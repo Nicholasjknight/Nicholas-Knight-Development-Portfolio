@@ -46,15 +46,63 @@ function initLayeredParallax() {
     // Check if mobile device
     const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
-    // Skip landing mode on mobile - allow normal scrolling
+    // Mobile-specific setup - keep animations but allow scrolling
     if (isMobile) {
-        console.log('Mobile device detected - enabling normal scrolling');
+        console.log('Mobile device detected - enabling scroll-based animations');
         isInLandingMode = false;
         document.body.style.overflow = 'auto';
         heroSection.style.position = 'relative';
-        heroSection.style.height = 'auto';
-        heroSection.style.minHeight = '100vh';
-        return; // Exit early for mobile
+        
+        // Add scroll-based animation for mobile
+        let ticking = false;
+        function updateMobileScrollEffect() {
+            const scrollTop = window.pageYOffset;
+            const heroHeight = window.innerHeight;
+            const progress = Math.min(scrollTop / heroHeight, 1);
+            
+            // Apply the same forest zoom effect based on scroll position
+            if (codeForest) {
+                const scale = 1 + (progress * 2); // Same zoom effect
+                const opacity = Math.max(0.9 - (progress * 0.6), 0.1);
+                codeForest.style.transform = `scale(${scale})`;
+                codeForest.style.opacity = opacity;
+            }
+            
+            // City background effect
+            if (cityBg) {
+                cityBg.style.opacity = Math.min(0.8 + (progress * 0.3), 1);
+            }
+            
+            // Title fade effect
+            const titleOpacity = Math.max(1 - (progress * 1.2), 0);
+            const titleY = progress * 20;
+            
+            if (heroTitle) {
+                heroTitle.style.opacity = titleOpacity;
+                heroTitle.style.transform = `translateY(-${titleY}px)`;
+            }
+            if (heroSubtitle) {
+                heroSubtitle.style.opacity = titleOpacity;
+                heroSubtitle.style.transform = `translateY(-${titleY}px)`;
+            }
+            if (scrollIndicator) {
+                scrollIndicator.style.opacity = Math.max(1 - (progress * 1.5), 0);
+            }
+            
+            ticking = false;
+        }
+        
+        function requestMobileScrollUpdate() {
+            if (!ticking) {
+                requestAnimationFrame(updateMobileScrollEffect);
+                ticking = true;
+            }
+        }
+        
+        // Add scroll listener for mobile animations
+        window.addEventListener('scroll', requestMobileScrollUpdate, { passive: true });
+        
+        return; // Exit early for mobile but with scroll animations
     }
     
     let scrollActionCount = 0;
