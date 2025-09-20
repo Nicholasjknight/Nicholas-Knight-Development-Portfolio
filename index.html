@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nicholas Knight's Portfolio - Full-Stack Developer & Business Management Professional showcasing web applications, automation scripts, SQL databases, and interactive games.">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VX36QR7HJW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VX36QR7HJW');
+    </script>
+    
+    <link rel="icon" type="image/x-icon" href="./images/PortfolioSiteLogo.jpg">
+    <link rel="stylesheet" href="style.css">
+    <title>Nicholas Knight | Developer Portfolio</title>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="spinner"></div>
+            <p>Loading Portfolio...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-menu" id="nav-menu">
+            <a href="#hero" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#professional" class="nav-link">Professional</a>
+            <a href="./projects.html" class="nav-link">Projects</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#video-showcase" class="nav-link">Demos</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Goonies-Style Parallax -->
+    <section id="hero" class="hero">
+        <!-- Simple Parallax Layers (like Goonies) -->
+        <div class="parallax-bg-far"></div>
+        <div class="parallax-bg-mid"></div>
+        <div class="parallax-bg-near"></div>
+        
+        <!-- Hero Content (stays centered initially) -->
+        <div class="hero-content-wrapper">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-line text-reveal">Nicholas Knight</span>
+                        <span class="title-line text-reveal">Full-Stack Developer</span>
+                    </h1>
+                    <p class="hero-subtitle">Crafting digital experiences through code, automation, and data</p>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+                <span class="scroll-text">Scroll to explore</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <p>The Developer Who Automates Everything</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm Nicholas Knight, a full-stack developer and entrepreneur who builds solutions that work while you sleep. What started as curiosity about making computers do tedious tasks has evolved into a passion for creating sophisticated automation systems that solve real-world problems.</p>
+                    
+                    <p><strong>I code for the joy of it.</strong> There's something magical about writing a script at midnight and waking up to see it processed hundreds of files, uploaded content, and generated reports while I slept. My recent projects reflect this passion - from video processing pipelines that automatically capture game highlights, compress them, and upload to Discord, to YouTube automation that converts videos to 9:16 format and generates AI-powered titles using OpenAI.</p>
+                    
+                    <p>My approach? <strong>The best code is code that runs itself.</strong> Whether it's Python scripts monitoring game events, API integrations connecting Discord/YouTube/OpenAI seamlessly, or web applications that adapt to user behavior in real-time - I approach every project asking "How can this be completely automated?"</p>
+                    
+                    <p>From relaunching Knight Group LLC with modern digital infrastructure to building custom e-commerce platforms and sophisticated gaming automation suites, I bring both technical expertise and business acumen to every challenge.</p>
+                </div>
+                <div class="skills-preview">
+                    <div class="skill-tag">JavaScript</div>
+                    <div class="skill-tag">Python</div>
+                    <div class="skill-tag">SQL</div>
+                    <div class="skill-tag">HTML/CSS</div>
+                    <div class="skill-tag">PowerShell</div>
+                    <div class="skill-tag">OpenAI API</div>
+                    <div class="skill-tag">Firebase</div>
+                    <div class="skill-tag">Automation</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Work Section -->
+    <section id="professional" class="professional">
+        <div class="container">
+            <div class="section-header">
+                <h2>Professional Applications</h2>
+                <p>Enterprise-level solutions and business automation</p>
+            </div>
+            <div class="professional-grid">
+                <div class="professional-item stagger-item" data-category="automation">
+                    <div class="item-image">
+                        <img src="./images/UoVidCompilerLogo.png" alt="UOVidCompiler System" style="object-fit: contain; width: 100%; height: 100%;">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="text-reveal">UOVidCompiler - Gaming Automation Suite</h3>
+                        <p>Sophisticated video processing pipeline that captures game highlights, compresses for Discord (<10MB), converts to YouTube Shorts (9:16), generates AI-powered titles via OpenAI, and provides comprehensive PvP statistics tracking.</p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>FFmpeg</span>
+                            <span>OpenAI API</span>
+                            <span>Discord Webhooks</span>
+                            <span>YouTube API</span>
+                        </div>
+                        <a href="#" class="project-link magnetic-btn">Private Repository</a>
+                    </div>
+                </div>
+                
+                <div class="professional-item stagger-item" data-category="business">
+                    <div class="item-image">
+                        <img src="./images/Fully TransLogo.png" alt="ManCaves.Store" style="object-fit: contain; width: 100%; height: 100%;">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="text-reveal">ManCaves.Store - Custom E-Commerce Platform</h3>
+                        <p>Custom-coded e-commerce solution replacing Shopify for cost efficiency and flexibility. Features dynamic inventory management, Firebase authentication, Snipcart integration, and automated product data parsing with Python/Selenium.</p>
+                        <div class="tech-stack">
+                            <span>JavaScript</span>
+                            <span>Firebase</span>
+                            <span>Snipcart</span>
+                            <span>Python</span>
+                            <span>Selenium</span>
+                        </div>
+                        <a href="https://mancavesstore.vercel.app/" class="project-link magnetic-btn" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+                
+                <div class="professional-item stagger-item" data-category="business">
+                    <div class="item-image">
+                        <img src="./images/Knight Group Logo.png" alt="Knight Group LLC" style="object-fit: contain; width: 100%; height: 100%;">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="text-reveal">Knight Group LLC - Business Automation</h3>
+                        <p>Relaunched family business with comprehensive digital infrastructure including automated booking systems, Google Business optimization, targeted ad campaigns, and complete web presence management for handyman services.</p>
+                        <div class="tech-stack">
+                            <span>Google Analytics</span>
+                            <span>Firebase</span>
+                            <span>Business Automation</span>
+                            <span>SEO</span>
+                        </div>
+                        <a href="https://knightgroup.com" class="project-link magnetic-btn" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+
+                <div class="professional-item stagger-item" data-category="system">
+                    <div class="item-image">
+                        <img src="./images/SpyBot.png" alt="SPY Data Trading System" style="object-fit: contain; width: 100%; height: 100%;">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="text-reveal">SPY Data Analysis System</h3>
+                        <p>Advanced financial data analysis platform for SPY options trading with real-time market data processing, pattern recognition algorithms, and automated trading signal generation for investment decision support.</p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>Data Analytics</span>
+                            <span>Trading APIs</span>
+                            <span>Algorithm Development</span>
+                        </div>
+                        <a href="#" class="project-link magnetic-btn">Private Repository</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Technical Skills</h2>
+                <p>Technologies and tools I work with</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">PowerShell</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">T-SQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>AI & APIs</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">ChatGPT & AI Assistants</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">OpenAI API Integration</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Machine Learning</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Trading APIs (Alpaca)</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Financial Data APIs</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>Automation & Systems</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Video Processing (FFmpeg)</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Windows APIs</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Task Scheduler</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Discord/YouTube APIs</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>Web & E-Commerce</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">HTML5/CSS3</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Firebase</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Snipcart</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">SEO & Analytics</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>Tools & Platforms</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Git/GitHub</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">PyInstaller</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Tableau</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Selenium</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>Data & Analytics</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Pandas/NumPy</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">MySQL/SQLite</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Data Visualization</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Real-time Data Processing</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>Cloud & Infrastructure</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">AWS/Cloud Services</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Docker Containers</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="65%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">CI/CD Pipelines</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Server Management</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>Gaming & Entertainment</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Game Automation Scripts</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Bot Development</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Macro Programming</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Interactive Applications</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Showcase Section -->
+    <section id="video-showcase" class="video-showcase">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Demo Videos</h2>
+                <p>Live demonstrations of automation systems and AI-powered applications</p>
+            </div>
+            <div class="video-player-container fade-in">
+                <div class="main-video">
+                    <video id="main-video" controls poster="./images/UoVidCompilerLogo.png">
+                        <source src="./videos/Main.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-playlist">
+                    <div class="video-item active" data-src="./videos/Main.mp4">
+                        <img src="./images/UoVidCompilerLogo.png" alt="UOVidCompiler System">
+                        <div class="video-info">
+                            <h4>UOVidCompiler Enterprise System</h4>
+                            <p>Full-stack video processing pipeline with AI content generation, Discord/YouTube integration, and automated workflow management</p>
+                        </div>
+                    </div>
+                    <div class="video-item" data-src="./videos/dart.mp4">
+                        <img src="./images/darts.png" alt="Precision Automation">
+                        <div class="video-info">
+                            <h4>Precision Targeting System</h4>
+                            <p>Real-time computer vision with trajectory calculation and adaptive targeting algorithms</p>
+                        </div>
+                    </div>
+                    <div class="video-item" data-src="./videos/evade.mp4">
+                        <img src="./images/evade.png" alt="AI Decision Engine">
+                        <div class="video-info">
+                            <h4>AI Decision Engine</h4>
+                            <p>Machine learning-powered threat assessment with dynamic pathfinding and behavioral prediction</p>
+                        </div>
+                    </div>
+                    <div class="video-item" data-src="./videos/looter.mp4">
+                        <img src="./images/looter.png" alt="Automated Resource Management">
+                        <div class="video-info">
+                            <h4>Intelligent Resource Management</h4>
+                            <p>Computer vision-based item recognition with priority-based collection algorithms and inventory optimization</p>
+                        </div>
+                    </div>
+                    <div class="video-item" data-src="./videos/mount.mp4">
+                        <img src="./images/mounting.png" alt="Autonomous Systems">
+                        <div class="video-info">
+                            <h4>Autonomous Entity Management</h4>
+                            <p>Multi-agent coordination system with state machines, behavioral trees, and adaptive combat strategies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Get In Touch</h2>
+                <p>Ready to bring your automation and AI projects to life</p>
+            </div>
+            <div class="contact-content fade-in">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Email</h3>
+                        <a href="mailto:nickknight488@gmail.com">nickknight488@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Location</h3>
+                        <p>Available for remote work worldwide</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Specialties</h3>
+                        <p>AI Integration, Automation Systems, Financial Technology, Video Processing</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Response Time</h3>
+                        <p>Typically within 24 hours</p>
+                    </div>
+                </div>
+                
+                <div class="contact-cta">
+                    <h3>What I Can Help With</h3>
+                    <ul class="services-list">
+                        <li>• Custom Automation Solutions</li>
+                        <li>• AI-Powered Applications</li>
+                        <li>• Data Collection & Analysis Systems</li>
+                        <li>• Trading Bot Development</li>
+                        <li>• Video Processing Pipelines</li>
+                        <li>• E-Commerce Platform Development</li>
+                        <li>• Windows Application Development</li>
+                        <li>• API Integration & Development</li>
+                    </ul>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://github.com/Nicholasjknight/Portfolio-Projects" target="_blank" class="social-link">
+                        <img src="./images/GithubIcon.png" alt="GitHub">
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nicholas-knight-23010b23a/" target="_blank" class="social-link">
+                        <img src="./images/linkedin-icon.png" alt="LinkedIn">
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UChI-xkk3bZTl_ZH4UcY1cMg" target="_blank" class="social-link">
+                        <img src="./images/youtube-icon.png" alt="YouTube">
+                        <span>YouTube</span>
+                    </a>
+                    <a href="https://discord.gg/mdMEVVmY" target="_blank" class="social-link">
+                        <img src="./images/discord-icon.png" alt="Discord">
+                        <span>Discord</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer fade-in">
+                <p>&copy; 2025 Nicholas Knight. Specializing in AI automation and enterprise solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

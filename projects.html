@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Nicholas Knight | AI Automation & Development</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico.jpg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-menu" id="nav-menu">
+            <a href="index.html#hero" class="nav-link">Home</a>
+            <a href="index.html#about" class="nav-link">About</a>
+            <a href="index.html#professional" class="nav-link">Professional</a>
+            <a href="./projects.html" class="nav-link">Projects</a>
+            <a href="index.html#skills" class="nav-link">Skills</a>
+            <a href="index.html#video-showcase" class="nav-link">Demos</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Projects Hero Section -->
+    <section class="projects-hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Technical Projects Portfolio</h1>
+                <p>Comprehensive showcase of AI automation systems, financial technology, and enterprise applications</p>
+                <div class="project-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">12+</span>
+                        <span class="stat-label">Major Projects</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">6</span>
+                        <span class="stat-label">Technology Domains</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">150k+</span>
+                        <span class="stat-label">Lines of Code</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Automated Systems</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Categories -->
+    <section class="project-categories">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Project Categories</h2>
+                <p>Organized by technology domain and application area</p>
+            </div>
+            <div class="category-filters fade-in">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="ai-automation">AI & Automation</button>
+                <button class="filter-btn" data-filter="financial">Financial Technology</button>
+                <button class="filter-btn" data-filter="video-processing">Video Processing</button>
+                <button class="filter-btn" data-filter="enterprise">Enterprise Applications</button>
+                <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+                <button class="filter-btn" data-filter="gaming">Gaming & Entertainment</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Projects Grid -->
+    <section class="detailed-projects">
+        <div class="container">
+            <!-- AI & Automation Projects -->
+            <div class="project-detailed fade-in" data-category="ai-automation enterprise">
+                <div class="project-header">
+                    <img src="./images/Display-Control-Plus-Logo.png" alt="Display Control Plus">
+                    <div class="project-title">
+                        <h3>Display Control Plus</h3>
+                        <span class="project-type">Commercial Desktop Application</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-description">
+                        <p>Professional OLED screen protection utility with advanced idle detection and multi-monitor support. Built as a commercial Windows application with system-level integration.</p>
+                        
+                        <h4>Technical Architecture</h4>
+                        <ul>
+                            <li><strong>Multi-Process Design:</strong> GUI, background service, and system integration components</li>
+                            <li><strong>Windows API Integration:</strong> Monitor enumeration, idle detection, Task Scheduler</li>
+                            <li><strong>Advanced Overlay System:</strong> Multiple protection modes (blank, image, slideshow, GIF)</li>
+                            <li><strong>Configuration Management:</strong> JSON-based settings with real-time updates</li>
+                        </ul>
+
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Per-monitor idle detection with configurable sensitivity</li>
+                            <li>PyInstaller-based distribution with Inno Setup installer</li>
+                            <li>System tray integration and Windows Task Scheduler automation</li>
+                            <li>Multi-monitor geometry handling and cursor tracking</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <h4>Technology Stack</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">tkinter</span>
+                            <span class="tech-tag">pywin32</span>
+                            <span class="tech-tag">pynput</span>
+                            <span class="tech-tag">PyInstaller</span>
+                            <span class="tech-tag">Windows APIs</span>
+                            <span class="tech-tag">Multiprocessing</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Nicholasjknight" target="_blank" class="project-link">View Code</a>
+                            <a href="#" class="project-link">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financial Technology Projects -->
+            <div class="project-detailed fade-in" data-category="financial ai-automation">
+                <div class="project-header">
+                    <img src="./images/slogo.png" alt="SPY Trading Bot">
+                    <div class="project-title">
+                        <h3>SPY Options Trading Bot</h3>
+                        <span class="project-type">AI-Powered Financial System</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-description">
+                        <p>Professional-grade options trading bot with AI signal generation, risk management, and live market integration. Features machine learning models for market prediction and automated execution.</p>
+                        
+                        <h4>AI & Machine Learning</h4>
+                        <ul>
+                            <li><strong>Signal Generation:</strong> Scikit-learn models with technical indicator analysis</li>
+                            <li><strong>Risk Assessment:</strong> Real-time position monitoring and automated stops</li>
+                            <li><strong>Adaptive Learning:</strong> Model retraining based on trade outcomes</li>
+                            <li><strong>Market Analysis:</strong> RSI, MACD, VIX correlation, volume analysis</li>
+                        </ul>
+
+                        <h4>Trading Features</h4>
+                        <ul>
+                            <li>Alpaca API integration for live options trading</li>
+                            <li>Multi-source data validation (yfinance, real-time feeds)</li>
+                            <li>Greeks monitoring and time decay management</li>
+                            <li>Emergency exit protocols and position limits</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <h4>Technology Stack</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">scikit-learn</span>
+                            <span class="tech-tag">pandas</span>
+                            <span class="tech-tag">Alpaca API</span>
+                            <span class="tech-tag">yfinance</span>
+                            <span class="tech-tag">asyncio</span>
+                            <span class="tech-tag">Technical Analysis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Nicholasjknight" target="_blank" class="project-link">View Code</a>
+                            <a href="#" class="project-link">Documentation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Collection System -->
+            <div class="project-detailed fade-in" data-category="financial ai-automation">
+                <div class="project-header">
+                    <img src="./images/slogo.png" alt="SPY Data Platform">
+                    <div class="project-title">
+                        <h3>SPY Data Collection Platform</h3>
+                        <span class="project-type">Real-Time Financial Data Pipeline</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-description">
+                        <p>Enterprise-scale data collection system for continuous SPY options and stock data with automated Windows Task Scheduler deployment and multi-API integration.</p>
+                        
+                        <h4>Data Architecture</h4>
+                        <ul>
+                            <li><strong>Multi-Source Integration:</strong> Tradier API, yfinance, real-time market feeds</li>
+                            <li><strong>Data Organization:</strong> Weekly/daily snapshots with synchronized stock+options data</li>
+                            <li><strong>Historical Compilation:</strong> Long-term datasets from daily snapshots</li>
+                            <li><strong>Quality Control:</strong> Data validation, deduplication, and audit trails</li>
+                        </ul>
+
+                        <h4>Automation Features</h4>
+                        <ul>
+                            <li>Controller-based parallel data collection during market hours</li>
+                            <li>Windows Task Scheduler integration for persistent operation</li>
+                            <li>Greeks synchronization with closest stock price timestamps</li>
+                            <li>Automated folder rotation and backup systems</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <h4>Technology Stack</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">pandas</span>
+                            <span class="tech-tag">Tradier API</span>
+                            <span class="tech-tag">yfinance</span>
+                            <span class="tech-tag">Task Scheduler</span>
+                            <span class="tech-tag">multiprocessing</span>
+                            <span class="tech-tag">Data Pipeline</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Nicholasjknight" target="_blank" class="project-link">View Code</a>
+                            <a href="#" class="project-link">Architecture</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Processing System -->
+            <div class="project-detailed fade-in" data-category="video-processing ai-automation">
+                <div class="project-header">
+                    <img src="./images/UOGithub.png" alt="UO Video Compiler">
+                    <div class="project-title">
+                        <h3>UOVidCompiler Enterprise System</h3>
+                        <span class="project-type">AI-Powered Video Automation</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-description">
+                        <p>Comprehensive video processing pipeline with AI content generation, multi-platform publishing, and automated workflow management for content creators and businesses.</p>
+                        
+                        <h4>AI Integration</h4>
+                        <ul>
+                            <li><strong>Content Generation:</strong> OpenAI API for automated descriptions and titles</li>
+                            <li><strong>Smart Processing:</strong> Intelligent video analysis and optimization</li>
+                            <li><strong>Quality Control:</strong> Automated validation and error detection</li>
+                            <li><strong>Workflow Automation:</strong> End-to-end content pipeline management</li>
+                        </ul>
+
+                        <h4>Platform Integration</h4>
+                        <ul>
+                            <li>YouTube API for automated uploads and metadata management</li>
+                            <li>Discord bot integration for team notifications</li>
+                            <li>FFmpeg processing with custom compression algorithms</li>
+                            <li>Multi-format output with quality optimization</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <h4>Technology Stack</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FFmpeg</span>
+                            <span class="tech-tag">OpenAI API</span>
+                            <span class="tech-tag">YouTube API</span>
+                            <span class="tech-tag">Discord.py</span>
+                            <span class="tech-tag">Video Processing</span>
+                            <span class="tech-tag">Automation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Nicholasjknight" target="_blank" class="project-link">View Code</a>
+                            <a href="./videos/Main.mp4" class="project-link">Demo Video</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- E-Commerce Platform -->
+            <div class="project-detailed fade-in" data-category="ecommerce ai-automation">
+                <div class="project-header">
+                    <img src="./images/Fully TransLogo.png" alt="ManCaves Store">
+                    <div class="project-title">
+                        <h3>ManCaves.Store E-Commerce Platform</h3>
+                        <span class="project-type">Automated Dropshipping System</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-description">
+                        <p>Full-stack e-commerce automation system with AI-powered product selection, dynamic pricing, and integrated payment processing for dropshipping operations.</p>
+                        
+                        <h4>Automation Pipeline</h4>
+                        <ul>
+                            <li><strong>Product Selection:</strong> AI-driven filtering and scoring algorithms</li>
+                            <li><strong>Content Generation:</strong> Automated product descriptions and SEO optimization</li>
+                            <li><strong>Image Processing:</strong> Automated image downloads and optimization</li>
+                            <li><strong>Inventory Management:</strong> Real-time stock monitoring and updates</li>
+                        </ul>
+
+                        <h4>E-Commerce Features</h4>
+                        <ul>
+                            <li>Snipcart integration for seamless checkout experience</li>
+                            <li>Firebase backend for real-time data management</li>
+                            <li>Responsive design with modern UI/UX principles</li>
+                            <li>SEO optimization and analytics integration</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <h4>Technology Stack</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">HTML5/CSS3</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Snipcart</span>
+                            <span class="tech-tag">API Integration</span>
+                            <span class="tech-tag">E-Commerce</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Nicholasjknight" target="_blank" class="project-link">View Code</a>
+                            <a href="#" class="project-link">Live Site</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Automation Suite -->
+            <div class="project-detailed fade-in" data-category="enterprise ai-automation">
+                <div class="project-header">
+                    <img src="./images/Knight Group Logo.png" alt="Knight Group">
+                    <div class="project-title">
+                        <h3>Knight Group Business Automation</h3>
+                        <span class="project-type">Enterprise Workflow System</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-description">
+                        <p>Comprehensive business automation suite for streamlining operations, client management, and service delivery with integrated communication and project management tools.</p>
+                        
+                        <h4>Business Intelligence</h4>
+                        <ul>
+                            <li><strong>Client Management:</strong> Automated lead tracking and follow-up systems</li>
+                            <li><strong>Project Automation:</strong> Workflow templates and progress monitoring</li>
+                            <li><strong>Communication Hub:</strong> Multi-channel integration (email, Discord, social media)</li>
+                            <li><strong>Analytics Dashboard:</strong> Real-time business metrics and reporting</li>
+                        </ul>
+
+                        <h4>Integration Features</h4>
+                        <ul>
+                            <li>CRM integration with automated data synchronization</li>
+                            <li>Financial tracking and invoice automation</li>
+                            <li>Team collaboration tools and task management</li>
+                            <li>Document automation and template systems</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <h4>Technology Stack</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">APIs</span>
+                            <span class="tech-tag">Database</span>
+                            <span class="tech-tag">Automation</span>
+                            <span class="tech-tag">Business Intelligence</span>
+                            <span class="tech-tag">Workflow</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Nicholasjknight" target="_blank" class="project-link">View Code</a>
+                            <a href="#" class="project-link">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gaming & Automation Projects -->
+                <div class="project-detailed fade-in" data-category="gaming ai-automation">
+                    <div class="project-header">
+                        <img src="./images/evade.png" alt="Gaming Automation Suite">
+                        <div class="project-title">
+                            <h3>Advanced Gaming Automation Suite</h3>
+                            <span class="project-type">AI-Powered Game Automation</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-description">
+                            <p>Sophisticated gaming automation system with AI decision-making, computer vision, and real-time strategy adaptation. Features multiple specialized modules for different game scenarios.</p>
+                            
+                            <h4>AI & Computer Vision</h4>
+                            <ul>
+                                <li><strong>Precision Targeting:</strong> Real-time trajectory calculation and adaptive targeting algorithms</li>
+                                <li><strong>Threat Assessment:</strong> Machine learning-powered threat detection and evasion strategies</li>
+                                <li><strong>Resource Management:</strong> Computer vision-based item recognition and priority systems</li>
+                                <li><strong>Autonomous Navigation:</strong> Dynamic pathfinding with obstacle avoidance</li>
+                            </ul>
+
+                            <h4>Automation Modules</h4>
+                            <ul>
+                                <li>Intelligent combat systems with behavioral prediction</li>
+                                <li>Automated resource collection with efficiency optimization</li>
+                                <li>Multi-agent coordination for complex scenarios</li>
+                                <li>Real-time decision trees with adaptive learning</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <h4>Technology Stack</h4>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Computer Vision</span>
+                                <span class="tech-tag">Machine Learning</span>
+                                <span class="tech-tag">pynput</span>
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">Behavioral Trees</span>
+                                <span class="tech-tag">Real-time Processing</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Nicholasjknight" target="_blank" class="project-link">View Code</a>
+                                <a href="./videos/evade.mp4" class="project-link">Demo Video</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Applications -->
+                <div class="project-detailed fade-in" data-category="enterprise ecommerce">
+                    <div class="project-header">
+                        <img src="./images/chessposter.png" alt="Interactive Web Applications">
+                        <div class="project-title">
+                            <h3>Interactive Web Applications</h3>
+                            <span class="project-type">Full-Stack Game Development</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-description">
+                            <p>Collection of sophisticated web-based applications featuring advanced game logic, AI opponents, and responsive design principles.</p>
+                            
+                            <h4>Chess Engine</h4>
+                            <ul>
+                                <li><strong>Complete Rule Implementation:</strong> Full chess rule validation including castling, en passant, and promotion</li>
+                                <li><strong>Game State Management:</strong> Advanced position tracking and move history</li>
+                                <li><strong>Interactive UI:</strong> Drag-and-drop interface with visual feedback</li>
+                                <li><strong>Responsive Design:</strong> Cross-platform compatibility and mobile optimization</li>
+                            </ul>
+
+                            <h4>Tic-Tac-Toe AI</h4>
+                            <ul>
+                                <li>Minimax algorithm implementation for optimal AI play</li>
+                                <li>Difficulty scaling and adaptive opponent strategies</li>
+                                <li>Clean, modern interface with smooth animations</li>
+                                <li>Win detection and game state persistence</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <h4>Technology Stack</h4>
+                            <div class="tech-tags">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">HTML5/CSS3</span>
+                                <span class="tech-tag">Game Logic</span>
+                                <span class="tech-tag">AI Algorithms</span>
+                                <span class="tech-tag">Responsive Design</span>
+                                <span class="tech-tag">DOM Manipulation</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="./Chess-Game-main/index.html" target="_blank" class="project-link">Chess Game</a>
+                                <a href="./JavaScript-Tic-Tac-Toe-master/index.html" target="_blank" class="project-link">Tic-Tac-Toe</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Analytics Platform -->
+                <div class="project-detailed fade-in" data-category="financial enterprise">
+                    <div class="project-header">
+                        <img src="./images/TableauDashboard.png" alt="Data Analytics Platform">
+                        <div class="project-title">
+                            <h3>Advanced Data Analytics Platform</h3>
+                            <span class="project-type">Business Intelligence & Visualization</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-description">
+                            <p>Comprehensive data analytics and visualization platform featuring advanced SQL analysis, interactive dashboards, and business intelligence reporting.</p>
+                            
+                            <h4>COVID-19 Analytics Dashboard</h4>
+                            <ul>
+                                <li><strong>Global Data Integration:</strong> Multi-source data aggregation and validation</li>
+                                <li><strong>Interactive Visualizations:</strong> Dynamic charts with drill-down capabilities</li>
+                                <li><strong>Trend Analysis:</strong> Statistical modeling and predictive analytics</li>
+                                <li><strong>Real-time Updates:</strong> Automated data refresh and alert systems</li>
+                            </ul>
+
+                            <h4>SQL Analysis Engine</h4>
+                            <ul>
+                                <li>Complex T-SQL queries with CTEs and window functions</li>
+                                <li>Advanced data mining and pattern recognition</li>
+                                <li>Performance optimization and query tuning</li>
+                                <li>Automated report generation and scheduling</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <h4>Technology Stack</h4>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Tableau</span>
+                                <span class="tech-tag">T-SQL</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Data Visualization</span>
+                                <span class="tech-tag">Statistical Analysis</span>
+                                <span class="tech-tag">Business Intelligence</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://public.tableau.com/views/CovidDashboard_16933543014790/Dashboard1" target="_blank" class="project-link">Live Dashboard</a>
+                                <a href="./SQLqueries/SQL Covid Project 1.sql" target="_blank" class="project-link">SQL Analysis</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Metrics -->
+    <section class="project-metrics">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Project Impact</h2>
+                <p>Measurable results from automation and AI implementations</p>
+            </div>
+            <div class="metrics-grid fade-in">
+                <div class="metric-item">
+                    <div class="metric-icon">⚡</div>
+                    <h3>98% Automation Success</h3>
+                    <p>High-reliability systems with intelligent error handling</p>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-icon">🤖</div>
+                    <h3>24/7 Operation</h3>
+                    <p>Continuous automated systems with minimal intervention</p>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-icon">📊</div>
+                    <h3>Real-Time Analytics</h3>
+                    <p>Live monitoring and intelligent decision making</p>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-icon">🎯</div>
+                    <h3>Multi-Domain Expertise</h3>
+                    <p>AI, Finance, Gaming, Enterprise, and E-Commerce solutions</p>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-icon">🔧</div>
+                    <h3>Commercial Grade</h3>
+                    <p>Production-ready applications with professional deployment</p>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-icon">🚀</div>
+                    <h3>Scalable Architecture</h3>
+                    <p>Enterprise-level systems designed for growth and reliability</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Portfolio -->
+    <section class="back-to-portfolio">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Ready to Automate Your Business?</h2>
+                <p>Let's discuss how these technologies can transform your operations</p>
+                <div class="cta-buttons">
+                    <a href="index.html#contact" class="btn-primary">Get In Touch</a>
+                    <a href="index.html" class="btn-secondary">Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-minimal">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Nicholas Knight. Specializing in AI automation and enterprise solutions.</p>
+                <div class="footer-links">
+                    <a href="https://github.com/Nicholasjknight" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/nicholas-knight-23010b23a/" target="_blank">LinkedIn</a>
+                    <a href="mailto:nickknight488@gmail.com">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="projects-script.js"></script>
+</body>
+</html>
