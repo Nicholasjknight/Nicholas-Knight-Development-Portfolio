@@ -7,6 +7,8 @@
 
 html {
     scroll-behavior: smooth;
+    /* Enable smooth scrolling on all devices */
+    -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -15,6 +17,9 @@ body {
     color: #ffffff;
     background-color: #0a0a0a;
     overflow-x: hidden;
+    /* Ensure touch scrolling works on mobile */
+    -webkit-overflow-scrolling: touch;
+    touch-action: manipulation;
 }
 
 .container {
@@ -1549,6 +1554,22 @@ section::before {
 }
 
 @media (max-width: 768px) {
+    /* Enable touch scrolling and fix mobile scroll issues */
+    html, body {
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
+    }
+    
+    /* Fix hero section for mobile scrolling */
+    .hero {
+        position: relative !important;
+        overflow: visible !important;
+        min-height: 100vh;
+        height: auto !important;
+    }
+
     .hamburger {
         display: flex;
     }
