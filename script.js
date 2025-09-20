@@ -43,6 +43,20 @@ function initLayeredParallax() {
         return;
     }
     
+    // Check if mobile device
+    const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    // Skip landing mode on mobile - allow normal scrolling
+    if (isMobile) {
+        console.log('Mobile device detected - enabling normal scrolling');
+        isInLandingMode = false;
+        document.body.style.overflow = 'auto';
+        heroSection.style.position = 'relative';
+        heroSection.style.height = 'auto';
+        heroSection.style.minHeight = '100vh';
+        return; // Exit early for mobile
+    }
+    
     let scrollActionCount = 0;
     let lastScrollY = 0;
     const maxLandingScrolls = 4; // Stay on landing screen for 4 scroll actions

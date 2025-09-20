@@ -1564,9 +1564,10 @@ section::before {
     /* Enable touch scrolling and fix mobile scroll issues */
     html, body {
         overflow-x: hidden;
-        overflow-y: auto;
+        overflow-y: auto !important;
         -webkit-overflow-scrolling: touch;
         touch-action: pan-y;
+        height: auto !important;
     }
     
     /* Fix hero section for mobile scrolling */
@@ -1575,6 +1576,17 @@ section::before {
         overflow: visible !important;
         min-height: 100vh;
         height: auto !important;
+        /* Allow normal document flow on mobile */
+        display: block !important;
+    }
+    
+    /* Ensure content flows normally on mobile */
+    .hero-content-wrapper {
+        position: relative !important;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .hamburger {
