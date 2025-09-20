@@ -56,6 +56,41 @@ function initLayeredParallax() {
         }
     }
     
+    // Mobile touch handling for landing mode
+    let touchStartY = 0;
+    let touchMoves = 0;
+    const maxTouchMoves = 4;
+    
+    function handleTouchStart(e) {
+        if (isInLandingMode) {
+            touchStartY = e.touches[0].clientY;
+        }
+    }
+    
+    function handleTouchMove(e) {
+        if (!isInLandingMode) return;
+        
+        e.preventDefault();
+        const touchY = e.touches[0].clientY;
+        const deltaY = touchStartY - touchY;
+        
+        // Only count significant upward swipes
+        if (deltaY > 30) {
+            touchMoves = Math.min(touchMoves + 1, maxTouchMoves);
+            touchStartY = touchY; // Reset for next move
+            updateForestEffect();
+            
+            // Exit landing mode after max touch moves
+            if (touchMoves >= maxTouchMoves) {
+                exitLandingModeFunction();
+            }
+        } else if (deltaY < -30) {
+            touchMoves = Math.max(touchMoves - 1, 0);
+            touchStartY = touchY;
+            updateForestEffect();
+        }
+    }
+    
     function handleWheelScroll(e) {
         if (!isInLandingMode) {
             // Allow scrolling back up to re-enter landing mode
@@ -85,7 +120,10 @@ function initLayeredParallax() {
     }
     
     function updateForestEffect() {
-        const progress = scrollActionCount / maxLandingScrolls;
+        // Use touch moves for mobile, scroll actions for desktop
+        const isMobile = window.innerWidth <= 768;
+        const currentProgress = isMobile ? touchMoves / maxTouchMoves : scrollActionCount / maxLandingScrolls;
+        const progress = Math.min(currentProgress, 1);
         
         if (codeForest) {
             // EXPAND the code forest - this creates the "exiting forest" illusion
@@ -129,6 +167,8 @@ function initLayeredParallax() {
     
     function exitLandingModeFunction() {
         isInLandingMode = false;
+        scrollActionCount = 0; // Reset for next time
+        touchMoves = 0; // Reset touch moves for mobile
         
         // Transition to About Me section
         if (heroSection) {
@@ -184,7 +224,8 @@ function initLayeredParallax() {
         updateForestEffect();
         
         // Re-add scroll prevention
-        document.addEventListener('touchmove', preventScroll, { passive: false });
+        document.addEventListener('touchstart', handleTouchStart, { passive: false });
+        document.addEventListener('touchmove', handleTouchMove, { passive: false });
         document.addEventListener('keydown', preventKeyScroll);
         
         // Scroll to top smoothly
@@ -209,7 +250,8 @@ function initLayeredParallax() {
     
     // Add event listeners
     document.addEventListener('wheel', handleWheelScroll, { passive: false });
-    document.addEventListener('touchmove', preventScroll, { passive: false });
+    document.addEventListener('touchstart', handleTouchStart, { passive: false });
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
     document.addEventListener('keydown', preventKeyScroll);
     
     // Allow reset when scrolling back to top (keep this listener always active)
