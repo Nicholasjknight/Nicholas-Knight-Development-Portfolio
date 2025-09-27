@@ -7,7 +7,7 @@ let main = {
       pieces: {
         w_king: {
           position: '5_1',
-          img: '&#9812;',
+          img: '<div class="chess-piece piece-w-king"></div>',
           captured: false,
           moved: false,
           type: 'w_king'
@@ -15,105 +15,105 @@ let main = {
         },
         w_queen: {
           position: '4_1',
-          img: '&#9813;',
+          img: '<div class="chess-piece piece-w-queen"></div>',
           captured: false,
           moved: false,
           type: 'w_queen'
         },
         w_bishop1: {
           position: '3_1',
-          img: '&#9815;',
+          img: '<div class="chess-piece piece-w-bishop"></div>',
           captured: false,
           moved: false,
           type: 'w_bishop'
         },
         w_bishop2: {
           position: '6_1',
-          img: '&#9815;',
+          img: '<div class="chess-piece piece-w-bishop"></div>',
           captured: false,
           moved: false,
           type: 'w_bishop'
         },
         w_knight1: {
           position: '2_1',
-          img: '&#9816;',
+          img: '<div class="chess-piece piece-w-knight"></div>',
           captured: false,
           moved: false,
           type: 'w_knight'
         },
         w_knight2: {
           position: '7_1',
-          img: '&#9816;',
+          img: '<div class="chess-piece piece-w-knight"></div>',
           captured: false,
           moved: false,
           type: 'w_knight'
         },
         w_rook1: {
           position: '1_1',
-          img: '&#9814;',
+          img: '<div class="chess-piece piece-w-rook"></div>',
           captured: false,
           moved: false,
           type: 'w_rook'
         },
         w_rook2: {
           position: '8_1',
-          img: '&#9814;',
+          img: '<div class="chess-piece piece-w-rook"></div>',
           captured: false,
           moved: false,
           type: 'w_rook'
         },
         w_pawn1: {
           position: '1_2',
-          img: '&#9817;',
+          img: '<div class="chess-piece piece-w-pawn"></div>',
           captured: false,
           type: 'w_pawn',
           moved: false
         },
         w_pawn2: {
           position: '2_2',
-          img: '&#9817;',
+          img: '<div class="chess-piece piece-w-pawn"></div>',
           captured: false,
           type: 'w_pawn',
           moved: false
         },
         w_pawn3: {
           position: '3_2',
-          img: '&#9817;',
+          img: '<div class="chess-piece piece-w-pawn"></div>',
           captured: false,
           type: 'w_pawn',
           moved: false
         },
         w_pawn4: {
           position: '4_2',
-          img: '&#9817;',
+          img: '<div class="chess-piece piece-w-pawn"></div>',
           captured: false,
           type: 'w_pawn',
           moved: false
         },
         w_pawn5: {
           position: '5_2',
-          img: '&#9817;',
+          img: '<div class="chess-piece piece-w-pawn"></div>',
           captured: false,
           type: 'w_pawn',
           moved: false
         },
         w_pawn6: {
           position: '6_2',
-          img: '&#9817;',
+          img: '<div class="chess-piece piece-w-pawn"></div>',
           captured: false,
           type: 'w_pawn',
           moved: false
         },
         w_pawn7: {
           position: '7_2',
-          img: '&#9817;',
+          img: '<div class="chess-piece piece-w-pawn"></div>',
           captured: false,
           type: 'w_pawn',
           moved: false
         },
         w_pawn8: {
           position: '8_2',
-          img: '&#9817;',
+          img: '<div class="chess-piece piece-w-pawn"></div>',
           captured: false,
           type: 'w_pawn',
           moved: false
@@ -121,112 +121,112 @@ let main = {
   
         b_king: {
           position: '5_8',
-          img: '&#9818;',
+          img: '<div class="chess-piece piece-b-king"></div>',
           captured: false,
           moved: false,
           type: 'b_king'
         },
         b_queen: {
           position: '4_8',
-          img: '&#9819;',
+          img: '<div class="chess-piece piece-b-queen"></div>',
           captured: false,
           moved: false,
           type: 'b_queen'
         },
         b_bishop1: {
           position: '3_8',
-          img: '&#9821;',
+          img: '<div class="chess-piece piece-b-bishop"></div>',
           captured: false,
           moved: false,
           type: 'b_bishop'
         },
         b_bishop2: {
           position: '6_8',
-          img: '&#9821;',
+          img: '<div class="chess-piece piece-b-bishop"></div>',
           captured: false,
           moved: false,
           type: 'b_bishop'
         },
         b_knight1: {
           position: '2_8',
-          img: '&#9822;',
+          img: '<div class="chess-piece piece-b-knight"></div>',
           captured: false,
           moved: false,
           type: 'b_knight'
         },
         b_knight2: {
           position: '7_8',
-          img: '&#9822;',
+          img: '<div class="chess-piece piece-b-knight"></div>',
           captured: false,
           moved: false,
           type: 'b_knight'
         },
         b_rook1: {
           position: '1_8',
-          img: '&#9820;',
+          img: '<div class="chess-piece piece-b-rook"></div>',
           captured: false,
           moved: false,
           type: 'b_rook'
         },
         b_rook2: {
           position: '8_8',
-          img: '&#9820;',
+          img: '<div class="chess-piece piece-b-rook"></div>',
           captured: false,
           moved: false,
           type: 'b_rook'
         },
         b_pawn1: {
           position: '1_7',
-          img: '&#9823;',
+          img: '<div class="chess-piece piece-b-pawn"></div>',
           captured: false,
           type: 'b_pawn',
           moved: false
         },
         b_pawn2: {
           position: '2_7',
-          img: '&#9823;',
+          img: '<div class="chess-piece piece-b-pawn"></div>',
           captured: false,
           type: 'b_pawn',
           moved: false
         },
         b_pawn3: {
           position: '3_7',
-          img: '&#9823;',
+          img: '<div class="chess-piece piece-b-pawn"></div>',
           captured: false,
           type: 'b_pawn',
           moved: false
         },
         b_pawn4: {
           position: '4_7',
-          img: '&#9823;',
+          img: '<div class="chess-piece piece-b-pawn"></div>',
           captured: false,
           type: 'b_pawn',
           moved: false
         },
         b_pawn5: {
           position: '5_7',
-          img: '&#9823;',
+          img: '<div class="chess-piece piece-b-pawn"></div>',
           captured: false,
           type: 'b_pawn',
           moved: false
         },
         b_pawn6: {
           position: '6_7',
-          img: '&#9823;',
+          img: '<div class="chess-piece piece-b-pawn"></div>',
           captured: false,
           type: 'b_pawn',
           moved: false
         },
         b_pawn7: {
           position: '7_7',
-          img: '&#9823;',
+          img: '<div class="chess-piece piece-b-pawn"></div>',
           captured: false,
           type: 'b_pawn',
           moved: false
         },
         b_pawn8: {
           position: '8_7',
-          img: '&#9823;',
+          img: '<div class="chess-piece piece-b-pawn"></div>',
           captured: false,
           type: 'b_pawn',
           moved: false
@@ -237,11 +237,21 @@ let main = {
   
     methods: {
       gamesetup: function() {
+        console.log('Starting gamesetup...');
         $('.gamecell').attr('chess', 'null');
+        let pieceCount = 0;
         for (let gamepiece in main.variables.pieces) {
-          $('#' + main.variables.pieces[gamepiece].position).html(main.variables.pieces[gamepiece].img);
-          $('#' + main.variables.pieces[gamepiece].position).attr('chess', gamepiece);
+          const piece = main.variables.pieces[gamepiece];
+          console.log(`Placing ${gamepiece} at ${piece.position}`);
+          $('#' + piece.position).html(piece.img);
+          $('#' + piece.position).attr('chess', gamepiece);
+          pieceCount++;
         }
+        console.log(`Game setup complete. Placed ${pieceCount} pieces.`);
+        
+        // Check if white pawn is properly placed
+        const whitePawn1 = $('#1_2').attr('chess');
+        console.log('White pawn 1 at 1_2:', whitePawn1);
       },
   
       moveoptions: function(selectedpiece) {
@@ -627,7 +637,9 @@ let main = {
           name: $('#' + main.variables.selectedpiece).attr('chess'),
           id: main.variables.selectedpiece
         };
-  
+
+        // Record the capture move in history
+        recordMove(main.variables.pieces[selectedpiece.name], selectedpiece.id, target.id, target.name);
         
           //new cell
           $('#' + target.id).html(main.variables.pieces[selectedpiece.name].img);
@@ -653,6 +665,10 @@ let main = {
       move: function (target) {
   
         let selectedpiece = $('#' + main.variables.selectedpiece).attr('chess');
+        let fromPosition = main.variables.selectedpiece;
+  
+        // Record the move in history
+        recordMove(main.variables.pieces[selectedpiece], fromPosition, target.id);
   
         // new cell
         $('#' + target.id).html(main.variables.pieces[selectedpiece].img);
@@ -683,7 +699,7 @@ let main = {
           // set the selected piece to '' again
           main.variables.selectedpiece = '';
   
-          $('#turn').html("It's Blacks Turn");
+          $('#turn .turn-text').html("Black's Turn");
   
           $('#turn').addClass('turnhighlight');
           window.setTimeout(function(){
@@ -699,7 +715,7 @@ let main = {
           // set the selected piece to '' again
           main.variables.selectedpiece = '';
   
-          $('#turn').html("It's Whites Turn");
+          $('#turn .turn-text').html("White's Turn");
   
           $('#turn').addClass('turnhighlight');
           window.setTimeout(function(){
@@ -707,10 +723,24 @@ let main = {
           }, 1500);
   
         }
-  
-      },
-  
-      togglehighlight: function(options) {
+        
+        // Check for check, checkmate, or stalemate after turn ends
+        setTimeout(function() {
+          if (typeof window.isCheckmate !== 'undefined' && window.isCheckmate(main.variables.turn)) {
+            window.announceCheckmate(main.variables.turn);
+          } else if (typeof window.isStalemate !== 'undefined' && window.isStalemate(main.variables.turn)) {
+            window.announceStalemate();
+          } else if (typeof window.isKingInCheck !== 'undefined' && window.isKingInCheck(main.variables.turn)) {
+            // Show check notification
+            const kingInCheckPlayer = main.variables.turn === 'w' ? 'White' : 'Black';
+            $('#turn').append(' - Check!').css('color', '#ff6b6b');
+            setTimeout(function() {
+              $('#turn').text(kingInCheckPlayer + ' Turn').css('color', '');
+            }, 3000);
+          }
+        }, 100); // Small delay to ensure DOM updates are complete
+
+      },      togglehighlight: function(options) {
         options.forEach(function(element, index, array) {
           $('#' + element).toggleClass("green shake-little neongreen_txt");
         });
@@ -720,37 +750,51 @@ let main = {
   };
   
   $(document).ready(function() {
+    console.log('Document ready - jQuery loaded:', typeof $ !== 'undefined');
+    console.log('Number of gamecells found:', $('.gamecell').length);
+    
     main.methods.gamesetup();
+    
+    console.log('Game setup completed');
+    console.log('Attaching click handlers to', $('.gamecell').length, 'cells');
   
     $('.gamecell').click(function(e) {
-  
+      // Get the correct cell ID - use $(this).attr('id') instead of e.target.id
+      const cellId = $(this).attr('id');
+      console.log('Click detected on cell:', cellId, 'Target element:', e.target);
+      console.log('Current selectedpiece:', main.variables.selectedpiece);
+      
       var selectedpiece = {
         name: '',
         id: main.variables.selectedpiece
       };
   
       if (main.variables.selectedpiece == ''){
-        selectedpiece.name = $('#' + e.target.id).attr('chess');
+        selectedpiece.name = $(this).attr('chess');
       } else {
         selectedpiece.name = $('#' + main.variables.selectedpiece).attr('chess');
       }
-  
+      
+      console.log('Selected piece name:', selectedpiece.name);
+      
       var target = {
         name: $(this).attr('chess'),
-        id: e.target.id
-      };
-  
+        id: cellId
+      };      console.log('Target piece:', target.name, 'at', target.id);
+      console.log('Current turn:', main.variables.turn);
+      console.log('Selected piece ID:', main.variables.selectedpiece);
+      console.log('Selected piece name:', selectedpiece.name);
+
       if (main.variables.selectedpiece == '' && target.name.slice(0,1) == main.variables.turn) { // show options
-  
-        // moveoptions
-        main.variables.selectedpiece = e.target.id;
+        console.log('Selecting piece for move options');        // moveoptions
+        main.variables.selectedpiece = cellId;
         main.methods.moveoptions($(this).attr('chess'));
   
       } else if (main.variables.selectedpiece !='' && target.name == 'null') { // move selected piece piece
-  
-        if (selectedpiece.name == 'w_king' || selectedpiece.name == 'b_king'){
-          
-          let t0 = (selectedpiece.name = 'w_king');
+        console.log('Attempting to move piece to empty square');
+        console.log('Moving piece:', selectedpiece.name, 'from', selectedpiece.id, 'to', target.id);
+
+        if (selectedpiece.name == 'w_king' || selectedpiece.name == 'b_king'){          let t0 = (selectedpiece.name = 'w_king');
           let t1 = (selectedpiece.name = 'b_king');
           let t2 = (main.variables.pieces[selectedpiece.name].moved == false);
           let t3 = (main.variables.pieces['b_rook2'].moved == false);
@@ -806,14 +850,30 @@ let main = {
             main.methods.endturn();
             
           } else { // move selectedpiece
-            main.methods.move(target);
-            main.methods.endturn();
+            if (isValidMove(main.variables.pieces[selectedpiece.name], selectedpiece.id, target.id)) {
+              main.methods.move(target);
+              main.methods.endturn();
+            } else {
+              showInvalidMoveMessage(main.variables.pieces[selectedpiece.name], selectedpiece.id, target.id);
+              // Clear selection
+              $('.gamecell').removeClass('selected green');
+              main.variables.selectedpiece = '';
+              main.variables.highlighted = [];
+            }
           }
     
         } else { // else if selecedpiece.name is not white/black king than move
-  
-          main.methods.move(target);
-          main.methods.endturn();
+          
+          if (isValidMove(main.variables.pieces[selectedpiece.name], selectedpiece.id, target.id)) {
+            main.methods.move(target);
+            main.methods.endturn();
+          } else {
+            showInvalidMoveMessage(main.variables.pieces[selectedpiece.name], selectedpiece.id, target.id);
+            // Clear selection
+            $('.gamecell').removeClass('selected green');
+            main.variables.selectedpiece = '';
+            main.variables.highlighted = [];
+          }
   
         }
           
@@ -843,5 +903,641 @@ let main = {
     $('body').contextmenu(function(e) {
       e.preventDefault();
     });
+
+  // Checkmate and Stalemate Detection Functions
+  window.isKingInCheck = function(color) {
+    const king = color === 'w' ? 'w_king' : 'b_king';
+    const kingPosition = main.variables.pieces[king].position;
+    
+    // Check if any opponent piece can attack the king
+    for (let piece in main.variables.pieces) {
+      if (main.variables.pieces[piece].captured) continue;
+      
+      const pieceColor = main.variables.pieces[piece].type.charAt(0);
+      if (pieceColor !== color) { // Opponent piece
+        if (window.isValidMove(main.variables.pieces[piece], main.variables.pieces[piece].position, kingPosition)) {
+          return true;
+        }
+      }
+    }
+    return false;
+  };
+  
+  window.hasLegalMoves = function(color) {
+    // Try all possible moves for the current player
+    for (let piece in main.variables.pieces) {
+      if (main.variables.pieces[piece].captured) continue;
+      
+      const pieceColor = main.variables.pieces[piece].type.charAt(0);
+      if (pieceColor === color) {
+        const piecePosition = main.variables.pieces[piece].position;
+        
+        // Try moving this piece to all squares
+        for (let x = 1; x <= 8; x++) {
+          for (let y = 1; y <= 8; y++) {
+            const targetPosition = `${x}_${y}`;
+            
+            // Check if this is a valid move
+            if (window.isValidMove(main.variables.pieces[piece], piecePosition, targetPosition)) {
+              // Simulate the move
+              const originalPosition = main.variables.pieces[piece].position;
+              const targetPiece = window.getTargetCellChess(targetPosition);
+              
+              // Temporarily make the move
+              main.variables.pieces[piece].position = targetPosition;
+              if (targetPiece && targetPiece !== 'null') {
+                main.variables.pieces[targetPiece].captured = true;
+              }
+              
+              // Check if king is still in check after this move
+              const stillInCheck = window.isKingInCheck(color);
+              
+              // Undo the move
+              main.variables.pieces[piece].position = originalPosition;
+              if (targetPiece && targetPiece !== 'null') {
+                main.variables.pieces[targetPiece].captured = false;
+              }
+              
+              // If king is not in check after this move, there are legal moves
+              if (!stillInCheck) {
+                return true;
+              }
+            }
+          }
+        }
+      }
+    }
+    return false; // No legal moves found
+  };
+  
+  window.isCheckmate = function(color) {
+    return isKingInCheck(color) && !hasLegalMoves(color);
+  };
+  
+  window.isStalemate = function(color) {
+    return !isKingInCheck(color) && !hasLegalMoves(color);
+  };
+  
+  window.getTargetCellChess = function(position) {
+    return $(`#${position}`).attr('chess');
+  };
+  
+  window.announceCheckmate = function(color) {
+    const winner = color === 'w' ? 'Black' : 'White';
+    
+    // Create checkmate announcement
+    const announcement = $(`
+      <div class="checkmate-announcement">
+        <div class="checkmate-content">
+          <div class="game-over-icon">♔</div>
+          <h2>Checkmate!</h2>
+          <p>${winner} Wins!</p>
+          <button id="new-game-checkmate" class="game-btn">New Game</button>
+        </div>
+      </div>
+    `);
+    
+    $('body').append(announcement);
+    
+    // Handle new game button
+    $('#new-game-checkmate').click(function() {
+      location.reload();
+    });
+  };
+  
+  window.announceStalemate = function() {
+    // Create stalemate announcement
+    const announcement = $(`
+      <div class="checkmate-announcement">
+        <div class="checkmate-content">
+          <div class="game-over-icon">⚖️</div>
+          <h2>Stalemate!</h2>
+          <p>It's a Draw!</p>
+          <button id="new-game-stalemate" class="game-btn">New Game</button>
+        </div>
+      </div>
+    `);
+    
+    $('body').append(announcement);
+    
+    // Handle new game button
+    $('#new-game-stalemate').click(function() {
+      location.reload();
+    });
+  };
+    
+    // Enhanced Game Features
+    window.moveHistory = [];
+    let gameState = [];
+    let currentTheme = 'default';
+    let moveNumber = 1;
+
+    // Move History Functions
+    window.recordMove = function(piece, fromPos, toPos, captured = null) {
+      const pieceColor = piece.type.charAt(0);
+      const pieceType = piece.type.split('_')[1];
+      const pieceSymbol = getPieceSymbol(pieceType);
+      
+      // Calculate proper move number based on color and history
+      let moveNumber;
+      if (pieceColor === 'w') {
+        // White move: count how many complete move pairs + 1
+        const completePairs = Math.floor(window.moveHistory.filter(m => m.color === 'b').length);
+        moveNumber = completePairs + 1;
+      } else {
+        // Black move: count how many white moves have been made
+        const whiteMoves = window.moveHistory.filter(m => m.color === 'w').length;
+        moveNumber = whiteMoves;
+      }
+      
+      const move = {
+        number: moveNumber,
+        color: pieceColor,
+        piece: pieceType,
+        from: fromPos,
+        to: toPos,
+        captured: captured,
+        notation: window.generateMoveNotation(pieceType, fromPos, toPos, captured)
+      };
+      
+      window.moveHistory.push(move);
+      window.updateMoveHistoryDisplay();
+    }
+    
+    window.getPieceSymbol = function(pieceType) {
+      const symbols = {
+        'king': '♔', 'queen': '♕', 'rook': '♖', 
+        'bishop': '♗', 'knight': '♘', 'pawn': '♙'
+      };
+      return symbols[pieceType] || '';
+    }
+    
+    window.generateMoveNotation = function(pieceType, fromPos, toPos, captured) {
+      const files = ['', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+      const fromFile = files[parseInt(fromPos.split('_')[0])];
+      const fromRank = fromPos.split('_')[1];
+      const toFile = files[parseInt(toPos.split('_')[0])];
+      const toRank = toPos.split('_')[1];
+      
+      let notation = '';
+      
+      // Piece symbol (empty for pawn)
+      if (pieceType !== 'pawn') {
+        notation += pieceType.charAt(0).toUpperCase();
+      }
+      
+      // Capture notation
+      if (captured) {
+        if (pieceType === 'pawn') {
+          notation += fromFile;
+        }
+        notation += 'x';
+      }
+      
+      // Destination square
+      notation += toFile + toRank;
+      
+      return notation;
+    }
+    
+    window.updateMoveHistoryDisplay = function() {
+      const movesList = $('#moves-list');
+      movesList.empty();
+      
+      // Group moves by actual move number and color
+      const movesByNumber = {};
+      
+      // Organize moves by move number
+      for (let move of window.moveHistory) {
+        if (!movesByNumber[move.number]) {
+          movesByNumber[move.number] = {};
+        }
+        movesByNumber[move.number][move.color] = move;
+      }
+      
+      // Display moves in order
+      const maxMoveNumber = Math.max(...Object.keys(movesByNumber).map(Number));
+      for (let i = 1; i <= maxMoveNumber; i++) {
+        const moves = movesByNumber[i] || {};
+        const whiteMove = moves['w'];
+        const blackMove = moves['b'];
+        
+        const moveEntry = $(`
+          <div class="move-pair">
+            <span class="move-number">${i}.</span>
+            <span class="white-move">${whiteMove ? whiteMove.notation : '...'}</span>
+            <span class="black-move">${blackMove ? blackMove.notation : '...'}</span>
+          </div>
+        `);
+        
+        movesList.append(moveEntry);
+      }
+      
+      // Auto-scroll to bottom
+      movesList.scrollTop(movesList[0].scrollHeight);
+    }
+    
+    // New Game Button
+    $('#reset-game').click(function() {
+      if (confirm('Start a new game? Current progress will be lost.')) {
+        location.reload();
+      }
+    });
+    
+    // Undo Move Button
+    $('#undo-move').click(function() {
+      if (window.moveHistory.length > 0) {
+        // Implement undo logic here
+        alert('Undo feature coming soon!');
+      } else {
+        alert('No moves to undo.');
+      }
+    });
+    
+    // Theme Toggle Button
+    $('#toggle-theme').click(function() {
+      toggleTheme();
+    });
+    
+    // Theme Toggle Function
+    function toggleTheme() {
+      const gameContainer = $('.game-container');
+      
+      if (currentTheme === 'default') {
+        gameContainer.addClass('dark-theme');
+        currentTheme = 'dark';
+        $(this).text('Light Theme');
+      } else {
+        gameContainer.removeClass('dark-theme');
+        currentTheme = 'default';
+        $(this).text('Dark Theme');
+      }
+    }
+    
+    // Move History Tracking
+    function addMoveToHistory(piece, from, to, captured = null) {
+      const moveNumber = Math.ceil((moveHistory.length + 1) / 2);
+      const isWhiteMove = moveHistory.length % 2 === 0;
+      
+      const move = {
+        moveNumber: moveNumber,
+        piece: piece,
+        from: from,
+        to: to,
+        captured: captured,
+        isWhite: isWhiteMove,
+        notation: generateNotation(piece, from, to, captured)
+      };
+      
+      moveHistory.push(move);
+      updateMoveHistoryDisplay();
+    }
+    
+    // Generate Chess Notation
+    function generateNotation(piece, from, to, captured) {
+      const pieceSymbols = {
+        'king': 'K', 'queen': 'Q', 'rook': 'R', 
+        'bishop': 'B', 'knight': 'N', 'pawn': ''
+      };
+      
+      const files = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+      const fromFile = files[parseInt(from.split('_')[0]) - 1];
+      const fromRank = from.split('_')[1];
+      const toFile = files[parseInt(to.split('_')[0]) - 1];
+      const toRank = to.split('_')[1];
+      
+      const pieceType = piece.split('_')[1];
+      const symbol = pieceSymbols[pieceType];
+      const captureSymbol = captured ? 'x' : '';
+      
+      return `${symbol}${fromFile}${fromRank}${captureSymbol}${toFile}${toRank}`;
+    }
+    
+    // Update Move History Display
+    function updateMoveHistoryDisplay() {
+      const movesList = $('#moves-list');
+      movesList.empty();
+      
+      for (let i = 0; i < moveHistory.length; i += 2) {
+        const moveNumber = Math.ceil((i + 1) / 2);
+        const whiteMove = moveHistory[i] ? moveHistory[i].notation : '';
+        const blackMove = moveHistory[i + 1] ? moveHistory[i + 1].notation : '';
+        
+        const moveEntry = $(`
+          <div class="move-entry">
+            <strong>${moveNumber}.</strong> ${whiteMove} ${blackMove}
+          </div>
+        `);
+        
+        movesList.append(moveEntry);
+      }
+      
+      // Auto-scroll to bottom
+      movesList.scrollTop(movesList[0].scrollHeight);
+    }
+    
+    // Enhanced piece selection with visual feedback
+    function enhancePieceSelection(cellId) {
+      $('.gamecell').removeClass('selected');
+      $('#' + cellId).addClass('selected');
+      
+      // Add selection sound effect (placeholder)
+      playSound('select');
+    }
+    
+    // Sound effects placeholder
+    function playSound(soundType) {
+      // Implement sound effects here
+      // For now, just a console log
+      console.log(`Playing sound: ${soundType}`);
+    }
+    
+    // Knight Logics Unique Features
+    let gameStats = {
+      movesPlayed: 0,
+      capturesMade: 0,
+      gameStartTime: new Date(),
+      timeElapsed: 0
+    };
+
+
+
+    // Chess Move Validation
+    window.isValidMove = function(piece, fromPos, toPos) {
+      const pieceType = piece.type.split('_')[1]; // e.g., 'king', 'pawn', etc.
+      const pieceColor = piece.type.charAt(0); // 'w' or 'b'
+      
+      const from = {
+        x: parseInt(fromPos.split('_')[0]),
+        y: parseInt(fromPos.split('_')[1])
+      };
+      
+      const to = {
+        x: parseInt(toPos.split('_')[0]),
+        y: parseInt(toPos.split('_')[1])
+      };
+      
+      const dx = to.x - from.x;
+      const dy = to.y - from.y;
+      
+      // Debug logging for pawn moves
+      if (pieceType === 'pawn') {
+        console.log(`Pawn move validation: ${pieceColor}_pawn from (${from.x},${from.y}) to (${to.x},${to.y}), dx=${dx}, dy=${dy}`);
+      }
+      
+      // Basic validation by piece type
+      switch(pieceType) {
+        case 'pawn':
+          return isValidPawnMove(pieceColor, from, to, dx, dy);
+        case 'rook':
+          return isValidRookMove(from, to, dx, dy);
+        case 'knight':
+          return isValidKnightMove(dx, dy);
+        case 'bishop':
+          return isValidBishopMove(from, to, dx, dy);
+        case 'queen':
+          return isValidQueenMove(from, to, dx, dy);
+        case 'king':
+          return isValidKingMove(dx, dy);
+        default:
+          return false;
+      }
+    }
+    
+    function isValidPawnMove(color, from, to, dx, dy) {
+      const direction = color === 'w' ? 1 : -1; // White moves up, black moves down
+      
+      console.log(`Pawn validation: color=${color}, direction=${direction}, from.y=${from.y}, dx=${dx}, dy=${dy}`);
+      
+      // Forward move
+      if (dx === 0) {
+        console.log(`Forward move check: dy === direction? ${dy === direction}`);
+        if (dy === direction) return true; // One square forward
+        
+        console.log(`Two square check: is starting position? w:${color === 'w' && from.y === 2}, b:${color === 'b' && from.y === 7}`);
+        if ((color === 'w' && from.y === 2) || (color === 'b' && from.y === 7)) {
+          console.log(`Two square move check: dy === 2*direction? ${dy === 2 * direction}`);
+          return dy === 2 * direction; // Two squares from starting position
+        }
+      }
+      
+      // Diagonal capture (we'll assume there's an opponent piece)
+      if (Math.abs(dx) === 1 && dy === direction) {
+        console.log(`Diagonal capture detected`);
+        return true; // Diagonal capture
+      }
+      
+      console.log(`Pawn move rejected`);
+      return false;
+    }
+    
+    function isValidRookMove(from, to, dx, dy) {
+      return (dx === 0 && dy !== 0) || (dy === 0 && dx !== 0); // Horizontal or vertical
+    }
+    
+    function isValidKnightMove(dx, dy) {
+      return (Math.abs(dx) === 2 && Math.abs(dy) === 1) || (Math.abs(dx) === 1 && Math.abs(dy) === 2);
+    }
+    
+    function isValidBishopMove(from, to, dx, dy) {
+      return Math.abs(dx) === Math.abs(dy) && dx !== 0; // Diagonal
+    }
+    
+    function isValidQueenMove(from, to, dx, dy) {
+      return isValidRookMove(from, to, dx, dy) || isValidBishopMove(from, to, dx, dy);
+    }
+    
+    function isValidKingMove(dx, dy) {
+      return Math.abs(dx) <= 1 && Math.abs(dy) <= 1 && (dx !== 0 || dy !== 0);
+    }
+    
+    // Invalid Move Feedback
+    function showInvalidMoveMessage(piece, fromPos, toPos) {
+      // Create invalid move indicator
+      const indicator = $(`
+        <div class="invalid-move-indicator">
+          <span class="invalid-icon">⚠️</span>
+          <span class="invalid-text">Invalid Move!</span>
+        </div>
+      `);
+      
+      // Add to game container
+      $('.game-container').append(indicator);
+      
+      // Animate piece back to original position
+      const fromSquare = $('#' + fromPos);
+      const toSquare = $('#' + toPos);
+      
+      // Add shake animation to the piece
+      toSquare.addClass('shake-invalid');
+      
+      // Play error sound (placeholder)
+      playSound('error');
+      
+      // Remove indicator and effects after 2 seconds
+      setTimeout(() => {
+        indicator.fadeOut(300, function() { $(this).remove(); });
+        toSquare.removeClass('shake-invalid');
+      }, 2000);
+      
+      console.log(`Invalid move: ${piece.type} cannot move from ${fromPos} to ${toPos}`);
+    }
+    
+    // Game Timer
+    function updateGameTimer() {
+      const elapsed = Math.floor((new Date() - gameStats.gameStartTime) / 1000);
+      const minutes = Math.floor(elapsed / 60);
+      const seconds = elapsed % 60;
+      gameStats.timeElapsed = elapsed;
+      
+      // Update display if element exists
+      const timerElement = $('#game-timer');
+      if (timerElement.length) {
+        timerElement.text(`${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`);
+      }
+    }
+    
+    // Start game timer
+    setInterval(updateGameTimer, 1000);
+    
+    // Board Analysis Feature
+    function analyzeBoardPosition() {
+      const analysis = {
+        whitePieces: 0,
+        blackPieces: 0,
+        materialValue: { white: 0, black: 0 },
+        centerControl: { white: 0, black: 0 }
+      };
+      
+      // Piece values for material analysis
+      const pieceValues = {
+        'pawn': 1, 'knight': 3, 'bishop': 3, 
+        'rook': 5, 'queen': 9, 'king': 0
+      };
+      
+      // Count pieces and calculate material
+      Object.keys(main.variables.pieces).forEach(pieceKey => {
+        const piece = main.variables.pieces[pieceKey];
+        if (!piece.captured) {
+          const color = piece.type.charAt(0); // 'w' or 'b'
+          const pieceType = piece.type.split('_')[1];
+          
+          if (color === 'w') {
+            analysis.whitePieces++;
+            analysis.materialValue.white += pieceValues[pieceType] || 0;
+          } else {
+            analysis.blackPieces++;
+            analysis.materialValue.black += pieceValues[pieceType] || 0;
+          }
+        }
+      });
+      
+      return analysis;
+    }
+    
+    // Highlight squares for learning
+    function highlightSquareByName(squareName) {
+      // Convert chess notation (like "e4") to grid position
+      const file = squareName.charAt(0);
+      const rank = squareName.charAt(1);
+      const fileNum = file.charCodeAt(0) - 96; // a=1, b=2, etc.
+      const squareId = `${fileNum}_${rank}`;
+      
+      $('.gamecell').removeClass('educational-highlight');
+      $(`#${squareId}`).addClass('educational-highlight');
+      
+      setTimeout(() => {
+        $(`#${squareId}`).removeClass('educational-highlight');
+      }, 2000);
+    }
+    
+    // Initialize enhanced features
+    function initializeEnhancements() {
+      // Add game timer to UI
+      const gameStatus = $('.game-status');
+      gameStatus.prepend(`
+        <div class="game-timer-section">
+          <div class="timer-display">
+            <span class="timer-label">Time:</span>
+            <span id="game-timer">00:00</span>
+          </div>
+        </div>
+      `);
+      
+      // Add keyboard shortcuts
+      $(document).keydown(function(e) {
+        switch(e.key) {
+          case 'Escape':
+            // Clear selection
+            $('.gamecell').removeClass('selected green');
+            main.variables.selectedpiece = '';
+            main.variables.highlighted = [];
+            break;
+          case 'r':
+          case 'R':
+            if (e.ctrlKey) {
+              $('#reset-game').click();
+            }
+            break;
+          case 'z':
+          case 'Z':
+            if (e.ctrlKey) {
+              $('#undo-move').click();
+            }
+            break;
+          case 'a':
+          case 'A':
+            if (e.ctrlKey) {
+              e.preventDefault();
+              showAnalysis();
+            }
+            break;
+        }
+      });
+      
+      // Add analysis feature
+      function showAnalysis() {
+        const analysis = analyzeBoardPosition();
+        const materialDiff = analysis.materialValue.white - analysis.materialValue.black;
+        const advantage = materialDiff > 0 ? 'White' : materialDiff < 0 ? 'Black' : 'Equal';
+        
+        alert(`Position Analysis:\n` +
+              `White pieces: ${analysis.whitePieces} (${analysis.materialValue.white} points)\n` +
+              `Black pieces: ${analysis.blackPieces} (${analysis.materialValue.black} points)\n` +
+              `Material advantage: ${advantage} (+${Math.abs(materialDiff)})`);
+      }
+      
+      // Add tooltips to buttons
+      $('#reset-game').attr('title', 'Start New Game (Ctrl+R)');
+      $('#undo-move').attr('title', 'Undo Last Move (Ctrl+Z)');
+      $('#toggle-theme').attr('title', 'Toggle Theme');
+      
+      // Add analysis button
+      $('.game-controls').append(`
+        <button id="analyze-position" class="game-btn" title="Analyze Position (Ctrl+A)">
+          Analyze
+        </button>
+      `);
+      
+      $('#analyze-position').click(showAnalysis);
+      
+      // Add educational tips
+      const tips = [
+        "Tip: Control the center squares (e4, e5, d4, d5) for better piece activity!",
+        "Tip: Develop knights before bishops in the opening.",
+        "Tip: Castle early to protect your king!",
+        "Tip: Look for tactics like pins, forks, and skewers.",
+        "Tip: In the endgame, activate your king!"
+      ];
+      
+      let tipIndex = 0;
+      setInterval(() => {
+        console.log(`♞ Chess Tip #${tipIndex + 1}: ${tips[tipIndex]}`);
+        tipIndex = (tipIndex + 1) % tips.length;
+      }, 30000); // Show tip every 30 seconds
+    }
+    
+    // Initialize when document is ready
+    initializeEnhancements();
   
   });

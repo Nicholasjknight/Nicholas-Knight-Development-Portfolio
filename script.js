@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initCursorTrail();
     initMagneticButtons();
     initAdvancedParallax();
+    initMobileReadMore();
 });
 
 // Fixed Hero Landing Screen with Code Forest Exit Effect
@@ -38,6 +39,12 @@ function initLayeredParallax() {
     const cityBg = document.querySelector('.parallax-bg-far');
     const grungeLayer = document.querySelector('.parallax-bg-mid');
     
+    // Debug element selection
+    console.log('🔍 Element selection:');
+    console.log('🌲 codeForest (.parallax-bg-near):', codeForest);
+    console.log('🏙️ cityBg (.parallax-bg-far):', cityBg);
+    console.log('🌫️ grungeLayer (.parallax-bg-mid):', grungeLayer);
+    
     if (!heroSection || !codeForest) {
         console.log('Hero elements not found');
         return;
@@ -45,69 +52,22 @@ function initLayeredParallax() {
     
     // Check if mobile device
     const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    console.log('📱 Mobile detection: width=', window.innerWidth, 'isMobile=', isMobile, 'userAgent=', navigator.userAgent);
     
-    // Mobile-specific setup - keep animations but allow scrolling
+    // Check if user navigated to a specific section (has hash in URL)
+    const hasHash = window.location.hash && window.location.hash.length > 1;
+    
+    // Mobile should also use landing mode - just like desktop!
     if (isMobile) {
-        console.log('Mobile device detected - enabling scroll-based animations');
-        isInLandingMode = false;
-        document.body.style.overflow = 'auto';
-        heroSection.style.position = 'relative';
-        
-        // Add scroll-based animation for mobile
-        let ticking = false;
-        function updateMobileScrollEffect() {
-            const scrollTop = window.pageYOffset;
-            const heroHeight = window.innerHeight;
-            const progress = Math.min(scrollTop / heroHeight, 1);
-            
-            // Apply the same forest zoom effect based on scroll position
-            if (codeForest) {
-                const scale = 1 + (progress * 2); // Same zoom effect
-                const opacity = Math.max(0.9 - (progress * 0.6), 0.1);
-                codeForest.style.transform = `scale(${scale})`;
-                codeForest.style.opacity = opacity;
-            }
-            
-            // City background effect
-            if (cityBg) {
-                cityBg.style.opacity = Math.min(0.8 + (progress * 0.3), 1);
-            }
-            
-            // Title fade effect
-            const titleOpacity = Math.max(1 - (progress * 1.2), 0);
-            const titleY = progress * 20;
-            
-            if (heroTitle) {
-                heroTitle.style.opacity = titleOpacity;
-                heroTitle.style.transform = `translateY(-${titleY}px)`;
-            }
-            if (heroSubtitle) {
-                heroSubtitle.style.opacity = titleOpacity;
-                heroSubtitle.style.transform = `translateY(-${titleY}px)`;
-            }
-            if (scrollIndicator) {
-                scrollIndicator.style.opacity = Math.max(1 - (progress * 1.5), 0);
-            }
-            
-            ticking = false;
-        }
-        
-        function requestMobileScrollUpdate() {
-            if (!ticking) {
-                requestAnimationFrame(updateMobileScrollEffect);
-                ticking = true;
-            }
-        }
-        
-        // Add scroll listener for mobile animations
-        window.addEventListener('scroll', requestMobileScrollUpdate, { passive: true });
-        
-        return; // Exit early for mobile but with scroll animations
+        console.log('📱 Mobile device detected - using SAME landing mode as desktop');
+        // Keep isInLandingMode = true for mobile too!
+        // Mobile will use touch events that simulate wheel events
     }
     
     let scrollActionCount = 0;
     let lastScrollY = 0;
-    const maxLandingScrolls = 4; // Stay on landing screen for 4 scroll actions
+    let lastScrollPosition = 0; // Track scroll position for re-entry detection
+    const maxLandingScrolls = 3; // Stay on landing screen for 3 scroll actions
     
     // Prevent default scrolling during landing mode
     function preventScroll(e) {
@@ -120,8 +80,7 @@ function initLayeredParallax() {
     
     // Mobile touch handling for landing mode
     let touchStartY = 0;
-    let touchMoves = 0;
-    const maxTouchMoves = 4;
+    // Mobile now uses same scrollActionCount as desktop (no separate touchMoves needed)
     
     function handleTouchStart(e) {
         if (isInLandingMode) {
@@ -130,36 +89,49 @@ function initLayeredParallax() {
     }
     
     function handleTouchMove(e) {
+        console.log('📱 Touch move detected, isInLandingMode:', isInLandingMode);
         if (!isInLandingMode) return;
         
         e.preventDefault();
+        e.stopPropagation();
         const touchY = e.touches[0].clientY;
         const deltaY = touchStartY - touchY;
         
-        // Only count significant upward swipes
-        if (deltaY > 30) {
-            touchMoves = Math.min(touchMoves + 1, maxTouchMoves);
-            touchStartY = touchY; // Reset for next move
-            updateForestEffect();
+        console.log('📱 Touch deltaY:', deltaY, 'Threshold check:', Math.abs(deltaY) > 20);
+        
+        // Simulate wheel events for mobile - use SAME logic as desktop
+        if (Math.abs(deltaY) > 20) {
+            console.log('📱 Creating fake wheel event with deltaY:', deltaY > 0 ? 100 : -100);
             
-            // Exit landing mode after max touch moves
-            if (touchMoves >= maxTouchMoves) {
-                exitLandingModeFunction();
-            }
-        } else if (deltaY < -30) {
-            touchMoves = Math.max(touchMoves - 1, 0);
-            touchStartY = touchY;
-            updateForestEffect();
+            // Create fake wheel event and use same handler
+            const fakeWheelEvent = {
+                deltaY: deltaY > 0 ? 100 : -100, // Positive = down, negative = up
+                preventDefault: () => {}
+            };
+            
+            // Use the SAME wheel handler as desktop
+            console.log('📱 Calling handleWheelScroll with fake event');
+            handleWheelScroll(fakeWheelEvent);
+            
+            touchStartY = touchY; // Reset for next move
         }
     }
     
     function handleWheelScroll(e) {
         if (!isInLandingMode) {
-            // Allow scrolling back up to re-enter landing mode
-            if (e.deltaY < 0 && window.pageYOffset <= 100) {
-                e.preventDefault();
-                enterLandingMode();
-                return;
+            const currentScroll = window.pageYOffset;
+            const aboutSection = document.querySelector('#about');
+            const aboutSectionTop = aboutSection ? aboutSection.offsetTop : 0;
+            
+            // Enhanced scroll-up detection for blank space and About section
+            if (e.deltaY < 0) { // Scrolling up
+                // Trigger if in the blank space above About or at the very top of About section
+                if (currentScroll <= aboutSectionTop + 200) { // Include blank space + top portion of About
+                    e.preventDefault();
+                    console.log('🔄 Scroll up detected at position:', currentScroll, 'About section at:', aboutSectionTop);
+                    enterLandingMode();
+                    return;
+                }
             }
             return;
         }
@@ -182,10 +154,12 @@ function initLayeredParallax() {
     }
     
     function updateForestEffect() {
-        // Use touch moves for mobile, scroll actions for desktop
+        // Both mobile and desktop now use scrollActionCount since mobile calls handleWheelScroll
         const isMobile = window.innerWidth <= 768;
-        const currentProgress = isMobile ? touchMoves / maxTouchMoves : scrollActionCount / maxLandingScrolls;
+        const currentProgress = scrollActionCount / maxLandingScrolls; // Unified progress tracking
         const progress = Math.min(currentProgress, 1);
+        
+        console.log(`🌲 updateForestEffect - Mobile: ${isMobile}, ScrollActions: ${scrollActionCount}/${maxLandingScrolls}, Progress: ${progress}`);
         
         if (codeForest) {
             // EXPAND the code forest - this creates the "exiting forest" illusion
@@ -193,13 +167,26 @@ function initLayeredParallax() {
             const scale = 1 + (progress * 2); // Grows from 100% to 300%
             const opacity = Math.max(0.9 - (progress * 0.6), 0.1); // Gradually fade
             
-            codeForest.style.transform = `scale(${scale})`;
+            console.log(`🌲 Forest transform: scale(${scale.toFixed(2)}), opacity: ${opacity.toFixed(2)}`);
+            console.log(`🌲 Forest element:`, codeForest);
+            
+            // Use 3D transform for better mobile performance and force hardware acceleration
+            codeForest.style.transform = `translate3d(0, 0, 0) scale(${scale})`;
             codeForest.style.opacity = opacity;
+            codeForest.style.willChange = 'transform, opacity';
+            
+            // Check if transform was applied
+            console.log(`🌲 Applied transform result:`, codeForest.style.transform);
+        } else {
+            console.log('❌ codeForest element not found! Selector: .parallax-bg-near');
         }
         
         // City background stays COMPLETELY STATIC (never moves)
         if (cityBg) {
-            cityBg.style.transform = 'none';
+            cityBg.style.transform = 'none !important';
+            cityBg.style.transformOrigin = 'center center';
+            cityBg.style.backgroundPosition = 'center center';
+            cityBg.style.backgroundSize = 'cover';
             cityBg.style.opacity = Math.min(0.8 + (progress * 0.3), 1);
         }
         
@@ -208,18 +195,23 @@ function initLayeredParallax() {
             grungeLayer.style.opacity = Math.max(0.2 - (progress * 0.1), 0.05);
         }
         
-        // Title fades during forest exit
-        const titleOpacity = Math.max(1 - (progress * 1.2), 0);
-        const titleY = progress * 20;
-        
+        // Keep title visible throughout the parallax sequence (don't fade until exit)
         if (heroTitle) {
-            heroTitle.style.opacity = titleOpacity;
-            heroTitle.style.transform = `translateY(-${titleY}px)`;
+            heroTitle.style.opacity = 1;
+            heroTitle.style.transform = 'translateY(0px)';
         }
         if (heroSubtitle) {
-            heroSubtitle.style.opacity = titleOpacity;
-            heroSubtitle.style.transform = `translateY(-${titleY}px)`;
+            heroSubtitle.style.opacity = 1;
+            heroSubtitle.style.transform = 'translateY(0px)';
         }
+        
+        // Keep CTA buttons visible throughout the parallax sequence
+        const heroCTAButtons = document.querySelector('.hero-cta-buttons');
+        if (heroCTAButtons) {
+            heroCTAButtons.style.opacity = 1;
+            heroCTAButtons.style.transform = 'translateY(0px)';
+        }
+        
         if (scrollIndicator) {
             scrollIndicator.style.opacity = Math.max(1 - (progress * 1.5), 0);
         }
@@ -230,27 +222,31 @@ function initLayeredParallax() {
     function exitLandingModeFunction() {
         isInLandingMode = false;
         scrollActionCount = 0; // Reset for next time
-        touchMoves = 0; // Reset touch moves for mobile
+        // Mobile now uses same scrollActionCount reset as desktop
         
-        // Transition to About Me section
+        // Transition to About section (first content section)
         if (heroSection) {
             heroSection.style.transition = 'opacity 0.8s ease-out';
             heroSection.style.opacity = '0';
             
             setTimeout(() => {
                 heroSection.style.display = 'none';
+                document.body.classList.remove('landing-mode');
                 document.body.style.overflow = 'auto';
                 
-                // Scroll to About Me section
+                // Scroll to About section (first after hero) with proper positioning
                 const aboutSection = document.querySelector('.about') || document.querySelector('#about');
                 if (aboutSection) {
-                    aboutSection.scrollIntoView({ 
-                        behavior: 'smooth',
-                        block: 'start'
+                    const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 80;
+                    // Position to show About section at the top, accounting for its negative margin
+                    const offsetTop = aboutSection.offsetTop - navbarHeight + 30; // Adjusted for new margins
+                    window.scrollTo({
+                        top: Math.max(0, offsetTop),
+                        behavior: 'smooth'
                     });
                 }
                 
-                console.log('Exited landing mode - scrolled to About Me section');
+                console.log('Exited landing mode - scrolled to About section');
             }, 800);
         }
         
@@ -261,6 +257,43 @@ function initLayeredParallax() {
     
     // Assign to global variable for access from navigation
     exitLandingMode = exitLandingModeFunction;
+    
+    // Handle hash navigation - automatically exit landing mode and scroll to target
+    if (hasHash) {
+        console.log('Hash detected in URL - auto-exiting landing mode and scrolling to:', window.location.hash);
+        setTimeout(() => {
+            if (isInLandingMode) {
+                // Use a modified exit that doesn't auto-scroll to about
+                isInLandingMode = false;
+                scrollActionCount = 0;
+                
+                if (heroSection) {
+                    heroSection.style.transition = 'opacity 0.8s ease-out';
+                    heroSection.style.opacity = '0';
+                    
+                    setTimeout(() => {
+                        heroSection.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                        
+                        // Scroll to the hash target instead of about section
+                        const targetSection = document.querySelector(window.location.hash);
+                        if (targetSection) {
+                            const offsetTop = targetSection.offsetTop - 100;
+                            window.scrollTo({
+                                top: offsetTop,
+                                behavior: 'smooth'
+                            });
+                            console.log('Scrolled to hash target:', window.location.hash);
+                        }
+                    }, 800);
+                }
+                
+                // Remove scroll prevention
+                document.removeEventListener('touchmove', preventScroll, { passive: false });
+                document.removeEventListener('keydown', preventKeyScroll);
+            }
+        }, 1200); // Wait a bit longer for landing mode to be fully established
+    }
     
     function preventKeyScroll(e) {
         if (isInLandingMode) {
@@ -280,6 +313,7 @@ function initLayeredParallax() {
             heroSection.style.display = 'flex';
             heroSection.style.opacity = '1';
             heroSection.style.transition = 'opacity 0.5s ease-in';
+            document.body.classList.add('landing-mode');
             document.body.style.overflow = 'hidden';
         }
         
@@ -297,14 +331,24 @@ function initLayeredParallax() {
     }
     
     function resetToLanding() {
-        // Allow re-entry when at the top of the page
-        if (window.pageYOffset < 50 && !isInLandingMode) {
-            enterLandingMode();
+        const currentScroll = window.pageYOffset;
+        const aboutSection = document.querySelector('#about');
+        const aboutSectionTop = aboutSection ? aboutSection.offsetTop : 0;
+        
+        // Allow re-entry when in blank space above About or at About header
+        if (currentScroll <= aboutSectionTop + 150 && !isInLandingMode) {
+            // Only trigger on upward scroll motion
+            if (currentScroll < (lastScrollPosition || 0)) {
+                console.log('🔄 resetToLanding triggered - returning to hero');
+                enterLandingMode();
+            }
         }
+        lastScrollPosition = currentScroll;
     }
     
     // Initialize landing mode
     if (heroSection) {
+        document.body.classList.add('landing-mode');
         document.body.style.overflow = 'hidden'; // Prevent page scrolling initially
         heroSection.style.display = 'flex';
         heroSection.style.opacity = '1';
@@ -319,10 +363,19 @@ function initLayeredParallax() {
     // Allow reset when scrolling back to top (keep this listener always active)
     window.addEventListener('scroll', resetToLanding, { passive: true });
     
-    // Also listen for scroll up at the top to re-enter landing mode
+    // Enhanced scroll up detection for blank space and About section header
     window.addEventListener('wheel', (e) => {
-        if (!isInLandingMode && e.deltaY < 0 && window.pageYOffset <= 10) {
-            enterLandingMode();
+        if (!isInLandingMode && e.deltaY < 0) {
+            const currentScroll = window.pageYOffset;
+            const aboutSection = document.querySelector('#about');
+            const aboutSectionTop = aboutSection ? aboutSection.offsetTop : 0;
+            
+            // Trigger when scrolling up in blank space or at About section header
+            if (currentScroll <= aboutSectionTop + 200) {
+                e.preventDefault();
+                console.log('🔄 Secondary wheel handler triggered at:', currentScroll);
+                enterLandingMode();
+            }
         }
     }, { passive: false });
     
@@ -479,21 +532,70 @@ function initAdvancedParallax() {
 function initNavigation() {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
+    const navMenuOverlay = document.getElementById('nav-menu-overlay');
     const navLinks = document.querySelectorAll('.nav-link');
     const navbar = document.querySelector('.navbar');
 
-    // Hamburger menu toggle
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    });
-
-    // Close menu when clicking on a link
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
+    // Enhanced hamburger menu toggle with overlay
+    function toggleMobileMenu() {
+        const isActive = navMenu.classList.contains('active');
+        
+        if (isActive) {
+            // Close menu
             navMenu.classList.remove('active');
             hamburger.classList.remove('active');
+            navMenuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        } else {
+            // Open menu
+            navMenu.classList.add('active');
+            hamburger.classList.add('active');
+            navMenuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scroll
+        }
+    }
+
+    // Hamburger click handler
+    hamburger.addEventListener('click', toggleMobileMenu);
+
+    // Overlay click handler - close menu when clicking overlay
+    navMenuOverlay.addEventListener('click', toggleMobileMenu);
+
+    // Close menu when clicking on a link with smooth animation
+    navLinks.forEach((link, index) => {
+        // Add staggered animation delay
+        link.style.transitionDelay = `${index * 0.05}s`;
+        
+        link.addEventListener('click', () => {
+            // Add click ripple effect
+            link.style.transform = 'translateX(4px) scale(0.95)';
+            
+            setTimeout(() => {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+                navMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+                
+                // Reset link transform
+                setTimeout(() => {
+                    link.style.transform = '';
+                }, 200);
+            }, 150);
         });
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            toggleMobileMenu();
+        }
+    });
+
+    // Handle window resize - close menu if screen gets larger
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+            toggleMobileMenu();
+        }
     });
 
     // Navbar scroll effect
@@ -508,6 +610,119 @@ function initNavigation() {
         }
 
         lastScrollTop = scrollTop;
+    });
+
+    // Home navigation handlers - trigger landing mode
+    const homeNavLink = document.getElementById('nav-home');
+    const logoHomeLink = document.getElementById('logo-home');
+    
+    function triggerLandingMode(e) {
+        e.preventDefault();
+        
+        // Close mobile menu if open
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+        
+        // Get hero section
+        const heroSection = document.querySelector('#hero');
+        
+        if (!heroSection) {
+            // If hero section not found, just scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+        
+        // If we're already in landing mode, just scroll to top
+        if (isInLandingMode) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+        
+        // Manually enter landing mode
+        isInLandingMode = true;
+        
+        // Reset hero section to landing mode state
+        heroSection.style.position = 'fixed';
+        heroSection.style.top = '0';
+        heroSection.style.left = '0';
+        heroSection.style.width = '100%';
+        heroSection.style.height = '100vh';
+        heroSection.style.display = 'flex';
+        heroSection.style.opacity = '1';
+        heroSection.style.zIndex = '1000';
+        heroSection.style.transition = 'opacity 0.5s ease-in';
+        
+        // Prevent scrolling
+        document.body.style.overflow = 'hidden';
+        
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        
+        console.log('Manually entered landing mode');
+    }
+    
+    if (homeNavLink) {
+        homeNavLink.addEventListener('click', triggerLandingMode);
+    }
+    
+    if (logoHomeLink) {
+        logoHomeLink.addEventListener('click', triggerLandingMode);
+    }
+
+    // CTA button handlers - exit landing mode and navigate
+    const ctaButtons = document.querySelectorAll('.cta-button');
+    ctaButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const targetId = button.getAttribute('href');
+            
+            // If in landing mode, exit it and navigate
+            if (isInLandingMode && targetId && targetId.startsWith('#')) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+                
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    // Exit landing mode manually
+                    isInLandingMode = false;
+                    
+                    const heroSection = document.querySelector('#hero');
+                    if (heroSection) {
+                        heroSection.style.transition = 'opacity 0.8s ease-out';
+                        heroSection.style.opacity = '0';
+                        
+                        setTimeout(() => {
+                            heroSection.style.display = 'none';
+                            document.body.style.overflow = 'auto';
+                            
+                            // Scroll to target section
+                            const offsetTop = targetSection.offsetTop - 100;
+                            window.scrollTo({
+                                top: offsetTop,
+                                behavior: 'smooth'
+                            });
+                            
+                            console.log('CTA button exited landing mode, navigated to:', targetId);
+                        }, 800);
+                    }
+                    
+                    // Remove scroll prevention
+                    document.removeEventListener('touchmove', function(e) { if (isInLandingMode) e.preventDefault(); }, { passive: false });
+                    document.removeEventListener('keydown', function(e) { 
+                        if (isInLandingMode) {
+                            const scrollKeys = [32, 33, 34, 35, 36, 37, 38, 39, 40];
+                            if (scrollKeys.includes(e.keyCode)) {
+                                e.preventDefault();
+                                return false;
+                            }
+                        }
+                    });
+                }
+            }
+            // If not in landing mode, let normal navigation handle it
+        });
     });
 
     // Smooth scrolling for navigation links
@@ -527,15 +742,40 @@ function initNavigation() {
             if (targetSection) {
                 // Force exit landing mode when clicking nav links
                 if (isInLandingMode) {
-                    exitLandingMode();
-                    // Wait for hero section to fade out before scrolling
-                    setTimeout(() => {
-                        const offsetTop = targetSection.offsetTop - 80;
-                        window.scrollTo({
-                            top: offsetTop,
-                            behavior: 'smooth'
-                        });
-                    }, 900); // Wait for fade out animation
+                    // Manually exit landing mode without auto-scrolling to about
+                    isInLandingMode = false;
+                    scrollActionCount = 0;
+                    // Mobile now uses same scrollActionCount as desktop
+                    
+                    if (document.querySelector('.hero')) {
+                        const heroSection = document.querySelector('.hero');
+                        heroSection.style.transition = 'opacity 0.8s ease-out';
+                        heroSection.style.opacity = '0';
+                        
+                        setTimeout(() => {
+                            heroSection.style.display = 'none';
+                            document.body.style.overflow = 'auto';
+                            
+                            // Scroll to the clicked target instead of about section
+                            const offsetTop = targetSection.offsetTop - 80;
+                            window.scrollTo({
+                                top: offsetTop,
+                                behavior: 'smooth'
+                            });
+                        }, 800);
+                    }
+                    
+                    // Remove scroll prevention
+                    document.removeEventListener('touchmove', function(e) { if (isInLandingMode) e.preventDefault(); }, { passive: false });
+                    document.removeEventListener('keydown', function(e) { 
+                        if (isInLandingMode) {
+                            const scrollKeys = [32, 33, 34, 35, 36, 37, 38, 39, 40];
+                            if (scrollKeys.includes(e.keyCode)) {
+                                e.preventDefault();
+                                return false;
+                            }
+                        }
+                    });
                 } else {
                     const offsetTop = targetSection.offsetTop - 80;
                     window.scrollTo({
@@ -550,45 +790,6 @@ function initNavigation() {
 
 // Scroll Effects and Animations
 function initScrollEffects() {
-    // Intersection Observer for animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                
-                // Special handling for section headers
-                if (entry.target.classList.contains('section-header')) {
-                    // Animate the text reveal elements inside
-                    const textReveals = entry.target.querySelectorAll('.text-reveal');
-                    textReveals.forEach((el, index) => {
-                        setTimeout(() => {
-                            el.classList.add('animate');
-                        }, index * 200);
-                    });
-                }
-                
-                // Special handling for staggered items
-                if (entry.target.classList.contains('stagger-item')) {
-                    const staggerItems = entry.target.parentElement.querySelectorAll('.stagger-item');
-                    staggerItems.forEach((item, index) => {
-                        setTimeout(() => {
-                            item.classList.add('visible');
-                        }, index * 100);
-                    });
-                }
-            }
-        });
-    }, observerOptions);
-
-    // Observe elements for animation
-    const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .section-header, .stagger-item');
-    animatedElements.forEach(el => observer.observe(el));
-    
     // Advanced scroll-based animations
     window.addEventListener('scroll', debounce(handleAdvancedScroll, 10));
 }
@@ -710,6 +911,8 @@ function initAnimations() {
     const elementsToAnimate = [
         '.section-header',
         '.about-content',
+        '.service-card',
+        '.solution-card',
         '.professional-item',
         '.project-card',
         '.skill-category',
@@ -724,6 +927,57 @@ function initAnimations() {
             el.style.transitionDelay = `${index * 0.1}s`;
         });
     });
+
+    // Set up intersection observer for the newly added elements
+    setupIntersectionObserver();
+    
+    // Immediately make service cards visible for debugging
+    setTimeout(() => {
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.classList.add('visible');
+        });
+    }, 100);
+}
+
+// Intersection Observer Setup
+function setupIntersectionObserver() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                
+                // Special handling for section headers
+                if (entry.target.classList.contains('section-header')) {
+                    // Animate the text reveal elements inside
+                    const textReveals = entry.target.querySelectorAll('.text-reveal');
+                    textReveals.forEach((el, index) => {
+                        setTimeout(() => {
+                            el.classList.add('animate');
+                        }, index * 200);
+                    });
+                }
+                
+                // Special handling for staggered items
+                if (entry.target.classList.contains('stagger-item')) {
+                    const staggerItems = entry.target.parentElement.querySelectorAll('.stagger-item');
+                    staggerItems.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add('visible');
+                        }, index * 100);
+                    });
+                }
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements for animation - get fresh list including dynamically added fade-in classes
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .section-header, .stagger-item');
+    animatedElements.forEach(el => observer.observe(el));
 }
 
 // Utility Functions
@@ -881,8 +1135,90 @@ function showNotification(message, type = 'info') {
     }, 3000);
 }
 
-// Initialize contact form if it exists
-initContactForm();
+// Business Contact Form Handler
+function initBusinessContactForm() {
+    const form = document.getElementById('consultationForm');
+    if (!form) return;
+
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const submitBtn = form.querySelector('.form-submit-btn');
+        const btnText = submitBtn.querySelector('span');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
+        
+        // Show loading state
+        submitBtn.disabled = true;
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'block';
+        
+        // Collect form data
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        
+        try {
+            // For now, we'll simulate form submission
+            // In production, this would connect to your backend/email service
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            
+            // Show success message
+            showBusinessNotification('Thank you! Your consultation request has been received. We\'ll contact you within 24 hours.', 'success');
+            
+            // Reset form
+            form.reset();
+            
+        } catch (error) {
+            console.error('Form submission error:', error);
+            showBusinessNotification('There was an error submitting your request. Please try again or contact us directly.', 'error');
+        } finally {
+            // Reset button state
+            submitBtn.disabled = false;
+            btnText.style.display = 'block';
+            btnLoading.style.display = 'none';
+        }
+    });
+}
+
+function showBusinessNotification(message, type = 'success') {
+    const notification = document.createElement('div');
+    notification.className = `business-notification ${type}`;
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${type === 'success' ? '#64ffda' : '#ff6b6b'};
+        color: #0a0a0a;
+        padding: 16px 24px;
+        border-radius: 10px;
+        font-weight: 500;
+        z-index: 10000;
+        transform: translateX(400px);
+        transition: transform 0.3s ease;
+        max-width: 400px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    `;
+    notification.textContent = message;
+    
+    document.body.appendChild(notification);
+    
+    // Animate in
+    requestAnimationFrame(() => {
+        notification.style.transform = 'translateX(0)';
+    });
+    
+    // Remove after delay
+    setTimeout(() => {
+        notification.style.transform = 'translateX(400px)';
+        setTimeout(() => {
+            if (document.body.contains(notification)) {
+                document.body.removeChild(notification);
+            }
+        }, 300);
+    }, 5000);
+}
+
+// Initialize business contact form
+initBusinessContactForm();
 
 // Performance optimization: Lazy loading for images
 function initLazyLoading() {
@@ -925,6 +1261,61 @@ function handleMediaErrors() {
 
 // Initialize error handling
 handleMediaErrors();
+
+// Mobile Read More functionality for About section
+function initMobileReadMore() {
+    const readMoreBtn = document.getElementById('about-read-more');
+    const truncatedContent = document.querySelector('.mobile-truncated-content');
+    const readMoreText = readMoreBtn?.querySelector('.read-more-text');
+    const readLessText = readMoreBtn?.querySelector('.read-less-text');
+    
+    if (!readMoreBtn || !truncatedContent) return;
+    
+    readMoreBtn.addEventListener('click', function() {
+        const isExpanded = truncatedContent.classList.contains('expanded');
+        
+        if (isExpanded) {
+            // Collapse
+            truncatedContent.classList.remove('expanded');
+            readMoreBtn.classList.remove('expanded');
+            readMoreText.style.display = 'inline';
+            readLessText.style.display = 'none';
+            
+            // Scroll back to the About section header for better UX
+            setTimeout(() => {
+                document.querySelector('#about .section-header').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 100);
+        } else {
+            // Expand
+            truncatedContent.classList.add('expanded');
+            readMoreBtn.classList.add('expanded');
+            readMoreText.style.display = 'none';
+            readLessText.style.display = 'inline';
+        }
+    });
+}
+
+// Work Read More Toggle Function
+function toggleWorkContent(button) {
+    const workContent = button.closest('.work-content');
+    const previewText = workContent.querySelector('.work-preview');
+    const fullText = workContent.querySelector('.work-full');
+    
+    if (fullText.style.display === 'none') {
+        // Show full content
+        previewText.style.display = 'none';
+        fullText.style.display = 'block';
+        button.textContent = 'Read Less';
+    } else {
+        // Show preview content
+        previewText.style.display = 'block';
+        fullText.style.display = 'none';
+        button.textContent = 'Read More';
+    }
+}
 
 // Browser compatibility check
 function checkBrowserSupport() {

@@ -3,7 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nicholas Knight's Portfolio - Full-Stack Developer & Business Management Professional showcasing web applications, automation scripts, SQL databases, and interactive games.">
+    <meta name="description" content="Nicholas Knight - Full-Stack Developer & Automation Specialist at Knight Logics. Live demos of CRM, Project Management, E-commerce, and Employee Management Systems. Custom software solutions, business automation, and interactive portfolio showcasing technical expertise.">
+    <meta name="keywords" content="Nicholas Knight, Knight Logics, CRM system demo, project management software, e-commerce platform, HR management system, automation, software development, full-stack developer, custom applications, web development, portfolio, business automation, live demos">
+    <meta name="author" content="Nicholas Knight">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nicholas Knight - Developer Portfolio & Knight Logics | Live Business System Demos">
+    <meta property="og:description" content="Full-stack developer specializing in automation and custom solutions. Interactive live demos of CRM, Project Management, E-commerce, and HR Management Systems. Portfolio and professional services.">
+    <meta property="og:url" content="https://knightlogics.com">
+    <meta property="og:site_name" content="Nicholas Knight Portfolio">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nicholas Knight - Developer Portfolio & Knight Logics | Live Business System Demos">
+    <meta name="twitter:description" content="Full-stack developer specializing in automation and custom solutions. Interactive live demos of CRM, Project Management, E-commerce, and HR Management Systems.">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VX36QR7HJW"></script>
@@ -14,9 +28,10 @@
         gtag('config', 'G-VX36QR7HJW');
     </script>
     
-    <link rel="icon" type="image/x-icon" href="./images/PortfolioSiteLogo.jpg">
+        <link rel="icon" type="image/png" href="./images/KnightLogicsLogo2.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Nicholas Knight | Developer Portfolio</title>
+    <title>Nicholas Knight | Full-Stack Developer & Knight Logics</title>
 </head>
 <body>
     <!-- Loading Screen -->
@@ -29,14 +44,27 @@
 
     <!-- Navigation -->
     <nav class="navbar">
+        <div class="nav-brand">
+            <a href="#" class="nav-brand-link" id="logo-home">
+                <img src="./images/KnightLogicsLogo2.png" alt="Knight Logics Logo" class="nav-logo">
+                <span class="nav-brand-text">Knight Logics</span>
+            </a>
+        </div>
         <div class="nav-menu" id="nav-menu">
-            <a href="#hero" class="nav-link">Home</a>
+            <div class="mobile-menu-header">
+                <h3>Navigation</h3>
+                <p>Explore Knight Logics</p>
+            </div>
+            <a href="#" class="nav-link" id="nav-home">Home</a>
+            <a href="#services" class="nav-link">Services</a>
             <a href="#about" class="nav-link">About</a>
-            <a href="#professional" class="nav-link">Professional</a>
-            <a href="./projects.html" class="nav-link">Projects</a>
             <a href="#skills" class="nav-link">Skills</a>
-            <a href="#video-showcase" class="nav-link">Demos</a>
+            <a href="./projects.html" class="nav-link">Portfolio</a>
+            <a href="#video-showcase" class="nav-link">Demo Videos</a>
             <a href="#contact" class="nav-link">Contact</a>
+            <div class="mobile-menu-footer">
+                <p>© 2025 Knight Logics</p>
+            </div>
         </div>
         <div class="hamburger" id="hamburger">
             <span></span>
@@ -44,6 +72,9 @@
             <span></span>
         </div>
     </nav>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="nav-menu-overlay" id="nav-menu-overlay"></div>
 
     <!-- Hero Section with Goonies-Style Parallax -->
     <section id="hero" class="hero">
@@ -58,16 +89,22 @@
                 <div class="hero-text">
                     <h1 class="hero-title">
                         <span class="title-line text-reveal">Nicholas Knight</span>
-                        <span class="title-line text-reveal">Full-Stack Developer</span>
+                        <span class="title-line text-reveal">Automation & Development</span>
                     </h1>
-                    <p class="hero-subtitle">Crafting digital experiences through code, automation, and data</p>
+                    <p class="hero-subtitle">Full-stack developer specializing in business automation, custom solutions, and systems that work while you sleep. Explore live interactive demos of complete business management systems.</p>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="hero-cta-buttons">
+                    <a href="#contact" class="cta-button primary">Start a Project</a>
+                    <a href="#professional" class="cta-button secondary">Try Live Demos</a>
                 </div>
             </div>
             
             <!-- Scroll Indicator -->
             <div class="scroll-indicator">
                 <div class="scroll-arrow"></div>
-                <span class="scroll-text">Scroll to explore</span>
+                <span class="scroll-text">Discover our solutions</span>
             </div>
         </div>
     </section>
@@ -76,18 +113,29 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <h2>About Me</h2>
-                <p>The Developer Who Automates Everything</p>
+                <h2>About Nicholas Knight</h2>
+                <p>Full-Stack Developer & Automation Specialist</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>I'm Nicholas Knight, a full-stack developer and entrepreneur who builds solutions that work while you sleep. What started as curiosity about making computers do tedious tasks has evolved into a passion for creating sophisticated automation systems that solve real-world problems.</p>
+                    <p>I'm <strong>Nicholas Knight</strong>, a full-stack developer and entrepreneur who builds solutions that work while you sleep. What started as curiosity about making computers do tedious tasks has evolved into <strong>Knight Logics</strong> - a practice focused on creating sophisticated automation systems that solve real-world business problems.</p>
                     
-                    <p><strong>I code for the joy of it.</strong> There's something magical about writing a script at midnight and waking up to see it processed hundreds of files, uploaded content, and generated reports while I slept. My recent projects reflect this passion - from video processing pipelines that automatically capture game highlights, compress them, and upload to Discord, to YouTube automation that converts videos to 9:16 format and generates AI-powered titles using OpenAI.</p>
+                    <div class="mobile-truncated-content">
+                        <p><strong>My Philosophy:</strong> The best code is code that runs itself. Whether it's Python scripts monitoring business processes, API integrations connecting platforms seamlessly, or web applications that adapt in real-time - I approach every project asking "How can this be completely automated?"</p>
+                        
+                        <p>From video processing pipelines that automatically capture, compress, and upload content, to business automation systems that handle workflows 24/7, I combine technical expertise with business acumen to create solutions that scale.</p>
+                        
+                        <div class="founder-section">
+                            <h4>Professional Experience</h4>
+                            <p>My automation solutions have processed thousands of files, streamlined operations for multiple businesses, and created seamless integrations between platforms like Discord, YouTube, and OpenAI APIs. I bring both the technical skills to build complex systems and the business understanding to ensure they deliver real value.</p>
+                        </div>
+                    </div>
                     
-                    <p>My approach? <strong>The best code is code that runs itself.</strong> Whether it's Python scripts monitoring game events, API integrations connecting Discord/YouTube/OpenAI seamlessly, or web applications that adapt to user behavior in real-time - I approach every project asking "How can this be completely automated?"</p>
-                    
-                    <p>From relaunching Knight Group LLC with modern digital infrastructure to building custom e-commerce platforms and sophisticated gaming automation suites, I bring both technical expertise and business acumen to every challenge.</p>
+                    <button class="read-more-btn mobile-only" id="about-read-more">
+                        <span class="read-more-text">Read More</span>
+                        <span class="read-less-text" style="display: none;">Read Less</span>
+                        <i class="read-more-icon">▼</i>
+                    </button>
                 </div>
                 <div class="skills-preview">
                     <div class="skill-tag">JavaScript</div>
@@ -103,21 +151,105 @@
         </div>
     </section>
 
-    <!-- Professional Work Section -->
-    <section id="professional" class="professional">
+    <!-- Services Section -->
+    <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2>Professional Applications</h2>
-                <p>Enterprise-level solutions and business automation</p>
+                <h2>What I Offer</h2>
+                <p>Custom development and automation solutions tailored to your needs</p>
             </div>
-            <div class="professional-grid">
+            
+            <div class="services-horizontal">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>Custom Development</h4>
+                        <p>Full-stack web applications, API integrations, and bespoke software solutions</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>Business Automation</h4>
+                        <p>Python scripts, workflow automation, and process optimization systems</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>System Integration</h4>
+                        <p>Connect platforms, automate data flows, and streamline operations</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>Technical Consulting</h4>
+                        <p>Architecture planning, technology selection, and automation strategy</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="services-cta">
+                <p>I build these solutions for fun, but I'm always open to interesting custom projects. The demo systems below showcase the kind of comprehensive solutions I can create.</p>
+                <a href="#contact" class="cta-button primary">Let's Discuss Your Project</a>
+            </div>
+            
+            <!-- Demo Systems Showcase -->
+            <div class="demo-showcase">
+                <h3>Featured Demonstrations</h3>
+                <div class="demo-grid">
+                    <a href="./CRM-Management-System/index.html" class="demo-link" target="_blank">
+                        <i class="fas fa-users"></i>
+                        <span>CRM System</span>
+                    </a>
+                    <a href="./Project-Management-System/index.html" class="demo-link" target="_blank">
+                        <i class="fas fa-tasks"></i>
+                        <span>Project Manager</span>
+                    </a>
+                    <a href="./Ecommerce-Management-System/index.html" class="demo-link" target="_blank">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>E-commerce</span>
+                    </a>
+                    <a href="./Employee-Management-System/index.html" class="demo-link" target="_blank">
+                        <i class="fas fa-user-tie"></i>
+                        <span>HR System</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Work Section -->
+    <section id="work" class="work professional">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Work</h2>
+                <p>Featured projects and professional applications</p>
+            </div>
+            <div class="work-grid">
                 <div class="professional-item stagger-item" data-category="automation">
                     <div class="item-image">
                         <img src="./images/UoVidCompilerLogo.png" alt="UOVidCompiler System" style="object-fit: contain; width: 100%; height: 100%;">
                     </div>
                     <div class="item-content">
                         <h3 class="text-reveal">UOVidCompiler - Gaming Automation Suite</h3>
-                        <p>Sophisticated video processing pipeline that captures game highlights, compresses for Discord (<10MB), converts to YouTube Shorts (9:16), generates AI-powered titles via OpenAI, and provides comprehensive PvP statistics tracking.</p>
+                        <div class="work-content">
+                            <p class="work-preview">Sophisticated video processing pipeline that captures game highlights, compresses for Discord (<10MB)...</p>
+                            <p class="work-full" style="display: none;">Sophisticated video processing pipeline that captures game highlights, compresses for Discord (<10MB), converts to YouTube Shorts (9:16), generates AI-powered titles via OpenAI, and provides comprehensive PvP statistics tracking.</p>
+                            <button class="work-read-more" onclick="toggleWorkContent(this)">Read More</button>
+                        </div>
                         <div class="tech-stack">
                             <span>Python</span>
                             <span>FFmpeg</span>
@@ -131,11 +263,15 @@
                 
                 <div class="professional-item stagger-item" data-category="business">
                     <div class="item-image">
-                        <img src="./images/Fully TransLogo.png" alt="ManCaves.Store" style="object-fit: contain; width: 100%; height: 100%;">
+                        <img src="./images/ManCavesLogo.png" alt="ManCaves.Store" style="object-fit: contain; width: 100%; height: 100%;">
                     </div>
                     <div class="item-content">
-                        <h3 class="text-reveal">ManCaves.Store - Custom E-Commerce Platform</h3>
-                        <p>Custom-coded e-commerce solution replacing Shopify for cost efficiency and flexibility. Features dynamic inventory management, Firebase authentication, Snipcart integration, and automated product data parsing with Python/Selenium.</p>
+                        <h3 class="text-reveal">Custom E-Commerce Platform</h3>
+                        <div class="work-content">
+                            <p class="work-preview">ManCaves.Store - Custom-coded e-commerce solution replacing Shopify for cost efficiency...</p>
+                            <p class="work-full" style="display: none;">ManCaves.Store - Custom-coded e-commerce solution replacing Shopify for cost efficiency and flexibility. Features dynamic inventory management, Firebase authentication, Snipcart integration, and automated product data parsing with Python/Selenium.</p>
+                            <button class="work-read-more" onclick="toggleWorkContent(this)">Read More</button>
+                        </div>
                         <div class="tech-stack">
                             <span>JavaScript</span>
                             <span>Firebase</span>
@@ -152,8 +288,12 @@
                         <img src="./images/Knight Group Logo.png" alt="Knight Group LLC" style="object-fit: contain; width: 100%; height: 100%;">
                     </div>
                     <div class="item-content">
-                        <h3 class="text-reveal">Knight Group LLC - Business Automation</h3>
-                        <p>Relaunched family business with comprehensive digital infrastructure including automated booking systems, Google Business optimization, targeted ad campaigns, and complete web presence management for handyman services.</p>
+                        <h3 class="text-reveal">Handyman Business Digital Infrastructure</h3>
+                        <div class="work-content">
+                            <p class="work-preview">Knight Group LLC - Family handyman business with complete digital infrastructure...</p>
+                            <p class="work-full" style="display: none;">Knight Group LLC - Family handyman business I own and run, created for my brother to operate while I handle all electronic aspects. Complete digital infrastructure including website development, Google Business optimization, rich text indexing, PageSpeed Insights improvements, automated booking systems, and targeted ad campaigns.</p>
+                            <button class="work-read-more" onclick="toggleWorkContent(this)">Read More</button>
+                        </div>
                         <div class="tech-stack">
                             <span>Google Analytics</span>
                             <span>Firebase</span>
@@ -170,7 +310,11 @@
                     </div>
                     <div class="item-content">
                         <h3 class="text-reveal">SPY Data Analysis System</h3>
-                        <p>Advanced financial data analysis platform for SPY options trading with real-time market data processing, pattern recognition algorithms, and automated trading signal generation for investment decision support.</p>
+                        <div class="work-content">
+                            <p class="work-preview">Advanced financial data analysis platform for SPY options trading with real-time market data...</p>
+                            <p class="work-full" style="display: none;">Advanced financial data analysis platform for SPY options trading with real-time market data processing, pattern recognition algorithms, and automated trading signal generation for investment decision support.</p>
+                            <button class="work-read-more" onclick="toggleWorkContent(this)">Read More</button>
+                        </div>
                         <div class="tech-stack">
                             <span>Python</span>
                             <span>Data Analytics</span>
@@ -179,6 +323,276 @@
                         </div>
                         <a href="#" class="project-link magnetic-btn">Private Repository</a>
                     </div>
+                </div>
+
+                <div class="professional-item stagger-item" data-category="business">
+                    <div class="item-image">
+                        <img src="./images/CRM.png" alt="CRM Management System" style="object-fit: contain; width: 100%; height: 100%;">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="text-reveal">Customer Relationship Management Platform</h3>
+                        <div class="work-content">
+                            <p class="work-preview">Complete CRM system with sales pipeline tracking, contact management...</p>
+                            <p class="work-full" style="display: none;">Complete CRM system with sales pipeline tracking, contact management, deal progression, and comprehensive business analytics. Features interactive dashboards with real-time data visualization and professional charcoal theme.</p>
+                            <button class="work-read-more" onclick="toggleWorkContent(this)">Read More</button>
+                        </div>
+                        <div class="tech-stack">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>Chart.js</span>
+                            <span>Responsive Design</span>
+                        </div>
+                        <a href="./CRM-Management-System/index.html" class="project-link magnetic-btn" target="_blank">Launch Demo</a>
+                    </div>
+                </div>
+                
+                <div class="professional-item stagger-item" data-category="automation">
+                    <div class="item-image">
+                        <img src="./images/ProjectManagement.png" alt="Project Management System" style="object-fit: contain; width: 100%; height: 100%;">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="text-reveal">Comprehensive Project Tracking Platform</h3>
+                        <div class="work-content">
+                            <p class="work-preview">Advanced project management system with task management, team collaboration...</p>
+                            <p class="work-full" style="display: none;">Advanced project management system with task management, team collaboration, timeline visualization, and progress monitoring. Includes Kanban boards, Gantt charts, resource allocation tools, and professional dark blue theme.</p>
+                            <button class="work-read-more" onclick="toggleWorkContent(this)">Read More</button>
+                        </div>
+                        <div class="tech-stack">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>Chart.js</span>
+                            <span>Dark Theme</span>
+                        </div>
+                        <a href="./Project-Management-System/index.html" class="project-link magnetic-btn" target="_blank">Launch Demo</a>
+                    </div>
+                </div>
+                
+                <div class="professional-item stagger-item" data-category="business">
+                    <div class="item-image">
+                        <img src="./images/Ecommerce Manager Logo.png" alt="E-commerce Management System" style="object-fit: contain; width: 100%; height: 100%;">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="text-reveal">Online Store Management Platform</h3>
+                        <div class="work-content">
+                            <p class="work-preview">Professional e-commerce management system with inventory tracking, order processing...</p>
+                            <p class="work-full" style="display: none;">Professional e-commerce management system with inventory tracking, order processing, customer management, and sales analytics. Features product catalog management, comprehensive reporting, and modern orange/amber theme with glassmorphism effects.</p>
+                            <button class="work-read-more" onclick="toggleWorkContent(this)">Read More</button>
+                        </div>
+                        <div class="tech-stack">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>Chart.js</span>
+                            <span>Glassmorphism</span>
+                        </div>
+                        <a href="./Ecommerce-Management-System/index.html" class="project-link magnetic-btn" target="_blank">Launch Demo</a>
+                    </div>
+                </div>
+
+                <div class="professional-item stagger-item" data-category="automation">
+                    <div class="item-image">
+                        <img src="./images/EmployeeManagementLogo.png" alt="Employee Management System" style="object-fit: contain; width: 100%; height: 100%;">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="text-reveal">HR Automation Platform</h3>
+                        <div class="work-content">
+                            <p class="work-preview">Complete employee management system with HR records management, payroll processing...</p>
+                            <p class="work-full" style="display: none;">Complete employee management system with HR records management, payroll processing, attendance tracking, performance management, and benefits administration. Features comprehensive HR analytics, reporting capabilities, and professional purple/violet theme.</p>
+                            <button class="work-read-more" onclick="toggleWorkContent(this)">Read More</button>
+                        </div>
+                        <div class="tech-stack">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>Chart.js</span>
+                            <span>Purple Theme</span>
+                        </div>
+                        <a href="./Employee-Management-System/index.html" class="project-link magnetic-btn" target="_blank">Launch Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+
+    <!-- Resources Section -->
+    <section id="resources" class="resources video-showcase">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Video Resources</h2>
+                <p>Tutorials and demonstrations of our automation systems</p>
+            </div>
+            <div class="video-player-container fade-in">
+                <div class="main-video">
+                    <video id="main-video" controls poster="./images/UoVidCompilerLogo.png">
+                        <source src="./videos/Main.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-playlist">
+                    <div class="video-item active" data-src="./videos/Main.mp4">
+                        <img src="./images/UoVidCompilerLogo.png" alt="UOVidCompiler System">
+                        <div class="video-info">
+                            <h4>UOVidCompiler Enterprise System</h4>
+                            <p>Full-stack video processing pipeline with AI content generation, Discord/YouTube integration, and automated workflow management</p>
+                        </div>
+                    </div>
+                    <div class="video-item" data-src="./videos/dart.mp4">
+                        <img src="./images/darts.png" alt="Precision Automation">
+                        <div class="video-info">
+                            <h4>Precision Targeting System</h4>
+                            <p>Real-time computer vision with trajectory calculation and adaptive targeting algorithms</p>
+                        </div>
+                    </div>
+                    <div class="video-item" data-src="./videos/evade.mp4">
+                        <img src="./images/evade.png" alt="AI Decision Engine">
+                        <div class="video-info">
+                            <h4>AI Decision Engine</h4>
+                            <p>Machine learning-powered threat assessment with dynamic pathfinding and behavioral prediction</p>
+                        </div>
+                    </div>
+                    <div class="video-item" data-src="./videos/looter.mp4">
+                        <img src="./images/looter.png" alt="Automated Resource Management">
+                        <div class="video-info">
+                            <h4>Intelligent Resource Management</h4>
+                            <p>Computer vision-based item recognition with priority-based collection algorithms and inventory optimization</p>
+                        </div>
+                    </div>
+                    <div class="video-item" data-src="./videos/mount.mp4">
+                        <img src="./images/mounting.png" alt="Autonomous Systems">
+                        <div class="video-info">
+                            <h4>Autonomous Entity Management</h4>
+                            <p>Multi-agent coordination system with state machines, behavioral trees, and adaptive combat strategies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Get Your Free Consultation</h2>
+                <p>Ready to transform your business operations? Let's discuss your automation needs.</p>
+            </div>
+            <div class="contact-content fade-in">
+                <div class="contact-form-container">
+                    <form class="consultation-form" id="consultationForm">
+                        <div class="form-group">
+                            <label for="businessName">Business/Organization Name</label>
+                            <input type="text" id="businessName" name="businessName" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">Your Name</label>
+                                <input type="text" id="contactName" name="contactName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="serviceType">What type of solution are you looking for?</label>
+                            <select id="serviceType" name="serviceType" required>
+                                <option value="">Select a service...</option>
+                                <option value="automation">Process Automation</option>
+                                <option value="development">Custom Development</option>
+                                <option value="integration">Data Integration</option>
+                                <option value="optimization">Business Optimization</option>
+                                <option value="other">Other/Not Sure</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="projectDetails">Tell us about your project or challenges</label>
+                            <textarea id="projectDetails" name="projectDetails" rows="5" placeholder="Describe your current processes, pain points, or automation goals..."></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="timeline">Expected Timeline</label>
+                                <select id="timeline" name="timeline">
+                                    <option value="">Select timeline...</option>
+                                    <option value="immediate">Immediate (1-2 weeks)</option>
+                                    <option value="short">Short-term (1 month)</option>
+                                    <option value="medium">Medium-term (2-3 months)</option>
+                                    <option value="flexible">Flexible</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="budget">Budget Range (USD)</label>
+                                <select id="budget" name="budget">
+                                    <option value="">Select budget...</option>
+                                    <option value="small">$1,000 - $5,000</option>
+                                    <option value="medium">$5,000 - $15,000</option>
+                                    <option value="large">$15,000+</option>
+                                    <option value="discuss">Prefer to discuss</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="form-submit-btn">
+                            <span>Get Free Consultation</span>
+                            <div class="btn-loading" style="display: none;">Sending...</div>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="contact-info-sidebar">
+                    <div class="contact-item">
+                        <h3>📧 Direct Contact</h3>
+                        <a href="mailto:info@knightlogics.com">info@knightlogics.com</a>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h3>🌍 Service Areas</h3>
+                        <p>Remote services available worldwide</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h3>⚡ Response Time</h3>
+                        <p>Free consultation within 24 hours</p>
+                    </div>
+                    
+                    <div class="specialties-box">
+                        <h3>🚀 We Specialize In</h3>
+                        <ul class="services-list">
+                            <li>• Business Process Automation</li>
+                            <li>• Custom Web Applications</li>
+                            <li>• Data Processing & Integration</li>
+                            <li>• AI-Powered Solutions</li>
+                            <li>• Workflow Optimization</li>
+                            <li>• API Development & Integration</li>
+                        <li>• Windows Application Development</li>
+                        <li>• API Integration & Development</li>
+                    </ul>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://github.com/Nicholasjknight/Portfolio-Projects" target="_blank" class="social-link">
+                        <img src="./images/GithubIcon.png" alt="GitHub">
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nicholas-knight-23010b23a/" target="_blank" class="social-link">
+                        <img src="./images/linkedin-icon.png" alt="LinkedIn">
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UChI-xkk3bZTl_ZH4UcY1cMg" target="_blank" class="social-link">
+                        <img src="./images/youtube-icon.png" alt="YouTube">
+                        <span>YouTube</span>
+                    </a>
+                    <a href="https://discord.gg/mdMEVVmY" target="_blank" class="social-link">
+                        <img src="./images/discord-icon.png" alt="Discord">
+                        <span>Discord</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -441,127 +855,18 @@
         </div>
     </section>
 
-    <!-- Video Showcase Section -->
-    <section id="video-showcase" class="video-showcase">
+    <!-- Footer -->
+    <footer class="footer fade-in">
         <div class="container">
-            <div class="section-header fade-in">
-                <h2>Demo Videos</h2>
-                <p>Live demonstrations of automation systems and AI-powered applications</p>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
             </div>
-            <div class="video-player-container fade-in">
-                <div class="main-video">
-                    <video id="main-video" controls poster="./images/UoVidCompilerLogo.png">
-                        <source src="./videos/Main.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="video-playlist">
-                    <div class="video-item active" data-src="./videos/Main.mp4">
-                        <img src="./images/UoVidCompilerLogo.png" alt="UOVidCompiler System">
-                        <div class="video-info">
-                            <h4>UOVidCompiler Enterprise System</h4>
-                            <p>Full-stack video processing pipeline with AI content generation, Discord/YouTube integration, and automated workflow management</p>
-                        </div>
-                    </div>
-                    <div class="video-item" data-src="./videos/dart.mp4">
-                        <img src="./images/darts.png" alt="Precision Automation">
-                        <div class="video-info">
-                            <h4>Precision Targeting System</h4>
-                            <p>Real-time computer vision with trajectory calculation and adaptive targeting algorithms</p>
-                        </div>
-                    </div>
-                    <div class="video-item" data-src="./videos/evade.mp4">
-                        <img src="./images/evade.png" alt="AI Decision Engine">
-                        <div class="video-info">
-                            <h4>AI Decision Engine</h4>
-                            <p>Machine learning-powered threat assessment with dynamic pathfinding and behavioral prediction</p>
-                        </div>
-                    </div>
-                    <div class="video-item" data-src="./videos/looter.mp4">
-                        <img src="./images/looter.png" alt="Automated Resource Management">
-                        <div class="video-info">
-                            <h4>Intelligent Resource Management</h4>
-                            <p>Computer vision-based item recognition with priority-based collection algorithms and inventory optimization</p>
-                        </div>
-                    </div>
-                    <div class="video-item" data-src="./videos/mount.mp4">
-                        <img src="./images/mounting.png" alt="Autonomous Systems">
-                        <div class="video-info">
-                            <h4>Autonomous Entity Management</h4>
-                            <p>Multi-agent coordination system with state machines, behavioral trees, and adaptive combat strategies</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <p>&copy; 2025 Nicholas Knight. Specializing in AI automation and enterprise solutions.</p>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2>Get In Touch</h2>
-                <p>Ready to bring your automation and AI projects to life</p>
-            </div>
-            <div class="contact-content fade-in">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <h3>Email</h3>
-                        <a href="mailto:nickknight488@gmail.com">nickknight488@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <h3>Location</h3>
-                        <p>Available for remote work worldwide</p>
-                    </div>
-                    <div class="contact-item">
-                        <h3>Specialties</h3>
-                        <p>AI Integration, Automation Systems, Financial Technology, Video Processing</p>
-                    </div>
-                    <div class="contact-item">
-                        <h3>Response Time</h3>
-                        <p>Typically within 24 hours</p>
-                    </div>
-                </div>
-                
-                <div class="contact-cta">
-                    <h3>What I Can Help With</h3>
-                    <ul class="services-list">
-                        <li>• Custom Automation Solutions</li>
-                        <li>• AI-Powered Applications</li>
-                        <li>• Data Collection & Analysis Systems</li>
-                        <li>• Trading Bot Development</li>
-                        <li>• Video Processing Pipelines</li>
-                        <li>• E-Commerce Platform Development</li>
-                        <li>• Windows Application Development</li>
-                        <li>• API Integration & Development</li>
-                    </ul>
-                </div>
-                
-                <div class="social-links">
-                    <a href="https://github.com/Nicholasjknight/Portfolio-Projects" target="_blank" class="social-link">
-                        <img src="./images/GithubIcon.png" alt="GitHub">
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/nicholas-knight-23010b23a/" target="_blank" class="social-link">
-                        <img src="./images/linkedin-icon.png" alt="LinkedIn">
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://www.youtube.com/channel/UChI-xkk3bZTl_ZH4UcY1cMg" target="_blank" class="social-link">
-                        <img src="./images/youtube-icon.png" alt="YouTube">
-                        <span>YouTube</span>
-                    </a>
-                    <a href="https://discord.gg/mdMEVVmY" target="_blank" class="social-link">
-                        <img src="./images/discord-icon.png" alt="Discord">
-                        <span>Discord</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="footer fade-in">
-                <p>&copy; 2025 Nicholas Knight. Specializing in AI automation and enterprise solutions.</p>
-            </div>
-        </div>
-    </section>
+    </footer>
 
     <script src="script.js"></script>
 </body>

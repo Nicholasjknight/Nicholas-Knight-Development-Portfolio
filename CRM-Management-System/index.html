@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knight Logics CRM - Customer Relationship Management</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h2>Knight Logics CRM</h2>
+            <p>Initializing Customer Relationship Management System...</p>
+        </div>
+    </div>
+
+    <!-- App Container -->
+    <div id="appContainer" class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <div class="logo">
+                    <i class="fas fa-handshake"></i>
+                    <h1>Knight Logics CRM</h1>
+                </div>
+            </div>
+            
+            <div class="header-center">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="globalSearch" class="search-input" placeholder="Search contacts, deals, companies...">
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <button class="header-btn" id="notificationsBtn">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                
+                <div class="user-profile">
+                    <img src="https://via.placeholder.com/40" alt="User" class="user-avatar">
+                    <div class="user-info">
+                        <span class="user-name">Nicholas Knight</span>
+                        <span class="user-role">Sales Manager</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link" data-section="dashboard">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="contacts">
+                            <i class="fas fa-users"></i>
+                            <span>Contacts</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="deals">
+                            <i class="fas fa-handshake"></i>
+                            <span>Deals Pipeline</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="companies">
+                            <i class="fas fa-building"></i>
+                            <span>Companies</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="activities">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Activities</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="reports">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Reports</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Quick Actions -->
+            <div class="sidebar-actions">
+                <div class="action-card">
+                    <h4>Quick Actions</h4>
+                    <button class="action-btn" id="addContactBtn">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Add Contact</span>
+                    </button>
+                    <button class="action-btn" id="addDealBtn">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>Create Deal</span>
+                    </button>
+                    <button class="action-btn" id="scheduleActivityBtn">
+                        <i class="fas fa-calendar-plus"></i>
+                        <span>Schedule Activity</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Section -->
+            <section id="dashboard-section" class="content-section active">
+                <div class="section-header">
+                    <h2>CRM Dashboard</h2>
+                    <div class="section-actions">
+                        <button class="btn btn-outline">
+                            <i class="fas fa-download"></i>
+                            Export Report
+                        </button>
+                        <button class="btn btn-primary" id="quickAddBtn">
+                            <i class="fas fa-plus"></i>
+                            Quick Add
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Key Metrics -->
+                <div class="stats-grid">
+                    <div class="stat-card revenue-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-value positive" id="totalRevenue">$0</h3>
+                            <p class="stat-label">Total Revenue</p>
+                            <div class="stat-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>18.2%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card deals-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-value neutral" id="activeDeals">0</h3>
+                            <p class="stat-label">Active Deals</p>
+                            <div class="stat-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>12.5%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card contacts-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-value neutral" id="totalContacts">0</h3>
+                            <p class="stat-label">Total Contacts</p>
+                            <div class="stat-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>8.7%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card conversion-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-value positive" id="conversionRate">0%</h3>
+                            <p class="stat-label">Conversion Rate</p>
+                            <div class="stat-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>5.3%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Grid -->
+                <div class="dashboard-grid">
+                    <!-- Sales Pipeline Chart -->
+                    <div class="dashboard-panel chart-panel">
+                        <div class="panel-header">
+                            <h3>Sales Pipeline</h3>
+                            <select class="period-selector">
+                                <option value="30">Last 30 Days</option>
+                                <option value="90">Last 90 Days</option>
+                                <option value="365">Last Year</option>
+                            </select>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="pipelineChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activities -->
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h3>Recent Activities</h3>
+                            <a href="#" class="panel-link">View All</a>
+                        </div>
+                        <div class="activities-list" id="recentActivitiesList">
+                            <!-- Activities will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Deal Conversion Funnel -->
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h3>Deal Conversion</h3>
+                        </div>
+                        <div class="funnel-chart">
+                            <canvas id="conversionChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Top Performers -->
+                    <div class="dashboard-panel">
+                        <div class="panel-header">
+                            <h3>Top Performers</h3>
+                            <select class="metric-selector">
+                                <option value="revenue">By Revenue</option>
+                                <option value="deals">By Deals</option>
+                                <option value="contacts">By Contacts</option>
+                            </select>
+                        </div>
+                        <div class="performers-list" id="topPerformersList">
+                            <!-- Performers will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contacts Section -->
+            <section id="contacts-section" class="content-section">
+                <div class="section-header">
+                    <h2>Contacts</h2>
+                    <div class="section-actions">
+                        <button class="btn btn-outline">
+                            <i class="fas fa-filter"></i>
+                            Filter
+                        </button>
+                        <button class="btn btn-outline">
+                            <i class="fas fa-download"></i>
+                            Export
+                        </button>
+                        <button class="btn btn-primary" onclick="window.crmSystem?.showAddContactModal()">
+                            <i class="fas fa-plus"></i>
+                            Add Contact
+                        </button>
+                    </div>
+                </div>
+
+                <div class="contacts-container">
+                    <div class="contacts-filters">
+                        <div class="filter-group">
+                            <label>Status</label>
+                            <select class="filter-select">
+                                <option value="">All Statuses</option>
+                                <option value="lead">Lead</option>
+                                <option value="prospect">Prospect</option>
+                                <option value="customer">Customer</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Company</label>
+                            <select class="filter-select" id="companyFilter">
+                                <option value="">All Companies</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Source</label>
+                            <select class="filter-select">
+                                <option value="">All Sources</option>
+                                <option value="website">Website</option>
+                                <option value="referral">Referral</option>
+                                <option value="social">Social Media</option>
+                                <option value="email">Email Campaign</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="contacts-grid" id="contactsGrid">
+                        <!-- Contacts will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Deals Section -->
+            <section id="deals-section" class="content-section">
+                <div class="section-header">
+                    <h2>Sales Pipeline</h2>
+                    <div class="section-actions">
+                        <button class="btn btn-outline">
+                            <i class="fas fa-eye"></i>
+                            Pipeline View
+                        </button>
+                        <button class="btn btn-primary" onclick="window.crmSystem?.showAddDealModal()">
+                            <i class="fas fa-plus"></i>
+                            Add Deal
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pipeline-container">
+                    <div class="pipeline-stages" id="pipelineStages">
+                        <!-- Pipeline stages will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Companies Section -->
+            <section id="companies-section" class="content-section">
+                <div class="section-header">
+                    <h2>Companies</h2>
+                    <div class="section-actions">
+                        <button class="btn btn-outline">
+                            <i class="fas fa-download"></i>
+                            Export
+                        </button>
+                        <button class="btn btn-primary" onclick="window.crmSystem?.showAddCompanyModal()">
+                            <i class="fas fa-plus"></i>
+                            Add Company
+                        </button>
+                    </div>
+                </div>
+
+                <div class="companies-grid" id="companiesGrid">
+                    <!-- Companies will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Activities Section -->
+            <section id="activities-section" class="content-section">
+                <div class="section-header">
+                    <h2>Activities & Calendar</h2>
+                    <div class="section-actions">
+                        <button class="btn btn-outline">
+                            <i class="fas fa-calendar"></i>
+                            Calendar View
+                        </button>
+                        <button class="btn btn-primary" onclick="window.crmSystem?.showScheduleActivityModal()">
+                            <i class="fas fa-plus"></i>
+                            Schedule Activity
+                        </button>
+                    </div>
+                </div>
+
+                <div class="activities-container">
+                    <div class="activities-timeline" id="activitiesTimeline">
+                        <!-- Activities timeline will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reports Section -->
+            <section id="reports-section" class="content-section">
+                <div class="section-header">
+                    <h2>Analytics & Reports</h2>
+                    <div class="section-actions">
+                        <button class="btn btn-outline">
+                            <i class="fas fa-download"></i>
+                            Export Report
+                        </button>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-chart-line"></i>
+                            Generate Report
+                        </button>
+                    </div>
+                </div>
+
+                <div class="reports-grid">
+                    <div class="report-card">
+                        <h3>Sales Performance</h3>
+                        <div class="chart-container">
+                            <canvas id="salesPerformanceChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="report-card">
+                        <h3>Lead Sources</h3>
+                        <div class="chart-container">
+                            <canvas id="leadSourcesChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="report-card">
+                        <h3>Monthly Targets</h3>
+                        <div class="chart-container">
+                            <canvas id="monthlyTargetsChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="report-summary">
+                        <h3>Key Performance Indicators</h3>
+                        <div class="kpi-grid">
+                            <div class="kpi-item">
+                                <span class="kpi-label">Average Deal Size</span>
+                                <span class="kpi-value" id="avgDealSize">$0</span>
+                            </div>
+                            <div class="kpi-item">
+                                <span class="kpi-label">Sales Cycle Length</span>
+                                <span class="kpi-value" id="salesCycleLength">0 days</span>
+                            </div>
+                            <div class="kpi-item">
+                                <span class="kpi-label">Lead Response Time</span>
+                                <span class="kpi-value" id="leadResponseTime">0 hours</span>
+                            </div>
+                            <div class="kpi-item">
+                                <span class="kpi-label">Customer Lifetime Value</span>
+                                <span class="kpi-value" id="customerLTV">$0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Background Effects -->
+    <div class="background-effects">
+        <div class="floating-icon"><i class="fas fa-handshake"></i></div>
+        <div class="floating-icon"><i class="fas fa-chart-line"></i></div>
+        <div class="floating-icon"><i class="fas fa-users"></i></div>
+        <div class="floating-icon"><i class="fas fa-building"></i></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+</body>
+</html>
