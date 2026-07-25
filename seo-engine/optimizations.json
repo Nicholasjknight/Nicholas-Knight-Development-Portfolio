@@ -1,0 +1,379 @@
+{
+  "version": 1,
+  "domain": "knightlogics.com",
+  "updatedAt": "2026-07-24T04:37:30.303Z",
+  "optimizations": [
+    {
+      "id": "c8c38c68e535",
+      "registeredAt": "2026-07-24T04:37:30.303Z",
+      "query": "st. petersburg web design",
+      "landingPath": "/web-designer-st-petersburg",
+      "landingUrl": "https://knightlogics.com/web-designer-st-petersburg",
+      "before": {
+        "query": {
+          "clicks": 0,
+          "impressions": 937,
+          "ctr": 0,
+          "position": 43.40448239060832
+        },
+        "page": {
+          "page": "https://knightlogics.com/web-designer-st-petersburg",
+          "clicks": 1,
+          "impressions": 26481,
+          "ctr": 0.000037762924360862507,
+          "position": 43.66534496431404
+        }
+      },
+      "after": {},
+      "status": "registered",
+      "patchSummary": {
+        "newSections": [
+          "estimates"
+        ],
+        "faqCount": 1
+      },
+      "notes": "Registered from SEO-Engine run",
+      "checkpoints": [
+        28,
+        56,
+        90
+      ]
+    },
+    {
+      "id": "d41a4f32ed34",
+      "registeredAt": "2026-07-24T04:37:18.143Z",
+      "query": "website development st petersburg",
+      "landingPath": "/web-designer-st-petersburg",
+      "landingUrl": "https://knightlogics.com/web-designer-st-petersburg",
+      "before": {
+        "query": {
+          "clicks": 0,
+          "impressions": 882,
+          "ctr": 0,
+          "position": 49.012471655328795
+        },
+        "page": {
+          "page": "https://knightlogics.com/web-designer-st-petersburg",
+          "clicks": 1,
+          "impressions": 26481,
+          "ctr": 0.000037762924360862507,
+          "position": 43.66534496431404
+        }
+      },
+      "after": {},
+      "status": "registered",
+      "patchSummary": {
+        "newSections": [
+          "estimates",
+          "licensing",
+          "warranty"
+        ],
+        "faqCount": 0
+      },
+      "notes": "Registered from SEO-Engine run",
+      "checkpoints": [
+        28,
+        56,
+        90
+      ]
+    },
+    {
+      "id": "d270caf9ad6f",
+      "registeredAt": "2026-07-24T04:37:12.369Z",
+      "query": "st pete web design",
+      "landingPath": "/web-designer-st-petersburg",
+      "landingUrl": "https://knightlogics.com/web-designer-st-petersburg",
+      "before": {
+        "query": {
+          "clicks": 0,
+          "impressions": 954,
+          "ctr": 0,
+          "position": 45.534591194968556
+        },
+        "page": {
+          "page": "https://knightlogics.com/web-designer-st-petersburg",
+          "clicks": 1,
+          "impressions": 26481,
+          "ctr": 0.000037762924360862507,
+          "position": 43.66534496431404
+        }
+      },
+      "after": {},
+      "status": "registered",
+      "patchSummary": {
+        "newSections": [
+          "estimates"
+        ],
+        "faqCount": 1
+      },
+      "notes": "Registered from SEO-Engine run",
+      "checkpoints": [
+        28,
+        56,
+        90
+      ]
+    },
+    {
+      "id": "d90d7713e2d3",
+      "registeredAt": "2026-07-24T04:37:05.323Z",
+      "query": "web design st petersburg",
+      "landingPath": "/web-designer-st-petersburg",
+      "landingUrl": "https://knightlogics.com/web-designer-st-petersburg",
+      "before": {
+        "query": {
+          "clicks": 0,
+          "impressions": 1122,
+          "ctr": 0,
+          "position": 42.118538324420676
+        },
+        "page": {
+          "page": "https://knightlogics.com/web-designer-st-petersburg",
+          "clicks": 1,
+          "impressions": 26481,
+          "ctr": 0.000037762924360862507,
+          "position": 43.66534496431404
+        }
+      },
+      "after": {},
+      "status": "registered",
+      "patchSummary": {
+        "newSections": [
+          "estimates"
+        ],
+        "faqCount": 1
+      },
+      "notes": "Registered from SEO-Engine run",
+      "checkpoints": [
+        28,
+        56,
+        90
+      ]
+    },
+    {
+      "id": "8d43e86e849f",
+      "registeredAt": "2026-07-24T04:36:57.673Z",
+      "query": "st petersburg web design",
+      "landingPath": "/web-designer-st-petersburg",
+      "landingUrl": "https://knightlogics.com/web-designer-st-petersburg",
+      "before": {
+        "query": {
+          "clicks": 0,
+          "impressions": 1096,
+          "ctr": 0,
+          "position": 43.39598540145985
+        },
+        "page": {
+          "page": "https://knightlogics.com/web-designer-st-petersburg",
+          "clicks": 1,
+          "impressions": 26481,
+          "ctr": 0.000037762924360862507,
+          "position": 43.66534496431404
+        }
+      },
+      "after": {},
+      "status": "registered",
+      "patchSummary": {
+        "newSections": [
+          "estimates"
+        ],
+        "faqCount": 1
+      },
+      "notes": "Registered from SEO-Engine run",
+      "checkpoints": [
+        28,
+        56,
+        90
+      ]
+    },
+    {
+      "id": "99c578a0ced0",
+      "registeredAt": "2026-07-24T04:32:52.258Z",
+      "query": "st. petersburg web design",
+      "landingPath": "/web-designer-st-petersburg",
+      "landingUrl": "https://knightlogics.com/web-designer-st-petersburg",
+      "before": {
+        "query": {
+          "clicks": 0,
+          "impressions": 937,
+          "ctr": 0,
+          "position": 43.40448239060832
+        },
+        "page": {
+          "page": "https://knightlogics.com/web-designer-st-petersburg",
+          "clicks": 1,
+          "impressions": 26481,
+          "ctr": 0.000037762924360862507,
+          "position": 43.66534496431404
+        }
+      },
+      "after": {},
+      "status": "registered",
+      "patchSummary": {
+        "newSections": [
+          "estimates",
+          "licensing",
+          "warranty"
+        ],
+        "faqCount": 0
+      },
+      "notes": "Registered from SEO-Engine run",
+      "checkpoints": [
+        28,
+        56,
+        90
+      ]
+    },
+    {
+      "id": "c49a04a1f31e",
+      "registeredAt": "2026-07-24T04:32:51.831Z",
+      "query": "website development st petersburg",
+      "landingPath": "/web-designer-st-petersburg",
+      "landingUrl": "https://knightlogics.com/web-designer-st-petersburg",
+      "before": {
+        "query": {
+          "clicks": 0,
+          "impressions": 882,
+          "ctr": 0,
+          "position": 49.012471655328795
+        },
+        "page": {
+          "page": "https://knightlogics.com/web-designer-st-petersburg",
+          "clicks": 1,
+          "impressions": 26481,
+          "ctr": 0.000037762924360862507,
+          "position": 43.66534496431404
+        }
+      },
+      "after": {},
+      "status": "registered",
+      "patchSummary": {
+        "newSections": [
+          "estimates",
+          "licensing",
+          "warranty"
+        ],
+        "faqCount": 0
+      },
+      "notes": "Registered from SEO-Engine run",
+      "checkpoints": [
+        28,
+        56,
+        90
+      ]
+    },
+    {
+      "id": "5ab46e02e7a6",
+      "registeredAt": "2026-07-24T04:32:51.354Z",
+      "query": "st pete web design",
+      "landingPath": "/web-designer-st-petersburg",
+      "landingUrl": "https://knightlogics.com/web-designer-st-petersburg",
+      "before": {
+        "query": {
+          "clicks": 0,
+          "impressions": 954,
+          "ctr": 0,
+          "position": 45.534591194968556
+        },
+        "page": {
+          "page": "https://knightlogics.com/web-designer-st-petersburg",
+          "clicks": 1,
+          "impressions": 26481,
+          "ctr": 0.000037762924360862507,
+          "position": 43.66534496431404
+        }
+      },
+      "after": {},
+      "status": "registered",
+      "patchSummary": {
+        "newSections": [
+          "estimates",
+          "licensing",
+          "warranty"
+        ],
+        "faqCount": 0
+      },
+      "notes": "Registered from SEO-Engine run",
+      "checkpoints": [
+        28,
+        56,
+        90
+      ]
+    },
+    {
+      "id": "f35d3ed68ceb",
+      "registeredAt": "2026-07-24T04:32:51.033Z",
+      "query": "web design st petersburg",
+      "landingPath": "/web-designer-st-petersburg",
+      "landingUrl": "https://knightlogics.com/web-designer-st-petersburg",
+      "before": {
+        "query": {
+          "clicks": 0,
+          "impressions": 1122,
+          "ctr": 0,
+          "position": 42.118538324420676
+        },
+        "page": {
+          "page": "https://knightlogics.com/web-designer-st-petersburg",
+          "clicks": 1,
+          "impressions": 26481,
+          "ctr": 0.000037762924360862507,
+          "position": 43.66534496431404
+        }
+      },
+      "after": {},
+      "status": "registered",
+      "patchSummary": {
+        "newSections": [
+          "estimates",
+          "licensing",
+          "warranty"
+        ],
+        "faqCount": 0
+      },
+      "notes": "Registered from SEO-Engine run",
+      "checkpoints": [
+        28,
+        56,
+        90
+      ]
+    },
+    {
+      "id": "7c48bb42e00b",
+      "registeredAt": "2026-07-24T04:32:50.657Z",
+      "query": "st petersburg web design",
+      "landingPath": "/web-designer-st-petersburg",
+      "landingUrl": "https://knightlogics.com/web-designer-st-petersburg",
+      "before": {
+        "query": {
+          "clicks": 0,
+          "impressions": 1096,
+          "ctr": 0,
+          "position": 43.39598540145985
+        },
+        "page": {
+          "page": "https://knightlogics.com/web-designer-st-petersburg",
+          "clicks": 1,
+          "impressions": 26481,
+          "ctr": 0.000037762924360862507,
+          "position": 43.66534496431404
+        }
+      },
+      "after": {},
+      "status": "registered",
+      "patchSummary": {
+        "newSections": [
+          "estimates",
+          "licensing",
+          "warranty"
+        ],
+        "faqCount": 0
+      },
+      "notes": "Registered from SEO-Engine run",
+      "checkpoints": [
+        28,
+        56,
+        90
+      ]
+    }
+  ]
+}

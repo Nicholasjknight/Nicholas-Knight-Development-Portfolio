@@ -41,6 +41,11 @@
     }
     hero.classList.add('hero-experiment-active');
 
+    const FORM_FIT_HYSTERESIS = 12;
+    let formFitLevel = 0;
+    let heroLayoutFrame = null;
+    let heroLayoutSyncing = false;
+
     function syncLayoutFit() {
         const wrapper = hero.querySelector('.hero-content-wrapper');
         const layout = hero.querySelector('.hero-layout');
@@ -54,8 +59,8 @@
             return;
         }
 
-        const needed = layout.scrollHeight;
-        const available = innerH - 6;
+        const needed = Math.ceil(layout.scrollHeight);
+        const available = Math.floor(innerH - 6);
         if (needed > available) {
             const scale = Math.max(0.76, available / needed);
             hero.style.setProperty('--kl-layout-scale', String(scale));
@@ -76,15 +81,29 @@
         }
     }
 
+    function scheduleHeroLayout() {
+        if (heroLayoutFrame !== null) return;
+        heroLayoutFrame = requestAnimationFrame(() => {
+            heroLayoutFrame = null;
+            if (heroLayoutSyncing) return;
+            heroLayoutSyncing = true;
+            try {
+                syncHeroLayout();
+            } finally {
+                heroLayoutSyncing = false;
+            }
+        });
+    }
+
     syncNavHeight();
     syncLayoutFit();
     window.addEventListener('resize', () => {
         syncNavHeight();
-        requestAnimationFrame(syncLayoutFit);
+        scheduleHeroLayout();
     }, { passive: true });
     window.addEventListener('orientationchange', () => {
         syncNavHeight();
-        requestAnimationFrame(syncLayoutFit);
+        scheduleHeroLayout();
     });
 
     /* ── DOM injection ── */
@@ -133,6 +152,149 @@
     const starsCanvas = document.getElementById('klHeroStars');
     const asteroidsCanvas = document.getElementById('klHeroAsteroids');
     const cutoutImg = document.getElementById('klHeroCutout');
+
+    function syncCutoutFit() {
+        if (!cutoutImg || window.innerWidth < 769) {
+            hero.style.setProperty('--kl-cutout-scale', '1');
+            hero.style.removeProperty('--kl-cutout-max-w');
+            hero.style.removeProperty('--kl-cutout-max-h');
+            return;
+        }
+
+        const content = hero.querySelector('.hero-content');
+        if (!content) return;
+
+        const pad = 10;
+        const minScale = 0.32;
+        const maxScale = 1.35;
+
+        function cutoutCollides() {
+            const contentRect = content.getBoundingClientRect();
+            const cutoutRect = cutoutImg.getBoundingClientRect();
+            if (!cutoutRect.width || !cutoutRect.height) return false;
+            return !(
+                cutoutRect.right + pad <= contentRect.left ||
+                cutoutRect.left >= contentRect.right + pad ||
+                cutoutRect.bottom + pad <= contentRect.top ||
+                cutoutRect.top >= contentRect.bottom + pad
+            );
+        }
+
+        function applyCutoutScale(scale) {
+            hero.style.setProperty('--kl-cutout-scale', scale.toFixed(3));
+            void cutoutImg.offsetHeight;
+        }
+
+        function applyCutoutDims(maxW, maxH) {
+            hero.style.setProperty('--kl-cutout-max-w', `${Math.round(maxW)}px`);
+            hero.style.setProperty('--kl-cutout-max-h', `${maxH.toFixed(1)}%`);
+            void cutoutImg.offsetHeight;
+        }
+
+        function findBestScale(lo, hi) {
+            applyCutoutScale(hi);
+            if (!cutoutCollides()) return hi;
+
+            applyCutoutScale(lo);
+            if (cutoutCollides()) return lo;
+
+            let best = lo;
+            for (let i = 0; i < 14; i += 1) {
+                const mid = (lo + hi) / 2;
+                applyCutoutScale(mid);
+                if (cutoutCollides()) {
+                    hi = mid;
+                } else {
+                    best = mid;
+                    lo = mid;
+                }
+            }
+            return best;
+        }
+
+        hero.style.removeProperty('--kl-cutout-max-w');
+        hero.style.removeProperty('--kl-cutout-max-h');
+
+        const baseMaxW = window.innerWidth >= 1800 ? 600 : window.innerWidth >= 1400 ? 560 : 520;
+        const baseMaxH = window.innerWidth >= 1800 ? 74 : 72;
+        let maxW = baseMaxW;
+        let maxH = baseMaxH;
+        let bestScale = maxScale;
+
+        applyCutoutDims(maxW, maxH);
+        bestScale = findBestScale(minScale, maxScale);
+        applyCutoutScale(bestScale);
+
+        while (cutoutCollides() && maxW > 160) {
+            maxW -= 24;
+            maxH = Math.max(42, maxH - 3);
+            applyCutoutDims(maxW, maxH);
+            bestScale = findBestScale(minScale, maxScale);
+            applyCutoutScale(bestScale);
+        }
+    }
+
+    function applyFormFitLevel(level) {
+        hero.setAttribute('data-form-fit', String(level));
+        hero.classList.toggle('hero-form-compact', level > 0);
+    }
+
+    function measureFormFit(layout, level) {
+        applyFormFitLevel(level);
+        void layout.offsetHeight;
+        syncLayoutFit();
+        return Math.ceil(layout.scrollHeight);
+    }
+
+    function syncFormFit() {
+        if (window.innerWidth < 769) {
+            formFitLevel = 0;
+            hero.removeAttribute('data-form-fit');
+            hero.classList.remove('hero-form-compact');
+            return;
+        }
+
+        const wrapper = hero.querySelector('.hero-content-wrapper');
+        const layout = hero.querySelector('.hero-layout');
+        if (!wrapper || !layout) return;
+
+        const maxLevel = 3;
+        const available = Math.floor(wrapper.clientHeight - 6);
+        let target = maxLevel;
+
+        for (let level = 0; level <= maxLevel; level += 1) {
+            const needed = measureFormFit(layout, level);
+            target = level;
+            if (needed <= available) break;
+        }
+
+        if (target !== formFitLevel) {
+            const currentNeeded = measureFormFit(layout, formFitLevel);
+            if (target < formFitLevel) {
+                const targetNeeded = measureFormFit(layout, target);
+                if (targetNeeded > available - FORM_FIT_HYSTERESIS) {
+                    target = formFitLevel;
+                }
+            } else if (currentNeeded <= available + FORM_FIT_HYSTERESIS) {
+                target = formFitLevel;
+            }
+        }
+
+        formFitLevel = target;
+        applyFormFitLevel(target);
+    }
+
+    function syncHeroLayout() {
+        syncLayoutFit();
+        syncCutoutFit();
+        syncFormFit();
+        syncCutoutFit();
+        syncLayoutFit();
+        if (typeof updateLayoutMetrics === 'function') {
+            updateLayoutMetrics();
+        }
+    }
+
     const scoreEl = document.getElementById('klHeroScoreValue');
     const hiScoreEl = document.getElementById('klHeroHiscoreValue');
     const hiInitialsEl = document.getElementById('klHeroHiscoreInitials');
@@ -566,10 +728,7 @@
         syncParallaxMode();
         sizeCanvases();
         buildStars();
-        requestAnimationFrame(() => {
-            updateLayoutMetrics();
-            syncLayoutFit();
-        });
+        scheduleHeroLayout();
     });
 
     /* ── Cutout collision mask ── */
@@ -971,28 +1130,19 @@
         sizeCanvases();
         buildStars();
         syncNavHeight();
-        updateLayoutMetrics();
-        syncLayoutFit();
+        syncHeroLayout();
         for (let i = 0; i < 4; i++) spawnRock();
     }
 
     if (cutoutImg.complete) boot();
     else cutoutImg.addEventListener('load', boot);
-    cutoutImg.addEventListener('load', updateLayoutMetrics);
+    cutoutImg.addEventListener('load', scheduleHeroLayout);
     window.addEventListener('load', () => {
-        updateLayoutMetrics();
+        scheduleHeroLayout();
         ensurePageScroll();
     });
     if (typeof ResizeObserver !== 'undefined') {
-        const ro = new ResizeObserver(() => requestAnimationFrame(() => {
-            updateLayoutMetrics();
-            syncLayoutFit();
-        }));
+        const ro = new ResizeObserver(() => scheduleHeroLayout());
         ro.observe(cutoutImg);
-        ro.observe(hero);
-        const wrapper = hero.querySelector('.hero-content-wrapper');
-        const layout = hero.querySelector('.hero-layout');
-        if (wrapper) ro.observe(wrapper);
-        if (layout) ro.observe(layout);
     }
 })();

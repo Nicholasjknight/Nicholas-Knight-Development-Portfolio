@@ -13,9 +13,9 @@ const DEFAULT_ALLOWED_ORIGINS = new Set([
 
 const LOCAL_DEV_ORIGIN_PATTERN = /^http:\/\/(?:127\.0\.0\.1|localhost):\d+$/;
 const FORMSPREE_ENDPOINT = process.env.FORMSPREE_ENDPOINT || 'https://formspree.io/f/xnnggyzp';
-const VALID_PAGE_COUNT_EXPECTATIONS = new Set(['small', 'medium', 'large', 'enterprise']);
-const VALID_SEO_EXPANSION_NEEDS = new Set(['no', 'services', 'cities', 'both']);
-const VALID_SELLING_ONLINE_NEEDS = new Set(['no', 'later', 'stripe-links', 'cart-store']);
+const VALID_PAGE_COUNT_EXPECTATIONS = new Set(['small', 'preview', 'medium', 'local', 'large', 'authority', 'enterprise', 'max', 'growth']);
+const VALID_SEO_EXPANSION_NEEDS = new Set(['no', 'services', 'cities', 'both', 'audit-external', 'audit-limited', 'audit-full', 'audit-maintained']);
+const VALID_SELLING_ONLINE_NEEDS = new Set(['no', 'later', 'stripe-links', 'invoicing', 'cart-store']);
 const MAX_JSON_BODY_BYTES = 64 * 1024;
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
 const RATE_LIMIT_MAX_REQUESTS = 30;
@@ -46,10 +46,10 @@ const PACKAGE_DEFINITIONS = {
     'website-preview-launch': {
         mode: 'payment',
         name: 'Preview Launch Site',
-        description: 'Hand-coded preview site with 2-4 pages, hosted on a GitHub Pages URL. Good for proof-of-concept and early sales before a full launch investment.',
-        amount: 50000,
+        description: 'Professional multi-page preview — up to about 20 pages — for proof-of-concept before a Local or Authority build.',
+        amount: 75000,
         currency: 'usd',
-        priceDisplay: '$500',
+        priceDisplay: '$750',
         metadata: {
             packageType: 'preview_launch_site',
             fulfillment: 'project',
@@ -59,10 +59,12 @@ const PACKAGE_DEFINITIONS = {
     'website-live-essential': {
         mode: 'payment',
         name: 'Essential Launch Site',
-        description: 'Hand-coded website launched on your domain with up to 4 pages, contact form, analytics, and launch QA.',
+        description: 'Deprecated ghost package. Prefer Local Site.',
         amount: 70000,
         currency: 'usd',
         priceDisplay: '$700',
+        checkoutEnabled: false,
+        deprecated: true,
         metadata: {
             packageType: 'essential_launch_site',
             fulfillment: 'project',
@@ -72,10 +74,12 @@ const PACKAGE_DEFINITIONS = {
     'website-live-plus': {
         mode: 'payment',
         name: 'Essential Launch Plus',
-        description: 'Expanded hand-coded website launch with up to 5 core pages, stronger layout polish, analytics setup, and additional revision depth.',
+        description: 'Deprecated ghost package. Prefer Local Site or Authority Site.',
         amount: 85000,
         currency: 'usd',
         priceDisplay: '$850',
+        checkoutEnabled: false,
+        deprecated: true,
         metadata: {
             packageType: 'essential_launch_plus',
             fulfillment: 'project',
@@ -85,10 +89,12 @@ const PACKAGE_DEFINITIONS = {
     'website-search-foundation': {
         mode: 'payment',
         name: 'Search Foundation Site',
-        description: 'Website launch package with Search Console, sitemap, schema, analytics, and search-readiness setup for a small local business site.',
+        description: 'Deprecated — superseded by Local Site.',
         amount: 120000,
         currency: 'usd',
         priceDisplay: '$1,200',
+        checkoutEnabled: false,
+        deprecated: true,
         metadata: {
             packageType: 'search_foundation_site',
             fulfillment: 'project',
@@ -98,10 +104,12 @@ const PACKAGE_DEFINITIONS = {
     'website-search-foundation-plus': {
         mode: 'payment',
         name: 'Search Foundation Plus',
-        description: 'Expanded search-ready website package with up to 5 pages, deeper title and meta alignment, and stronger launch cleanup.',
+        description: 'Deprecated ghost package.',
         amount: 150000,
         currency: 'usd',
         priceDisplay: '$1,500',
+        checkoutEnabled: false,
+        deprecated: true,
         metadata: {
             packageType: 'search_foundation_plus',
             fulfillment: 'project',
@@ -110,11 +118,11 @@ const PACKAGE_DEFINITIONS = {
     },
     'website-local-seo-starter': {
         mode: 'payment',
-        name: 'Local Launch Site',
-        description: 'Hand-coded website with up to 10 pages, premium layout and motion polish, competitor SEO review, dynamic local SEO structure, Search Console and analytics setup, Google Business Profile alignment, and a 14-day post-launch polish window.',
-        amount: 199700,
+        name: 'Local Site',
+        description: 'Domain-backed local website with up to 35 pages, search foundation (GSC, schema, analytics), and launch QA. GBP Setup is optional and chosen in intake.',
+        amount: 120000,
         currency: 'usd',
-        priceDisplay: '$1,997',
+        priceDisplay: '$1,200',
         metadata: {
             packageType: 'local_launch_website_package',
             fulfillment: 'project',
@@ -123,11 +131,11 @@ const PACKAGE_DEFINITIONS = {
     },
     'website-local-launch-plus': {
         mode: 'payment',
-        name: 'Local Launch Plus',
-        description: 'Expanded hand-coded website with up to 20 pages, full local SEO, city and service-area pages, schema, analytics, and a 14-day post-launch polish window.',
-        amount: 299700,
+        name: 'Authority Site',
+        description: '35-60 page multi-area authority website with advanced schema, conversion tracking, and a GBP setup or optimization pass included.',
+        amount: 200000,
         currency: 'usd',
-        priceDisplay: '$2,997',
+        priceDisplay: '$2,000',
         metadata: {
             packageType: 'local_launch_plus',
             fulfillment: 'project',
@@ -136,13 +144,32 @@ const PACKAGE_DEFINITIONS = {
     },
     'website-local-launch-max': {
         mode: 'payment',
-        name: 'Local Launch Max',
-        description: 'Expanded local service website package for larger builds, deeper page structure, advanced tracking, and full launch support.',
+        name: 'Max Authority Site',
+        description: 'Up to 40-page Max Authority website PROJECT with deep service/location architecture, audit-grade SEO/GEO/AEO depth, and a GBP setup or optimization pass included. Ongoing ops sold separately.',
         amount: 450000,
         currency: 'usd',
         priceDisplay: '$4,500',
+        billingType: 'PROJECT',
+        pageLimit: 40,
         metadata: {
             packageType: 'local_launch_max',
+            fulfillment: 'project',
+            family: 'website'
+        }
+    },
+    'website-authority-network': {
+        mode: 'payment',
+        name: 'Authority Network',
+        description: '60-100+ page structured service/location architecture. Scope required — deposit or consult only; not a flat open checkout for maximum page counts.',
+        amount: 650000,
+        currency: 'usd',
+        priceDisplay: 'from $6,500',
+        billingType: 'SCOPED',
+        requireDeposit: true,
+        pageLimitMin: 60,
+        pageLimit: 100,
+        metadata: {
+            packageType: 'authority_network',
             fulfillment: 'project',
             family: 'website'
         }
@@ -176,10 +203,12 @@ const PACKAGE_DEFINITIONS = {
     'ecommerce-launch': {
         mode: 'payment',
         name: 'E-Commerce Launch',
-        description: 'Full custom-coded storefront with cart, checkout, product pages, confirmation flow, and up to 20 products.',
-        amount: 249700,
+        description: 'Full custom-coded storefront with cart, checkout, product pages, confirmation flow, and initial setup for up to 20 products. CMS can hold more SKUs; extra migration is quoted separately.',
+        amount: 299700,
         currency: 'usd',
-        priceDisplay: '$2,497',
+        priceDisplay: '$2,997',
+        billingType: 'PROJECT',
+        productLoadLimit: 20,
         metadata: {
             packageType: 'ecommerce_launch',
             fulfillment: 'project',
@@ -215,10 +244,12 @@ const PACKAGE_DEFINITIONS = {
     'ecommerce-advanced-system': {
         mode: 'payment',
         name: 'Advanced E-Commerce System',
-        description: 'Advanced e-commerce build with dynamic product management, inventory logic, admin editing, webhooks, and reporting.',
+        description: 'Advanced e-commerce build with dynamic product management, inventory logic, admin editing, webhooks, and reporting. Scope required — strategy deposit only until scope is confirmed.',
         amount: 750000,
         currency: 'usd',
-        priceDisplay: '$7,500',
+        priceDisplay: 'from $7,500',
+        billingType: 'SCOPED',
+        requireDeposit: true,
         metadata: {
             packageType: 'advanced_ecommerce_system',
             fulfillment: 'project',
@@ -289,10 +320,12 @@ const PACKAGE_DEFINITIONS = {
     'monthly-growth-management': {
         mode: 'subscription',
         name: 'Growth Management',
-        description: 'Ongoing growth management covering CRM support, reporting, content coordination, and automation workflows.',
+        description: 'Ongoing growth management covering CRM support, reporting, content coordination, and automation workflows. Scope required for ranges above the $1,000/mo floor.',
         amount: 100000,
         currency: 'usd',
-        priceDisplay: '$1,000 / month',
+        priceDisplay: 'starting at $1,000 / month',
+        billingType: 'SCOPED',
+        checkoutEnabled: false,
         recurring: {
             interval: 'month'
         },
@@ -378,11 +411,11 @@ const PACKAGE_DEFINITIONS = {
         mode: 'subscription',
         name: 'Growth System Starter',
         description: 'Starter growth system with site upgrades, lead tracking, review workflow, reporting dashboard, and monthly optimization support.',
-        setupAmount: 350000,
-        setupPriceDisplay: '$3,500 setup',
+        setupAmount: 500000,
+        setupPriceDisplay: '$5,000 setup',
         amount: 39700,
         currency: 'usd',
-        priceDisplay: '$3,500 setup + $397/mo',
+        priceDisplay: 'from $5,000 setup + $397/mo',
         recurring: {
             interval: 'month'
         },
@@ -412,8 +445,8 @@ const PACKAGE_DEFINITIONS = {
     },
     'ops-custom-automation-system': {
         mode: 'subscription',
-        name: 'Custom Automation System',
-        description: 'Custom automation system with dashboarding, lead routing, follow-up workflows, reporting, and monthly support.',
+        name: 'Custom / Field Ops System',
+        description: 'Branded field mobile job app and/or multi-brand automation — estimates, invoices, scoped photos, Stripe, OutreachEngine, Email-Agent, and Social when scoped.',
         setupAmount: 1000000,
         setupPriceDisplay: '$10,000 setup',
         amount: 100000,
@@ -426,6 +459,63 @@ const PACKAGE_DEFINITIONS = {
             packageType: 'custom_automation_system',
             fulfillment: 'subscription',
             family: 'ops'
+        }
+    },
+    'ops-growth-systems-only-starter': {
+        mode: 'subscription',
+        name: 'Growth Systems-Only Starter',
+        description: 'Ops layer only on an existing website — lead tracker, review/follow-up, reporting, and monthly support. No new marketing site build.',
+        setupAmount: 250000,
+        setupPriceDisplay: '$2,500 setup',
+        amount: 39700,
+        currency: 'usd',
+        priceDisplay: 'from $2,500 setup + $397/mo',
+        recurring: {
+            interval: 'month'
+        },
+        metadata: {
+            packageType: 'growth_systems_only_starter',
+            fulfillment: 'subscription',
+            family: 'ops',
+            systemsOnly: 'true'
+        }
+    },
+    'ops-growth-systems-only-full': {
+        mode: 'subscription',
+        name: 'Growth Systems-Only Full',
+        description: 'Full back-office growth systems on an existing site — follow-up, ops alerts, one automation lane, monthly management. No marketing site rebuild.',
+        setupAmount: 350000,
+        setupPriceDisplay: '$3,500 setup',
+        amount: 69700,
+        currency: 'usd',
+        priceDisplay: 'from $3,500 setup + $697/mo',
+        recurring: {
+            interval: 'month'
+        },
+        metadata: {
+            packageType: 'growth_systems_only_full',
+            fulfillment: 'subscription',
+            family: 'ops',
+            systemsOnly: 'true'
+        }
+    },
+    'ops-growth-systems-only-field': {
+        mode: 'subscription',
+        name: 'Field Ops Systems-Only',
+        description: 'Field Job App / dispatch systems on your current marketing site — estimates, invoices, photos, Stripe when scoped. No full site rebuild.',
+        setupAmount: 800000,
+        setupPriceDisplay: '$8,000 setup',
+        amount: 100000,
+        currency: 'usd',
+        priceDisplay: 'from $8,000 setup + $1,000/mo',
+        recurring: {
+            interval: 'month'
+        },
+        metadata: {
+            packageType: 'growth_systems_only_field',
+            fulfillment: 'subscription',
+            family: 'ops',
+            systemsOnly: 'true'
         }
     }
 };
@@ -441,32 +531,40 @@ const PACKAGE_PAYMENT_OPTIONS = {
     },
     'website-local-seo-starter': {
         deposit: {
-            amount: 100000,
-            priceDisplay: '$1,000 deposit',
-            lineItemName: 'Local Launch Site - Kickoff Deposit',
-            description: 'Kickoff deposit applied to the Local Launch Site project total. Remaining balance is invoiced during milestone approvals before final launch.'
+            amount: 60000,
+            priceDisplay: '$600 deposit',
+            lineItemName: 'Local Site - Kickoff Deposit',
+            description: 'Kickoff deposit applied to the Local Site project total. Remaining balance is invoiced during milestone approvals before final launch.'
         }
     },
     'website-local-launch-plus': {
         deposit: {
-            amount: 150000,
-            priceDisplay: '$1,500 deposit',
-            lineItemName: 'Local Launch Plus - Kickoff Deposit',
-            description: 'Kickoff deposit applied to the Local Launch Plus project total. Remaining balance is invoiced during milestone approvals before final launch.'
+            amount: 100000,
+            priceDisplay: '$1,000 deposit',
+            lineItemName: 'Authority Site - Kickoff Deposit',
+            description: 'Kickoff deposit applied to the Authority Site project total. Remaining balance is invoiced during milestone approvals before final launch.'
         }
     },
     'website-local-launch-max': {
         deposit: {
             amount: 200000,
             priceDisplay: '$2,000 deposit',
-            lineItemName: 'Local Launch Max - Kickoff Deposit',
-            description: 'Kickoff deposit applied to the Local Launch Max project total. Remaining balance is invoiced across scoped milestones before final delivery.'
+            lineItemName: 'Max Authority Site - Kickoff Deposit',
+            description: 'Kickoff deposit applied to the Max Authority Site project total. Remaining balance is invoiced across scoped milestones before final delivery.'
+        }
+    },
+    'website-authority-network': {
+        deposit: {
+            amount: 250000,
+            priceDisplay: '$2,500 scope deposit',
+            lineItemName: 'Authority Network - Scope Deposit',
+            description: 'Scope deposit applied to the Authority Network project total. Remaining balance is invoiced after page architecture and milestones are confirmed.'
         }
     },
     'ecommerce-launch': {
         deposit: {
-            amount: 125000,
-            priceDisplay: '$1,250 deposit',
+            amount: 150000,
+            priceDisplay: '$1,500 deposit',
             lineItemName: 'E-Commerce Launch - Kickoff Deposit',
             description: 'Kickoff deposit applied to the E-Commerce Launch project total. Remaining balance is invoiced before final launch.'
         }
@@ -633,9 +731,14 @@ async function parseJsonBody(req) {
 function getPageCountRank(pageCountExpectation) {
     const pageRanks = {
         small: 1,
+        preview: 2,
         medium: 2,
-        large: 3,
-        enterprise: 4
+        local: 3,
+        large: 4,
+        authority: 4,
+        enterprise: 5,
+        max: 5,
+        growth: 6
     };
 
     return pageRanks[pageCountExpectation] || 0;
@@ -677,11 +780,17 @@ function getPackageRoute(packageKey, intakeDetails) {
         }
 
         return {
-            routeType: packageKey === 'website-local-launch-max' ? 'allowed' : 'package',
-            recommendedPackageKey: 'website-local-launch-max',
+            routeType: (packageKey === 'website-local-launch-max' || packageKey === 'website-authority-network')
+                ? 'allowed'
+                : 'package',
+            recommendedPackageKey: intakeDetails.pageCountExpectation === 'growth'
+                ? 'website-authority-network'
+                : 'website-local-launch-max',
             recommendationMessage: hasComplexFeatureRequest
-                ? 'Complex website features moved this to Local Launch Max.'
-                : 'A larger local build fits the Local Launch Max package.'
+                ? 'Complex website features moved this to Max Authority Site (PROJECT) or Authority Network (SCOPED).'
+                : (intakeDetails.pageCountExpectation === 'growth'
+                    ? 'A 60–100+ page network fits Authority Network (scoped from $6,500).'
+                    : 'An up-to-40-page deep authority PROJECT fits Max Authority Site ($4,500).')
         };
     }
 
@@ -709,30 +818,30 @@ function getPackageRoute(packageKey, intakeDetails) {
     } else if (seoNeed === 'cities' || seoNeed === 'both' || seoNeed === 'services') {
         if (pageRank >= 3) {
             recommendedPackageKey = 'website-local-launch-plus';
-            recommendationMessage = 'A large site with SEO coverage fits the Local Launch Plus package.';
+            recommendationMessage = 'A large site with SEO coverage fits the Authority Site package.';
         } else if (pageRank >= 2) {
             recommendedPackageKey = 'website-local-seo-starter';
-            recommendationMessage = 'A standard site with SEO coverage fits the Local Launch Site package.';
+            recommendationMessage = 'A standard site with SEO coverage fits the Local Site package.';
         } else {
-            recommendedPackageKey = seoNeed === 'services' ? 'website-search-foundation' : 'website-local-seo-starter';
+            recommendedPackageKey = 'website-local-seo-starter';
             recommendationMessage = seoNeed === 'services'
-                ? 'A small site with service-page SEO fits the Search Foundation package.'
-                : 'City or service-area SEO work fits the Local Launch Site package.';
+                ? 'A small live site with service-page SEO fits the Local Site package.'
+                : 'City or service-area SEO work fits the Local Site package.';
         }
     } else {
         if (pageRank >= 3) {
             recommendedPackageKey = 'website-local-launch-plus';
-            recommendationMessage = 'A large build fits the Local Launch Plus package.';
+            recommendationMessage = 'A large build fits the Authority Site package.';
         } else if (pageRank >= 2) {
-            recommendedPackageKey = 'website-live-plus';
-            recommendationMessage = 'A medium site fits the Essential Launch Plus package.';
+            recommendedPackageKey = 'website-local-seo-starter';
+            recommendationMessage = 'A medium live site fits the Local Site package.';
         } else {
             recommendedPackageKey = packageKey === 'website-preview-launch'
                 ? 'website-preview-launch'
-                : 'website-live-essential';
+                : 'website-local-seo-starter';
             recommendationMessage = recommendedPackageKey === 'website-preview-launch'
                 ? 'A small preview site fits the Preview Launch package.'
-                : 'A small live site fits the Essential Launch Site package.';
+                : 'A small live site fits the Local Site package.';
         }
     }
 
@@ -867,23 +976,43 @@ function buildIntakeDetails(body, packageDefinition) {
 
 function getPaymentSelection(packageKey, requestedOption, packageDefinition) {
     const packageOptions = PACKAGE_PAYMENT_OPTIONS[packageKey];
+    const forceDeposit = Boolean(packageDefinition.requireDeposit) || packageDefinition.billingType === 'SCOPED';
 
-    if (!packageOptions || requestedOption !== 'deposit' || packageDefinition.mode !== 'payment') {
+    if (forceDeposit && packageDefinition.mode === 'payment') {
+        if (!packageOptions || !packageOptions.deposit) {
+            const error = createHttpError(400, 'This package requires scoped deposit checkout. Contact Knight Logics to proceed.');
+            throw error;
+        }
+
         return {
-            key: 'full',
-            amount: packageDefinition.amount,
-            priceDisplay: packageDefinition.priceDisplay,
-            lineItemName: packageDefinition.name,
-            description: packageDefinition.description
+            key: 'deposit',
+            amount: packageOptions.deposit.amount,
+            priceDisplay: packageOptions.deposit.priceDisplay,
+            lineItemName: packageOptions.deposit.lineItemName,
+            description: packageOptions.deposit.description
+        };
+    }
+
+    if (
+        packageOptions
+        && packageDefinition.mode === 'payment'
+        && requestedOption === 'deposit'
+    ) {
+        return {
+            key: 'deposit',
+            amount: packageOptions.deposit.amount,
+            priceDisplay: packageOptions.deposit.priceDisplay,
+            lineItemName: packageOptions.deposit.lineItemName,
+            description: packageOptions.deposit.description
         };
     }
 
     return {
-        key: 'deposit',
-        amount: packageOptions.deposit.amount,
-        priceDisplay: packageOptions.deposit.priceDisplay,
-        lineItemName: packageOptions.deposit.lineItemName,
-        description: packageOptions.deposit.description
+        key: 'full',
+        amount: packageDefinition.amount,
+        priceDisplay: packageDefinition.priceDisplay,
+        lineItemName: packageDefinition.name,
+        description: packageDefinition.description
     };
 }
 
@@ -1282,6 +1411,13 @@ async function handler(req, res) {
         return sendJson(res, 400, { error: 'Invalid package selected.' });
     }
 
+    if (packageDefinition.checkoutEnabled === false || packageDefinition.deprecated === true) {
+        return sendJson(res, 400, {
+            error: 'This package is not available for self-serve checkout. Contact Knight Logics to scope the right fit.',
+            intakeAccepted: false
+        });
+    }
+
     const intakeResult = buildIntakeDetails(requestBody || {}, packageDefinition);
 
     if (intakeResult.error) {
@@ -1304,7 +1440,16 @@ async function handler(req, res) {
         }
     }
 
-    const paymentSelection = getPaymentSelection(packageKey, intakeDetails.paymentOption, packageDefinition);
+    let paymentSelection;
+
+    try {
+        paymentSelection = getPaymentSelection(packageKey, intakeDetails.paymentOption, packageDefinition);
+    } catch (error) {
+        return sendJson(res, error.statusCode || 400, {
+            error: error.message || 'Unable to build checkout payment selection.',
+            intakeAccepted: false
+        });
+    }
 
     try {
         if (!intakeDetails.intakeUploadCompleted) {

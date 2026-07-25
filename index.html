@@ -343,7 +343,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 "name": "How much does a small business website cost?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Knight Logics offers two clear lanes: Demo Preview at $200, Starter Sites from $500-$750, and custom lead-generation builds (typically $1,500-$4,500+ depending on scope). Starter sites are intentionally lean, while lead-gen builds include deeper SEO, schema, conversion structure, and service-area strategy."
+                    "text": "Knight Logics offers Demo Preview at $200, Preview Launch at $750 (up to ~20 pages), Local Site at $1,200 (up to 35 pages), Authority Site at $2,000 (35–60 pages), Max Authority Site at $4,500 (up to 40 pages PROJECT), and Authority Network from $6,500 (60–100+ pages SCOPED). Authority and Max include a GBP setup or optimization pass. Local can add GBP Setup separately; GBP Maintenance is always optional."
                 }
             },
             {
@@ -669,9 +669,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             white-space: nowrap;
             min-height: 1.15em;
         }
-        .hero-form-card {
-            min-height: 420px;
-        }
         .about-visual {
             aspect-ratio: 540 / 460;
         }
@@ -960,22 +957,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             min-width: min(var(--kl-min), 100%);
         }
 
-        .starter-packages-grid.starter-packages-grid--5 {
-            --kl-cols: 5;
+        .starter-packages-grid.starter-packages-grid--6 {
+            --kl-cols: 6;
             --kl-gap: 16px;
-            --kl-min: 210px;
+            --kl-min: 170px;
         }
 
         @media (max-width: 1399px) {
-            .starter-packages-grid.starter-packages-grid--5 {
+            .starter-packages-grid.starter-packages-grid--6 {
                 --kl-cols: 3;
-                --kl-min: 240px;
+                --kl-min: 220px;
             }
         }
 
         @media (max-width: 1024px) {
             .starter-packages-grid,
-            .starter-packages-grid.starter-packages-grid--5 {
+            .starter-packages-grid.starter-packages-grid--6 {
                 --kl-cols: 2;
                 --kl-min: 140px;
                 --kl-gap: 12px;
@@ -990,7 +987,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         @media (max-width: 380px) {
             .starter-packages-grid,
-            .starter-packages-grid.starter-packages-grid--5 {
+            .starter-packages-grid.starter-packages-grid--6 {
                 --kl-cols: 1;
                 --kl-min: 100%;
             }
@@ -1026,29 +1023,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             overflow: hidden;
         }
 
-        .starter-packages-grid--5 .starter-package-head h3 {
+        .starter-packages-grid--6 .starter-package-head h3 {
             font-size: 1.08rem;
         }
 
-        .starter-packages-grid--5 .starter-package-price-value {
+        .starter-packages-grid--6 .starter-package-price-value {
             font-size: 1.22rem;
         }
 
-        .starter-packages-grid--5 .starter-package-desc {
+        .starter-packages-grid--6 .starter-package-desc {
             font-size: 0.88rem;
             line-height: 1.5;
         }
 
-        .starter-packages-grid--5 .starter-package-points {
+        .starter-packages-grid--6 .starter-package-points {
             gap: 6px;
         }
 
-        .starter-packages-grid--5 .starter-package-points li {
+        .starter-packages-grid--6 .starter-package-points li {
             font-size: 0.82rem;
             line-height: 1.45;
         }
 
-        .starter-packages-grid--5 .starter-package-card-note {
+        .starter-packages-grid--6 .starter-package-card-note {
             font-size: 0.8rem;
             margin: 0;
         }
@@ -1129,10 +1126,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             white-space: normal;
         }
 
-        .starter-packages-grid--5 .starter-package-card .starter-package-cta.cta-button {
+        .starter-packages-grid--6 .starter-package-card .starter-package-cta.cta-button {
             padding: 8px 8px;
             font-size: 0.78rem;
             min-height: 36px;
+        }
+
+        .starter-package-details-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 8px;
+            color: #64ffda;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+
+        .starter-package-details-link:hover,
+        .starter-package-details-link:focus-visible {
+            color: #e6c688;
+            text-decoration: underline;
+            outline: none;
         }
 
         .starter-package-card--featured {
@@ -1844,7 +1860,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 gap: 6px 12px;
             }
 
-            .starter-packages-grid--5 .starter-package-head h3 {
+            .starter-packages-grid--6 .starter-package-head h3 {
                 flex: 1 1 12ch;
                 font-size: 1.05rem;
                 margin: 0;
@@ -1857,7 +1873,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 white-space: nowrap;
             }
 
-            .starter-packages-grid--5 .starter-package-price-value {
+            .starter-packages-grid--6 .starter-package-price-value {
                 font-size: 1.08rem;
             }
 
@@ -2002,10 +2018,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
     </style>
     <link rel="preload" href="/header.html?v=20260703nav1" as="fetch" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css?v=20260719megaalign1">
+    <link rel="stylesheet" href="style.css?v=20260725showcase1">
     <link rel="preload" as="image" type="image/webp" href="./experiments/hero-asteroids/hero-cutout-480.webp?v=20260703perf3" imagesrcset="./experiments/hero-asteroids/hero-cutout-480.webp?v=20260703perf3 480w, ./experiments/hero-asteroids/hero-cutout-800.webp?v=20260703perf3 800w, ./experiments/hero-asteroids/hero-cutout.webp?v=20260703perf3 1135w" imagesizes="(max-width: 768px) min(42vw, 220px), (max-width: 1200px) 400px, 600px" fetchpriority="high">
     <!-- HERO ASTEROIDS EXPERIMENT — remove this block + script below to revert (see experiments/hero-asteroids/REVERT.md) -->
-    <link rel="stylesheet" href="./experiments/hero-asteroids/hero-experiment.css?v=20260703perf3">
+    <link rel="stylesheet" href="./experiments/hero-asteroids/hero-experiment.css?v=20260724hero4">
     <title>Knight Logics | Tampa Bay Websites & Local SEO</title>
     <!-- Microsoft Clarity (deferred until after load to protect first paint) -->
     <script type="text/javascript">
@@ -2073,7 +2089,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <span class="hero-byline hero-enter hero-enter--left hero-enter--d1">Tampa Bay Business Growth Systems</span>
                         <h1 class="hero-title">
                             <span class="title-line text-reveal company-name hero-enter hero-enter--left hero-enter--d2">Knight Logics</span>
-                            <span class="title-line text-reveal hero-enter hero-enter--left hero-enter--d3">Websites, Visibility &amp;<br>Operational Systems</span>
+                            <span class="title-line text-reveal hero-enter hero-enter--left hero-enter--d3">Business Development, Websites &amp;<br>Visibility Systems</span>
                         </h1>
                         <p class="hero-subtitle hero-enter hero-enter--up hero-enter--d-phase2">Knight Logics builds the website, local visibility, CRM outreach, automation, referral tracking, and internal tools that help Tampa Bay small businesses get more leads and manage the work behind them.</p>
                     </div>
@@ -2167,33 +2183,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="kl-proof-copy">
                     <span class="about-kicker kl-proof-enter kl-proof-enter--left kl-proof-enter--d1">About Knight Logics</span>
                     <div class="kl-proof-headline-band">
-                        <h2 class="about-headline kl-proof-enter kl-proof-enter--left kl-proof-enter--d2">Websites engineered to <em>outrank</em> &amp; outsell the competition.</h2>
+                        <h2 class="about-headline kl-proof-enter kl-proof-enter--left kl-proof-enter--d2">Business development &amp; websites engineered to <em>outrank</em> &amp; outsell.</h2>
                         <a href="/" class="kl-proof-brand-mark" aria-label="Knight Logics home">
                             <span class="kl-proof-brand-logo-scene" aria-hidden="true">
                                 <img src="./images/KnightLogicsLogo2.webp" srcset="./images/KnightLogicsLogo2.webp 128w" sizes="(max-width: 768px) 160px, 256px" alt="" class="nav-logo kl-proof-brand-logo" width="128" height="128" decoding="async" loading="lazy">
                             </span>
                         </a>
                     </div>
-                    <p class="about-lead">Most local websites fail before the first call: slow pages, vague offers, weak Google signals, and no clean conversion path. Knight Logics fixes the front door first, then builds the systems behind it.</p>
-                    <p class="about-secondary">Run by <a href="/nicholas-knight"><strong>Nicholas Knight</strong></a> in Safety Harbor, Knight Logics blends hand-coded web design, local SEO, Google Business Profile support, analytics, and practical automation. The goal is simple: make your business easier to find, trust, and contact.</p>
+                    <p class="about-lead">Most local businesses stall before the first call: unclear offers, weak Google signals, slow sites, and no systems behind the front door. Knight Logics develops the business and engineers the website so both actually convert.</p>
+                    <p class="about-secondary">Run by <a href="/nicholas-knight"><strong>Nicholas Knight</strong></a> in Safety Harbor, Knight Logics blends business development, hand-coded web design, local SEO, Google Business Profile support, analytics, and practical automation. The goal is simple: make your business easier to find, trust, and contact.</p>
                     <div class="kl-proof-pill-grid" aria-label="Knight Logics build standards">
-                        <span>Hand-coded, zero builders</span>
-                        <span>Hero forms built for leads</span>
-                        <span>Schema + GSC from launch</span>
-                        <span>Fast pages you own outright</span>
+                        <span>Ground-up business builds</span>
+                        <span>Hand-coded sites you own</span>
+                        <span>Lead paths + follow-up systems</span>
+                        <span>Local SEO from day one</span>
                     </div>
-                    <div class="kl-proof-showcase-mobile" aria-label="Recent website design samples">
+                    <div class="kl-proof-showcase-mobile" aria-label="Recent Knight Logics growth builds">
                         <a href="/case-study-roof-monsters" class="kl-proof-thumb kl-proof-enter kl-proof-enter--left kl-proof-enter--d1">
-                            <img src="./images/showcase/roof-monsters-showcase-400.webp" alt="Roof Monsters roofing website" width="400" height="225" loading="lazy" decoding="async">
+                            <img src="./images/showcase/roof-monsters-showcase-400.webp" alt="Roof Monsters growth system" width="400" height="225" loading="lazy" decoding="async">
                         </a>
                         <a href="/case-study-screen-team" class="kl-proof-thumb kl-proof-enter kl-proof-enter--right kl-proof-enter--d2">
-                            <img src="./images/screen-team-showcase-800.webp" alt="The Screen Team LLC website" width="400" height="225" loading="lazy" decoding="async">
+                            <img src="./images/screen-team-showcase-800.webp" alt="The Screen Team LLC growth system" width="400" height="225" loading="lazy" decoding="async">
                         </a>
                         <a href="/case-study-knight-group" class="kl-proof-thumb kl-proof-enter kl-proof-enter--down kl-proof-enter--d3">
-                            <img src="./images/showcase/knight-group-showcase.webp" alt="Knight Group website" width="400" height="210" loading="lazy" decoding="async">
+                            <img src="./images/showcase/knight-group-showcase.webp" alt="Knight Group growth system" width="400" height="210" loading="lazy" decoding="async">
                         </a>
                         <a href="/case-study-faith-works" class="kl-proof-thumb kl-proof-enter kl-proof-enter--up kl-proof-enter--d4">
-                            <img src="./images/showcase/faith-works-og-card.jpg" alt="Faith Works Outdoor Services website" width="400" height="210" loading="lazy" decoding="async">
+                            <img src="./images/showcase/faith-works-og-card.jpg" alt="Faith Works Outdoor Services growth system" width="400" height="210" loading="lazy" decoding="async">
                         </a>
                     </div>
                     <div class="about-ctas">
@@ -2201,24 +2217,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <a href="#testimonials" class="cta-button secondary">See Local Trust</a>
                     </div>
                     <p class="kl-proof-mobile-handoff">
-                        <a href="#proof" class="solution-link">Website case studies with full breakdowns ↓</a>
+                        <a href="#proof" class="solution-link">Growth case studies with full breakdowns ↓</a>
                     </p>
                 </div>
 
-                <div class="kl-proof-showcase kl-proof-showcase--desktop kl-proof-showcase--uniform" aria-label="Recent Knight Logics website work">
+                <div class="kl-proof-showcase kl-proof-showcase--desktop kl-proof-showcase--uniform" aria-label="Recent Knight Logics business development and website work">
                     <a href="/case-study-roof-monsters" class="kl-proof-card kl-proof-card--video kl-proof-enter kl-proof-enter--left kl-proof-enter--d1" style="--kl-proof-video-poster: url('./images/showcase/roof-monsters-showcase-800.webp');">
                         <video class="kl-proof-card-video" autoplay muted loop playsinline preload="metadata" poster="./images/showcase/roof-monsters-showcase-800.webp" aria-hidden="true" tabindex="-1">
                             <source src="./images/roof-monsters-rebuild.mp4" type="video/mp4">
                         </video>
                         <span class="kl-proof-card-media-overlay" aria-hidden="true"></span>
                         <span class="kl-proof-card-panel kl-proof-card-panel--front">
-                            <span class="kl-proof-card-label">Roofing Growth System</span>
+                            <span class="kl-proof-card-label">Roofing Growth Rebuild</span>
                             <strong>Roof Monsters</strong>
                         </span>
                         <span class="kl-proof-card-panel kl-proof-card-panel--hover">
                             <strong class="kl-proof-card-hover-title">Roof Monsters</strong>
                             <span class="kl-proof-card-hover-box">
-                                <span class="kl-proof-card-hover-detail">Live Tampa Bay roofing site on roofmonsters.co — 79+ pages, estimate-first lead capture, 97 Lighthouse, and local SEO built for storm-season search.</span>
+                                <span class="kl-proof-card-hover-detail">Rebuilt from a WordPress site with weak visibility, errors, and high monthly design cost — now 79+ pages, estimate-first lead capture, 97 Lighthouse, and local SEO for storm-season search.</span>
                                 <span class="kl-proof-card-hover-cta">View case study</span>
                             </span>
                         </span>
@@ -2229,13 +2245,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </video>
                         <span class="kl-proof-card-media-overlay" aria-hidden="true"></span>
                         <span class="kl-proof-card-panel kl-proof-card-panel--front">
-                            <span class="kl-proof-card-label">Website Case Study</span>
+                            <span class="kl-proof-card-label">Ground-Up Build</span>
                             <strong>The Screen Team LLC</strong>
                         </span>
                         <span class="kl-proof-card-panel kl-proof-card-panel--hover">
                             <strong class="kl-proof-card-hover-title">The Screen Team LLC</strong>
                             <span class="kl-proof-card-hover-box">
-                                <span class="kl-proof-card-hover-detail">Pool enclosure growth site with CRM, email automation, social systems, and local directory groundwork behind the public website.</span>
+                                <span class="kl-proof-card-hover-detail">Built from the ground up — brand, website, CRM, email automation, social systems, and local directory groundwork for a new pool enclosure business.</span>
                                 <span class="kl-proof-card-hover-cta">View case study</span>
                             </span>
                         </span>
@@ -2246,13 +2262,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </video>
                         <span class="kl-proof-card-media-overlay" aria-hidden="true"></span>
                         <span class="kl-proof-card-panel kl-proof-card-panel--front">
-                            <span class="kl-proof-card-label">Growth System</span>
+                            <span class="kl-proof-card-label">Ground-Up Build</span>
                             <strong>Knight Group</strong>
                         </span>
                         <span class="kl-proof-card-panel kl-proof-card-panel--hover">
                             <strong class="kl-proof-card-hover-title">Knight Group</strong>
                             <span class="kl-proof-card-hover-box">
-                                <span class="kl-proof-card-hover-detail">Handyman growth site with booking flow, local SEO, CRM follow-up, and the operating systems behind the public website.</span>
+                                <span class="kl-proof-card-hover-detail">Built from the ground up — handyman brand, booking flow, local SEO, CRM follow-up, and the operating systems behind the public website.</span>
                                 <span class="kl-proof-card-hover-cta">View case study</span>
                             </span>
                         </span>
@@ -2260,13 +2276,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <a href="/case-study-faith-works" class="kl-proof-card kl-proof-enter kl-proof-enter--up kl-proof-enter--d4" style="background-image: url('./images/showcase/faith-works-og-card.jpg'); background-size: cover; background-position: center;">
                         <span class="kl-proof-card-media-overlay" aria-hidden="true"></span>
                         <span class="kl-proof-card-panel kl-proof-card-panel--front">
-                            <span class="kl-proof-card-label">Local SEO Network</span>
+                            <span class="kl-proof-card-label">Ground-Up Build</span>
                             <strong>Faith Works</strong>
                         </span>
                         <span class="kl-proof-card-panel kl-proof-card-panel--hover">
                             <strong class="kl-proof-card-hover-title">Faith Works Outdoor Services</strong>
                             <span class="kl-proof-card-hover-box">
-                                <span class="kl-proof-card-hover-detail">80+ page land clearing and forestry mulching SEO network with schema, GBP alignment, and Central Florida service-area depth.</span>
+                                <span class="kl-proof-card-hover-detail">Built from the ground up — 80+ page land clearing and forestry mulching SEO network with schema, GBP alignment, and Central Florida service-area depth.</span>
                                 <span class="kl-proof-card-hover-cta">View case study</span>
                             </span>
                         </span>
@@ -2489,18 +2505,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container">
             <div class="section-header kl-services-enter kl-services-enter--up kl-services-enter--d1">
                 <h2>Services</h2>
-                <p>Business growth systems that combine websites, local visibility, CRM outreach, automation, referral tracking, and custom tools — not just a front door, but the systems behind it.</p>
+                <p>Business development and growth systems that combine websites, local visibility, CRM outreach, automation, referral tracking, and custom tools — not just a front door, but the systems that run the business.</p>
             </div>
 
             <div class="services-positioning-panel">
                 <div class="services-positioning-copy kl-services-enter kl-services-enter--left kl-services-enter--d1">
-                    <span class="services-panel-kicker">Growth Systems, Not Just Websites</span>
+                    <span class="services-panel-kicker">Business Development &amp; Growth Systems</span>
                     <h3>Find, trust, contact — then track, follow up, and prove what works</h3>
-                    <p>Knight Logics builds for small businesses that need more than a brochure site: local SEO and Google Business alignment, lead capture, CRM outreach, ticket and invoice workflows, referral attribution, and dashboards that show what is actually driving work.</p>
+                    <p>Knight Logics develops businesses from the ground up and rebuilds ones that are stuck — local SEO and Google Business alignment, lead capture, CRM outreach, ticket and invoice workflows, referral attribution, and dashboards that show what is actually driving work.</p>
                     <div class="services-panel-points">
                         <div>
                             <strong>What we deliver</strong>
-                            <span>Websites, local visibility, CRM outreach, workflow automation, referral systems, and internal tools tied to real operations.</span>
+                            <span>Business development, websites, local visibility, CRM outreach, workflow automation, referral systems, and internal tools tied to real operations.</span>
                         </div>
                         <div>
                             <strong>How we work</strong>
@@ -2511,11 +2527,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="services-target-card kl-services-enter kl-services-enter--right kl-services-enter--d2">
                     <h4>Typical Engagements</h4>
                     <ul class="services-target-list">
-                        <li>Full business growth systems for local service companies</li>
-                        <li>Website + local SEO + Google Business cleanup</li>
+                        <li>Ground-up business development for new local companies</li>
+                        <li>Full growth systems for service businesses ready to scale</li>
+                        <li>Website + local SEO + Google Business rebuilds</li>
                         <li>CRM outreach and lead-generation workflows</li>
-                        <li>Ticketing, invoicing, and field job tracking</li>
-                        <li>Referral networks with QR attribution and reporting</li>
+                        <li>Ticketing, invoicing, referral networks, and field ops</li>
                         <li>Custom automation and internal tools after launch</li>
                     </ul>
                     <a href="/book-consultation" class="services-panel-link">Book a Free Consultation</a>
@@ -2537,6 +2553,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 <article class="kl-service-card kl-services-enter kl-services-enter--right kl-services-enter--d2">
                     <div class="kl-service-card-icon" aria-hidden="true">
+                        <svg class="fi"><use href="#fi-code"/></svg>
+                    </div>
+                    <div class="kl-service-card-body">
+                        <span class="kl-service-card-kicker">Just getting started</span>
+                        <h3>Starting a New Business</h3>
+                        <p>Ground-up business development — brand, website, Google Business Profile, analytics, and lead capture when you do not know where to begin.</p>
+                        <a href="/starting-a-new-business" class="kl-service-card-link">Start Your Launch Path <svg class="fi" aria-hidden="true"><use href="#fi-arrow-right"/></svg></a>
+                    </div>
+                </article>
+
+                <article class="kl-service-card kl-services-enter kl-services-enter--left kl-services-enter--d3">
+                    <div class="kl-service-card-icon" aria-hidden="true">
                         <svg class="fi"><use href="#fi-bolt"/></svg>
                     </div>
                     <div class="kl-service-card-body">
@@ -2547,7 +2575,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </article>
 
-                <article class="kl-service-card kl-services-enter kl-services-enter--left kl-services-enter--d3">
+                <article class="kl-service-card kl-services-enter kl-services-enter--right kl-services-enter--d4">
                     <div class="kl-service-card-icon" aria-hidden="true">
                         <svg class="fi"><use href="#fi-magnifying-glass-chart"/></svg>
                     </div>
@@ -2559,7 +2587,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </article>
 
-                <article class="kl-service-card kl-services-enter kl-services-enter--right kl-services-enter--d4">
+                <article class="kl-service-card kl-services-enter kl-services-enter--left kl-services-enter--d5">
                     <div class="kl-service-card-icon" aria-hidden="true">
                         <svg class="fi"><use href="#fi-comment-sms"/></svg>
                     </div>
@@ -2571,7 +2599,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </article>
 
-                <article class="kl-service-card kl-services-enter kl-services-enter--left kl-services-enter--d5">
+                <article class="kl-service-card kl-services-enter kl-services-enter--right kl-services-enter--d6">
                     <div class="kl-service-card-icon" aria-hidden="true">
                         <svg class="fi"><use href="#fi-robot"/></svg>
                     </div>
@@ -2583,7 +2611,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </article>
 
-                <article class="kl-service-card kl-services-enter kl-services-enter--right kl-services-enter--d6">
+                <article class="kl-service-card kl-services-enter kl-services-enter--left kl-services-enter--d7">
                     <div class="kl-service-card-icon" aria-hidden="true">
                         <svg class="fi"><use href="#fi-window-maximize"/></svg>
                     </div>
@@ -2635,8 +2663,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <!-- Website proof cards -->
             <div class="services-showcase kl-services-showcase" id="proof">
                 <div class="services-showcase-header kl-services-enter kl-services-enter--up kl-services-enter--d1">
-                    <h3>Website Work You Can Check</h3>
-                    <p>Live sites built for real businesses and product brands  with local SEO, conversion structure, and clean technical foundations baked in from the start.</p>
+                    <h3>Live Sites &amp; Case Studies</h3>
+                    <p>Real businesses and product brands — open the live site, read the case study, and see what each build includes.</p>
                     <nav class="services-showcase-links" aria-label="More website case studies">
                         <a href="/case-study-roof-monsters" class="solution-link">See Roof Monsters</a>
                         <a href="/case-study-faith-works" class="solution-link">See Faith Works</a>
@@ -2752,7 +2780,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </span>
                         <span class="services-showcase-card__panel services-showcase-card__panel--hover">
                             <strong class="services-showcase-card__title">Farrell Electric</strong>
-                            <span class="services-showcase-card__detail">Preview Launch demo — compact multi-page electrician site with click-to-call conversion and basic SEO, useful as a starter-tier proof example.</span>
+                            <span class="services-showcase-card__detail">Demo Preview on GitHub Pages — compact electrician demo with click-to-call conversion, built as a portfolio sample before a paid launch.</span>
                             <span class="services-showcase-card__cta">View case study</span>
                         </span>
                     </a>
@@ -2824,7 +2852,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
 
-            <div class="services-cta kl-services-enter kl-services-enter--up kl-services-enter--d2">
+            <div class="services-cta kl-services-enter kl-services-enter--left kl-services-enter--d2" data-kl-services-cta>
                 <p>Need a website rebuild, stronger local visibility, or a custom system behind the scenes? Start with the business problem and Knight Logics can scope the right fix.</p>
                 <div class="services-cta-row">
                     <a href="/book-consultation" class="cta-button primary">Start with a Free Consultation</a>
@@ -2840,13 +2868,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="starter-packages-shell">
                 <div class="starter-packages-intro">
                     <span class="starter-packages-kicker">Pricing</span>
-                    <h2>Start at $200. Scale by scope — not page count alone.</h2>
-                    <p>Custom-coded websites for local businesses — from a low-risk demo preview to a full local SEO system with premium design, motion, competitor research, and GBP alignment.</p>
+                    <h2>Start at $200. Scale by page depth and scope.</h2>
+                    <p>One-time website tiers: Demo → Preview → Local → Authority → Max. Growth System adds monthly ops. Google Business Profile is optional and sold separately. Storefront packages live on the <a href="/pricing#ecommerce">pricing page</a>.</p>
                 </div>
 
                 <div class="starter-packages-feedback" id="starterPackagesFeedback" aria-live="polite"></div>
 
-                <div class="starter-packages-grid starter-packages-grid--5">
+                <div class="starter-packages-grid starter-packages-grid--6">
 
                     <!-- Demo Preview -->
                     <article class="starter-package-card">
@@ -2859,154 +2887,214 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <details class="starter-package-details">
                                 <summary class="starter-package-details-summary">Overview</summary>
                                 <div class="starter-package-details-body">
-                                    <p class="starter-package-desc">One custom-coded demo page to validate layout, offer clarity, and conversion direction before you invest in a full build.</p>
+                                    <p class="starter-package-desc">A custom-coded demo on a GitHub Pages URL — no custom domain, intentionally not indexed — so you can validate layout, offer, and conversion before a full build.</p>
                                 </div>
                             </details>
                             <details class="starter-package-details">
                                 <summary class="starter-package-details-summary">What's included</summary>
                                 <div class="starter-package-details-body">
                                     <ul class="starter-package-points">
-                                        <li>Single-page demo on a GitHub Pages URL</li>
+                                        <li>~1–5 pages on a GitHub Pages URL (no custom domain)</li>
+                                        <li>Built from your photos/copy — often FB or phone images</li>
                                         <li>Hero, services snapshot, and contact CTA</li>
-                                        <li>Fast turnaround for early sales conversations</li>
-                                        <li>Credit applies toward a full launch package</li>
+                                        <li>Intentional noindex — not submitted for search</li>
+                                        <li>Credit applies toward a full site package</li>
                                     </ul>
+                                </div>
+                            </details>
+                            <details class="starter-package-details">
+                                <summary class="starter-package-details-summary">Example</summary>
+                                <div class="starter-package-details-body">
+                                    <p class="starter-package-card-note"><strong>Example:</strong> <a href="/case-study-farrell-electric">Farrell Electric</a> — FB photos → GitHub demo, no domain, not for indexing.</p>
                                 </div>
                             </details>
                         </div>
                         <button type="button" class="cta-button primary starter-package-cta" data-package-key="website-demo-preview" aria-label="Start demo preview">Demo preview</button>
+                        <a href="/package-demo-preview" class="starter-package-details-link">See details &amp; example →</a>
                     </article>
 
-                    <!-- Starter Preview -->
+                    <!-- Preview Launch -->
                     <article class="starter-package-card">
                         <span class="starter-package-tag">Entry Point</span>
                         <div class="starter-package-head">
-                            <h3>Preview Launch Site</h3>
-                            <p class="starter-package-price"><span class="starter-package-price-prefix">from</span><span class="starter-package-price-value">$500</span></p>
+                            <h3>Preview Launch</h3>
+                            <p class="starter-package-price"><span class="starter-package-price-prefix">project</span><span class="starter-package-price-value">$750</span></p>
                         </div>
                         <div class="starter-package-accordions">
                             <details class="starter-package-details">
                                 <summary class="starter-package-details-summary">Overview</summary>
                                 <div class="starter-package-details-body">
-                                    <p class="starter-package-desc">A professional multi-page preview to show customers fast before domain, search setup, or a larger live package.</p>
+                                    <p class="starter-package-desc">Professional multi-page preview — up to <strong>~20 pages</strong> — to show customers before a full Local Site.</p>
                                 </div>
                             </details>
                             <details class="starter-package-details">
                                 <summary class="starter-package-details-summary">What's included</summary>
                                 <div class="starter-package-details-body">
                                     <ul class="starter-package-points">
-                                        <li>2–4 page preview structure</li>
-                                        <li>Hosted on a GitHub Pages URL</li>
-                                        <li>Good for proof-of-concept and early sales</li>
-                                        <li>1 revision round</li>
+                                        <li>Up to ~20 pages by scope</li>
+                                        <li>Hosted preview URL for proof-of-concept</li>
+                                        <li>Stronger depth than a $200 demo</li>
+                                        <li>1 revision round + credit toward Local / Authority / Max</li>
                                     </ul>
+                                </div>
+                            </details>
+                            <details class="starter-package-details">
+                                <summary class="starter-package-details-summary">Example</summary>
+                                <div class="starter-package-details-body">
+                                    <p class="starter-package-card-note"><strong>Demo:</strong> <a href="/demos/preview-launch/">Harbor Line Painting</a> — fictional Preview Launch sample (noindex).</p>
                                 </div>
                             </details>
                         </div>
                         <button type="button" class="cta-button primary starter-package-cta" data-package-key="website-preview-launch">Choose options</button>
+                        <a href="/package-preview-launch" class="starter-package-details-link">See details &amp; example →</a>
                     </article>
 
-                    <!-- Local Launch  Featured -->
+                    <!-- Local Site Featured -->
                     <article class="starter-package-card starter-package-card--featured">
                         <span class="starter-package-tag">Most Popular</span>
                         <div class="starter-package-head">
-                            <h3>Local Launch Site</h3>
-                            <p class="starter-package-price"><span class="starter-package-price-prefix">from</span><span class="starter-package-price-value">$700</span></p>
+                            <h3>Local Site</h3>
+                            <p class="starter-package-price"><span class="starter-package-price-prefix">project</span><span class="starter-package-price-value">$1,200</span></p>
                         </div>
                         <div class="starter-package-accordions">
                             <details class="starter-package-details">
                                 <summary class="starter-package-details-summary">Overview</summary>
                                 <div class="starter-package-details-body">
-                                    <p class="starter-package-desc">Premium local builds focused on design quality, motion, SEO depth, and GBP alignment — not just stacking pages.</p>
+                                    <p class="starter-package-desc">Domain-backed local website with search foundation — up to <strong>35 pages</strong>. Choose your GBP status at checkout (Setup is optional here).</p>
                                 </div>
                             </details>
                             <details class="starter-package-details">
                                 <summary class="starter-package-details-summary">What's included</summary>
                                 <div class="starter-package-details-body">
                                     <ul class="starter-package-points">
-                                        <li>Up to 10 pages with stronger design + scroll polish</li>
-                                        <li>Competitor SEO review and backlink direction</li>
-                                        <li>Dynamic local SEO structure + GBP alignment</li>
-                                        <li>Search Console, schema, analytics, and launch QA</li>
-                                        <li>Configurator routes to the right flat tier before checkout</li>
+                                        <li>Domain, DNS, SSL, launch QA</li>
+                                        <li>Up to 35 pages — services, areas, gallery, FAQ, contact</li>
+                                        <li>GSC, schema, analytics</li>
+                                        <li>2 revision rounds + 14 days complimentary minor fixes</li>
+                                        <li>GBP optional — Setup / optimize / maintenance chosen in intake</li>
                                     </ul>
                                 </div>
                             </details>
                             <details class="starter-package-details">
-                                <summary class="starter-package-details-summary">Typical investment</summary>
+                                <summary class="starter-package-details-summary">Example</summary>
                                 <div class="starter-package-details-body">
-                                    <p class="starter-package-card-note"><strong>Full local launch:</strong> Most businesses land at <strong>$1,997</strong> once search depth and page scope are confirmed.</p>
+                                    <p class="starter-package-card-note"><strong>Client:</strong> <a href="/case-study-jns">JNS Construction</a> — <a href="https://www.jnsbuilds.com/" target="_blank" rel="noopener noreferrer">jnsbuilds.com</a></p>
                                 </div>
                             </details>
                         </div>
-                        <button type="button" class="cta-button primary starter-package-cta" data-package-key="website-local-seo-starter" aria-label="Build your package">Build package</button>
+                        <button type="button" class="cta-button primary starter-package-cta" data-package-key="website-local-seo-starter" aria-label="Build your Local Site">Build Local Site</button>
+                        <a href="/package-local-launch" class="starter-package-details-link">See details &amp; example →</a>
                     </article>
 
-                    <!-- E-Commerce -->
+                    <!-- Authority Site -->
                     <article class="starter-package-card">
-                        <span class="starter-package-tag">E-Commerce</span>
+                        <span class="starter-package-tag">Multi-Area</span>
                         <div class="starter-package-head">
-                            <h3>Storefront Packages</h3>
-                            <p class="starter-package-price"><span class="starter-package-price-prefix">from</span><span class="starter-package-price-value">$750</span></p>
+                            <h3>Authority Site</h3>
+                            <p class="starter-package-price"><span class="starter-package-price-prefix">project</span><span class="starter-package-price-value">$2,000</span></p>
                         </div>
                         <div class="starter-package-accordions">
                             <details class="starter-package-details">
                                 <summary class="starter-package-details-summary">Overview</summary>
                                 <div class="starter-package-details-body">
-                                    <p class="starter-package-desc">Pick the selling flow you need first. The selector will separate a preview catalog, payment-link store, and full cart storefront before checkout.</p>
+                                    <p class="starter-package-desc"><strong>35–60 pages</strong> for multi-service / multi-area depth. Includes GBP setup or optimization — maps presence is part of local authority, not an afterthought.</p>
                                 </div>
                             </details>
                             <details class="starter-package-details">
-                                <summary class="starter-package-details-summary">Package tiers</summary>
+                                <summary class="starter-package-details-summary">What's included</summary>
                                 <div class="starter-package-details-body">
                                     <ul class="starter-package-points">
-                                        <li>Storefront Preview  $750</li>
-                                        <li>Payment-Link Store  $1,200</li>
-                                        <li>E-Commerce Launch  $2,497</li>
-                                        <li>E-Commerce Launch Plus  $3,497</li>
-                                        <li>Cart, checkout, and automation only appear when the package supports them</li>
+                                        <li>35–60 custom-coded pages</li>
+                                        <li>Service + city/area structure, gallery, FAQ, estimate paths</li>
+                                        <li>Advanced schema + conversion tracking</li>
+                                        <li>GBP setup or optimization pass included (choose status in intake)</li>
+                                        <li>2 revision rounds + 14 days complimentary minor fixes</li>
                                     </ul>
                                 </div>
                             </details>
                             <details class="starter-package-details">
-                                <summary class="starter-package-details-summary">Live example</summary>
+                                <summary class="starter-package-details-summary">GBP &amp; next steps</summary>
                                 <div class="starter-package-details-body">
-                                    <p class="starter-package-card-note"><strong>Example:</strong> <a href="https://momsresintables.com" target="_blank" rel="noopener noreferrer">Mom's Resin Tables</a>  custom product catalog, Stripe links, product pages.</p>
+                                    <p class="starter-package-card-note">Tell us if you already have a GBP, need one built, need it cleaned up, or want ongoing <a href="/pricing#gbp-optional">GBP Maintenance</a> ($147/mo). Need 60–100+ pages? <a href="/package-authority-network">Authority Network</a> from $6,500.</p>
                                 </div>
                             </details>
                         </div>
-                        <button type="button" class="cta-button primary starter-package-cta" data-package-key="ecommerce-preview-catalog" aria-label="Choose store options">Store options</button>
+                        <button type="button" class="cta-button primary starter-package-cta" data-package-key="website-local-launch-plus">Build Authority</button>
+                        <a href="/package-authority-site" class="starter-package-details-link">See details →</a>
+                    </article>
+
+                    <!-- Max Authority -->
+                    <article class="starter-package-card">
+                        <span class="starter-package-tag">Deep SEO</span>
+                        <div class="starter-package-head">
+                            <h3>Max Authority</h3>
+                            <p class="starter-package-price"><span class="starter-package-price-prefix">project</span><span class="starter-package-price-value">$4,500</span></p>
+                        </div>
+                        <div class="starter-package-accordions">
+                            <details class="starter-package-details">
+                                <summary class="starter-package-details-summary">Overview</summary>
+                                <div class="starter-package-details-body">
+                                    <p class="starter-package-desc"><strong>Up to 40 pages</strong> — PROJECT build with audit-grade SEO / GEO / AEO depth. GBP setup or optimization included; ongoing ops is <a href="/pricing#growth">Growth from $397/mo</a>.</p>
+                                </div>
+                            </details>
+                            <details class="starter-package-details">
+                                <summary class="starter-package-details-summary">What's included</summary>
+                                <div class="starter-package-details-body">
+                                    <ul class="starter-package-points">
+                                        <li>Up to 40 custom-coded pages with service + location architecture</li>
+                                        <li>Technical SEO / GEO / AEO depth, schema, GSC, GA4</li>
+                                        <li>GBP setup or optimization pass included (choose status in intake)</li>
+                                        <li>2 revision rounds + 14 days complimentary minor fixes</li>
+                                        <li>One-time PROJECT — not monthly CRM or ops</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="starter-package-details">
+                                <summary class="starter-package-details-summary">Vs Growth System</summary>
+                                <div class="starter-package-details-body">
+                                    <p class="starter-package-card-note">Max Authority = deep PROJECT website (up to 40 pages + GBP setup/optimize). Need 60–100+? <a href="/package-authority-network">Authority Network</a>. Growth System = site depth <em>plus</em> CRM, follow-up, and monthly support from $397/mo.</p>
+                                </div>
+                            </details>
+                        </div>
+                        <button type="button" class="cta-button primary starter-package-cta" data-package-key="website-local-launch-max">Build Max Authority</button>
+                        <a href="/package-max-authority" class="starter-package-details-link">See details →</a>
                     </article>
 
                     <!-- Growth System -->
                     <article class="starter-package-card">
                         <span class="starter-package-tag">Growth System</span>
                         <div class="starter-package-head">
-                            <h3>Growth &amp; Automation System</h3>
-                            <p class="starter-package-price"><span class="starter-package-price-prefix">from</span><span class="starter-package-price-value">$3,500 + $397/mo</span></p>
+                            <h3>Growth &amp; Automation</h3>
+                            <p class="starter-package-price"><span class="starter-package-price-prefix">from</span><span class="starter-package-price-value">$5,000 + $397/mo</span></p>
                         </div>
                         <div class="starter-package-accordions">
                             <details class="starter-package-details">
                                 <summary class="starter-package-details-summary">Overview</summary>
                                 <div class="starter-package-details-body">
-                                    <p class="starter-package-desc">The system behind the site: lead tracking, CRM, automated follow-up, reporting, and business workflow automation with monthly support after setup.</p>
+                                    <p class="starter-package-desc">The system behind the site: 70+ pages with service + city coverage, lead tracking, CRM, follow-up, reporting, and workflow automation with monthly support. Final setup and monthly rate depend on systems opted in, Website Audit depth (external → limited → full-access → maintained), and whether you need invoicing.</p>
                                 </div>
                             </details>
                             <details class="starter-package-details">
                                 <summary class="starter-package-details-summary">What's included</summary>
                                 <div class="starter-package-details-body">
                                     <ul class="starter-package-points">
-                                        <li>Website + domain + full Google setup</li>
+                                        <li>Website + domain + Google setup as scoped</li>
                                         <li>Lead tracker and source attribution</li>
                                         <li>CRM / job records system</li>
-                                        <li>Automated email follow-up sequences</li>
-                                        <li>Review request workflow</li>
+                                        <li>Automated email follow-up + review workflows</li>
                                         <li>Reporting dashboard + monthly upkeep</li>
                                     </ul>
                                 </div>
                             </details>
+                            <details class="starter-package-details">
+                                <summary class="starter-package-details-summary">Examples</summary>
+                                <div class="starter-package-details-body">
+                                    <p class="starter-package-card-note"><strong>Examples:</strong> <a href="/case-study-knight-group">Knight Group</a>, <a href="/case-study-screen-team">Screen Team</a>, <a href="/case-study-roof-monsters">Roof Monsters</a> — deep sites plus ops.</p>
+                                </div>
+                            </details>
                         </div>
                         <button type="button" class="cta-button primary starter-package-cta" data-package-key="ops-growth-system-starter" aria-label="Start growth checkout">Growth checkout</button>
+                        <a href="/package-growth-system" class="starter-package-details-link">See details &amp; example →</a>
                     </article>
 
                 </div><!-- /starter-packages-grid -->
@@ -3119,24 +3207,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <h3 class="starter-package-configurator-title" id="starterPackageConfiguratorTitle">Choose the structure first</h3>
                                 <p class="starter-package-configurator-copy" id="starterPackageConfiguratorCopy">Pick the scope and this modal will match it to the right flat package before checkout.</p>
                             </div>
-                            <div class="starter-package-configurator-price" id="starterPackageConfiguratorPrice">$1,997</div>
+                            <div class="starter-package-configurator-price" id="starterPackageConfiguratorPrice">$1,200</div>
                         </div>
                         <p class="starter-package-configurator-meta" id="starterPackageConfiguratorMeta">Flat packages check out through Stripe right now. Larger custom storefront builds can still end up as Snipcart-scoped work once the project moves past flat-package scope.</p>
                     </div>
 
-                    <div class="starter-package-intake-grid">
+                    <div class="starter-package-intake-grid" id="starterPackageWebsiteScopeFields">
                         <div class="form-group">
-                            <label for="starterPackagePageCountExpectation">How much structure do you expect?</label>
+                            <label for="starterPackagePageCountExpectation" id="starterPackagePageCountLabel">How much structure do you expect?</label>
                             <select id="starterPackagePageCountExpectation" name="pageCountExpectation" required>
                                 <option value="">Choose one...</option>
-                                <option value="small">Small  up to 3 pages</option>
-                                <option value="medium">Medium  up to 10 pages</option>
-                                <option value="large">Large  up to 20 pages</option>
-                                <option value="enterprise">Enterprise  20+ pages</option>
+                                <option value="small">Demo / tiny — up to ~5 pages</option>
+                                <option value="preview">Preview Launch — up to ~20 pages</option>
+                                <option value="local">Local Site — up to ~35 pages</option>
+                                <option value="authority">Authority Site — 35–60 pages</option>
+                                <option value="max">Max Authority — up to 40 pages (PROJECT)</option>
+                                <option value="network">Authority Network — 60–100+ pages (SCOPED)</option>
+                                <option value="growth">Growth System site — 70+ pages minimum</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="starterPackageSeoExpansionNeed">How much search/local SEO depth do you need?</label>
+                            <label for="starterPackageSeoExpansionNeed" id="starterPackageSeoLabel">How much search / local SEO page depth do you need?</label>
                             <select id="starterPackageSeoExpansionNeed" name="seoExpansionNeed" required>
                                 <option value="">Choose one...</option>
                                 <option value="no">None beyond a clean launch</option>
@@ -3146,19 +3237,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </select>
                         </div>
                         <div class="form-group starter-package-intake-span-2">
-                            <label for="starterPackageSellingOnlineNeed">What selling flow do you need?</label>
+                            <label for="starterPackageSellingOnlineNeed" id="starterPackageSellingLabel">What selling, payment, or invoicing flow do you need?</label>
                             <select id="starterPackageSellingOnlineNeed" name="sellingOnlineNeed" required>
                                 <option value="">Choose one...</option>
-                                <option value="no">No online selling</option>
+                                <option value="no">No online selling or invoicing</option>
                                 <option value="later">Maybe later, but not now</option>
                                 <option value="stripe-links">Simple payment links or buy buttons</option>
+                                <option value="invoicing">Job / estimate invoicing system (not a storefront)</option>
                                 <option value="cart-store">A real cart and storefront checkout</option>
                             </select>
+                        </div>
+                        <div class="form-group starter-package-intake-span-2" id="starterPackageGbpStatusGroup">
+                            <label for="starterPackageGbpStatus">Google Business Profile status</label>
+                            <select id="starterPackageGbpStatus" name="gbpStatus" required>
+                                <option value="">Choose one...</option>
+                                <option value="have-good">Already have a solid GBP — light website alignment only</option>
+                                <option value="need-optimize">Have a GBP — needs cleanup / optimization</option>
+                                <option value="need-setup">Need a new GBP or full setup</option>
+                                <option value="want-maintenance">Need setup/optimize plus ongoing GBP Maintenance</option>
+                                <option value="skip">Skip GBP for now</option>
+                            </select>
+                            <p class="starter-package-intake-helper" id="starterPackageGbpStatusHelp" style="margin-top:0.45rem;">Authority and Max include a GBP setup or optimization pass. Local can add Setup ($497) separately. Maintenance is always optional ($147/mo).</p>
                         </div>
                         <div class="form-group starter-package-intake-span-2">
                             <label for="starterPackageSpecialFeatures">Any special features or caveats?</label>
                             <textarea id="starterPackageSpecialFeatures" name="specialFeatures" placeholder="Examples: booking, memberships, account logins, advanced quote flow, dashboard, inventory sync, calculator, file uploads, or any caveats that might change scope." maxlength="1000"></textarea>
                         </div>
+                    </div>
+
+                    <div class="starter-package-intake-grid" id="starterPackageGrowthScopeFields" hidden>
+                        <div class="form-group">
+                            <label for="starterPackageSystemsScope">Which systems are you opting into?</label>
+                            <select id="starterPackageSystemsScope" name="systemsScope">
+                                <option value="">Choose one...</option>
+                                <option value="core">Core — lead tracker + reporting</option>
+                                <option value="site-ops">Site + ops — website upgrades, CRM, reviews</option>
+                                <option value="full-stack">Full stack — site, search, GBP, CRM, workflows</option>
+                                <option value="custom">Custom — multi-brand CRM, routing, or custom automation</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="starterPackageMaintenanceDepth">Monthly care level (pairs with audit depth above)</label>
+                            <select id="starterPackageMaintenanceDepth" name="maintenanceDepth">
+                                <option value="">Choose one...</option>
+                                <option value="standard">Standard care — $397/mo</option>
+                                <option value="pro">Pro care — $697/mo</option>
+                                <option value="management">Growth Management — $1,000+/mo</option>
+                            </select>
+                        </div>
+                        <div class="form-group starter-package-intake-span-2">
+                            <p class="starter-package-intake-helper" style="margin:0;">Growth sites are 70+ pages with service + city coverage included. Final price moves with systems opted in, Website Audit depth (external → limited → full-access → maintained), and monthly care.</p>
+                        </div>
+                    </div>
+
+                    <div class="starter-package-intake-grid">
                         <div class="form-group">
                             <label for="starterPackageBusinessName">Business / Organization</label>
                             <input type="text" id="starterPackageBusinessName" name="businessName" placeholder="Your business name" maxlength="120" required>
@@ -3194,7 +3326,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
 
-                    <p class="starter-package-intake-helper">This selector is meant to set the package first and contact details second. If the options point to a bigger scoped build, the modal will stop checkout and tell you to scope it first.</p>
+                    <p class="starter-package-intake-helper">Structure, SEO/audit depth, and selling/invoicing set the package first; contact details come second. If the options point to a bigger scoped build, the modal will move you to the right package or ask you to scope it first.</p>
 
                     <div class="starter-package-intake-actions">
                         <button type="button" class="cta-button secondary" id="starterPackageIntakeCancel">Cancel</button>
@@ -3405,7 +3537,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <li>Free consultation with no obligation to buy</li>
                             <li>Hand-coded builds you own — no builder lock-in</li>
                             <li>Clear flat pricing before checkout when scope fits a package</li>
-                            <li>Local SEO, schema, and GBP alignment when the project needs it</li>
+                            <li>Local SEO, schema, and search foundation when the project needs it</li>
                             <li>Remote across the United States &bull; on-site Tampa Bay when useful</li>
                         </ul>
 
@@ -3484,17 +3616,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <svg viewBox="0 0 320 512" width="32" height="32" aria-hidden="true" focusable="false"><path fill="#1877F2" d="M279.14 288l14.22-92.66h-88.91V127.77c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
                         <span>Facebook</span>
                     </a>
+                    <a href="https://x.com/KnightLogics" target="_blank" rel="me noopener noreferrer" class="contact-social-chip">
+                        <svg viewBox="0 0 512 512" width="28" height="28" aria-hidden="true" focusable="false"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345.9L238.5 312.8 118.8 464H48.2l164.9-188.5L48.2 48h143.3l96.4 127.6L389.2 48zm-24.1 374.8h39.1L151.1 88h-42l273.1 334.8z"/></svg>
+                        <span>X</span>
+                    </a>
+                    <a href="https://nextdoor.com/page/knight-logics-safety-harbor-fl/" target="_blank" rel="me noopener noreferrer" class="contact-social-chip">
+                        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false"><path fill="#00B246" d="M12 3 2 12h3v8h6v-5h2v5h6v-8h3L12 3z"/></svg>
+                        <span>Nextdoor</span>
+                    </a>
                     <a href="https://github.com/Knight-Logics" target="_blank" rel="noopener noreferrer" class="contact-social-chip">
-                        <img src="./images/GithubIcon.webp" alt="GitHub" width="32" height="32" loading="lazy">
+                        <img src="./images/GithubIcon.webp" alt="" width="32" height="32" loading="lazy">
                         <span>GitHub</span>
                     </a>
-                    <a href="https://www.linkedin.com/company/knight-logics/" target="_blank" rel="noopener noreferrer" class="contact-social-chip">
+                    <a href="https://www.linkedin.com/company/knight-logics/" target="_blank" rel="me noopener noreferrer" class="contact-social-chip">
                         <img src="./images/linkedin-icon.webp" alt="" width="32" height="32" loading="lazy">
                         <span>LinkedIn</span>
-                    </a>
-                    <a href="https://www.upwork.com/freelancers/~012b2336fd2530d7ab" target="_blank" rel="noopener noreferrer" class="contact-social-chip">
-                        <img src="./images/upwork-icon.svg" alt="" width="32" height="32" loading="lazy">
-                        <span>Upwork</span>
                     </a>
                 </div>
             </div>
@@ -3511,7 +3647,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; max-width: 1000px; margin-left: auto; margin-right: auto;">
                 <article style="background: rgba(255,255,255,0.04); border: 1px solid rgba(100,255,218,0.15); border-radius: 16px; padding: 28px;">
                     <h3 style="font-size: 1rem; font-weight: 600; color: #64ffda; margin-bottom: 10px;">How much does a small business website cost?</h3>
-                    <p style="font-size: 0.88rem; color: rgba(255,255,255,0.78); line-height: 1.65; margin: 0;">Scope drives price, but most brochure and lead-generation sites land in the mid four figures. No recurring page-builder fees  every site is hand-coded and owned outright. Contact us for a free scoped quote.</p>
+                    <p style="font-size: 0.88rem; color: rgba(255,255,255,0.78); line-height: 1.65; margin: 0;">Demo $200, Preview $750 (up to ~20 pages), Local Site $1,200 (up to 35), Authority $2,000 (35–60), Max Authority $4,500 (up to 40 PROJECT), Authority Network from $6,500 (60–100+ SCOPED). GBP is separate. Every site is hand-coded and owned outright — see <a href="#starter-packages" style="color:#64ffda;">starter packages</a>.</p>
                 </article>
                 <article style="background: rgba(255,255,255,0.04); border: 1px solid rgba(100,255,218,0.15); border-radius: 16px; padding: 28px;">
                     <h3 style="font-size: 1rem; font-weight: 600; color: #64ffda; margin-bottom: 10px;">Do you offer local SEO services in Tampa Bay?</h3>
@@ -3677,17 +3813,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 },
                 'website-preview-launch': {
                     name: 'Preview Launch Site',
-                    price: '$500',
-                    family: 'website'
-                },
-                'website-live-essential': {
-                    name: 'Essential Launch Site',
-                    price: '$700',
-                    family: 'website'
-                },
-                'website-live-plus': {
-                    name: 'Essential Launch Plus',
-                    price: '$850',
+                    price: '$750',
                     family: 'website'
                 },
                 'website-search-foundation': {
@@ -3701,19 +3827,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     family: 'website'
                 },
                 'website-local-seo-starter': {
-                    name: 'Local Launch Site',
-                    price: '$1,997',
-                    family: 'website'
+                    name: 'Local Site',
+                    price: '$1,200',
+                    family: 'website',
+                    gbpMode: 'optional'
                 },
                 'website-local-launch-plus': {
-                    name: 'Local Launch Plus',
-                    price: '$2,997',
-                    family: 'website'
+                    name: 'Authority Site',
+                    price: '$2,000',
+                    family: 'website',
+                    gbpMode: 'included'
                 },
                 'website-local-launch-max': {
-                    name: 'Local Launch Max',
+                    name: 'Max Authority Site',
                     price: '$4,500',
-                    family: 'website'
+                    family: 'website',
+                    gbpMode: 'included'
+                },
+                'website-authority-network': {
+                    name: 'Authority Network',
+                    price: 'from $6,500',
+                    family: 'website',
+                    gbpMode: 'included'
+                },
+                'gbp-setup': {
+                    name: 'GBP Setup',
+                    price: '$497',
+                    family: 'seo'
+                },
+                'gbp-maintenance': {
+                    name: 'GBP Maintenance',
+                    price: '$147/mo',
+                    family: 'seo'
                 },
                 'ecommerce-preview-catalog': {
                     name: 'Storefront Preview',
@@ -3727,7 +3872,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 },
                 'ecommerce-launch': {
                     name: 'E-Commerce Launch',
-                    price: '$2,497',
+                    price: '$2,997',
                     family: 'ecommerce'
                 },
                 'ecommerce-launch-plus': {
@@ -3746,8 +3891,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     family: 'ecommerce'
                 },
                 'gbp-optimization': {
-                    name: 'Google Business Profile Sprint',
-                    price: '$297',
+                    name: 'GBP Setup',
+                    price: '$497',
                     family: 'seo'
                 },
                 'monthly-local-seo-starter': {
@@ -3792,60 +3937,131 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 },
                 'ops-growth-system-starter': {
                     name: 'Growth System Starter',
-                    price: '$3,500 setup + $397/mo',
-                    family: 'ops'
+                    price: 'from $5,000 setup + $397/mo',
+                    family: 'ops',
+                    growthScoped: true
                 },
                 'ops-full-growth-system': {
                     name: 'Full Growth System',
                     price: '$5,000 setup + $697/mo',
-                    family: 'ops'
+                    family: 'ops',
+                    growthScoped: true
                 },
                 'ops-custom-automation-system': {
-                    name: 'Custom Automation System',
+                    name: 'Custom / Field Ops System',
                     price: '$10,000 setup + $1,000/mo',
-                    family: 'ops'
+                    family: 'ops',
+                    growthScoped: true
+                },
+                'ops-growth-systems-only-starter': {
+                    name: 'Growth Systems-Only Starter',
+                    price: 'from $2,500 setup + $397/mo',
+                    family: 'ops',
+                    growthScoped: true
+                },
+                'ops-growth-systems-only-full': {
+                    name: 'Growth Systems-Only Full',
+                    price: 'from $3,500 setup + $697/mo',
+                    family: 'ops',
+                    growthScoped: true
+                },
+                'ops-growth-systems-only-field': {
+                    name: 'Field Ops Systems-Only',
+                    price: 'from $8,000 setup + $1,000/mo',
+                    family: 'ops',
+                    growthScoped: true
                 }
             };
             const packagePresets = {
                 'website-demo-preview': {
                     pageCountExpectation: 'small',
                     seoExpansionNeed: 'no',
-                    sellingOnlineNeed: 'no'
+                    sellingOnlineNeed: 'no',
+                    gbpStatus: 'skip'
                 },
                 'website-preview-launch': {
-                    pageCountExpectation: 'small',
+                    pageCountExpectation: 'preview',
                     seoExpansionNeed: 'no',
-                    sellingOnlineNeed: 'no'
+                    sellingOnlineNeed: 'no',
+                    gbpStatus: 'skip'
+                },
+                'website-search-foundation': {
+                    pageCountExpectation: 'local',
+                    seoExpansionNeed: 'services',
+                    sellingOnlineNeed: 'no',
+                    gbpStatus: 'skip'
                 },
                 'website-local-seo-starter': {
-                    pageCountExpectation: 'medium',
+                    pageCountExpectation: 'local',
                     seoExpansionNeed: 'services',
-                    sellingOnlineNeed: 'no'
+                    sellingOnlineNeed: 'no',
+                    gbpStatus: 'skip'
                 },
                 'ecommerce-preview-catalog': {
                     pageCountExpectation: 'small',
                     seoExpansionNeed: 'no',
-                    sellingOnlineNeed: 'stripe-links'
+                    sellingOnlineNeed: 'stripe-links',
+                    gbpStatus: 'skip'
+                },
+                'ecommerce-payment-links': {
+                    pageCountExpectation: 'preview',
+                    seoExpansionNeed: 'no',
+                    sellingOnlineNeed: 'stripe-links',
+                    gbpStatus: 'skip'
+                },
+                'ecommerce-launch': {
+                    pageCountExpectation: 'local',
+                    seoExpansionNeed: 'no',
+                    sellingOnlineNeed: 'cart-store',
+                    gbpStatus: 'skip'
                 },
                 'website-local-launch-plus': {
-                    pageCountExpectation: 'large',
+                    pageCountExpectation: 'authority',
                     seoExpansionNeed: 'both',
-                    sellingOnlineNeed: 'no'
+                    sellingOnlineNeed: 'no',
+                    gbpStatus: 'need-optimize'
                 },
                 'website-local-launch-max': {
-                    pageCountExpectation: 'enterprise',
+                    pageCountExpectation: 'max',
                     seoExpansionNeed: 'both',
-                    sellingOnlineNeed: 'no'
+                    sellingOnlineNeed: 'no',
+                    gbpStatus: 'need-setup'
+                },
+                'website-authority-network': {
+                    pageCountExpectation: 'network',
+                    seoExpansionNeed: 'both',
+                    sellingOnlineNeed: 'no',
+                    gbpStatus: 'need-setup'
+                },
+                'ops-growth-system-starter': {
+                    pageCountExpectation: 'growth',
+                    seoExpansionNeed: 'audit-limited',
+                    sellingOnlineNeed: 'invoicing',
+                    gbpStatus: 'need-optimize'
+                },
+                'ops-full-growth-system': {
+                    pageCountExpectation: 'growth',
+                    seoExpansionNeed: 'audit-full',
+                    sellingOnlineNeed: 'invoicing',
+                    gbpStatus: 'need-setup'
+                },
+                'ops-custom-automation-system': {
+                    pageCountExpectation: 'growth',
+                    seoExpansionNeed: 'audit-maintained',
+                    sellingOnlineNeed: 'invoicing',
+                    gbpStatus: 'want-maintenance'
                 },
                 'ecommerce-growth-store': {
-                    pageCountExpectation: 'large',
+                    pageCountExpectation: 'authority',
                     seoExpansionNeed: 'no',
-                    sellingOnlineNeed: 'cart-store'
+                    sellingOnlineNeed: 'cart-store',
+                    gbpStatus: 'skip'
                 },
                 'ecommerce-advanced-system': {
-                    pageCountExpectation: 'enterprise',
+                    pageCountExpectation: 'max',
                     seoExpansionNeed: 'no',
-                    sellingOnlineNeed: 'cart-store'
+                    sellingOnlineNeed: 'cart-store',
+                    gbpStatus: 'skip'
                 }
             };
             const productionCheckoutApiBase = 'https://knightlogics.com';
@@ -3877,6 +4093,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             const seoExpansionInput = document.getElementById('starterPackageSeoExpansionNeed');
             const sellingOnlineInput = document.getElementById('starterPackageSellingOnlineNeed');
             const specialFeaturesInput = document.getElementById('starterPackageSpecialFeatures');
+            const gbpStatusInput = document.getElementById('starterPackageGbpStatus');
+            const gbpStatusGroup = document.getElementById('starterPackageGbpStatusGroup');
+            const gbpStatusHelp = document.getElementById('starterPackageGbpStatusHelp');
+            const pageCountLabel = document.getElementById('starterPackagePageCountLabel');
+            const seoLabel = document.getElementById('starterPackageSeoLabel');
+            const sellingLabel = document.getElementById('starterPackageSellingLabel');
+            const websiteScopeFields = document.getElementById('starterPackageWebsiteScopeFields');
+            const growthScopeFields = document.getElementById('starterPackageGrowthScopeFields');
+            const systemsScopeInput = document.getElementById('starterPackageSystemsScope');
+            const maintenanceDepthInput = document.getElementById('starterPackageMaintenanceDepth');
+            const websiteSeoOptions = [
+                { value: '', label: 'Choose one...' },
+                { value: 'no', label: 'None beyond a clean launch' },
+                { value: 'services', label: 'Service pages or search-ready setup' },
+                { value: 'cities', label: 'City or service-area pages' },
+                { value: 'both', label: 'Both service and city pages' }
+            ];
+            const growthAuditOptions = [
+                { value: '', label: 'Choose one...' },
+                { value: 'audit-external', label: 'External audit — public checks only (no GSC/GBP login)' },
+                { value: 'audit-limited', label: 'Limited Website Audit — partial access (e.g. no GSC yet)' },
+                { value: 'audit-full', label: 'Full-access Website Audit — GSC, GBP, analytics when granted' },
+                { value: 'audit-maintained', label: 'Full-access + maintained ongoing audits' }
+            ];
             const successOverlay = document.getElementById('starterPackageSuccessOverlay');
             const successDialog = successOverlay ? successOverlay.querySelector('.starter-package-success-dialog') : null;
             const successPackageLabel = document.getElementById('starterPackageSuccessPackage');
@@ -3927,13 +4167,229 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             function getPageCountRank(pageCountExpectation) {
                 const pageRanks = {
-                    'small': 1,
-                    'medium': 2,
-                    'large': 3,
-                    'enterprise': 4
+                    small: 1,
+                    preview: 2,
+                    medium: 2,
+                    local: 3,
+                    large: 4,
+                    authority: 4,
+                    enterprise: 5,
+                    max: 5,
+                    network: 6,
+                    growth: 7
                 };
 
                 return pageRanks[pageCountExpectation] || 0;
+            }
+
+            function setSelectOptions(selectElement, options, preferredValue) {
+                if (!selectElement) {
+                    return;
+                }
+
+                const previousValue = preferredValue || selectElement.value;
+                selectElement.innerHTML = options.map(function (option) {
+                    return `<option value="${option.value}">${option.label}</option>`;
+                }).join('');
+
+                const hasPreferred = options.some(function (option) {
+                    return option.value === previousValue;
+                });
+                selectElement.value = hasPreferred ? previousValue : '';
+            }
+
+            function mapAuditDepthToMaintenance(auditDepth) {
+                if (auditDepth === 'audit-maintained') {
+                    return 'management';
+                }
+
+                if (auditDepth === 'audit-full') {
+                    return 'pro';
+                }
+
+                return 'standard';
+            }
+
+            function resolveGrowthPackageRoute(systemsScope, maintenanceDepth, auditDepth) {
+                const effectiveMaintenance = maintenanceDepth
+                    || mapAuditDepthToMaintenance(auditDepth)
+                    || 'standard';
+
+                if (systemsScope === 'custom' || effectiveMaintenance === 'management' || auditDepth === 'audit-maintained') {
+                    return {
+                        routeType: 'package',
+                        recommendedPackageKey: 'ops-custom-automation-system',
+                        recommendationMessage: 'Custom systems, Growth Management care, maintained audits, or a field mobile job app map to Custom / Field Ops System ($10,000 setup + $1,000/mo).'
+                    };
+                }
+
+                if (systemsScope === 'full-stack' || effectiveMaintenance === 'pro' || auditDepth === 'audit-full') {
+                    return {
+                        routeType: 'package',
+                        recommendedPackageKey: 'ops-full-growth-system',
+                        recommendationMessage: 'Full systems stack, Pro care, or full-access Website Audits map to Full Growth System ($5,000 setup + $697/mo).'
+                    };
+                }
+
+                return {
+                    routeType: 'allowed',
+                    recommendedPackageKey: 'ops-growth-system-starter',
+                    recommendationMessage: 'Growth sites start at 70+ pages with service + city coverage included. Standard care / limited audit depth starts from $5,000 setup + $397/mo.'
+                };
+            }
+
+            function getConfiguratorGuidance(packageDetails) {
+                const family = packageDetails.family || 'website';
+                const gbpStatus = gbpStatusInput ? gbpStatusInput.value : '';
+                const gbpNote = gbpStatus === 'want-maintenance'
+                    ? ' You also asked for ongoing GBP Maintenance ($147/mo) — that stays a separate monthly add-on.'
+                    : gbpStatus === 'need-setup' && packageDetails.gbpMode === 'optional'
+                        ? ' GBP Setup ($497) can be added for Local / Preview packages.'
+                        : gbpStatus === 'skip' && packageDetails.gbpMode === 'included'
+                            ? ' Skipping GBP on Authority/Max weakens map-pack readiness — setup/optimize is included for a reason.'
+                            : '';
+
+                if (packageDetails.growthScoped) {
+                    return {
+                        copy: 'Growth builds are 70+ pages with service + city pages included. Adjust systems, Website Audit depth, monthly care, GBP status, and invoicing — those move the package and price.' + gbpNote,
+                        meta: 'Project fee via Stripe (financing may appear when eligible). Variables: pages (70+), audit depth, systems, monthly care, GBP status, selling/invoicing.'
+                    };
+                }
+
+                if (family === 'ecommerce') {
+                    return {
+                        copy: 'Storefront scope is driven by catalog size and checkout type. Payment links stay light; a real cart is a different package.' + gbpNote,
+                        meta: 'Project fee via Stripe (financing may appear when eligible). Variables: catalog size, SEO pages if needed, payment/cart/invoicing, GBP status, special features.'
+                    };
+                }
+
+                if (family === 'ops' || family === 'monthly' || family === 'seo') {
+                    return {
+                        copy: 'This package is about ongoing systems or visibility, not just page count. Tell us what must be maintained and how deep the audit access should go.' + gbpNote,
+                        meta: 'Subscription or project fee via Stripe. Variables: property, systems/visibility work, audit depth, GBP status, monthly care.'
+                    };
+                }
+
+                if (packageDetails.gbpMode === 'included') {
+                    return {
+                        copy: 'Authority/Max are project website builds with GBP setup or optimization included. Choose whether you already have a profile, need one built, need cleanup, or want ongoing maintenance.' + gbpNote,
+                        meta: 'Project fee via Stripe (financing may appear when eligible) — not “cash-only.” Variables: page band, SEO depth, selling/invoicing, GBP status (included setup/optimize; Maintenance $147/mo optional).'
+                    };
+                }
+
+                return {
+                    copy: 'Match structure and SEO page depth to the right website tier. GBP is optional on Local/Preview — pick your status so we know whether to add Setup.' + gbpNote,
+                    meta: 'Project fee via Stripe (financing may appear when eligible). Variables: page band, SEO depth, selling/invoicing, GBP status (optional Setup $497 / Maintenance $147/mo), special features.'
+                };
+            }
+
+            function setIntakeScopeMode(packageKey) {
+                const packageDetails = getPackageDetails(packageKey);
+                const isGrowth = Boolean(packageDetails.growthScoped);
+                const showGbp = packageDetails.family === 'website' || packageDetails.growthScoped || packageDetails.family === 'ecommerce';
+                const websiteRequired = [pageCountInput, seoExpansionInput, sellingOnlineInput];
+
+                if (websiteScopeFields) {
+                    websiteScopeFields.hidden = false;
+                }
+
+                if (growthScopeFields) {
+                    growthScopeFields.hidden = !isGrowth;
+                }
+
+                if (gbpStatusGroup) {
+                    gbpStatusGroup.hidden = !showGbp;
+                }
+
+                if (gbpStatusInput) {
+                    if (showGbp) {
+                        gbpStatusInput.setAttribute('required', 'required');
+                    } else {
+                        gbpStatusInput.removeAttribute('required');
+                        gbpStatusInput.value = '';
+                    }
+                }
+
+                if (gbpStatusHelp) {
+                    if (packageDetails.gbpMode === 'included') {
+                        gbpStatusHelp.textContent = 'Authority/Max include a GBP setup or optimization pass. Pick your current status. Ongoing Maintenance ($147/mo) stays optional.';
+                    } else if (isGrowth) {
+                        gbpStatusHelp.textContent = 'Growth usually needs a real GBP. Choose setup, optimize, maintenance, or skip if maps work is out of scope.';
+                    } else {
+                        gbpStatusHelp.textContent = 'Local/Preview: GBP Setup is optional ($497). Maintenance is always optional ($147/mo).';
+                    }
+                }
+
+                if (pageCountLabel) {
+                    pageCountLabel.textContent = isGrowth
+                        ? 'Growth sites are 70+ pages — confirm structure'
+                        : 'How much structure do you expect?';
+                }
+
+                if (seoLabel) {
+                    seoLabel.textContent = isGrowth
+                        ? 'How deep should Website Audits and maintained audits go?'
+                        : 'How much search / local SEO page depth do you need?';
+                }
+
+                if (sellingLabel) {
+                    sellingLabel.textContent = 'What selling, payment, or invoicing flow do you need?';
+                }
+
+                const currentSeo = seoExpansionInput ? seoExpansionInput.value : '';
+                const growthDefaultAudit = packageKey === 'ops-custom-automation-system'
+                    ? 'audit-maintained'
+                    : packageKey === 'ops-full-growth-system'
+                        ? 'audit-full'
+                        : 'audit-limited';
+                const growthPreferredAudit = String(currentSeo).indexOf('audit-') === 0
+                    ? currentSeo
+                    : growthDefaultAudit;
+
+                setSelectOptions(
+                    seoExpansionInput,
+                    isGrowth ? growthAuditOptions : websiteSeoOptions,
+                    isGrowth ? growthPreferredAudit : currentSeo
+                );
+
+                websiteRequired.forEach(function (input) {
+                    if (input) {
+                        input.setAttribute('required', 'required');
+                    }
+                });
+
+                if (isGrowth && pageCountInput && !pageCountInput.value) {
+                    pageCountInput.value = 'growth';
+                }
+
+                if (systemsScopeInput) {
+                    if (isGrowth) {
+                        systemsScopeInput.setAttribute('required', 'required');
+                        if (!systemsScopeInput.value) {
+                            systemsScopeInput.value = packageKey === 'ops-custom-automation-system'
+                                ? 'custom'
+                                : packageKey === 'ops-full-growth-system'
+                                    ? 'full-stack'
+                                    : 'site-ops';
+                        }
+                    } else {
+                        systemsScopeInput.removeAttribute('required');
+                        systemsScopeInput.value = '';
+                    }
+                }
+
+                if (maintenanceDepthInput) {
+                    if (isGrowth) {
+                        maintenanceDepthInput.setAttribute('required', 'required');
+                        const mapped = mapAuditDepthToMaintenance(seoExpansionInput ? seoExpansionInput.value : '');
+                        if (!maintenanceDepthInput.value) {
+                            maintenanceDepthInput.value = mapped;
+                        }
+                    } else {
+                        maintenanceDepthInput.removeAttribute('required');
+                        maintenanceDepthInput.value = '';
+                    }
+                }
             }
 
             function getPackageRoute(packageKey, intakeDetails) {
@@ -3951,13 +4407,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 let recommendedPackageKey = packageKey;
                 let recommendationMessage = 'These options fit the package you selected.';
 
+                if (packageDefinition.growthScoped || pageRank >= 7) {
+                    if (pageRank >= 7 && !packageDefinition.growthScoped) {
+                        return {
+                            routeType: 'package',
+                            recommendedPackageKey: 'ops-growth-system-starter',
+                            recommendationMessage: 'A 70+ page Growth System site is a different lane from one-time website packages — service + city pages are included, and ops/audit depth set the monthly side.'
+                        };
+                    }
+
+                    return resolveGrowthPackageRoute(
+                        intakeDetails.systemsScope,
+                        intakeDetails.maintenanceDepth,
+                        intakeDetails.seoExpansionNeed
+                    );
+                }
+
                 if (family === 'ops' || family === 'monthly' || family === 'seo') {
                     return {
                         routeType: 'allowed'
                     };
                 }
 
-                if (pageRank >= 4 || hasComplexFeatureRequest) {
+                if (sellingNeed === 'invoicing') {
+                    return {
+                        routeType: packageKey.indexOf('ops-') === 0 ? 'allowed' : 'package',
+                        recommendedPackageKey: 'ops-growth-system-starter',
+                        recommendationMessage: 'An invoicing system (estimates/jobs → Stripe invoices) usually belongs with Growth System ops, not a flat brochure site.'
+                    };
+                }
+
+                if (pageRank >= 6 || (pageRank >= 5 && hasComplexFeatureRequest)) {
                     if (sellingNeed === 'cart-store' || family === 'ecommerce') {
                         return {
                             routeType: packageKey === 'ecommerce-advanced-system' ? 'allowed' : 'package',
@@ -3968,12 +4448,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         };
                     }
 
+                    if (pageRank >= 6) {
+                        return {
+                            routeType: packageKey === 'website-authority-network' ? 'allowed' : 'package',
+                            recommendedPackageKey: 'website-authority-network',
+                            recommendationMessage: hasComplexFeatureRequest
+                                ? 'Complex website features at this page depth fit Authority Network (scoped).'
+                                : 'A 60–100+ page network fits Authority Network (scoped from $6,500).'
+                        };
+                    }
+
                     return {
                         routeType: packageKey === 'website-local-launch-max' ? 'allowed' : 'package',
                         recommendedPackageKey: 'website-local-launch-max',
                         recommendationMessage: hasComplexFeatureRequest
-                            ? 'Complex website features moved this to Local Launch Max.'
-                            : 'A larger local build fits the Local Launch Max package.'
+                            ? 'Complex website features moved this to Max Authority Site (up to 40 pages PROJECT).'
+                            : 'A deep authority build up to 40 pages fits Max Authority Site.'
+                    };
+                }
+
+                if (pageRank >= 5 && !hasComplexFeatureRequest) {
+                    return {
+                        routeType: packageKey === 'website-local-launch-max' ? 'allowed' : 'package',
+                        recommendedPackageKey: 'website-local-launch-max',
+                        recommendationMessage: 'An up-to-40-page authority build fits the Max Authority Site package (PROJECT).'
                     };
                 }
 
@@ -3999,32 +4497,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         recommendationMessage = 'A small preview catalog fits the Storefront Preview package.';
                     }
                 } else if (seoNeed === 'cities' || seoNeed === 'both' || seoNeed === 'services') {
-                    if (pageRank >= 3) {
+                    if (pageRank >= 6) {
+                        recommendedPackageKey = 'website-authority-network';
+                        recommendationMessage = 'A 60–100+ page SEO build fits the Authority Network package (scoped).';
+                    } else if (pageRank >= 5) {
+                        recommendedPackageKey = 'website-local-launch-max';
+                        recommendationMessage = 'An up-to-40-page SEO build fits the Max Authority Site package (PROJECT).';
+                    } else if (pageRank >= 4) {
                         recommendedPackageKey = 'website-local-launch-plus';
-                        recommendationMessage = 'A large site with SEO coverage fits the Local Launch Plus package.';
-                    } else if (pageRank >= 2) {
+                        recommendationMessage = 'A 35–60 page SEO build fits the Authority Site package.';
+                    } else if (pageRank >= 3) {
                         recommendedPackageKey = 'website-local-seo-starter';
-                        recommendationMessage = 'A standard site with SEO coverage fits the Local Launch Site package.';
-                    } else {
+                        recommendationMessage = 'A standard site with SEO coverage fits the Local Site package (up to 35 pages).';
+                    } else if (pageRank >= 2) {
                         recommendedPackageKey = seoNeed === 'services' ? 'website-search-foundation' : 'website-local-seo-starter';
                         recommendationMessage = seoNeed === 'services'
+                            ? 'A Preview-sized site with service-page SEO fits Search Foundation or Local Site.'
+                            : 'City or service-area SEO work fits the Local Site package.';
+                    } else {
+                        recommendedPackageKey = seoNeed === 'services' ? 'website-search-foundation' : 'website-preview-launch';
+                        recommendationMessage = seoNeed === 'services'
                             ? 'A small site with service-page SEO fits the Search Foundation package.'
-                            : 'City or service-area SEO work fits the Local Launch Site package.';
+                            : 'A small launch with light SEO still fits Preview Launch.';
                     }
                 } else {
-                    if (pageRank >= 3) {
+                    if (pageRank >= 6) {
+                        recommendedPackageKey = 'website-authority-network';
+                        recommendationMessage = 'A 60–100+ page build fits the Authority Network package (scoped from $6,500).';
+                    } else if (pageRank >= 5) {
+                        recommendedPackageKey = 'website-local-launch-max';
+                        recommendationMessage = 'An up-to-40-page build fits the Max Authority Site package (PROJECT).';
+                    } else if (pageRank >= 4) {
                         recommendedPackageKey = 'website-local-launch-plus';
-                        recommendationMessage = 'A large build fits the Local Launch Plus package.';
+                        recommendationMessage = 'A 35–60 page build fits the Authority Site package.';
+                    } else if (pageRank >= 3) {
+                        recommendedPackageKey = 'website-local-seo-starter';
+                        recommendationMessage = 'A Local Site (up to ~35 pages) fits this structure.';
                     } else if (pageRank >= 2) {
-                        recommendedPackageKey = 'website-live-plus';
-                        recommendationMessage = 'A medium site fits the Essential Launch Plus package.';
-                    } else {
                         recommendedPackageKey = packageKey === 'website-preview-launch'
                             ? 'website-preview-launch'
-                            : 'website-live-essential';
+                            : 'website-local-seo-starter';
                         recommendationMessage = recommendedPackageKey === 'website-preview-launch'
-                            ? 'A small preview site fits the Preview Launch package.'
-                            : 'A small live site fits the Essential Launch Site package.';
+                            ? 'A Preview Launch site (up to ~20 pages) fits this structure.'
+                            : 'A Local Site (up to ~35 pages) fits this structure.';
+                    } else {
+                        recommendedPackageKey = packageKey === 'website-demo-preview'
+                            ? 'website-demo-preview'
+                            : 'website-preview-launch';
+                        recommendationMessage = recommendedPackageKey === 'website-demo-preview'
+                            ? 'A tiny demo fits Demo Preview.'
+                            : 'A small site fits Preview Launch.';
                     }
                 }
 
@@ -4042,13 +4564,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             }
 
             function getRouteMessage(routeResult, requestedPackageKey) {
-                if (!routeResult || routeResult.routeType === 'allowed') {
+                if (!routeResult) {
+                    return '';
+                }
+
+                const requestedPackage = getPackageDetails(requestedPackageKey);
+
+                if (requestedPackage.growthScoped && routeResult.recommendationMessage) {
+                    if (routeResult.routeType === 'package' && routeResult.recommendedPackageKey && routeResult.recommendedPackageKey !== requestedPackageKey) {
+                        const recommendedPackage = getPackageDetails(routeResult.recommendedPackageKey);
+                        return `${routeResult.recommendationMessage} Checkout will use <strong>${recommendedPackage.name}</strong> at ${recommendedPackage.price}.`;
+                    }
+
+                    return routeResult.recommendationMessage;
+                }
+
+                if (routeResult.routeType === 'allowed') {
                     return '';
                 }
 
                 if (routeResult.routeType === 'package') {
                     const recommendedPackage = getPackageDetails(routeResult.recommendedPackageKey);
-                    const requestedPackage = getPackageDetails(requestedPackageKey);
 
                     return `${routeResult.recommendationMessage} <strong>${requestedPackage.name}</strong> is not the best fit for these options. This selector moved you to <strong>${recommendedPackage.name}</strong> at ${recommendedPackage.price}.`;
                 }
@@ -4089,17 +4625,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     configuratorTitle.textContent = packageDetails.name;
                 }
                 if (configuratorCopy) {
-                    configuratorCopy.innerHTML = routeResult && routeResult.routeType === 'package'
+                    const guidance = getConfiguratorGuidance(packageDetails);
+                    const routeMessage = routeResult && (routeResult.routeType === 'package' || routeResult.recommendationMessage)
                         ? getRouteMessage(routeResult, requestedPackageKey)
-                        : 'These options fit a flat package, so you can continue straight into checkout after sending your contact details.';
+                        : '';
+                    configuratorCopy.innerHTML = routeMessage || guidance.copy;
                 }
                 if (configuratorPrice) {
                     configuratorPrice.textContent = packageDetails.price || '';
                 }
                 if (configuratorMeta) {
-                    configuratorMeta.textContent = packageDetails.family === 'ecommerce'
-                        ? 'Flat storefront packages still use the existing Stripe checkout flow here. Snipcart remains part of the broader custom storefront build work, not this instant flat-package checkout.'
-                        : 'Flat packages use the existing Stripe checkout flow right now. This selector will move you to the right package instead of sending you off-page.';
+                    configuratorMeta.textContent = getConfiguratorGuidance(packageDetails).meta;
                 }
                 if (intakeSubmitText) {
                     intakeSubmitText.textContent = packageDetails.price
@@ -4114,6 +4650,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 setSelectFieldValue(pageCountInput, preset.pageCountExpectation || '');
                 setSelectFieldValue(seoExpansionInput, preset.seoExpansionNeed || '');
                 setSelectFieldValue(sellingOnlineInput, preset.sellingOnlineNeed || '');
+                setSelectFieldValue(gbpStatusInput, preset.gbpStatus || 'skip');
                 if (specialFeaturesInput) {
                     specialFeaturesInput.value = '';
                 }
@@ -4121,8 +4658,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             function refreshPackageRecommendation() {
                 const requestedPackageKey = activeRequestedPackageKey || intakePackageKeyInput.value || 'website-local-seo-starter';
+                setIntakeScopeMode(requestedPackageKey);
 
-                if (requestedPackageKey === 'website-demo-preview') {
+                if (requestedPackageKey === 'website-demo-preview' && !getPackageDetails(requestedPackageKey).growthScoped) {
                     updateConfiguratorSummary({ routeType: 'allowed' }, requestedPackageKey);
                     return;
                 }
@@ -4131,7 +4669,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     pageCountExpectation: pageCountInput ? pageCountInput.value : '',
                     seoExpansionNeed: seoExpansionInput ? seoExpansionInput.value : '',
                     sellingOnlineNeed: sellingOnlineInput ? sellingOnlineInput.value : '',
-                    specialFeatures: specialFeaturesInput ? specialFeaturesInput.value : ''
+                    specialFeatures: specialFeaturesInput ? specialFeaturesInput.value : '',
+                    systemsScope: systemsScopeInput ? systemsScopeInput.value : '',
+                    maintenanceDepth: maintenanceDepthInput ? maintenanceDepthInput.value : '',
+                    gbpStatus: gbpStatusInput ? gbpStatusInput.value : ''
                 });
 
                 updateConfiguratorSummary(routeResult, requestedPackageKey);
@@ -4419,6 +4960,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 intakeForm.reset();
                 activeRequestedPackageKey = button.dataset.packageKey;
                 intakePackageKeyInput.value = activeRequestedPackageKey;
+                setIntakeScopeMode(activeRequestedPackageKey);
                 applyPackagePreset(activeRequestedPackageKey);
                 refreshPackageRecommendation();
                 setIntakeStatus('');
@@ -4598,11 +5140,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 }
             });
 
-            [pageCountInput, seoExpansionInput, sellingOnlineInput].forEach(function (input) {
+            [pageCountInput, sellingOnlineInput, gbpStatusInput, systemsScopeInput, maintenanceDepthInput].forEach(function (input) {
                 if (input) {
                     input.addEventListener('change', refreshPackageRecommendation);
                 }
             });
+
+            if (seoExpansionInput) {
+                seoExpansionInput.addEventListener('change', function () {
+                    const activeKey = activeRequestedPackageKey || (intakePackageKeyInput ? intakePackageKeyInput.value : '');
+                    if (
+                        getPackageDetails(activeKey).growthScoped
+                        && maintenanceDepthInput
+                        && String(seoExpansionInput.value || '').indexOf('audit-') === 0
+                    ) {
+                        maintenanceDepthInput.value = mapAuditDepthToMaintenance(seoExpansionInput.value);
+                    }
+                    refreshPackageRecommendation();
+                });
+            }
 
             if (specialFeaturesInput) {
                 specialFeaturesInput.addEventListener('input', refreshPackageRecommendation);
@@ -4803,7 +5359,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </script>
     <script src="attribution.js" defer></script>
     <!-- HERO ASTEROIDS EXPERIMENT — remove to revert -->
-    <script src="./experiments/hero-asteroids/hero-experiment.js?v=20260703perf4" defer></script>
+    <script src="./experiments/hero-asteroids/hero-experiment.js?v=20260724hero4" defer></script>
     <script>
     (function () {
         function stabilizeHero() {
@@ -4822,7 +5378,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         window.setTimeout(stabilizeHero, 2200);
     })();
     </script>
-    <script src="script.js?v=20260719megaalign1" defer></script>
+    <script src="script.js?v=20260725showcase1" defer></script>
     <script>
         // Google Ads conversion tracking  hero consultation form
         (function() {

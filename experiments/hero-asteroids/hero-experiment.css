@@ -1,10 +1,17 @@
 /* Hero Asteroids Experiment — revert via experiments/hero-asteroids/REVERT.md */
 
+body:has(#hero.hero-experiment-active) {
+    scrollbar-gutter: stable;
+}
+
 #hero.hero-experiment-active {
     background: #05090c;
     --kl-nav-height: 108px;
     --kl-hero-inner-h: 640px;
     --kl-layout-scale: 1;
+    --kl-cutout-scale: 1;
+    --kl-cutout-max-w: 560px;
+    --kl-cutout-max-h: 72%;
     --kl-hero-parallax-rate: 0.42;
     --kl-hero-cta-font-base: 0.96rem;
     --kl-hero-cta-pad-y: clamp(8px, 0.9vh, 12px);
@@ -52,7 +59,7 @@ body.hero-experiment-parallax-active {
 
 .hero-experiment-foreground {
     z-index: 5;
-    overflow: hidden;
+    overflow: visible;
 }
 
 #hero.hero-experiment-active .hero-experiment-parallax {
@@ -95,8 +102,8 @@ body.hero-experiment-parallax-active {
     padding: 0;
     width: auto;
     height: auto;
-    max-height: 30%;
-    max-width: 220px;
+    max-width: min(var(--kl-cutout-max-w, 560px), 46vw);
+    max-height: var(--kl-cutout-max-h, 72%);
     object-fit: contain;
     object-position: bottom left;
     z-index: 5;
@@ -104,6 +111,8 @@ body.hero-experiment-parallax-active {
     user-select: none;
     -webkit-user-drag: none;
     filter: drop-shadow(0 8px 28px rgba(0, 0, 0, 0.4));
+    transform: scale(var(--kl-cutout-scale, 1));
+    transform-origin: bottom left;
 }
 
 .hero-experiment-hud-mount {
@@ -300,16 +309,16 @@ body.hero-experiment-parallax-active {
 }
 
 #hero.hero-experiment-active .hero-layout {
-    width: min(960px, calc(100% - 32px));
-    max-width: 960px;
+    width: min(1000px, calc(100% - 32px));
+    max-width: 1000px;
     max-height: var(--kl-hero-inner-h);
     margin: 0 auto;
     margin-top: clamp(-12px, -1vh, 0px);
     min-height: 0 !important;
     align-items: center;
     justify-content: center;
-    grid-template-columns: minmax(0, 520px) 340px;
-    gap: clamp(24px, 2vw, 32px);
+    grid-template-columns: minmax(0, 540px) 340px;
+    gap: clamp(18px, 1.6vw, 28px);
     transform: scale(var(--kl-layout-scale));
     transform-origin: center center;
     will-change: transform;
@@ -319,7 +328,7 @@ body.hero-experiment-parallax-active {
     max-height: var(--kl-hero-inner-h);
     min-height: 0;
     min-width: 0;
-    max-width: 520px;
+    max-width: 540px;
     align-self: center;
     overflow: hidden;
     position: relative;
@@ -338,24 +347,167 @@ body.hero-experiment-parallax-active {
     display: flex;
     justify-content: flex-end;
     align-self: center;
-    max-height: var(--kl-hero-inner-h);
     position: relative;
-    z-index: 3;
+    z-index: 3200;
+    isolation: isolate;
 }
 
 #hero.hero-experiment-active .hero-form-card {
     width: 340px;
     min-width: 340px;
     max-width: 340px;
-    min-height: min(420px, var(--kl-hero-inner-h));
-    max-height: var(--kl-hero-inner-h);
-    overflow-x: hidden;
-    overflow-y: auto;
+    min-height: 0 !important;
+    max-height: none;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 3201;
+    overflow: visible;
     overscroll-behavior: contain;
+    pointer-events: none;
 }
 
-#hero.hero-experiment-active .hero-form-card {
-    pointer-events: none;
+#hero.hero-experiment-active .hero-consultation-form {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 auto;
+    min-height: 0;
+    gap: 0.55rem;
+}
+
+#hero.hero-experiment-active .hero-form-grid {
+    flex: 0 1 auto;
+    min-height: 0;
+}
+
+#hero.hero-experiment-active .hero-consultation-form textarea {
+    min-height: clamp(48px, 8vh, 80px);
+    max-height: clamp(56px, 12vh, 96px);
+    resize: none;
+}
+
+#hero.hero-experiment-active .hero-form-submit {
+    flex: 0 0 auto;
+    margin-top: 0;
+}
+
+#hero.hero-experiment-active[data-form-fit="1"] .hero-form-card,
+#hero.hero-experiment-active.hero-form-compact .hero-form-card {
+    padding: 0.7rem 1.15rem 0.65rem;
+}
+
+#hero.hero-experiment-active[data-form-fit="1"] .hero-form-header,
+#hero.hero-experiment-active.hero-form-compact .hero-form-header {
+    margin-bottom: 0.4rem;
+}
+
+#hero.hero-experiment-active[data-form-fit="1"] .hero-form-header h2,
+#hero.hero-experiment-active.hero-form-compact .hero-form-header h2 {
+    font-size: 1.02rem;
+    margin-top: 0.55rem;
+}
+
+#hero.hero-experiment-active[data-form-fit="1"] .hero-form-header p,
+#hero.hero-experiment-active.hero-form-compact .hero-form-header p {
+    font-size: 0.84rem;
+    line-height: 1.28;
+}
+
+#hero.hero-experiment-active[data-form-fit="1"] .hero-form-grid,
+#hero.hero-experiment-active.hero-form-compact .hero-form-grid {
+    gap: 0.48rem;
+}
+
+#hero.hero-experiment-active[data-form-fit="1"] .hero-consultation-form textarea,
+#hero.hero-experiment-active.hero-form-compact .hero-consultation-form textarea {
+    min-height: 48px;
+    max-height: 64px;
+}
+
+#hero.hero-experiment-active[data-form-fit="2"] .hero-form-card {
+    padding: 0.58rem 1rem 0.55rem;
+}
+
+#hero.hero-experiment-active[data-form-fit="2"] .hero-form-header {
+    margin-bottom: 0.28rem;
+}
+
+#hero.hero-experiment-active[data-form-fit="2"] .hero-form-header h2 {
+    font-size: 0.96rem;
+    margin-top: 0.42rem;
+}
+
+#hero.hero-experiment-active[data-form-fit="2"] .hero-form-header p {
+    font-size: 0.78rem;
+    line-height: 1.22;
+}
+
+#hero.hero-experiment-active[data-form-fit="2"] .hero-form-kicker {
+    font-size: 0.7rem;
+    padding: 0.28rem 0.58rem;
+}
+
+#hero.hero-experiment-active[data-form-fit="2"] .hero-form-grid {
+    gap: 0.38rem;
+}
+
+#hero.hero-experiment-active[data-form-fit="2"] .hero-consultation-form .form-group label {
+    font-size: 0.76rem;
+    margin-bottom: 0.22rem;
+}
+
+#hero.hero-experiment-active[data-form-fit="2"] .hero-consultation-form .form-group input,
+#hero.hero-experiment-active[data-form-fit="2"] .hero-consultation-form .form-group select,
+#hero.hero-experiment-active[data-form-fit="2"] .hero-consultation-form .form-group textarea {
+    padding: 6px 9px;
+    font-size: 0.84rem;
+}
+
+#hero.hero-experiment-active[data-form-fit="2"] .hero-consultation-form textarea {
+    min-height: 40px;
+    max-height: 52px;
+}
+
+#hero.hero-experiment-active[data-form-fit="3"] .hero-form-card {
+    padding: 0.5rem 0.9rem 0.48rem;
+}
+
+#hero.hero-experiment-active[data-form-fit="3"] .hero-form-header p {
+    display: none;
+}
+
+#hero.hero-experiment-active[data-form-fit="3"] .hero-form-header h2 {
+    font-size: 0.9rem;
+    margin-top: 0.35rem;
+    margin-bottom: 0.15rem;
+}
+
+#hero.hero-experiment-active[data-form-fit="3"] .hero-form-grid {
+    gap: 0.3rem;
+}
+
+#hero.hero-experiment-active[data-form-fit="3"] .hero-consultation-form .form-group label {
+    font-size: 0.72rem;
+    margin-bottom: 0.18rem;
+}
+
+#hero.hero-experiment-active[data-form-fit="3"] .hero-consultation-form .form-group input,
+#hero.hero-experiment-active[data-form-fit="3"] .hero-consultation-form .form-group select,
+#hero.hero-experiment-active[data-form-fit="3"] .hero-consultation-form .form-group textarea {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+}
+
+#hero.hero-experiment-active[data-form-fit="3"] .hero-consultation-form textarea {
+    min-height: 36px;
+    max-height: 44px;
+}
+
+#hero.hero-experiment-active[data-form-fit="3"] .hero-form-submit {
+    padding-top: 0.55rem;
+    padding-bottom: 0.55rem;
+    font-size: 0.84rem;
 }
 
 #hero.hero-experiment-active .hero-content-wrapper a,
@@ -397,35 +549,50 @@ body.hero-experiment-parallax-active {
 }
 
 @media (min-width: 1279px) {
+    #hero.hero-experiment-active {
+        --kl-cutout-max-w: 520px;
+        --kl-cutout-max-h: 68%;
+    }
+
     .hero-experiment-cutout {
-        max-width: 440px;
-        max-height: 60%;
+        max-width: min(var(--kl-cutout-max-w, 520px), 46vw);
+        max-height: var(--kl-cutout-max-h, 68%);
     }
 }
 
 @media (min-width: 1400px) {
     .hero-experiment-cutout {
-        max-width: 520px;
-        max-height: 68%;
+        max-width: min(var(--kl-cutout-max-w, 560px), 46vw);
+        max-height: var(--kl-cutout-max-h, 72%);
     }
 
     #hero.hero-experiment-active .hero-layout {
-        width: min(1080px, calc(100% - 80px));
-        max-width: 1080px;
-        gap: clamp(48px, 5vw, 88px);
-        grid-template-columns: minmax(0, 560px) 340px;
+        width: min(1060px, calc(100% - 48px));
+        max-width: 1060px;
+        gap: clamp(24px, 2.4vw, 44px);
+        grid-template-columns: minmax(0, 580px) 340px;
     }
 
     #hero.hero-experiment-active .hero-content {
-        max-width: 560px;
+        max-width: 580px;
     }
 }
 
 @media (min-width: 1800px) {
+    #hero.hero-experiment-active {
+        --kl-cutout-max-w: 600px;
+        --kl-cutout-max-h: 74%;
+    }
+
     #hero.hero-experiment-active .hero-layout {
-        width: min(1140px, calc(100% - 120px));
-        max-width: 1140px;
-        gap: clamp(56px, 4vw, 96px);
+        width: min(1120px, calc(100% - 80px));
+        max-width: 1120px;
+        gap: clamp(28px, 2.2vw, 52px);
+        grid-template-columns: minmax(0, 600px) 340px;
+    }
+
+    #hero.hero-experiment-active .hero-content {
+        max-width: 600px;
     }
 }
 

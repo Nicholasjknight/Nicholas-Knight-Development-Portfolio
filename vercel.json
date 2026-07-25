@@ -522,8 +522,18 @@
       "permanent": true
     },
     {
+      "source": "/startup-business-launch-systems",
+      "destination": "/starting-a-new-business",
+      "permanent": true
+    },
+    {
       "source": "/startup-business-launch-systems.html",
-      "destination": "/startup-business-launch-systems",
+      "destination": "/starting-a-new-business",
+      "permanent": true
+    },
+    {
+      "source": "/starting-a-new-business.html",
+      "destination": "/starting-a-new-business",
       "permanent": true
     },
     {
@@ -609,6 +619,81 @@
     {
       "source": "/painter-business-growth-systems.html",
       "destination": "/painter-business-growth-systems",
+      "permanent": true
+    },
+    {
+      "source": "/web-designer-dunedin.html",
+      "destination": "/web-designer-dunedin",
+      "permanent": true
+    },
+    {
+      "source": "/web-designer-largo.html",
+      "destination": "/web-designer-largo",
+      "permanent": true
+    },
+    {
+      "source": "/web-designer-pinellas-park.html",
+      "destination": "/web-designer-pinellas-park",
+      "permanent": true
+    },
+    {
+      "source": "/web-designer-seminole.html",
+      "destination": "/web-designer-seminole",
+      "permanent": true
+    },
+    {
+      "source": "/web-designer-tarpon-springs.html",
+      "destination": "/web-designer-tarpon-springs",
+      "permanent": true
+    },
+    {
+      "source": "/web-designer-oldsmar.html",
+      "destination": "/web-designer-oldsmar",
+      "permanent": true
+    },
+    {
+      "source": "/web-designer-brandon.html",
+      "destination": "/web-designer-brandon",
+      "permanent": true
+    },
+    {
+      "source": "/web-designer-riverview.html",
+      "destination": "/web-designer-riverview",
+      "permanent": true
+    },
+    {
+      "source": "/web-designer-temple-terrace.html",
+      "destination": "/web-designer-temple-terrace",
+      "permanent": true
+    },
+    {
+      "source": "/web-designer-lutz.html",
+      "destination": "/web-designer-lutz",
+      "permanent": true
+    },
+    {
+      "source": "/web-designer-wesley-chapel.html",
+      "destination": "/web-designer-wesley-chapel",
+      "permanent": true
+    },
+    {
+      "source": "/web-designer-new-port-richey.html",
+      "destination": "/web-designer-new-port-richey",
+      "permanent": true
+    },
+    {
+      "source": "/web-designer-holiday.html",
+      "destination": "/web-designer-holiday",
+      "permanent": true
+    },
+    {
+      "source": "/web-designer-land-o-lakes.html",
+      "destination": "/web-designer-land-o-lakes",
+      "permanent": true
+    },
+    {
+      "source": "/web-designer-plant-city.html",
+      "destination": "/web-designer-plant-city",
       "permanent": true
     }
   ],
@@ -910,8 +995,8 @@
       "destination": "/restaurant-bar-growth-systems.html"
     },
     {
-      "source": "/startup-business-launch-systems",
-      "destination": "/startup-business-launch-systems.html"
+      "source": "/starting-a-new-business",
+      "destination": "/starting-a-new-business.html"
     },
     {
       "source": "/stripe-invoice-automation",
@@ -964,6 +1049,66 @@
     {
       "source": "/painter-business-growth-systems",
       "destination": "/painter-business-growth-systems.html"
+    },
+    {
+      "source": "/web-designer-dunedin",
+      "destination": "/web-designer-dunedin.html"
+    },
+    {
+      "source": "/web-designer-largo",
+      "destination": "/web-designer-largo.html"
+    },
+    {
+      "source": "/web-designer-pinellas-park",
+      "destination": "/web-designer-pinellas-park.html"
+    },
+    {
+      "source": "/web-designer-seminole",
+      "destination": "/web-designer-seminole.html"
+    },
+    {
+      "source": "/web-designer-tarpon-springs",
+      "destination": "/web-designer-tarpon-springs.html"
+    },
+    {
+      "source": "/web-designer-oldsmar",
+      "destination": "/web-designer-oldsmar.html"
+    },
+    {
+      "source": "/web-designer-brandon",
+      "destination": "/web-designer-brandon.html"
+    },
+    {
+      "source": "/web-designer-riverview",
+      "destination": "/web-designer-riverview.html"
+    },
+    {
+      "source": "/web-designer-temple-terrace",
+      "destination": "/web-designer-temple-terrace.html"
+    },
+    {
+      "source": "/web-designer-lutz",
+      "destination": "/web-designer-lutz.html"
+    },
+    {
+      "source": "/web-designer-wesley-chapel",
+      "destination": "/web-designer-wesley-chapel.html"
+    },
+    {
+      "source": "/web-designer-new-port-richey",
+      "destination": "/web-designer-new-port-richey.html"
+    },
+    {
+      "source": "/web-designer-holiday",
+      "destination": "/web-designer-holiday.html"
+    },
+    {
+      "source": "/web-designer-land-o-lakes",
+      "destination": "/web-designer-land-o-lakes.html"
+    },
+    {
+      "source": "/web-designer-plant-city",
+      "destination": "/web-designer-plant-city.html"
     }
   ],
   "headers": [

@@ -87,7 +87,7 @@ Industry verticals:
 - https://knightlogics.com/screen-enclosure-business-growth-systems
 - https://knightlogics.com/excavation-business-growth-systems
 - https://knightlogics.com/restaurant-bar-growth-systems
-- https://knightlogics.com/startup-business-launch-systems
+- https://knightlogics.com/starting-a-new-business
 
 Programs:
 - https://knightlogics.com/performance-partner-program
@@ -103,7 +103,19 @@ Programs:
 
 ## Public Pricing Summary
 
-Public pricing on https://knightlogics.com/pricing includes website launch tiers starting at $200 (demo preview), $500 (preview launch), $700 (essential launch), $1,200 (search foundation), and $1,997 (local launch), with larger growth-system and automation builds priced by scope. Monthly visibility and management plans are also listed. Verify live pricing page for current offers.
+Canonical ladder (verify live at https://knightlogics.com/pricing):
+
+Website PROJECTS: Demo Preview $200 → Preview Launch $750 → Local Site $1,200 (≤35 pages) → Authority Site $2,000 (35–60) → Max Authority $4,500 (≤40 pages PROJECT) → Authority Network from $6,500 (60–100+ SCOPED).
+
+Managed Growth Systems (SETUP + MONTHLY): from $5,000 + $397/mo (Starter), $5,000 + $697/mo (Full), $10,000 + $1,000/mo (Custom / Field Ops). Systems-only variants exist for businesses that already have a site.
+
+Automation Build: one-time PROJECT from $500–$10,000+ (built and handed off). Do not call build-only automation a Growth System.
+
+E-commerce: Payment-Link Store $1,200; E-Commerce Launch $2,997; Advanced from $7,500 SCOPED.
+
+Monthly visibility: $197 / $397 / $697 with capped combined operator hours.
+
+Obsolete (do not cite): retired Essential/Local Launch-era SKUs, the former ~$2k local tier, Preview sold at $500, or Max Authority framed as an 80 to 100+ page build for $4,500.
 
 ## What Knight Logics Does
 

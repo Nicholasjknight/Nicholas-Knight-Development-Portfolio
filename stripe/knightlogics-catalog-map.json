@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-14T20:56:40.407Z",
+  "generatedAt": "2026-07-25T12:41:59.776Z",
   "rows": [
     {
       "packageKey": "website-preview-launch",
@@ -7,12 +7,14 @@
       "family": "website",
       "billingMode": "payment",
       "paymentOption": "full",
-      "amountUsd": "500.00",
+      "amountUsd": "750.00",
       "interval": "",
       "productName": "KL - Preview Launch Site",
       "productId": "prod_UW8ZeNIJjjqDA8",
       "priceId": "price_1TX6IFErWiwwLYoRkwXyo3Zb",
-      "createdNow": false
+      "createdNow": false,
+      "priceIdNeedsResync": true,
+      "notes": "Amount updated to match package-catalog / PACKAGE_DEFINITIONS; re-run stripe:sync-catalog."
     },
     {
       "packageKey": "website-live-essential",
@@ -25,7 +27,9 @@
       "productName": "KL - Essential Launch Site",
       "productId": "prod_UW8ZpbO1fCZwL3",
       "priceId": "price_1TX6IFErWiwwLYoRLCj09vAO",
-      "createdNow": false
+      "createdNow": false,
+      "deprecated": true,
+      "publicSellable": false
     },
     {
       "packageKey": "website-live-plus",
@@ -38,7 +42,9 @@
       "productName": "KL - Essential Launch Plus",
       "productId": "prod_UW8Zifk62E3Yn2",
       "priceId": "price_1TX6IGErWiwwLYoR6uJEmLVl",
-      "createdNow": false
+      "createdNow": false,
+      "deprecated": true,
+      "publicSellable": false
     },
     {
       "packageKey": "website-search-foundation",
@@ -51,7 +57,9 @@
       "productName": "KL - Search Foundation Site",
       "productId": "prod_UW8ZfGTQKWVpi0",
       "priceId": "price_1TX6IHErWiwwLYoRo5tcFL3w",
-      "createdNow": false
+      "createdNow": false,
+      "deprecated": true,
+      "publicSellable": false
     },
     {
       "packageKey": "website-search-foundation-plus",
@@ -64,7 +72,9 @@
       "productName": "KL - Search Foundation Plus",
       "productId": "prod_UW8ZxTLhwSVKfA",
       "priceId": "price_1TX6IHErWiwwLYoR4zBfVYU9",
-      "createdNow": false
+      "createdNow": false,
+      "deprecated": true,
+      "publicSellable": false
     },
     {
       "packageKey": "website-search-foundation-plus",
@@ -77,82 +87,92 @@
       "productName": "KL - Search Foundation Plus",
       "productId": "prod_UW8ZxTLhwSVKfA",
       "priceId": "price_1TX6IIErWiwwLYoRYeSz0OrL",
-      "createdNow": false
+      "createdNow": false,
+      "deprecated": true,
+      "publicSellable": false
     },
     {
       "packageKey": "website-local-seo-starter",
-      "packageName": "Local Launch Site",
+      "packageName": "Local Site",
       "family": "website",
       "billingMode": "payment",
       "paymentOption": "full",
-      "amountUsd": "1997.00",
+      "amountUsd": "1200.00",
       "interval": "",
-      "productName": "KL - Local Launch Site",
+      "productName": "KL - Local Site",
       "productId": "prod_UW8ZCsmUlsw5OC",
       "priceId": "price_1TX6IIErWiwwLYoRt7g6QDZl",
-      "createdNow": false
+      "createdNow": false,
+      "priceIdNeedsResync": true,
+      "notes": "Amount updated to match package-catalog / PACKAGE_DEFINITIONS; re-run stripe:sync-catalog."
     },
     {
       "packageKey": "website-local-seo-starter",
-      "packageName": "Local Launch Site",
+      "packageName": "Local Site",
+      "family": "website",
+      "billingMode": "payment",
+      "paymentOption": "deposit",
+      "amountUsd": "600.00",
+      "interval": "",
+      "productName": "KL - Local Site",
+      "productId": "prod_UW8ZCsmUlsw5OC",
+      "priceId": "price_1TX6IJErWiwwLYoREcQMrXzA",
+      "createdNow": false,
+      "priceIdNeedsResync": true,
+      "notes": "Deposit amount updated; re-run stripe:sync-catalog."
+    },
+    {
+      "packageKey": "website-local-launch-plus",
+      "packageName": "Authority Site",
+      "family": "website",
+      "billingMode": "payment",
+      "paymentOption": "full",
+      "amountUsd": "2000.00",
+      "interval": "",
+      "productName": "KL - Authority Site",
+      "productId": "prod_UW8Z4obTD3JzoV",
+      "priceId": "price_1TX6IKErWiwwLYoRqxtYQI7H",
+      "createdNow": false,
+      "priceIdNeedsResync": true,
+      "notes": "Amount updated to match package-catalog / PACKAGE_DEFINITIONS; re-run stripe:sync-catalog."
+    },
+    {
+      "packageKey": "website-local-launch-plus",
+      "packageName": "Authority Site",
       "family": "website",
       "billingMode": "payment",
       "paymentOption": "deposit",
       "amountUsd": "1000.00",
       "interval": "",
-      "productName": "KL - Local Launch Site",
-      "productId": "prod_UW8ZCsmUlsw5OC",
-      "priceId": "price_1TX6IJErWiwwLYoREcQMrXzA",
-      "createdNow": false
-    },
-    {
-      "packageKey": "website-local-launch-plus",
-      "packageName": "Local Launch Plus",
-      "family": "website",
-      "billingMode": "payment",
-      "paymentOption": "full",
-      "amountUsd": "2997.00",
-      "interval": "",
-      "productName": "KL - Local Launch Plus",
-      "productId": "prod_UW8Z4obTD3JzoV",
-      "priceId": "price_1TX6IKErWiwwLYoRqxtYQI7H",
-      "createdNow": false
-    },
-    {
-      "packageKey": "website-local-launch-plus",
-      "packageName": "Local Launch Plus",
-      "family": "website",
-      "billingMode": "payment",
-      "paymentOption": "deposit",
-      "amountUsd": "1500.00",
-      "interval": "",
-      "productName": "KL - Local Launch Plus",
+      "productName": "KL - Authority Site",
       "productId": "prod_UW8Z4obTD3JzoV",
       "priceId": "price_1TX6IKErWiwwLYoRkAaQnBkN",
-      "createdNow": false
+      "createdNow": false,
+      "priceIdNeedsResync": true,
+      "notes": "Deposit amount updated; re-run stripe:sync-catalog."
     },
     {
       "packageKey": "website-local-launch-max",
-      "packageName": "Local Launch Max",
+      "packageName": "Max Authority Site",
       "family": "website",
       "billingMode": "payment",
       "paymentOption": "full",
       "amountUsd": "4500.00",
       "interval": "",
-      "productName": "KL - Local Launch Max",
+      "productName": "KL - Max Authority Site",
       "productId": "prod_UW8ZgzrMbObwa0",
       "priceId": "price_1TX6ILErWiwwLYoRf3lkVGj0",
       "createdNow": false
     },
     {
       "packageKey": "website-local-launch-max",
-      "packageName": "Local Launch Max",
+      "packageName": "Max Authority Site",
       "family": "website",
       "billingMode": "payment",
       "paymentOption": "deposit",
       "amountUsd": "2000.00",
       "interval": "",
-      "productName": "KL - Local Launch Max",
+      "productName": "KL - Max Authority Site",
       "productId": "prod_UW8ZgzrMbObwa0",
       "priceId": "price_1TX6ILErWiwwLYoRidTACaU3",
       "createdNow": false
@@ -189,12 +209,14 @@
       "family": "ecommerce",
       "billingMode": "payment",
       "paymentOption": "full",
-      "amountUsd": "2497.00",
+      "amountUsd": "2997.00",
       "interval": "",
       "productName": "KL - E-Commerce Launch",
       "productId": "prod_UW8ZCZugvRpQ3p",
       "priceId": "price_1TX6INErWiwwLYoRld9p3r1b",
-      "createdNow": false
+      "createdNow": false,
+      "priceIdNeedsResync": true,
+      "notes": "Amount updated to match package-catalog / PACKAGE_DEFINITIONS; re-run stripe:sync-catalog."
     },
     {
       "packageKey": "ecommerce-launch",
@@ -202,12 +224,14 @@
       "family": "ecommerce",
       "billingMode": "payment",
       "paymentOption": "deposit",
-      "amountUsd": "1250.00",
+      "amountUsd": "1500.00",
       "interval": "",
       "productName": "KL - E-Commerce Launch",
       "productId": "prod_UW8ZCZugvRpQ3p",
       "priceId": "price_1TX6INErWiwwLYoRbvW2Ss9G",
-      "createdNow": false
+      "createdNow": false,
+      "priceIdNeedsResync": true,
+      "notes": "Deposit amount updated; re-run stripe:sync-catalog."
     },
     {
       "packageKey": "ecommerce-launch-plus",
@@ -345,12 +369,14 @@
       "family": "ops",
       "billingMode": "payment",
       "paymentOption": "full",
-      "amountUsd": "250.00",
+      "amountUsd": "49.00",
       "interval": "",
       "productName": "KL - Simple Lead Tracker",
       "productId": "prod_UW8ZTQSb01cvJ5",
       "priceId": "price_1TX6IUErWiwwLYoRXbaBqJrs",
-      "createdNow": false
+      "createdNow": false,
+      "priceIdNeedsResync": true,
+      "notes": "Amount updated to match package-catalog / PACKAGE_DEFINITIONS; re-run stripe:sync-catalog."
     },
     {
       "packageKey": "ops-contractor-crm-starter",
@@ -358,12 +384,14 @@
       "family": "ops",
       "billingMode": "payment",
       "paymentOption": "full",
-      "amountUsd": "500.00",
+      "amountUsd": "97.00",
       "interval": "",
       "productName": "KL - Contractor CRM Starter",
       "productId": "prod_UW8Zoapio2IO8o",
       "priceId": "price_1TX6IVErWiwwLYoROxY8IOdJ",
-      "createdNow": false
+      "createdNow": false,
+      "priceIdNeedsResync": true,
+      "notes": "Amount updated to match package-catalog / PACKAGE_DEFINITIONS; re-run stripe:sync-catalog."
     },
     {
       "packageKey": "ops-job-records-system",
@@ -371,12 +399,14 @@
       "family": "ops",
       "billingMode": "payment",
       "paymentOption": "full",
-      "amountUsd": "750.00",
+      "amountUsd": "149.00",
       "interval": "",
       "productName": "KL - Job Records System",
       "productId": "prod_UW8ZsglciPlLBV",
       "priceId": "price_1TX6IVErWiwwLYoRvCaJrb9O",
-      "createdNow": false
+      "createdNow": false,
+      "priceIdNeedsResync": true,
+      "notes": "Amount updated to match package-catalog / PACKAGE_DEFINITIONS; re-run stripe:sync-catalog."
     },
     {
       "packageKey": "ops-automated-job-records",
@@ -384,12 +414,14 @@
       "family": "ops",
       "billingMode": "payment",
       "paymentOption": "full",
-      "amountUsd": "1500.00",
+      "amountUsd": "197.00",
       "interval": "",
       "productName": "KL - Automated Job Records",
       "productId": "prod_UW8ZJC68DRxxZb",
       "priceId": "price_1TX6IWErWiwwLYoRurRRsi2T",
-      "createdNow": false
+      "createdNow": false,
+      "priceIdNeedsResync": true,
+      "notes": "Amount updated to match package-catalog / PACKAGE_DEFINITIONS; re-run stripe:sync-catalog."
     },
     {
       "packageKey": "ops-automated-job-records",
@@ -410,12 +442,14 @@
       "family": "ops",
       "billingMode": "payment",
       "paymentOption": "full",
-      "amountUsd": "3500.00",
+      "amountUsd": "397.00",
       "interval": "",
       "productName": "KL - Growth System Starter",
       "productId": "prod_UW8ZRL9d8z30Ad",
       "priceId": "price_1TX6IXErWiwwLYoRLVUF5ous",
-      "createdNow": false
+      "createdNow": false,
+      "priceIdNeedsResync": true,
+      "notes": "Amount updated to match package-catalog / PACKAGE_DEFINITIONS; re-run stripe:sync-catalog."
     },
     {
       "packageKey": "ops-growth-system-starter",
@@ -423,7 +457,7 @@
       "family": "ops",
       "billingMode": "payment",
       "paymentOption": "deposit",
-      "amountUsd": "1750.00",
+      "amountUsd": "2500.00",
       "interval": "",
       "productName": "KL - Growth System Starter",
       "productId": "prod_UW8ZRL9d8z30Ad",
@@ -436,12 +470,14 @@
       "family": "ops",
       "billingMode": "payment",
       "paymentOption": "full",
-      "amountUsd": "5000.00",
+      "amountUsd": "697.00",
       "interval": "",
       "productName": "KL - Full Growth System",
       "productId": "prod_UW8Z9tlHGJy7ZL",
       "priceId": "price_1TX6IYErWiwwLYoRISI0g3MT",
-      "createdNow": false
+      "createdNow": false,
+      "priceIdNeedsResync": true,
+      "notes": "Amount updated to match package-catalog / PACKAGE_DEFINITIONS; re-run stripe:sync-catalog."
     },
     {
       "packageKey": "ops-full-growth-system",
@@ -458,29 +494,47 @@
     },
     {
       "packageKey": "ops-custom-automation-system",
-      "packageName": "Custom Automation System",
+      "packageName": "Custom / Field Ops System",
       "family": "ops",
       "billingMode": "payment",
       "paymentOption": "full",
-      "amountUsd": "10000.00",
+      "amountUsd": "1000.00",
       "interval": "",
-      "productName": "KL - Custom Automation System",
+      "productName": "KL - Custom / Field Ops System",
       "productId": "prod_UW8Z3CYNrnSOBH",
       "priceId": "price_1TX6IZErWiwwLYoRDu6E5B6E",
-      "createdNow": false
+      "createdNow": false,
+      "priceIdNeedsResync": true,
+      "notes": "Amount updated to match package-catalog / PACKAGE_DEFINITIONS; re-run stripe:sync-catalog."
     },
     {
       "packageKey": "ops-custom-automation-system",
-      "packageName": "Custom Automation System",
+      "packageName": "Custom / Field Ops System",
       "family": "ops",
       "billingMode": "payment",
       "paymentOption": "deposit",
       "amountUsd": "2500.00",
       "interval": "",
-      "productName": "KL - Custom Automation System",
+      "productName": "KL - Custom / Field Ops System",
       "productId": "prod_UW8Z3CYNrnSOBH",
       "priceId": "price_1TX6IaErWiwwLYoR89f70Ss4",
       "createdNow": false
+    },
+    {
+      "packageKey": "website-authority-network",
+      "packageName": "Authority Network",
+      "family": "website",
+      "billingMode": "payment",
+      "paymentOption": "deposit",
+      "amountUsd": "2500.00",
+      "interval": "",
+      "productName": "KL - Authority Network",
+      "productId": "",
+      "priceId": "",
+      "createdNow": false,
+      "billingType": "SCOPED",
+      "notes": "New SCOPED package — create via stripe:sync-catalog."
     }
-  ]
+  ],
+  "alignedTo": "data/package-catalog.json + api/create-checkout-session.js PACKAGE_DEFINITIONS"
 }

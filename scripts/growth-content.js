@@ -2087,7 +2087,7 @@ const subPages = [
         text: 'Once contacts and brand footing are real, we claim Google Business Profile and build the website package you choose. Going live is only one gate — the site also needs to be indexable and ready for search, local, and answer-engine discovery.',
         bullets: [
           'Google Business Profile claimed and verified with matching NAP',
-          'Website package scoped from Preview through Local Launch / Growth System',
+          'Website package scoped from Preview through Local Site / Growth System',
           'Website Audit gates before public DNS — quality, not just speed',
           'Indexability, SEO, GEO, and AEO readiness so Search, Maps, and AI answers can find you'
         ],
@@ -2140,7 +2140,7 @@ const subPages = [
       },
       {
         q: 'How much does a website cost for a new business?',
-        a: 'It depends on how far you need to go on day one. Packages typically run from Demo Preview and Starter Preview/Live through Search-Ready, Local Launch, Local Launch Plus, and full Growth System. A consult maps what you already have (LLC, insurance, logo, phone) versus what still needs to be built, then we give a written estimate for that scope — not a surprise invoice after go-live. See pricing for current package ranges, or book a consult if you want a phased plan.'
+        a: 'It depends on how far you need to go on day one. Packages typically run from Demo Preview and Preview Launch through Local Site, Authority Site, Max Authority, Authority Network, and full Growth System (setup + monthly). A consult maps what you already have (LLC, insurance, logo, phone) versus what still needs to be built, then we give a written estimate for that scope — not a surprise invoice after go-live. See pricing for current package ranges, or book a consult if you want a phased plan.'
       },
       {
         q: 'When do we make the GBP vs the website live?',
@@ -2164,7 +2164,7 @@ const subPages = [
       },
       {
         q: 'How long does a new-business launch take?',
-        a: 'Foundation and contacts can move in days once decisions are made. A Search-Ready or Local Launch website is typically weeks on staging with an audit gate before public DNS. Growth-system lanes (outreach, social, dispatch) follow in milestones so your team is not trained on five tools on day one. Timeline depends on how ready registration, insurance, brand assets, and content are when we start.'
+        a: 'Foundation and contacts can move in days once decisions are made. A Search-Ready or Local Site website is typically weeks on staging with an audit gate before public DNS. Growth-system lanes (outreach, social, dispatch) follow in milestones so your team is not trained on five tools on day one. Timeline depends on how ready registration, insurance, brand assets, and content are when we start.'
       }
     ],
     links: [

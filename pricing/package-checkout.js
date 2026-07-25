@@ -11,7 +11,7 @@
         },
         'website-preview-launch': {
             name: 'Preview Launch Site',
-            price: '$500',
+            price: '$750',
             family: 'website',
             profile: 'website-basic',
             goalLabel: 'What is this preview page for?',
@@ -22,6 +22,8 @@
             price: '$700',
             family: 'website',
             profile: 'website-basic',
+            checkoutEnabled: false,
+            deprecated: true,
             goalLabel: 'What should this website help your business do?',
             goalPlaceholder: 'Example: generate calls, show services clearly, look more professional, or launch a simple business site.'
         },
@@ -30,6 +32,8 @@
             price: '$850',
             family: 'website',
             profile: 'website-basic',
+            checkoutEnabled: false,
+            deprecated: true,
             goalLabel: 'What are we building, and what should it accomplish?',
             goalPlaceholder: 'Give us the short version. We only need enough to start the build cleanly.'
         },
@@ -38,6 +42,8 @@
             price: '$1,200',
             family: 'website',
             profile: 'website-local',
+            checkoutEnabled: false,
+            deprecated: true,
             goalLabel: 'What should this search-ready site help you get more of?',
             goalPlaceholder: 'Example: local calls, quote requests, or a stronger Google-ready site.'
         },
@@ -46,33 +52,43 @@
             price: '$1,500',
             family: 'website',
             profile: 'website-local',
+            checkoutEnabled: false,
+            deprecated: true,
             goalLabel: 'What should this search-ready site help your business do?',
-            goalPlaceholder: 'Give us the core goal first. We can fill in the rest with you after checkout.',
+            goalPlaceholder: 'Give us the core goal first. We can fill in the rest with you after checkout.'
+        },
+        'website-local-seo-starter': {
+            name: 'Local Site',
+            price: '$1,200',
+            family: 'website',
+            profile: 'website-local',
+            goalLabel: 'What should this local site help you win?',
+            goalPlaceholder: 'Example: stronger Google visibility, better design quality, cleaner lead capture, or competitor differentiation.',
             paymentOptions: [
                 {
                     value: 'full',
-                    label: 'Pay in full - $1,500',
-                    help: 'One-time payment through Stripe.'
+                    label: 'Pay in full - $1,200',
+                    help: 'Project payment through Stripe — financing may appear when eligible.'
                 },
                 {
                     value: 'deposit',
-                    label: 'Reserve kickoff with a $750 deposit',
-                    help: 'Deposit is applied to the project total. Remaining balance is invoiced before launch.'
+                    label: 'Reserve kickoff with a $600 deposit',
+                    help: 'Deposit is applied to the project total. Remaining balance is invoiced during milestone approvals.'
                 }
             ]
         },
-        'website-local-seo-starter': {
-            name: 'Local Launch Site',
-            price: '$1,997',
+        'website-local-launch-plus': {
+            name: 'Authority Site',
+            price: '$2,000',
             family: 'website',
             profile: 'website-local',
-            goalLabel: 'What should this local launch help you win?',
-            goalPlaceholder: 'Example: stronger Google visibility, better design quality, cleaner lead capture, competitor differentiation, or GBP alignment.',
+            goalLabel: 'What is the main growth goal for this 35–60 page build?',
+            goalPlaceholder: 'Example: cover multiple service areas, expand page depth, or launch a stronger lead-generation site.',
             paymentOptions: [
                 {
                     value: 'full',
-                    label: 'Pay in full - $1,997',
-                    help: 'One-time payment through Stripe.'
+                    label: 'Pay in full - $2,000',
+                    help: 'Project payment through Stripe — financing may appear when eligible. GBP setup/optimize is included.'
                 },
                 {
                     value: 'deposit',
@@ -81,43 +97,41 @@
                 }
             ]
         },
-        'website-local-launch-plus': {
-            name: 'Local Launch Plus',
-            price: '$2,997',
-            family: 'website',
-            profile: 'website-local',
-            goalLabel: 'What is the main growth goal for this larger local build?',
-            goalPlaceholder: 'Example: cover multiple service areas, expand page depth, or launch a stronger lead-generation site.',
-            paymentOptions: [
-                {
-                    value: 'full',
-                    label: 'Pay in full - $2,997',
-                    help: 'One-time payment through Stripe.'
-                },
-                {
-                    value: 'deposit',
-                    label: 'Reserve kickoff with a $1,500 deposit',
-                    help: 'Deposit is applied to the project total. Remaining balance is invoiced during milestone approvals.'
-                }
-            ]
-        },
         'website-local-launch-max': {
-            name: 'Local Launch Max',
+            name: 'Max Authority Site',
             price: '$4,500',
             family: 'website',
             profile: 'website-local',
-            goalLabel: 'What makes this build larger or more complex?',
-            goalPlaceholder: 'Example: larger page count, deeper service-area coverage, advanced tracking, or more complex lead flow.',
+            billingType: 'PROJECT',
+            goalLabel: 'What should this up-to-40-page Max Authority PROJECT prioritize?',
+            goalPlaceholder: 'Example: deeper service/location architecture, stronger technical SEO/GEO/AEO, or a denser conversion path than Authority Site.',
             paymentOptions: [
                 {
                     value: 'full',
                     label: 'Pay in full - $4,500',
-                    help: 'One-time payment through Stripe.'
+                    help: 'One-time PROJECT payment through Stripe — financing may appear when eligible. GBP setup/optimize is included. Monthly ops is separate.'
                 },
                 {
                     value: 'deposit',
                     label: 'Reserve kickoff with a $2,000 deposit',
                     help: 'Deposit is applied to the project total. Remaining balance is invoiced across scoped milestones.'
+                }
+            ]
+        },
+        'website-authority-network': {
+            name: 'Authority Network',
+            price: 'from $6,500',
+            family: 'website',
+            profile: 'website-local',
+            billingType: 'SCOPED',
+            requireDeposit: true,
+            goalLabel: 'What 60–100+ page network architecture are we scoping?',
+            goalPlaceholder: 'Example: multi-market service/location graph, standardized expansion pages, or a large authority network beyond Max Authority.',
+            paymentOptions: [
+                {
+                    value: 'deposit',
+                    label: 'Reserve scope with a $2,500 deposit',
+                    help: 'Scope deposit only. Remaining balance is invoiced after page architecture and milestones are confirmed.'
                 }
             ]
         },
@@ -139,20 +153,21 @@
         },
         'ecommerce-launch': {
             name: 'E-Commerce Launch',
-            price: '$2,497',
+            price: '$2,997',
             family: 'ecommerce',
             profile: 'ecommerce',
+            billingType: 'PROJECT',
             goalLabel: 'What are we selling, and what should the buying process feel like?',
-            goalPlaceholder: 'Example: clean cart flow, custom product pages, or a more polished online store than templates allow.',
+            goalPlaceholder: 'Example: clean cart flow, custom product pages, or a more polished online store than templates allow. Initial setup includes up to 20 products.',
             paymentOptions: [
                 {
                     value: 'full',
-                    label: 'Pay in full - $2,497',
-                    help: 'One-time payment through Stripe.'
+                    label: 'Pay in full - $2,997',
+                    help: 'One-time payment through Stripe. Initial product load capped; extra migration quoted separately.'
                 },
                 {
                     value: 'deposit',
-                    label: 'Reserve kickoff with a $1,250 deposit',
+                    label: 'Reserve kickoff with a $1,500 deposit',
                     help: 'Deposit is applied to the project total. Remaining balance is invoiced before final launch.'
                 }
             ]
@@ -187,27 +202,40 @@
         },
         'ecommerce-advanced-system': {
             name: 'Advanced E-Commerce System',
-            price: '$7,500',
+            price: 'from $7,500',
             family: 'ecommerce',
             profile: 'ecommerce',
-            goalLabel: 'What advanced store or system are we building?',
-            goalPlaceholder: 'Example: dynamic inventory, admin editing, accounts, reporting, or complex purchase logic.',
+            billingType: 'SCOPED',
+            requireDeposit: true,
+            goalLabel: 'What advanced store or system are we scoping?',
+            goalPlaceholder: 'Example: dynamic inventory, admin editing, accounts, reporting, or complex purchase logic. Full price is confirmed after scope.',
             paymentOptions: [
                 {
-                    value: 'full',
-                    label: 'Pay in full - $7,500',
-                    help: 'One-time payment through Stripe.'
-                },
-                {
                     value: 'deposit',
-                    label: 'Reserve strategy and kickoff with a $2,500 deposit',
-                    help: 'Strategy deposit is applied to the project total. Remaining balance is invoiced after scope confirmation and milestones.'
+                    label: 'Reserve strategy with a $2,500 deposit',
+                    help: 'Strategy deposit only. Remaining balance is invoiced after scope confirmation — not a flat open checkout for large scope.'
                 }
             ]
         },
+        'gbp-setup': {
+            name: 'GBP Setup',
+            price: '$497',
+            family: 'seo',
+            profile: 'website-local',
+            goalLabel: 'What do you need for Google Business Profile setup?',
+            goalPlaceholder: 'Example: new profile from scratch, category cleanup, services, photos checklist, or verification help.'
+        },
+        'gbp-maintenance': {
+            name: 'GBP Maintenance',
+            price: '$147/mo',
+            family: 'seo',
+            profile: 'monthly',
+            goalLabel: 'What should we maintain on your Google Business Profile each month?',
+            goalPlaceholder: 'Example: posts, photo updates, Q&A, review reply templates, or category/service hygiene.'
+        },
         'gbp-optimization': {
-            name: 'Google Business Profile Sprint',
-            price: '$397',
+            name: 'GBP Setup',
+            price: '$497',
             family: 'seo',
             profile: 'website-local',
             goalLabel: 'What do you want improved about your Google Business Profile?',
@@ -239,9 +267,11 @@
         },
         'monthly-growth-management': {
             name: 'Growth Management',
-            price: '$1,000/mo',
+            price: 'starting at $1,000/mo',
             family: 'monthly',
             profile: 'monthly',
+            billingType: 'SCOPED',
+            checkoutEnabled: false,
             goalLabel: 'What would you want us actively managing every month?',
             goalPlaceholder: 'Example: CRM, reporting, content coordination, automation workflows, or a broader growth system.'
         },
@@ -279,9 +309,10 @@
         },
         'ops-growth-system-starter': {
             name: 'Growth System Starter',
-            price: '$3,500 setup + $397/mo',
+            price: 'from $5,000 setup + $397/mo',
             family: 'ops',
             profile: 'ops',
+            growthScoped: true,
             goalLabel: 'What business bottleneck should this system solve first?',
             goalPlaceholder: 'Example: lead tracking, review workflow, reporting, or a weak process behind the website.'
         },
@@ -290,16 +321,45 @@
             price: '$5,000 setup + $697/mo',
             family: 'ops',
             profile: 'ops',
+            growthScoped: true,
             goalLabel: 'What should this full system improve most for the business?',
             goalPlaceholder: 'Example: lead flow, tracking, CRM, reporting, site and search alignment, or operations cleanup.'
         },
         'ops-custom-automation-system': {
-            name: 'Custom Automation System',
+            name: 'Custom / Field Ops System',
             price: '$10,000 setup + $1,000/mo',
             family: 'ops',
             profile: 'ops',
-            goalLabel: 'What workflow, system, or automation are we creating?',
-            goalPlaceholder: 'Example: routing leads, dashboards, follow-up automation, reporting, or a custom internal tool.'
+            growthScoped: true,
+            goalLabel: 'What should the field app or multi-brand automation handle first?',
+            goalPlaceholder: 'Example: mobile estimates/invoices/photos for crews, portal ticket dispatch, multi-brand outreach, or social fan-out from completed jobs.'
+        },
+        'ops-growth-systems-only-starter': {
+            name: 'Growth Systems-Only Starter',
+            price: 'from $2,500 setup + $397/mo',
+            family: 'ops',
+            profile: 'ops',
+            growthScoped: true,
+            goalLabel: 'You already have a site — what ops gap should we close first?',
+            goalPlaceholder: 'Example: lead tracker, review follow-up, reporting, or quote follow-up on your existing website.'
+        },
+        'ops-growth-systems-only-full': {
+            name: 'Growth Systems-Only Full',
+            price: 'from $3,500 setup + $697/mo',
+            family: 'ops',
+            profile: 'ops',
+            growthScoped: true,
+            goalLabel: 'What back-office automation should run on your existing site?',
+            goalPlaceholder: 'Example: follow-up email, ops alerts, outreach or social lane, GBP/search depth without rebuilding the site.'
+        },
+        'ops-growth-systems-only-field': {
+            name: 'Field Ops Systems-Only',
+            price: 'from $8,000 setup + $1,000/mo',
+            family: 'ops',
+            profile: 'ops',
+            growthScoped: true,
+            goalLabel: 'What should the field job app handle first on your current site?',
+            goalPlaceholder: 'Example: mobile estimates, invoices, scoped photos, Stripe, or dispatch/portal intake without a marketing site rebuild.'
         }
     };
 
@@ -406,6 +466,88 @@
             goalLabel: 'What are we building for you?',
             goalPlaceholder: 'Tell us the short version so we can start cleanly.'
         };
+    }
+
+    function resolveGrowthPackageRoute(systemsScope, maintenanceDepth, auditDepth) {
+        const effectiveMaintenance = maintenanceDepth
+            || (auditDepth === 'audit-maintained' ? 'management' : auditDepth === 'audit-full' ? 'pro' : 'standard');
+
+        if (systemsScope === 'custom' || effectiveMaintenance === 'management' || auditDepth === 'audit-maintained') {
+            return {
+                packageKey: 'ops-custom-automation-system',
+                message: 'Custom systems, Growth Management care, or maintained ongoing audits map to Custom Automation System ($10,000 setup + $1,000/mo).'
+            };
+        }
+
+        if (systemsScope === 'full-stack' || effectiveMaintenance === 'pro' || auditDepth === 'audit-full') {
+            return {
+                packageKey: 'ops-full-growth-system',
+                message: 'Full systems stack, Pro care, or full-access Website Audits map to Full Growth System ($5,000 setup + $697/mo).'
+            };
+        }
+
+        return {
+            packageKey: 'ops-growth-system-starter',
+            message: 'Growth sites are 70+ pages with service + city coverage included. Standard care / limited audit depth starts from $5,000 setup + $397/mo.'
+        };
+    }
+
+    function applyGrowthScopeSelection() {
+        const systemsScopeInput = intakeForm ? intakeForm.querySelector('#starterPackageSystemsScope') : null;
+        const maintenanceDepthInput = intakeForm ? intakeForm.querySelector('#starterPackageMaintenanceDepth') : null;
+        const auditDepthInput = intakeForm ? intakeForm.querySelector('#starterPackageAuditDepth') : null;
+
+        if (!systemsScopeInput || !maintenanceDepthInput) {
+            return null;
+        }
+
+        const auditDepth = auditDepthInput ? auditDepthInput.value : '';
+        if (auditDepthInput && auditDepth && maintenanceDepthInput) {
+            if (auditDepth === 'audit-maintained') {
+                maintenanceDepthInput.value = 'management';
+            } else if (auditDepth === 'audit-full') {
+                maintenanceDepthInput.value = 'pro';
+            } else if (!maintenanceDepthInput.value) {
+                maintenanceDepthInput.value = 'standard';
+            }
+        }
+
+        const route = resolveGrowthPackageRoute(
+            systemsScopeInput.value || 'site-ops',
+            maintenanceDepthInput.value || 'standard',
+            auditDepth
+        );
+        const packageConfig = getPackageDetails(route.packageKey);
+        activePackageKey = route.packageKey;
+
+        if (intakePackageKeyInput) {
+            intakePackageKeyInput.value = route.packageKey;
+        }
+
+        if (intakePackageNameInput) {
+            intakePackageNameInput.value = packageConfig.name;
+        }
+
+        if (intakePackagePriceInput) {
+            intakePackagePriceInput.value = packageConfig.price;
+        }
+
+        if (intakePackageLabel) {
+            intakePackageLabel.textContent = `${packageConfig.name} - ${packageConfig.price}`;
+        }
+
+        renderAssurance(packageConfig);
+        updateCheckoutSummary(packageConfig);
+
+        if (configuratorCopy) {
+            configuratorCopy.textContent = route.message;
+        }
+
+        if (configuratorMeta) {
+            configuratorMeta.textContent = 'Variables: (1) 70+ page Growth site with service + city pages included, (2) Website Audit depth — external → limited → full-access → maintained, (3) systems opted in, (4) monthly care $397 / $697 / $1,000+, (5) selling or invoicing needs.';
+        }
+
+        return packageConfig;
     }
 
     function getCheckoutEndpoint() {
@@ -780,8 +922,55 @@
         }
 
         if (packageConfig.profile === 'ops') {
+            const growthFields = packageConfig.growthScoped ? `
+                    <div class="form-group">
+                        <label for="starterPackageSystemsScope">Which systems are you opting into?</label>
+                        <select id="starterPackageSystemsScope" name="systemsScope" required>
+                            <option value="">Choose one...</option>
+                            <option value="core">Core — lead tracker + reporting</option>
+                            <option value="site-ops" selected>Site + ops — website upgrades, CRM, reviews</option>
+                            <option value="full-stack">Full stack — site, search, GBP, CRM, workflows</option>
+                            <option value="custom">Custom — multi-brand CRM, routing, or custom automation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="starterPackageAuditDepth">How deep should Website Audits and maintained audits go?</label>
+                        <select id="starterPackageAuditDepth" name="auditDepth" required>
+                            <option value="">Choose one...</option>
+                            <option value="audit-external">External audit — public checks only (no GSC/GBP login)</option>
+                            <option value="audit-limited" selected>Limited Website Audit — partial access (e.g. no GSC yet)</option>
+                            <option value="audit-full">Full-access Website Audit — GSC, GBP, analytics when granted</option>
+                            <option value="audit-maintained">Full-access + maintained ongoing audits</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="starterPackageMaintenanceDepth">Monthly care level</label>
+                        <select id="starterPackageMaintenanceDepth" name="maintenanceDepth" required>
+                            <option value="">Choose one...</option>
+                            <option value="standard" selected>Standard care — $397/mo</option>
+                            <option value="pro">Pro care — $697/mo</option>
+                            <option value="management">Growth Management — $1,000+/mo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="starterPackageSellingOnlineNeed">What selling, payment, or invoicing flow do you need?</label>
+                        <select id="starterPackageSellingOnlineNeed" name="sellingOnlineNeed" required>
+                            <option value="">Choose one...</option>
+                            <option value="no">No online selling or invoicing</option>
+                            <option value="later">Maybe later, but not now</option>
+                            <option value="stripe-links">Simple payment links or buy buttons</option>
+                            <option value="invoicing" selected>Job / estimate invoicing system (not a storefront)</option>
+                            <option value="cart-store">A real cart and storefront checkout</option>
+                        </select>
+                    </div>
+                    <div class="form-group starter-package-intake-span-2">
+                        <p class="starter-package-intake-helper" style="margin-top:0;">Growth sites are 70+ pages with service + city coverage included. Price moves with systems, Website Audit depth (external → limited → full-access → maintained), monthly care, and invoicing needs.</p>
+                    </div>
+            ` : '';
+
             return `
                 <div class="starter-package-intake-grid">
+                    ${growthFields}
                     <div class="form-group starter-package-intake-span-2">
                         <label for="starterPackageProjectGoal">${packageConfig.goalLabel}</label>
                         <textarea id="starterPackageProjectGoal" name="projectDetails" placeholder="${packageConfig.goalPlaceholder}" maxlength="1500" required></textarea>
@@ -943,7 +1132,9 @@
             configuratorCopy.textContent = selectedPaymentConfig && selectedPayment === 'deposit'
                 ? selectedPaymentConfig.help
                 : packageConfig.family === 'ops'
-                    ? 'This checkout includes the setup fee today and starts the monthly support subscription in Stripe.'
+                    ? (packageConfig.growthScoped
+                        ? 'Checkout starts from $5,000 setup + $397/mo. Systems, Website Audit depth, monthly care, and invoicing needs can move you to Full Growth ($697/mo) or Custom ($1,000/mo).'
+                        : 'This checkout includes the setup fee today and starts the monthly support subscription in Stripe.')
                 : packageConfig.family === 'monthly'
                     ? 'This starter form confirms the property and main priority before recurring Stripe checkout starts.'
                     : 'This starter form is just enough to get the project moving cleanly before secure Stripe checkout.';
@@ -951,7 +1142,9 @@
 
         if (configuratorMeta) {
             configuratorMeta.textContent = packageConfig.family === 'ops'
-                ? 'CRM and automation systems are not one-and-done. The monthly portion covers upkeep, small adjustments, monitoring, and support after setup.'
+                ? (packageConfig.growthScoped
+                    ? 'Variables: (1) 70+ page Growth site with service + city pages included, (2) Website Audit depth — external → limited → full-access → maintained, (3) systems opted in, (4) monthly care $397 / $697 / $1,000+, (5) selling or invoicing needs.'
+                    : 'CRM and automation systems are not one-and-done. The monthly portion covers upkeep, small adjustments, monitoring, and support after setup.')
                 : packageConfig.family === 'monthly'
                 ? 'You can attach starter files now, but the main thing we need is the site or profile you want maintained.'
                 : hasDepositOption(packageConfig)
@@ -972,6 +1165,9 @@
         const existingPresenceCheckbox = intakeForm ? intakeForm.querySelector('#starterPackageHasPresence, #starterPackageMonthlyHasPresence') : null;
         const existingPresenceFields = intakeForm ? intakeForm.querySelector('#starterPackagePresenceFields, #starterPackageMonthlyPresenceFields') : null;
         const paymentInputs = intakeForm ? Array.from(intakeForm.querySelectorAll('input[name="paymentOption"]')) : [];
+        const systemsScopeInput = intakeForm ? intakeForm.querySelector('#starterPackageSystemsScope') : null;
+        const maintenanceDepthInput = intakeForm ? intakeForm.querySelector('#starterPackageMaintenanceDepth') : null;
+        const auditDepthInput = intakeForm ? intakeForm.querySelector('#starterPackageAuditDepth') : null;
 
         if (existingPresenceCheckbox && existingPresenceFields) {
             const toggleExistingPresence = function () {
@@ -984,9 +1180,43 @@
 
         paymentInputs.forEach((input) => {
             input.addEventListener('change', function () {
-                updateCheckoutSummary(packageConfig);
+                updateCheckoutSummary(getPackageDetails(activePackageKey) || packageConfig);
             });
         });
+
+        if (systemsScopeInput && maintenanceDepthInput) {
+            const syncGrowthScope = function () {
+                applyGrowthScopeSelection();
+            };
+
+            systemsScopeInput.addEventListener('change', syncGrowthScope);
+            maintenanceDepthInput.addEventListener('change', syncGrowthScope);
+            if (auditDepthInput) {
+                auditDepthInput.addEventListener('change', syncGrowthScope);
+            }
+
+            if (activePackageKey === 'ops-full-growth-system') {
+                systemsScopeInput.value = 'full-stack';
+                maintenanceDepthInput.value = 'pro';
+                if (auditDepthInput) {
+                    auditDepthInput.value = 'audit-full';
+                }
+            } else if (activePackageKey === 'ops-custom-automation-system') {
+                systemsScopeInput.value = 'custom';
+                maintenanceDepthInput.value = 'management';
+                if (auditDepthInput) {
+                    auditDepthInput.value = 'audit-maintained';
+                }
+            } else {
+                systemsScopeInput.value = 'site-ops';
+                maintenanceDepthInput.value = 'standard';
+                if (auditDepthInput) {
+                    auditDepthInput.value = 'audit-limited';
+                }
+            }
+
+            syncGrowthScope();
+        }
     }
 
     function saveCheckoutDraft(packageKey) {
@@ -1126,6 +1356,12 @@
         }
 
         const packageConfig = getPackageDetails(packageKey);
+
+        if (packageConfig.checkoutEnabled === false || packageConfig.deprecated === true) {
+            window.location.href = '/contact?reason=scope&package=' + encodeURIComponent(packageKey);
+            return;
+        }
+
         activePackageKey = packageKey;
         lastTrigger = triggerElement || null;
 

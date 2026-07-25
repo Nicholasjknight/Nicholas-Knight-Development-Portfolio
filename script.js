@@ -934,7 +934,7 @@ const KL_HERO_PANEL_POOL = [
     '/images/showcase/faith-works-og-card.jpg',
     '/images/screen-team-showcase-800.webp',
     '/images/KGHero.webp',
-    '/images/JNS-HomeImage.webp',
+    '/images/showcase/roof-monsters-og-card.webp',
     '/images/momhero.webp',
     '/images/websitehero.webp?v=20260604perf1'
 ];
@@ -943,7 +943,7 @@ const KL_HERO_IMAGE_FOCUS = {
     '/images/showcase/faith-works-og-card.jpg': { desktop: '42% 38%', mobile: '44% 36%' },
     '/images/screen-team-showcase-800.webp': { desktop: '74% 48%', mobile: '82% 50%' },
     '/images/KGHero.webp': { desktop: '76% 44%', mobile: '82% 46%' },
-    '/images/JNS-HomeImage.webp': { desktop: '55% 42%', mobile: '58% 44%' },
+    '/images/showcase/roof-monsters-og-card.webp': { desktop: '50% 40%', mobile: '52% 42%' },
     '/images/momhero.webp': { desktop: '50% 32%', mobile: '50% 28%' },
     '/images/websitehero.webp': { desktop: '38% 36%', mobile: '42% 38%' },
     '/images/websitehero.webp?v=20260604perf1': { desktop: '38% 36%', mobile: '42% 38%' }
@@ -953,7 +953,7 @@ const KL_HERO_MOBILE_PRIORITY = [
     '/images/screen-team-showcase-800.webp',
     '/images/KGHero.webp',
     '/images/websitehero.webp?v=20260604perf1',
-    '/images/JNS-HomeImage.webp',
+    '/images/showcase/roof-monsters-og-card.webp',
     '/images/showcase/faith-works-og-card.jpg',
     '/images/momhero.webp'
 ];
@@ -1319,11 +1319,18 @@ function initServicesEntrance() {
         if (showcase.classList.contains('kl-services-showcase-animate')) return;
         showcase.classList.add('kl-services-showcase-animate');
         const cardCount = showcase.querySelectorAll('.services-showcase-card.kl-services-enter').length;
-        const doneMs = Math.min(1400, 650 + cardCount * 60);
+        const doneMs = Math.min(2800, 1100 + cardCount * 110);
         window.setTimeout(() => showcase.classList.add('kl-services-showcase-animate-done'), doneMs);
     };
 
+    const startCtaAnimation = (cta) => {
+        if (!cta || cta.classList.contains('kl-services-cta-animate')) return;
+        cta.classList.add('kl-services-cta-animate');
+        window.setTimeout(() => cta.classList.add('kl-services-cta-animate-done'), 1000);
+    };
+
     const showcaseBlocks = services.querySelectorAll('.kl-services-showcase');
+    const servicesCta = services.querySelector('[data-kl-services-cta]');
 
     const isNearViewport = (el, leadPx = 280) => {
         const rect = el.getBoundingClientRect();
@@ -1334,20 +1341,26 @@ function initServicesEntrance() {
     if (prefersReducedMotion) {
         startSectionAnimation();
         showcaseBlocks.forEach(startShowcaseAnimation);
+        startCtaAnimation(servicesCta);
         return;
     }
 
-    // Immediate reveal if the user lands mid-page or scrolls past before observers fire.
-    if (isNearViewport(services, 120)) startSectionAnimation();
+    // Only auto-start if already clearly on screen (refresh mid-page). Avoid
+    // burning the entrance while the user is still reading content above.
+    if (isNearViewport(services, 40)) startSectionAnimation();
     showcaseBlocks.forEach((showcase) => {
-        if (isNearViewport(showcase, 320)) startShowcaseAnimation(showcase);
+        if (isNearViewport(showcase, 24)) startShowcaseAnimation(showcase);
     });
+    if (servicesCta && isNearViewport(servicesCta, 40)) startCtaAnimation(servicesCta);
 
-    // Hard failsafe: never leave services content blank for more than a beat.
+    // Failsafe only if the block is in/near view and somehow never animated.
     window.setTimeout(() => {
-        startSectionAnimation();
-        showcaseBlocks.forEach(startShowcaseAnimation);
-    }, 1200);
+        if (isNearViewport(services, 80)) startSectionAnimation();
+        showcaseBlocks.forEach((showcase) => {
+            if (isNearViewport(showcase, 80)) startShowcaseAnimation(showcase);
+        });
+        if (servicesCta && isNearViewport(servicesCta, 80)) startCtaAnimation(servicesCta);
+    }, 4500);
 
     if ('IntersectionObserver' in window) {
         const sectionObserver = new IntersectionObserver((entries) => {
@@ -1358,13 +1371,14 @@ function initServicesEntrance() {
                 }
             });
         }, {
-            threshold: 0.01,
-            rootMargin: '120px 0px 80px 0px'
+            threshold: 0.12,
+            rootMargin: '0px 0px -8% 0px'
         });
         sectionObserver.observe(services);
 
         showcaseBlocks.forEach((showcase) => {
             if (showcase.classList.contains('kl-services-showcase-animate')) return;
+            const observeTarget = showcase.querySelector('.services-showcase-grid') || showcase;
             const showcaseObserver = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
@@ -1373,16 +1387,33 @@ function initServicesEntrance() {
                     }
                 });
             }, {
-                threshold: 0.01,
-                rootMargin: '220px 0px 120px 0px'
+                // Fire when a solid chunk of the mosaic is actually on screen
+                threshold: 0.22,
+                rootMargin: '0px 0px -12% 0px'
             });
-            showcaseObserver.observe(showcase);
+            showcaseObserver.observe(observeTarget);
         });
+
+        if (servicesCta && !servicesCta.classList.contains('kl-services-cta-animate')) {
+            const ctaObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        startCtaAnimation(servicesCta);
+                        ctaObserver.disconnect();
+                    }
+                });
+            }, {
+                threshold: 0.2,
+                rootMargin: '0px 0px -6% 0px'
+            });
+            ctaObserver.observe(servicesCta);
+        }
         return;
     }
 
     startSectionAnimation();
     showcaseBlocks.forEach(startShowcaseAnimation);
+    startCtaAnimation(servicesCta);
 }
 
 function initShowcaseCardReveal() {
@@ -1539,6 +1570,71 @@ function initAdvancedParallax() {
     window.addEventListener('scroll', requestTick);
 }
 
+// Desktop nav: shrink link size/gap so links never overlap .nav-actions CTAs
+let navLinksFitRaf = 0;
+
+function fitDesktopNavLinks() {
+    const desktopMq = window.matchMedia('(min-width: 1025px)');
+    const navLinksEl = document.querySelector('.nav-menu .mobile-nav-links');
+    const navActions = document.querySelector('.nav-actions');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (!navLinksEl) return;
+
+    navLinksEl.style.removeProperty('--nav-links-font-size');
+    navLinksEl.style.removeProperty('--nav-links-gap');
+    if (navMenu) navMenu.style.removeProperty('--nav-menu-gap');
+
+    if (!desktopMq.matches || !navActions || navActions.offsetParent === null) return;
+
+    const sampleLink = navLinksEl.querySelector('.nav-link');
+    if (!sampleLink) return;
+
+    const buffer = 10;
+    let fontSize = parseFloat(getComputedStyle(sampleLink).fontSize);
+    let gap = parseFloat(getComputedStyle(navLinksEl).columnGap || getComputedStyle(navLinksEl).gap) || 18;
+    let menuGap = navMenu ? parseFloat(getComputedStyle(navMenu).columnGap || getComputedStyle(navMenu).gap) || 14 : 14;
+    const minFont = 11;
+    const minGap = 8;
+    const minMenuGap = 6;
+
+    function overlaps() {
+        const actionsRect = navActions.getBoundingClientRect();
+        let maxRight = navLinksEl.getBoundingClientRect().right;
+        navLinksEl.querySelectorAll(':scope > *').forEach((child) => {
+            maxRight = Math.max(maxRight, child.getBoundingClientRect().right);
+        });
+        return maxRight > actionsRect.left - buffer;
+    }
+
+    if (!overlaps()) return;
+
+    while (overlaps() && fontSize > minFont) {
+        fontSize = Math.max(minFont, fontSize - 0.5);
+        navLinksEl.style.setProperty('--nav-links-font-size', `${fontSize}px`);
+    }
+
+    while (overlaps() && gap > minGap) {
+        gap = Math.max(minGap, gap - 2);
+        navLinksEl.style.setProperty('--nav-links-gap', `${gap}px`);
+    }
+
+    if (navMenu) {
+        while (overlaps() && menuGap > minMenuGap) {
+            menuGap = Math.max(minMenuGap, menuGap - 2);
+            navMenu.style.setProperty('--nav-menu-gap', `${menuGap}px`);
+        }
+    }
+}
+
+function scheduleFitDesktopNavLinks() {
+    if (navLinksFitRaf) cancelAnimationFrame(navLinksFitRaf);
+    navLinksFitRaf = requestAnimationFrame(() => {
+        navLinksFitRaf = 0;
+        fitDesktopNavLinks();
+    });
+}
+
 // Navigation
 function initNavigation() {
     const hamburger = document.getElementById('hamburger');
@@ -1549,7 +1645,11 @@ function initNavigation() {
 
     function closeNavigationUI() {
         if (navMenu) navMenu.classList.remove('active');
-        if (hamburger) hamburger.classList.remove('active');
+        if (hamburger) {
+            hamburger.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+            hamburger.setAttribute('aria-label', 'Open menu');
+        }
         if (navMenuOverlay) navMenuOverlay.classList.remove('active');
         document.body.classList.remove('nav-menu-open');
         document.body.style.overflow = '';
@@ -1566,6 +1666,8 @@ function initNavigation() {
         } else {
             navMenu.classList.add('active');
             hamburger.classList.add('active');
+            hamburger.setAttribute('aria-expanded', 'true');
+            hamburger.setAttribute('aria-label', 'Close menu');
             navMenuOverlay.classList.add('active');
             document.body.classList.add('nav-menu-open');
             document.body.style.overflow = 'hidden';
@@ -1642,6 +1744,13 @@ function initNavigation() {
         alignMegaPanelToTab(mega, 0);
     }
 
+    function scrollMegaIntoDrawer(target) {
+        if (!target || typeof target.scrollIntoView !== 'function') return;
+        requestAnimationFrame(() => {
+            target.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        });
+    }
+
     function activateMegaTab(mega, index) {
         const tabs = mega.querySelectorAll('.nav-dropdown-mega-tab');
         const panels = mega.querySelectorAll('.nav-dropdown-mega-panel');
@@ -1659,6 +1768,8 @@ function initNavigation() {
         if (!desktopMega.matches) {
             mega.classList.add('nav-dropdown-mega--flyout-open');
             clearMegaPanelAlign(mega);
+            const backBtn = mega.querySelector('.nav-dropdown-mega-back');
+            scrollMegaIntoDrawer(backBtn || panels[index] || mega);
         } else {
             alignMegaPanelToTab(mega, index);
         }
@@ -1732,6 +1843,7 @@ function initNavigation() {
                 e.preventDefault();
                 e.stopPropagation();
                 mega.classList.remove('nav-dropdown-mega--flyout-open');
+                scrollMegaIntoDrawer(mega.querySelector('.nav-dropdown-mega-nav') || mega);
             });
         }
     });
@@ -1911,11 +2023,25 @@ function initNavigation() {
         const updateNavbarScrollState = () => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             navbar.classList.toggle('scrolled', scrollTop > scrollThreshold);
+            scheduleFitDesktopNavLinks();
         };
 
         updateNavbarScrollState();
         window.addEventListener('scroll', updateNavbarScrollState, { passive: true });
         window.addEventListener('resize', updateNavbarScrollState, { passive: true });
+    }
+
+    scheduleFitDesktopNavLinks();
+    window.addEventListener('resize', scheduleFitDesktopNavLinks, { passive: true });
+
+    if (navbar && typeof ResizeObserver !== 'undefined' && navbar.dataset.navFitObserved !== '1') {
+        navbar.dataset.navFitObserved = '1';
+        const navFitObserver = new ResizeObserver(scheduleFitDesktopNavLinks);
+        navFitObserver.observe(navbar);
+        const navActions = document.querySelector('.nav-actions');
+        const navBrand = document.querySelector('.nav-brand');
+        if (navActions) navFitObserver.observe(navActions);
+        if (navBrand) navFitObserver.observe(navBrand);
     }
 
     // Home navigation handlers - trigger landing mode
@@ -3946,19 +4072,19 @@ function initPricingStickyNav() {
     const categories = [
         { id: 'all', label: 'All packages' },
         { id: 'websites', label: 'Website', anchor: '#websites' },
-        { id: 'local', label: 'Local visibility', anchor: '#local-visibility' },
-        { id: 'growth', label: 'Growth systems', anchor: '#growth' },
-        { id: 'automation', label: 'Automation', anchor: '#automation-systems' },
+        { id: 'stores', label: 'Stores', anchor: '#ecommerce' },
         { id: 'monthly', label: 'Monthly', anchor: '#monthly' },
-        { id: 'addons', label: 'Add-ons', anchor: '#addons' }
+        { id: 'growth', label: 'Growth', anchor: '#growth' },
+        { id: 'addons', label: 'Extras', anchor: '#addons' },
+        { id: 'programs', label: 'Programs', anchor: '#referral-systems' }
     ];
     const sectionMap = {
         websites: ['#websites'],
-        local: ['#local-visibility'],
-        growth: ['#growth', '#referral-systems', '#performance-partner'],
-        automation: ['#automation-systems'],
+        stores: ['#ecommerce'],
         monthly: ['#monthly'],
-        addons: ['#addons', '#search-addons']
+        growth: ['#growth'],
+        addons: ['#addons'],
+        programs: ['#referral-systems']
     };
 
     categories.forEach((cat, i) => {

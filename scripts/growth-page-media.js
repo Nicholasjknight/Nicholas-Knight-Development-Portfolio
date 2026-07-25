@@ -78,6 +78,17 @@ const PAGE_GALLERIES = {
     img('/images/added-media/embedded Google map and reviews carousel.png', 'Map and reviews on home service site'),
     images.caseStudyCrm,
   ],
+  'starting-a-new-business': [
+    images.kgHero,
+    images.googleBusinessProfile,
+    images.knightCommandShell,
+    images.caseStudySocial,
+    images.faithWorks,
+    images.screenTeam,
+    images.roofMonstersShowcase,
+    img('/images/added-media/Screen Teams Business Cards.png', 'Business card brand materials for a local service company'),
+    img('/images/added-media/Screen Team Yard Signs.png', 'Yard signs and field brand materials for a local trade business'),
+  ],
 };
 
 const FALLBACK_IMAGES = [
@@ -182,22 +193,7 @@ function diversifyPageMedia(page) {
     }
   }
 
-  if (Array.isArray(page.proofGrid)) {
-    page.proofGrid = page.proofGrid.map((proof) => {
-      const key = normalizeSrc(proof.image);
-      if (!key || !used.has(key)) {
-        if (key) used.add(key);
-        return proof;
-      }
-      const next = pickReplacement(gallery, used);
-      if (!next) return proof;
-      return {
-        ...proof,
-        image: next.src,
-        imageAlt: next.alt || proof.imageAlt,
-      };
-    });
-  }
+  // proofGrid is curated per-client — do not swap images across brands.
 
   return page;
 }

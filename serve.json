@@ -2,6 +2,16 @@
   "cleanUrls": true,
   "redirects": [
     {
+      "source": "/startup-business-launch-systems",
+      "destination": "/starting-a-new-business",
+      "type": 301
+    },
+    {
+      "source": "/startup-business-launch-systems.html",
+      "destination": "/starting-a-new-business",
+      "type": 301
+    },
+    {
       "source": "/projects",
       "destination": "/service-websites",
       "type": 301
@@ -316,54 +326,6 @@
       "destination": "/service-local-seo.html"
     },
     {
-      "source": "/service-packages",
-      "destination": "/service-packages.html"
-    },
-    {
-      "source": "/website-health-audit",
-      "destination": "/website-health-audit.html"
-    },
-    {
-      "source": "/white-label-website-audit",
-      "destination": "/white-label-website-audit.html"
-    },
-    {
-      "source": "/local-opportunity-pack",
-      "destination": "/local-opportunity-pack.html"
-    },
-    {
-      "source": "/full-access-website-audit",
-      "destination": "/full-access-website-audit.html"
-    },
-    {
-      "source": "/sample-website-health-audit",
-      "destination": "/sample-website-health-audit.html"
-    },
-    {
-      "source": "/sample-white-label-website-audit",
-      "destination": "/sample-white-label-website-audit.html"
-    },
-    {
-      "source": "/sample-local-opportunity-pack",
-      "destination": "/sample-local-opportunity-pack.html"
-    },
-    {
-      "source": "/sample-full-access-website-audit",
-      "destination": "/sample-full-access-website-audit.html"
-    },
-    {
-      "source": "/search-performance-retainer",
-      "destination": "/search-performance-retainer.html"
-    },
-    {
-      "source": "/growth-systems-offer",
-      "destination": "/growth-systems-offer.html"
-    },
-    {
-      "source": "/trade-partnership",
-      "destination": "/trade-partnership.html"
-    },
-    {
       "source": "/service-websites",
       "destination": "/service-websites.html"
     },
@@ -372,8 +334,8 @@
       "destination": "/social-media-automation-systems.html"
     },
     {
-      "source": "/startup-business-launch-systems",
-      "destination": "/startup-business-launch-systems.html"
+      "source": "/starting-a-new-business",
+      "destination": "/starting-a-new-business.html"
     },
     {
       "source": "/stripe-invoice-automation",
@@ -392,16 +354,64 @@
       "destination": "/videoforge.html"
     },
     {
+      "source": "/web-designer-brandon",
+      "destination": "/web-designer-brandon.html"
+    },
+    {
       "source": "/web-designer-clearwater",
       "destination": "/web-designer-clearwater.html"
+    },
+    {
+      "source": "/web-designer-dunedin",
+      "destination": "/web-designer-dunedin.html"
+    },
+    {
+      "source": "/web-designer-holiday",
+      "destination": "/web-designer-holiday.html"
+    },
+    {
+      "source": "/web-designer-land-o-lakes",
+      "destination": "/web-designer-land-o-lakes.html"
+    },
+    {
+      "source": "/web-designer-largo",
+      "destination": "/web-designer-largo.html"
+    },
+    {
+      "source": "/web-designer-lutz",
+      "destination": "/web-designer-lutz.html"
+    },
+    {
+      "source": "/web-designer-new-port-richey",
+      "destination": "/web-designer-new-port-richey.html"
+    },
+    {
+      "source": "/web-designer-oldsmar",
+      "destination": "/web-designer-oldsmar.html"
     },
     {
       "source": "/web-designer-palm-harbor",
       "destination": "/web-designer-palm-harbor.html"
     },
     {
+      "source": "/web-designer-pinellas-park",
+      "destination": "/web-designer-pinellas-park.html"
+    },
+    {
+      "source": "/web-designer-plant-city",
+      "destination": "/web-designer-plant-city.html"
+    },
+    {
+      "source": "/web-designer-riverview",
+      "destination": "/web-designer-riverview.html"
+    },
+    {
       "source": "/web-designer-safety-harbor",
       "destination": "/web-designer-safety-harbor.html"
+    },
+    {
+      "source": "/web-designer-seminole",
+      "destination": "/web-designer-seminole.html"
     },
     {
       "source": "/web-designer-st-petersburg",
@@ -410,6 +420,18 @@
     {
       "source": "/web-designer-tampa",
       "destination": "/web-designer-tampa.html"
+    },
+    {
+      "source": "/web-designer-tarpon-springs",
+      "destination": "/web-designer-tarpon-springs.html"
+    },
+    {
+      "source": "/web-designer-temple-terrace",
+      "destination": "/web-designer-temple-terrace.html"
+    },
+    {
+      "source": "/web-designer-wesley-chapel",
+      "destination": "/web-designer-wesley-chapel.html"
     },
     {
       "source": "/website-growth-audit",

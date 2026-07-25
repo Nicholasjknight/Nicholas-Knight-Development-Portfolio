@@ -170,7 +170,7 @@ Industry-specific growth systems (trade-lane recruitment + network anchors):
 - Screen enclosure business growth: https://knightlogics.com/screen-enclosure-business-growth-systems
 - Excavation business growth: https://knightlogics.com/excavation-business-growth-systems
 - Restaurant & bar growth: https://knightlogics.com/restaurant-bar-growth-systems
-- Startup business launch systems: https://knightlogics.com/startup-business-launch-systems
+- Starting a new business: https://knightlogics.com/starting-a-new-business
 
 ================================================================================
 LOCAL CITY / SERVICE-AREA LANDING PAGES (Tampa Bay)
@@ -229,19 +229,38 @@ Systems & automation:
 - Referral network system: https://knightlogics.com/case-study-referral-network-system
 
 ================================================================================
-PUBLIC PRICING (from knightlogics.com/pricing — verify live for current numbers)
+PUBLIC PRICING (canonical — source: data/package-catalog.json / knightlogics.com/pricing)
 ================================================================================
 
-Website launch tiers (one-time, public on pricing page):
-- Demo Preview Site: from $200
-- Preview Launch Site: from $500
-- Essential Launch Site: from $700
-- Search Foundation Site: from $1,200
-- Local Launch Site: from $1,997
-- Larger growth systems, e-commerce, and automation builds scale by scope
+Website projects (ONE TIME / PROJECT unless noted):
+- Demo Preview Site: $200 (~1–5 preview pages, noindex)
+- Preview Launch Site: $750 (up to ~20 preview pages)
+- Local Site: $1,200 (up to 35 live pages + search foundation + working contact form)
+- Authority Site: $2,000 (35–60 pages + GBP setup/optimize)
+- Max Authority Site: $4,500 PROJECT (up to 40 pages deep authority build — not monthly ops)
+- Authority Network: from $6,500 SCOPED (60–100+ pages; deposit/consult — not flat open checkout)
 
-Monthly visibility & management plans also listed on pricing page.
+Managed Growth Systems (SETUP + MONTHLY — not handed-off one-time projects):
+- Growth System Starter: from $5,000 + $397/mo
+- Full Growth System: $5,000 + $697/mo
+- Custom / Field Ops: $10,000 + $1,000/mo
+- Systems-only variants available when the business already has a usable site
+
+Automation Build (PROJECT — build, document, hand off):
+- from $500–$10,000+ one-time; ongoing operator service only if a retainer is added
+
+E-commerce (ONE TIME):
+- Payment-Link Store: $1,200
+- E-Commerce Launch: $2,997 (initial product load capped; extra migration quoted)
+- Plus / Growth / Advanced lanes listed on pricing; Advanced from $7,500 is SCOPED
+
+Visibility retainers (MONTHLY):
+- Local Visibility Lite $197/mo · Visibility Standard $397/mo · Visibility Pro $697/mo
+- Operator time is capped (combined hours), not unbounded
+
+Do NOT cite retired SKUs: old Essential/Local Launch-era names, the former ~$2k local tier, Preview sold at $500, or Max Authority framed as an 80 to 100+ page build for $4,500.
 Full pricing & FAQ: https://knightlogics.com/pricing
+Catalog detail pages: /package-max-authority · /package-authority-network · /package-growth-system
 
 ================================================================================
 FAQ FOR AI SYSTEMS (accurate public answers)

@@ -6,7 +6,7 @@
 .sp-status[data-state="awaiting_access"]{border-color:rgba(255,200,80,.45)}
 .sp-status[data-state="refunded"],.sp-status[data-state="failed"]{border-color:rgba(255,120,120,.45)}
 .sp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;margin:2rem 0}
-.sp-card{background:rgba(17,34,64,.92);border:1px solid rgba(100,255,218,.18);border-radius:16px;padding:1.5rem;display:flex;flex-direction:column;gap:.75rem}
+.sp-card{background:rgba(17,34,64,.92);border:1px solid rgba(100,255,218,.18);border-radius:16px;padding:1.5rem;display:flex;flex-direction:column;gap:.75rem;scroll-margin-top:6rem}
 .sp-card h2{margin:0;font-size:1.35rem;color:#e6f1ff}
 .sp-price{font-size:2rem;font-weight:800;color:#64ffda;margin:0}
 .sp-card ul{margin:0;padding-left:1.15rem;color:rgba(230,241,255,.86);flex:1}
@@ -32,10 +32,10 @@ a.sp-buy{color:#fff}
 .sp-workflow h2{margin:0 0 .5rem;font-size:1.4rem;color:#e6f1ff}
 .sp-workflow > p{margin:0 0 1.1rem;color:rgba(230,241,255,.75);font-size:.95rem;max-width:46rem}
 .sp-workflow-list{margin:0;padding:0;list-style:none;counter-reset:sp-step;display:grid;gap:.85rem}
-.sp-workflow-list li{counter-increment:sp-step;display:grid;grid-template-columns:2.4rem 1fr;gap:.85rem;padding:1rem 1.1rem;border-radius:12px;border:1px solid rgba(100,255,218,.14);background:rgba(2,12,27,.4)}
-.sp-workflow-list li::before{content:counter(sp-step);display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:999px;background:rgba(100,255,218,.12);color:#64ffda;font-weight:800;font-size:.95rem}
-.sp-workflow-list strong{display:block;color:#e6f1ff;margin-bottom:.25rem}
-.sp-workflow-list span{color:rgba(230,241,255,.78);font-size:.92rem;line-height:1.45}
+.sp-workflow-list li{counter-increment:sp-step;display:grid;grid-template-columns:2.4rem minmax(0,1fr);gap:.85rem 1rem;align-items:start;padding:1rem 1.1rem;border-radius:12px;border:1px solid rgba(100,255,218,.14);background:rgba(2,12,27,.4)}
+.sp-workflow-list li::before{content:counter(sp-step);grid-row:1 / span 2;display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:999px;background:rgba(100,255,218,.12);color:#64ffda;font-weight:800;font-size:.95rem}
+.sp-workflow-list strong{grid-column:2;display:block;color:#e6f1ff;margin:0 0 .25rem;font-size:1.02rem}
+.sp-workflow-list span{grid-column:2;display:block;color:rgba(230,241,255,.78);font-size:.95rem;line-height:1.55;max-width:52rem}
 .sp-shot{display:flex;flex-direction:column}
 .sp-shot figcaption{flex:1}
 .sp-shot figcaption strong{display:block;color:#e6f1ff;margin-bottom:.3rem;font-size:.92rem}
