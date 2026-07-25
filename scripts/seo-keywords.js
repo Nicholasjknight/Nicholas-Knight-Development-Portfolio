@@ -20,10 +20,6 @@ const PAGE_SEO = {
   'business-growth-systems': {
     terms: ['small business growth systems', 'Tampa Bay local SEO', 'CRM outreach automation', 'referral tracking'],
     meta: 'Business growth systems for Tampa Bay — websites, local SEO, GBP, CRM outreach, automation, and referral tracking.',
-    contextLines: lines(
-      'Owners searching for small business growth systems in Tampa Bay usually need more than a brochure site — they need local SEO structure, map-pack-ready Google Business Profile alignment, and lead follow-up that does not live in one inbox.',
-      'Knight Logics connects websites, outreach, referrals, and ops into phased milestones so Pinellas and Hillsborough service businesses can measure leads instead of guessing whether marketing is working.'
-    ),
   },
   'contractor-growth-systems': {
     terms: ['contractor website Tampa Bay', 'contractor local SEO Florida', 'field trade lead generation'],
@@ -215,12 +211,18 @@ const PAGE_SEO = {
       'Events calendars, admin-editable specials, and Stripe-ready ordering reduce platform dependency.'
     ),
   },
-  'startup-business-launch-systems': {
-    terms: ['startup website launch Tampa', 'new business website package', 'launch SEO foundation'],
-    meta: 'Startup launch systems — credible first website, analytics, schema, Google Business setup, and growth foundations for new Tampa Bay businesses.',
+  'starting-a-new-business': {
+    terms: [
+      'starting a new business website',
+      'new business website',
+      'how to get my business on Google',
+      'small business website cost',
+      'website for new LLC',
+      'new business Google Business Profile'
+    ],
+    meta: 'Starting a new business? Sequenced launch: foundation, package, Website Audit gate, GBP and website publish — plus separate growth systems for maximum growth.',
     contextLines: lines(
-      'Launch-week credibility matters — domain, email, GBP, and a conversion path should go live together instead of staggered DIY patches.',
-      'Phased growth systems add outreach and referrals when the first jobs prove offer-market fit.'
+      'Registration, business email, business phone, and cards come before GBP and the website — then audits for indexability, SEO, GEO, and AEO, with optional signs and growth systems after.'
     ),
   },
   'stripe-invoice-automation': {

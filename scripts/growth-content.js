@@ -10,79 +10,194 @@ const flagshipPages = [
     lead: 'Build the online presence, then wire leads, outreach, referrals, and ops into one stack — and grow a roster of complementary service partners who send tracked work across Tampa Bay.',
     heroIcon: 'fa-layer-group',
     heroImage: { src: images.logo.src, alt: 'Knight Logics business growth systems' },
-    stats: [
-      { value: '6', label: 'Connected system lanes' },
-      { value: 'Live', label: 'Production workflows' },
-      { value: 'Tampa Bay', label: 'Primary market focus' }
-    ],
+    stats: [],
     problem: {
-      kicker: 'The problem',
-      title: 'Growth breaks when every tool lives in a different tab',
-      text: 'Most local businesses stack a website, Gmail, spreadsheets, a CRM they never open, and social accounts nobody maintains. Leads slip through because nothing talks to anything else.',
+      kicker: 'Lead generation',
+      title: 'Find and grade the leads worth your send window',
+      text: 'Knight Command’s CRM Outreach builds and scores local lists so you spend send capacity on accounts that fit — not a blast to every email you can scrape. Leads are graded by niche, geography, and brand-lane fit before first_touch goes out.',
       bullets: [
-        'Outreach replies get lost in personal inboxes',
-        'Referral partners have no attribution or payout clarity',
-        'Owners cannot see queue depth or lead sources without logging into five tools',
-        'Websites launch without SEO, schema, or follow-up infrastructure'
+        'Targets property managers, complementary trades, HOAs, and estimate-first local businesses that buy project and recurring work',
+        'Scores and tiers each lead so high-fit accounts get priority in the daily send cap',
+        'Brand lanes (kl / kg / st / faithworks) keep templates and sender reputation separated',
+        'Queue shows scored leads and next actions — not a spreadsheet dump nobody opens'
       ],
-      media: { ...videos.crm, title: 'Growth ops in one view', text: 'Knight Command ties outreach, email, social, and referral workflows into operator tabs.' }
+      media: { ...videos.crm, title: 'CRM outreach & lead grading', text: 'Scored lead queue inside Knight Command Outreach CRM.' }
+    },
+    followSplit: {
+      kicker: 'Email Agent',
+      title: 'Form fills and CRM replies land where your team will answer',
+      text: 'Email-Agent sits beside Outreach in Knight Command. Website form submissions and CRM replies fan out to multiple inboxes — with automated acknowledgements if you want coverage, or instant notifications when someone should respond while the lead is still hot.',
+      bullets: [
+        'Form submissions and CRM replies route to the right brand inboxes — not one buried personal Gmail thread',
+        'Optional automated responses for after-hours coverage, or push notifications to reply immediately',
+        'crm_reply and lead views keep outreach responses separate from day-to-day mail',
+        'These are not one-off tire-kickers — graded leads and fast replies tend to become repeat-service customers'
+      ],
+      align: 'right',
+      alt: false,
+      media: { ...videos.email, title: 'Email-Agent routing', text: 'Multi-inbox routing for forms, CRM replies, and operator notifications.' }
+    },
+    referralSplit: {
+      kicker: 'Referral network',
+      title: 'Track partner leads, QR paths, and payouts in one dashboard',
+      text: 'Referral tracking turns word-of-mouth into attributed pipeline — unique /ref/:partner links, QR brochure scans, and a partner dashboard that shows earned vs paid status without spreadsheet disputes. Stripe webhook settlement closes the loop when jobs convert.',
+      bullets: [
+        'Partner codes and QR paths attribute form fills and consults to the right trade',
+        'Referral dashboard shows lead status, attribution, and payout progress per partner',
+        'Neon Postgres events plus Stripe webhooks keep settlement tied to real booked work',
+        'Embeds in Knight Command Referrals tab so ops review happens next to outreach and email'
+      ],
+      alt: false,
+      media: { ...videos.referral, title: 'Referral system dashboard', text: 'Partner attribution, QR paths, and payout visibility.' }
+    },
+    socialSplit: {
+      kicker: 'Social automation',
+      title: 'Queue posts across brands — and know when something fails',
+      text: 'Social Poster on port 8501 is the scheduling queue your team actually opens: content lined up per brand, posting windows enforced, and last-success timestamps per platform. Social Ops on 8500 runs engagement sweeps and growth-agent workflows — both embed in Knight Command beside CRM and Email.',
+      bullets: [
+        'Per-brand queues for KL, KG, ST, and faithworks — credentials and content never cross accounts',
+        'X and Facebook post via API; LinkedIn and Nextdoor use Playwright runners where APIs fall short',
+        'Google Business Profile posts scheduled alongside site campaigns so map-pack messaging stays current',
+        'Failures surface in the queue and Logs tab — not a silent gap nobody notices for a week'
+      ],
+      align: 'right',
+      media: { ...videos.social, title: 'Social media manager', text: 'Multi-brand posting queue with API and Playwright runners on port 8501.' }
+    },
+    dispatchSplit: {
+      kicker: 'Field dispatch',
+      title: 'Mobile job photos → composites → gallery, social, and invoice',
+      text: 'KG Dispatch (Handyman Ticket Manager) is the field ops layer behind Knight Group — crews upload before, process, and after shots per scope from the mobile app; admins run Vendoroo intake, assign contractors, and close jobs into Stripe billing from the same shell at dispatch.knightlogics.com.',
+      bullets: [
+        'Before / process / after photos export automatically when a job completes — scoped per ticket, not dumped from a camera roll',
+        'Marketing worker builds branded before | repair process | after composites and publishes to the website gallery with privacy-safe titles',
+        'Social-ready JPGs fan out to the kg Social Poster queue — field work becomes marketing without a second upload',
+        'Weekly Stripe invoices, payment links, service-report PDFs, and contractor My Jobs views in one dispatch system'
+      ],
+      alt: false,
+      media: { ...videos.dispatch, title: 'KG Dispatch mobile app', text: 'Handyman Ticket Manager — field photos through invoicing and marketing handoff.' }
     },
     features: [
-      { icon: 'fa-globe', label: 'Foundation', title: 'Website & conversion', text: 'Hand-coded sites with offer clarity, lead capture, analytics, and PageSpeed-first builds — not bloated page builders.' },
-      { icon: 'fa-map-marker-alt', label: 'Discovery', title: 'Local visibility', text: 'Technical SEO, schema, Google Business alignment, service-area pages, and map-pack readiness tied to real geography.' },
-      { icon: 'fa-paper-plane', label: 'Outbound', title: 'CRM outreach', text: 'OutreachEngine with segmented lists, branded sends, reply routing, follow-up queues, and daily caps that protect sender reputation.' },
-      { icon: 'fa-cogs', label: 'Automation', title: 'Workflow automation', text: 'Email-Agent on port 5100, Social Poster on 8501, ticket intake, invoice triggers, and internal tools wired to daily ops.' },
-      { icon: 'fa-qrcode', label: 'Partners', title: 'Referral tracking', text: 'QR brochures, /ref/:partner paths, Neon Postgres events, referral-dashboard payouts, and Stripe webhook settlement.' },
-      { icon: 'fa-chart-line', label: 'Visibility', title: 'Owner reporting', text: 'Dashboards for queue depth, lead sources, failures, and campaign performance — readable on mobile.' }
-    ],
-    mediaBlocks: [
       {
-        kicker: 'Command center',
-        title: 'Knight Command at /admin',
-        text: 'One authenticated shell with tabs for Command Center, Referrals, Outreach CRM, Email Agent, Social Ops, Social Poster, and Logs — each embedding live services on ports 5050, 5100, 8500, and 8501.',
-        bullets: ['Fewer context switches between growth tools', 'Embeds stay isolated but reachable from one login', 'Operator-first layout, not marketing fluff'],
-        media: { ...videos.referral, title: 'Referral & ops embed', text: 'Referral dashboard and partner attribution inside the admin shell.' }
+        icon: 'fa-building',
+        label: 'Launch',
+        title: 'Business development & registration',
+        text: 'Brand, business email, phone line, Google Business Profile, domain, and analytics — the foundation before outreach and automation plug in.',
+        href: '/starting-a-new-business',
+        linkLabel: 'Start your launch path'
       },
       {
-        kicker: 'Proof in market',
-        title: 'Built on live Tampa Bay client work',
-        text: 'Three live growth-system clients prove the stack: Faith Works at 82 land-clearing pages (faithworks lane), Screen Team at 36 enclosure pages (st lane), and Knight Group at 97 handyman pages (kg lane) — same OutreachEngine, Email-Agent, and local SEO infrastructure.',
-        align: 'right',
-        media: images.faithWorks
+        icon: 'fa-globe',
+        label: 'Foundation',
+        title: 'Website & conversion',
+        text: 'Hand-coded sites with offer clarity, lead capture, analytics, and PageSpeed-first builds — not bloated page builders.',
+        href: '/service-websites',
+        linkLabel: 'Explore websites & SEO'
+      },
+      {
+        icon: 'fa-map-marker-alt',
+        label: 'Discovery',
+        title: 'Local visibility',
+        text: 'Technical SEO, schema, Google Business alignment, service-area pages, and map-pack readiness tied to real geography.',
+        href: '/local-visibility-systems',
+        linkLabel: 'Explore local visibility'
+      },
+      {
+        icon: 'fa-paper-plane',
+        label: 'Outbound',
+        title: 'CRM outreach & lead gen',
+        text: 'OutreachEngine with segmented lists, lead grading, reply routing, follow-up queues, and daily caps that protect sender reputation.',
+        href: '/crm-outreach-lead-generation',
+        linkLabel: 'Explore CRM outreach'
+      },
+      {
+        icon: 'fa-envelope-open-text',
+        label: 'Inbox',
+        title: 'Email Agent automation',
+        text: 'Form submissions and CRM replies route to the right inboxes — with auto-acknowledgements or instant notifications when speed matters.',
+        href: '/email-agent-automation',
+        linkLabel: 'Explore Email Agent'
+      },
+      {
+        icon: 'fa-share-nodes',
+        label: 'Social',
+        title: 'Social media automation',
+        text: 'Social Poster queues per brand with API and Playwright runners, GBP posts, and failure reporting — not silent scheduling gaps.',
+        href: '/social-media-automation-systems',
+        linkLabel: 'Explore social automation'
+      },
+      {
+        icon: 'fa-truck-fast',
+        label: 'Field ops',
+        title: 'Dispatch, photos & invoicing',
+        text: 'Mobile before/process/after uploads, job tracking, branded composites, gallery publish, and Stripe billing from one dispatch shell.',
+        href: '/ticketing-invoicing-job-workflows',
+        linkLabel: 'Explore job workflows'
+      },
+      {
+        icon: 'fa-qrcode',
+        label: 'Partners',
+        title: 'Referral tracking',
+        text: 'QR brochures, /ref/:partner paths, partner dashboards, and Stripe webhook settlement for complementary trade networks.',
+        href: '/referral-network-systems',
+        linkLabel: 'Explore referral systems'
       }
     ],
+    mediaBlocks: [],
     process: [
-      { title: 'Audit & baseline', text: 'Website clarity, SEO, GBP alignment, lead capture gaps, and automation bottlenecks documented before build scope.' },
-      { title: 'Foundation launch', text: 'Site, schema, analytics, Search Console, and conversion paths go live with measurable baselines.' },
-      { title: 'Systems wiring', text: 'CRM outreach, Email-Agent, referral tracking, and job workflows connected to how your team actually sells.' },
-      { title: 'Reporting & iteration', text: 'Owner dashboards, monthly review, and prioritized next moves based on queue data — not vanity metrics.' }
+      { title: 'Strategy & business setup', text: 'Brand direction, domain, business email, phone/call tracking, and Google Business Profile planning — the operator foundation before design or outreach.' },
+      { title: 'Audit & baseline', text: 'Website clarity, SEO gaps, GBP alignment, lead capture, and which automation lanes are worth wiring for how you actually sell.' },
+      { title: 'Foundation launch', text: 'Site, schema, analytics, Search Console, and conversion paths go live — or GBP-first / launch-only if that is the right first step.' },
+      { title: 'Systems wiring', text: 'CRM outreach, Email-Agent, social queues, referral tracking, and field dispatch connected only when your team will open them daily.' },
+      { title: 'Reporting & iteration', text: 'Owner-readable queues and monthly review — prioritize next lanes from booked work and failures, not vanity traffic.' }
     ],
-    idealFor: [
-      'Local service companies ready to invest in systems, not just a redesign',
-      'Owners who want outreach, referrals, and ops visibility in one growth stack',
-      'Trades and home services selling estimates, calls, and repeat work',
-      'Businesses outgrowing spreadsheets and disconnected SaaS tools'
-    ],
-    proof: {
-      title: 'Faith Works: 82-page land clearing growth system',
-      text: '82 indexable pages across Central Florida, faithworks OutreachEngine lane, schema, GA4/GSC, and GBP alignment — full growth stack alongside Screen Team and Knight Group.',
-      image: images.faithWorks.src,
-      imageAlt: 'Faith Works land clearing website',
-      badge: 'Live client',
-      href: '/case-study-faith-works',
-      linkLabel: 'View Faith Works case study'
-    },
     faq: [
-      { q: 'Is this a website package or full operations build?', a: 'It is a connected growth system. The website is the foundation, but CRM outreach, automation, referrals, and reporting are scoped to what your business will actually use.' },
-      { q: 'Do you replace our existing CRM?', a: 'Often we extend or replace lightweight CRM gaps with OutreachEngine and Email-Agent routing. We map to what you already pay for before recommending a swap.' },
-      { q: 'How long until systems are live?', a: 'Foundation sites typically launch in weeks. Automation and outreach layers follow in phased milestones so your team is not overwhelmed on day one.' }
+      {
+        q: 'Is this a website package or a full operations build?',
+        a: 'It is a connected growth system — not a brochure site with a logo swap. The website and local SEO are the foundation; CRM outreach, Email-Agent, social queues, referral tracking, and field dispatch are lanes we add only when your team will actually open them. You can start with launch + website, then phase in outbound, inbox routing, social, and ops.'
+      },
+      {
+        q: 'What does “business development” include before the website?',
+        a: 'For new or rebranding companies we cover the basics operators need to look real: brand direction, domain, business email, phone/call tracking, Google Business Profile setup, analytics, and lead capture. That launch path is documented on Starting a New Business — growth systems plug into that foundation instead of leaving you with a pretty site and no inbox.'
+      },
+      {
+        q: 'How does lead generation and grading work?',
+        a: 'OutreachEngine builds and scores local lists by niche, geography, and brand-lane fit (property managers, complementary trades, HOAs, estimate-first businesses). High-fit accounts get priority inside daily send caps so you do not burn domain reputation on low-quality blasts. Replies route into Email-Agent crm_reply views for triage and booking.'
+      },
+      {
+        q: 'What does Email-Agent do with forms and CRM replies?',
+        a: 'Website form submissions and outreach replies fan out to the right brand inboxes — not one buried personal Gmail thread. You can enable automated acknowledgements for after-hours coverage, or notifications so someone answers while the lead is still hot. crm_reply and lead views keep marketing conversations separate from day-to-day mail.'
+      },
+      {
+        q: 'Do you replace our existing CRM?',
+        a: 'Often we extend what you already pay for, or replace lightweight CRM gaps with OutreachEngine plus Email-Agent routing. We map current tools, inboxes, and follow-up habits before recommending a swap — the goal is queues your team will open daily, not another unused SaaS seat.'
+      },
+      {
+        q: 'What is Knight Command?',
+        a: 'Knight Command is the authenticated /admin shell that embeds live services in one login: Command Center, Referrals, Outreach CRM, Email Agent, Social Ops, Social Poster, and Logs. Each tab points at the real service (referral stack, Email-Agent, Social Poster, etc.) so operators stop jumping between five bookmarks.'
+      },
+      {
+        q: 'How do social posts and job photos connect?',
+        a: 'Social Poster queues multi-brand content with API and Playwright runners and failure reporting. On the field side, KG Dispatch (Handyman Ticket Manager) captures before / process / after photos per job; a marketing worker builds branded composites, publishes to the website gallery, and hands social-ready assets to the brand queue — so completed work becomes proof without a second upload process.'
+      },
+      {
+        q: 'How does the Tampa Bay trade partner network fit in?',
+        a: 'After a partner has a credible owned presence, we publish a case study when ready, assign a referral lane, and co-market with complementary trades through tracked QR paths and /ref/:partner attribution. Partners see earned vs paid status in the referral dashboard instead of spreadsheet arguments.'
+      },
+      {
+        q: 'How long until systems are live, and how is work phased?',
+        a: 'Foundation sites typically launch in weeks with schema, analytics, Search Console, and conversion paths. Outreach, Email-Agent, social, referral, and dispatch lanes follow in milestones so your team is not trained on five tools on day one. Scope is written per lane — website-only, outbound, automation, field ops, or full stack — with pricing tied to what you adopt.'
+      },
+      {
+        q: 'Who is this for, and who should wait?',
+        a: 'Best fit is estimate-first local service companies ready to invest in systems — trades and home services that need more than a redesign. If you only need a brochure site, start with websites or a growth audit. If you will not answer outreach replies or open a dispatch board, we will not sell those lanes yet.'
+      }
     ],
     links: [
       ['/service-websites', 'Websites & Local SEO'],
       ['/crm-outreach-lead-generation', 'CRM Outreach'],
       ['/service-ai-automation', 'Automation & Tools'],
       ['/ai-business-automation', 'AI Business Automation'],
-      ['/startup-business-launch-systems', 'Startup Launch Systems'],
+      ['/starting-a-new-business', 'Starting a New Business'],
       ['/case-study-faith-works', 'Faith Works Case Study'],
       ['/case-study-screen-team', 'Screen Team Case Study'],
       ['/case-study-knight-group', 'Knight Group Case Study'],
@@ -1921,69 +2036,147 @@ const subPages = [
     cta: { title: 'Planning a restaurant or bar site?', text: 'Tell us about menus, events, and how you want orders to flow.' }
   },
   {
-    slug: 'startup-business-launch-systems',
+    slug: 'starting-a-new-business',
     parent: { href: '/business-growth-systems', label: 'Growth Systems' },
-    title: 'Startup Business Launch Systems',
-    meta: 'Startup launch systems — website, local SEO, analytics, CRM basics, and growth infrastructure from day one.',
-    eyebrow: 'New businesses',
-    h1: 'Startup Business Launch Systems',
-    lead: 'Launch with credibility, analytics, lead capture, and a clear upgrade path into full growth systems — instead of rebuilding after six months when ops get messy.',
+    title: 'Starting a New Business',
+    meta: 'Starting a new business? Registration, business email and phone, cards, GBP and website, audits for SEO/GEO/AEO and indexability — then optional signs and growth systems.',
+    eyebrow: 'Start here',
+    h1: 'Starting a New Business — From Registration to Growth Systems',
+    lead: 'We help new and restarting local businesses build in a real order: registration and insurance footing, business email and phone, cards and brand basics, then Google Business Profile and a website that can actually get found — with audits for indexability, SEO, GEO, and AEO. Optional yard signs, banners, and vehicle decals come next. Growth systems come after the foundation is solid.',
     heroIcon: 'fa-rocket',
-    heroImage: images.logo,
+    heroImage: images.kgHero,
     problem: {
-      kicker: 'Launch debt',
-      title: 'Cheap launches create expensive rebuilds',
-      text: 'Template sites skip schema, analytics, and CRM basics. When leads arrive, owners scramble to bolt on tools that should have been day-one infrastructure.',
+      kicker: 'Where do I begin?',
+      title: 'Most “launches” skip the business and rush the page',
+      text: 'New owners often jump straight to Instagram, an AI site builder, or a template that looks finished — while registration, insurance, business email, a real phone line, cards, and discovery readiness are still missing. Getting found takes more than going live.',
       bullets: [
-        'No Search Console or baseline analytics',
-        'Forms dump to personal email with no CRM',
-        'Brand and domain misaligned with GBP creation',
-        'No documented path to outreach or automation later'
+        'No registration or insurance clarity before asking the public for work',
+        'Personal Gmail and personal cell on every form, card, and Google profile',
+        'A website that is live but thin on indexability, SEO, GEO, and answer-engine readiness',
+        'No plan for GBP, brand materials, or the systems that create growth after launch'
       ],
-      media: images.logo
+      media: videos.knightGroup
     },
     features: [
-      { icon: 'fa-globe', label: 'Web', title: 'Launch website', text: 'Credibility, offer clarity, and conversion paths from day one.' },
-      { icon: 'fa-chart-simple', label: 'Measure', title: 'Analytics & search', text: 'Search Console, sitemap, schema, and baseline tracking.' },
-      { icon: 'fa-user-plus', label: 'Leads', title: 'Lead capture', text: 'Forms, CRM basics, and follow-up workflow hooks.' },
-      { icon: 'fa-stairs', label: 'Scale', title: 'Scale path', text: 'Documented upgrade into OutreachEngine, Email-Agent, and referral systems.' }
+      { icon: 'fa-building', label: 'Foundation', title: 'Registration & brand footing', text: 'Entity clarity, insurance readiness, logo, and cards so you look legitimate before the public site goes live.' },
+      { icon: 'fa-at', label: 'Identity', title: 'Business email & phone', text: 'Contacts that belong to the company — ready for GBP, website forms, and every customer touchpoint.' },
+      { icon: 'fa-magnifying-glass', label: 'Discovery', title: 'GBP + website + audits', text: 'Maps and Search presence with technical audits for indexability, SEO, GEO, and AEO — not just a pretty publish.' },
+      { icon: 'fa-layer-group', label: 'Next', title: 'Signs & growth systems', text: 'Optional yard signs, banners, and vehicle decals — then CRM, social, field ops, and reviews when you are ready to grow harder.' }
     ],
     mediaBlocks: [
       {
-        kicker: 'Foundation',
-        title: 'JNS 11-page contractor bundle pattern',
-        text: 'Focused launch footprint for new trades — enough depth without overbuilding on day one.',
-        media: images.jns
+        kicker: 'Step 1 — Foundation',
+        title: 'Registration, email, phone, and cards first',
+        text: 'Before public marketing, we want the business to look and operate like a business. That starts offline and in your inboxes — not on a template homepage.',
+        bullets: [
+          'Entity / registration clarity and insurance where your trade requires it',
+          'Business email on your domain — not a personal Gmail forever',
+          'Business phone line quoted on every public surface',
+          'Business cards and basic brand mark ready for handoffs and networking'
+        ],
+        media: {
+          type: 'image',
+          src: '/images/added-media/Screen Teams Business Cards.png',
+          alt: 'Business card brand materials for a local service company'
+        },
+        align: 'right'
+      },
+      {
+        kicker: 'Step 2 — Public presence',
+        title: 'GBP and website built to get found',
+        text: 'Once contacts and brand footing are real, we claim Google Business Profile and build the website package you choose. Going live is only one gate — the site also needs to be indexable and ready for search, local, and answer-engine discovery.',
+        bullets: [
+          'Google Business Profile claimed and verified with matching NAP',
+          'Website package scoped from Preview through Local Launch / Growth System',
+          'Website Audit gates before public DNS — quality, not just speed',
+          'Indexability, SEO, GEO, and AEO readiness so Search, Maps, and AI answers can find you'
+        ],
+        media: images.googleBusinessProfile
+      },
+      {
+        kicker: 'Step 3 — Optional brand presence',
+        title: 'Yard signs, banners, and vehicle decals',
+        text: 'Not every launch needs trucks wrapped on day one — but local trades often want physical brand in the field. We can add yard signs, banners, and car/truck decals as optional brand deliverables alongside the digital launch.',
+        bullets: [
+          'Yard signs for job sites and neighborhood visibility',
+          'Banners for events, openings, or temporary promotions',
+          'Vehicle decals so every job advertises the business',
+          'Aligned with the same logo, phone, and website you just launched'
+        ],
+        media: {
+          type: 'image',
+          src: '/images/added-media/Screen Team Yard Signs.png',
+          alt: 'Yard signs and field brand materials for a local trade business'
+        },
+        align: 'right'
+      },
+      {
+        kicker: 'Step 4 — Growth systems',
+        title: 'After the foundation — systems that create growth',
+        text: 'A credible site and GBP get you discoverable. Growth comes from the lanes behind them — the same stack running Knight Group, Faith Works, Screen Team, and Roof Monsters.',
+        bullets: [
+          'CRM outreach and lead generation — OutreachEngine brand lanes',
+          'Social posting and automation — consistent presence without a full-time marketer',
+          'Ticketing, invoicing, and field ops — jobs get proofed, closed, and billed',
+          'Review requests and referral tracking — reputation and partner work that compounds'
+        ],
+        media: images.knightCommandShell
       }
     ],
+    followSplit: null,
     process: [
-      { title: 'Offer & brand clarity', text: 'Positioning, domain, and core pages before feature creep.' },
-      { title: 'Launch site & tracking', text: 'Analytics, schema, and form intake live at go-live.' },
-      { title: 'GBP & local setup', text: 'Profile creation aligned with website geography.' },
-      { title: 'Growth roadmap', text: 'Written phase-two path for outreach and automation.' }
+      { title: 'Registration & insurance footing', text: 'Entity clarity and insurance readiness so you can market without looking unfinished or unprotected.' },
+      { title: 'Business email, phone & cards', text: 'Company contacts and print-ready cards before GBP and the website quote personal accounts everywhere.' },
+      { title: 'GBP + website + audits', text: 'Claim Maps early once NAP is real. Build the package on staging. Pass Website Audit — including indexability and SEO/GEO/AEO readiness — before public publish.' },
+      { title: 'Optional field brand', text: 'Yard signs, banners, and vehicle decals when you want offline presence matching the digital brand.' },
+      { title: 'Add growth systems', text: 'CRM outreach, social automation, ticketing and field ops, reviews, and referrals — each as its own lane when you want maximum growth.' }
     ],
-    idealFor: [
-      'New Tampa Bay local service businesses pre-launch',
-      'Side hustles graduating to full-time with first marketing spend',
-      'Founders who want ops-ready infrastructure, not just a logo site',
-      'Startups planning referral or outreach within 6–12 months'
-    ],
-    proof: {
-      title: 'JNS Construction launch bundle',
-      text: '11-page contractor launch — focused service clarity and conversion without enterprise scope on day one.',
-      image: images.jns.src,
-      imageAlt: 'JNS startup contractor launch',
-      badge: '11 pages',
-      href: '/case-study-jns',
-      linkLabel: 'JNS case study'
-    },
+    idealFor: [],
+    proof: null,
     faq: [
-      { q: 'How is this different from business-growth-systems?', a: 'Launch lane is phased foundation — full growth system adds outreach, referral, and ops embeds when volume justifies them.' },
-      { q: 'Do you include logo design?', a: 'We work with your brand assets; logo design can be scoped separately if needed.' },
-      { q: 'When should we add CRM outreach?', a: 'Roadmap defines triggers — usually after site, GBP, and baseline leads are stable.' }
+      {
+        q: 'What comes first — the website or registration?',
+        a: 'Foundation first. We want entity/registration clarity and insurance where your trade requires it, then business email on your domain, a business phone line, and cards — so every public surface quotes company contacts, not a personal Gmail and cell. Google Business Profile and the website come next once name, phone, and service area are real. Optional yard signs, banners, and vehicle decals can follow. CRM, social, field ops, and review systems are growth lanes after that footing is solid — not day-one requirements.'
+      },
+      {
+        q: 'How much does a website cost for a new business?',
+        a: 'It depends on how far you need to go on day one. Packages typically run from Demo Preview and Starter Preview/Live through Search-Ready, Local Launch, Local Launch Plus, and full Growth System. A consult maps what you already have (LLC, insurance, logo, phone) versus what still needs to be built, then we give a written estimate for that scope — not a surprise invoice after go-live. See pricing for current package ranges, or book a consult if you want a phased plan.'
+      },
+      {
+        q: 'When do we make the GBP vs the website live?',
+        a: 'Claim and verify Google Business Profile as soon as the business name, service area, and phone are real — often while the site is still on staging. That gets you into Maps early. Publish the website only after package scope is locked and it passes Website Audit (indexability, SEO, GEO, and AEO readiness — not just a pretty homepage). After DNS is public, add the website URL on GBP and keep name, address, phone, hours, and categories identical on both. Mismatched NAP is one of the fastest ways to look unfinished online.'
+      },
+      {
+        q: 'Do you help with yard signs, banners, or vehicle decals?',
+        a: 'Yes — those are optional brand deliverables, not required for launch. Many trades want job-site and truck visibility once the digital brand is set. We design yard signs, banners, and car/truck decals to match the same logo, phone, and website URL you just launched, so offline and online marketing do not look like two different companies.'
+      },
+      {
+        q: 'Do you offer lead gen, outreach, social, and field ops?',
+        a: 'Yes — as separate growth-system lanes after the foundation is live. CRM outreach and lead grading, Email-Agent inbox routing, social posting automation, ticketing/invoicing/field dispatch, referral tracking, and review requests are all productized. You can add one lane or several; we will not force a full stack on a brand that is still filing paperwork or soft-launching.'
+      },
+      {
+        q: 'How is this different from Business Growth Systems?',
+        a: 'This page is the sequenced start path for new and restarting businesses: registration → contacts → GBP/website/audits → optional field brand → growth lanes. Business Growth Systems is the flagship hub that demonstrates the live stack — outreach, email, referrals, social, and dispatch — and links into each lane. Most new owners start here; established companies that already have a site often go straight to Growth Systems or a free growth audit.'
+      },
+      {
+        q: 'What if I already have a DIY site or social pages?',
+        a: 'That is common. We audit what you already have — domain, email, phone, GBP, and the current site — then decide what to keep, rebuild, or replace. Soft-launched DIY sites often need NAP cleanup, indexability fixes, and a clearer conversion path before we add outreach or automation. Bring what you have; the plan starts from reality, not a blank slate.'
+      },
+      {
+        q: 'How long does a new-business launch take?',
+        a: 'Foundation and contacts can move in days once decisions are made. A Search-Ready or Local Launch website is typically weeks on staging with an audit gate before public DNS. Growth-system lanes (outreach, social, dispatch) follow in milestones so your team is not trained on five tools on day one. Timeline depends on how ready registration, insurance, brand assets, and content are when we start.'
+      }
     ],
-    links: [['/service-websites', 'Website Services'], ['/website-growth-audit', 'Free Growth Audit'], ['/business-growth-systems', 'Full Growth Systems']],
-    cta: { title: 'Launching a new business?', text: 'Share your offer and timeline — we will scope a foundation that scales.' }
+    links: [
+      ['/service-websites', 'Websites & Local SEO'],
+      ['/service-google-business-profile', 'Google Business Profile'],
+      ['/crm-outreach-lead-generation', 'CRM Outreach & Lead Generation'],
+      ['/social-media-automation-systems', 'Social Media Automation'],
+      ['/ticketing-invoicing-job-workflows', 'Ticketing & Job Workflows'],
+      ['/business-growth-systems', 'Business Growth Systems'],
+      ['/pricing', 'Pricing']
+    ],
+    cta: { title: 'Tell us where you are', text: 'Idea stage, LLC filed, insurance pending, or soft-launched with a DIY site — we will map registration → contacts → GBP/website/audits → optional signs → growth systems.' }
   },
   {
     slug: 'stripe-invoice-automation',

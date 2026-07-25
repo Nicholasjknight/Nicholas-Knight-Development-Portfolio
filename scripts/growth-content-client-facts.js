@@ -56,15 +56,15 @@ const FW = {
 const ST = {
   key: 'st',
   name: 'Screen Team',
-  pageCount: 36,
-  sitemapCount: 24,
+  pageCount: 81,
+  sitemapCount: 81,
   sitemapUrl: 'https://screenteamllc.com/sitemap.xml',
   liveUrl: 'https://screenteamllc.com/',
   trade: 'screen repair / pool enclosures',
   summary:
-    '36-page Tampa Bay screen repair and pool enclosure site — service silos, metro city pages, gallery proof, and quote-first conversion paths.',
+    '81-page Tampa Bay screen repair and pool enclosure site — service silos, metro city pages, gallery proof, and quote-first conversion paths.',
   shortProof:
-    '36-page enclosure trade local SEO with st OutreachEngine lane, Email-Agent ST mapping, and growth-system CRM alignment.',
+    '81-page enclosure trade local SEO with st OutreachEngine lane, Email-Agent ST mapping, and growth-system CRM alignment.',
   outreachNote:
     'Screen Team runs as the st brand lane in OutreachEngine — separate from kg and faithworks with dedicated send caps and templates.',
   geography: 'Tampa Bay metros — Safety Harbor, Clearwater, Largo, Palm Harbor, St. Petersburg, and surrounding coverage.',
@@ -119,7 +119,7 @@ const FW_STATS = [
 ];
 
 const ST_STATS = [
-  { value: '36', label: 'Indexable pages — Screen Team' },
+  { value: '81', label: 'Indexable pages — Screen Team' },
   { value: '6', label: 'Core service silos — ST' },
   { value: 'st', label: 'OutreachEngine st brand lane' }
 ];
@@ -131,11 +131,11 @@ const RM_STATS = [
 ];
 
 const TRIO_PROOF =
-  'Three live Tampa Bay growth-system clients prove the stack at different scales: Knight Group (97 handyman pages, kg lane), Faith Works (82 land-clearing pages, faithworks lane), and Screen Team (36 enclosure pages, st lane).';
+  'Three live Tampa Bay growth-system clients prove the stack at different scales: Knight Group (97 handyman pages, kg lane), Faith Works (82 land-clearing pages, faithworks lane), and Screen Team (81 enclosure pages, st lane).';
 
 const TRIO_STATS = [
   { value: '82', label: 'Pages — Faith Works growth system' },
-  { value: '36', label: 'Pages — Screen Team growth system' },
+  { value: '81', label: 'Pages — Screen Team growth system' },
   { value: '97', label: 'Pages — Knight Group growth system' }
 ];
 

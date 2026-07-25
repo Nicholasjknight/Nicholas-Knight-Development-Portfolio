@@ -127,6 +127,7 @@ module.exports = {
     crm: { type: 'video', src: '/videos/automation/crm-outreach-dashboard.mp4', vtt: '/videos/automation/crm-outreach-dashboard.vtt', title: 'CRM outreach dashboard' },
     email: { type: 'video', src: '/videos/automation/email-agent-routing.mp4', vtt: '/videos/automation/email-agent-routing.vtt', title: 'Email-Agent routing' },
     social: { type: 'video', src: '/videos/automation/social-media-manager.mp4', vtt: '/videos/automation/social-media-manager.vtt', title: 'Social media manager' },
+    dispatch: { type: 'video', src: '/videos/automation/kg-dispatch-mobile-app.mp4', vtt: '/videos/automation/kg-dispatch-mobile-app.vtt', title: 'KG Dispatch mobile app' },
     referral: { type: 'video', src: '/videos/automation/referral-system-dashboard.mp4', vtt: '/videos/automation/referral-system-dashboard.vtt', title: 'Referral system dashboard' },
     roofMonsters: {
       type: 'video',
@@ -197,6 +198,8 @@ module.exports = {
     caseStudyCrm: { type: 'image', src: '/images/showcase/case-study-crm-outreach-mockup.webp', alt: 'CRM outreach queue dashboard', width: 1200, height: 675 },
     caseStudyVendoroo: { type: 'image', src: '/images/showcase/case-study-vendoroo-ticket-mockup.webp', alt: 'Vendor ticket and invoice workflow', width: 1200, height: 675 },
     caseStudyKnightCommand: { type: 'image', src: '/images/showcase/case-study-knight-command-mockup.webp', alt: 'Knight Command admin shell', width: 1200, height: 675 },
+    knightCommandShell: { type: 'image', src: '/images/added-media/knight-command.webp', alt: 'Knight Command admin shell', width: 2853, height: 1261 },
+    googleBusinessProfile: { type: 'image', src: '/images/added-media/google-business-profile.webp', alt: 'Google Business Profile for a local service business', width: 1377, height: 1264 },
     caseStudyReferral: { type: 'image', src: '/images/showcase/case-study-referral-network-mockup.webp', alt: 'Referral network attribution dashboard', width: 1200, height: 675 },
     caseStudySocial: { type: 'image', src: '/images/showcase/case-study-social-poster-mockup.webp', alt: 'Social posting queue dashboard', width: 1200, height: 675 },
     caseStudyRoofing: { type: 'image', src: '/images/showcase/roof-monsters-og-card.webp', alt: 'Roof Monsters live roofing website on roofmonsters.co', width: 1200, height: 630 },

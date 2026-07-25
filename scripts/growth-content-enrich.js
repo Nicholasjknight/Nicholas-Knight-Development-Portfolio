@@ -29,7 +29,7 @@ const PROOF = {
     href: '/case-study-screen-team',
     image: ST.media.src,
     imageAlt: ST.media.alt,
-    title: 'Screen Team — 36-page growth system',
+    title: `Screen Team — ${ST.pageCount}-page growth system`,
     text: `${ST.pageCount} indexable pages for pool enclosure and screen repair across Tampa Bay — st OutreachEngine lane, Email-Agent mapping, and full growth stack.`,
     badge: 'Live client'
   },
@@ -207,7 +207,7 @@ function defaultProofGrid(slug) {
     PROOF.vendoroo
   ];
   const map = {
-    'business-growth-systems': [PROOF.faithWorks, PROOF.screenTeam, PROOF.kg],
+    'business-growth-systems': [PROOF.kg, PROOF.faithWorks, PROOF.screenTeam, PROOF.roofMonsters, PROOF.farrellElectric, PROOF.salsPainting, PROOF.jns, PROOF.hospitalityPattern],
     'crm-outreach-lead-generation': [PROOF.crmOutreach, PROOF.kg],
     'ticketing-invoicing-job-workflows': [PROOF.vendoroo, PROOF.jns],
     'referral-network-systems': [PROOF.referral, PROOF.knightCommand],
@@ -224,6 +224,7 @@ function defaultProofGrid(slug) {
     'screen-enclosure-business-growth-systems': [PROOF.screenTeam, PROOF.socialPoster],
     'excavation-business-growth-systems': [PROOF.faithWorks, PROOF.jns],
     'restaurant-bar-growth-systems': [PROOF.hospitalityPattern, PROOF.socialPoster],
+    'starting-a-new-business': [PROOF.kg, PROOF.faithWorks, PROOF.screenTeam, PROOF.roofMonsters, PROOF.farrellElectric, PROOF.salsPainting, PROOF.jns, PROOF.hospitalityPattern],
     'ai-business-automation': [PROOF.knightCommand, PROOF.socialPoster],
     'workflow-automation': [PROOF.knightCommand, PROOF.crmOutreach],
     'email-agent-automation': [PROOF.crmOutreach, PROOF.knightCommand],
@@ -260,30 +261,32 @@ function defaultSectionIntros(page) {
 const enrichments = {
   'business-growth-systems': {
     context: {
-      title: 'Why connected growth systems beat disconnected tools',
+      title: 'One stack — not five tabs',
+      layout: 'wide',
       paragraphs: [
-        'Small and local businesses rarely fail because they lack a website — they fail because leads, follow-up, referrals, and field work live in separate tabs with no shared truth. A growth system wires the website, local discovery, outreach, automation, and reporting into lanes your team will actually open daily.',
-        'Knight Logics also runs a Tampa Bay trade partner network: build the online presence, publish a case study when launch is ready, assign a referral lane, and co-market with complementary service partners through tracked QR paths and /ref/:partner attribution.',
-        'Three live growth-system anchors prove the stack — Faith Works (82 land-clearing pages, faithworks lane), Screen Team (36 enclosure pages, st lane), and Knight Group (97 handyman pages, kg lane) — plus OutreachEngine, Email-Agent, Social Poster, and Knight Command at /admin.'
+        'We do not just design fancy websites — we build sophisticated growth systems that help local businesses get found, capture leads, and follow up. Start with a basic setup (site, Google Business Profile, email, phone) or add CRM outreach, Email-Agent, social, referrals, and field ops as you are ready — the same stack behind Faith Works, Screen Team, and Knight Group in Tampa Bay.'
       ]
     },
-    deliverables: [
-      { title: 'Foundation & discovery', items: ['Hand-coded website with conversion paths and analytics baselines', 'Technical SEO, schema, and Google Business alignment', 'Service-area page architecture scaled to your trade and metros', 'PageSpeed-first builds without bloated page builders'] },
-      { title: 'Lead & partner lanes', items: ['OutreachEngine CRM with segmented lists and daily send caps', 'Email-Agent reply routing into crm_reply views', 'Referral /ref/:partner paths with QR brochure assets', 'Review request timing tied to job completion'] },
-      { title: 'Ops visibility', items: ['Knight Command-style admin embeds or owner dashboards', 'Queue depth and lead-source reporting readable on mobile', 'Monthly review cadence with prioritized next moves', 'Written scope per lane — not a one-size agency retainer'] }
-    ],
-    connections: {
-      kicker: 'Trade network flywheel',
-      title: 'Build → case study → referral lane → co-marketing',
-      text: 'Each new trade partner gets a growth stack, a published proof page when ready, and a slot in the complementary referral roster. Mass outreach and partner campaigns scale as the network grows.',
-      bullets: ['Website & audit → local visibility and conversion baselines', 'CRM outreach → Email-Agent reply discipline', 'Referral network → Stripe webhook settlement and partner dashboard', 'Industry trade lanes document the playbook per vertical'],
-      links: [['/referral-network-systems', 'Referral Systems'], ['/contractor-growth-systems', 'Trade Lanes'], ['/case-study-referral-network-system', 'Referral Case Study']]
-    },
+    connections: null,
+    outcomesIntro: 'What a connected growth stack is built to move — more qualified leads, faster follow-up, repeat work, and numbers you can actually check.',
     outcomes: [
-      { title: 'Fewer lost leads', text: 'Form fills and outreach replies route into tracked queues instead of personal inboxes that get checked inconsistently.' },
-      { title: 'Defensible attribution', text: 'Referral partners, outreach lists, and GBP actions tie back to consults and booked work — not vanity traffic.' },
-      { title: 'Operator speed', text: 'Morning review happens in one shell with queue depth, failures, and next sends visible without hunting localhost ports.' },
-      { title: 'Scalable geography', text: 'City and service silos match how customers search — Faith Works at 82 pages and Screen Team at 36 show the pattern across trades, with Knight Group at 97 for handyman depth.' }
+      { title: 'More leads that fit', text: 'Local SEO, graded outreach lists, and referral lanes bring estimate-ready prospects — property managers, complementary trades, and homeowners searching your services — not random spam.' },
+      { title: 'Fewer lost leads', text: 'Website forms and CRM replies route into Email-Agent with notifications or auto-acknowledgements — so nothing sits in a personal inbox until tomorrow.' },
+      { title: 'Faster first response', text: 'High-fit outreach replies surface in crm_reply queues while the lead is still comparing vendors — speed wins estimate-first trades.' },
+      { title: 'Repeat-service customers', text: 'Graded targeting and fast follow-up attract accounts that buy ongoing work; dispatch and invoicing keep them in your system after the first job.' },
+      { title: 'Marketing from field work', text: 'Before/process/after photos become gallery pages and social posts automatically — proof content without a second upload step.' },
+      { title: 'Attribution you can defend', text: 'Referral partners, outreach lists, GBP posts, and form fills tie back to consults and booked jobs — not vanity traffic with no source.' }
+    ],
+    proofsIntro: 'Live client sites across Tampa Bay — full growth systems and focused launches — not only the flagship stack.',
+    proofGrid: [
+      PROOF.kg,
+      PROOF.faithWorks,
+      PROOF.screenTeam,
+      PROOF.roofMonsters,
+      PROOF.farrellElectric,
+      PROOF.salsPainting,
+      PROOF.jns,
+      PROOF.hospitalityPattern
     ],
     stats: TRIO_STATS
   },
@@ -1017,33 +1020,61 @@ const enrichments = {
       { title: 'GBP coherence', text: 'Hours and specials match website before launch marketing.' }
     ]
   },
-  'startup-business-launch-systems': {
+  'starting-a-new-business': {
+    stats: [
+      { value: 'Foundation', label: 'Registration, email, phone & cards first' },
+      { value: 'Discovery', label: 'GBP + website with SEO / GEO / AEO audits' },
+      { value: 'Growth', label: 'Optional signs, then full growth systems' }
+    ],
+    deliverablesIntro: 'What a real new-business launch includes — foundation first, then discovery, optional field brand, and growth systems.',
+    deliverablesAlign: 'center',
+    outcomes: [],
+    outcomesIntro: '',
+    proofsIntro: 'Live sites across package levels — full growth systems and focused launches — so you can see what this path can grow into.',
+    proofGrid: [
+      PROOF.kg,
+      PROOF.faithWorks,
+      PROOF.screenTeam,
+      PROOF.roofMonsters,
+      PROOF.farrellElectric,
+      PROOF.salsPainting,
+      PROOF.jns,
+      PROOF.hospitalityPattern
+    ],
+    proof: null,
+    idealFor: [],
     context: {
-      title: 'Launch lean — measure before scaling lanes',
+      title: 'How we help you start a new business',
       paragraphs: [
-        'Startup and new business launches need credible web presence, clear offer, analytics baseline, and phased systems — not every automation lane on day one.',
-        'Phased milestones typical path: foundation site and GBP, then CRM outreach or referrals when lead flow justifies, then ops automation when job volume demands it.',
-        'Faith Works, Screen Team, and Knight Group each started with strong web and local foundation before outreach lanes scaled — the sequence matters more than feature count.'
+        'We start with the business itself: registration and insurance footing, business email, business phone, and cards — so every public surface quotes real company contacts.',
+        'Next comes Google Business Profile and the website, with audit processes for indexability, SEO, GEO, and AEO — not just a publish button. Optional yard signs, banners, and vehicle decals can follow. Growth systems (CRM, social, field ops, reviews) come after that foundation is solid.'
       ]
     },
     deliverables: [
-      { title: 'Launch foundation', items: ['Hand-coded site with offer clarity and lead capture', 'Analytics, Search Console, and conversion baselines', 'GBP setup and local schema', 'Brand-consistent photography and copy guidance'] },
-      { title: 'Growth phase two', items: ['OutreachEngine when outbound pipeline needed', 'Referral program scaffolding when partner network forms', 'Review request workflow at first completed jobs', 'website-growth-audit follow-up at 90 days'] },
-      { title: 'Scale readiness', items: ['Knight Command or dashboard patterns when ops complexity grows', 'Documentation for which lanes to add next', 'Performance-partner-program option when metrics stabilize', 'Written scope per phase — no surprise retainers'] }
+      { title: 'Business foundation', items: ['Registration / entity clarity', 'Insurance readiness where your trade requires it', 'Business email on your domain', 'Business phone line', 'Business cards and basic brand mark'] },
+      { title: 'GBP, website & audits', items: ['Google Business Profile claim / verify with matching NAP', 'Website package from Preview through Local Launch / Growth System', 'Website Audit gate before public go-live', 'Indexability plus SEO, GEO, and AEO readiness'] },
+      { title: 'Optional brand + growth systems', items: ['Yard signs, banners, and vehicle decals as needed', 'CRM outreach and lead generation', 'Social posting and automation', 'Ticketing, invoicing, field ops, and review requests'] }
     ],
     connections: {
-      kicker: 'Phased growth',
-      title: 'Maps to flagship lanes over time',
-      text: 'Startups adopt business-growth-systems incrementally — website first, systems as revenue supports.',
-      bullets: ['website-growth-audit for launch baseline', 'business-growth-systems for full stack roadmap', 'Faith Works, Screen Team, or Knight Group as trade-matched proof', 'book-consultation for scope conversation'],
-      links: [['/website-growth-audit', 'Growth Audit'], ['/business-growth-systems', 'Growth Systems'], ['/book-consultation', 'Book Consultation']]
-    },
-    outcomes: [
-      { title: 'Credible day-one presence', text: 'Launch with conversion-ready site — not a Coming Soon placeholder.' },
-      { title: 'Measured expansion', text: 'Add outreach and automation when data says volume warrants it.' },
-      { title: 'Avoided overbuild', text: 'No unused CRM or dashboard licenses on week one.' },
-      { title: 'Documented roadmap', text: 'Clear next lane when referrals or inbound plateau.' }
-    ]
+      kicker: 'What we offer',
+      title: 'After the foundation — growth systems that match the live network',
+      text: 'Once registration, contacts, GBP, and the website are solid, these product lanes are how Knight Group, Faith Works, Screen Team, and Roof Monsters keep growing.',
+      align: 'center',
+      bullets: [
+        'CRM outreach and lead generation (OutreachEngine)',
+        'Social media posting and automation',
+        'Ticketing, invoicing, and job / field workflows',
+        'Review request systems and local visibility'
+      ],
+      links: [
+        ['/crm-outreach-lead-generation', 'CRM Outreach & Lead Generation'],
+        ['/social-media-automation-systems', 'Social Media Automation'],
+        ['/ticketing-invoicing-job-workflows', 'Ticketing & Job Workflows'],
+        ['/review-request-systems', 'Review Request Systems'],
+        ['/business-growth-systems', 'All Business Growth Systems'],
+        ['/book-consultation', 'Book Consultation']
+      ]
+    }
   },
   'stripe-invoice-automation': {
     deliverablesIntro: 'Invoice automation scoped to job milestones — triggers, webhooks, and paid-status sync.',

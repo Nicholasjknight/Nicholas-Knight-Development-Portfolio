@@ -1,4 +1,4 @@
-const VER = '20260711cs6';
+const VER = '20260724start3';
 const { pickHeroPanels, getHeroFocus, pickMobileHeroImage } = require('./growth-content-media');
 const { tradeNetworkForSlug } = require('./growth-trade-network');
 const { renderStructuredDataScripts } = require('./growth-schema');
@@ -68,19 +68,36 @@ function renderStats(stats) {
 
 function renderFeatures(features, title = 'What this includes') {
   if (!features || !features.length) return '';
+  const linked = features.some((f) => f.href);
+  const gridClass = linked ? ' kl-growth-features--linked' : '';
+  const cards = features.map((f) => {
+    const cta = f.href
+      ? `<span class="kl-growth-feature-cta">${f.linkLabel || 'Learn more'} <i class="fas fa-arrow-right" aria-hidden="true"></i></span>`
+      : '';
+    const inner = `
+                    <div class="kl-growth-feature-icon" aria-hidden="true"><i class="fas ${f.icon || 'fa-check'}"></i></div>
+                    ${f.label ? `<p class="kl-growth-feature-label">${f.label}</p>` : ''}
+                    <h3>${f.title}</h3>
+                    <p>${f.text}</p>
+                    ${cta}`;
+    if (f.href) {
+      return `
+                <a href="${f.href}" class="kl-growth-feature kl-growth-feature--link fade-in">
+                    ${inner}
+                </a>`;
+    }
+    return `
+                <article class="kl-growth-feature fade-in">
+                    ${inner}
+                </article>`;
+  }).join('');
   return `<section class="kl-growth-section">
         <div class="container">
             <div class="section-header fade-in">
                 <h2>${title}</h2>
                 ${featuresIntro(title)}
             </div>
-            <div class="kl-growth-features">${features.map((f) => `
-                <article class="kl-growth-feature fade-in">
-                    <div class="kl-growth-feature-icon" aria-hidden="true"><i class="fas ${f.icon || 'fa-check'}"></i></div>
-                    ${f.label ? `<p class="kl-growth-feature-label">${f.label}</p>` : ''}
-                    <h3>${f.title}</h3>
-                    <p>${f.text}</p>
-                </article>`).join('')}
+            <div class="kl-growth-features${gridClass}">${cards}
             </div>
         </div>
     </section>`;
@@ -98,9 +115,11 @@ function renderSplit(block) {
   const paras = Array.isArray(block.paragraphs) && block.paragraphs.length
     ? block.paragraphs.map((p) => `<p>${p}</p>`).join('\n                    ')
     : `<p>${block.text || ''}</p>`;
-  return `<section class="kl-growth-section kl-growth-section--alt">
+  const reverse = block.align === 'right' ? ' kl-growth-split--reverse' : '';
+  const sectionAlt = block.alt === false ? '' : ' kl-growth-section--alt';
+  return `<section class="kl-growth-section${sectionAlt}">
         <div class="container">
-            <div class="kl-growth-split fade-in">
+            <div class="kl-growth-split${reverse} fade-in">
                 <div class="kl-growth-split-copy">
                     <span class="kl-growth-kicker">${block.kicker || 'The problem'}</span>
                     <h2>${block.title}</h2>
@@ -419,7 +438,7 @@ function renderLinks(links, pricingNote) {
   return `<section class="kl-growth-section kl-growth-section--compact">
         <div class="container">
             ${pricingNote ? `<p class="kl-growth-pricing-note fade-in">${pricingNote}</p>` : ''}
-            <div class="kl-growth-links fade-in">${links.map(([href, label]) => `<a href="${href}">${label}</a>`).join('\n                ')}</div>
+            <div class="kl-growth-links kl-growth-links--center fade-in">${links.map(([href, label]) => `<a href="${href}">${label}</a>`).join('\n                ')}</div>
         </div>
     </section>`;
 }
@@ -448,9 +467,9 @@ function renderContext(ctx) {
     </section>`;
   }
 
-  return `<section class="kl-growth-section kl-growth-section--compact">
+  return `<section class="kl-growth-section kl-growth-section--compact${ctx.layout === 'wide' ? ' kl-growth-section--context-wide' : ''}">
         <div class="container">
-            <div class="kl-growth-context fade-in">
+            <div class="kl-growth-context${ctx.layout === 'wide' ? ' kl-growth-context--wide' : ''} fade-in">
                 ${title}
                 ${paras}
                 ${note}
@@ -498,11 +517,12 @@ function renderTradeNetwork(block) {
     </section>`;
 }
 
-function renderDeliverables(items, intro) {
+function renderDeliverables(items, intro, align) {
   if (!items || !items.length) return '';
   const subtitle = intro || 'What ships in this lane — configured for how your team sells and delivers work.';
+  const centerClass = align === 'center' ? ' kl-growth-deliverables-wrap--center' : '';
   return `<section class="kl-growth-section kl-growth-section--alt">
-        <div class="container">
+        <div class="container${centerClass}">
             <div class="section-header fade-in">
                 <h2>Typical deliverables</h2>
                 <p>${subtitle}</p>
@@ -519,9 +539,10 @@ function renderDeliverables(items, intro) {
 
 function renderConnections(conn) {
   if (!conn) return '';
+  const centerClass = conn.align === 'center' ? ' kl-growth-connection--center' : '';
   return `<section class="kl-growth-section">
         <div class="container">
-            <div class="kl-growth-connection fade-in">
+            <div class="kl-growth-connection${centerClass} fade-in">
                 <span class="kl-growth-kicker">${conn.kicker || 'How it connects'}</span>
                 <h2>${conn.title}</h2>
                 <p>${conn.text}</p>
@@ -535,13 +556,14 @@ function renderConnections(conn) {
 function renderOutcomes(outcomes, intro) {
   if (!outcomes || !outcomes.length) return '';
   const subtitle = intro || 'Results operators can check in the tools they already open — not vanity traffic charts.';
+  const rowClass = outcomes.length >= 5 ? ' kl-growth-outcomes--row' : '';
   return `<section class="kl-growth-section kl-growth-section--alt">
         <div class="container">
             <div class="section-header fade-in">
                 <h2>Outcomes we design for</h2>
                 <p>${subtitle}</p>
             </div>
-            <div class="kl-growth-outcomes">${outcomes.map((o) => `
+            <div class="kl-growth-outcomes${rowClass}">${outcomes.map((o) => `
                 <article class="kl-growth-outcome fade-in">
                     <h3>${o.title}</h3>
                     <p>${o.text}</p>
@@ -669,9 +691,13 @@ function renderServicePage(p) {
     ${renderContext(p.context)}
     ${renderTradeNetwork(p.tradeNetwork || tradeNetworkForSlug(p.slug))}
     ${renderSplit(p.problem)}
+    ${renderSplit(p.followSplit)}
+    ${renderSplit(p.referralSplit || p.commandSplit)}
+    ${renderSplit(p.socialSplit)}
+    ${renderSplit(p.dispatchSplit)}
     ${renderFeatures(p.features)}
     ${renderMediaBlocks(p.mediaBlocks)}
-    ${renderDeliverables(p.deliverables, p.deliverablesIntro)}
+    ${renderDeliverables(p.deliverables, p.deliverablesIntro, p.deliverablesAlign)}
     ${renderConnections(p.connections)}
     ${renderProcess(p.process)}
     ${renderOutcomes(p.outcomes, p.outcomesIntro)}
