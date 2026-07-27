@@ -124,6 +124,24 @@ function priceMatches(price, packageDefinition, paymentOption, amount) {
 }
 
 function getPaymentVariants(packageKey, packageDefinition) {
+    if (
+        packageDefinition.checkoutEnabled === false
+        || packageDefinition.deprecated === true
+        || ['CONSULT_ONLY', 'DISABLED'].includes(packageDefinition.checkoutMode)
+    ) {
+        return [];
+    }
+
+    const deposit = PACKAGE_PAYMENT_OPTIONS[packageKey] && PACKAGE_PAYMENT_OPTIONS[packageKey].deposit;
+
+    if (packageDefinition.checkoutMode === 'DEPOSIT_ONLY') {
+        return deposit ? [{
+            paymentOption: 'deposit',
+            amount: deposit.amount,
+            label: deposit.priceDisplay
+        }] : [];
+    }
+
     const variants = [
         {
             paymentOption: 'full',
@@ -134,7 +152,6 @@ function getPaymentVariants(packageKey, packageDefinition) {
         }
     ];
 
-    const deposit = PACKAGE_PAYMENT_OPTIONS[packageKey] && PACKAGE_PAYMENT_OPTIONS[packageKey].deposit;
     if (deposit && packageDefinition.mode === 'payment') {
         variants.push({
             paymentOption: 'deposit',
@@ -150,20 +167,36 @@ async function ensureCatalogProduct(stripe, allProducts, packageKey, packageDefi
     const existing = allProducts.find((product) =>
         product && product.metadata && product.metadata[KL_PRODUCT_KEY_META] === packageKey
     );
+    const desiredName = `KL - ${packageDefinition.name}`;
+    const desiredMetadata = {
+        [KL_PRODUCT_KEY_META]: packageKey,
+        kl_package_name: packageDefinition.name,
+        kl_mode: packageDefinition.mode,
+        kl_family: (packageDefinition.metadata && packageDefinition.metadata.family) || '',
+        kl_catalog_version: (packageDefinition.metadata && packageDefinition.metadata.catalogVersion) || ''
+    };
 
     if (existing) {
+        const metadataDrift = Object.entries(desiredMetadata).some(
+            ([key, value]) => String((existing.metadata && existing.metadata[key]) || '') !== String(value)
+        );
+
+        if (existing.name !== desiredName || existing.description !== packageDefinition.description || metadataDrift) {
+            const updated = await stripe.products.update(existing.id, {
+                name: desiredName,
+                description: packageDefinition.description,
+                metadata: desiredMetadata
+            });
+            Object.assign(existing, updated);
+        }
+
         return existing;
     }
 
     const created = await stripe.products.create({
-        name: `KL - ${packageDefinition.name}`,
+        name: desiredName,
         description: packageDefinition.description,
-        metadata: {
-            [KL_PRODUCT_KEY_META]: packageKey,
-            kl_package_name: packageDefinition.name,
-            kl_mode: packageDefinition.mode,
-            kl_family: (packageDefinition.metadata && packageDefinition.metadata.family) || ''
-        }
+        metadata: desiredMetadata
     });
 
     allProducts.push(created);
@@ -210,6 +243,18 @@ async function main() {
         throw new Error('Missing STRIPE_SECRET_KEY or STRIPE_API_KEY.');
     }
 
+    const productionRequested = process.argv.includes('--production');
+    const productionConfirmed = process.argv.includes('--confirm-production');
+    const isLiveKey = String(stripeSecretKey).startsWith('sk_live_');
+
+    if (isLiveKey && (!productionRequested || !productionConfirmed)) {
+        throw new Error('Refusing to mutate live Stripe. Use both --production and --confirm-production after test-mode verification.');
+    }
+
+    if (!isLiveKey && productionRequested) {
+        throw new Error('The --production flag was supplied with a non-live Stripe key.');
+    }
+
     const stripe = new Stripe(stripeSecretKey, { apiVersion: '2025-03-31.basil' });
     const allProducts = await listAllProducts(stripe);
 
@@ -234,8 +279,13 @@ async function main() {
 
     for (const packageKey of packageKeys) {
         const packageDefinition = PACKAGE_DEFINITIONS[packageKey];
-        const product = await ensureCatalogProduct(stripe, allProducts, packageKey, packageDefinition);
         const paymentVariants = getPaymentVariants(packageKey, packageDefinition);
+
+        if (!paymentVariants.length) {
+            continue;
+        }
+
+        const product = await ensureCatalogProduct(stripe, allProducts, packageKey, packageDefinition);
 
         for (const variant of paymentVariants) {
             const result = await ensureCatalogPrice(
@@ -258,7 +308,9 @@ async function main() {
                 productName: product.name,
                 productId: product.id,
                 priceId: result.price.id,
-                createdNow: result.created
+                createdNow: result.created,
+                priceIdNeedsResync: false,
+                catalogVersion: packageDefinition.metadata && packageDefinition.metadata.catalogVersion
             };
 
             mappingRows.push(row);
@@ -283,10 +335,15 @@ async function main() {
         fs.mkdirSync(outputDir, { recursive: true });
     }
 
-    const mapPath = path.join(outputDir, 'knightlogics-catalog-map.json');
-    const csvPath = path.join(outputDir, 'knightlogics-catalog-map.csv');
+    const artifactSuffix = isLiveKey ? '' : '.test';
+    const mapPath = path.join(outputDir, `knightlogics-catalog-map${artifactSuffix}.json`);
+    const csvPath = path.join(outputDir, `knightlogics-catalog-map${artifactSuffix}.csv`);
 
-    fs.writeFileSync(mapPath, JSON.stringify({ generatedAt: new Date().toISOString(), rows: mappingRows }, null, 2));
+    fs.writeFileSync(mapPath, JSON.stringify({
+        generatedAt: new Date().toISOString(),
+        mode: isLiveKey ? 'live' : 'test',
+        rows: mappingRows
+    }, null, 2));
     fs.writeFileSync(
         csvPath,
         csvRows.map((row) => row.map(csvEscape).join(',')).join('\n') + '\n'

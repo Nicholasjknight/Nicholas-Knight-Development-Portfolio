@@ -1,7 +1,7 @@
 /** Shared media paths for growth page content */
 
 const heroPanelPool = [
-  '/images/showcase/faith-works-og-card.jpg',
+  '/images/showcase/faith-works-og-card.webp',
   '/images/screen-team-showcase-800.webp',
   '/images/KGHero.webp',
   '/images/JNS-HomeImage.webp',
@@ -20,7 +20,7 @@ const SLUG_HERO_PANELS = {
 
 /** object-position for cover crops — tuned so people stay in frame */
 const heroImageFocus = {
-  '/images/showcase/faith-works-og-card.jpg': { desktop: '42% 38%', mobile: '44% 36%' },
+  '/images/showcase/faith-works-og-card.webp': { desktop: '42% 38%', mobile: '44% 36%' },
   '/images/screen-team-showcase-800.webp': { desktop: '74% 48%', mobile: '82% 50%' },
   '/images/KGHero.webp': { desktop: '76% 44%', mobile: '82% 46%' },
   '/images/JNS-HomeImage.webp': { desktop: '55% 42%', mobile: '58% 44%' },
@@ -40,7 +40,7 @@ const heroMobilePriority = [
   '/images/KGHero.webp',
   '/images/websitehero.webp?v=20260604perf1',
   '/images/JNS-HomeImage.webp',
-  '/images/showcase/faith-works-og-card.jpg',
+  '/images/showcase/faith-works-og-card.webp',
   '/images/momhero.webp'
 ];
 
@@ -124,11 +124,35 @@ module.exports = {
   isLogoHero,
   pickHeroPanels,
   videos: {
-    crm: { type: 'video', src: '/videos/automation/crm-outreach-dashboard.mp4', vtt: '/videos/automation/crm-outreach-dashboard.vtt', title: 'CRM outreach dashboard' },
-    email: { type: 'video', src: '/videos/automation/email-agent-routing.mp4', vtt: '/videos/automation/email-agent-routing.vtt', title: 'Email-Agent routing' },
-    social: { type: 'video', src: '/videos/automation/social-media-manager.mp4', vtt: '/videos/automation/social-media-manager.vtt', title: 'Social media manager' },
+    // Prefer real added-media captures over the short /videos/automation stubs
+    crm: {
+      type: 'video',
+      src: '/images/added-media/CRM%20Outreach.mp4',
+      poster: '/images/added-media/CRM%20System.png',
+      title: 'CRM outreach dashboard',
+      controls: true
+    },
+    email: {
+      type: 'video',
+      src: '/images/added-media/Email%20Agent.mp4',
+      poster: '/images/added-media/Email%20Agent.png',
+      title: 'Email-Agent routing',
+      controls: true
+    },
+    social: {
+      type: 'video',
+      src: '/images/added-media/Social%20Media%20Manager.mp4',
+      title: 'Social media manager',
+      controls: true
+    },
     dispatch: { type: 'video', src: '/videos/automation/kg-dispatch-mobile-app.mp4', vtt: '/videos/automation/kg-dispatch-mobile-app.vtt', title: 'KG Dispatch mobile app' },
-    referral: { type: 'video', src: '/videos/automation/referral-system-dashboard.mp4', vtt: '/videos/automation/referral-system-dashboard.vtt', title: 'Referral system dashboard' },
+    referral: {
+      type: 'video',
+      src: '/images/added-media/Referral%20System%20KL.mp4',
+      poster: '/images/added-media/Tracking%20Referral%20Payouts.png',
+      title: 'Referral system dashboard',
+      controls: true
+    },
     roofMonsters: {
       type: 'video',
       src: '/images/roof-monsters-rebuild.mp4',
@@ -168,7 +192,7 @@ module.exports = {
   images: {
     kgHero: { type: 'image', src: '/images/KGHero.webp', alt: 'Knight Group handyman website hero' },
     screenTeam: { type: 'image', src: '/images/screen-team-showcase-800.webp', alt: 'Screen Team LLC local service website', width: 800, height: 450 },
-    faithWorks: { type: 'image', src: '/images/showcase/faith-works-og-card.jpg', alt: 'Faith Works Outdoor Services local SEO site', width: 1200, height: 630 },
+    faithWorks: { type: 'image', src: '/images/showcase/faith-works-og-card.webp', alt: 'Faith Works Outdoor Services local SEO site', width: 1200, height: 630 },
     jns: { type: 'image', src: '/images/JNS-HomeImage.webp', alt: 'JNS Construction contractor website' },
     farrellElectric: { type: 'image', src: '/images/farrell/hero.png', alt: 'Farrell Electric website hero', width: 1200, height: 630 },
     salsPainting: { type: 'image', src: '/images/sals-hero.webp', alt: "Sal's Painting website hero", width: 1200, height: 630 },
@@ -195,13 +219,33 @@ module.exports = {
       height: 750
     },
     logo: { type: 'image', src: '/images/KnightLogicsLogo2.webp', alt: 'Knight Logics growth systems' },
-    caseStudyCrm: { type: 'image', src: '/images/showcase/case-study-crm-outreach-mockup.webp', alt: 'CRM outreach queue dashboard', width: 1200, height: 675 },
-    caseStudyVendoroo: { type: 'image', src: '/images/showcase/case-study-vendoroo-ticket-mockup.webp', alt: 'Vendor ticket and invoice workflow', width: 1200, height: 675 },
-    caseStudyKnightCommand: { type: 'image', src: '/images/showcase/case-study-knight-command-mockup.webp', alt: 'Knight Command admin shell', width: 1200, height: 675 },
-    knightCommandShell: { type: 'image', src: '/images/added-media/knight-command.webp', alt: 'Knight Command admin shell', width: 2853, height: 1261 },
+    caseStudyCrm: { type: 'image', src: '/images/added-media/CRM%20System.png', alt: 'OutreachEngine CRM queue with brand switcher and send caps', width: 1400, height: 900 },
+    caseStudyVendoroo: {
+      type: 'media-needed',
+      aspect: '16:9',
+      page: '/case-study-vendoroo-ticket-invoice-system',
+      brief: 'Real Vendoroo / KG Dispatch ticket queue screenshot — redact homeowner PII, show job status and photo slots',
+      alt: 'Vendor ticket and invoice workflow (capture needed)',
+      specs: 'Screenshot · 1600×900 · redact PII'
+    },
+    caseStudyKnightCommand: { type: 'image', src: '/images/proof/knight-command-admin-command-center.png', alt: 'Knight Command ADMIN Command Center with live ops lane status', width: 1600, height: 1000 },
+    knightCommandShell: { type: 'image', src: '/images/proof/knight-command-admin-command-center.png', alt: 'Knight Command ADMIN Command Center showing Referral, Outreach, Email, and Social status', width: 1600, height: 1000 },
+    knightCommandOverview: { type: 'image', src: '/images/added-media/Knight%20Command.png', alt: 'Knight Command admin shell overview', width: 1400, height: 900 },
+    crmSystemUi: { type: 'image', src: '/images/added-media/CRM%20System.png', alt: 'OutreachEngine CRM production UI', width: 1400, height: 900 },
+    emailAgentUi: { type: 'image', src: '/images/added-media/Email%20Agent.png', alt: 'Email-Agent routing and inbox views', width: 1400, height: 900 },
+    referralPayoutsUi: { type: 'image', src: '/images/added-media/Tracking%20Referral%20Payouts.png', alt: 'Referral payout tracking dashboard', width: 1400, height: 900 },
+    referralQrUi: { type: 'image', src: '/images/added-media/Creating%20Referral%20QR%20Code.png', alt: 'Creating a referral partner QR code', width: 1400, height: 900 },
+    referralCheckoutUi: { type: 'image', src: '/images/added-media/Referral%20At%20Checkout%20Options.png', alt: 'Referral attribution options at checkout', width: 1400, height: 900 },
     googleBusinessProfile: { type: 'image', src: '/images/added-media/google-business-profile.webp', alt: 'Google Business Profile for a local service business', width: 1377, height: 1264 },
-    caseStudyReferral: { type: 'image', src: '/images/showcase/case-study-referral-network-mockup.webp', alt: 'Referral network attribution dashboard', width: 1200, height: 675 },
-    caseStudySocial: { type: 'image', src: '/images/showcase/case-study-social-poster-mockup.webp', alt: 'Social posting queue dashboard', width: 1200, height: 675 },
+    caseStudyReferral: { type: 'image', src: '/images/added-media/Tracking%20Referral%20Payouts.png', alt: 'Referral network payout and attribution dashboard', width: 1400, height: 900 },
+    caseStudySocial: {
+      type: 'media-needed',
+      aspect: '16:9',
+      page: '/social-media-automation-systems',
+      brief: 'Real Social Poster queue screenshot from Knight Command Social Poster tab — show brand lanes, scheduled posts, last-success timestamps',
+      alt: 'Social Poster queue (capture needed)',
+      specs: 'Screenshot · 1600×900 · redact tokens'
+    },
     caseStudyRoofing: { type: 'image', src: '/images/showcase/roof-monsters-og-card.webp', alt: 'Roof Monsters live roofing website on roofmonsters.co', width: 1200, height: 630 },
     roofMonstersHome: { type: 'image', src: '/images/showcase/roof-monsters-homepage-wave.webp', alt: 'Roof Monsters homepage — Your Roof Is Our Proof', width: 1920, height: 1080 },
     roofMonstersProject: { type: 'image', src: '/images/showcase/roof-monsters-project.webp', alt: 'Roof Monsters completed Tampa Bay roofing project', width: 1200, height: 800 },
@@ -209,6 +253,6 @@ module.exports = {
     roofMonstersSemrush: { type: 'image', src: '/images/showcase/roof-monsters-semrush-99.webp', alt: 'Roof Monsters Semrush site health 99 percent', width: 1200, height: 800 },
     roofMonstersGsc: { type: 'image', src: '/images/showcase/roof-monsters-gsc-sitemap.webp', alt: 'Google Search Console sitemap success — 79 discovered pages', width: 1200, height: 800 },
     roofMonstersShowcase: { type: 'image', src: '/images/showcase/roof-monsters-showcase-800.webp', alt: 'Roof Monsters website showcase card', width: 800, height: 500 },
-    caseStudyKnightLogics: { type: 'image', src: '/images/showcase/case-study-knightlogics-platform-mockup.webp', alt: 'Knight Logics marketing and ops platform', width: 1200, height: 675 }
+    caseStudyKnightLogics: { type: 'image', src: '/images/proof/knight-command-admin-command-center.png', alt: 'Knight Logics Knight Command ops platform Command Center', width: 1600, height: 1000 }
   }
 };

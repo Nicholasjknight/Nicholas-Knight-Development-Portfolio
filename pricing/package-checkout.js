@@ -1,6 +1,6 @@
 (function () {
     try {
-    const packageCatalog = {
+    const packagePresentationDefaults = {
         'website-demo-preview': {
             name: 'Demo Preview Site',
             price: '$200',
@@ -82,7 +82,7 @@
             price: '$2,000',
             family: 'website',
             profile: 'website-local',
-            goalLabel: 'What is the main growth goal for this 35–60 page build?',
+            goalLabel: 'What is the main growth goal for this up-to-30-page Authority build?',
             goalPlaceholder: 'Example: cover multiple service areas, expand page depth, or launch a stronger lead-generation site.',
             paymentOptions: [
                 {
@@ -318,7 +318,7 @@
         },
         'ops-full-growth-system': {
             name: 'Full Growth System',
-            price: '$5,000 setup + $697/mo',
+            price: '$7,500 setup + $697/mo',
             family: 'ops',
             profile: 'ops',
             growthScoped: true,
@@ -362,6 +362,60 @@
             goalPlaceholder: 'Example: mobile estimates, invoices, scoped photos, Stripe, or dispatch/portal intake without a marketing site rebuild.'
         }
     };
+    const canonicalCatalog = window.KL_PACKAGE_CATALOG || { packages: [] };
+    const routing = window.KLPackageRouting || null;
+    const packageCatalog = Object.fromEntries((canonicalCatalog.packages || []).map((pkg) => {
+        const defaults = packagePresentationDefaults[pkg.id] || {};
+        const familyByLane = {
+            WEBSITE: 'website',
+            COMMERCE: 'ecommerce',
+            VISIBILITY: pkg.id.startsWith('gbp-') ? 'seo' : 'monthly',
+            OPERATIONS: 'ops',
+            GROWTH_WEBSITE_SYSTEMS: 'ops',
+            GROWTH_SYSTEMS_ONLY: 'ops',
+            CARE: 'monthly',
+            ADD_ON: 'ops'
+        };
+        const profileByLane = {
+            WEBSITE: pkg.id.includes('demo') || pkg.id.includes('preview') ? 'website-basic' : 'website-local',
+            COMMERCE: 'ecommerce',
+            VISIBILITY: pkg.id.startsWith('gbp-') ? 'seo' : 'monthly',
+            OPERATIONS: 'ops',
+            GROWTH_WEBSITE_SYSTEMS: 'ops',
+            GROWTH_SYSTEMS_ONLY: 'ops',
+            CARE: 'monthly',
+            ADD_ON: 'ops'
+        };
+        const canonicalPaymentOptions = routing ? routing.getPaymentOptions(pkg) : [];
+        const paymentOptions = canonicalPaymentOptions.map((option) => ({
+            value: option.key,
+            label: option.key === 'deposit'
+                ? `Pay ${option.priceDisplay}`
+                : `Pay ${pkg.priceDisplay}`,
+            help: option.description || (pkg.billingType === 'MONTHLY'
+                ? 'Monthly subscription through Stripe.'
+                : 'Secure payment through Stripe.')
+        }));
+
+        return [pkg.id, {
+            ...defaults,
+            name: pkg.name,
+            price: pkg.priceDisplay,
+            family: familyByLane[pkg.lane] || defaults.family || 'website',
+            profile: profileByLane[pkg.lane] || defaults.profile || 'website-basic',
+            checkoutEnabled: pkg.checkoutEnabled,
+            checkoutMode: pkg.checkoutMode,
+            pricingMode: pkg.pricingMode,
+            deprecated: pkg.deprecated === true,
+            depositOnly: pkg.checkoutMode === 'DEPOSIT_ONLY',
+            consultOnly: pkg.checkoutMode === 'CONSULT_ONLY',
+            growthScoped: ['GROWTH_WEBSITE_SYSTEMS', 'GROWTH_SYSTEMS_ONLY'].includes(pkg.lane),
+            systemsOnly: pkg.lane === 'GROWTH_SYSTEMS_ONLY',
+            paymentOptions: paymentOptions.length ? paymentOptions : undefined,
+            goalLabel: defaults.goalLabel || `What should ${pkg.name} accomplish?`,
+            goalPlaceholder: defaults.goalPlaceholder || pkg.bestFor || pkg.outcome || 'Tell us the result you need and any important constraints.'
+        }];
+    }));
 
     const productionCheckoutApiBase = 'https://knightlogics.com';
     const splitHostedProductionHosts = new Set(['knightlogics.com', 'www.knightlogics.com']);
@@ -471,24 +525,31 @@
     function resolveGrowthPackageRoute(systemsScope, maintenanceDepth, auditDepth) {
         const effectiveMaintenance = maintenanceDepth
             || (auditDepth === 'audit-maintained' ? 'management' : auditDepth === 'audit-full' ? 'pro' : 'standard');
+        const systemsOnly = systemsScope === 'systems-only';
 
         if (systemsScope === 'custom' || effectiveMaintenance === 'management' || auditDepth === 'audit-maintained') {
             return {
-                packageKey: 'ops-custom-automation-system',
-                message: 'Custom systems, Growth Management care, or maintained ongoing audits map to Custom Automation System ($10,000 setup + $1,000/mo).'
+                packageKey: systemsOnly ? 'ops-growth-systems-only-field' : 'ops-custom-automation-system',
+                message: systemsOnly
+                    ? 'Field-level systems preserve your existing-site choice; no website rebuild is added.'
+                    : 'Field operations require an approved Website + Systems scope.'
             };
         }
 
         if (systemsScope === 'full-stack' || effectiveMaintenance === 'pro' || auditDepth === 'audit-full') {
             return {
-                packageKey: 'ops-full-growth-system',
-                message: 'Full systems stack, Pro care, or full-access Website Audits map to Full Growth System ($5,000 setup + $697/mo).'
+                packageKey: systemsOnly ? 'ops-growth-systems-only-full' : 'ops-full-growth-system',
+                message: systemsOnly
+                    ? 'Full systems preserve your existing-site choice; no website rebuild is added.'
+                    : 'Full Growth combines an approved website scope with broader workflows and monthly ownership.'
             };
         }
 
         return {
-            packageKey: 'ops-growth-system-starter',
-            message: 'Growth sites are 70+ pages with service + city coverage included. Standard care / limited audit depth starts from $5,000 setup + $397/mo.'
+            packageKey: systemsOnly ? 'ops-growth-systems-only-starter' : 'ops-growth-system-starter',
+            message: systemsOnly
+                ? 'Starter systems use your suitable existing website; no rebuild is added.'
+                : 'Growth Starter includes a named Local or Authority-equivalent website scope plus lead systems.'
         };
     }
 
@@ -544,7 +605,7 @@
         }
 
         if (configuratorMeta) {
-            configuratorMeta.textContent = 'Variables: (1) 70+ page Growth site with service + city pages included, (2) Website Audit depth — external → limited → full-access → maintained, (3) systems opted in, (4) monthly care $397 / $697 / $1,000+, (5) selling or invoicing needs.';
+            configuratorMeta.textContent = 'Variables: (1) Systems-only or Website + Systems with a named Local/Authority-equivalent website scope, (2) Website Audit depth, (3) systems complexity, (4) monthly ownership tier, and (5) selling or invoicing needs. Max or Authority Network depth is scoped separately.';
         }
 
         return packageConfig;
@@ -927,8 +988,8 @@
                         <label for="starterPackageSystemsScope">Which systems are you opting into?</label>
                         <select id="starterPackageSystemsScope" name="systemsScope" required>
                             <option value="">Choose one...</option>
-                            <option value="core">Core — lead tracker + reporting</option>
-                            <option value="site-ops" selected>Site + ops — website upgrades, CRM, reviews</option>
+                            <option value="systems-only" ${packageConfig.systemsOnly ? 'selected' : ''}>Systems only — keep my suitable existing website</option>
+                            <option value="site-ops" ${packageConfig.systemsOnly ? '' : 'selected'}>Website + systems — approved Local/Authority-equivalent scope</option>
                             <option value="full-stack">Full stack — site, search, GBP, CRM, workflows</option>
                             <option value="custom">Custom — multi-brand CRM, routing, or custom automation</option>
                         </select>
@@ -964,7 +1025,7 @@
                         </select>
                     </div>
                     <div class="form-group starter-package-intake-span-2">
-                        <p class="starter-package-intake-helper" style="margin-top:0;">Growth sites are 70+ pages with service + city coverage included. Price moves with systems, Website Audit depth (external → limited → full-access → maintained), monthly care, and invoicing needs.</p>
+                        <p class="starter-package-intake-helper" style="margin-top:0;">Systems-only keeps a suitable existing website. Website + Systems includes a named Local or Authority-equivalent scope; Max or Authority Network depth is quoted as an upgrade.</p>
                     </div>
             ` : '';
 
@@ -1133,7 +1194,7 @@
                 ? selectedPaymentConfig.help
                 : packageConfig.family === 'ops'
                     ? (packageConfig.growthScoped
-                        ? 'Checkout starts from $5,000 setup + $397/mo. Systems, Website Audit depth, monthly care, and invoicing needs can move you to Full Growth ($697/mo) or Custom ($1,000/mo).'
+                        ? 'Pricing begins at the published setup and monthly base. A consultation confirms the exact Systems-only or Website + Systems scope before any payment or subscription is created.'
                         : 'This checkout includes the setup fee today and starts the monthly support subscription in Stripe.')
                 : packageConfig.family === 'monthly'
                     ? 'This starter form confirms the property and main priority before recurring Stripe checkout starts.'
@@ -1143,7 +1204,7 @@
         if (configuratorMeta) {
             configuratorMeta.textContent = packageConfig.family === 'ops'
                 ? (packageConfig.growthScoped
-                    ? 'Variables: (1) 70+ page Growth site with service + city pages included, (2) Website Audit depth — external → limited → full-access → maintained, (3) systems opted in, (4) monthly care $397 / $697 / $1,000+, (5) selling or invoicing needs.'
+                    ? 'Variables: (1) Systems-only or Website + Systems with a named Local/Authority-equivalent website scope, (2) Website Audit depth, (3) systems complexity, (4) monthly ownership tier, and (5) selling or invoicing needs. Max or Authority Network depth is scoped separately.'
                     : 'CRM and automation systems are not one-and-done. The monthly portion covers upkeep, small adjustments, monitoring, and support after setup.')
                 : packageConfig.family === 'monthly'
                 ? 'You can attach starter files now, but the main thing we need is the site or profile you want maintained.'
@@ -1153,7 +1214,9 @@
         }
 
         if (intakeSubmitText) {
-            intakeSubmitText.textContent = selectedPaymentConfig
+            intakeSubmitText.textContent = packageConfig.consultOnly
+                ? 'Continue to Scope Consultation'
+                : selectedPaymentConfig
                 ? `Continue to Checkout - ${selectedPaymentConfig.label.replace(/^.*?-\s*/, '')}`
                 : packageConfig.family === 'monthly' || packageConfig.family === 'ops'
                     ? `Continue to Subscription Checkout - ${packageConfig.price}`

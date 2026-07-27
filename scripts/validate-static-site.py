@@ -25,11 +25,12 @@ def tracked_files() -> list[Path]:
     result = subprocess.run(
         ["git", "ls-files", "-z"], cwd=ROOT, check=True, capture_output=True
     )
-    return [
+    tracked = [
         ROOT / raw.decode("utf-8")
         for raw in result.stdout.split(b"\0")
         if raw
     ]
+    return [path for path in tracked if path.exists()]
 
 
 class PageParser(HTMLParser):
@@ -100,7 +101,35 @@ def local_target(page: Path, reference: str) -> Path | None:
 def main() -> int:
     errors: list[str] = []
     domain = (ROOT / "CNAME").read_text(encoding="utf-8").strip()
-    public_pages = {ROOT / "index.html"}
+    public_pages: set[Path] = set()
+    expected_locations: set[str] = set()
+    manifest_entries = 0
+    try:
+        manifest = json.loads(
+            (ROOT / "data" / "route-manifest.json").read_text(encoding="utf-8")
+        )
+        origin = str(manifest["origin"]).rstrip("/")
+        route_groups = manifest["routes"]
+        for classification, entries in route_groups.items():
+            if not isinstance(entries, list):
+                errors.append(
+                    f"data/route-manifest.json: routes[{classification!r}] must be a list"
+                )
+                continue
+            manifest_entries += len(entries)
+        for entry in route_groups["public-indexable"]:
+            file_path = ROOT / entry["file"]
+            public_pages.add(file_path)
+            route = entry["route"]
+            expected_locations.add(f"{origin}/" if route == "/" else f"{origin}{route}")
+            if not entry.get("sitemap"):
+                errors.append(
+                    f"data/route-manifest.json: {entry['file']} is public-indexable "
+                    "but not opted into the sitemap"
+                )
+    except (FileNotFoundError, KeyError, TypeError, json.JSONDecodeError) as exc:
+        errors.append(f"data/route-manifest.json: invalid or missing ({exc})")
+
     locations: list[str] = []
     try:
         tree = ElementTree.parse(ROOT / "sitemap.xml")
@@ -111,6 +140,14 @@ def main() -> int:
         ]
     except (FileNotFoundError, ElementTree.ParseError) as exc:
         errors.append(f"sitemap.xml: invalid or missing ({exc})")
+
+    if len(locations) != len(set(locations)):
+        errors.append("sitemap.xml: duplicate locations")
+    actual_locations = set(locations)
+    for location in sorted(expected_locations - actual_locations):
+        errors.append(f"sitemap.xml: manifest route missing {location}")
+    for location in sorted(actual_locations - expected_locations):
+        errors.append(f"sitemap.xml: non-indexable or unknown route {location}")
 
     for location in locations:
         parsed = urlparse(location)
@@ -125,8 +162,6 @@ def main() -> int:
             target = target.with_suffix(".html")
         if not target.exists():
             errors.append(f"sitemap.xml: missing page for {location}")
-        elif target.suffix.lower() == ".html":
-            public_pages.add(target)
 
     for path in tracked_files():
         parents = {part.lower() for part in path.relative_to(ROOT).parts[:-1]}
@@ -176,8 +211,9 @@ def main() -> int:
         print(f"Static-site validation failed with {len(errors)} error(s).")
         return 1
     print(
-        f"Validated {len(public_pages)} public HTML files, {len(locations)} sitemap URLs, "
-        "canonicals, JSON-LD, links, UTF-8, and image budgets."
+        f"Validated {len(public_pages)} public HTML files from {manifest_entries} classified "
+        f"routes, {len(locations)} sitemap URLs, canonicals, JSON-LD, links, UTF-8, "
+        "and image budgets."
     )
     return 0
 

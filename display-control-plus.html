@@ -182,6 +182,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <a href="https://www.facebook.com/KnightLogics/" target="_blank" rel="noopener noreferrer" class="project-link">Follow Knight Logics on Facebook</a>
                 </div>
             </div>
+            <article class="svc-mirror fade-in" style="margin-bottom:2rem;">
+                <figure class="svc-mirror-media svc-mirror-media--good">
+                    <img src="/images/added-media/Display%20Control+%20Page.png" alt="Display Control+ dashboard — per-monitor selection, detection modes, and overlay picker" loading="lazy" width="1400" height="900">
+                </figure>
+                <div class="svc-mirror-copy">
+                    <p class="svc-mirror-versus"><span>Shipped UI</span> Tray → dashboard</p>
+                    <h3>Per-monitor protection controls</h3>
+                    <p>Monitor selection, idle timeout, detection mode (Input / Activity / Both), and overlay type — captured from the production dashboard, not a wireframe.</p>
+                    <ul class="svc-checklist">
+                        <li>Settings persist in %APPDATA% across restarts</li>
+                        <li>Blank, image, slideshow, or video playlist overlays</li>
+                        <li>14-day trial, then annual or lifetime licensing</li>
+                    </ul>
+                </div>
+            </article>
+            <figure class="kl-media-needed fade-in" data-media-needed="true"
+                data-asset-type="video"
+                data-aspect="16:9"
+                data-page="/display-control-plus"
+                data-brief="Screen-recorded walkthrough of the real Display Control+ tray app: opening the dashboard, selecting monitors, choosing a detection mode, and setting an overlay (blank/image/slideshow/video).">
+                <div class="kl-media-needed__frame" aria-hidden="true"></div>
+                <figcaption>
+                    <strong>Media needed:</strong> A recorded walkthrough of the actual tray.exe &rarr; dashboard flow, captured from a real multi-monitor Windows machine, not a mockup.
+                    <span class="kl-media-needed__specs">MP4 or YouTube embed · 16:9 · 60&ndash;120s · screen capture of real app</span>
+                </figcaption>
+            </figure>
         </div>
     </section>
 
@@ -203,6 +229,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span class="displayplus-proof-number">Release-ready</span>
                 <p>Packaged with PyInstaller and distributed through GitHub Releases with update-aware workflow support.</p>
             </article>
+        </div>
+    </section>
+
+    <section class="displayplus-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>System Requirements</h2>
+                <p>Display Control+ is a native Windows tray utility. It doesn&rsquo;t require Python, a browser tab, or a background service beyond its own tray process.</p>
+            </div>
+            <div class="kl-proof-gallery fade-in" style="margin:2rem 0;">
+                <figure>
+                    <img src="/images/added-media/Display%20Control+%20Page.png" alt="Display Control+ dashboard — per-monitor selection, detection modes, and overlay picker" loading="lazy" width="1400" height="900">
+                    <figcaption><strong>Dashboard</strong> Per-monitor profiles and overlay modes from the shipped build.</figcaption>
+                </figure>
+                <figure class="kl-media-needed" data-media-needed="true" data-asset-type="screenshot" data-aspect="16:9" data-page="/display-control-plus" data-brief="Screenshot of tray.exe system tray menu with Open Dashboard, Pause/Resume, and Exit options on a live Windows machine.">
+                    <div class="kl-media-needed__frame" aria-hidden="true"></div>
+                    <figcaption><strong>Media needed:</strong> Tray context menu capture — Open Dashboard, Pause/Resume, Exit on a real multi-monitor setup. <span class="kl-media-needed__specs">PNG · 1600×900</span></figcaption>
+                </figure>
+            </div>
+            <div class="displayplus-feature-grid">
+                <article class="displayplus-feature-card fade-in">
+                    <i class="fas fa-desktop"></i>
+                    <h3>Windows 10 / 11</h3>
+                    <p>Packaged installer and portable release binaries target Windows 10 and Windows 11 desktop and laptop setups.</p>
+                </article>
+                <article class="displayplus-feature-card fade-in">
+                    <i class="fas fa-file-zipper"></i>
+                    <h3>Keep the release together</h3>
+                    <p>Portable release binaries should stay in the same folder after download &mdash; <code>tray.exe</code>, <code>DisplayControl.exe</code>, and <code>overlay_bg.exe</code> are companion executables, not standalone downloads.</p>
+                </article>
+                <article class="displayplus-feature-card fade-in">
+                    <i class="fas fa-play"></i>
+                    <h3>Recommended entry point</h3>
+                    <p>Run <code>tray.exe</code> first. Right-click the tray icon and choose <strong>Open Dashboard</strong> to select displays, timeout, and mode.</p>
+                </article>
+                <article class="displayplus-feature-card fade-in">
+                    <i class="fas fa-wifi"></i>
+                    <h3>Internet needed for licensing</h3>
+                    <p>Local protection runs fully offline once configured, but license activation, billing portal access, and account restore go through a hosted licensing service.</p>
+                </article>
+            </div>
         </div>
     </section>
 
@@ -281,6 +348,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
+    <section class="displayplus-section displayplus-section-alt">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Free Trial, Then Annual or Lifetime</h2>
+                <p>Display Control+ moved off a legacy hour-pack model onto a straightforward trial-then-license structure.</p>
+            </div>
+            <div class="displayplus-feature-grid">
+                <article class="displayplus-feature-card fade-in">
+                    <i class="fas fa-hourglass-half"></i>
+                    <h3>14-day free trial</h3>
+                    <p>New installs start with a full-featured 14-day trial &mdash; no credit card required to try per-monitor protection first.</p>
+                </article>
+                <article class="displayplus-feature-card fade-in">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Annual subscription</h3>
+                    <p>Ongoing access billed annually through Stripe checkout once the trial ends, managed from a hosted customer billing portal.</p>
+                </article>
+                <article class="displayplus-feature-card fade-in">
+                    <i class="fas fa-infinity"></i>
+                    <h3>Lifetime license</h3>
+                    <p>A one-time purchase option for people who want to buy protection once instead of renewing every year.</p>
+                </article>
+                <article class="displayplus-feature-card fade-in">
+                    <i class="fas fa-key"></i>
+                    <h3>Recovery-code account restore</h3>
+                    <p>Billing email and a recovery code are stored locally so you can restore an existing license on another machine without re-purchasing.</p>
+                </article>
+            </div>
+            <p style="max-width:760px;color:#a8b2c8;line-height:1.7;margin-top:24px;">Legacy installs that purchased local credit packs under the previous model keep that entitlement; new installs use the trial-to-subscription-or-lifetime path. &ldquo;Manage Billing&rdquo; inside the dashboard opens the hosted portal for subscription changes.</p>
+        </div>
+    </section>
+
     <section class="displayplus-section">
         <div class="container">
             <div class="section-header fade-in">
@@ -349,6 +448,91 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
                 </aside>
+            </div>
+        </div>
+    </section>
+
+    <section class="displayplus-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Release Notes</h2>
+                <p>Display Control+ ships versioned releases through GitHub, including the switch to the current licensing model.</p>
+            </div>
+            <div class="displayplus-steps" style="grid-template-columns:1fr;">
+                <article class="displayplus-step fade-in">
+                    <span class="displayplus-step-number">v1.1.1</span>
+                    <h3>Current release</h3>
+                    <p>Fixes a wake-detection bug that could close a newly started overlay immediately, which made short-timeout profiles appear broken. Also restores reliable mixed-timeout behavior so a fast center-display profile can coexist with longer side-display profiles.</p>
+                </article>
+                <article class="displayplus-step fade-in">
+                    <span class="displayplus-step-number">v1.1.0</span>
+                    <h3>New licensing model</h3>
+                    <p>Replaced legacy hour-pack sales with the current free trial, annual subscription, and lifetime license model. Added hosted account restore, entitlement sync, billing portal support, and webhook-driven subscription state updates.</p>
+                </article>
+                <article class="displayplus-step fade-in">
+                    <span class="displayplus-step-number">v1.0.9&ndash;v1.0.17</span>
+                    <h3>Stability and detection fixes</h3>
+                    <p>A run of hotfixes covering monitor-selection drift, overlay wake behavior, tray singleton/duplicate-icon prevention, recovery-code parsing, and clearer taskbar/tray icon rendering.</p>
+                </article>
+            </div>
+            <p style="text-align:center;margin-top:28px;"><a href="https://github.com/Knight-Logics/display-control-plus/releases" target="_blank" rel="noopener noreferrer" class="btn-secondary">Full Release History on GitHub</a></p>
+        </div>
+    </section>
+
+    <section class="displayplus-section displayplus-section-alt">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Known Limitations</h2>
+                <p>Worth knowing before you install, so per-monitor protection is the right fit for your setup.</p>
+            </div>
+            <div class="displayplus-feature-grid">
+                <article class="displayplus-feature-card fade-in">
+                    <i class="fas fa-window-restore"></i>
+                    <h3>Windows only</h3>
+                    <p>Display Control+ is a Windows desktop utility. There is no macOS or Linux build.</p>
+                </article>
+                <article class="displayplus-feature-card fade-in">
+                    <i class="fas fa-not-equal"></i>
+                    <h3>Not a permanent free tool</h3>
+                    <p>New installs get a 14-day trial, then require an annual subscription or lifetime license to keep running &mdash; it is not open-ended freeware.</p>
+                </article>
+                <article class="displayplus-feature-card fade-in">
+                    <i class="fas fa-link-slash"></i>
+                    <h3>Moved media breaks saved paths</h3>
+                    <p>Image and video overlay selections persist as file paths. If a referenced file is moved or deleted, the setting stays but the media won&rsquo;t load until the path is corrected.</p>
+                </article>
+                <article class="displayplus-feature-card fade-in">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Licensing needs connectivity</h3>
+                    <p>Local protection itself runs offline, but activation, billing portal access, and account restore require a connection to the hosted licensing service.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="displayplus-section" id="displayplus-faq">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Display Control+ FAQ</h2>
+                <p>Common questions before installing a multi-monitor protection utility.</p>
+            </div>
+            <div class="displayplus-steps" style="grid-template-columns:1fr;">
+                <article class="displayplus-step fade-in">
+                    <h3>Is Display Control+ free?</h3>
+                    <p>New installs get a 14-day free trial. After that, continued use requires an annual subscription or a one-time lifetime license through Stripe checkout.</p>
+                </article>
+                <article class="displayplus-step fade-in">
+                    <h3>Which executable should I actually run?</h3>
+                    <p><code>tray.exe</code>. It is the recommended entry point for daily use. <code>DisplayControl.exe</code> opens the dashboard directly if you need it, and <code>overlay_bg.exe</code> is a background process the tray app manages for you.</p>
+                </article>
+                <article class="displayplus-step fade-in">
+                    <h3>Do my settings survive a restart?</h3>
+                    <p>Yes. Configuration is stored in <code>%APPDATA%\KnightLogics\DisplayControlPlus\config.json</code>, and license/account state is stored separately in <code>license.json</code> in the same folder.</p>
+                </article>
+                <article class="displayplus-step fade-in">
+                    <h3>Can I run different protection rules on different monitors?</h3>
+                    <p>Yes. Per-monitor profiles let one display use a fast timeout while another uses a longer one, with mixed-timeout reliability improved in v1.1.1.</p>
+                </article>
             </div>
         </div>
     </section>

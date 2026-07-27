@@ -1,4 +1,4 @@
-﻿// Loading Screen and Initial Setup
+// Loading Screen and Initial Setup
 // Global variables for landing mode
 let isInLandingMode = false;
 let exitLandingMode = null;
@@ -151,7 +151,7 @@ async function loadSocialIcons() {
     }
 }
 
-const HEADER_FOOTER_VER = '20260718labs1';
+const HEADER_FOOTER_VER = '20260726cases1';
 
 async function loadHeaderFooter() {
     try {
@@ -931,7 +931,7 @@ function initMainAnimations() {
 }
 
 const KL_HERO_PANEL_POOL = [
-    '/images/showcase/faith-works-og-card.jpg',
+    '/images/showcase/faith-works-og-card.webp',
     '/images/screen-team-showcase-800.webp',
     '/images/KGHero.webp',
     '/images/showcase/roof-monsters-og-card.webp',
@@ -940,7 +940,7 @@ const KL_HERO_PANEL_POOL = [
 ];
 
 const KL_HERO_IMAGE_FOCUS = {
-    '/images/showcase/faith-works-og-card.jpg': { desktop: '42% 38%', mobile: '44% 36%' },
+    '/images/showcase/faith-works-og-card.webp': { desktop: '42% 38%', mobile: '44% 36%' },
     '/images/screen-team-showcase-800.webp': { desktop: '74% 48%', mobile: '82% 50%' },
     '/images/KGHero.webp': { desktop: '76% 44%', mobile: '82% 46%' },
     '/images/showcase/roof-monsters-og-card.webp': { desktop: '50% 40%', mobile: '52% 42%' },
@@ -954,7 +954,7 @@ const KL_HERO_MOBILE_PRIORITY = [
     '/images/KGHero.webp',
     '/images/websitehero.webp?v=20260604perf1',
     '/images/showcase/roof-monsters-og-card.webp',
-    '/images/showcase/faith-works-og-card.jpg',
+    '/images/showcase/faith-works-og-card.webp',
     '/images/momhero.webp'
 ];
 
@@ -1270,13 +1270,17 @@ function initProofAboutEntrance() {
 }
 
 function initProofCardVideos() {
-    const cards = document.querySelectorAll('.kl-proof-card--video .kl-proof-card-video');
+    const cards = document.querySelectorAll(
+        '.kl-proof-card--video .kl-proof-card-video, video.kl-lane-video'
+    );
     if (!cards.length) return;
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
 
     const playVideo = (video) => {
+        video.muted = true;
+        video.playsInline = true;
         const attempt = video.play();
         if (attempt && typeof attempt.catch === 'function') {
             attempt.catch(() => {});

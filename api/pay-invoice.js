@@ -19,6 +19,7 @@ const MAX_AMOUNT_CENTS = 5000000; // $50,000.00 maximum
 const INVOICE_NUMBER_PATTERN = /^[A-Za-z0-9\-_.#/]{1,60}$/;
 
 const requestBuckets = new Map();
+let stripeFactory = (secretKey) => new Stripe(secretKey, { apiVersion: '2024-06-20' });
 
 function createHttpError(statusCode, message) {
     const error = new Error(message);
@@ -156,7 +157,7 @@ async function sendReferralEvent(apiBase, payload) {
     } catch (_) {}
 }
 
-module.exports = async function handler(req, res) {
+async function handler(req, res) {
     const allowedOrigin = getAllowedOrigin(req);
 
     if (allowedOrigin === false) {
@@ -287,7 +288,7 @@ module.exports = async function handler(req, res) {
     let session;
 
     try {
-        const stripe = new Stripe(stripeSecretKey, { apiVersion: '2024-06-20' });
+        const stripe = stripeFactory(stripeSecretKey);
 
         session = await stripe.checkout.sessions.create({
             mode: 'payment',
@@ -360,4 +361,12 @@ module.exports = async function handler(req, res) {
     }
 
     return sendJson(res, 200, { url: session.url });
+}
+
+module.exports = handler;
+module.exports.setStripeFactoryForTests = function setStripeFactoryForTests(factory) {
+    stripeFactory = factory;
+};
+module.exports.resetStripeFactoryForTests = function resetStripeFactoryForTests() {
+    stripeFactory = (secretKey) => new Stripe(secretKey, { apiVersion: '2024-06-20' });
 };

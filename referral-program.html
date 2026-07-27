@@ -415,6 +415,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <section class="referral-section alt">
             <div class="container">
                 <div class="referral-section-head">
+                    <h2>Tracked referrals in production</h2>
+                    <p>Real admin surfaces behind the brochure workflow — QR generation, checkout attribution, and payout review.</p>
+                </div>
+
+                <article class="svc-mirror fade-in" style="margin-bottom:2.5rem;">
+                    <figure class="svc-mirror-media svc-mirror-media--good">
+                        <img src="/images/added-media/Tracking%20Referral%20Payouts.png" alt="Referral payout tracking dashboard with partner status rows" loading="lazy" width="1400" height="900">
+                    </figure>
+                    <div class="svc-mirror-copy">
+                        <p class="svc-mirror-versus"><span>Admin view</span> Partner → sale → payout</p>
+                        <h3>Referral status before any transfer is issued</h3>
+                        <p>Completed projects tied to a partner code surface for manual review — referrals are not auto-paid on click volume alone. Admins confirm eligibility before invoice or transfer.</p>
+                        <ul class="svc-checklist">
+                            <li>Tracked partner codes on brochures and QR routes</li>
+                            <li>Checkout metadata tied to the referring business</li>
+                            <li>Payout path visible — not a handshake promise</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <div class="kl-proof-gallery fade-in">
+                    <figure>
+                        <img src="/images/added-media/Creating%20Referral%20QR%20Code.png" alt="Referral QR code generation interface for partner brochures" loading="lazy" width="1400" height="900">
+                        <figcaption><strong>QR generation</strong> Unique tracked routes per approved partner.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/images/added-media/Referral%20At%20Checkout%20Options.png" alt="Referral partner selection at checkout" loading="lazy" width="1400" height="900">
+                        <figcaption><strong>Checkout attribution</strong> Partner dropdown on qualifying purchases.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/images/showcase/case-study-referral-network-mockup.svg" alt="Referral network attribution diagram — mockup illustrating QR scan to partner dashboard to payout webhook flow" loading="lazy" width="1200" height="675">
+                        <figcaption><strong>Network architecture</strong> Showcase mockup for multi-partner referral flows. <a href="/case-study-referral-network-system" style="color:#64ffda;">Case study →</a></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="referral-section alt">
+            <div class="container">
+                <div class="referral-section-head">
                     <h2>Best-fit referral partners</h2>
                     <p>The program is built for companies that already talk with owners who are launching, rebranding, renovating, or trying to improve how their business runs.</p>
                 </div>
@@ -494,6 +534,96 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="referral-mini-row"><strong>Partner payout</strong><span>Eligible after sale</span></div>
                         <div class="referral-mini-row"><strong>Admin review</strong><span>Invoice / transfer ready</span></div>
                     </div>
+                </div>
+                <figure class="kl-media-needed fade-in" data-media-needed="true"
+                    data-asset-type="screenshot"
+                    data-aspect="16:9"
+                    data-page="/referral-program"
+                    data-brief="Real screenshot of the referral-verify partner dashboard: stat cards for tracked referrals, and the referral status list. Blur or use a demo partner account, not a mockup graphic."
+                    style="margin-top:32px;">
+                    <div class="kl-media-needed__frame" aria-hidden="true"></div>
+                    <figcaption>
+                        <strong>Media needed:</strong> Screenshot of the partner-facing verification view at <code>/referral-verify</code> with a demo partner code — the payout tracking screenshot above covers admin review; this slot is for the partner self-service status UI.
+                        <span class="kl-media-needed__specs">PNG or WebP · 1600&times;900 · real dashboard UI, sensitive data blurred or demo data used</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="referral-section">
+            <div class="container">
+                <div class="referral-section-head">
+                    <h2>How tracking and payout eligibility work</h2>
+                    <p>The mechanics behind the QR code, so partners know what's actually being measured before they hand out a brochure.</p>
+                </div>
+                <div class="partner-grid">
+                    <article class="partner-card">
+                        <p>Step 1</p>
+                        <h3>Referral code assigned</h3>
+                        <p>Each approved partner gets a unique referral code tied to their business record, used on their personalized brochure and QR route.</p>
+                    </article>
+                    <article class="partner-card">
+                        <p>Step 2</p>
+                        <h3>Touchpoints get attributed</h3>
+                        <p>Website visits, form starts, checkout starts, and completed payments through that code are logged against the partner's record.</p>
+                    </article>
+                    <article class="partner-card">
+                        <p>Step 3</p>
+                        <h3>Admin review before payout</h3>
+                        <p>A completed, paid project is reviewed manually before any invoice or transfer is issued - referrals aren't auto-paid on click volume alone.</p>
+                    </article>
+                </div>
+                <p style="color:#a8b2c8;line-height:1.75;max-width:820px;margin:28px auto 0;text-align:center;">Payout terms, commission structure, and qualifying project types are confirmed directly with each partner during approval rather than published as a blanket rate - project scope varies too much (a website build and an automation project are priced differently) for one generic number to be accurate.</p>
+            </div>
+        </section>
+
+        <section class="referral-section alt">
+            <div class="container">
+                <div class="referral-section-head">
+                    <h2>Referral Program FAQ</h2>
+                    <p>Common questions before applying.</p>
+                </div>
+                <div class="partner-grid">
+                    <article class="partner-card">
+                        <p>Eligibility</p>
+                        <h3>Who gets approved?</h3>
+                        <p>Businesses that regularly and legitimately meet new business owners - sign shops, print shops, bookkeepers, consultants, and similar local vendors are the strongest fit.</p>
+                    </article>
+                    <article class="partner-card">
+                        <p>Tracking</p>
+                        <h3>What if a referral calls instead of scanning the QR code?</h3>
+                        <p>Mention the referring partner during intake and it can be manually attributed. The QR code and referral link make tracking automatic, but they aren't the only path to credit.</p>
+                    </article>
+                    <article class="partner-card">
+                        <p>Timing</p>
+                        <h3>How long does partner approval take?</h3>
+                        <p>Applications are reviewed manually, not auto-approved, since partners appear in live referral materials. There's no published guaranteed turnaround - reach out if a submitted application is time-sensitive.</p>
+                    </article>
+                    <article class="partner-card">
+                        <p>Fit</p>
+                        <h3>Who is this program not a good fit for?</h3>
+                        <p>Anyone expecting a flat monthly payout unrelated to actual referrals, or anyone unwilling to be reviewed before appearing in referral materials. This is a performance-based partner program, not a paid placement.</p>
+                    </article>
+                    <article class="partner-card">
+                        <p>Materials</p>
+                        <h3>Do I have to use the printed brochure?</h3>
+                        <p>No. The brochure is one option. A partner's unique referral link or QR code works the same way whether it's on a printed handout, a counter display, or shared digitally.</p>
+                    </article>
+                    <article class="partner-card">
+                        <p>Status</p>
+                        <h3>Can I check on a referral I already sent?</h3>
+                        <p>Yes, through the partner verification dashboard linked above, once your application has been approved and your code is active.</p>
+                    </article>
+                    <article class="partner-card">
+                        <p>Payout</p>
+                        <h3>How and when do partners actually get paid?</h3>
+                        <p>Today that's a manual invoice or transfer after a referred project is completed and paid, reviewed case by case. We're not going to publish a fake automated-payout promise before that layer is actually built.</p>
+                    </article>
+                    <article class="partner-card">
+                        <p>Scale</p>
+                        <h3>Is this open to partners outside Tampa Bay?</h3>
+                        <p>The program started with local sign shops, print shops, and service vendors who meet new business owners in person, but the same tracked-code approach works for any partner who regularly refers businesses that need a website, SEO, or automation.</p>
+                    </article>
                 </div>
             </div>
         </section>

@@ -416,6 +416,90 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </a>
             </div>
+
+            <article class="svc-mirror fade-in" style="margin-top:2.75rem;">
+                <figure class="svc-mirror-media svc-mirror-media--good">
+                    <img src="/images/added-media/PixelForge%20Ai%20Video%20Enhancer%20GUI.png" alt="PixelForge AI desktop GUI — multi-stage video enhancement pipeline" loading="lazy" width="1400" height="900">
+                </figure>
+                <div class="svc-mirror-copy">
+                    <p class="svc-mirror-versus"><span>Shipped app</span> PixelForge AI</p>
+                    <h3>GPU-aware enhancement pipeline in a Windows shell</h3>
+                    <p>Not a concept mockup — a packaged desktop app with batch mode, stage controls, and FFmpeg-backed processing. The GUI is the product users download from GitHub Releases.</p>
+                    <ul class="svc-checklist">
+                        <li>PyInstaller build — no Python install on the target machine</li>
+                        <li>Versioned releases with changelog and asset downloads</li>
+                        <li><a href="/pixelforge-ai" style="color:#64ffda;">Product page →</a></li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="svc-mirror svc-mirror--flip fade-in" style="margin-top:2.5rem;">
+                <figure class="svc-mirror-media svc-mirror-media--good">
+                    <img src="/images/added-media/Display%20Control+%20Page.png" alt="Display Control+ product page and dashboard screenshot" loading="lazy" width="1400" height="900">
+                </figure>
+                <div class="svc-mirror-copy">
+                    <p class="svc-mirror-versus"><span>Shipped app</span> Display Control+</p>
+                    <h3>Tray-first display protection for multi-monitor setups</h3>
+                    <p>Per-monitor idle rules, overlay modes, and persistent AppData config — distributed as an Inno Setup installer with ongoing versioned releases.</p>
+                    <ul class="svc-checklist">
+                        <li>tray.exe entry point for daily operator use</li>
+                        <li>14-day trial → annual or lifetime licensing</li>
+                        <li><a href="/display-control-plus" style="color:#64ffda;">Product page →</a></li>
+                    </ul>
+                </div>
+            </article>
+
+            <div class="kl-proof-gallery fade-in" style="margin-top:2.5rem;">
+                <figure>
+                    <img src="/images/added-media/Auto%20Vid%20Compiler%20Page.png" alt="Auto Vid Compiler product page and GUI screenshot" loading="lazy" width="1400" height="900">
+                    <figcaption><strong>Auto Vid Compiler</strong> Batch highlight-reel tool — portable PyInstaller build. <a href="/auto-vid-compiler" style="color:#64ffda;">Product page →</a></figcaption>
+                </figure>
+                <figure>
+                    <img src="/images/added-media/Pixel%20Forge%20App%20page.png" alt="PixelForge AI marketing page screenshot" loading="lazy" width="1400" height="900">
+                    <figcaption><strong>PixelForge AI</strong> Public product page paired with the shipped Windows build.</figcaption>
+                </figure>
+                <figure>
+                    <img src="/images/videoforge-app-icon.webp" alt="VideoForge Studio application icon" loading="lazy" width="590" height="400">
+                    <figcaption><strong>VideoForge Studio</strong> Evolved ranked-video workflow — installer on GitHub Releases. <a href="/videoforge" style="color:#64ffda;">Product page →</a></figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section class="svc-features" style="padding-top:0;">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>How Each One Actually Ships</h2>
+                <p>The three product pages above cover features. This is the packaging and distribution reality behind each one.</p>
+            </div>
+            <figure class="kl-media-needed fade-in" data-media-needed="true"
+                data-asset-type="screenshot"
+                data-aspect="16:9"
+                data-page="/service-desktop-apps"
+                data-brief="Screenshot of the GitHub Releases page for one of the shipped Knight Logics desktop apps, showing versioned tags, changelog notes, and download assets.">
+                <div class="kl-media-needed__frame" aria-hidden="true"></div>
+                <figcaption>
+                    <strong>Media needed:</strong> Real screenshot of a Knight Logics GitHub Releases page &mdash; versioned tags, release notes, and asset downloads visible.
+                    <span class="kl-media-needed__specs">PNG or WebP · 1600&times;900 · real GitHub UI, not a mockup</span>
+                </figcaption>
+            </figure>
+            <div class="svc-features-grid">
+                <article class="svc-feature-card fade-in">
+                    <div class="svc-card-icon"><i class="fas fa-video"></i></div>
+                    <h3>VideoForge Studio</h3>
+                    <p>Ships as a packaged Windows build with a bundled Python runtime and bundled FFmpeg/ffprobe &mdash; nothing else to install. A source-mode fallback exists for Python 3.12 users who want to run it directly. Optional narration, credit billing, and email recovery are configurable add-ons, not requirements.</p>
+                </article>
+                <article class="svc-feature-card fade-in">
+                    <div class="svc-card-icon"><i class="fas fa-desktop"></i></div>
+                    <h3>Display Control+</h3>
+                    <p>Distributed as an Inno Setup installer plus portable release binaries that must stay in the same folder. Licensing moved from one-time hour packs to a 14-day free trial followed by an annual subscription or lifetime license, with hosted account restore via a recovery code.</p>
+                </article>
+                <article class="svc-feature-card fade-in">
+                    <div class="svc-card-icon"><i class="fas fa-clapperboard"></i></div>
+                    <h3>Auto Vid Compiler</h3>
+                    <p>A portable PyInstaller .exe with bundled FFmpeg, intro, and music folders that ship together. The executable isn&rsquo;t code-signed yet, so each release publishes a SHA256 checksum alongside the download for verification.</p>
+                </article>
+            </div>
         </div>
     </section>
 
@@ -463,6 +547,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="svc-card-icon"><i class="fas fa-file-code"></i></div>
                     <h3>Documentation &amp; Spec</h3>
                     <p>README, CHANGELOG, build commands, and architecture notes — so you understand the project and can hand it to another developer if needed without starting over.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- -- PACKAGING FORMATS -- -->
+    <section class="svc-features" style="background:#0a0a0a;">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Packaging &amp; Distribution Formats</h2>
+                <p>Which packaging format fits depends on how the app is used day to day &mdash; a tray-first utility has different needs than a batch-processing tool.</p>
+            </div>
+            <div class="svc-features-grid">
+                <article class="svc-feature-card fade-in">
+                    <div class="svc-card-icon"><i class="fas fa-file-arrow-down"></i></div>
+                    <h3>Single-file EXE</h3>
+                    <p>One self-contained executable, best for portable batch tools that don&rsquo;t need a Start Menu presence or persistent background service.</p>
+                </article>
+                <article class="svc-feature-card fade-in">
+                    <div class="svc-card-icon"><i class="fas fa-folder-tree"></i></div>
+                    <h3>Folder-based build</h3>
+                    <p>A companion-folder layout for apps that bundle FFmpeg, media assets, or other runtime dependencies the executable needs to find at launch.</p>
+                </article>
+                <article class="svc-feature-card fade-in">
+                    <div class="svc-card-icon"><i class="fas fa-compact-disc"></i></div>
+                    <h3>Inno Setup installer</h3>
+                    <p>For apps meant to run continuously in the background &mdash; Start Menu shortcuts, AppData config storage, and a proper uninstaller.</p>
+                </article>
+                <article class="svc-feature-card fade-in">
+                    <div class="svc-card-icon"><i class="fas fa-code-branch"></i></div>
+                    <h3>Versioned GitHub Releases</h3>
+                    <p>Every build ships as a tagged release with changelog notes, so users and the auto-update check both know exactly what changed and when.</p>
+                </article>
+                <article class="svc-feature-card fade-in">
+                    <div class="svc-card-icon"><i class="fas fa-shield-halved"></i></div>
+                    <h3>Checksums over code signing</h3>
+                    <p>Executables without a paid code-signing certificate still ship a SHA256 checksum in the release notes, so anyone can verify a download before running it.</p>
+                </article>
+                <article class="svc-feature-card fade-in">
+                    <div class="svc-card-icon"><i class="fas fa-arrows-rotate"></i></div>
+                    <h3>In-app update checks</h3>
+                    <p>Apps poll their own GitHub Releases feed and surface an update banner instead of requiring a separate update service or manual version checking.</p>
                 </article>
             </div>
         </div>
@@ -527,6 +653,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <article class="svc-faq-item fade-in">
                     <h3>Can it be distributed to multiple machines or users?</h3>
                     <p>Yes. Builds are packaged with Inno Setup into a standard installer (.exe) that can be distributed, deployed via network share, or put on GitHub Releases. Licensing, activation, and auto-update logic can be built in as needed.</p>
+                </article>
+                <article class="svc-faq-item fade-in">
+                    <h3>Do you support the app after launch, or is it a one-time build?</h3>
+                    <p>Shipped apps here keep getting versioned updates &mdash; bug fixes, small features, and stability work &mdash; through GitHub Releases with an in-app update check. Ongoing support scope is agreed upfront rather than assumed.</p>
+                </article>
+                <article class="svc-faq-item fade-in">
+                    <h3>Can an existing desktop app be extended later?</h3>
+                    <p>Yes, if it was built with a maintainable structure. Because these apps ship with documentation and versioned source history, adding a feature later doesn&rsquo;t require rebuilding from scratch.</p>
                 </article>
             </div>
         </div>

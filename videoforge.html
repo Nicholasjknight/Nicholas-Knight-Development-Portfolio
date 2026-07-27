@@ -184,6 +184,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <a href="https://www.facebook.com/KnightLogics/" target="_blank" rel="noopener noreferrer" class="project-link">Follow Knight Logics on Facebook</a>
                 </div>
             </div>
+            <article class="svc-mirror fade-in" style="margin-bottom:2rem;">
+                <figure class="svc-mirror-media svc-mirror-media--good">
+                    <img src="/images/videoforge-app-icon.webp" alt="VideoForge Studio branding and application icon" loading="lazy" width="590" height="400">
+                </figure>
+                <div class="svc-mirror-copy">
+                    <p class="svc-mirror-versus"><span>Evolved from</span> Auto Vid Compiler → ranked exports</p>
+                    <h3>Local-first ranked video on your hardware</h3>
+                    <p>VideoForge Studio adds ranked formats, captions, custom overlays, and a browser UI on top of the same FFmpeg pipeline philosophy — installer distributed through GitHub Releases v0.4.5.</p>
+                    <ul class="svc-checklist">
+                        <li>3–10 clips per render with sequencing controls</li>
+                        <li>Optional narration and credit billing for hosted add-ons</li>
+                        <li><a href="/auto-vid-compiler" style="color:#64ffda;">Predecessor: Auto Vid Compiler →</a></li>
+                    </ul>
+                </div>
+            </article>
+            <figure class="kl-media-needed fade-in" data-media-needed="true"
+                data-asset-type="video"
+                data-aspect="16:9"
+                data-page="/videoforge"
+                data-brief="Screen-recorded walkthrough of the real VideoForge Studio desktop window: upload 3-10 clips, set titles/captions/overlays, pick an output preset, and render with the FFmpeg pipeline.">
+                <div class="kl-media-needed__frame" aria-hidden="true"></div>
+                <figcaption>
+                    <strong>Media needed:</strong> A recorded walkthrough of the actual VideoForge Studio UI &mdash; upload, sequence, render, export &mdash; captured from the packaged desktop build, not a mockup.
+                    <span class="kl-media-needed__specs">MP4 or YouTube embed · 16:9 · 60&ndash;120s · screen capture of real app, no narration required</span>
+                </figcaption>
+            </figure>
         </div>
     </section>
 
@@ -205,6 +231,70 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span class="videoforge-proof-number">Deployable</span>
                 <p>Repository includes desktop packaging and container/deployment paths for broader product distribution strategy.</p>
             </article>
+        </div>
+    </section>
+
+    <section class="videoforge-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>System Requirements &amp; Two Ways To Run It</h2>
+                <p>VideoForge Studio ships two install paths. Almost everyone should use the packaged Windows build below; source mode exists for anyone who wants to run it directly from Python.</p>
+            </div>
+            <div class="kl-proof-gallery fade-in" style="margin:2rem 0;">
+                <figure class="kl-media-needed" data-media-needed="true" data-asset-type="screenshot" data-aspect="16:9" data-page="/videoforge" data-brief="Screenshot of the real VideoForge Studio desktop window showing the upload/sequence panel with clip thumbnails and the render progress bar.">
+                    <div class="kl-media-needed__frame" aria-hidden="true"></div>
+                    <figcaption><strong>Media needed:</strong> Packaged desktop app — clip upload/sequence screen or in-progress render with SSE progress bar. <span class="kl-media-needed__specs">PNG · 1600×900 · real UI</span></figcaption>
+                </figure>
+                <figure>
+                    <img src="/images/added-media/Auto%20Vid%20Compiler%20Page.png" alt="Auto Vid Compiler — predecessor highlight-reel tool" loading="lazy" width="1400" height="900">
+                    <figcaption><strong>Predecessor</strong> Auto Vid Compiler — folder-based batch compile that VideoForge evolved from.</figcaption>
+                </figure>
+                <figure>
+                    <img src="/images/added-media/PixelForge%20Ai%20Video%20Enhancer%20GUI.png" alt="PixelForge AI video enhancement GUI from the same studio" loading="lazy" width="1400" height="900">
+                    <figcaption><strong>Same studio</strong> PixelForge AI — shipped enhancement pipeline. <a href="/pixelforge-ai" style="color:#64ffda;">Product page →</a></figcaption>
+                </figure>
+            </div>
+            <div class="videoforge-split-layout">
+                <div class="videoforge-content-column fade-in">
+                    <span class="videoforge-mini-label">Recommended: Packaged Windows Build</span>
+                    <h3 style="color:#e6f1ff;font-size:1.2rem;margin:0 0 10px;">Bundled Python + FFmpeg &mdash; nothing else to install</h3>
+                    <p>Download the installer or the portable exe zip from GitHub Releases. Both include a bundled Python runtime plus bundled <code>ffmpeg.exe</code> and <code>ffprobe.exe</code>, so there is nothing separate to install. Extract the zip, run <code>VideoForge-Studio.exe</code>, and the app opens in its own desktop window backed by a local render server on your machine.</p>
+                    <div class="videoforge-profile-list">
+                        <div class="videoforge-profile-item">
+                            <strong>Operating system</strong>
+                            <span>Windows 10 or Windows 11, 64-bit</span>
+                        </div>
+                        <div class="videoforge-profile-item">
+                            <strong>Dependencies</strong>
+                            <span>None &mdash; Python runtime and FFmpeg/ffprobe are bundled in the packaged build</span>
+                        </div>
+                        <div class="videoforge-profile-item">
+                            <strong>Fallback access</strong>
+                            <span>If the desktop window doesn&rsquo;t open, the same UI is reachable at http://127.0.0.1:5050 in a browser</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="videoforge-stack-cards fade-in">
+                    <div class="videoforge-stack-card">
+                        <h3>Source Mode (Advanced / Dev)</h3>
+                        <ul>
+                            <li>Windows 10 or 11</li>
+                            <li>Python 3.12 installed, added to PATH</li>
+                            <li>FFmpeg installed and available on PATH</li>
+                            <li>Run <code>install_videoforge.bat</code>, then <code>start_videoforge.bat</code></li>
+                        </ul>
+                    </div>
+                    <div class="videoforge-stack-card">
+                        <h3>What Drives Render Time</h3>
+                        <ul>
+                            <li>Number and length of clips in the sequence</li>
+                            <li>Output resolution and selected frame rate</li>
+                            <li>Whether narration or timed captions are generated</li>
+                            <li>How many render jobs are running at once on your machine</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -287,6 +377,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="videoforge-section">
         <div class="container">
             <div class="section-header fade-in">
+                <h2>Exports &amp; Output Presets</h2>
+                <p>Rendering is tuned for ranked and countdown formats that get published across vertical and horizontal platforms, not for arbitrary timeline editing.</p>
+            </div>
+            <figure class="kl-media-needed" data-media-needed="true"
+                data-asset-type="screenshot"
+                data-aspect="16:9"
+                data-page="/videoforge"
+                data-brief="Side-by-side comparison of a portrait 1440x2560 export and a landscape 1920x1080 export from the same VideoForge Studio render job.">
+                <div class="kl-media-needed__frame" aria-hidden="true"></div>
+                <figcaption>
+                    <strong>Media needed:</strong> Side-by-side portrait vs. landscape export samples from a real VideoForge render, showing overlays and captions rendered at each preset.
+                    <span class="kl-media-needed__specs">PNG or WebP · 1600&times;900 composite · two real exports, not stock footage</span>
+                </figcaption>
+            </figure>
+            <div class="videoforge-feature-grid">
+                <article class="videoforge-feature-card fade-in">
+                    <i class="fas fa-mobile-screen-button"></i>
+                    <h3>Portrait &mdash; 1440&times;2560</h3>
+                    <p>Preset sized for Shorts, Reels, and TikTok-style vertical placement.</p>
+                </article>
+                <article class="videoforge-feature-card fade-in">
+                    <i class="fas fa-tv"></i>
+                    <h3>Landscape &mdash; 1920&times;1080</h3>
+                    <p>Standard widescreen export for YouTube and general publishing.</p>
+                </article>
+                <article class="videoforge-feature-card fade-in">
+                    <i class="fas fa-ruler-combined"></i>
+                    <h3>Custom Dimensions</h3>
+                    <p>Set your own output size when a platform needs something other than the two standard presets.</p>
+                </article>
+                <article class="videoforge-feature-card fade-in">
+                    <i class="fas fa-gauge-high"></i>
+                    <h3>Frame Rate Selector</h3>
+                    <p>Choose output FPS per render, added in v0.4.4 alongside a live Fast / Balanced / Heavy / Extreme render-load indicator.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="videoforge-section">
+        <div class="container">
+            <div class="section-header fade-in">
                 <h2>Quick Start</h2>
                 <p>A practical setup sequence for creators and operators.</p>
             </div>
@@ -311,6 +443,68 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <h3>Render and export</h3>
                     <p>Run the FFmpeg pipeline, monitor progress, and ship polished output for publication.</p>
                 </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="videoforge-section videoforge-section-alt">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Release Notes</h2>
+                <p>VideoForge Studio ships versioned releases through GitHub. Highlights from recent builds:</p>
+            </div>
+            <div class="videoforge-steps" style="grid-template-columns:1fr;">
+                <article class="videoforge-step fade-in">
+                    <span class="videoforge-step-number">v0.4.5</span>
+                    <h3>Current release</h3>
+                    <p>Fixes the desktop launcher opening the wrong local tool when another Knight Logics app is already using port 5050. VideoForge now defaults to port 5055+ and checks its own <code>/health</code> endpoint before opening the UI.</p>
+                </article>
+                <article class="videoforge-step fade-in">
+                    <span class="videoforge-step-number">v0.4.4</span>
+                    <h3>Billing order, FPS control, performance panel</h3>
+                    <p>Unified credit consumption so free-trial credits burn before paid credits, a payment success/cancel banner, a render FPS selector, and a live Performance &amp; Timing panel that flags render load as Fast, Balanced, Heavy, or Extreme.</p>
+                </article>
+                <article class="videoforge-step fade-in">
+                    <span class="videoforge-step-number">v0.4.0&ndash;v0.4.3</span>
+                    <h3>Standalone desktop shell</h3>
+                    <p>Moved from a browser-only local app to a standalone desktop window with an embedded app icon, persisted render history, and in-app update checks against GitHub Releases.</p>
+                </article>
+            </div>
+            <p style="text-align:center;margin-top:28px;"><a href="https://github.com/Knight-Logics/VideoForge-Studio/releases" target="_blank" rel="noopener noreferrer" class="btn-secondary">Full Release History on GitHub</a></p>
+        </div>
+    </section>
+
+    <section class="videoforge-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Known Limitations</h2>
+                <p>Worth knowing before you download, so this is a good fit for what you actually need.</p>
+            </div>
+            <div class="videoforge-feature-grid">
+                <article class="videoforge-feature-card fade-in">
+                    <i class="fas fa-window-restore"></i>
+                    <h3>Windows only</h3>
+                    <p>There is no macOS or Linux build. Source mode still requires a Windows machine with Python 3.12 and FFmpeg on PATH.</p>
+                </article>
+                <article class="videoforge-feature-card fade-in">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Render speed depends on your hardware</h3>
+                    <p>Rendering is compute-heavy. Clip count, resolution, frame rate, and whether narration/captions are generated all affect how long a job takes on your machine.</p>
+                </article>
+                <article class="videoforge-feature-card fade-in">
+                    <i class="fas fa-toggle-off"></i>
+                    <h3>Add-ons are optional, not required</h3>
+                    <p>Narration, credit billing, and email recovery are features that can be enabled &mdash; none of them are required to install the app or render local ranked exports.</p>
+                </article>
+                <article class="videoforge-feature-card fade-in">
+                    <i class="fas fa-folder-tree"></i>
+                    <h3>Not a general-purpose editor</h3>
+                    <p>VideoForge builds ranked and countdown-style sequences from clips you provide. It is not a timeline editor for arbitrary video projects.</p>
+                </article>
+            </div>
+            <div class="videoforge-note-box" style="margin-top:32px;max-width:760px;">
+                <strong>If the .exe won&rsquo;t start</strong>
+                <p>Run <code>VideoForge-Studio.exe</code> from a normal extracted folder like Desktop or Downloads &mdash; not from inside the zip. If the desktop window itself doesn&rsquo;t open, set <code>VIDEOFORGE_UI_MODE=browser</code> and relaunch, or visit <code>http://127.0.0.1:5050</code> directly.</p>
             </div>
         </div>
     </section>
@@ -374,6 +568,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <article class="videoforge-step fade-in">
                     <h3>What does “ranked local video” mean?</h3>
                     <p>You upload 3–10 clips, set titles/captions/overlays, and render a countdown or ranked showcase with FFmpeg on your machine — not a YouTube Shorts auto-reframe tool.</p>
+                </article>
+                <article class="videoforge-step fade-in">
+                    <h3>Does rendering ever run on Knight Logics servers?</h3>
+                    <p>No, not in the packaged desktop build. Rendering happens locally with the bundled FFmpeg on your own hardware — no render workload is sent to Knight Logics infrastructure unless you deploy the backend-ready stack yourself.</p>
+                </article>
+                <article class="videoforge-step fade-in">
+                    <h3>What output sizes does it support?</h3>
+                    <p>Portrait 1440×2560, landscape 1920×1080, or a custom size you set per render, with a frame-rate selector added in v0.4.4.</p>
+                </article>
+                <article class="videoforge-step fade-in">
+                    <h3>The .exe won’t start — what do I try first?</h3>
+                    <p>Extract the zip fully and run <code>VideoForge-Studio.exe</code> from a normal folder like Desktop or Downloads, not from inside the compressed zip. If the desktop window still doesn’t open, the app is also reachable at <code>http://127.0.0.1:5050</code> in a browser.</p>
                 </article>
             </div>
         </div>

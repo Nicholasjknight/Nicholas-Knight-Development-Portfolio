@@ -450,7 +450,7 @@ module.exports = async function handler(req, res) {
     const amountCents = normInt(session.amount_total) || 0;
     const paymentType = metadata.paymentType === 'invoice_payment' ? 'invoice_payment' : 'starter_package';
     const packageName = normStr(
-        metadata.packageKey || metadata.packageName || (paymentType === 'invoice_payment'
+        metadata.resolvedPackageKey || metadata.packageKey || metadata.packageName || (paymentType === 'invoice_payment'
             ? 'invoice:' + (metadata.invoiceNumber || 'payment')
             : 'starter_checkout'),
         120

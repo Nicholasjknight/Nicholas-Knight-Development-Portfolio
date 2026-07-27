@@ -1,189 +1,105 @@
 /**
- * Regenerate sitemap.xml from canonical public routes.
+ * Regenerate sitemap.xml from the explicit route policy.
  * Run: node scripts/sync-sitemap.js
  */
 const fs = require('fs');
 const path = require('path');
-const { allSlugs } = require('./growth-content');
 
 const root = path.join(__dirname, '..');
-const LASTMOD = '2026-07-10';
+const manifestPath = path.join(root, 'data', 'route-manifest.json');
+const sitemapPath = path.join(root, 'sitemap.xml');
+const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+const defaults = manifest.sitemapDefaults || {};
+const publicRoutes = manifest.routes?.['public-indexable'];
 
-const CORE = [
-  { loc: '', priority: '1.0', changefreq: 'weekly' },
-  { loc: 'pricing', priority: '0.92', changefreq: 'monthly' },
-  { loc: 'contact', priority: '0.9', changefreq: 'monthly' },
-  { loc: 'book-consultation', priority: '0.9', changefreq: 'monthly' },
-  { loc: 'website-growth-audit', priority: '0.92', changefreq: 'monthly' },
-  { loc: 'nicholas-knight', priority: '0.84', changefreq: 'monthly' },
-];
+if (!Array.isArray(publicRoutes)) {
+  throw new Error('route-manifest.json must define routes["public-indexable"]');
+}
 
-const FLAGSHIP_GROWTH = [
-  'business-growth-systems',
-  'crm-outreach-lead-generation',
-  'ticketing-invoicing-job-workflows',
-  'referral-network-systems',
-  'local-visibility-systems',
-  'online-ordering-systems',
-  'contractor-growth-systems',
-  'home-service-business-growth-systems',
-  'performance-partner-program',
-];
+function xmlEscape(value) {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&apos;');
+}
 
-const SERVICES = [
-  { loc: 'service-websites', priority: '0.95' },
-  { loc: 'home-service-websites', priority: '0.9' },
-  { loc: 'service-local-seo', priority: '0.9' },
-  { loc: 'service-google-business-profile', priority: '0.88' },
-  { loc: 'service-ecommerce', priority: '0.85' },
-  { loc: 'service-ai-automation', priority: '0.86' },
-  { loc: 'service-desktop-apps', priority: '0.75' },
-];
+function routeUrl(route) {
+  if (route === '/') return `${manifest.origin}/`;
+  return `${manifest.origin}${route}`;
+}
 
-const PROOF = [
-  'case-studies',
-  'automation',
-  'referral-program',
-  'case-study-knight-logics',
-  'case-study-jns',
-  'case-study-knight-group',
-  'case-study-screen-team',
-  'case-study-faith-works',
-  'case-study-farrell-electric',
-  'case-study-sals-painting',
-  'case-study-moms-resin-tables',
-  'case-study-evidencedesk-ai',
-];
+function parseCurrentEntries(xml) {
+  const entries = new Map();
+  for (const match of xml.matchAll(/<url>\s*([\s\S]*?)\s*<\/url>/g)) {
+    const block = match[1];
+    const value = (tag) => {
+      const found = block.match(new RegExp(`<${tag}>([^<]+)</${tag}>`));
+      return found?.[1]?.trim();
+    };
+    const loc = value('loc');
+    if (loc) {
+      entries.set(loc, {
+        lastmod: value('lastmod'),
+        changefreq: value('changefreq'),
+        priority: value('priority'),
+      });
+    }
+  }
+  return entries;
+}
 
-const LOCAL = [
-  'web-designer-tampa',
-  'web-designer-st-petersburg',
-  'web-designer-clearwater',
-  'web-designer-safety-harbor',
-  'web-designer-palm-harbor',
-  'web-designer-dunedin',
-  'web-designer-largo',
-  'web-designer-pinellas-park',
-  'web-designer-seminole',
-  'web-designer-tarpon-springs',
-  'web-designer-oldsmar',
-  'web-designer-brandon',
-  'web-designer-riverview',
-  'web-designer-temple-terrace',
-  'web-designer-lutz',
-  'web-designer-wesley-chapel',
-  'web-designer-new-port-richey',
-  'web-designer-holiday',
-  'web-designer-land-o-lakes',
-  'web-designer-plant-city',
-  'remote-us-services',
-];
+const currentXml = fs.existsSync(sitemapPath) ? fs.readFileSync(sitemapPath, 'utf8') : '';
+const currentEntries = parseCurrentEntries(currentXml);
+const seenRoutes = new Set();
+const seenUrls = new Set();
 
-const PRODUCTS = [
-  'display-control-plus',
-  'videoforge',
-  'pixelforge-ai',
-  'auto-vid-compiler',
-];
+const entries = publicRoutes.map((entry) => {
+  if (!entry || typeof entry.file !== 'string' || typeof entry.route !== 'string') {
+    throw new Error('Every public-indexable manifest entry needs file and route strings');
+  }
+  if (!entry.sitemap) {
+    throw new Error(`${entry.file}: public-indexable route must opt into the sitemap`);
+  }
+  if (seenRoutes.has(entry.route)) {
+    throw new Error(`${entry.file}: duplicate preferred route ${entry.route}`);
+  }
+  seenRoutes.add(entry.route);
 
-const OFFERS = [
-  { loc: 'service-packages', priority: '0.9' },
-  { loc: 'website-health-audit', priority: '0.9' },
-  { loc: 'white-label-website-audit', priority: '0.88' },
-  { loc: 'local-opportunity-pack', priority: '0.88' },
-  { loc: 'full-access-website-audit', priority: '0.88' },
-  { loc: 'package-demo-preview', priority: '0.9' },
-  { loc: 'package-preview-launch', priority: '0.88' },
-  { loc: 'package-local-launch', priority: '0.9' },
-  { loc: 'package-authority-site', priority: '0.88' },
-  { loc: 'package-max-authority', priority: '0.88' },
-  { loc: 'package-authority-network', priority: '0.88' },
-  { loc: 'package-storefront', priority: '0.88' },
-  { loc: 'package-growth-system', priority: '0.9' },
-  { loc: 'sample-website-health-audit', priority: '0.7' },
-  { loc: 'sample-white-label-website-audit', priority: '0.7' },
-  { loc: 'sample-local-opportunity-pack', priority: '0.7' },
-  { loc: 'sample-full-access-website-audit', priority: '0.7' },
-  { loc: 'search-performance-retainer', priority: '0.88' },
-  { loc: 'growth-systems-offer', priority: '0.9' },
-  { loc: 'trade-partnership', priority: '0.84' },
-];
+  const loc = routeUrl(entry.route);
+  if (seenUrls.has(loc)) throw new Error(`${entry.file}: duplicate sitemap URL ${loc}`);
+  seenUrls.add(loc);
 
-const LEGAL = [
-  'privacy-policy',
-  'terms-of-service',
-  'cookie-policy',
-  'refund-policy',
-  'disclaimer',
-];
+  const configured = entry.sitemap === true ? {} : entry.sitemap;
+  const previous = currentEntries.get(loc) || {};
+  const lastmod = configured.lastmod || previous.lastmod || defaults.lastmod;
+  const changefreq = configured.changefreq || previous.changefreq || defaults.changefreq;
+  const priority = configured.priority || previous.priority || defaults.priority;
+  if (!lastmod || !changefreq || !priority) {
+    throw new Error(`${entry.file}: incomplete sitemap metadata`);
+  }
 
-const DISCOVERY = ['ai.txt'];
-
-function urlEntry(loc, priority, changefreq = 'monthly') {
-  const href = loc ? `https://knightlogics.com/${loc}` : 'https://knightlogics.com/';
   return `  <url>
-    <loc>${href}</loc>
-    <lastmod>${LASTMOD}</lastmod>
-    <changefreq>${changefreq}</changefreq>
-    <priority>${priority}</priority>
+    <loc>${xmlEscape(loc)}</loc>
+    <lastmod>${xmlEscape(lastmod)}</lastmod>
+    <changefreq>${xmlEscape(changefreq)}</changefreq>
+    <priority>${xmlEscape(priority)}</priority>
   </url>`;
-}
-
-const seen = new Set();
-const entries = [];
-
-function add(loc, priority, changefreq) {
-  const key = loc || '/';
-  if (seen.has(key)) return;
-  seen.add(key);
-  entries.push(urlEntry(loc, priority, changefreq));
-}
-
-CORE.forEach((e) => add(e.loc, e.priority, e.changefreq));
-FLAGSHIP_GROWTH.forEach((slug) => add(slug, '0.9'));
-SERVICES.forEach((e) => add(e.loc, e.priority));
-
-const growthSub = allSlugs.filter(
-  (s) => !FLAGSHIP_GROWTH.includes(s) && !s.startsWith('case-study-')
-);
-growthSub.forEach((slug) => add(slug, '0.88'));
-
-const growthCases = allSlugs.filter((s) => s.startsWith('case-study-'));
-growthCases.forEach((slug) => add(slug, '0.84'));
-
-PROOF.forEach((slug) => add(slug, slug === 'case-studies' ? '0.88' : '0.84'));
-LOCAL.forEach((slug) => add(slug, slug.includes('tampa') || slug.includes('clearwater') ? '0.85' : '0.8'));
-PRODUCTS.forEach((slug) => add(slug, '0.65'));
-OFFERS.forEach((offer) => add(offer.loc, offer.priority));
-LEGAL.forEach((slug) => add(slug, '0.3', 'yearly'));
-DISCOVERY.forEach((slug) => add(slug, '0.3'));
+});
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Core conversion pages -->
+  <!-- Generated from data/route-manifest.json; public-indexable routes only. -->
 ${entries.join('\n')}
 
 </urlset>
 `;
 
-const sitemapPath = path.join(root, 'sitemap.xml');
-const desiredUrls = new Set(
-  [...seen].map((route) =>
-    route === '/' ? 'https://knightlogics.com/' : `https://knightlogics.com/${route}`
-  )
-);
-const currentXml = fs.existsSync(sitemapPath) ? fs.readFileSync(sitemapPath, 'utf8') : '';
-const currentUrls = new Set(
-  [...currentXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1].trim())
-);
-const routeSetMatches =
-  desiredUrls.size === currentUrls.size &&
-  [...desiredUrls].every((url) => currentUrls.has(url));
-
-if (routeSetMatches) {
-  console.log(`Sitemap already synchronized: ${desiredUrls.size} URLs`);
+if (currentXml.replace(/\r\n/g, '\n') === xml) {
+  console.log(`Sitemap already synchronized: ${entries.length} public-indexable URLs`);
 } else {
   fs.writeFileSync(sitemapPath, xml, 'utf8');
-  console.log(`Sitemap synced: ${entries.length} URLs, lastmod=${LASTMOD}`);
+  console.log(`Sitemap synced from route manifest: ${entries.length} public-indexable URLs`);
 }

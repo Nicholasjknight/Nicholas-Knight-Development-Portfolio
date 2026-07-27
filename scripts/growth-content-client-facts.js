@@ -48,7 +48,7 @@ const FW = {
     'Full growth system client — deep local SEO site, faithworks OutreachEngine lane, Email-Agent routing, and local visibility ops aligned to the Knight Logics stack.',
   media: {
     type: 'image',
-    src: '/images/showcase/faith-works-og-card.jpg',
+    src: '/images/showcase/faith-works-og-card.webp',
     alt: 'Faith Works land clearing website'
   }
 };

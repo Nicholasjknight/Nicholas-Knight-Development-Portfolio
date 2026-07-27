@@ -76,30 +76,75 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         ],
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "Google Business Profile Services",
+            "name": "Public Google Business Profile Packages",
             "itemListElement": [
                 {
                     "@type": "Offer",
+                    "identifier": "gbp-setup",
+                    "name": "Google Business Profile Setup",
+                    "price": "497",
+                    "priceCurrency": "USD",
+                    "additionalProperty": [
+                        {"@type": "PropertyValue", "name": "billingType", "value": "PROJECT"},
+                        {"@type": "PropertyValue", "name": "checkoutMode", "value": "FULL"}
+                    ],
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "GBP Cleanup and Setup",
-                        "description": "Category review, service list cleanup, business description work, and primary profile foundation."
+                        "name": "Google Business Profile Setup",
+                        "description": "Profile setup or completion, core categories and services, business details, and launch checklist."
                     }
                 },
                 {
                     "@type": "Offer",
+                    "identifier": "gbp-maintenance",
+                    "name": "Google Business Profile Maintenance",
+                    "price": "147",
+                    "priceCurrency": "USD",
+                    "description": "$147 per month for a verified profile.",
+                    "additionalProperty": [
+                        {"@type": "PropertyValue", "name": "billingType", "value": "MONTHLY"},
+                        {"@type": "PropertyValue", "name": "checkoutMode", "value": "FULL"}
+                    ],
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Review and Q&A System",
-                        "description": "Review request workflow, review response guidance, and Q&A cleanup so the profile supports trust and conversion."
+                        "name": "Google Business Profile Maintenance",
+                        "description": "Monthly profile updates, basic post cadence, review-response support, and issue monitoring."
                     }
                 },
                 {
-                    "@type": "Offer",
+                    "@type": "AggregateOffer",
+                    "identifier": "gbp-optimization",
+                    "name": "Google Business Profile Optimization",
+                    "lowPrice": "500",
+                    "highPrice": "900",
+                    "priceCurrency": "USD",
+                    "description": "Scoped $500–$900 optimization range; consultation required.",
+                    "additionalProperty": [
+                        {"@type": "PropertyValue", "name": "billingType", "value": "PROJECT"},
+                        {"@type": "PropertyValue", "name": "checkoutMode", "value": "CONSULT_ONLY"}
+                    ],
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Website and GBP Alignment",
-                        "description": "Align profile categories, services, and landing pages with the site so both systems reinforce local relevance."
+                        "name": "Google Business Profile Optimization",
+                        "description": "A deeper competitive and quality pass for an existing profile."
+                    }
+                },
+                {
+                    "@type": "AggregateOffer",
+                    "identifier": "gbp-recovery",
+                    "name": "Google Business Profile Recovery",
+                    "lowPrice": "750",
+                    "highPrice": "1500",
+                    "priceCurrency": "USD",
+                    "description": "Scoped $750–$1,500+ recovery range; consultation required.",
+                    "additionalProperty": [
+                        {"@type": "PropertyValue", "name": "billingType", "value": "SCOPED"},
+                        {"@type": "PropertyValue", "name": "checkoutMode", "value": "CONSULT_ONLY"}
+                    ],
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Google Business Profile Recovery",
+                        "description": "Scoped work for a suspended, inaccessible, or materially damaged profile."
                     }
                 }
             ]
@@ -117,7 +162,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 "name": "What does Google Business Profile optimization include?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Typical GBP work includes category review, services cleanup, business description improvement, photo and post direction, Q&A cleanup, review workflow support, and alignment between the profile and the website."
+                    "text": "Google Business Profile Setup is a flat $497 project and Maintenance is $147 monthly. Existing-profile Optimization is scoped at $500–$900, while Recovery is scoped at $750–$1,500+ for suspended, inaccessible, or materially damaged profiles."
                 }
             },
             {
@@ -255,6 +300,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <p>Ratings and review counts sync from the Business Profile API on a schedule — grouped by established profiles and recently launched locations we actively manage.</p>
             </div>
             <div data-gbp-showcase data-gbp-showcase-layout="grid" class="fade-in" style="margin-top: 32px;" aria-live="polite"></div>
+            <noscript>
+                <figure style="margin-top:24px;">
+                    <img src="/images/added-media/Google%20Business%20Profile.png" alt="Google Business Profile management screenshot — Knight Logics managed profiles" width="1200" height="800" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:8px;border:1px solid rgba(100,255,218,.2);">
+                    <figcaption style="font-size:.85rem;color:rgba(255,255,255,.55);margin-top:10px;">Static fallback when JavaScript is unavailable — live ratings sync from the Business Profile API above when scripts load.</figcaption>
+                </figure>
+            </noscript>
+
+            <article class="svc-mirror fade-in" style="margin-top:2.75rem;">
+                <figure class="svc-mirror-media svc-mirror-media--good">
+                    <img src="/images/proof/gbp-panel-knightgroup.png" alt="Google Business Profile panel for Knight Group showing categories, services, and review presence" loading="lazy" width="1200" height="800">
+                </figure>
+                <div class="svc-mirror-copy">
+                    <p class="svc-mirror-versus"><span>Static proof</span> Survives when the live API panel is empty</p>
+                    <h3>Knight Group GBP — categories, services, reviews</h3>
+                    <p>Map-pack readiness is a profile + website problem. We clean categories and services, then align the landing pages so clicks from Maps land on the right offer.</p>
+                    <ul class="svc-checklist">
+                        <li>Primary / secondary category fit for the trade</li>
+                        <li>Services list that matches estimate-worthy intents</li>
+                        <li>Review cadence and response hygiene</li>
+                        <li>Website URL and NAP parity with owned pages</li>
+                    </ul>
+                </div>
+            </article>
+
+            <div class="kl-proof-gallery fade-in" style="margin-top:2rem;">
+                <figure>
+                    <img src="/images/proof/knight-command-admin-command-center.png" alt="Knight Command admin shell used to manage GBP-linked review and posting workflows across client profiles" loading="lazy" width="1200" height="800">
+                    <figcaption><strong>Managed profiles overview</strong> Multi-location care with review and posting discipline.</figcaption>
+                </figure>
+                <figure>
+                    <img src="/images/knight-group-hero-mobile.webp" alt="Knight Group website mobile hero aligned with GBP landing URL" loading="lazy" width="800" height="1200">
+                    <figcaption><strong>Site ↔ profile parity</strong> Map clicks should land on a call-first page, not a generic homepage.</figcaption>
+                </figure>
+                <figure class="kl-media-needed" data-media-needed="true" data-asset-type="screenshot" data-aspect="4:3" data-page="/service-google-business-profile" data-brief="Annotated before/after GBP categories and services crop from Google Business Profile.png">
+                    <div class="kl-media-needed__frame" aria-hidden="true"></div>
+                    <figcaption><strong>Media needed:</strong> Annotated before/after categories + services stills. <span class="kl-media-needed__specs">WebP · 1200×900 · redact if needed</span></figcaption>
+                </figure>
+            </div>
             <p class="fade-in" style="margin-top: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.55);">Clearwater Dentist and other locations without an active client agreement are excluded from this public showcase. Review growth claims use onboarding baselines where applicable.</p>
         </div>
     </section>
@@ -285,6 +368,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <li>Site and profile targeting different service signals</li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="svc-section svc-section--gradient" id="gbp-pricing">
+        <div class="container">
+            <div class="fade-in">
+                <p class="svc-section-label"><i class="fas fa-tags"></i> Public pricing</p>
+                <h2>Choose the lane that matches the profile state</h2>
+                <p>Setup and routine maintenance have flat public prices. Deeper optimization and recovery stay scoped because access, competition, and policy issues materially change the work.</p>
+            </div>
+            <div class="svc-card-grid fade-in" style="margin-top: 40px;">
+                <article class="svc-card"><h3>Google Business Profile Setup — $497</h3><p>Flat project for a new or incomplete profile: core categories and services, business details, and a launch checklist.</p></article>
+                <article class="svc-card"><h3>Google Business Profile Maintenance — $147/mo</h3><p>Flat monthly care for a verified profile: updates, a basic post cadence, review-response support, and issue monitoring.</p></article>
+                <article class="svc-card"><h3>Google Business Profile Optimization — $500–$900</h3><p>Consult-only scoped work for an existing profile that needs a deeper competitive, conversion, and quality pass.</p></article>
+                <article class="svc-card"><h3>Google Business Profile Recovery — $750–$1,500+</h3><p>Consult-only scoped work for suspension, access loss, reinstatement, or material profile damage.</p></article>
             </div>
         </div>
     </section>
@@ -343,6 +442,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <h2>Google Business Profile FAQs</h2>
             </div>
             <div class="svc-faq-grid fade-in" style="margin-top: 40px;">
+                <article class="svc-faq-card"><h3>How much does GBP work cost?</h3><p>Setup is $497 once and Maintenance is $147/mo. Optimization is scoped at $500–$900, while Recovery is scoped at $750–$1,500+ because profile condition and policy issues change the work.</p></article>
                 <article class="svc-faq-card"><h3>Can GBP work help if the site is weak too?</h3><p>Yes, but the best outcome usually comes from fixing both systems together. If the landing pages are weak, the site still needs attention alongside the profile.</p></article>
                 <article class="svc-faq-card"><h3>Do you help with review systems?</h3><p>Yes. Review acquisition and response patterns are part of trust and conversion, so the workflow matters just as much as the review count itself.</p></article>
                 <article class="svc-faq-card"><h3>Can you help with categories and service areas?</h3><p>Yes. Those settings are core parts of profile positioning and should match the real business footprint and the site pages supporting it.</p></article>

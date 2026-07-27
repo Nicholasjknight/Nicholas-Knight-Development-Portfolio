@@ -13,7 +13,7 @@ Usage:
 
 Options:
   --base=<url>          Base URL to audit. Default: http://127.0.0.1:4178
-  --profile=<name>      Route profile: knightlogics-core, knightlogics-services, client-demo
+  --profile=<name>      Route profile: knightlogics-core, knightlogics-commercial, knightlogics-services, client-demo
   --preset=<name>       mobile, desktop, or all. Default: mobile
   --help                Show this help text
 

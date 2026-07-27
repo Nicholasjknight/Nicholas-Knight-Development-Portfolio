@@ -12,7 +12,7 @@ Usage:
 
 Options:
   --base=<url>          Base URL to test. Default: http://127.0.0.1:4178
-  --profile=<name>      Route profile: knightlogics-core, knightlogics-services, client-demo
+  --profile=<name>      Route profile: knightlogics-core, knightlogics-commercial, knightlogics-services, client-demo
   --browser=<list>      Comma-separated browsers: chromium,webkit,firefox. Default: chromium,webkit
   --headed              Run with visible browser windows
   --strict              Exit with code 1 when warnings are found
@@ -99,8 +99,23 @@ function ensureDir(dirPath) {
 
 async function scrollForLazyContent(page) {
   await page.evaluate(async () => {
+    const images = Array.from(document.images);
+    images.forEach((image) => {
+      image.loading = 'eager';
+    });
     window.scrollTo(0, document.body.scrollHeight);
-    await new Promise((resolve) => setTimeout(resolve, 300));
+    await Promise.race([
+      Promise.all(images.map((image) => {
+        if (image.complete) {
+          return Promise.resolve();
+        }
+        return new Promise((resolve) => {
+          image.addEventListener('load', resolve, { once: true });
+          image.addEventListener('error', resolve, { once: true });
+        });
+      })),
+      new Promise((resolve) => setTimeout(resolve, 2000)),
+    ]);
     window.scrollTo(0, 0);
   });
   await page.waitForTimeout(300);
@@ -364,6 +379,8 @@ async function main() {
 
   const runDir = path.join(process.cwd(), '.qa-matrix', 'runs', `${slugify(options.profile)}-${timestampSlug()}`);
   ensureDir(runDir);
+  const baseHostname = new URL(options.base).hostname;
+  const isLocalBase = baseHostname === 'localhost' || baseHostname === '127.0.0.1';
 
   const results = [];
 
@@ -382,6 +399,13 @@ async function main() {
 
         for (const route of profile.routes) {
           const page = await context.newPage();
+          if (isLocalBase) {
+            await page.route('**/api/hero-asteroids-hiscore', (requestRoute) => requestRoute.fulfill({
+              status: 200,
+              contentType: 'application/json',
+              body: JSON.stringify({ score: 100, initials: 'KL' }),
+            }));
+          }
           const pageErrors = [];
           const consoleErrors = [];
           page.on('pageerror', (error) => pageErrors.push(String(error.message || error)));
@@ -422,6 +446,9 @@ async function main() {
             const response = await page.goto(url, { waitUntil: 'networkidle', timeout: 45000 });
             responseStatus = response ? response.status() : null;
             await scrollForLazyContent(page);
+            await page.addStyleTag({
+              content: '* { content-visibility: visible !important; }',
+            });
             pageData = await collectPageData(page);
 
             await page.screenshot({ path: screenshotPath, fullPage: true });

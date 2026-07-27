@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="preload" href="/header.html?v=20260724start3" as="fetch" crossorigin="anonymous">
-    <link rel="preload" href="/footer.html?v=20260724start3" as="fetch" crossorigin="anonymous">
-    <script defer src="/script.js?v=20260724start3"></script>
+    <link rel="preload" href="/header.html?v=20260726cases1" as="fetch" crossorigin="anonymous">
+    <link rel="preload" href="/footer.html?v=20260726cases1" as="fetch" crossorigin="anonymous">
+    <script defer src="/script.js?v=20260726cases1"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Referral network case study — partner attribution, QR paths, consult tracking, and payout visibility across Tampa Bay trade partners.">
@@ -14,7 +14,7 @@
     <meta property="og:description" content="Referral network case study — partner attribution, QR paths, consult tracking, and payout visibility across Tampa Bay trade partners.">
     <meta property="og:url" content="https://knightlogics.com/case-study-referral-network-system">
     <meta property="og:site_name" content="Knight Logics">
-    <meta property="og:image" content="https://knightlogics.com/images/showcase/case-study-referral-network-mockup.webp">
+    <meta property="og:image" content="https://knightlogics.com/images/added-media/Tracking%20Referral%20Payouts.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Referral Network System Case Study | Knight Logics">
     <meta name="twitter:description" content="Referral network case study — partner attribution, QR paths, consult tracking, and payout visibility across Tampa Bay trade partners.">
@@ -63,32 +63,64 @@
             </div>
             <div class="cs-media-grid fade-in">
                 <figure class="cs-video-shell">
-                    <video controls playsinline preload="metadata" aria-label="Referral system dashboard walkthrough">
-                        <source src="/videos/automation/referral-system-dashboard.mp4" type="video/mp4">
+                    <video poster="/images/added-media/Tracking%20Referral%20Payouts.png" controls playsinline preload="metadata" aria-label="Referral system dashboard walkthrough">
+                        <source src="/images/added-media/Referral%20System%20KL.mp4" type="video/mp4">
                         <track kind="captions" srclang="en" label="English captions" src="/videos/automation/referral-system-dashboard.vtt" default>
                     </video>
                 </figure>
                 <div class="cs-proof-stack">
                     <figure class="cs-proof-card">
-                        <img src="/images/showcase/case-study-referral-network-mockup.webp" alt="Referral network attribution dashboard" loading="lazy" decoding="async" width="1200" height="675">
+                        <img src="/images/added-media/Tracking%20Referral%20Payouts.png" alt="Referral payout tracking dashboard with partner attribution" loading="lazy" decoding="async" width="1200" height="675">
                         <figcaption>Partner attribution dashboard with earned vs paid visibility.</figcaption>
                     </figure>
                     <figure class="cs-proof-card">
-                        <img src="/images/showcase/case-study-knight-command-mockup.webp" alt="Knight Command admin shell" loading="lazy" decoding="async" width="1200" height="675">
+                        <img src="/images/proof/knight-command-admin-command-center.png" alt="Knight Command ADMIN Command Center with live Referral, Outreach, Email, and Social status" loading="lazy" decoding="async" width="1200" height="675">
                         <figcaption>Referrals tab inside Knight Command — no orphan dashboard URLs.</figcaption>
                     </figure>
                 </div>
             </div>
             <div class="cs-audit-grid fade-in">
                 <article class="cs-audit-card">
-                    <img src="/images/showcase/faith-works-og-card.jpg" alt="Trade network" loading="lazy" decoding="async">
+                    <img src="/images/showcase/faith-works-og-card.webp" alt="Trade network" loading="lazy" decoding="async">
                     <div><strong>Trade network fit</strong><span>Built to scale local partner onboarding with clear credit.</span></div>
                 </article>
                 <article class="cs-audit-card">
-                    <img src="/images/showcase/case-study-crm-outreach-mockup.webp" alt="Consult capture" loading="lazy" decoding="async">
+                    <img src="/images/added-media/CRM%20System.png" alt="OutreachEngine CRM queue with brand switcher and send caps" loading="lazy" decoding="async">
                     <div><strong>Consult capture</strong><span>Form submits keep referral context into Neon events.</span></div>
                 </article>
             </div>
+
+            <article class="svc-mirror fade-in" style="margin-top:2.5rem;">
+                <figure class="svc-mirror-media svc-mirror-media--good">
+                    <img src="/images/added-media/Referral%20At%20Checkout%20Options.png" alt="Referral code applied at checkout — tied to the /ref/:partner attribution path" loading="lazy" decoding="async" width="1400" height="900">
+                </figure>
+                <div class="svc-mirror-copy">
+                    <p class="svc-mirror-versus"><span>Partner attribution</span> /ref/:partner → payout</p>
+                    <h3>QR brochures, Neon event logging, and Stripe webhook settlement</h3>
+                    <p>Referral network infrastructure deploys unique partner entry paths, tracked consult forms, and partner dashboards — so credit disputes stop living in spreadsheets.</p>
+                    <ul class="svc-checklist">
+                        <li>/ref/:partner landing paths with QR brochure assets</li>
+                        <li>Neon Postgres event store for scans, forms, and conversions</li>
+                        <li>Embeds on port 5050 inside Knight Command Referrals tab</li>
+                    </ul>
+                </div>
+            </article>
+
+            <div class="kl-proof-gallery fade-in" style="margin-top:2.5rem;">
+                <figure>
+                    <img src="/images/added-media/Creating Referral QR Code.png" alt="Creating referral QR code in the referral system" loading="lazy" decoding="async" width="1400" height="900">
+                    <figcaption><strong>QR generation</strong> Partner brochure assets tied to unique /ref paths.</figcaption>
+                </figure>
+                <figure>
+                    <img src="/images/referral-brochures/Knight_Logics_Referral_Partner_Program_preview.png" alt="Knight Logics Referral Partner Program brochure preview" loading="lazy" decoding="async" width="1200" height="900">
+                    <figcaption><strong>Partner brochure</strong> Print-ready referral program preview for trade network onboarding.</figcaption>
+                </figure>
+                <figure class="kl-media-needed" data-media-needed="true" data-asset-type="screenshot" data-aspect="16:9" data-page="/case-study-referral-network-system" data-brief="Live /referral-dashboard partner view — earned vs paid columns with redacted partner PII.">
+                    <div class="kl-media-needed__frame" aria-hidden="true"></div>
+                    <figcaption><strong>Media needed:</strong> Partner self-service dashboard capture — attribution events and payout status visible, PII redacted. <span class="kl-media-needed__specs">WebP · 1600×900 · no fabricated dollar amounts</span></figcaption>
+                </figure>
+            </div>
+
             <div class="svc-cta-row" style="margin-top:1.5rem;justify-content:center;">
                 <a href="/book-consultation" class="btn-primary">Build referral tracking for your network</a>
                 <a href="/referral-network-systems" class="btn-secondary">Referral systems</a>
@@ -104,7 +136,8 @@
                 <p>Knight Command Referrals tab embeds referral ops on port 5050 family alongside CRM and email — single operator shell for partner support.</p>
                 <p>If you want partners to trust the program — and you want to know which QR codes actually produce consults — this is the live attribution and payout stack.</p>
                 <p>Referral networks scale when attribution is automatic — partners see leads and payouts without spreadsheet arguments.</p>
-                
+                <p>Before this system existed, "who gets credit" was a recurring source of friction with our earliest trade partners. A handshake introduction and a QR scan looked identical in generic web analytics, so payout conversations relied on memory and trust rather than a record either side could check.</p>
+                <p>The dashboard did not remove the need for manual review before a payout — it removed the need to argue about whether a referral happened in the first place. Partners can check status themselves; admins still approve before money moves.</p>
             </div>
         </div>
     </section>
@@ -263,15 +296,37 @@
                     <summary>Can this run for my company brand, not just Knight Logics?</summary>
                     <p>Yes. We scope partner codes, attribution windows, and payout rules to your program — then wire Stripe webhooks and a partner-facing dashboard.</p>
                 </details>
+                <details class="kl-growth-faq-item fade-in">
+                    <summary>Are payouts automatic once a referral converts?</summary>
+                    <p>No, by design. Stripe webhooks update payment status automatically, but a person still reviews each referral before an invoice or transfer goes out — that manual checkpoint is what keeps the program trustworthy at small scale.</p>
+                </details>
             </div>
         </div>
     </section>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this the same as the public Referral Program page?","acceptedAnswer":{"@type":"Answer","text":"The public Referral Program is the join path and terms. This case study documents the production infrastructure — codes, QR, Neon events, dashboard, and Stripe payout sync — behind that program."}},{"@type":"Question","name":"Can partners see what they earned?","acceptedAnswer":{"@type":"Answer","text":"Yes. referral-dashboard gives partners earned vs paid visibility within program data boundaries so disputes do not live in email threads."}},{"@type":"Question","name":"Do you support print QR brochures?","acceptedAnswer":{"@type":"Answer","text":"Yes. QR brochure assets and /ref/:partner routes are part of the attribution path so print and digital share the same event log."}},{"@type":"Question","name":"Can this run for my company brand, not just Knight Logics?","acceptedAnswer":{"@type":"Answer","text":"Yes. We scope partner codes, attribution windows, and payout rules to your program — then wire Stripe webhooks and a partner-facing dashboard."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this the same as the public Referral Program page?","acceptedAnswer":{"@type":"Answer","text":"The public Referral Program is the join path and terms. This case study documents the production infrastructure — codes, QR, Neon events, dashboard, and Stripe payout sync — behind that program."}},{"@type":"Question","name":"Can partners see what they earned?","acceptedAnswer":{"@type":"Answer","text":"Yes. referral-dashboard gives partners earned vs paid visibility within program data boundaries so disputes do not live in email threads."}},{"@type":"Question","name":"Do you support print QR brochures?","acceptedAnswer":{"@type":"Answer","text":"Yes. QR brochure assets and /ref/:partner routes are part of the attribution path so print and digital share the same event log."}},{"@type":"Question","name":"Can this run for my company brand, not just Knight Logics?","acceptedAnswer":{"@type":"Answer","text":"Yes. We scope partner codes, attribution windows, and payout rules to your program — then wire Stripe webhooks and a partner-facing dashboard."}},{"@type":"Question","name":"Are payouts automatic once a referral converts?","acceptedAnswer":{"@type":"Answer","text":"No, by design. Stripe webhooks update payment status automatically, but a person still reviews each referral before an invoice or transfer goes out — that manual checkpoint is what keeps the program trustworthy at small scale."}}]}</script>
     <section class="kl-growth-section kl-growth-section--compact">
         <div class="container">
             <aside class="kl-growth-scope-note fade-in">
                 <strong>Scope clarity:</strong> Referral infrastructure is production Knight Logics systems — partner program terms, fees, and payout rules are defined separately in program documentation.
             </aside>
+        </div>
+    </section>
+    <section class="kl-growth-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Related proof &amp; examples</h2>
+                <p>Examples that belong to Referral Network System. Primary proof first; secondary only when it shares the same system pattern.</p>
+            </div>
+            <div class="kl-growth-proof-grid">
+                <a class="kl-growth-proof-card fade-in" href="/case-study-knight-command">
+                    <img src="/images/added-media/Knight%20Command.png" alt="Knight Command Referrals tab shell" loading="lazy" decoding="async">
+                    <div class="kl-growth-proof-card-copy">
+                        <span class="kl-growth-proof-badge">Internal system</span>
+                        <h3>Knight Command Referrals tab</h3>
+                        <p>Where referral ops live day to day, alongside CRM outreach and social queues.</p>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
     

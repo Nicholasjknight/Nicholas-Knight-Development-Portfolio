@@ -245,7 +245,7 @@ const flagshipPages = [
         title: 'OutreachEngine dashboard',
         text: 'Queue preview, send windows, brand switcher, and reply counts — the same interface used on Screen Team, Faith Works, and Knight Group campaigns.',
         bullets: ['Flask + SQLite backend with reliable scheduler', 'Brand mapping for kl, kg, st, and faithworks lanes', 'Failure and bounce visibility before the week is wasted'],
-        media: { ...videos.crm, title: 'CRM outreach queue', text: 'Segmented sends with daily cap enforcement.' }
+        media: images.crmSystemUi
       },
       {
         kicker: 'How OutreachEngine works',
@@ -259,7 +259,7 @@ const flagshipPages = [
           '4. Replies route into Email-Agent crm_reply views; operators triage and book estimates from tracked threads.',
           '5. Lead-source reporting shows which list and message variant produced replies and booked work.'
         ],
-        media: { ...videos.crm, title: 'Send → reply → book', text: 'Outbound lead generation with reply routing, not spreadsheet Gmail.' }
+        media: images.emailAgentUi
       }
     ],
     process: [
@@ -345,7 +345,14 @@ const flagshipPages = [
         title: 'Stripe from completed work',
         text: 'Payment links and paid status reflected on the job record so office staff stops chasing spreadsheets.',
         align: 'right',
-        media: { ...videos.email, title: 'Ops notification flow', text: 'Status and payment events routed to the right owner view.' }
+        media: {
+          type: 'media-needed',
+          aspect: '16:9',
+          page: '/ticketing-invoicing-job-workflows',
+          brief: 'Stripe invoice / payment-link status on a completed Vendoroo or KG Dispatch job record — do not reuse Email-Agent video here',
+          specs: 'Screenshot · 1600×900 · redact customer PII',
+          alt: 'Job invoice status (capture needed)'
+        }
       }
     ],
     process: [
@@ -420,7 +427,7 @@ const flagshipPages = [
         kicker: 'Live system',
         title: 'Referral dashboard & partner paths',
         text: 'The same referral infrastructure behind Knight Logics partner program — QR, codes, events, and payout visibility in production.',
-        media: { ...videos.referral, title: 'Partner attribution dashboard', text: 'See which partners and QR scans produce consults.' }
+        media: images.referralQrUi
       },
       {
         kicker: 'How referral tracking works',
@@ -434,7 +441,7 @@ const flagshipPages = [
           '4. Stripe webhooks update payout status when fees settle — no spreadsheet reconciliation.',
           '5. Knight Command Referrals tab embeds the same ops surface operators already open daily.'
         ],
-        media: { ...videos.referral, title: 'Attribution → settlement', text: 'QR referral tracking with defensible partner credit.' }
+        media: images.referralPayoutsUi
       }
     ],
     process: [
@@ -620,7 +627,9 @@ const flagshipPages = [
     faq: [
       { q: 'Is the audit really free?', a: 'Yes — the initial website and growth audit tier is free. Deeper technical dives or competitive research may be quoted separately.' },
       { q: 'How long until I get results?', a: 'Most audits return within a few business days with written priorities — faster if analytics and Search Console access are ready.' },
-      { q: 'Do you implement what you recommend?', a: 'You can hire Knight Logics for the build or use the audit with another vendor — the report is yours either way.' }
+      { q: 'Do you implement what you recommend?', a: 'You can hire Knight Logics for the build or use the audit with another vendor — the report is yours either way.' },
+      { q: 'What access do you actually need?', a: 'Site URL and your Google Business Profile link are enough to start; Search Console and analytics access speed up the technical review but are not required.' },
+      { q: 'Will you tell me if I do not need a rebuild?', a: 'Yes — if the fix is a handful of targeted changes rather than a full rebuild, the audit says so instead of upselling unnecessary work.' }
     ],
     links: [
       ['/book-consultation', 'Book Consultation'],
@@ -632,6 +641,8 @@ const flagshipPages = [
     cta: { title: 'Request your growth audit', text: 'Share your site and how you get customers today. We will return prioritized fixes and system opportunities.' }
   },
   {
+    // MEDIA NOTE: needs a real ordering-flow screenshot (cart/checkout) beyond the Mom's
+    // Resin Tables storefront once a hospitality ordering build ships — reuses images.moms.
     slug: 'online-ordering-systems',
     title: 'E-Commerce & Online Ordering Systems',
     meta: 'E-commerce and online ordering for Tampa Bay restaurants, retailers, and product businesses — Stripe, admin editing, events, and checkout flows.',
@@ -648,12 +659,13 @@ const flagshipPages = [
     problem: {
       kicker: 'The problem',
       title: 'Restaurant and retail sites stall at PDF menus and manual orders',
-      text: 'Hospitality and product businesses outgrow brochure sites — but full POS platforms are expensive and rigid. Owners need ordering, events, and editable content without rebuilding every year.',
+      text: 'Hospitality and product businesses outgrow brochure sites — but full POS platforms are expensive and rigid. Owners need ordering, events, and editable content without rebuilding every year. The middle ground between "static PDF menu" and "enterprise POS contract" is where most Tampa Bay hospitality and retail brands actually need to launch.',
       bullets: [
         'Menu changes require a developer for every special',
         'Events and hours are buried or outdated',
         'Checkout is phone-only while competitors take online orders',
-        'No room to add Toast or POS integrations later'
+        'No room to add Toast or POS integrations later',
+        'Product catalogs outgrow social-only selling but are not ready for Shopify overhead'
       ],
       media: images.moms
     },
@@ -662,7 +674,8 @@ const flagshipPages = [
       { icon: 'fa-utensils', label: 'Hospitality', title: 'Restaurant & bar systems', text: 'Events, menus, ordering flows, and admin content editing — hospitality system pattern in active development.' },
       { icon: 'fa-credit-card', label: 'Payments', title: 'Checkout & Stripe', text: 'Payment links, checkout flows, and order confirmation without platform transaction bloat.' },
       { icon: 'fa-pen-to-square', label: 'Control', title: 'Admin-editable content', text: 'Menus, events, and specials your team updates without touching code.' },
-      { icon: 'fa-plug', label: 'Future', title: 'Integration-ready', text: 'Architecture leaves room for Toast or POS hooks as volume grows.' }
+      { icon: 'fa-plug', label: 'Future', title: 'Integration-ready', text: 'Architecture leaves room for Toast or POS hooks as volume grows.' },
+      { icon: 'fa-mobile-screen', label: 'Mobile', title: 'Mobile-first checkout', text: 'Order flows tested on the phone screens most customers actually use to order.' }
     ],
     mediaBlocks: [
       {
@@ -689,7 +702,8 @@ const flagshipPages = [
       'Restaurants and bars needing events plus order-ahead flows',
       'Product businesses outgrowing Etsy or social-only sales',
       'Owners who want admin control without Shopify bloat',
-      'Brands planning POS integration in a later phase'
+      'Brands planning POS integration in a later phase',
+      'Retailers needing conversion-focused product pages instead of a generic template shop'
     ],
     proof: {
       title: "Mom's Resin Tables live storefront",
@@ -703,7 +717,9 @@ const flagshipPages = [
     faq: [
       { q: 'Do you build on Shopify or WooCommerce?', a: 'We hand-code lean storefronts with Stripe for owners who want speed, control, and lower platform fees — not plugin maintenance.' },
       { q: 'Can staff update menus without calling you?', a: 'Yes — admin-editable content patterns are core to restaurant and bar builds in the hospitality lane.' },
-      { q: 'What about delivery apps?', a: 'We focus on owned ordering first; third-party app integrations can be scoped if they fit your volume.' }
+      { q: 'What about delivery apps?', a: 'We focus on owned ordering first; third-party app integrations can be scoped if they fit your volume.' },
+      { q: 'How does this compare to Mom\'s Resin Tables?', a: 'That live storefront is the reference build — Stripe checkout, product catalog, and conversion-focused pages without a page-builder subscription.' },
+      { q: 'Can we add ordering later instead of at launch?', a: 'Yes — many clients launch a fast informational or catalog site first, then add checkout once volume or staffing supports it.' }
     ],
     links: [
       ['/restaurant-bar-growth-systems', 'Restaurant & Bar Systems'],
@@ -894,6 +910,8 @@ const flagshipPages = [
     cta: { title: 'Growing a home service company?', text: 'Tell us your services, service area, and how customers find you today.' }
   },
   {
+    // MEDIA NOTE: needs a real before/after baseline-vs-90-day reporting screenshot once a
+    // performance partnership client completes a measurement window — reuses images.logo/images.kgHero.
     slug: 'performance-partner-program',
     title: 'Performance Partner Program',
     meta: 'Performance-based partnership for Tampa Bay businesses — base fee, 90-day measurement window, clear attribution, and monthly reporting.',
@@ -931,7 +949,7 @@ const flagshipPages = [
         title: 'Performance needs tracking infrastructure',
         text: 'Partnership fit assumes growth systems exist or will be built — CRM, analytics, referral attribution, and reporting from the Business Growth Systems lane.',
         bullets: ['Knight Command-style visibility for queue and lead sources', 'Outreach and referral attribution for defensible metrics', 'Monthly owner review tied to real ops data'],
-        media: { ...videos.crm, title: 'Reporting foundation', text: 'Dashboards that support performance measurement.' }
+        media: images.knightCommandShell
       }
     ],
     process: [
@@ -944,7 +962,8 @@ const flagshipPages = [
       'Owners who want accountability beyond a standard retainer',
       'Businesses with measurable call, form, or booking volume',
       'Teams willing to implement tracking and follow-up discipline',
-      'Growth system clients ready for a long-term partnership lane'
+      'Growth system clients ready for a long-term partnership lane',
+      'Owners comfortable documenting a baseline before results are measured'
     ],
     proof: {
       title: 'Built on measurable growth systems',
@@ -958,7 +977,9 @@ const flagshipPages = [
     faq: [
       { q: 'What metrics qualify for performance?', a: 'Typically tracked calls, form submits, booked consults, or attributed revenue — defined in writing before the 90-day window starts.' },
       { q: 'Is there a minimum term?', a: 'Yes — partnership terms include minimum term, cancellation rules, and monthly caps documented in the agreement.' },
-      { q: 'Can I start with a standard project instead?', a: 'Absolutely — many clients begin with website-growth-audit or business-growth-systems before exploring performance partnership fit.' }
+      { q: 'Can I start with a standard project instead?', a: 'Absolutely — many clients begin with website-growth-audit or business-growth-systems before exploring performance partnership fit.' },
+      { q: 'What counts as the baseline?', a: 'Current call volume, form submits, and booked consults captured before any new work goes live — documented in writing so results are measured against reality, not memory.' },
+      { q: 'Does this replace the standard pricing tiers?', a: 'No — performance partnership is an alternative structure layered on top of a systems build, not a replacement for the underlying website and automation work.' }
     ],
     links: [
       ['/pricing', 'Standard Pricing'],
@@ -991,7 +1012,7 @@ const subPages = [
         'AI siloed from CRM queues and Email-Agent routing',
         'Automation volume unchecked until sender reputation breaks'
       ],
-      media: { ...videos.crm, title: 'Ops-aware automation', text: 'Triggers tied to live queue data — not disconnected chat widgets.' }
+      media: images.knightCommandShell
     },
     features: [
       { icon: 'fa-bolt', label: 'Triggers', title: 'Workflow triggers', text: 'Automate repetitive decisions when rules are explicit and mistake cost is low.' },
@@ -1004,7 +1025,7 @@ const subPages = [
         kicker: 'Connected stack',
         title: 'Automation inside Knight Command',
         text: 'AI-assisted workflows embed alongside Outreach CRM, Email Agent, and Social Ops — not a standalone toy app.',
-        media: videos.crm
+        media: images.knightCommandShell
       },
       {
         kicker: 'Safe boundaries',
@@ -1018,7 +1039,7 @@ const subPages = [
           '4. Surface failures in Logs tabs the same day — never silent overnight breakage.',
           '5. Expand only after operators trust the morning review loop.'
         ],
-        media: { ...videos.crm, title: 'Assistive AI, owned rules', text: 'Non-hype automation wired to live ops ports.' }
+        media: images.emailAgentUi
       }
     ],
     process: [
@@ -1053,6 +1074,8 @@ const subPages = [
     links: [['/service-ai-automation', 'Automation Services'], ['/workflow-automation', 'Workflow Automation'], ['/email-agent-automation', 'Email-Agent Automation']],
     cta: { title: 'Where should AI save time?', text: 'Describe repetitive decisions your team makes daily — we will scope safe automation hooks.' }
   },
+  // MEDIA NOTE: needs a real screenshot of a client-facing internal admin panel (beyond
+  // Knight Command) once one exists — currently reuses images.logo/images.knightCommandShell.
   {
     slug: 'internal-business-tools',
     parent: { href: '/service-ai-automation', label: 'AI Automation' },
@@ -1065,12 +1088,13 @@ const subPages = [
     problem: {
       kicker: 'Spreadsheet ceiling',
       title: 'Shared spreadsheets break when more than two people touch them',
-      text: 'Version conflicts, no audit trail, and fields that do not match field crew reality — internal ops need purpose-built tools, not another Google Sheet.',
+      text: 'Version conflicts, no audit trail, and fields that do not match field crew reality — internal ops need purpose-built tools, not another Google Sheet. Once a business runs a CRM, a ticket queue, and payout tracking at the same time, spreadsheet formulas start silently breaking and nobody notices until a number looks wrong at month-end.',
       bullets: [
         'No role separation between owner, office, and field views',
         'Sensitive payout or lead data mixed in one tab',
         'Manual exports to invoice or email tools',
-        'Mobile unusable for crews on site'
+        'Mobile unusable for crews on site',
+        'Formula errors from copy-paste edits go unnoticed for weeks'
       ],
       media: images.logo
     },
@@ -1078,7 +1102,9 @@ const subPages = [
       { icon: 'fa-gauge-high', label: 'Admin', title: 'Admin panels', text: 'Owner and staff views with fields and actions that match your process — Command Center pattern.' },
       { icon: 'fa-list-check', label: 'Queues', title: 'Trackers & queues', text: 'Lead, job, ticket, and payout visibility in one authenticated shell.' },
       { icon: 'fa-users', label: 'Roles', title: 'Role-based views', text: 'Different screens for office staff, field crews, and ownership.' },
-      { icon: 'fa-cloud', label: 'Deploy', title: 'Web-first deployment', text: 'Browser tools on desktop and mobile without app store friction.' }
+      { icon: 'fa-cloud', label: 'Deploy', title: 'Web-first deployment', text: 'Browser tools on desktop and mobile without app store friction.' },
+      { icon: 'fa-lock', label: 'Auth', title: 'Authenticated access', text: 'Login-gated panels so payout and lead data are not one guessed URL away from public.' },
+      { icon: 'fa-diagram-project', label: 'Embeds', title: 'Service embeds', text: 'Wrap existing Flask or Streamlit tools behind one shell instead of rebuilding what already works.' }
     ],
     mediaBlocks: [
       {
@@ -1086,19 +1112,36 @@ const subPages = [
         title: 'Knight Command tab architecture',
         text: 'Referrals, Outreach CRM, Email Agent, Social Ops, Social Poster, and Logs as modular embeds behind one login.',
         media: images.logo
+      },
+      {
+        kicker: 'Build order',
+        title: 'Start with the highest-friction spreadsheet, not the whole admin',
+        text: 'Internal tool projects fail when they try to replace every spreadsheet at once. We scope one painful tracker first — usually leads or payouts — prove it, then add tabs.',
+        align: 'right',
+        bullets: [
+          'Identify the spreadsheet causing the most weekly friction or errors',
+          'Build that view first with real fields your team already uses',
+          'Add authentication and role gates before wider rollout',
+          'Embed or link adjacent services instead of rebuilding them',
+          'Expand tab by tab once the first panel earns daily trust'
+        ],
+        media: images.knightCommandShell
       }
     ],
     process: [
       { title: 'Workflow interview', text: 'Map who does what, which fields matter, and what must stay owner-only.' },
       { title: 'Wireframes & roles', text: 'Sketch views per role before database or API work.' },
       { title: 'Build & embed', text: 'Deploy panels with secure auth and optional embeds to Flask or Streamlit services.' },
+      { title: 'Data migration', text: 'Move records out of the old spreadsheet without losing history teams still reference.' },
       { title: 'Train & iterate', text: 'Short training cycle then adjust fields based on real usage.' }
     ],
     idealFor: [
       'Owners outgrowing spreadsheets for leads, jobs, or payouts',
       'Teams running multiple localhost or cloud services needing one shell',
       'Businesses wanting referral-dashboard-style visibility for internal ops',
-      'Operators preparing to scale without buying enterprise ERP'
+      'Operators preparing to scale without buying enterprise ERP',
+      'Companies with sensitive payout data currently sitting in a shared sheet',
+      'Field crews who need job details on a phone, not a desktop-only tool'
     ],
     proof: {
       title: 'Knight Command internal admin shell',
@@ -1112,11 +1155,16 @@ const subPages = [
     faq: [
       { q: 'Do you build mobile apps?', a: 'We prioritize responsive web tools crews open in the browser — faster to ship and easier to maintain.' },
       { q: 'Can tools embed our existing software?', a: 'Yes — Knight Command embeds OutreachEngine, Email-Agent, and Social Poster instead of rebuilding them.' },
-      { q: 'Who hosts the tools?', a: 'Cloud or your infrastructure depending on security needs — scoped during consult.' }
+      { q: 'Who hosts the tools?', a: 'Cloud or your infrastructure depending on security needs — scoped during consult.' },
+      { q: 'Can you migrate our existing spreadsheet data?', a: 'Yes — data migration is part of the build so historical leads, jobs, or payout records carry over instead of starting from zero.' },
+      { q: 'How do you handle sensitive payout or lead data?', a: 'Panels sit behind authentication with role gates, so field staff see job details while payout and partner data stay owner-only.' },
+      { q: 'What if we only need one panel, not a full admin?', a: 'That is the recommended starting point — build the highest-friction tracker first, then add tabs once it earns daily use.' }
     ],
     links: [['/service-ai-automation', 'Automation Services'], ['/business-dashboard-development', 'Dashboard Development'], ['/case-study-knight-command', 'Knight Command']],
     cta: { title: 'Need an internal ops panel?', text: 'Walk us through the spreadsheet or tabs you wish one screen could replace.' }
   },
+  // MEDIA NOTE: needs a real screenshot/clip of a webhook failure alert or retry log
+  // once captured from Knight Command Logs — currently reuses videos.email/videos.referral/videos.crm.
   {
     slug: 'api-integration-services',
     parent: { href: '/service-ai-automation', label: 'AI Automation' },
@@ -1129,20 +1177,23 @@ const subPages = [
     problem: {
       kicker: 'Data silos',
       title: 'Manual re-entry between Stripe, Google, and CRM wastes hours',
-      text: 'Paid invoices do not update job records. Search Console data never informs site fixes. Referral payouts need Stripe webhooks — not copy-paste from dashboards.',
+      text: 'Paid invoices do not update job records. Search Console data never informs site fixes. Referral payouts need Stripe webhooks — not copy-paste from dashboards. Every manual re-entry step is also a place where a number gets mistyped or a status update gets forgotten until a customer or partner asks why nothing changed.',
       bullets: [
         'Payment status checked manually in Stripe dashboard',
         'GBP and Analytics disconnected from site change workflow',
         'Webhook failures silent until customers complain',
-        'Multi-brand CRM events not mapped to correct inboxes'
+        'Multi-brand CRM events not mapped to correct inboxes',
+        'Vendor portal ticket updates require a separate manual check-in'
       ],
-      media: { ...videos.email, title: 'Event routing', text: 'Email-Agent and webhook paths for business-critical events.' }
+      media: images.knightCommandShell
     },
     features: [
       { icon: 'fa-credit-card', label: 'Payments', title: 'Stripe & webhooks', text: 'Checkout, invoices, referral payout webhooks, and payment-status sync on job records.' },
       { icon: 'fa-google', label: 'Google', title: 'Google stack APIs', text: 'Analytics, Search Console, Business Profile, Drive, and Gmail integrations where needed.' },
       { icon: 'fa-address-book', label: 'CRM', title: 'CRM & outreach events', text: 'Lead sync, reply events, bounce flags, and campaign logging for OutreachEngine.' },
-      { icon: 'fa-server', label: 'Reliability', title: 'Webhooks & retries', text: 'Event queues with retries and failure alerts — especially for referral and invoice flows.' }
+      { icon: 'fa-server', label: 'Reliability', title: 'Webhooks & retries', text: 'Event queues with retries and failure alerts — especially for referral and invoice flows.' },
+      { icon: 'fa-shield-halved', label: 'Security', title: 'Signature validation', text: 'Verified webhook signatures and idempotency keys so replayed or forged events never double-process a payout.' },
+      { icon: 'fa-clipboard-list', label: 'Portals', title: 'Vendor portal sync', text: 'Ticket status and invoice events from vendor portals like Vendoroo synced back to job records automatically.' }
     ],
     mediaBlocks: [
       {
@@ -1150,19 +1201,36 @@ const subPages = [
         title: 'Stripe webhook settlement',
         text: 'Referral network system uses Stripe webhooks to track earned vs paid partner fees in Neon Postgres-backed events.',
         media: videos.referral
+      },
+      {
+        kicker: 'Failure handling',
+        title: 'What happens when a webhook fails',
+        text: 'Integrations are only as trustworthy as their failure path. Ours are built to retry, log, and alert instead of quietly dropping an event.',
+        align: 'right',
+        bullets: [
+          'Signed payload validation rejects forged or replayed events',
+          'Idempotency keys prevent double-charging or double-crediting a payout',
+          'Failed deliveries queue for retry with exponential backoff',
+          'Repeated failures escalate to an operator alert, not a silent log line',
+          'Every event — success or failure — is timestamped for audit and dispute review'
+        ],
+        media: { ...videos.crm, title: 'Event log to operator alert', text: 'Failure visibility patterns shared across CRM, billing, and referral integrations.' }
       }
     ],
     process: [
       { title: 'System inventory', text: 'List tools, credentials, and which direction data must flow.' },
       { title: 'Event mapping', text: 'Define webhook payloads, idempotency, and failure alerts.' },
       { title: 'Integration build', text: 'Implement and test in staging with real sample events.' },
+      { title: 'Staging validation', text: 'Replay real sample payloads before cutover so production traffic never hits untested code.' },
       { title: 'Monitor & document', text: 'Runbook for failures and owner-visible last-success timestamps.' }
     ],
     idealFor: [
       'Businesses running Stripe plus custom job or referral trackers',
       'Teams connecting OutreachEngine or Email-Agent to external CRMs',
       'Owners needing Google Search Console data in growth workflows',
-      'Referral programs ready for automated payout status'
+      'Referral programs ready for automated payout status',
+      'Contractors syncing vendor portal tickets like Vendoroo to internal job records',
+      'Teams that have been burned by a webhook failing silently before'
     ],
     proof: {
       title: 'Referral network Stripe webhooks',
@@ -1176,7 +1244,10 @@ const subPages = [
     faq: [
       { q: 'Do you integrate Zapier instead of custom code?', a: 'We prefer direct integrations for critical paths — webhooks, CRM, and payments — with logging you control.' },
       { q: 'Can you connect Microsoft or Zoho email?', a: 'Email-Agent supports Gmail, Zoho, and Microsoft with brand mapping KL/KG/ST for routed views.' },
-      { q: 'What about API rate limits?', a: 'We design queues and backoff for Google and social APIs — especially Social Poster runners.' }
+      { q: 'What about API rate limits?', a: 'We design queues and backoff for Google and social APIs — especially Social Poster runners.' },
+      { q: 'How do you prevent duplicate webhook processing?', a: 'Idempotency keys on every event mean a retried or duplicated Stripe or portal webhook updates a record once, not twice.' },
+      { q: 'Can you sync a vendor portal like Vendoroo?', a: 'Yes — ticket status and invoice events from vendor portals sync back into job records so billing and field work stay aligned.' },
+      { q: 'Who gets notified if an integration breaks?', a: 'Failure alerts route to the owner or ops team through the same Knight Command Logs pattern used across other automation lanes.' }
     ],
     links: [['/service-ai-automation', 'Automation Services'], ['/stripe-invoice-automation', 'Stripe Automation'], ['/crm-outreach-lead-generation', 'CRM Outreach']],
     cta: { title: 'Which systems need to talk?', text: 'List your tools and manual copy-paste steps — we will map integration scope.' }
@@ -1200,7 +1271,7 @@ const subPages = [
         'Review requests sent randomly or not at all',
         'Follow-up on stale quotes inconsistent'
       ],
-      media: videos.crm
+      media: images.knightCommandShell
     },
     features: [
       { icon: 'fa-inbox', label: 'Intake', title: 'Intake to action', text: 'Form or ticket in → record created → owner notified → tracker updated automatically.' },
@@ -1213,7 +1284,7 @@ const subPages = [
         kicker: 'Outreach cadence',
         title: 'first_touch and followup scheduler',
         text: 'OutreachEngine scheduler drives first_touch and followup sends with daily caps and bounce detection.',
-        media: videos.crm
+        media: images.crmSystemUi
       },
       {
         kicker: 'Concrete triggers',
@@ -1227,7 +1298,7 @@ const subPages = [
           '4. Ticket photo missing → block closeout until proof attaches.',
           '5. Failed runner or webhook → Logs alert same day, pause/resume runbook documented.'
         ],
-        media: { ...videos.crm, title: 'Trigger → monitor → recover', text: 'Review-request and follow-up automation with visible failures.' }
+        media: images.emailAgentUi
       }
     ],
     process: [
@@ -1262,6 +1333,8 @@ const subPages = [
     links: [['/automation', 'Automation Overview'], ['/ticketing-invoicing-job-workflows', 'Job Workflows'], ['/review-request-systems', 'Review Requests']],
     cta: { title: 'Which process repeats every week?', text: 'Describe the steps — we will identify automation triggers with safe fallbacks.' }
   },
+  // MEDIA NOTE: needs a real screenshot of an owner-facing dashboard build (queue depth /
+  // revenue cards) once a client engagement ships one — currently reuses videos.referral/videos.crm.
   {
     slug: 'business-dashboard-development',
     parent: { href: '/service-ai-automation', label: 'AI Automation' },
@@ -1274,20 +1347,23 @@ const subPages = [
     problem: {
       kicker: 'Blind spots',
       title: 'Owners log into five tools and still do not know what needs attention',
-      text: 'CRM queue in one tab, Stripe in another, GBP in a third. Dashboards should answer: what failed, what is stale, and what produced leads this week.',
+      text: 'CRM queue in one tab, Stripe in another, GBP in a third, Vendoroo tickets in a fourth. Dashboards should answer three questions fast: what failed overnight, what is stale and needs a nudge, and what actually produced leads or bookings this week — without stitching five exports together in a spreadsheet.',
       bullets: [
         'No single view of outreach queue and follow-up due',
         'Referral partner activity invisible until disputes arise',
         'Invoice paid status not on the same screen as open jobs',
-        'Desktop-only admin tools unusable from phone'
+        'Desktop-only admin tools unusable from phone',
+        'Vendor portal ticket status disconnected from the owner view entirely'
       ],
-      media: { ...videos.referral, title: 'Partner dashboard', text: 'Referral-dashboard style visibility for leads and payouts.' }
+      media: images.knightCommandShell
     },
     features: [
       { icon: 'fa-filter', label: 'Leads', title: 'Lead & source reporting', text: 'Channels, partners, campaigns, and lists that produce consults.' },
       { icon: 'fa-heart-pulse', label: 'Health', title: 'Ops health', text: 'Queue depth, last successful send, bounce rate, and failure alerts.' },
       { icon: 'fa-dollar-sign', label: 'Revenue', title: 'Revenue signals', text: 'Quotes, booked jobs, invoices sent, and paid status where Stripe is connected.' },
-      { icon: 'fa-mobile-screen', label: 'Mobile', title: 'Mobile-friendly views', text: 'Check the business from phone without complex admin UIs.' }
+      { icon: 'fa-mobile-screen', label: 'Mobile', title: 'Mobile-friendly views', text: 'Check the business from phone without complex admin UIs.' },
+      { icon: 'fa-ticket', label: 'Tickets', title: 'Vendor ticket rollups', text: 'Open, in-progress, and closed Vendoroo-style portal tickets summarized alongside billing status.' },
+      { icon: 'fa-clock-rotate-left', label: 'History', title: 'Trend context', text: 'Week-over-week comparisons so a slow Tuesday reads as normal instead of alarming.' }
     ],
     mediaBlocks: [
       {
@@ -1295,19 +1371,36 @@ const subPages = [
         title: 'Knight Command owner tab',
         text: 'Embeds outreach, email, social, and referral services behind one authenticated shell with Logs for failure review.',
         media: videos.referral
+      },
+      {
+        kicker: 'What the owner screen shows',
+        title: 'One card per decision, not one chart per vanity metric',
+        text: 'The dashboards we build skip generic traffic graphs in favor of cards an owner can act on the same morning — queue depth, stale leads, and money in motion.',
+        align: 'right',
+        bullets: [
+          'Outreach queue depth and last successful send timestamp',
+          'Leads by source this week vs the trailing four-week average',
+          'Open vs paid invoices with days-outstanding flagged in red',
+          'Referral partner activity and pending payout amounts',
+          'Failed automations or bounces that need a human look today'
+        ],
+        media: { ...videos.crm, title: 'Queue-to-dashboard pipeline', text: 'CRM outreach data feeding the same owner view as billing and referrals.' }
       }
     ],
     process: [
       { title: 'KPI selection', text: 'Pick metrics that drive decisions — not vanity traffic.' },
       { title: 'Data sources', text: 'Wire OutreachEngine, Neon referral events, Stripe, and job trackers.' },
       { title: 'Dashboard build', text: 'Role-based views with mobile layout priority for owners.' },
+      { title: 'Threshold alerts', text: 'Set the queue-depth and bounce-rate numbers that should trigger a same-day alert instead of waiting for the monthly review.' },
       { title: 'Review cadence', text: 'Monthly readout and threshold alerts.' }
     ],
     idealFor: [
       'Owners running outreach plus referrals simultaneously',
       'Businesses with Stripe invoicing and open job queues',
       'Teams needing partner-visible referral-dashboard views',
-      'Operators replacing spreadsheet KPI tabs'
+      'Operators replacing spreadsheet KPI tabs',
+      'Vendor-portal contractors who need ticket status next to billing status',
+      'Multi-brand owners checking KL, KG, and ST performance from one login'
     ],
     proof: {
       title: 'Knight Command ops shell',
@@ -1321,7 +1414,10 @@ const subPages = [
     faq: [
       { q: 'Can partners see their own dashboard?', a: 'Yes — referral-dashboard pattern gives partners QR, lead, and payout visibility without owner-only data.' },
       { q: 'Do you use off-the-shelf BI tools?', a: 'We build lean custom views integrated with your stack — faster than generic BI for small business ops.' },
-      { q: 'How often is data refreshed?', a: 'Near real-time for webhooks and queues; nightly rollups where appropriate for reporting.' }
+      { q: 'How often is data refreshed?', a: 'Near real-time for webhooks and queues; nightly rollups where appropriate for reporting.' },
+      { q: 'Can vendor portal ticket data show up next to billing?', a: 'Yes — Vendoroo-style ticket status can roll up alongside Stripe invoice status so an owner sees open work and open balances on the same card.' },
+      { q: 'What if we do not have Stripe or CRM data yet?', a: 'We can scope dashboard-ready tracking as part of the same engagement — a dashboard is only as good as the events feeding it, so wiring often comes first.' },
+      { q: 'Will this replace our accounting software?', a: 'No — dashboards summarize signals for daily decisions. Invoicing and books stay in Stripe and your accounting system; we read from them, not replace them.' }
     ],
     links: [['/business-growth-systems', 'Growth Systems'], ['/case-study-knight-command', 'Knight Command'], ['/referral-network-systems', 'Referral Dashboards']],
     cta: { title: 'What should one screen show?', text: 'List the numbers you check every morning — we will design the owner dashboard around them.' }
@@ -1364,7 +1460,7 @@ const subPages = [
         kicker: 'Live demo',
         title: 'Email-Agent routing walkthrough',
         text: 'See crm_reply vs formspree_lead separation and brand mapping in the production interface.',
-        media: { ...videos.email, title: 'Email-Agent routing', text: 'Multi-inbox views on port 5100.' }
+        media: images.emailAgentUi
       },
       {
         kicker: 'How views differ',
@@ -1378,7 +1474,14 @@ const subPages = [
           '4. Manual threads stay operator-owned without mixing into campaign queues.',
           '5. Bounce signals loop back to OutreachEngine before the next capped send window.'
         ],
-        media: { ...videos.email, title: 'Provider → view → bounce loop', text: 'Email-Agent brand maps and reply routing.' }
+        media: {
+          type: 'media-needed',
+          aspect: '16:9',
+          page: '/email-agent-automation',
+          brief: 'Email-Agent provider → view → bounce loop UI — show form vs crm_reply separation with brand map',
+          specs: 'Screenshot · 1600×900 · redact addresses',
+          alt: 'Email-Agent bounce and view loop (capture needed)'
+        }
       }
     ],
     process: [
@@ -1451,7 +1554,14 @@ const subPages = [
         kicker: 'Live runner',
         title: 'Social Poster Streamlit UI',
         text: 'Queue management, posting windows, and failure visibility embedded in Knight Command Social Poster tab.',
-        media: { ...videos.social, title: 'Social media manager', text: 'Multi-brand queue on port 8501.' }
+        media: {
+          type: 'media-needed',
+          aspect: '16:9',
+          page: '/social-media-automation-systems',
+          brief: 'Social Poster queue screenshot — brand lanes, scheduled posts, last-success timestamps (replace HTML mockup)',
+          specs: 'Screenshot · 1600×900 · redact tokens',
+          alt: 'Social Poster queue (capture needed)'
+        }
       },
       {
         kicker: 'API vs Playwright',
@@ -1465,7 +1575,14 @@ const subPages = [
           '4. Schedule GBP local posts tied to the same site campaigns.',
           '5. Report failures and last-success timestamps in Social Ops / Logs.'
         ],
-        media: { ...videos.social, title: 'Queue → runner → report', text: 'Social scheduling multi-brand with failure reporting.' }
+        media: {
+          type: 'media-needed',
+          aspect: '16:9',
+          page: '/social-media-automation-systems',
+          brief: 'Social Ops engagement / growth-agent sweep UI from Knight Command Social Ops tab',
+          specs: 'Screenshot · 1600×900 · redact tokens',
+          alt: 'Social Ops UI (capture needed)'
+        }
       }
     ],
     process: [
@@ -1966,6 +2083,8 @@ const subPages = [
     cta: { title: 'Join the painting trade lane?', text: 'Share your services and markets — we will scope search-ready or full growth-system fit.' }
   },
   {
+    // MEDIA NOTE: needs real branded restaurant/bar screenshots once a hospitality client
+    // launches publicly — currently reuses images.hospitalityEvents/images.hospitalityMenus.
     slug: 'restaurant-bar-growth-systems',
     parent: { href: '/online-ordering-systems', label: 'Ordering Systems' },
     title: 'Restaurant & Bar Growth Systems',
@@ -1983,12 +2102,13 @@ const subPages = [
     problem: {
       kicker: 'Beyond PDF menus',
       title: 'Restaurants lose regulars when events and hours are hard to find',
-      text: 'Static menus and Facebook-only event posts fragment your brand. Customers want tonight\'s specials, order-ahead, and accurate hours on a fast mobile site.',
+      text: 'Static menus and Facebook-only event posts fragment your brand. Customers want tonight\'s specials, order-ahead, and accurate hours on a fast mobile site. When a PDF menu is three months stale and Instagram is the only place trivia night gets announced, regulars start checking a competitor\'s page instead of yours.',
       bullets: [
         'Menu updates require developer tickets',
         'Events scattered across social platforms',
         'No owned ordering path — only third-party apps',
-        'GBP hours and website specials out of sync'
+        'GBP hours and website specials out of sync',
+        'Slow, template-based sites lag during Friday night peak traffic'
       ],
       media: images.hospitalityEvents
     },
@@ -1996,7 +2116,9 @@ const subPages = [
       { icon: 'fa-calendar-star', label: 'Events', title: 'Events & menus', text: 'Admin-editable specials, events, and hours — staff-friendly hospitality UX.' },
       { icon: 'fa-bag-shopping', label: 'Order', title: 'Ordering flows', text: 'Pickup or order-ahead paths without enterprise POS lock-in.' },
       { icon: 'fa-map-marker-alt', label: 'Local', title: 'Local visibility', text: 'GBP alignment, schema, and map discovery support.' },
-      { icon: 'fa-plug', label: 'POS', title: 'Future POS hooks', text: 'Room for Toast or POS integration as volume grows.' }
+      { icon: 'fa-plug', label: 'POS', title: 'Future POS hooks', text: 'Room for Toast or POS integration as volume grows.' },
+      { icon: 'fa-gauge-high', label: 'Speed', title: 'Hand-coded performance', text: 'No page-builder bloat slowing down mobile load during peak Friday and Saturday traffic.' },
+      { icon: 'fa-star', label: 'Reviews', title: 'Post-visit review timing', text: 'Review requests timed after the check closes — not blasted to every visitor at once.' }
     ],
     mediaBlocks: [
       {
@@ -2004,19 +2126,36 @@ const subPages = [
         title: 'Staff-editable specials and owned checkout',
         text: 'Kitchen and bar staff publish tonight\'s menu without an agency ticket. Stripe-ready pickup keeps orders on your domain — not only third-party marketplaces.',
         media: images.hospitalityMenus
+      },
+      {
+        kicker: 'Weekly rhythm',
+        title: 'Built around how a kitchen actually runs the week',
+        text: 'Hospitality content changes daily — specials, live music, happy hour, and holiday hours. The admin patterns we build match that rhythm instead of fighting it.',
+        align: 'right',
+        bullets: [
+          'Daily specials editable by whoever runs the pass that night',
+          'Recurring events — trivia, live music, brunch — scheduled once and repeating automatically',
+          'Holiday hours override standard hours without breaking the schema',
+          'Happy hour windows reflected consistently on site and GBP',
+          'Photos and menu PDFs swap out without a developer ticket'
+        ],
+        media: images.hospitalityEvents
       }
     ],
     process: [
       { title: 'Content workflow', text: 'Who updates menus, events, and hours — and how often.' },
       { title: 'Site & admin build', text: 'Hand-coded hospitality UX with editable content zones.' },
       { title: 'Ordering path', text: 'Stripe or order-ahead flow scoped to your kitchen ops.' },
+      { title: 'Staff training', text: 'Walk the team who will actually publish specials through the admin before launch.' },
       { title: 'Local launch', text: 'GBP, schema, and review request timing post-open.' }
     ],
     idealFor: [
       'Tampa Bay restaurants and bars upgrading from brochure sites',
       'Venues with weekly events needing easy admin edits',
       'Owners wanting owned ordering before app commission fatigue',
-      'Hospitality brands planning POS integration later'
+      'Hospitality brands planning POS integration later',
+      'Venues with recurring live music, trivia, or brunch that need a real events calendar',
+      'Owners tired of GBP hours contradicting the website'
     ],
     proof: {
       title: 'Hospitality stack we deploy',
@@ -2030,7 +2169,10 @@ const subPages = [
     faq: [
       { q: 'Can you show a live restaurant example?', a: 'We walk prospects through the system pattern and admin workflows on a consult. Branded hospitality case studies go live only after a client approves public marketing — ask us what we can share for your vertical today.' },
       { q: 'Do you replace Toast?', a: 'We build owned web ordering first; POS integrations scoped when you are ready.' },
-      { q: 'Can bartenders update specials?', a: 'Admin patterns target staff-friendly edits without code.' }
+      { q: 'Can bartenders update specials?', a: 'Admin patterns target staff-friendly edits without code.' },
+      { q: 'How do you handle recurring events like trivia or live music?', a: 'Recurring events are scheduled once in the admin and repeat automatically, instead of re-entering the same trivia night every single week.' },
+      { q: 'What happens to our site during Friday night rush?', a: 'Hand-coded pages avoid the page-builder bloat that causes slow mobile loads exactly when order volume peaks.' },
+      { q: 'Can we start with just a site and add ordering later?', a: 'Yes — the hospitality lane is designed so events and menus launch first, with ordering-ready architecture already in place for when kitchen ops are ready.' }
     ],
     links: [['/online-ordering-systems', 'Ordering Systems'], ['/case-study-hospitality-system-pattern', 'Hospitality System Pattern'], ['/local-visibility-systems', 'Local Visibility']],
     cta: { title: 'Planning a restaurant or bar site?', text: 'Tell us about menus, events, and how you want orders to flow.' }
@@ -2197,7 +2339,14 @@ const subPages = [
         'Paid status not reflected on job tracker',
         'Referral or partner fees not tied to Stripe webhooks'
       ],
-      media: { ...videos.referral, title: 'Stripe webhooks', text: 'Payment and referral payout events in one reliability model.' }
+      media: {
+        type: 'media-needed',
+        aspect: '16:9',
+        page: '/stripe-invoice-automation',
+        brief: 'Completed job record with Stripe payment-link / invoice status — do not reuse referral dashboard video',
+        specs: 'Screenshot · 1600×900 · redact customer PII',
+        alt: 'Job invoice status (capture needed)'
+      }
     },
     features: [
       { icon: 'fa-check-double', label: 'Trigger', title: 'Job → invoice trigger', text: 'Completed status creates invoice draft or payment link automatically.' },

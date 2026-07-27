@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-07-15T20:47:01.553Z",
+  "generatedAt": "2026-07-26T14:19:47.471Z",
   "target": 1000,
   "method": "Visible text after stripping head/scripts/styles/nav/header/footer containers. Crawl-fallback footer links still included when present in page HTML.",
   "summary": {
-    "total": 77,
-    "critical": 1,
-    "thin": 7,
-    "belowTarget": 18,
-    "ok": 46,
+    "total": 114,
+    "critical": 6,
+    "thin": 1,
+    "belowTarget": 0,
+    "ok": 102,
     "legal": 5,
-    "median": 1007,
-    "mean": 1083
+    "median": 1102,
+    "mean": 1272
   },
   "pages": [
     {
@@ -19,6 +19,34 @@
       "words": 7,
       "bucket": "critical",
       "chars": 43
+    },
+    {
+      "page": "service-terms",
+      "file": "service-terms.html",
+      "words": 278,
+      "bucket": "critical",
+      "chars": 1899
+    },
+    {
+      "page": "sample-white-label-website-audit",
+      "file": "sample-white-label-website-audit.html",
+      "words": 284,
+      "bucket": "critical",
+      "chars": 1747
+    },
+    {
+      "page": "sample-local-opportunity-pack",
+      "file": "sample-local-opportunity-pack.html",
+      "words": 294,
+      "bucket": "critical",
+      "chars": 1764
+    },
+    {
+      "page": "sample-website-health-audit",
+      "file": "sample-website-health-audit.html",
+      "words": 342,
+      "bucket": "critical",
+      "chars": 2150
     },
     {
       "page": "disclaimer",
@@ -35,11 +63,18 @@
       "chars": 2598
     },
     {
+      "page": "sample-full-access-website-audit",
+      "file": "sample-full-access-website-audit.html",
+      "words": 395,
+      "bucket": "critical",
+      "chars": 2521
+    },
+    {
       "page": "free-website-audit",
       "file": "free-website-audit.html",
-      "words": 451,
+      "words": 452,
       "bucket": "thin",
-      "chars": 2835
+      "chars": 2845
     },
     {
       "page": "terms-of-service",
@@ -56,179 +91,11 @@
       "chars": 3438
     },
     {
-      "page": "nicholas-knight",
-      "file": "nicholas-knight.html",
-      "words": 539,
-      "bucket": "thin",
-      "chars": 3772
-    },
-    {
       "page": "privacy-policy",
       "file": "privacy-policy.html",
       "words": 565,
       "bucket": "legal",
       "chars": 3648
-    },
-    {
-      "page": "referral-program",
-      "file": "referral-program.html",
-      "words": 571,
-      "bucket": "thin",
-      "chars": 3862
-    },
-    {
-      "page": "videoforge",
-      "file": "videoforge.html",
-      "words": 589,
-      "bucket": "thin",
-      "chars": 4223
-    },
-    {
-      "page": "display-control-plus",
-      "file": "display-control-plus.html",
-      "words": 593,
-      "bucket": "thin",
-      "chars": 4456
-    },
-    {
-      "page": "auto-vid-compiler",
-      "file": "auto-vid-compiler.html",
-      "words": 684,
-      "bucket": "thin",
-      "chars": 4250
-    },
-    {
-      "page": "service-desktop-apps",
-      "file": "service-desktop-apps.html",
-      "words": 695,
-      "bucket": "thin",
-      "chars": 4834
-    },
-    {
-      "page": "business-dashboard-development",
-      "file": "business-dashboard-development.html",
-      "words": 772,
-      "bucket": "below-target",
-      "chars": 5443
-    },
-    {
-      "page": "book-consultation",
-      "file": "book-consultation.html",
-      "words": 792,
-      "bucket": "below-target",
-      "chars": 5098
-    },
-    {
-      "page": "case-study-knight-logics",
-      "file": "case-study-knight-logics.html",
-      "words": 797,
-      "bucket": "below-target",
-      "chars": 5244
-    },
-    {
-      "page": "api-integration-services",
-      "file": "api-integration-services.html",
-      "words": 808,
-      "bucket": "below-target",
-      "chars": 5678
-    },
-    {
-      "page": "restaurant-bar-growth-systems",
-      "file": "restaurant-bar-growth-systems.html",
-      "words": 810,
-      "bucket": "below-target",
-      "chars": 5614
-    },
-    {
-      "page": "starting-a-new-business",
-      "file": "starting-a-new-business.html",
-      "words": 1200,
-      "bucket": "target",
-      "chars": 7500
-    },
-    {
-      "page": "contact",
-      "file": "contact.html",
-      "words": 834,
-      "bucket": "below-target",
-      "chars": 5387
-    },
-    {
-      "page": "internal-business-tools",
-      "file": "internal-business-tools.html",
-      "words": 849,
-      "bucket": "below-target",
-      "chars": 5709
-    },
-    {
-      "page": "pixelforge-ai",
-      "file": "pixelforge-ai.html",
-      "words": 865,
-      "bucket": "below-target",
-      "chars": 5627
-    },
-    {
-      "page": "case-study-referral-network-system",
-      "file": "case-study-referral-network-system.html",
-      "words": 876,
-      "bucket": "below-target",
-      "chars": 6237
-    },
-    {
-      "page": "case-study-hospitality-system-pattern",
-      "file": "case-study-hospitality-system-pattern.html",
-      "words": 878,
-      "bucket": "below-target",
-      "chars": 6388
-    },
-    {
-      "page": "online-ordering-systems",
-      "file": "online-ordering-systems.html",
-      "words": 897,
-      "bucket": "below-target",
-      "chars": 6365
-    },
-    {
-      "page": "case-studies",
-      "file": "case-studies.html",
-      "words": 908,
-      "bucket": "below-target",
-      "chars": 6245
-    },
-    {
-      "page": "case-study-vendoroo-ticket-invoice-system",
-      "file": "case-study-vendoroo-ticket-invoice-system.html",
-      "words": 911,
-      "bucket": "below-target",
-      "chars": 6245
-    },
-    {
-      "page": "case-study-social-poster",
-      "file": "case-study-social-poster.html",
-      "words": 918,
-      "bucket": "below-target",
-      "chars": 6165
-    },
-    {
-      "page": "case-study-farrell-electric",
-      "file": "case-study-farrell-electric.html",
-      "words": 940,
-      "bucket": "below-target",
-      "chars": 6101
-    },
-    {
-      "page": "performance-partner-program",
-      "file": "performance-partner-program.html",
-      "words": 952,
-      "bucket": "below-target",
-      "chars": 6820
-    },
-    {
-      "page": "website-growth-audit",
-      "file": "website-growth-audit.html",
-      "words": 971,
-      "bucket": "below-target",
-      "chars": 6445
     },
     {
       "page": "home-service-websites",
@@ -245,6 +112,13 @@
       "chars": 6820
     },
     {
+      "page": "case-study-sals-painting",
+      "file": "case-study-sals-painting.html",
+      "words": 1001,
+      "bucket": "ok",
+      "chars": 7069
+    },
+    {
       "page": "excavation-business-growth-systems",
       "file": "excavation-business-growth-systems.html",
       "words": 1001,
@@ -252,25 +126,11 @@
       "chars": 6834
     },
     {
-      "page": "case-study-sals-painting",
-      "file": "case-study-sals-painting.html",
-      "words": 1004,
-      "bucket": "ok",
-      "chars": 7078
-    },
-    {
       "page": "painter-business-growth-systems",
       "file": "painter-business-growth-systems.html",
       "words": 1006,
       "bucket": "ok",
       "chars": 6974
-    },
-    {
-      "page": "remote-us-services",
-      "file": "remote-us-services.html",
-      "words": 1006,
-      "bucket": "ok",
-      "chars": 6447
     },
     {
       "page": "service-area-page-strategy",
@@ -294,11 +154,46 @@
       "chars": 6685
     },
     {
+      "page": "case-study-knight-logics",
+      "file": "case-study-knight-logics.html",
+      "words": 1010,
+      "bucket": "ok",
+      "chars": 6566
+    },
+    {
       "page": "workflow-automation",
       "file": "workflow-automation.html",
       "words": 1014,
       "bucket": "ok",
       "chars": 7063
+    },
+    {
+      "page": "online-ordering-systems",
+      "file": "online-ordering-systems.html",
+      "words": 1017,
+      "bucket": "ok",
+      "chars": 7159
+    },
+    {
+      "page": "performance-partner-program",
+      "file": "performance-partner-program.html",
+      "words": 1025,
+      "bucket": "ok",
+      "chars": 7294
+    },
+    {
+      "page": "search-performance-retainer",
+      "file": "search-performance-retainer.html",
+      "words": 1025,
+      "bucket": "ok",
+      "chars": 6371
+    },
+    {
+      "page": "white-label-website-audit",
+      "file": "white-label-website-audit.html",
+      "words": 1026,
+      "bucket": "ok",
+      "chars": 6129
     },
     {
       "page": "social-media-automation-systems",
@@ -322,6 +217,13 @@
       "chars": 7044
     },
     {
+      "page": "trade-partnership",
+      "file": "trade-partnership.html",
+      "words": 1034,
+      "bucket": "ok",
+      "chars": 6295
+    },
+    {
       "page": "ticketing-invoicing-job-workflows",
       "file": "ticketing-invoicing-job-workflows.html",
       "words": 1036,
@@ -329,18 +231,74 @@
       "chars": 6948
     },
     {
-      "page": "web-designer-palm-harbor",
-      "file": "web-designer-palm-harbor.html",
-      "words": 1036,
+      "page": "local-opportunity-pack",
+      "file": "local-opportunity-pack.html",
+      "words": 1037,
       "bucket": "ok",
-      "chars": 6456
+      "chars": 6138
     },
     {
-      "page": "service-google-business-profile",
-      "file": "service-google-business-profile.html",
-      "words": 1051,
+      "page": "package-demo-preview",
+      "file": "package-demo-preview.html",
+      "words": 1037,
       "bucket": "ok",
-      "chars": 6945
+      "chars": 6146
+    },
+    {
+      "page": "package-local-launch",
+      "file": "package-local-launch.html",
+      "words": 1037,
+      "bucket": "ok",
+      "chars": 6354
+    },
+    {
+      "page": "website-growth-audit",
+      "file": "website-growth-audit.html",
+      "words": 1039,
+      "bucket": "ok",
+      "chars": 6815
+    },
+    {
+      "page": "package-preview-launch",
+      "file": "package-preview-launch.html",
+      "words": 1044,
+      "bucket": "ok",
+      "chars": 6375
+    },
+    {
+      "page": "service-packages",
+      "file": "service-packages.html",
+      "words": 1044,
+      "bucket": "ok",
+      "chars": 6404
+    },
+    {
+      "page": "case-study-referral-network-system",
+      "file": "case-study-referral-network-system.html",
+      "words": 1048,
+      "bucket": "ok",
+      "chars": 7315
+    },
+    {
+      "page": "package-authority-network",
+      "file": "package-authority-network.html",
+      "words": 1057,
+      "bucket": "ok",
+      "chars": 7113
+    },
+    {
+      "page": "nicholas-knight",
+      "file": "nicholas-knight.html",
+      "words": 1059,
+      "bucket": "ok",
+      "chars": 6947
+    },
+    {
+      "page": "growth-systems-offer",
+      "file": "growth-systems-offer.html",
+      "words": 1060,
+      "bucket": "ok",
+      "chars": 6576
     },
     {
       "page": "local-visibility-systems",
@@ -350,11 +308,11 @@
       "chars": 7061
     },
     {
-      "page": "automation",
-      "file": "automation.html",
-      "words": 1064,
+      "page": "service-areas",
+      "file": "service-areas.html",
+      "words": 1061,
       "bucket": "ok",
-      "chars": 7160
+      "chars": 6790
     },
     {
       "page": "screen-enclosure-business-growth-systems",
@@ -371,6 +329,27 @@
       "chars": 7202
     },
     {
+      "page": "referral-program",
+      "file": "referral-program.html",
+      "words": 1072,
+      "bucket": "ok",
+      "chars": 7026
+    },
+    {
+      "page": "business-dashboard-development",
+      "file": "business-dashboard-development.html",
+      "words": 1073,
+      "bucket": "ok",
+      "chars": 7310
+    },
+    {
+      "page": "case-study-vendoroo-ticket-invoice-system",
+      "file": "case-study-vendoroo-ticket-invoice-system.html",
+      "words": 1074,
+      "bucket": "ok",
+      "chars": 7258
+    },
+    {
       "page": "electrician-business-growth-systems",
       "file": "electrician-business-growth-systems.html",
       "words": 1076,
@@ -385,11 +364,67 @@
       "chars": 7239
     },
     {
+      "page": "package-max-authority",
+      "file": "package-max-authority.html",
+      "words": 1080,
+      "bucket": "ok",
+      "chars": 7183
+    },
+    {
+      "page": "contact",
+      "file": "contact.html",
+      "words": 1081,
+      "bucket": "ok",
+      "chars": 6867
+    },
+    {
+      "page": "case-study-social-poster",
+      "file": "case-study-social-poster.html",
+      "words": 1084,
+      "bucket": "ok",
+      "chars": 7207
+    },
+    {
+      "page": "case-study-hospitality-system-pattern",
+      "file": "case-study-hospitality-system-pattern.html",
+      "words": 1086,
+      "bucket": "ok",
+      "chars": 7605
+    },
+    {
+      "page": "api-integration-services",
+      "file": "api-integration-services.html",
+      "words": 1087,
+      "bucket": "ok",
+      "chars": 7472
+    },
+    {
+      "page": "pixelforge-ai",
+      "file": "pixelforge-ai.html",
+      "words": 1091,
+      "bucket": "ok",
+      "chars": 6984
+    },
+    {
+      "page": "restaurant-bar-growth-systems",
+      "file": "restaurant-bar-growth-systems.html",
+      "words": 1099,
+      "bucket": "ok",
+      "chars": 7435
+    },
+    {
       "page": "service-local-seo",
       "file": "service-local-seo.html",
       "words": 1102,
       "bucket": "ok",
       "chars": 7338
+    },
+    {
+      "page": "book-consultation",
+      "file": "book-consultation.html",
+      "words": 1107,
+      "bucket": "ok",
+      "chars": 6998
     },
     {
       "page": "referral-network-systems",
@@ -399,25 +434,39 @@
       "chars": 7669
     },
     {
+      "page": "case-study-farrell-electric",
+      "file": "case-study-farrell-electric.html",
+      "words": 1123,
+      "bucket": "ok",
+      "chars": 7048
+    },
+    {
+      "page": "website-health-audit",
+      "file": "website-health-audit.html",
+      "words": 1134,
+      "bucket": "ok",
+      "chars": 7081
+    },
+    {
+      "page": "service-desktop-apps",
+      "file": "service-desktop-apps.html",
+      "words": 1135,
+      "bucket": "ok",
+      "chars": 7654
+    },
+    {
       "page": "case-study-jns",
       "file": "case-study-jns.html",
-      "words": 1114,
+      "words": 1142,
       "bucket": "ok",
-      "chars": 7538
+      "chars": 7753
     },
     {
-      "page": "case-study-moms-resin-tables",
-      "file": "case-study-moms-resin-tables.html",
-      "words": 1151,
+      "page": "internal-business-tools",
+      "file": "internal-business-tools.html",
+      "words": 1145,
       "bucket": "ok",
-      "chars": 8484
-    },
-    {
-      "page": "web-designer-safety-harbor",
-      "file": "web-designer-safety-harbor.html",
-      "words": 1165,
-      "bucket": "ok",
-      "chars": 7286
+      "chars": 7504
     },
     {
       "page": "handyman-business-growth-systems",
@@ -425,6 +474,20 @@
       "words": 1170,
       "bucket": "ok",
       "chars": 7684
+    },
+    {
+      "page": "package-storefront",
+      "file": "package-storefront.html",
+      "words": 1187,
+      "bucket": "ok",
+      "chars": 8279
+    },
+    {
+      "page": "case-studies",
+      "file": "case-studies.html",
+      "words": 1194,
+      "bucket": "ok",
+      "chars": 7826
     },
     {
       "page": "contractor-growth-systems",
@@ -441,6 +504,13 @@
       "chars": 8149
     },
     {
+      "page": "full-access-website-audit",
+      "file": "full-access-website-audit.html",
+      "words": 1209,
+      "bucket": "ok",
+      "chars": 7521
+    },
+    {
       "page": "case-study-evidencedesk-ai",
       "file": "case-study-evidencedesk-ai.html",
       "words": 1239,
@@ -455,60 +525,95 @@
       "chars": 8571
     },
     {
-      "page": "case-study-screen-team",
-      "file": "case-study-screen-team.html",
-      "words": 1332,
+      "page": "case-study-moms-resin-tables",
+      "file": "case-study-moms-resin-tables.html",
+      "words": 1257,
       "bucket": "ok",
-      "chars": 9196
+      "chars": 9056
     },
     {
-      "page": "business-growth-systems",
-      "file": "business-growth-systems.html",
+      "page": "service-google-business-profile",
+      "file": "service-google-business-profile.html",
+      "words": 1257,
+      "bucket": "ok",
+      "chars": 8330
+    },
+    {
+      "page": "automation",
+      "file": "automation.html",
+      "words": 1265,
+      "bucket": "ok",
+      "chars": 8501
+    },
+    {
+      "page": "display-control-plus",
+      "file": "display-control-plus.html",
+      "words": 1288,
+      "bucket": "ok",
+      "chars": 9230
+    },
+    {
+      "page": "package-authority-site",
+      "file": "package-authority-site.html",
+      "words": 1290,
+      "bucket": "ok",
+      "chars": 8251
+    },
+    {
+      "page": "auto-vid-compiler",
+      "file": "auto-vid-compiler.html",
+      "words": 1326,
+      "bucket": "ok",
+      "chars": 8109
+    },
+    {
+      "page": "remote-us-services",
+      "file": "remote-us-services.html",
       "words": 1367,
       "bucket": "ok",
-      "chars": 9036
+      "chars": 8773
     },
     {
-      "page": "service-ecommerce",
-      "file": "service-ecommerce.html",
-      "words": 1388,
+      "page": "case-study-screen-team",
+      "file": "case-study-screen-team.html",
+      "words": 1408,
       "bucket": "ok",
-      "chars": 9762
+      "chars": 9920
     },
     {
       "page": "case-study-faith-works",
       "file": "case-study-faith-works.html",
-      "words": 1434,
+      "words": 1432,
       "bucket": "ok",
-      "chars": 9598
+      "chars": 9592
     },
     {
       "page": "service-ai-automation",
       "file": "service-ai-automation.html",
-      "words": 1493,
+      "words": 1484,
       "bucket": "ok",
-      "chars": 10475
+      "chars": 10427
     },
     {
-      "page": "case-study-knight-group",
-      "file": "case-study-knight-group.html",
-      "words": 1511,
+      "page": "service-ecommerce",
+      "file": "service-ecommerce.html",
+      "words": 1523,
       "bucket": "ok",
-      "chars": 10414
+      "chars": 10676
     },
     {
-      "page": "web-designer-clearwater",
-      "file": "web-designer-clearwater.html",
-      "words": 1581,
+      "page": "videoforge",
+      "file": "videoforge.html",
+      "words": 1564,
       "bucket": "ok",
-      "chars": 10201
+      "chars": 10396
     },
     {
-      "page": "web-designer-tampa",
-      "file": "web-designer-tampa.html",
-      "words": 1601,
+      "page": "package-growth-system",
+      "file": "package-growth-system.html",
+      "words": 1574,
       "bucket": "ok",
-      "chars": 10191
+      "chars": 10253
     },
     {
       "page": "case-study-roof-monsters",
@@ -518,6 +623,139 @@
       "chars": 10720
     },
     {
+      "page": "case-study-knight-group",
+      "file": "case-study-knight-group.html",
+      "words": 1651,
+      "bucket": "ok",
+      "chars": 11449
+    },
+    {
+      "page": "web-designer-clearwater",
+      "file": "web-designer-clearwater.html",
+      "words": 1824,
+      "bucket": "ok",
+      "chars": 12114
+    },
+    {
+      "page": "web-designer-riverview",
+      "file": "web-designer-riverview.html",
+      "words": 1826,
+      "bucket": "ok",
+      "chars": 12118
+    },
+    {
+      "page": "web-designer-lutz",
+      "file": "web-designer-lutz.html",
+      "words": 1833,
+      "bucket": "ok",
+      "chars": 11776
+    },
+    {
+      "page": "web-designer-brandon",
+      "file": "web-designer-brandon.html",
+      "words": 1834,
+      "bucket": "ok",
+      "chars": 12013
+    },
+    {
+      "page": "web-designer-seminole",
+      "file": "web-designer-seminole.html",
+      "words": 1834,
+      "bucket": "ok",
+      "chars": 11995
+    },
+    {
+      "page": "web-designer-dunedin",
+      "file": "web-designer-dunedin.html",
+      "words": 1835,
+      "bucket": "ok",
+      "chars": 11934
+    },
+    {
+      "page": "web-designer-largo",
+      "file": "web-designer-largo.html",
+      "words": 1838,
+      "bucket": "ok",
+      "chars": 11832
+    },
+    {
+      "page": "web-designer-tampa",
+      "file": "web-designer-tampa.html",
+      "words": 1838,
+      "bucket": "ok",
+      "chars": 11945
+    },
+    {
+      "page": "web-designer-oldsmar",
+      "file": "web-designer-oldsmar.html",
+      "words": 1839,
+      "bucket": "ok",
+      "chars": 11978
+    },
+    {
+      "page": "web-designer-holiday",
+      "file": "web-designer-holiday.html",
+      "words": 1840,
+      "bucket": "ok",
+      "chars": 11892
+    },
+    {
+      "page": "web-designer-wesley-chapel",
+      "file": "web-designer-wesley-chapel.html",
+      "words": 1888,
+      "bucket": "ok",
+      "chars": 12205
+    },
+    {
+      "page": "web-designer-tarpon-springs",
+      "file": "web-designer-tarpon-springs.html",
+      "words": 1889,
+      "bucket": "ok",
+      "chars": 12312
+    },
+    {
+      "page": "web-designer-plant-city",
+      "file": "web-designer-plant-city.html",
+      "words": 1890,
+      "bucket": "ok",
+      "chars": 12220
+    },
+    {
+      "page": "web-designer-st-petersburg",
+      "file": "web-designer-st-petersburg.html",
+      "words": 1891,
+      "bucket": "ok",
+      "chars": 12360
+    },
+    {
+      "page": "web-designer-temple-terrace",
+      "file": "web-designer-temple-terrace.html",
+      "words": 1891,
+      "bucket": "ok",
+      "chars": 12446
+    },
+    {
+      "page": "web-designer-palm-harbor",
+      "file": "web-designer-palm-harbor.html",
+      "words": 1895,
+      "bucket": "ok",
+      "chars": 12188
+    },
+    {
+      "page": "web-designer-pinellas-park",
+      "file": "web-designer-pinellas-park.html",
+      "words": 1895,
+      "bucket": "ok",
+      "chars": 12340
+    },
+    {
+      "page": "web-designer-safety-harbor",
+      "file": "web-designer-safety-harbor.html",
+      "words": 1901,
+      "bucket": "ok",
+      "chars": 12348
+    },
+    {
       "page": "roofing-business-growth-systems",
       "file": "roofing-business-growth-systems.html",
       "words": 1926,
@@ -525,32 +763,53 @@
       "chars": 13060
     },
     {
-      "page": "web-designer-st-petersburg",
-      "file": "web-designer-st-petersburg.html",
-      "words": 2099,
+      "page": "web-designer-land-o-lakes",
+      "file": "web-designer-land-o-lakes.html",
+      "words": 1947,
       "bucket": "ok",
-      "chars": 13243
+      "chars": 12215
     },
     {
-      "page": "index",
-      "file": "index.html",
-      "words": 3028,
+      "page": "web-designer-new-port-richey",
+      "file": "web-designer-new-port-richey.html",
+      "words": 1950,
       "bucket": "ok",
-      "chars": 20487
+      "chars": 12369
     },
     {
-      "page": "pricing",
-      "file": "pricing.html",
-      "words": 3191,
+      "page": "starting-a-new-business",
+      "file": "starting-a-new-business.html",
+      "words": 2014,
       "bucket": "ok",
-      "chars": 21482
+      "chars": 12581
+    },
+    {
+      "page": "business-growth-systems",
+      "file": "business-growth-systems.html",
+      "words": 2135,
+      "bucket": "ok",
+      "chars": 13828
     },
     {
       "page": "service-websites",
       "file": "service-websites.html",
-      "words": 3349,
+      "words": 3177,
       "bucket": "ok",
-      "chars": 22618
+      "chars": 19872
+    },
+    {
+      "page": "pricing",
+      "file": "pricing.html",
+      "words": 3309,
+      "bucket": "ok",
+      "chars": 22499
+    },
+    {
+      "page": "index",
+      "file": "index.html",
+      "words": 3719,
+      "bucket": "ok",
+      "chars": 24655
     }
   ]
 }

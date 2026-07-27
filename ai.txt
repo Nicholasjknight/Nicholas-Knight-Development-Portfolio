@@ -1,6 +1,6 @@
 # Knight Logics — AI Discovery & Entity File
 # Canonical URL: https://knightlogics.com/ai.txt
-# Last updated: 2026-07-02
+# Last updated: 2026-07-25
 # Purpose: Primary machine-readable entry point for AI crawlers, answer engines, and agent systems.
 # Companion files: https://knightlogics.com/llms.txt (summary) | https://knightlogics.com/llms-full.txt (extended)
 
@@ -233,32 +233,43 @@ PUBLIC PRICING (canonical — source: data/package-catalog.json / knightlogics.c
 ================================================================================
 
 Website projects (ONE TIME / PROJECT unless noted):
-- Demo Preview Site: $200 (~1–5 preview pages, noindex)
-- Preview Launch Site: $750 (up to ~20 preview pages)
-- Local Site: $1,200 (up to 35 live pages + search foundation + working contact form)
-- Authority Site: $2,000 (35–60 pages + GBP setup/optimize)
-- Max Authority Site: $4,500 PROJECT (up to 40 pages deep authority build — not monthly ops)
-- Authority Network: from $6,500 SCOPED (60–100+ pages; deposit/consult — not flat open checkout)
+- Demo Preview: $200 (1–5 preview pages, noindex)
+- Preview Launch: $750 (up to 10 preview pages, noindex)
+- Local Site: $1,200 (up to 15 live pages)
+- Authority Site: $2,000 (up to 30 planned live pages + one GBP setup/optimization pass)
+- Max Authority Site: $4,500 PROJECT (up to 40 individually planned, research/conversion/technical-intensive live pages)
+- Authority Network: From $6,500 SCOPED (typically 60–100+ planned pages; $2,500 scope deposit, not flat open checkout)
 
 Managed Growth Systems (SETUP + MONTHLY — not handed-off one-time projects):
-- Growth System Starter: from $5,000 + $397/mo
-- Full Growth System: $5,000 + $697/mo
-- Custom / Field Ops: $10,000 + $1,000/mo
-- Systems-only variants available when the business already has a usable site
+- Growth Starter — Website + Systems: From $5,000 setup + $397/mo
+- Full Growth System — Website + Systems: From $7,500 setup + $697/mo
+- Field Ops System — Website + Systems: From $10,000 setup + $1,000/mo
+- Growth Starter — Systems Only: From $2,500 setup + $397/mo
+- Full Growth System — Systems Only: From $3,500 setup + $697/mo
+- Field Ops System — Systems Only: From $8,000 setup + $1,000/mo
+- Website + Systems includes an approved Local- or Authority-equivalent website scope; it never turns Growth into an unlimited-page offer. Systems Only requires a suitable existing website.
 
 Automation Build (PROJECT — build, document, hand off):
-- from $500–$10,000+ one-time; ongoing operator service only if a retainer is added
+- $500–$10,000+ scoped one-time: simple $500–$1,500, integrated $1,500–$5,000, custom $5,000–$10,000+
 
 E-commerce (ONE TIME):
+- Store Preview: $750 flat
 - Payment-Link Store: $1,200
 - E-Commerce Launch: $2,997 (initial product load capped; extra migration quoted)
-- Plus / Growth / Advanced lanes listed on pricing; Advanced from $7,500 is SCOPED
+- Growth Store: $3,997 flat
+- Advanced E-Commerce System: From $7,500 SCOPED ($2,500 scope deposit)
+
+Google Business Profile:
+- Setup: $497 one-time
+- Maintenance: $147/mo
+- Optimization: $500–$900 scoped, consult only
+- Recovery: $750–$1,500+ scoped, consult only
 
 Visibility retainers (MONTHLY):
 - Local Visibility Lite $197/mo · Visibility Standard $397/mo · Visibility Pro $697/mo
 - Operator time is capped (combined hours), not unbounded
 
-Do NOT cite retired SKUs: old Essential/Local Launch-era names, the former ~$2k local tier, Preview sold at $500, or Max Authority framed as an 80 to 100+ page build for $4,500.
+Do NOT cite retired SKUs: the historical Essential/Local Launch-era names, retired SEO package names, the retired extra commerce tier, Preview sold at $500, or Max Authority framed as an 80 to 100+ page build for $4,500.
 Full pricing & FAQ: https://knightlogics.com/pricing
 Catalog detail pages: /package-max-authority · /package-authority-network · /package-growth-system
 

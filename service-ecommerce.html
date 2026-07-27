@@ -78,30 +78,87 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         ],
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "E-Commerce Services",
+            "name": "Public E-Commerce Packages",
             "itemListElement": [
                 {
                     "@type": "Offer",
+                    "identifier": "ecommerce-preview-catalog",
+                    "name": "Store Preview",
+                    "price": "750",
+                    "priceCurrency": "USD",
+                    "additionalProperty": [
+                        {"@type": "PropertyValue", "name": "billingType", "value": "PROJECT"},
+                        {"@type": "PropertyValue", "name": "checkoutMode", "value": "FULL"}
+                    ],
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Shopify Store Development",
-                        "description": "Custom Shopify storefronts with theme customization, product setup, payment configuration, and conversion optimization."
+                        "name": "Store Preview",
+                        "description": "Noindex catalog preview with up to five sample products and demo-only checkout."
                     }
                 },
                 {
                     "@type": "Offer",
+                    "identifier": "ecommerce-payment-links",
+                    "name": "Payment-Link Store",
+                    "price": "1200",
+                    "priceCurrency": "USD",
+                    "additionalProperty": [
+                        {"@type": "PropertyValue", "name": "billingType", "value": "PROJECT"},
+                        {"@type": "PropertyValue", "name": "checkoutMode", "value": "FULL"}
+                    ],
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Custom E-Commerce with Firebase & Stripe",
-                        "description": "Hand-coded e-commerce platforms with Firebase authentication, Stripe and Snipcart payment processing, and full product catalog management."
+                        "name": "Payment-Link Store",
+                        "description": "Up to ten offers with hosted payment links and no full cart."
                     }
                 },
                 {
                     "@type": "Offer",
+                    "identifier": "ecommerce-launch",
+                    "name": "E-Commerce Launch",
+                    "price": "2997",
+                    "priceCurrency": "USD",
+                    "additionalProperty": [
+                        {"@type": "PropertyValue", "name": "billingType", "value": "PROJECT"},
+                        {"@type": "PropertyValue", "name": "checkoutMode", "value": "FULL_OR_DEPOSIT"}
+                    ],
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Inventory Automation & Analytics",
-                        "description": "Automated inventory sync, pricing updates, analytics dashboards, and data pipelines for growing online stores."
+                        "name": "E-Commerce Launch",
+                        "description": "Production cart and payment setup with an initial load of up to twenty products."
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "identifier": "ecommerce-growth-store",
+                    "name": "Growth Store",
+                    "price": "3997",
+                    "priceCurrency": "USD",
+                    "additionalProperty": [
+                        {"@type": "PropertyValue", "name": "billingType", "value": "PROJECT"},
+                        {"@type": "PropertyValue", "name": "checkoutMode", "value": "FULL_OR_DEPOSIT"}
+                    ],
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Growth Store",
+                        "description": "Up to thirty products with stronger merchandising, measurement, and launch testing."
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "identifier": "ecommerce-advanced-system",
+                    "name": "Advanced E-Commerce System",
+                    "price": "7500",
+                    "priceCurrency": "USD",
+                    "description": "From $7,500; scoped and deposit-only after discovery.",
+                    "additionalProperty": [
+                        {"@type": "PropertyValue", "name": "billingType", "value": "SCOPED"},
+                        {"@type": "PropertyValue", "name": "checkoutMode", "value": "DEPOSIT_ONLY"}
+                    ],
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Advanced E-Commerce System",
+                        "description": "Scoped subscriptions, fulfillment, marketplace, data migration, or back-office integrations."
                     }
                 }
             ]
@@ -119,7 +176,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 "name": "How much does an e-commerce website cost in Tampa Bay?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "A clean, custom-coded storefront with Snipcart or Stripe integration, product catalog, and mobile-optimized checkout typically starts in the mid four figures. Larger catalogs, inventory automation, Firebase authentication, and advanced data integrations add scope accordingly. Every build gets a detailed quote after discovery."
+                    "text": "The retained commerce ladder is Store Preview at $750, Payment-Link Store at $1,200, E-Commerce Launch at $2,997, Growth Store at $3,997, and Advanced E-Commerce System scoped from $7,500. The first four are flat project tiers; Advanced is scoped with a deposit-only checkout path."
                 }
             },
             {
@@ -454,6 +511,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
 
+    <section class="svc-section svc-section--dark kl-proof-section" style="background:#0a0a0a;padding:4.5rem 0;" aria-labelledby="ecom-proof-heading">
+        <div class="container">
+            <header class="section-header fade-in">
+                <h2 id="ecom-proof-heading">Storefront proof — not another theme demo</h2>
+                <p>Commerce pages need product UI, checkout confidence, and catalog ownership. These surfaces show the kind of builds this service covers.</p>
+            </header>
+
+            <article class="svc-mirror fade-in">
+                <figure class="svc-mirror-media svc-mirror-media--good">
+                    <img src="/images/mancaves-store.webp" alt="ManCaves.Store custom e-commerce storefront product catalog" loading="lazy" width="1400" height="900">
+                </figure>
+                <div class="svc-mirror-copy">
+                    <p class="svc-mirror-versus"><span>Custom storefront</span> ManCaves.Store</p>
+                    <h3>JSON catalog + Snipcart checkout — no template lock-in</h3>
+                    <p>Hand-coded storefront with Firebase auth, real-time search, and Vercel deployment. Built for ownership and cleaner margins than an app-heavy SaaS theme stack.</p>
+                    <ul class="svc-checklist">
+                        <li>Product catalog driven by structured data</li>
+                        <li>PCI-aware cart via Snipcart / Stripe patterns</li>
+                        <li>Mobile-first product and checkout paths</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="svc-mirror svc-mirror--flip fade-in">
+                <figure class="svc-mirror-media svc-mirror-media--good">
+                    <img src="/images/showcase/hospitality-menus-ordering-mockup.webp" alt="Pattern illustration — fictional hospitality menus and online ordering mockup, not live client UI" loading="lazy" width="1400" height="900">
+                </figure>
+                <div class="svc-mirror-copy">
+                    <p class="svc-mirror-versus"><span>Pattern illustration</span> Menus &amp; events</p>
+                    <h3>Hospitality ordering when a full catalog is overkill</h3>
+                    <p>Bars and restaurants often need menus, events, and order paths — not a 200-SKU Shopify theme. The visual below is a fictional pattern mockup, not a live client workspace. We scope the storefront to the commerce pattern that matches the business.</p>
+                    <ul class="svc-checklist">
+                        <li>Menu / event / order flows without platform bloat</li>
+                        <li>Pairs with <a href="/online-ordering-systems" style="color:#64ffda;">online ordering systems</a></li>
+                        <li>Payment links when a full cart is not required</li>
+                    </ul>
+                </div>
+            </article>
+
+            <div class="kl-proof-gallery fade-in">
+                <figure>
+                    <img src="/images/ManCavesLogo.webp" alt="ManCaves.Store brand mark" loading="lazy" width="800" height="450">
+                    <figcaption><strong>ManCaves.Store</strong> Custom-coded specialty retail storefront.</figcaption>
+                </figure>
+                <figure class="kl-media-needed" data-media-needed="true" data-asset-type="screenshot" data-aspect="16:9" data-page="/service-ecommerce" data-brief="Snipcart cart drawer or Stripe checkout flow on a live Knight Logics storefront">
+                    <div class="kl-media-needed__frame" aria-hidden="true"></div>
+                    <figcaption><strong>Media needed:</strong> Cart / checkout flow screenshot. <span class="kl-media-needed__specs">Screenshot · 16:9 · redact PII</span></figcaption>
+                </figure>
+                <figure class="kl-media-needed" data-media-needed="true" data-asset-type="screenshot" data-aspect="16:9" data-page="/service-ecommerce" data-brief="Admin or inventory automation panel for ecommerce ops">
+                    <div class="kl-media-needed__frame" aria-hidden="true"></div>
+                    <figcaption><strong>Media needed:</strong> Inventory / pricing automation panel. <span class="kl-media-needed__specs">Screenshot · 16:9</span></figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
     <!-- -- FEATURES / DELIVERABLES -- -->
     <section class="svc-features">
         <div class="container">
@@ -662,8 +775,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <!-- -- WORK EXAMPLES — hidden until better examples are ready -- -->
-    <section class="svc-work" style="display:none">
+    <!-- -- WORK EXAMPLES (kept for archive; live proof section above) -- -->
+    <section class="svc-work" style="display:none" aria-hidden="true">
         <div class="container">
             <div class="section-header fade-in">
                 <h2>E-Commerce Builds</h2>
@@ -704,6 +817,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <p>Snipcart wired into a custom product catalog with cart flow, product variants, and Vercel-proxied API key handling for secure client-side checkout.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="svc-features" id="ecommerce-pricing">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Public E-Commerce Pricing</h2>
+                <p>Five retained commerce packages, from a noindex concept through scoped integrations. Final scope changes only where the package is explicitly marked scoped.</p>
+            </div>
+            <div class="svc-features-grid">
+                <article class="svc-feature-card fade-in"><div class="svc-card-icon"><i class="fas fa-eye"></i></div><h3>Store Preview — $750</h3><p>Flat project for up to five sample products, responsive catalog preview, and demo-only checkout.</p></article>
+                <article class="svc-feature-card fade-in"><div class="svc-card-icon"><i class="fas fa-link"></i></div><h3>Payment-Link Store — $1,200</h3><p>Flat project for up to ten offers using hosted payment links instead of a full cart.</p></article>
+                <article class="svc-feature-card fade-in"><div class="svc-card-icon"><i class="fas fa-cart-shopping"></i></div><h3>E-Commerce Launch — $2,997</h3><p>Flat project with a full cart, payment setup, shipping and tax foundations, and up to twenty products.</p></article>
+                <article class="svc-feature-card fade-in"><div class="svc-card-icon"><i class="fas fa-chart-line"></i></div><h3>Growth Store — $3,997</h3><p>Flat project for up to thirty products with collection structure, enhanced analytics, and launch testing.</p></article>
+                <article class="svc-feature-card fade-in"><div class="svc-card-icon"><i class="fas fa-gears"></i></div><h3>Advanced E-Commerce System — From $7,500</h3><p>Scoped subscriptions, fulfillment, marketplace, migration, and back-office integration work. Public checkout is for the disclosed scope deposit, not an undisclosed full total.</p></article>
             </div>
         </div>
     </section>
@@ -759,7 +888,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="svc-faq-grid">
                 <article class="svc-faq-item fade-in">
                     <h3>How much does an e-commerce website cost in Tampa Bay?</h3>
-                    <p>A custom storefront with Snipcart or Stripe, product catalog, and mobile checkout typically starts in the mid four figures. Larger catalogs, inventory automation, custom accounts, and advanced data integrations add scope. Every build gets a detailed quote after discovery.</p>
+                    <p>Store Preview is $750, Payment-Link Store is $1,200, E-Commerce Launch is $2,997, and Growth Store is $3,997 — all flat projects for their listed scope. Advanced E-Commerce System starts from $7,500 and is scoped for complex subscriptions, fulfillment, marketplace, migration, or integration work.</p>
                 </article>
                 <article class="svc-faq-item fade-in">
                     <h3>Do you build on Shopify or custom code?</h3>

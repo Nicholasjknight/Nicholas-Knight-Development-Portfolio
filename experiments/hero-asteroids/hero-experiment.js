@@ -8,9 +8,9 @@
 
     const GREEN = '#64ffda';
     const GREEN_RGB = '100, 255, 218';
-    const CUTOUT_VER = '20260703perf4';
+    const CUTOUT_VER = '20260726perf1';
     const CUTOUT_BASE = './experiments/hero-asteroids';
-    const CUTOUT_SRC = `${CUTOUT_BASE}/hero-cutout-480.webp?v=${CUTOUT_VER}`;
+    const CUTOUT_SRC = `${CUTOUT_BASE}/hero-cutout-320.webp?v=${CUTOUT_VER}`;
 
     function isEnabled() {
         const params = new URLSearchParams(window.location.search);
@@ -116,7 +116,7 @@
             <canvas class="hero-experiment-canvas hero-experiment-canvas--asteroids" id="klHeroAsteroids" aria-hidden="true"></canvas>
         </div>
         <div class="hero-experiment-foreground" aria-hidden="true">
-            <img class="hero-experiment-cutout" id="klHeroCutout" src="${CUTOUT_SRC}" srcset="${CUTOUT_BASE}/hero-cutout-480.webp?v=${CUTOUT_VER} 480w, ${CUTOUT_BASE}/hero-cutout-800.webp?v=${CUTOUT_VER} 800w, ${CUTOUT_BASE}/hero-cutout.webp?v=${CUTOUT_VER} 1135w" sizes="(max-width: 768px) min(42vw, 220px), (max-width: 1200px) 400px, 600px" alt="" width="1135" height="1041" decoding="async" fetchpriority="high">
+            <img class="hero-experiment-cutout" id="klHeroCutout" src="${CUTOUT_SRC}" srcset="${CUTOUT_BASE}/hero-cutout-320.webp?v=${CUTOUT_VER} 320w, ${CUTOUT_BASE}/hero-cutout-480.webp?v=${CUTOUT_VER} 480w, ${CUTOUT_BASE}/hero-cutout-800.webp?v=${CUTOUT_VER} 800w, ${CUTOUT_BASE}/hero-cutout.webp?v=${CUTOUT_VER} 1135w" sizes="(max-width: 768px) min(42vw, 220px), (max-width: 1200px) 400px, 600px" alt="" width="1135" height="1041" decoding="async" fetchpriority="high">
         </div>
     `;
     const wrapper = hero.querySelector('.hero-content-wrapper');

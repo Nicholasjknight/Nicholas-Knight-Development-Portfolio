@@ -49,6 +49,22 @@ const siteProfiles = {
       { name: 'service-desktop-apps', path: '/service-desktop-apps', expectsHero: true, requiresMobileNav: true },
     ],
   },
+  'knightlogics-commercial': {
+    label: 'Knight Logics pricing and package checkout pages',
+    routes: [
+      { name: 'home', path: '/', expectsHero: true, requiresMobileNav: true },
+      { name: 'pricing', path: '/pricing', expectsHero: true, requiresMobileNav: true },
+      { name: 'package-demo-preview', path: '/package-demo-preview', requiresMobileNav: true },
+      { name: 'package-preview-launch', path: '/package-preview-launch', requiresMobileNav: true },
+      { name: 'package-local-launch', path: '/package-local-launch', requiresMobileNav: true },
+      { name: 'package-authority-site', path: '/package-authority-site', requiresMobileNav: true },
+      { name: 'package-max-authority', path: '/package-max-authority', requiresMobileNav: true },
+      { name: 'package-authority-network', path: '/package-authority-network', requiresMobileNav: true },
+      { name: 'package-storefront', path: '/package-storefront', requiresMobileNav: true },
+      { name: 'package-growth-system', path: '/package-growth-system', requiresMobileNav: true },
+      { name: 'pay-invoice', path: '/pay-invoice', expectsForm: true, requiresMobileNav: true },
+    ],
+  },
   'client-demo': {
     label: 'Client or demo site template pages',
     routes: [

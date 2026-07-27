@@ -1,0 +1,2683 @@
+/** Auto-built by build-cities-json.js — prefer editing that script then rebuild. */
+module.exports = [
+  {
+    "slug": "tampa",
+    "name": "Tampa",
+    "county": "Hillsborough",
+    "countyFull": "Hillsborough County",
+    "state": "FL",
+    "formId": "Tam",
+    "keywords": "Tampa web designer, web design Tampa FL, Tampa website designer, local SEO Tampa, Hillsborough County web design",
+    "title": "Web Design Tampa FL | Hand-Coded Sites That Rank",
+    "metaDescription": "Web design Tampa FL — hand-coded sites for Hillsborough County service businesses with local SEO, GBP alignment, and Tampa Bay case studies. Free audit.",
+    "ogTitle": "Tampa Web Design & Local SEO | Knight Logics",
+    "ogDescription": "Hand-coded Tampa websites with local SEO, Google Business alignment, on-site Tampa Bay support, and remote U.S. delivery.",
+    "h1": "Tampa Web Designer for Service Businesses",
+    "heroLead": "Searching <strong>web designer Tampa</strong> or <strong>Tampa web design</strong>? Knight Logics builds hand-coded sites for Hillsborough County businesses — local SEO structure, Google Business Profile alignment, and live Tampa Bay proof — with on-site support in the metro and full remote delivery nationwide.",
+    "breadcrumbLabel": "Tampa Web Design",
+    "articleHeadline": "Web Design for Tampa, FL — Built for Hillsborough County Visibility",
+    "articleDescription": "What Tampa businesses need from a custom website to compete in Hillsborough County: speed, service architecture, local SEO, and a conversion path that works.",
+    "whyHeading": "Why Tampa needs a stronger website than a template",
+    "whyParagraphs": [
+      "Tampa sits inside Hillsborough County, where local search is no longer a polite brochure contest. Homeowners and commercial buyers compare multiple tabs before they call — and the sites that win usually combine clear service architecture, fast mobile performance, and a Google Business Profile that matches the website. If your current Tampa presence is a template homepage with a contact form buried below the fold, you are competing with one hand tied behind your back.",
+      "The competitive angle in Tampa is largest metro search volume and densest map-pack competition. That means generic “Florida web design” language does not hold. Pages need Tampa-specific framing, honest service-area statements, and proof that you actually work this corridor. Knight Logics builds hand-coded sites for Tampa operators who want that clarity without WordPress bloat or monthly page-builder lock-in.",
+      "Neighborhood and corridor intent matters here: South Tampa, Ybor City, Hyde Park, Channelside, Carrollwood, Westchase, and Seminole Heights. When someone searches a trade plus Tampa, they are not looking for a statewide franchise story. They want to know whether you serve their street, how fast you respond, and whether the site feels trustworthy on a phone. That is what local SEO and conversion structure are for — not keyword stuffing.",
+      "Many Tampa businesses lose to Hillsborough contractors and multi-location franchise sites. The fix is rarely “more blog posts.” It is usually cleaner HTML, dedicated service pages, schema that validates, Search Console indexing, and GBP categories/service areas that agree with the site. Those fundamentals compound. Decorative redesigns without them do not.",
+      "A Tampa website should also make the next step obvious. Estimate forms, click-to-call, booking paths, and service selectors belong above the fold on mobile — not buried under stock hero text. Knight Logics designs conversion paths for how Hillsborough County buyers actually behave when they are ready to hire."
+    ],
+    "marketHeading": "How Tampa buyers actually find and book",
+    "marketParagraphs": [
+      "In-person delivery is available across Tampa and the wider Tampa Bay metro when a kickoff, photo shoot, or on-site review helps. At the same time, every Knight Logics package is available fully remote across the United States — discovery, design, development, launch, and automation systems do not require you to be next door. Tampa clients often use a hybrid: local when useful, remote for speed.",
+      "A strong Tampa website usually includes a conversion-first homepage, dedicated service pages, FAQ structure, clear NAP consistency, and internal links into proof (reviews, galleries, case studies). For trades, estimate and call CTAs stay visible. For professional services, credibility and process clarity take the lead. Either way, the technical baseline is the same: hand-coded performance, schema, analytics, and indexing hygiene.",
+      "Hillsborough County searchers bounce from slow sites. Core Web Vitals, compressed media, and lean JavaScript are not vanity metrics in Tampa — they are conversion infrastructure. Knight Logics targets high Lighthouse scores because a fast page keeps the lead in your pipeline instead of the next result.",
+      "When you are ready to grow beyond the website, the same foundation supports CRM outreach, review requests, ticketing, and social systems without starting over. Tampa operators who treat the site as the front door and the systems as the engine get compounding returns. That is the Growth Systems path — optional, but designed to attach cleanly.",
+      "Internal linking is part of the Tampa strategy. Your hub pages, service silos, and neighboring city pages should reinforce each other instead of competing as orphans. Knight Logics also connects Tampa landing pages back to pricing, audits, and case studies so visitors can move from education to a clear next step without bouncing to a competitor.",
+      "Content depth matters for indexing, but utility matters more. Every section on a Tampa page should answer a real buyer question: what you do, where you work, how to contact you, what proof exists, and what happens after the first call. Doorway pages that only swap city names fail that test. Unique local framing for Tampa and Hillsborough County passes it.",
+      "Search Console data for Tampa-style queries often shows impressions without clicks when titles are vague or pages look interchangeable. We write Tampa-specific titles, meta descriptions, and H1 framing so the SERP snippet matches the promise on the page — then we measure CTR and iterate instead of guessing."
+    ],
+    "needsHeading": "What a Tampa site should include",
+    "needs": [
+      {
+        "title": "Tampa-specific service architecture",
+        "text": "Separate pages for the jobs people actually search in Tampa beat a single dump “Services” page every time. Architecture should match how Hillsborough County buyers phrase queries."
+      },
+      {
+        "title": "GBP and website alignment",
+        "text": "Categories, service areas, phone, and business name must match. Tampa map-pack competition punishes mismatches between the profile and the site."
+      },
+      {
+        "title": "Mobile-first conversion",
+        "text": "Most Tampa service searches happen on phones. Click-to-call, short forms, and above-the-fold clarity are non-negotiable."
+      },
+      {
+        "title": "Proof that feels local",
+        "text": "Photos, reviews, and project examples should support Tampa / Hillsborough County credibility — not generic stock that could be anywhere."
+      },
+      {
+        "title": "Indexation and measurement",
+        "text": "Search Console, sitemap submission, schema validation, and analytics so you can see what Tampa queries actually convert."
+      },
+      {
+        "title": "Honest geography",
+        "text": "Only claim Tampa and neighboring metros you can actually serve. Inflated service-area lists create trust gaps and GBP policy risk."
+      }
+    ],
+    "processHeading": "The build process for Tampa clients",
+    "processSteps": [
+      {
+        "title": "Audit",
+        "text": "Review the current Tampa site or competitive gap — speed, local keyword targeting, GBP alignment, schema, and conversion path — before writing code."
+      },
+      {
+        "title": "Architecture",
+        "text": "Map service and location structure around real Tampa and Hillsborough County search intent, including sibling cities you actually serve."
+      },
+      {
+        "title": "Build",
+        "text": "Hand-coded HTML, CSS, and JavaScript. No CMS bloat. Performance, accessibility, and SEO targeted together."
+      },
+      {
+        "title": "Launch & index",
+        "text": "GSC setup, sitemap, schema checks, GBP alignment, and tracking verified so the Tampa property can be discovered."
+      },
+      {
+        "title": "Iterate",
+        "text": "After launch, review Tampa query performance, strengthen weak pages, and attach growth systems when lead handling becomes the bottleneck."
+      }
+    ],
+    "industriesHeading": "Industries we support around Tampa",
+    "industriesBlurb": "Tampa projects commonly include contractors, home services, specialty trades, professional services, and product brands that sell locally or ship. Around South Tampa, Ybor City, Hyde Park, Channelside, Carrollwood, Westchase, and Seminole Heights, information architecture changes by industry; the technical bar does not.",
+    "localAngle": "On-site collaboration is available in Tampa and across Tampa Bay. Full remote website and growth-system delivery is available nationwide.",
+    "proofBlurb": "Nearby Tampa Bay builds (Screen Team, Knight Group, JNS, Sal’s Painting, and others) show the same hand-coded, search-ready foundation Tampa businesses need. Your page count and package tier change; the quality bar does not. When we have a Tampa-specific project, it is featured here; until then, regional proof still demonstrates the delivery standard.",
+    "contentImage": "/images/service-areas/tampa.jpg",
+    "contentImageAlt": "Tampa, Florida — service area for Knight Logics web design and local SEO",
+    "contentImageCaption": "Tampa, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.",
+    "imageVerified": false,
+    "imageQuery": "tampa florida skyline downtown",
+    "siblings": [
+      "brandon",
+      "temple-terrace",
+      "clearwater",
+      "st-petersburg",
+      "safety-harbor"
+    ],
+    "faqs": [
+      {
+        "q": "Do you build websites specifically for Tampa businesses?",
+        "a": "Yes. Copy, schema, internal links, and GBP alignment are scoped for Tampa and Hillsborough County — not a statewide filler page with the city name swapped."
+      },
+      {
+        "q": "Can Knight Logics work on-site in Tampa?",
+        "a": "Yes for Tampa Bay engagements when on-site helps. Full remote delivery is also available nationwide for the same packages."
+      },
+      {
+        "q": "What package fits most Tampa service businesses?",
+        "a": "Many start with Local Site depth for ranking foundations, then expand into Authority or Growth Systems when page count and automation justify it. Pricing lists the current ladder."
+      },
+      {
+        "q": "How long does a Tampa website build take?",
+        "a": "Lean launches often take 1–2 weeks after content is ready. Deeper multi-page authority builds take longer based on scope and feedback speed."
+      },
+      {
+        "q": "Will a Tampa page help if I also serve neighboring cities?",
+        "a": "Yes — when those cities are real service areas. We link sibling metros and keep GBP service areas honest so you do not claim geography you cannot cover."
+      },
+      {
+        "q": "Do you only do websites, or full growth systems too?",
+        "a": "Websites are the foundation. CRM, reviews, ticketing, and automation are available as attached systems when you want the full stack."
+      },
+      {
+        "q": "What makes a Tampa page different from a template city page?",
+        "a": "Unique local framing (largest metro search volume and densest map-pack competition), real corridors (South Tampa, Ybor City, Hyde Park, Channelside, Carrollwood, Westchase, and Seminole Heights), verified media when available, and conversion paths matched to Hillsborough County buyer behavior — not a find-and-replace city name."
+      }
+    ],
+    "ctaBlurb": "If your Tampa site is not earning calls or organic leads, the free audit shows what is actually blocking you — technical debt, thin structure, GBP mismatch, or conversion gaps — before you spend on a rebuild. Bring your current URL and we will map the Tampa opportunity against Hillsborough County competition.",
+    "approxWordCount": 1388
+  },
+  {
+    "slug": "st-petersburg",
+    "name": "St. Petersburg",
+    "county": "Pinellas",
+    "countyFull": "Pinellas County",
+    "state": "FL",
+    "formId": "StP",
+    "keywords": "St. Petersburg web designer, web design St. Petersburg FL, St. Petersburg website designer, local SEO St. Petersburg, Pinellas County web design",
+    "title": "Web Design St. Petersburg FL | Hand-Coded Sites That Rank",
+    "metaDescription": "Web design St. Petersburg FL — hand-coded sites for Pinellas County service businesses with local SEO, GBP alignment, and Tampa Bay case studies. Free audit.",
+    "ogTitle": "St. Petersburg Web Design & Local SEO | Knight Logics",
+    "ogDescription": "Hand-coded St. Petersburg websites with local SEO, Google Business alignment, on-site Tampa Bay support, and remote U.S. delivery.",
+    "h1": "St. Petersburg Web Designer for Service Businesses",
+    "heroLead": "Searching <strong>web designer St. Petersburg</strong> or <strong>St. Petersburg web design</strong>? Knight Logics builds hand-coded sites for Pinellas County businesses — local SEO structure, Google Business Profile alignment, and live Tampa Bay proof — with on-site support in the metro and full remote delivery nationwide.",
+    "breadcrumbLabel": "St. Petersburg Web Design",
+    "articleHeadline": "Web Design for St. Petersburg, FL — Built for Pinellas County Visibility",
+    "articleDescription": "What St. Petersburg businesses need from a custom website to compete in Pinellas County: speed, service architecture, local SEO, and a conversion path that works.",
+    "whyHeading": "Why St. Petersburg needs a stronger website than a template",
+    "whyParagraphs": [
+      "St. Petersburg sits inside Pinellas County, where local search is no longer a polite brochure contest. Homeowners and commercial buyers compare multiple tabs before they call — and the sites that win usually combine clear service architecture, fast mobile performance, and a Google Business Profile that matches the website. If your current St. Petersburg presence is a template homepage with a contact form buried below the fold, you are competing with one hand tied behind your back.",
+      "The competitive angle in St. Petersburg is creative downtown energy mixed with peninsula-wide trade demand. That means generic “Florida web design” language does not hold. Pages need St. Petersburg-specific framing, honest service-area statements, and proof that you actually work this corridor. Knight Logics builds hand-coded sites for St. Petersburg operators who want that clarity without WordPress bloat or monthly page-builder lock-in.",
+      "Neighborhood and corridor intent matters here: Downtown St. Pete, Midtown, Snell Isle, Historic Kenwood, and Gulfport. When someone searches a trade plus St. Petersburg, they are not looking for a statewide franchise story. They want to know whether you serve their street, how fast you respond, and whether the site feels trustworthy on a phone. That is what local SEO and conversion structure are for — not keyword stuffing.",
+      "Many St. Petersburg businesses lose to beach-tourism templates and thin Pinellas brochure sites. The fix is rarely “more blog posts.” It is usually cleaner HTML, dedicated service pages, schema that validates, Search Console indexing, and GBP categories/service areas that agree with the site. Those fundamentals compound. Decorative redesigns without them do not.",
+      "A St. Petersburg website should also make the next step obvious. Estimate forms, click-to-call, booking paths, and service selectors belong above the fold on mobile — not buried under stock hero text. Knight Logics designs conversion paths for how Pinellas County buyers actually behave when they are ready to hire."
+    ],
+    "marketHeading": "How St. Petersburg buyers actually find and book",
+    "marketParagraphs": [
+      "In-person delivery is available across St. Petersburg and the wider Tampa Bay metro when a kickoff, photo shoot, or on-site review helps. At the same time, every Knight Logics package is available fully remote across the United States — discovery, design, development, launch, and automation systems do not require you to be next door. St. Petersburg clients often use a hybrid: local when useful, remote for speed.",
+      "A strong St. Petersburg website usually includes a conversion-first homepage, dedicated service pages, FAQ structure, clear NAP consistency, and internal links into proof (reviews, galleries, case studies). For trades, estimate and call CTAs stay visible. For professional services, credibility and process clarity take the lead. Either way, the technical baseline is the same: hand-coded performance, schema, analytics, and indexing hygiene.",
+      "Pinellas County searchers bounce from slow sites. Core Web Vitals, compressed media, and lean JavaScript are not vanity metrics in St. Petersburg — they are conversion infrastructure. Knight Logics targets high Lighthouse scores because a fast page keeps the lead in your pipeline instead of the next result.",
+      "When you are ready to grow beyond the website, the same foundation supports CRM outreach, review requests, ticketing, and social systems without starting over. St. Petersburg operators who treat the site as the front door and the systems as the engine get compounding returns. That is the Growth Systems path — optional, but designed to attach cleanly.",
+      "Internal linking is part of the St. Petersburg strategy. Your hub pages, service silos, and neighboring city pages should reinforce each other instead of competing as orphans. Knight Logics also connects St. Petersburg landing pages back to pricing, audits, and case studies so visitors can move from education to a clear next step without bouncing to a competitor.",
+      "Content depth matters for indexing, but utility matters more. Every section on a St. Petersburg page should answer a real buyer question: what you do, where you work, how to contact you, what proof exists, and what happens after the first call. Doorway pages that only swap city names fail that test. Unique local framing for St. Petersburg and Pinellas County passes it.",
+      "Search Console data for St. Petersburg-style queries often shows impressions without clicks when titles are vague or pages look interchangeable. We write St. Petersburg-specific titles, meta descriptions, and H1 framing so the SERP snippet matches the promise on the page — then we measure CTR and iterate instead of guessing."
+    ],
+    "needsHeading": "What a St. Petersburg site should include",
+    "needs": [
+      {
+        "title": "St. Petersburg-specific service architecture",
+        "text": "Separate pages for the jobs people actually search in St. Petersburg beat a single dump “Services” page every time. Architecture should match how Pinellas County buyers phrase queries."
+      },
+      {
+        "title": "GBP and website alignment",
+        "text": "Categories, service areas, phone, and business name must match. St. Petersburg map-pack competition punishes mismatches between the profile and the site."
+      },
+      {
+        "title": "Mobile-first conversion",
+        "text": "Most St. Petersburg service searches happen on phones. Click-to-call, short forms, and above-the-fold clarity are non-negotiable."
+      },
+      {
+        "title": "Proof that feels local",
+        "text": "Photos, reviews, and project examples should support St. Petersburg / Pinellas County credibility — not generic stock that could be anywhere."
+      },
+      {
+        "title": "Indexation and measurement",
+        "text": "Search Console, sitemap submission, schema validation, and analytics so you can see what St. Petersburg queries actually convert."
+      },
+      {
+        "title": "Honest geography",
+        "text": "Only claim St. Petersburg and neighboring metros you can actually serve. Inflated service-area lists create trust gaps and GBP policy risk."
+      }
+    ],
+    "processHeading": "The build process for St. Petersburg clients",
+    "processSteps": [
+      {
+        "title": "Audit",
+        "text": "Review the current St. Petersburg site or competitive gap — speed, local keyword targeting, GBP alignment, schema, and conversion path — before writing code."
+      },
+      {
+        "title": "Architecture",
+        "text": "Map service and location structure around real St. Petersburg and Pinellas County search intent, including sibling cities you actually serve."
+      },
+      {
+        "title": "Build",
+        "text": "Hand-coded HTML, CSS, and JavaScript. No CMS bloat. Performance, accessibility, and SEO targeted together."
+      },
+      {
+        "title": "Launch & index",
+        "text": "GSC setup, sitemap, schema checks, GBP alignment, and tracking verified so the St. Petersburg property can be discovered."
+      },
+      {
+        "title": "Iterate",
+        "text": "After launch, review St. Petersburg query performance, strengthen weak pages, and attach growth systems when lead handling becomes the bottleneck."
+      }
+    ],
+    "industriesHeading": "Industries we support around St. Petersburg",
+    "industriesBlurb": "St. Petersburg projects commonly include contractors, home services, specialty trades, professional services, and product brands that sell locally or ship. Around Downtown St. Pete, Midtown, Snell Isle, Historic Kenwood, and Gulfport, information architecture changes by industry; the technical bar does not.",
+    "localAngle": "On-site collaboration is available in St. Petersburg and across Tampa Bay. Full remote website and growth-system delivery is available nationwide.",
+    "proofBlurb": "Nearby Tampa Bay builds (Screen Team, Knight Group, JNS, Sal’s Painting, and others) show the same hand-coded, search-ready foundation St. Petersburg businesses need. Your page count and package tier change; the quality bar does not. When we have a St. Petersburg-specific project, it is featured here; until then, regional proof still demonstrates the delivery standard.",
+    "contentImage": "/images/service-areas/st-petersburg.jpg",
+    "contentImageAlt": "St. Petersburg, Florida — service area for Knight Logics web design and local SEO",
+    "contentImageCaption": "St. Petersburg, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.",
+    "imageVerified": false,
+    "imageQuery": "st petersburg florida downtown pier",
+    "siblings": [
+      "clearwater",
+      "pinellas-park",
+      "largo",
+      "tampa",
+      "seminole"
+    ],
+    "faqs": [
+      {
+        "q": "Do you build websites specifically for St. Petersburg businesses?",
+        "a": "Yes. Copy, schema, internal links, and GBP alignment are scoped for St. Petersburg and Pinellas County — not a statewide filler page with the city name swapped."
+      },
+      {
+        "q": "Can Knight Logics work on-site in St. Petersburg?",
+        "a": "Yes for Tampa Bay engagements when on-site helps. Full remote delivery is also available nationwide for the same packages."
+      },
+      {
+        "q": "What package fits most St. Petersburg service businesses?",
+        "a": "Many start with Local Site depth for ranking foundations, then expand into Authority or Growth Systems when page count and automation justify it. Pricing lists the current ladder."
+      },
+      {
+        "q": "How long does a St. Petersburg website build take?",
+        "a": "Lean launches often take 1–2 weeks after content is ready. Deeper multi-page authority builds take longer based on scope and feedback speed."
+      },
+      {
+        "q": "Will a St. Petersburg page help if I also serve neighboring cities?",
+        "a": "Yes — when those cities are real service areas. We link sibling metros and keep GBP service areas honest so you do not claim geography you cannot cover."
+      },
+      {
+        "q": "Do you only do websites, or full growth systems too?",
+        "a": "Websites are the foundation. CRM, reviews, ticketing, and automation are available as attached systems when you want the full stack."
+      },
+      {
+        "q": "What makes a St. Petersburg page different from a template city page?",
+        "a": "Unique local framing (creative downtown energy mixed with peninsula-wide trade demand), real corridors (Downtown St. Pete, Midtown, Snell Isle, Historic Kenwood, and Gulfport), verified media when available, and conversion paths matched to Pinellas County buyer behavior — not a find-and-replace city name."
+      }
+    ],
+    "ctaBlurb": "If your St. Petersburg site is not earning calls or organic leads, the free audit shows what is actually blocking you — technical debt, thin structure, GBP mismatch, or conversion gaps — before you spend on a rebuild. Bring your current URL and we will map the St. Petersburg opportunity against Pinellas County competition.",
+    "approxWordCount": 1428
+  },
+  {
+    "slug": "clearwater",
+    "name": "Clearwater",
+    "county": "Pinellas",
+    "countyFull": "Pinellas County",
+    "state": "FL",
+    "formId": "Cle",
+    "keywords": "Clearwater web designer, web design Clearwater FL, Clearwater website designer, local SEO Clearwater, Pinellas County web design",
+    "title": "Web Design Clearwater FL | Hand-Coded Sites That Rank",
+    "metaDescription": "Web design Clearwater FL — hand-coded sites for Pinellas County service businesses with local SEO, GBP alignment, and Tampa Bay case studies. Free audit.",
+    "ogTitle": "Clearwater Web Design & Local SEO | Knight Logics",
+    "ogDescription": "Hand-coded Clearwater websites with local SEO, Google Business alignment, on-site Tampa Bay support, and remote U.S. delivery.",
+    "h1": "Clearwater Web Designer for Service Businesses",
+    "heroLead": "Searching <strong>web designer Clearwater</strong> or <strong>Clearwater web design</strong>? Knight Logics builds hand-coded sites for Pinellas County businesses — local SEO structure, Google Business Profile alignment, and live Tampa Bay proof — with on-site support in the metro and full remote delivery nationwide.",
+    "breadcrumbLabel": "Clearwater Web Design",
+    "articleHeadline": "Web Design for Clearwater, FL — Built for Pinellas County Visibility",
+    "articleDescription": "What Clearwater businesses need from a custom website to compete in Pinellas County: speed, service architecture, local SEO, and a conversion path that works.",
+    "whyHeading": "Why Clearwater needs a stronger website than a template",
+    "whyParagraphs": [
+      "Clearwater sits inside Pinellas County, where local search is no longer a polite brochure contest. Homeowners and commercial buyers compare multiple tabs before they call — and the sites that win usually combine clear service architecture, fast mobile performance, and a Google Business Profile that matches the website. If your current Clearwater presence is a template homepage with a contact form buried below the fold, you are competing with one hand tied behind your back.",
+      "The competitive angle in Clearwater is beach visibility noise competing with serious service-intent searches. That means generic “Florida web design” language does not hold. Pages need Clearwater-specific framing, honest service-area statements, and proof that you actually work this corridor. Knight Logics builds hand-coded sites for Clearwater operators who want that clarity without WordPress bloat or monthly page-builder lock-in.",
+      "Neighborhood and corridor intent matters here: Clearwater Beach, Countryside, Coachman, and downtown Clearwater. When someone searches a trade plus Clearwater, they are not looking for a statewide franchise story. They want to know whether you serve their street, how fast you respond, and whether the site feels trustworthy on a phone. That is what local SEO and conversion structure are for — not keyword stuffing.",
+      "Many Clearwater businesses lose to seasonal tourism pages that ignore homeowner intent. The fix is rarely “more blog posts.” It is usually cleaner HTML, dedicated service pages, schema that validates, Search Console indexing, and GBP categories/service areas that agree with the site. Those fundamentals compound. Decorative redesigns without them do not.",
+      "A Clearwater website should also make the next step obvious. Estimate forms, click-to-call, booking paths, and service selectors belong above the fold on mobile — not buried under stock hero text. Knight Logics designs conversion paths for how Pinellas County buyers actually behave when they are ready to hire."
+    ],
+    "marketHeading": "How Clearwater buyers actually find and book",
+    "marketParagraphs": [
+      "In-person delivery is available across Clearwater and the wider Tampa Bay metro when a kickoff, photo shoot, or on-site review helps. At the same time, every Knight Logics package is available fully remote across the United States — discovery, design, development, launch, and automation systems do not require you to be next door. Clearwater clients often use a hybrid: local when useful, remote for speed.",
+      "A strong Clearwater website usually includes a conversion-first homepage, dedicated service pages, FAQ structure, clear NAP consistency, and internal links into proof (reviews, galleries, case studies). For trades, estimate and call CTAs stay visible. For professional services, credibility and process clarity take the lead. Either way, the technical baseline is the same: hand-coded performance, schema, analytics, and indexing hygiene.",
+      "Pinellas County searchers bounce from slow sites. Core Web Vitals, compressed media, and lean JavaScript are not vanity metrics in Clearwater — they are conversion infrastructure. Knight Logics targets high Lighthouse scores because a fast page keeps the lead in your pipeline instead of the next result.",
+      "When you are ready to grow beyond the website, the same foundation supports CRM outreach, review requests, ticketing, and social systems without starting over. Clearwater operators who treat the site as the front door and the systems as the engine get compounding returns. That is the Growth Systems path — optional, but designed to attach cleanly.",
+      "Internal linking is part of the Clearwater strategy. Your hub pages, service silos, and neighboring city pages should reinforce each other instead of competing as orphans. Knight Logics also connects Clearwater landing pages back to pricing, audits, and case studies so visitors can move from education to a clear next step without bouncing to a competitor.",
+      "Content depth matters for indexing, but utility matters more. Every section on a Clearwater page should answer a real buyer question: what you do, where you work, how to contact you, what proof exists, and what happens after the first call. Doorway pages that only swap city names fail that test. Unique local framing for Clearwater and Pinellas County passes it.",
+      "Search Console data for Clearwater-style queries often shows impressions without clicks when titles are vague or pages look interchangeable. We write Clearwater-specific titles, meta descriptions, and H1 framing so the SERP snippet matches the promise on the page — then we measure CTR and iterate instead of guessing."
+    ],
+    "needsHeading": "What a Clearwater site should include",
+    "needs": [
+      {
+        "title": "Clearwater-specific service architecture",
+        "text": "Separate pages for the jobs people actually search in Clearwater beat a single dump “Services” page every time. Architecture should match how Pinellas County buyers phrase queries."
+      },
+      {
+        "title": "GBP and website alignment",
+        "text": "Categories, service areas, phone, and business name must match. Clearwater map-pack competition punishes mismatches between the profile and the site."
+      },
+      {
+        "title": "Mobile-first conversion",
+        "text": "Most Clearwater service searches happen on phones. Click-to-call, short forms, and above-the-fold clarity are non-negotiable."
+      },
+      {
+        "title": "Proof that feels local",
+        "text": "Photos, reviews, and project examples should support Clearwater / Pinellas County credibility — not generic stock that could be anywhere."
+      },
+      {
+        "title": "Indexation and measurement",
+        "text": "Search Console, sitemap submission, schema validation, and analytics so you can see what Clearwater queries actually convert."
+      },
+      {
+        "title": "Honest geography",
+        "text": "Only claim Clearwater and neighboring metros you can actually serve. Inflated service-area lists create trust gaps and GBP policy risk."
+      }
+    ],
+    "processHeading": "The build process for Clearwater clients",
+    "processSteps": [
+      {
+        "title": "Audit",
+        "text": "Review the current Clearwater site or competitive gap — speed, local keyword targeting, GBP alignment, schema, and conversion path — before writing code."
+      },
+      {
+        "title": "Architecture",
+        "text": "Map service and location structure around real Clearwater and Pinellas County search intent, including sibling cities you actually serve."
+      },
+      {
+        "title": "Build",
+        "text": "Hand-coded HTML, CSS, and JavaScript. No CMS bloat. Performance, accessibility, and SEO targeted together."
+      },
+      {
+        "title": "Launch & index",
+        "text": "GSC setup, sitemap, schema checks, GBP alignment, and tracking verified so the Clearwater property can be discovered."
+      },
+      {
+        "title": "Iterate",
+        "text": "After launch, review Clearwater query performance, strengthen weak pages, and attach growth systems when lead handling becomes the bottleneck."
+      }
+    ],
+    "industriesHeading": "Industries we support around Clearwater",
+    "industriesBlurb": "Clearwater projects commonly include contractors, home services, specialty trades, professional services, and product brands that sell locally or ship. Around Clearwater Beach, Countryside, Coachman, and downtown Clearwater, information architecture changes by industry; the technical bar does not.",
+    "localAngle": "On-site collaboration is available in Clearwater and across Tampa Bay. Full remote website and growth-system delivery is available nationwide.",
+    "proofBlurb": "Nearby Tampa Bay builds (Screen Team, Knight Group, JNS, Sal’s Painting, and others) show the same hand-coded, search-ready foundation Clearwater businesses need. Your page count and package tier change; the quality bar does not. When we have a Clearwater-specific project, it is featured here; until then, regional proof still demonstrates the delivery standard.",
+    "contentImage": "/images/service-areas/clearwater.jpg",
+    "contentImageAlt": "Clearwater, Florida — service area for Knight Logics web design and local SEO",
+    "contentImageCaption": "Clearwater, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.",
+    "imageVerified": false,
+    "imageQuery": "clearwater beach florida",
+    "siblings": [
+      "safety-harbor",
+      "largo",
+      "dunedin",
+      "st-petersburg",
+      "palm-harbor"
+    ],
+    "faqs": [
+      {
+        "q": "Do you build websites specifically for Clearwater businesses?",
+        "a": "Yes. Copy, schema, internal links, and GBP alignment are scoped for Clearwater and Pinellas County — not a statewide filler page with the city name swapped."
+      },
+      {
+        "q": "Can Knight Logics work on-site in Clearwater?",
+        "a": "Yes for Tampa Bay engagements when on-site helps. Full remote delivery is also available nationwide for the same packages."
+      },
+      {
+        "q": "What package fits most Clearwater service businesses?",
+        "a": "Many start with Local Site depth for ranking foundations, then expand into Authority or Growth Systems when page count and automation justify it. Pricing lists the current ladder."
+      },
+      {
+        "q": "How long does a Clearwater website build take?",
+        "a": "Lean launches often take 1–2 weeks after content is ready. Deeper multi-page authority builds take longer based on scope and feedback speed."
+      },
+      {
+        "q": "Will a Clearwater page help if I also serve neighboring cities?",
+        "a": "Yes — when those cities are real service areas. We link sibling metros and keep GBP service areas honest so you do not claim geography you cannot cover."
+      },
+      {
+        "q": "Do you only do websites, or full growth systems too?",
+        "a": "Websites are the foundation. CRM, reviews, ticketing, and automation are available as attached systems when you want the full stack."
+      },
+      {
+        "q": "What makes a Clearwater page different from a template city page?",
+        "a": "Unique local framing (beach visibility noise competing with serious service-intent searches), real corridors (Clearwater Beach, Countryside, Coachman, and downtown Clearwater), verified media when available, and conversion paths matched to Pinellas County buyer behavior — not a find-and-replace city name."
+      }
+    ],
+    "ctaBlurb": "If your Clearwater site is not earning calls or organic leads, the free audit shows what is actually blocking you — technical debt, thin structure, GBP mismatch, or conversion gaps — before you spend on a rebuild. Bring your current URL and we will map the Clearwater opportunity against Pinellas County competition.",
+    "approxWordCount": 1374
+  },
+  {
+    "slug": "safety-harbor",
+    "name": "Safety Harbor",
+    "county": "Pinellas",
+    "countyFull": "Pinellas County",
+    "state": "FL",
+    "formId": "Saf",
+    "keywords": "Safety Harbor web designer, web design Safety Harbor FL, Safety Harbor website designer, local SEO Safety Harbor, Pinellas County web design",
+    "title": "Web Design Safety Harbor FL | Hand-Coded Sites That Rank",
+    "metaDescription": "Web design Safety Harbor FL — hand-coded sites for Pinellas County service businesses with local SEO, GBP alignment, and Tampa Bay case studies. Free audit.",
+    "ogTitle": "Safety Harbor Web Design & Local SEO | Knight Logics",
+    "ogDescription": "Hand-coded Safety Harbor websites with local SEO, Google Business alignment, on-site Tampa Bay support, and remote U.S. delivery.",
+    "h1": "Safety Harbor Web Designer for Service Businesses",
+    "heroLead": "Searching <strong>web designer Safety Harbor</strong> or <strong>Safety Harbor web design</strong>? Knight Logics builds hand-coded sites for Pinellas County businesses — local SEO structure, Google Business Profile alignment, and live Tampa Bay proof — with on-site support in the metro and full remote delivery nationwide.",
+    "breadcrumbLabel": "Safety Harbor Web Design",
+    "articleHeadline": "Web Design for Safety Harbor, FL — Built for Pinellas County Visibility",
+    "articleDescription": "What Safety Harbor businesses need from a custom website to compete in Pinellas County: speed, service architecture, local SEO, and a conversion path that works.",
+    "whyHeading": "Why Safety Harbor needs a stronger website than a template",
+    "whyParagraphs": [
+      "Safety Harbor sits inside Pinellas County, where local search is no longer a polite brochure contest. Homeowners and commercial buyers compare multiple tabs before they call — and the sites that win usually combine clear service architecture, fast mobile performance, and a Google Business Profile that matches the website. If your current Safety Harbor presence is a template homepage with a contact form buried below the fold, you are competing with one hand tied behind your back.",
+      "The competitive angle in Safety Harbor is Knight Logics home base with drive-time reach into Clearwater and Tampa. That means generic “Florida web design” language does not hold. Pages need Safety Harbor-specific framing, honest service-area statements, and proof that you actually work this corridor. Knight Logics builds hand-coded sites for Safety Harbor operators who want that clarity without WordPress bloat or monthly page-builder lock-in.",
+      "Neighborhood and corridor intent matters here: downtown Safety Harbor, Philippe Park corridor, and the Oldsmar bridge approach. When someone searches a trade plus Safety Harbor, they are not looking for a statewide franchise story. They want to know whether you serve their street, how fast you respond, and whether the site feels trustworthy on a phone. That is what local SEO and conversion structure are for — not keyword stuffing.",
+      "Many Safety Harbor businesses lose to generic Pinellas templates that never mention Safety Harbor. The fix is rarely “more blog posts.” It is usually cleaner HTML, dedicated service pages, schema that validates, Search Console indexing, and GBP categories/service areas that agree with the site. Those fundamentals compound. Decorative redesigns without them do not.",
+      "A Safety Harbor website should also make the next step obvious. Estimate forms, click-to-call, booking paths, and service selectors belong above the fold on mobile — not buried under stock hero text. Knight Logics designs conversion paths for how Pinellas County buyers actually behave when they are ready to hire."
+    ],
+    "marketHeading": "How Safety Harbor buyers actually find and book",
+    "marketParagraphs": [
+      "In-person delivery is available across Safety Harbor and the wider Tampa Bay metro when a kickoff, photo shoot, or on-site review helps. At the same time, every Knight Logics package is available fully remote across the United States — discovery, design, development, launch, and automation systems do not require you to be next door. Safety Harbor clients often use a hybrid: local when useful, remote for speed.",
+      "A strong Safety Harbor website usually includes a conversion-first homepage, dedicated service pages, FAQ structure, clear NAP consistency, and internal links into proof (reviews, galleries, case studies). For trades, estimate and call CTAs stay visible. For professional services, credibility and process clarity take the lead. Either way, the technical baseline is the same: hand-coded performance, schema, analytics, and indexing hygiene.",
+      "Pinellas County searchers bounce from slow sites. Core Web Vitals, compressed media, and lean JavaScript are not vanity metrics in Safety Harbor — they are conversion infrastructure. Knight Logics targets high Lighthouse scores because a fast page keeps the lead in your pipeline instead of the next result.",
+      "When you are ready to grow beyond the website, the same foundation supports CRM outreach, review requests, ticketing, and social systems without starting over. Safety Harbor operators who treat the site as the front door and the systems as the engine get compounding returns. That is the Growth Systems path — optional, but designed to attach cleanly.",
+      "Internal linking is part of the Safety Harbor strategy. Your hub pages, service silos, and neighboring city pages should reinforce each other instead of competing as orphans. Knight Logics also connects Safety Harbor landing pages back to pricing, audits, and case studies so visitors can move from education to a clear next step without bouncing to a competitor.",
+      "Content depth matters for indexing, but utility matters more. Every section on a Safety Harbor page should answer a real buyer question: what you do, where you work, how to contact you, what proof exists, and what happens after the first call. Doorway pages that only swap city names fail that test. Unique local framing for Safety Harbor and Pinellas County passes it.",
+      "Search Console data for Safety Harbor-style queries often shows impressions without clicks when titles are vague or pages look interchangeable. We write Safety Harbor-specific titles, meta descriptions, and H1 framing so the SERP snippet matches the promise on the page — then we measure CTR and iterate instead of guessing."
+    ],
+    "needsHeading": "What a Safety Harbor site should include",
+    "needs": [
+      {
+        "title": "Safety Harbor-specific service architecture",
+        "text": "Separate pages for the jobs people actually search in Safety Harbor beat a single dump “Services” page every time. Architecture should match how Pinellas County buyers phrase queries."
+      },
+      {
+        "title": "GBP and website alignment",
+        "text": "Categories, service areas, phone, and business name must match. Safety Harbor map-pack competition punishes mismatches between the profile and the site."
+      },
+      {
+        "title": "Mobile-first conversion",
+        "text": "Most Safety Harbor service searches happen on phones. Click-to-call, short forms, and above-the-fold clarity are non-negotiable."
+      },
+      {
+        "title": "Proof that feels local",
+        "text": "Photos, reviews, and project examples should support Safety Harbor / Pinellas County credibility — not generic stock that could be anywhere."
+      },
+      {
+        "title": "Indexation and measurement",
+        "text": "Search Console, sitemap submission, schema validation, and analytics so you can see what Safety Harbor queries actually convert."
+      },
+      {
+        "title": "Honest geography",
+        "text": "Only claim Safety Harbor and neighboring metros you can actually serve. Inflated service-area lists create trust gaps and GBP policy risk."
+      }
+    ],
+    "processHeading": "The build process for Safety Harbor clients",
+    "processSteps": [
+      {
+        "title": "Audit",
+        "text": "Review the current Safety Harbor site or competitive gap — speed, local keyword targeting, GBP alignment, schema, and conversion path — before writing code."
+      },
+      {
+        "title": "Architecture",
+        "text": "Map service and location structure around real Safety Harbor and Pinellas County search intent, including sibling cities you actually serve."
+      },
+      {
+        "title": "Build",
+        "text": "Hand-coded HTML, CSS, and JavaScript. No CMS bloat. Performance, accessibility, and SEO targeted together."
+      },
+      {
+        "title": "Launch & index",
+        "text": "GSC setup, sitemap, schema checks, GBP alignment, and tracking verified so the Safety Harbor property can be discovered."
+      },
+      {
+        "title": "Iterate",
+        "text": "After launch, review Safety Harbor query performance, strengthen weak pages, and attach growth systems when lead handling becomes the bottleneck."
+      }
+    ],
+    "industriesHeading": "Industries we support around Safety Harbor",
+    "industriesBlurb": "Safety Harbor projects commonly include contractors, home services, specialty trades, professional services, and product brands that sell locally or ship. Around downtown Safety Harbor, Philippe Park corridor, and the Oldsmar bridge approach, information architecture changes by industry; the technical bar does not.",
+    "localAngle": "On-site collaboration is available in Safety Harbor and across Tampa Bay. Full remote website and growth-system delivery is available nationwide.",
+    "proofBlurb": "Nearby Tampa Bay builds (Screen Team, Knight Group, JNS, Sal’s Painting, and others) show the same hand-coded, search-ready foundation Safety Harbor businesses need. Your page count and package tier change; the quality bar does not. When we have a Safety Harbor-specific project, it is featured here; until then, regional proof still demonstrates the delivery standard.",
+    "contentImage": "/images/service-areas/safety-harbor.jpg",
+    "contentImageAlt": "Safety Harbor, Florida — service area for Knight Logics web design and local SEO",
+    "contentImageCaption": "Safety Harbor, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.",
+    "imageVerified": false,
+    "imageQuery": "safety harbor florida waterfront",
+    "siblings": [
+      "clearwater",
+      "oldsmar",
+      "palm-harbor",
+      "tampa",
+      "dunedin"
+    ],
+    "faqs": [
+      {
+        "q": "Do you build websites specifically for Safety Harbor businesses?",
+        "a": "Yes. Copy, schema, internal links, and GBP alignment are scoped for Safety Harbor and Pinellas County — not a statewide filler page with the city name swapped."
+      },
+      {
+        "q": "Can Knight Logics work on-site in Safety Harbor?",
+        "a": "Yes for Tampa Bay engagements when on-site helps. Full remote delivery is also available nationwide for the same packages."
+      },
+      {
+        "q": "What package fits most Safety Harbor service businesses?",
+        "a": "Many start with Local Site depth for ranking foundations, then expand into Authority or Growth Systems when page count and automation justify it. Pricing lists the current ladder."
+      },
+      {
+        "q": "How long does a Safety Harbor website build take?",
+        "a": "Lean launches often take 1–2 weeks after content is ready. Deeper multi-page authority builds take longer based on scope and feedback speed."
+      },
+      {
+        "q": "Will a Safety Harbor page help if I also serve neighboring cities?",
+        "a": "Yes — when those cities are real service areas. We link sibling metros and keep GBP service areas honest so you do not claim geography you cannot cover."
+      },
+      {
+        "q": "Do you only do websites, or full growth systems too?",
+        "a": "Websites are the foundation. CRM, reviews, ticketing, and automation are available as attached systems when you want the full stack."
+      },
+      {
+        "q": "What makes a Safety Harbor page different from a template city page?",
+        "a": "Unique local framing (Knight Logics home base with drive-time reach into Clearwater and Tampa), real corridors (downtown Safety Harbor, Philippe Park corridor, and the Oldsmar bridge approach), verified media when available, and conversion paths matched to Pinellas County buyer behavior — not a find-and-replace city name."
+      }
+    ],
+    "ctaBlurb": "If your Safety Harbor site is not earning calls or organic leads, the free audit shows what is actually blocking you — technical debt, thin structure, GBP mismatch, or conversion gaps — before you spend on a rebuild. Bring your current URL and we will map the Safety Harbor opportunity against Pinellas County competition.",
+    "approxWordCount": 1438
+  },
+  {
+    "slug": "palm-harbor",
+    "name": "Palm Harbor",
+    "county": "Pinellas",
+    "countyFull": "Pinellas County",
+    "state": "FL",
+    "formId": "Pal",
+    "keywords": "Palm Harbor web designer, web design Palm Harbor FL, Palm Harbor website designer, local SEO Palm Harbor, Pinellas County web design",
+    "title": "Web Design Palm Harbor FL | Hand-Coded Sites That Rank",
+    "metaDescription": "Web design Palm Harbor FL — hand-coded sites for Pinellas County service businesses with local SEO, GBP alignment, and Tampa Bay case studies. Free audit.",
+    "ogTitle": "Palm Harbor Web Design & Local SEO | Knight Logics",
+    "ogDescription": "Hand-coded Palm Harbor websites with local SEO, Google Business alignment, on-site Tampa Bay support, and remote U.S. delivery.",
+    "h1": "Palm Harbor Web Designer for Service Businesses",
+    "heroLead": "Searching <strong>web designer Palm Harbor</strong> or <strong>Palm Harbor web design</strong>? Knight Logics builds hand-coded sites for Pinellas County businesses — local SEO structure, Google Business Profile alignment, and live Tampa Bay proof — with on-site support in the metro and full remote delivery nationwide.",
+    "breadcrumbLabel": "Palm Harbor Web Design",
+    "articleHeadline": "Web Design for Palm Harbor, FL — Built for Pinellas County Visibility",
+    "articleDescription": "What Palm Harbor businesses need from a custom website to compete in Pinellas County: speed, service architecture, local SEO, and a conversion path that works.",
+    "whyHeading": "Why Palm Harbor needs a stronger website than a template",
+    "whyParagraphs": [
+      "Palm Harbor sits inside Pinellas County, where local search is no longer a polite brochure contest. Homeowners and commercial buyers compare multiple tabs before they call — and the sites that win usually combine clear service architecture, fast mobile performance, and a Google Business Profile that matches the website. If your current Palm Harbor presence is a template homepage with a contact form buried below the fold, you are competing with one hand tied behind your back.",
+      "The competitive angle in Palm Harbor is north Pinellas homeowners searching trades with high intent. That means generic “Florida web design” language does not hold. Pages need Palm Harbor-specific framing, honest service-area statements, and proof that you actually work this corridor. Knight Logics builds hand-coded sites for Palm Harbor operators who want that clarity without WordPress bloat or monthly page-builder lock-in.",
+      "Neighborhood and corridor intent matters here: Ozona, Crystal Beach, Innisbrook, and east Palm Harbor toward East Lake. When someone searches a trade plus Palm Harbor, they are not looking for a statewide franchise story. They want to know whether you serve their street, how fast you respond, and whether the site feels trustworthy on a phone. That is what local SEO and conversion structure are for — not keyword stuffing.",
+      "Many Palm Harbor businesses lose to Palm Harbor Facebook-only businesses with no service architecture. The fix is rarely “more blog posts.” It is usually cleaner HTML, dedicated service pages, schema that validates, Search Console indexing, and GBP categories/service areas that agree with the site. Those fundamentals compound. Decorative redesigns without them do not.",
+      "A Palm Harbor website should also make the next step obvious. Estimate forms, click-to-call, booking paths, and service selectors belong above the fold on mobile — not buried under stock hero text. Knight Logics designs conversion paths for how Pinellas County buyers actually behave when they are ready to hire."
+    ],
+    "marketHeading": "How Palm Harbor buyers actually find and book",
+    "marketParagraphs": [
+      "In-person delivery is available across Palm Harbor and the wider Tampa Bay metro when a kickoff, photo shoot, or on-site review helps. At the same time, every Knight Logics package is available fully remote across the United States — discovery, design, development, launch, and automation systems do not require you to be next door. Palm Harbor clients often use a hybrid: local when useful, remote for speed.",
+      "A strong Palm Harbor website usually includes a conversion-first homepage, dedicated service pages, FAQ structure, clear NAP consistency, and internal links into proof (reviews, galleries, case studies). For trades, estimate and call CTAs stay visible. For professional services, credibility and process clarity take the lead. Either way, the technical baseline is the same: hand-coded performance, schema, analytics, and indexing hygiene.",
+      "Pinellas County searchers bounce from slow sites. Core Web Vitals, compressed media, and lean JavaScript are not vanity metrics in Palm Harbor — they are conversion infrastructure. Knight Logics targets high Lighthouse scores because a fast page keeps the lead in your pipeline instead of the next result.",
+      "When you are ready to grow beyond the website, the same foundation supports CRM outreach, review requests, ticketing, and social systems without starting over. Palm Harbor operators who treat the site as the front door and the systems as the engine get compounding returns. That is the Growth Systems path — optional, but designed to attach cleanly.",
+      "Internal linking is part of the Palm Harbor strategy. Your hub pages, service silos, and neighboring city pages should reinforce each other instead of competing as orphans. Knight Logics also connects Palm Harbor landing pages back to pricing, audits, and case studies so visitors can move from education to a clear next step without bouncing to a competitor.",
+      "Content depth matters for indexing, but utility matters more. Every section on a Palm Harbor page should answer a real buyer question: what you do, where you work, how to contact you, what proof exists, and what happens after the first call. Doorway pages that only swap city names fail that test. Unique local framing for Palm Harbor and Pinellas County passes it.",
+      "Search Console data for Palm Harbor-style queries often shows impressions without clicks when titles are vague or pages look interchangeable. We write Palm Harbor-specific titles, meta descriptions, and H1 framing so the SERP snippet matches the promise on the page — then we measure CTR and iterate instead of guessing."
+    ],
+    "needsHeading": "What a Palm Harbor site should include",
+    "needs": [
+      {
+        "title": "Palm Harbor-specific service architecture",
+        "text": "Separate pages for the jobs people actually search in Palm Harbor beat a single dump “Services” page every time. Architecture should match how Pinellas County buyers phrase queries."
+      },
+      {
+        "title": "GBP and website alignment",
+        "text": "Categories, service areas, phone, and business name must match. Palm Harbor map-pack competition punishes mismatches between the profile and the site."
+      },
+      {
+        "title": "Mobile-first conversion",
+        "text": "Most Palm Harbor service searches happen on phones. Click-to-call, short forms, and above-the-fold clarity are non-negotiable."
+      },
+      {
+        "title": "Proof that feels local",
+        "text": "Photos, reviews, and project examples should support Palm Harbor / Pinellas County credibility — not generic stock that could be anywhere."
+      },
+      {
+        "title": "Indexation and measurement",
+        "text": "Search Console, sitemap submission, schema validation, and analytics so you can see what Palm Harbor queries actually convert."
+      },
+      {
+        "title": "Honest geography",
+        "text": "Only claim Palm Harbor and neighboring metros you can actually serve. Inflated service-area lists create trust gaps and GBP policy risk."
+      }
+    ],
+    "processHeading": "The build process for Palm Harbor clients",
+    "processSteps": [
+      {
+        "title": "Audit",
+        "text": "Review the current Palm Harbor site or competitive gap — speed, local keyword targeting, GBP alignment, schema, and conversion path — before writing code."
+      },
+      {
+        "title": "Architecture",
+        "text": "Map service and location structure around real Palm Harbor and Pinellas County search intent, including sibling cities you actually serve."
+      },
+      {
+        "title": "Build",
+        "text": "Hand-coded HTML, CSS, and JavaScript. No CMS bloat. Performance, accessibility, and SEO targeted together."
+      },
+      {
+        "title": "Launch & index",
+        "text": "GSC setup, sitemap, schema checks, GBP alignment, and tracking verified so the Palm Harbor property can be discovered."
+      },
+      {
+        "title": "Iterate",
+        "text": "After launch, review Palm Harbor query performance, strengthen weak pages, and attach growth systems when lead handling becomes the bottleneck."
+      }
+    ],
+    "industriesHeading": "Industries we support around Palm Harbor",
+    "industriesBlurb": "Palm Harbor projects commonly include contractors, home services, specialty trades, professional services, and product brands that sell locally or ship. Around Ozona, Crystal Beach, Innisbrook, and east Palm Harbor toward East Lake, information architecture changes by industry; the technical bar does not.",
+    "localAngle": "On-site collaboration is available in Palm Harbor and across Tampa Bay. Full remote website and growth-system delivery is available nationwide.",
+    "proofBlurb": "Nearby Tampa Bay builds (Screen Team, Knight Group, JNS, Sal’s Painting, and others) show the same hand-coded, search-ready foundation Palm Harbor businesses need. Your page count and package tier change; the quality bar does not. When we have a Palm Harbor-specific project, it is featured here; until then, regional proof still demonstrates the delivery standard.",
+    "contentImage": "/images/service-areas/palm-harbor.jpg",
+    "contentImageAlt": "Palm Harbor, Florida — service area for Knight Logics web design and local SEO",
+    "contentImageCaption": "Palm Harbor, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.",
+    "imageVerified": false,
+    "imageQuery": "palm harbor florida",
+    "siblings": [
+      "tarpon-springs",
+      "dunedin",
+      "safety-harbor",
+      "oldsmar",
+      "new-port-richey"
+    ],
+    "faqs": [
+      {
+        "q": "Do you build websites specifically for Palm Harbor businesses?",
+        "a": "Yes. Copy, schema, internal links, and GBP alignment are scoped for Palm Harbor and Pinellas County — not a statewide filler page with the city name swapped."
+      },
+      {
+        "q": "Can Knight Logics work on-site in Palm Harbor?",
+        "a": "Yes for Tampa Bay engagements when on-site helps. Full remote delivery is also available nationwide for the same packages."
+      },
+      {
+        "q": "What package fits most Palm Harbor service businesses?",
+        "a": "Many start with Local Site depth for ranking foundations, then expand into Authority or Growth Systems when page count and automation justify it. Pricing lists the current ladder."
+      },
+      {
+        "q": "How long does a Palm Harbor website build take?",
+        "a": "Lean launches often take 1–2 weeks after content is ready. Deeper multi-page authority builds take longer based on scope and feedback speed."
+      },
+      {
+        "q": "Will a Palm Harbor page help if I also serve neighboring cities?",
+        "a": "Yes — when those cities are real service areas. We link sibling metros and keep GBP service areas honest so you do not claim geography you cannot cover."
+      },
+      {
+        "q": "Do you only do websites, or full growth systems too?",
+        "a": "Websites are the foundation. CRM, reviews, ticketing, and automation are available as attached systems when you want the full stack."
+      },
+      {
+        "q": "What makes a Palm Harbor page different from a template city page?",
+        "a": "Unique local framing (north Pinellas homeowners searching trades with high intent), real corridors (Ozona, Crystal Beach, Innisbrook, and east Palm Harbor toward East Lake), verified media when available, and conversion paths matched to Pinellas County buyer behavior — not a find-and-replace city name."
+      }
+    ],
+    "ctaBlurb": "If your Palm Harbor site is not earning calls or organic leads, the free audit shows what is actually blocking you — technical debt, thin structure, GBP mismatch, or conversion gaps — before you spend on a rebuild. Bring your current URL and we will map the Palm Harbor opportunity against Pinellas County competition.",
+    "approxWordCount": 1432
+  },
+  {
+    "slug": "dunedin",
+    "name": "Dunedin",
+    "county": "Pinellas",
+    "countyFull": "Pinellas County",
+    "state": "FL",
+    "formId": "Dun",
+    "keywords": "Dunedin web designer, web design Dunedin FL, Dunedin website designer, local SEO Dunedin, Pinellas County web design",
+    "title": "Web Design Dunedin FL | Hand-Coded Sites That Rank",
+    "metaDescription": "Web design Dunedin FL — hand-coded sites for Pinellas County service businesses with local SEO, GBP alignment, and Tampa Bay case studies. Free audit.",
+    "ogTitle": "Dunedin Web Design & Local SEO | Knight Logics",
+    "ogDescription": "Hand-coded Dunedin websites with local SEO, Google Business alignment, on-site Tampa Bay support, and remote U.S. delivery.",
+    "h1": "Dunedin Web Designer for Service Businesses",
+    "heroLead": "Searching <strong>web designer Dunedin</strong> or <strong>Dunedin web design</strong>? Knight Logics builds hand-coded sites for Pinellas County businesses — local SEO structure, Google Business Profile alignment, and live Tampa Bay proof — with on-site support in the metro and full remote delivery nationwide.",
+    "breadcrumbLabel": "Dunedin Web Design",
+    "articleHeadline": "Web Design for Dunedin, FL — Built for Pinellas County Visibility",
+    "articleDescription": "What Dunedin businesses need from a custom website to compete in Pinellas County: speed, service architecture, local SEO, and a conversion path that works.",
+    "whyHeading": "Why Dunedin needs a stronger website than a template",
+    "whyParagraphs": [
+      "Dunedin sits inside Pinellas County, where local search is no longer a polite brochure contest. Homeowners and commercial buyers compare multiple tabs before they call — and the sites that win usually combine clear service architecture, fast mobile performance, and a Google Business Profile that matches the website. If your current Dunedin presence is a template homepage with a contact form buried below the fold, you are competing with one hand tied behind your back.",
+      "The competitive angle in Dunedin is walkable downtown brand that still needs map-pack and service pages. That means generic “Florida web design” language does not hold. Pages need Dunedin-specific framing, honest service-area statements, and proof that you actually work this corridor. Knight Logics builds hand-coded sites for Dunedin operators who want that clarity without WordPress bloat or monthly page-builder lock-in.",
+      "Neighborhood and corridor intent matters here: downtown Dunedin, Edgewater Drive, and the Pinellas Trail corridor. When someone searches a trade plus Dunedin, they are not looking for a statewide franchise story. They want to know whether you serve their street, how fast you respond, and whether the site feels trustworthy on a phone. That is what local SEO and conversion structure are for — not keyword stuffing.",
+      "Many Dunedin businesses lose to cute Main Street sites with zero technical SEO. The fix is rarely “more blog posts.” It is usually cleaner HTML, dedicated service pages, schema that validates, Search Console indexing, and GBP categories/service areas that agree with the site. Those fundamentals compound. Decorative redesigns without them do not.",
+      "A Dunedin website should also make the next step obvious. Estimate forms, click-to-call, booking paths, and service selectors belong above the fold on mobile — not buried under stock hero text. Knight Logics designs conversion paths for how Pinellas County buyers actually behave when they are ready to hire."
+    ],
+    "marketHeading": "How Dunedin buyers actually find and book",
+    "marketParagraphs": [
+      "In-person delivery is available across Dunedin and the wider Tampa Bay metro when a kickoff, photo shoot, or on-site review helps. At the same time, every Knight Logics package is available fully remote across the United States — discovery, design, development, launch, and automation systems do not require you to be next door. Dunedin clients often use a hybrid: local when useful, remote for speed.",
+      "A strong Dunedin website usually includes a conversion-first homepage, dedicated service pages, FAQ structure, clear NAP consistency, and internal links into proof (reviews, galleries, case studies). For trades, estimate and call CTAs stay visible. For professional services, credibility and process clarity take the lead. Either way, the technical baseline is the same: hand-coded performance, schema, analytics, and indexing hygiene.",
+      "Pinellas County searchers bounce from slow sites. Core Web Vitals, compressed media, and lean JavaScript are not vanity metrics in Dunedin — they are conversion infrastructure. Knight Logics targets high Lighthouse scores because a fast page keeps the lead in your pipeline instead of the next result.",
+      "When you are ready to grow beyond the website, the same foundation supports CRM outreach, review requests, ticketing, and social systems without starting over. Dunedin operators who treat the site as the front door and the systems as the engine get compounding returns. That is the Growth Systems path — optional, but designed to attach cleanly.",
+      "Internal linking is part of the Dunedin strategy. Your hub pages, service silos, and neighboring city pages should reinforce each other instead of competing as orphans. Knight Logics also connects Dunedin landing pages back to pricing, audits, and case studies so visitors can move from education to a clear next step without bouncing to a competitor.",
+      "Content depth matters for indexing, but utility matters more. Every section on a Dunedin page should answer a real buyer question: what you do, where you work, how to contact you, what proof exists, and what happens after the first call. Doorway pages that only swap city names fail that test. Unique local framing for Dunedin and Pinellas County passes it.",
+      "Search Console data for Dunedin-style queries often shows impressions without clicks when titles are vague or pages look interchangeable. We write Dunedin-specific titles, meta descriptions, and H1 framing so the SERP snippet matches the promise on the page — then we measure CTR and iterate instead of guessing."
+    ],
+    "needsHeading": "What a Dunedin site should include",
+    "needs": [
+      {
+        "title": "Dunedin-specific service architecture",
+        "text": "Separate pages for the jobs people actually search in Dunedin beat a single dump “Services” page every time. Architecture should match how Pinellas County buyers phrase queries."
+      },
+      {
+        "title": "GBP and website alignment",
+        "text": "Categories, service areas, phone, and business name must match. Dunedin map-pack competition punishes mismatches between the profile and the site."
+      },
+      {
+        "title": "Mobile-first conversion",
+        "text": "Most Dunedin service searches happen on phones. Click-to-call, short forms, and above-the-fold clarity are non-negotiable."
+      },
+      {
+        "title": "Proof that feels local",
+        "text": "Photos, reviews, and project examples should support Dunedin / Pinellas County credibility — not generic stock that could be anywhere."
+      },
+      {
+        "title": "Indexation and measurement",
+        "text": "Search Console, sitemap submission, schema validation, and analytics so you can see what Dunedin queries actually convert."
+      },
+      {
+        "title": "Honest geography",
+        "text": "Only claim Dunedin and neighboring metros you can actually serve. Inflated service-area lists create trust gaps and GBP policy risk."
+      }
+    ],
+    "processHeading": "The build process for Dunedin clients",
+    "processSteps": [
+      {
+        "title": "Audit",
+        "text": "Review the current Dunedin site or competitive gap — speed, local keyword targeting, GBP alignment, schema, and conversion path — before writing code."
+      },
+      {
+        "title": "Architecture",
+        "text": "Map service and location structure around real Dunedin and Pinellas County search intent, including sibling cities you actually serve."
+      },
+      {
+        "title": "Build",
+        "text": "Hand-coded HTML, CSS, and JavaScript. No CMS bloat. Performance, accessibility, and SEO targeted together."
+      },
+      {
+        "title": "Launch & index",
+        "text": "GSC setup, sitemap, schema checks, GBP alignment, and tracking verified so the Dunedin property can be discovered."
+      },
+      {
+        "title": "Iterate",
+        "text": "After launch, review Dunedin query performance, strengthen weak pages, and attach growth systems when lead handling becomes the bottleneck."
+      }
+    ],
+    "industriesHeading": "Industries we support around Dunedin",
+    "industriesBlurb": "Dunedin projects commonly include contractors, home services, specialty trades, professional services, and product brands that sell locally or ship. Around downtown Dunedin, Edgewater Drive, and the Pinellas Trail corridor, information architecture changes by industry; the technical bar does not.",
+    "localAngle": "On-site collaboration is available in Dunedin and across Tampa Bay. Full remote website and growth-system delivery is available nationwide.",
+    "proofBlurb": "Nearby Tampa Bay builds (Screen Team, Knight Group, JNS, Sal’s Painting, and others) show the same hand-coded, search-ready foundation Dunedin businesses need. Your page count and package tier change; the quality bar does not. When we have a Dunedin-specific project, it is featured here; until then, regional proof still demonstrates the delivery standard.",
+    "contentImage": "/images/service-areas/dunedin.jpg",
+    "contentImageAlt": "Dunedin, Florida — service area for Knight Logics web design and local SEO",
+    "contentImageCaption": "Dunedin, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.",
+    "imageVerified": false,
+    "imageQuery": "dunedin florida downtown",
+    "siblings": [
+      "palm-harbor",
+      "clearwater",
+      "safety-harbor",
+      "tarpon-springs",
+      "largo"
+    ],
+    "faqs": [
+      {
+        "q": "Do you build websites specifically for Dunedin businesses?",
+        "a": "Yes. Copy, schema, internal links, and GBP alignment are scoped for Dunedin and Pinellas County — not a statewide filler page with the city name swapped."
+      },
+      {
+        "q": "Can Knight Logics work on-site in Dunedin?",
+        "a": "Yes for Tampa Bay engagements when on-site helps. Full remote delivery is also available nationwide for the same packages."
+      },
+      {
+        "q": "What package fits most Dunedin service businesses?",
+        "a": "Many start with Local Site depth for ranking foundations, then expand into Authority or Growth Systems when page count and automation justify it. Pricing lists the current ladder."
+      },
+      {
+        "q": "How long does a Dunedin website build take?",
+        "a": "Lean launches often take 1–2 weeks after content is ready. Deeper multi-page authority builds take longer based on scope and feedback speed."
+      },
+      {
+        "q": "Will a Dunedin page help if I also serve neighboring cities?",
+        "a": "Yes — when those cities are real service areas. We link sibling metros and keep GBP service areas honest so you do not claim geography you cannot cover."
+      },
+      {
+        "q": "Do you only do websites, or full growth systems too?",
+        "a": "Websites are the foundation. CRM, reviews, ticketing, and automation are available as attached systems when you want the full stack."
+      },
+      {
+        "q": "What makes a Dunedin page different from a template city page?",
+        "a": "Unique local framing (walkable downtown brand that still needs map-pack and service pages), real corridors (downtown Dunedin, Edgewater Drive, and the Pinellas Trail corridor), verified media when available, and conversion paths matched to Pinellas County buyer behavior — not a find-and-replace city name."
+      }
+    ],
+    "ctaBlurb": "If your Dunedin site is not earning calls or organic leads, the free audit shows what is actually blocking you — technical debt, thin structure, GBP mismatch, or conversion gaps — before you spend on a rebuild. Bring your current URL and we will map the Dunedin opportunity against Pinellas County competition.",
+    "approxWordCount": 1385
+  },
+  {
+    "slug": "largo",
+    "name": "Largo",
+    "county": "Pinellas",
+    "countyFull": "Pinellas County",
+    "state": "FL",
+    "formId": "Lar",
+    "keywords": "Largo web designer, web design Largo FL, Largo website designer, local SEO Largo, Pinellas County web design",
+    "title": "Web Design Largo FL | Hand-Coded Sites That Rank",
+    "metaDescription": "Web design Largo FL — hand-coded sites for Pinellas County service businesses with local SEO, GBP alignment, and Tampa Bay case studies. Free audit.",
+    "ogTitle": "Largo Web Design & Local SEO | Knight Logics",
+    "ogDescription": "Hand-coded Largo websites with local SEO, Google Business alignment, on-site Tampa Bay support, and remote U.S. delivery.",
+    "h1": "Largo Web Designer for Service Businesses",
+    "heroLead": "Searching <strong>web designer Largo</strong> or <strong>Largo web design</strong>? Knight Logics builds hand-coded sites for Pinellas County businesses — local SEO structure, Google Business Profile alignment, and live Tampa Bay proof — with on-site support in the metro and full remote delivery nationwide.",
+    "breadcrumbLabel": "Largo Web Design",
+    "articleHeadline": "Web Design for Largo, FL — Built for Pinellas County Visibility",
+    "articleDescription": "What Largo businesses need from a custom website to compete in Pinellas County: speed, service architecture, local SEO, and a conversion path that works.",
+    "whyHeading": "Why Largo needs a stronger website than a template",
+    "whyParagraphs": [
+      "Largo sits inside Pinellas County, where local search is no longer a polite brochure contest. Homeowners and commercial buyers compare multiple tabs before they call — and the sites that win usually combine clear service architecture, fast mobile performance, and a Google Business Profile that matches the website. If your current Largo presence is a template homepage with a contact form buried below the fold, you are competing with one hand tied behind your back.",
+      "The competitive angle in Largo is central Pinellas logistics hub for contractors and home services. That means generic “Florida web design” language does not hold. Pages need Largo-specific framing, honest service-area statements, and proof that you actually work this corridor. Knight Logics builds hand-coded sites for Largo operators who want that clarity without WordPress bloat or monthly page-builder lock-in.",
+      "Neighborhood and corridor intent matters here: central Largo, Baskin, and the Ulmerton corridor toward Pinellas Park. When someone searches a trade plus Largo, they are not looking for a statewide franchise story. They want to know whether you serve their street, how fast you respond, and whether the site feels trustworthy on a phone. That is what local SEO and conversion structure are for — not keyword stuffing.",
+      "Many Largo businesses lose to county-wide handyman sites that bury Largo in a footer list. The fix is rarely “more blog posts.” It is usually cleaner HTML, dedicated service pages, schema that validates, Search Console indexing, and GBP categories/service areas that agree with the site. Those fundamentals compound. Decorative redesigns without them do not.",
+      "A Largo website should also make the next step obvious. Estimate forms, click-to-call, booking paths, and service selectors belong above the fold on mobile — not buried under stock hero text. Knight Logics designs conversion paths for how Pinellas County buyers actually behave when they are ready to hire."
+    ],
+    "marketHeading": "How Largo buyers actually find and book",
+    "marketParagraphs": [
+      "In-person delivery is available across Largo and the wider Tampa Bay metro when a kickoff, photo shoot, or on-site review helps. At the same time, every Knight Logics package is available fully remote across the United States — discovery, design, development, launch, and automation systems do not require you to be next door. Largo clients often use a hybrid: local when useful, remote for speed.",
+      "A strong Largo website usually includes a conversion-first homepage, dedicated service pages, FAQ structure, clear NAP consistency, and internal links into proof (reviews, galleries, case studies). For trades, estimate and call CTAs stay visible. For professional services, credibility and process clarity take the lead. Either way, the technical baseline is the same: hand-coded performance, schema, analytics, and indexing hygiene.",
+      "Pinellas County searchers bounce from slow sites. Core Web Vitals, compressed media, and lean JavaScript are not vanity metrics in Largo — they are conversion infrastructure. Knight Logics targets high Lighthouse scores because a fast page keeps the lead in your pipeline instead of the next result.",
+      "When you are ready to grow beyond the website, the same foundation supports CRM outreach, review requests, ticketing, and social systems without starting over. Largo operators who treat the site as the front door and the systems as the engine get compounding returns. That is the Growth Systems path — optional, but designed to attach cleanly.",
+      "Internal linking is part of the Largo strategy. Your hub pages, service silos, and neighboring city pages should reinforce each other instead of competing as orphans. Knight Logics also connects Largo landing pages back to pricing, audits, and case studies so visitors can move from education to a clear next step without bouncing to a competitor.",
+      "Content depth matters for indexing, but utility matters more. Every section on a Largo page should answer a real buyer question: what you do, where you work, how to contact you, what proof exists, and what happens after the first call. Doorway pages that only swap city names fail that test. Unique local framing for Largo and Pinellas County passes it.",
+      "Search Console data for Largo-style queries often shows impressions without clicks when titles are vague or pages look interchangeable. We write Largo-specific titles, meta descriptions, and H1 framing so the SERP snippet matches the promise on the page — then we measure CTR and iterate instead of guessing."
+    ],
+    "needsHeading": "What a Largo site should include",
+    "needs": [
+      {
+        "title": "Largo-specific service architecture",
+        "text": "Separate pages for the jobs people actually search in Largo beat a single dump “Services” page every time. Architecture should match how Pinellas County buyers phrase queries."
+      },
+      {
+        "title": "GBP and website alignment",
+        "text": "Categories, service areas, phone, and business name must match. Largo map-pack competition punishes mismatches between the profile and the site."
+      },
+      {
+        "title": "Mobile-first conversion",
+        "text": "Most Largo service searches happen on phones. Click-to-call, short forms, and above-the-fold clarity are non-negotiable."
+      },
+      {
+        "title": "Proof that feels local",
+        "text": "Photos, reviews, and project examples should support Largo / Pinellas County credibility — not generic stock that could be anywhere."
+      },
+      {
+        "title": "Indexation and measurement",
+        "text": "Search Console, sitemap submission, schema validation, and analytics so you can see what Largo queries actually convert."
+      },
+      {
+        "title": "Honest geography",
+        "text": "Only claim Largo and neighboring metros you can actually serve. Inflated service-area lists create trust gaps and GBP policy risk."
+      }
+    ],
+    "processHeading": "The build process for Largo clients",
+    "processSteps": [
+      {
+        "title": "Audit",
+        "text": "Review the current Largo site or competitive gap — speed, local keyword targeting, GBP alignment, schema, and conversion path — before writing code."
+      },
+      {
+        "title": "Architecture",
+        "text": "Map service and location structure around real Largo and Pinellas County search intent, including sibling cities you actually serve."
+      },
+      {
+        "title": "Build",
+        "text": "Hand-coded HTML, CSS, and JavaScript. No CMS bloat. Performance, accessibility, and SEO targeted together."
+      },
+      {
+        "title": "Launch & index",
+        "text": "GSC setup, sitemap, schema checks, GBP alignment, and tracking verified so the Largo property can be discovered."
+      },
+      {
+        "title": "Iterate",
+        "text": "After launch, review Largo query performance, strengthen weak pages, and attach growth systems when lead handling becomes the bottleneck."
+      }
+    ],
+    "industriesHeading": "Industries we support around Largo",
+    "industriesBlurb": "Largo projects commonly include contractors, home services, specialty trades, professional services, and product brands that sell locally or ship. Around central Largo, Baskin, and the Ulmerton corridor toward Pinellas Park, information architecture changes by industry; the technical bar does not.",
+    "localAngle": "On-site collaboration is available in Largo and across Tampa Bay. Full remote website and growth-system delivery is available nationwide.",
+    "proofBlurb": "Nearby Tampa Bay builds (Screen Team, Knight Group, JNS, Sal’s Painting, and others) show the same hand-coded, search-ready foundation Largo businesses need. Your page count and package tier change; the quality bar does not. When we have a Largo-specific project, it is featured here; until then, regional proof still demonstrates the delivery standard.",
+    "contentImage": "/images/service-areas/largo.jpg",
+    "contentImageAlt": "Largo, Florida — service area for Knight Logics web design and local SEO",
+    "contentImageCaption": "Largo, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.",
+    "imageVerified": false,
+    "imageQuery": "largo florida",
+    "siblings": [
+      "pinellas-park",
+      "clearwater",
+      "seminole",
+      "st-petersburg",
+      "safety-harbor"
+    ],
+    "faqs": [
+      {
+        "q": "Do you build websites specifically for Largo businesses?",
+        "a": "Yes. Copy, schema, internal links, and GBP alignment are scoped for Largo and Pinellas County — not a statewide filler page with the city name swapped."
+      },
+      {
+        "q": "Can Knight Logics work on-site in Largo?",
+        "a": "Yes for Tampa Bay engagements when on-site helps. Full remote delivery is also available nationwide for the same packages."
+      },
+      {
+        "q": "What package fits most Largo service businesses?",
+        "a": "Many start with Local Site depth for ranking foundations, then expand into Authority or Growth Systems when page count and automation justify it. Pricing lists the current ladder."
+      },
+      {
+        "q": "How long does a Largo website build take?",
+        "a": "Lean launches often take 1–2 weeks after content is ready. Deeper multi-page authority builds take longer based on scope and feedback speed."
+      },
+      {
+        "q": "Will a Largo page help if I also serve neighboring cities?",
+        "a": "Yes — when those cities are real service areas. We link sibling metros and keep GBP service areas honest so you do not claim geography you cannot cover."
+      },
+      {
+        "q": "Do you only do websites, or full growth systems too?",
+        "a": "Websites are the foundation. CRM, reviews, ticketing, and automation are available as attached systems when you want the full stack."
+      },
+      {
+        "q": "What makes a Largo page different from a template city page?",
+        "a": "Unique local framing (central Pinellas logistics hub for contractors and home services), real corridors (central Largo, Baskin, and the Ulmerton corridor toward Pinellas Park), verified media when available, and conversion paths matched to Pinellas County buyer behavior — not a find-and-replace city name."
+      }
+    ],
+    "ctaBlurb": "If your Largo site is not earning calls or organic leads, the free audit shows what is actually blocking you — technical debt, thin structure, GBP mismatch, or conversion gaps — before you spend on a rebuild. Bring your current URL and we will map the Largo opportunity against Pinellas County competition.",
+    "approxWordCount": 1388
+  },
+  {
+    "slug": "pinellas-park",
+    "name": "Pinellas Park",
+    "county": "Pinellas",
+    "countyFull": "Pinellas County",
+    "state": "FL",
+    "formId": "Pin",
+    "keywords": "Pinellas Park web designer, web design Pinellas Park FL, Pinellas Park website designer, local SEO Pinellas Park, Pinellas County web design",
+    "title": "Web Design Pinellas Park FL | Hand-Coded Sites That Rank",
+    "metaDescription": "Web design Pinellas Park FL — hand-coded sites for Pinellas County service businesses with local SEO, GBP alignment, and Tampa Bay case studies. Free audit.",
+    "ogTitle": "Pinellas Park Web Design & Local SEO | Knight Logics",
+    "ogDescription": "Hand-coded Pinellas Park websites with local SEO, Google Business alignment, on-site Tampa Bay support, and remote U.S. delivery.",
+    "h1": "Pinellas Park Web Designer for Service Businesses",
+    "heroLead": "Searching <strong>web designer Pinellas Park</strong> or <strong>Pinellas Park web design</strong>? Knight Logics builds hand-coded sites for Pinellas County businesses — local SEO structure, Google Business Profile alignment, and live Tampa Bay proof — with on-site support in the metro and full remote delivery nationwide.",
+    "breadcrumbLabel": "Pinellas Park Web Design",
+    "articleHeadline": "Web Design for Pinellas Park, FL — Built for Pinellas County Visibility",
+    "articleDescription": "What Pinellas Park businesses need from a custom website to compete in Pinellas County: speed, service architecture, local SEO, and a conversion path that works.",
+    "whyHeading": "Why Pinellas Park needs a stronger website than a template",
+    "whyParagraphs": [
+      "Pinellas Park sits inside Pinellas County, where local search is no longer a polite brochure contest. Homeowners and commercial buyers compare multiple tabs before they call — and the sites that win usually combine clear service architecture, fast mobile performance, and a Google Business Profile that matches the website. If your current Pinellas Park presence is a template homepage with a contact form buried below the fold, you are competing with one hand tied behind your back.",
+      "The competitive angle in Pinellas Park is working-class Pinellas market where call-first CTAs convert. That means generic “Florida web design” language does not hold. Pages need Pinellas Park-specific framing, honest service-area statements, and proof that you actually work this corridor. Knight Logics builds hand-coded sites for Pinellas Park operators who want that clarity without WordPress bloat or monthly page-builder lock-in.",
+      "Neighborhood and corridor intent matters here: Park Boulevard corridor, Gateway area, and industrial zones near the airport approach. When someone searches a trade plus Pinellas Park, they are not looking for a statewide franchise story. They want to know whether you serve their street, how fast you respond, and whether the site feels trustworthy on a phone. That is what local SEO and conversion structure are for — not keyword stuffing.",
+      "Many Pinellas Park businesses lose to industrial-park businesses still on free website builders. The fix is rarely “more blog posts.” It is usually cleaner HTML, dedicated service pages, schema that validates, Search Console indexing, and GBP categories/service areas that agree with the site. Those fundamentals compound. Decorative redesigns without them do not.",
+      "A Pinellas Park website should also make the next step obvious. Estimate forms, click-to-call, booking paths, and service selectors belong above the fold on mobile — not buried under stock hero text. Knight Logics designs conversion paths for how Pinellas County buyers actually behave when they are ready to hire."
+    ],
+    "marketHeading": "How Pinellas Park buyers actually find and book",
+    "marketParagraphs": [
+      "In-person delivery is available across Pinellas Park and the wider Tampa Bay metro when a kickoff, photo shoot, or on-site review helps. At the same time, every Knight Logics package is available fully remote across the United States — discovery, design, development, launch, and automation systems do not require you to be next door. Pinellas Park clients often use a hybrid: local when useful, remote for speed.",
+      "A strong Pinellas Park website usually includes a conversion-first homepage, dedicated service pages, FAQ structure, clear NAP consistency, and internal links into proof (reviews, galleries, case studies). For trades, estimate and call CTAs stay visible. For professional services, credibility and process clarity take the lead. Either way, the technical baseline is the same: hand-coded performance, schema, analytics, and indexing hygiene.",
+      "Pinellas County searchers bounce from slow sites. Core Web Vitals, compressed media, and lean JavaScript are not vanity metrics in Pinellas Park — they are conversion infrastructure. Knight Logics targets high Lighthouse scores because a fast page keeps the lead in your pipeline instead of the next result.",
+      "When you are ready to grow beyond the website, the same foundation supports CRM outreach, review requests, ticketing, and social systems without starting over. Pinellas Park operators who treat the site as the front door and the systems as the engine get compounding returns. That is the Growth Systems path — optional, but designed to attach cleanly.",
+      "Internal linking is part of the Pinellas Park strategy. Your hub pages, service silos, and neighboring city pages should reinforce each other instead of competing as orphans. Knight Logics also connects Pinellas Park landing pages back to pricing, audits, and case studies so visitors can move from education to a clear next step without bouncing to a competitor.",
+      "Content depth matters for indexing, but utility matters more. Every section on a Pinellas Park page should answer a real buyer question: what you do, where you work, how to contact you, what proof exists, and what happens after the first call. Doorway pages that only swap city names fail that test. Unique local framing for Pinellas Park and Pinellas County passes it.",
+      "Search Console data for Pinellas Park-style queries often shows impressions without clicks when titles are vague or pages look interchangeable. We write Pinellas Park-specific titles, meta descriptions, and H1 framing so the SERP snippet matches the promise on the page — then we measure CTR and iterate instead of guessing."
+    ],
+    "needsHeading": "What a Pinellas Park site should include",
+    "needs": [
+      {
+        "title": "Pinellas Park-specific service architecture",
+        "text": "Separate pages for the jobs people actually search in Pinellas Park beat a single dump “Services” page every time. Architecture should match how Pinellas County buyers phrase queries."
+      },
+      {
+        "title": "GBP and website alignment",
+        "text": "Categories, service areas, phone, and business name must match. Pinellas Park map-pack competition punishes mismatches between the profile and the site."
+      },
+      {
+        "title": "Mobile-first conversion",
+        "text": "Most Pinellas Park service searches happen on phones. Click-to-call, short forms, and above-the-fold clarity are non-negotiable."
+      },
+      {
+        "title": "Proof that feels local",
+        "text": "Photos, reviews, and project examples should support Pinellas Park / Pinellas County credibility — not generic stock that could be anywhere."
+      },
+      {
+        "title": "Indexation and measurement",
+        "text": "Search Console, sitemap submission, schema validation, and analytics so you can see what Pinellas Park queries actually convert."
+      },
+      {
+        "title": "Honest geography",
+        "text": "Only claim Pinellas Park and neighboring metros you can actually serve. Inflated service-area lists create trust gaps and GBP policy risk."
+      }
+    ],
+    "processHeading": "The build process for Pinellas Park clients",
+    "processSteps": [
+      {
+        "title": "Audit",
+        "text": "Review the current Pinellas Park site or competitive gap — speed, local keyword targeting, GBP alignment, schema, and conversion path — before writing code."
+      },
+      {
+        "title": "Architecture",
+        "text": "Map service and location structure around real Pinellas Park and Pinellas County search intent, including sibling cities you actually serve."
+      },
+      {
+        "title": "Build",
+        "text": "Hand-coded HTML, CSS, and JavaScript. No CMS bloat. Performance, accessibility, and SEO targeted together."
+      },
+      {
+        "title": "Launch & index",
+        "text": "GSC setup, sitemap, schema checks, GBP alignment, and tracking verified so the Pinellas Park property can be discovered."
+      },
+      {
+        "title": "Iterate",
+        "text": "After launch, review Pinellas Park query performance, strengthen weak pages, and attach growth systems when lead handling becomes the bottleneck."
+      }
+    ],
+    "industriesHeading": "Industries we support around Pinellas Park",
+    "industriesBlurb": "Pinellas Park projects commonly include contractors, home services, specialty trades, professional services, and product brands that sell locally or ship. Around Park Boulevard corridor, Gateway area, and industrial zones near the airport approach, information architecture changes by industry; the technical bar does not.",
+    "localAngle": "On-site collaboration is available in Pinellas Park and across Tampa Bay. Full remote website and growth-system delivery is available nationwide.",
+    "proofBlurb": "Nearby Tampa Bay builds (Screen Team, Knight Group, JNS, Sal’s Painting, and others) show the same hand-coded, search-ready foundation Pinellas Park businesses need. Your page count and package tier change; the quality bar does not. When we have a Pinellas Park-specific project, it is featured here; until then, regional proof still demonstrates the delivery standard.",
+    "contentImage": "/images/service-areas/pinellas-park.jpg",
+    "contentImageAlt": "Pinellas Park, Florida — service area for Knight Logics web design and local SEO",
+    "contentImageCaption": "Pinellas Park, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.",
+    "imageVerified": false,
+    "imageQuery": "pinellas park florida",
+    "siblings": [
+      "largo",
+      "st-petersburg",
+      "seminole",
+      "clearwater",
+      "tampa"
+    ],
+    "faqs": [
+      {
+        "q": "Do you build websites specifically for Pinellas Park businesses?",
+        "a": "Yes. Copy, schema, internal links, and GBP alignment are scoped for Pinellas Park and Pinellas County — not a statewide filler page with the city name swapped."
+      },
+      {
+        "q": "Can Knight Logics work on-site in Pinellas Park?",
+        "a": "Yes for Tampa Bay engagements when on-site helps. Full remote delivery is also available nationwide for the same packages."
+      },
+      {
+        "q": "What package fits most Pinellas Park service businesses?",
+        "a": "Many start with Local Site depth for ranking foundations, then expand into Authority or Growth Systems when page count and automation justify it. Pricing lists the current ladder."
+      },
+      {
+        "q": "How long does a Pinellas Park website build take?",
+        "a": "Lean launches often take 1–2 weeks after content is ready. Deeper multi-page authority builds take longer based on scope and feedback speed."
+      },
+      {
+        "q": "Will a Pinellas Park page help if I also serve neighboring cities?",
+        "a": "Yes — when those cities are real service areas. We link sibling metros and keep GBP service areas honest so you do not claim geography you cannot cover."
+      },
+      {
+        "q": "Do you only do websites, or full growth systems too?",
+        "a": "Websites are the foundation. CRM, reviews, ticketing, and automation are available as attached systems when you want the full stack."
+      },
+      {
+        "q": "What makes a Pinellas Park page different from a template city page?",
+        "a": "Unique local framing (working-class Pinellas market where call-first CTAs convert), real corridors (Park Boulevard corridor, Gateway area, and industrial zones near the airport approach), verified media when available, and conversion paths matched to Pinellas County buyer behavior — not a find-and-replace city name."
+      }
+    ],
+    "ctaBlurb": "If your Pinellas Park site is not earning calls or organic leads, the free audit shows what is actually blocking you — technical debt, thin structure, GBP mismatch, or conversion gaps — before you spend on a rebuild. Bring your current URL and we will map the Pinellas Park opportunity against Pinellas County competition.",
+    "approxWordCount": 1432
+  },
+  {
+    "slug": "seminole",
+    "name": "Seminole",
+    "county": "Pinellas",
+    "countyFull": "Pinellas County",
+    "state": "FL",
+    "formId": "Sem",
+    "keywords": "Seminole web designer, web design Seminole FL, Seminole website designer, local SEO Seminole, Pinellas County web design",
+    "title": "Web Design Seminole FL | Hand-Coded Sites That Rank",
+    "metaDescription": "Web design Seminole FL — hand-coded sites for Pinellas County service businesses with local SEO, GBP alignment, and Tampa Bay case studies. Free audit.",
+    "ogTitle": "Seminole Web Design & Local SEO | Knight Logics",
+    "ogDescription": "Hand-coded Seminole websites with local SEO, Google Business alignment, on-site Tampa Bay support, and remote U.S. delivery.",
+    "h1": "Seminole Web Designer for Service Businesses",
+    "heroLead": "Searching <strong>web designer Seminole</strong> or <strong>Seminole web design</strong>? Knight Logics builds hand-coded sites for Pinellas County businesses — local SEO structure, Google Business Profile alignment, and live Tampa Bay proof — with on-site support in the metro and full remote delivery nationwide.",
+    "breadcrumbLabel": "Seminole Web Design",
+    "articleHeadline": "Web Design for Seminole, FL — Built for Pinellas County Visibility",
+    "articleDescription": "What Seminole businesses need from a custom website to compete in Pinellas County: speed, service architecture, local SEO, and a conversion path that works.",
+    "whyHeading": "Why Seminole needs a stronger website than a template",
+    "whyParagraphs": [
+      "Seminole sits inside Pinellas County, where local search is no longer a polite brochure contest. Homeowners and commercial buyers compare multiple tabs before they call — and the sites that win usually combine clear service architecture, fast mobile performance, and a Google Business Profile that matches the website. If your current Seminole presence is a template homepage with a contact form buried below the fold, you are competing with one hand tied behind your back.",
+      "The competitive angle in Seminole is mid-county residential demand between Largo and the beaches. That means generic “Florida web design” language does not hold. Pages need Seminole-specific framing, honest service-area statements, and proof that you actually work this corridor. Knight Logics builds hand-coded sites for Seminole operators who want that clarity without WordPress bloat or monthly page-builder lock-in.",
+      "Neighborhood and corridor intent matters here: Seminole city proper, Oakhurst, and the Park Boulevard west corridor. When someone searches a trade plus Seminole, they are not looking for a statewide franchise story. They want to know whether you serve their street, how fast you respond, and whether the site feels trustworthy on a phone. That is what local SEO and conversion structure are for — not keyword stuffing.",
+      "Many Seminole businesses lose to lookalike Pinellas service sites with identical stock copy. The fix is rarely “more blog posts.” It is usually cleaner HTML, dedicated service pages, schema that validates, Search Console indexing, and GBP categories/service areas that agree with the site. Those fundamentals compound. Decorative redesigns without them do not.",
+      "A Seminole website should also make the next step obvious. Estimate forms, click-to-call, booking paths, and service selectors belong above the fold on mobile — not buried under stock hero text. Knight Logics designs conversion paths for how Pinellas County buyers actually behave when they are ready to hire."
+    ],
+    "marketHeading": "How Seminole buyers actually find and book",
+    "marketParagraphs": [
+      "In-person delivery is available across Seminole and the wider Tampa Bay metro when a kickoff, photo shoot, or on-site review helps. At the same time, every Knight Logics package is available fully remote across the United States — discovery, design, development, launch, and automation systems do not require you to be next door. Seminole clients often use a hybrid: local when useful, remote for speed.",
+      "A strong Seminole website usually includes a conversion-first homepage, dedicated service pages, FAQ structure, clear NAP consistency, and internal links into proof (reviews, galleries, case studies). For trades, estimate and call CTAs stay visible. For professional services, credibility and process clarity take the lead. Either way, the technical baseline is the same: hand-coded performance, schema, analytics, and indexing hygiene.",
+      "Pinellas County searchers bounce from slow sites. Core Web Vitals, compressed media, and lean JavaScript are not vanity metrics in Seminole — they are conversion infrastructure. Knight Logics targets high Lighthouse scores because a fast page keeps the lead in your pipeline instead of the next result.",
+      "When you are ready to grow beyond the website, the same foundation supports CRM outreach, review requests, ticketing, and social systems without starting over. Seminole operators who treat the site as the front door and the systems as the engine get compounding returns. That is the Growth Systems path — optional, but designed to attach cleanly.",
+      "Internal linking is part of the Seminole strategy. Your hub pages, service silos, and neighboring city pages should reinforce each other instead of competing as orphans. Knight Logics also connects Seminole landing pages back to pricing, audits, and case studies so visitors can move from education to a clear next step without bouncing to a competitor.",
+      "Content depth matters for indexing, but utility matters more. Every section on a Seminole page should answer a real buyer question: what you do, where you work, how to contact you, what proof exists, and what happens after the first call. Doorway pages that only swap city names fail that test. Unique local framing for Seminole and Pinellas County passes it.",
+      "Search Console data for Seminole-style queries often shows impressions without clicks when titles are vague or pages look interchangeable. We write Seminole-specific titles, meta descriptions, and H1 framing so the SERP snippet matches the promise on the page — then we measure CTR and iterate instead of guessing."
+    ],
+    "needsHeading": "What a Seminole site should include",
+    "needs": [
+      {
+        "title": "Seminole-specific service architecture",
+        "text": "Separate pages for the jobs people actually search in Seminole beat a single dump “Services” page every time. Architecture should match how Pinellas County buyers phrase queries."
+      },
+      {
+        "title": "GBP and website alignment",
+        "text": "Categories, service areas, phone, and business name must match. Seminole map-pack competition punishes mismatches between the profile and the site."
+      },
+      {
+        "title": "Mobile-first conversion",
+        "text": "Most Seminole service searches happen on phones. Click-to-call, short forms, and above-the-fold clarity are non-negotiable."
+      },
+      {
+        "title": "Proof that feels local",
+        "text": "Photos, reviews, and project examples should support Seminole / Pinellas County credibility — not generic stock that could be anywhere."
+      },
+      {
+        "title": "Indexation and measurement",
+        "text": "Search Console, sitemap submission, schema validation, and analytics so you can see what Seminole queries actually convert."
+      },
+      {
+        "title": "Honest geography",
+        "text": "Only claim Seminole and neighboring metros you can actually serve. Inflated service-area lists create trust gaps and GBP policy risk."
+      }
+    ],
+    "processHeading": "The build process for Seminole clients",
+    "processSteps": [
+      {
+        "title": "Audit",
+        "text": "Review the current Seminole site or competitive gap — speed, local keyword targeting, GBP alignment, schema, and conversion path — before writing code."
+      },
+      {
+        "title": "Architecture",
+        "text": "Map service and location structure around real Seminole and Pinellas County search intent, including sibling cities you actually serve."
+      },
+      {
+        "title": "Build",
+        "text": "Hand-coded HTML, CSS, and JavaScript. No CMS bloat. Performance, accessibility, and SEO targeted together."
+      },
+      {
+        "title": "Launch & index",
+        "text": "GSC setup, sitemap, schema checks, GBP alignment, and tracking verified so the Seminole property can be discovered."
+      },
+      {
+        "title": "Iterate",
+        "text": "After launch, review Seminole query performance, strengthen weak pages, and attach growth systems when lead handling becomes the bottleneck."
+      }
+    ],
+    "industriesHeading": "Industries we support around Seminole",
+    "industriesBlurb": "Seminole projects commonly include contractors, home services, specialty trades, professional services, and product brands that sell locally or ship. Around Seminole city proper, Oakhurst, and the Park Boulevard west corridor, information architecture changes by industry; the technical bar does not.",
+    "localAngle": "On-site collaboration is available in Seminole and across Tampa Bay. Full remote website and growth-system delivery is available nationwide.",
+    "proofBlurb": "Nearby Tampa Bay builds (Screen Team, Knight Group, JNS, Sal’s Painting, and others) show the same hand-coded, search-ready foundation Seminole businesses need. Your page count and package tier change; the quality bar does not. When we have a Seminole-specific project, it is featured here; until then, regional proof still demonstrates the delivery standard.",
+    "contentImage": "/images/service-areas/seminole.jpg",
+    "contentImageAlt": "Seminole, Florida — service area for Knight Logics web design and local SEO",
+    "contentImageCaption": "Seminole, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.",
+    "imageVerified": false,
+    "imageQuery": "seminole florida pinellas",
+    "siblings": [
+      "largo",
+      "pinellas-park",
+      "st-petersburg",
+      "clearwater",
+      "safety-harbor"
+    ],
+    "faqs": [
+      {
+        "q": "Do you build websites specifically for Seminole businesses?",
+        "a": "Yes. Copy, schema, internal links, and GBP alignment are scoped for Seminole and Pinellas County — not a statewide filler page with the city name swapped."
+      },
+      {
+        "q": "Can Knight Logics work on-site in Seminole?",
+        "a": "Yes for Tampa Bay engagements when on-site helps. Full remote delivery is also available nationwide for the same packages."
+      },
+      {
+        "q": "What package fits most Seminole service businesses?",
+        "a": "Many start with Local Site depth for ranking foundations, then expand into Authority or Growth Systems when page count and automation justify it. Pricing lists the current ladder."
+      },
+      {
+        "q": "How long does a Seminole website build take?",
+        "a": "Lean launches often take 1–2 weeks after content is ready. Deeper multi-page authority builds take longer based on scope and feedback speed."
+      },
+      {
+        "q": "Will a Seminole page help if I also serve neighboring cities?",
+        "a": "Yes — when those cities are real service areas. We link sibling metros and keep GBP service areas honest so you do not claim geography you cannot cover."
+      },
+      {
+        "q": "Do you only do websites, or full growth systems too?",
+        "a": "Websites are the foundation. CRM, reviews, ticketing, and automation are available as attached systems when you want the full stack."
+      },
+      {
+        "q": "What makes a Seminole page different from a template city page?",
+        "a": "Unique local framing (mid-county residential demand between Largo and the beaches), real corridors (Seminole city proper, Oakhurst, and the Park Boulevard west corridor), verified media when available, and conversion paths matched to Pinellas County buyer behavior — not a find-and-replace city name."
+      }
+    ],
+    "ctaBlurb": "If your Seminole site is not earning calls or organic leads, the free audit shows what is actually blocking you — technical debt, thin structure, GBP mismatch, or conversion gaps — before you spend on a rebuild. Bring your current URL and we will map the Seminole opportunity against Pinellas County competition.",
+    "approxWordCount": 1384
+  },
+  {
+    "slug": "tarpon-springs",
+    "name": "Tarpon Springs",
+    "county": "Pinellas",
+    "countyFull": "Pinellas County",
+    "state": "FL",
+    "formId": "Tar",
+    "keywords": "Tarpon Springs web designer, web design Tarpon Springs FL, Tarpon Springs website designer, local SEO Tarpon Springs, Pinellas County web design",
+    "title": "Web Design Tarpon Springs FL | Hand-Coded Sites That Rank",
+    "metaDescription": "Web design Tarpon Springs FL — hand-coded sites for Pinellas County service businesses with local SEO, GBP alignment, and Tampa Bay case studies. Free audit.",
+    "ogTitle": "Tarpon Springs Web Design & Local SEO | Knight Logics",
+    "ogDescription": "Hand-coded Tarpon Springs websites with local SEO, Google Business alignment, on-site Tampa Bay support, and remote U.S. delivery.",
+    "h1": "Tarpon Springs Web Designer for Service Businesses",
+    "heroLead": "Searching <strong>web designer Tarpon Springs</strong> or <strong>Tarpon Springs web design</strong>? Knight Logics builds hand-coded sites for Pinellas County businesses — local SEO structure, Google Business Profile alignment, and live Tampa Bay proof — with on-site support in the metro and full remote delivery nationwide.",
+    "breadcrumbLabel": "Tarpon Springs Web Design",
+    "articleHeadline": "Web Design for Tarpon Springs, FL — Built for Pinellas County Visibility",
+    "articleDescription": "What Tarpon Springs businesses need from a custom website to compete in Pinellas County: speed, service architecture, local SEO, and a conversion path that works.",
+    "whyHeading": "Why Tarpon Springs needs a stronger website than a template",
+    "whyParagraphs": [
+      "Tarpon Springs sits inside Pinellas County, where local search is no longer a polite brochure contest. Homeowners and commercial buyers compare multiple tabs before they call — and the sites that win usually combine clear service architecture, fast mobile performance, and a Google Business Profile that matches the website. If your current Tarpon Springs presence is a template homepage with a contact form buried below the fold, you are competing with one hand tied behind your back.",
+      "The competitive angle in Tarpon Springs is north Pinellas identity with Pasco overflow search behavior. That means generic “Florida web design” language does not hold. Pages need Tarpon Springs-specific framing, honest service-area statements, and proof that you actually work this corridor. Knight Logics builds hand-coded sites for Tarpon Springs operators who want that clarity without WordPress bloat or monthly page-builder lock-in.",
+      "Neighborhood and corridor intent matters here: the Sponge Docks, downtown Tarpon, and East Lake Tarpon. When someone searches a trade plus Tarpon Springs, they are not looking for a statewide franchise story. They want to know whether you serve their street, how fast you respond, and whether the site feels trustworthy on a phone. That is what local SEO and conversion structure are for — not keyword stuffing.",
+      "Many Tarpon Springs businesses lose to tourism sites that ignore contractor and home-service intent. The fix is rarely “more blog posts.” It is usually cleaner HTML, dedicated service pages, schema that validates, Search Console indexing, and GBP categories/service areas that agree with the site. Those fundamentals compound. Decorative redesigns without them do not.",
+      "A Tarpon Springs website should also make the next step obvious. Estimate forms, click-to-call, booking paths, and service selectors belong above the fold on mobile — not buried under stock hero text. Knight Logics designs conversion paths for how Pinellas County buyers actually behave when they are ready to hire."
+    ],
+    "marketHeading": "How Tarpon Springs buyers actually find and book",
+    "marketParagraphs": [
+      "In-person delivery is available across Tarpon Springs and the wider Tampa Bay metro when a kickoff, photo shoot, or on-site review helps. At the same time, every Knight Logics package is available fully remote across the United States — discovery, design, development, launch, and automation systems do not require you to be next door. Tarpon Springs clients often use a hybrid: local when useful, remote for speed.",
+      "A strong Tarpon Springs website usually includes a conversion-first homepage, dedicated service pages, FAQ structure, clear NAP consistency, and internal links into proof (reviews, galleries, case studies). For trades, estimate and call CTAs stay visible. For professional services, credibility and process clarity take the lead. Either way, the technical baseline is the same: hand-coded performance, schema, analytics, and indexing hygiene.",
+      "Pinellas County searchers bounce from slow sites. Core Web Vitals, compressed media, and lean JavaScript are not vanity metrics in Tarpon Springs — they are conversion infrastructure. Knight Logics targets high Lighthouse scores because a fast page keeps the lead in your pipeline instead of the next result.",
+      "When you are ready to grow beyond the website, the same foundation supports CRM outreach, review requests, ticketing, and social systems without starting over. Tarpon Springs operators who treat the site as the front door and the systems as the engine get compounding returns. That is the Growth Systems path — optional, but designed to attach cleanly.",
+      "Internal linking is part of the Tarpon Springs strategy. Your hub pages, service silos, and neighboring city pages should reinforce each other instead of competing as orphans. Knight Logics also connects Tarpon Springs landing pages back to pricing, audits, and case studies so visitors can move from education to a clear next step without bouncing to a competitor.",
+      "Content depth matters for indexing, but utility matters more. Every section on a Tarpon Springs page should answer a real buyer question: what you do, where you work, how to contact you, what proof exists, and what happens after the first call. Doorway pages that only swap city names fail that test. Unique local framing for Tarpon Springs and Pinellas County passes it.",
+      "Search Console data for Tarpon Springs-style queries often shows impressions without clicks when titles are vague or pages look interchangeable. We write Tarpon Springs-specific titles, meta descriptions, and H1 framing so the SERP snippet matches the promise on the page — then we measure CTR and iterate instead of guessing."
+    ],
+    "needsHeading": "What a Tarpon Springs site should include",
+    "needs": [
+      {
+        "title": "Tarpon Springs-specific service architecture",
+        "text": "Separate pages for the jobs people actually search in Tarpon Springs beat a single dump “Services” page every time. Architecture should match how Pinellas County buyers phrase queries."
+      },
+      {
+        "title": "GBP and website alignment",
+        "text": "Categories, service areas, phone, and business name must match. Tarpon Springs map-pack competition punishes mismatches between the profile and the site."
+      },
+      {
+        "title": "Mobile-first conversion",
+        "text": "Most Tarpon Springs service searches happen on phones. Click-to-call, short forms, and above-the-fold clarity are non-negotiable."
+      },
+      {
+        "title": "Proof that feels local",
+        "text": "Photos, reviews, and project examples should support Tarpon Springs / Pinellas County credibility — not generic stock that could be anywhere."
+      },
+      {
+        "title": "Indexation and measurement",
+        "text": "Search Console, sitemap submission, schema validation, and analytics so you can see what Tarpon Springs queries actually convert."
+      },
+      {
+        "title": "Honest geography",
+        "text": "Only claim Tarpon Springs and neighboring metros you can actually serve. Inflated service-area lists create trust gaps and GBP policy risk."
+      }
+    ],
+    "processHeading": "The build process for Tarpon Springs clients",
+    "processSteps": [
+      {
+        "title": "Audit",
+        "text": "Review the current Tarpon Springs site or competitive gap — speed, local keyword targeting, GBP alignment, schema, and conversion path — before writing code."
+      },
+      {
+        "title": "Architecture",
+        "text": "Map service and location structure around real Tarpon Springs and Pinellas County search intent, including sibling cities you actually serve."
+      },
+      {
+        "title": "Build",
+        "text": "Hand-coded HTML, CSS, and JavaScript. No CMS bloat. Performance, accessibility, and SEO targeted together."
+      },
+      {
+        "title": "Launch & index",
+        "text": "GSC setup, sitemap, schema checks, GBP alignment, and tracking verified so the Tarpon Springs property can be discovered."
+      },
+      {
+        "title": "Iterate",
+        "text": "After launch, review Tarpon Springs query performance, strengthen weak pages, and attach growth systems when lead handling becomes the bottleneck."
+      }
+    ],
+    "industriesHeading": "Industries we support around Tarpon Springs",
+    "industriesBlurb": "Tarpon Springs projects commonly include contractors, home services, specialty trades, professional services, and product brands that sell locally or ship. Around the Sponge Docks, downtown Tarpon, and East Lake Tarpon, information architecture changes by industry; the technical bar does not.",
+    "localAngle": "On-site collaboration is available in Tarpon Springs and across Tampa Bay. Full remote website and growth-system delivery is available nationwide.",
+    "proofBlurb": "Nearby Tampa Bay builds (Screen Team, Knight Group, JNS, Sal’s Painting, and others) show the same hand-coded, search-ready foundation Tarpon Springs businesses need. Your page count and package tier change; the quality bar does not. When we have a Tarpon Springs-specific project, it is featured here; until then, regional proof still demonstrates the delivery standard.",
+    "contentImage": "/images/service-areas/tarpon-springs.jpg",
+    "contentImageAlt": "Tarpon Springs, Florida — service area for Knight Logics web design and local SEO",
+    "contentImageCaption": "Tarpon Springs, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.",
+    "imageVerified": false,
+    "imageQuery": "tarpon springs florida sponge docks",
+    "siblings": [
+      "palm-harbor",
+      "new-port-richey",
+      "holiday",
+      "dunedin",
+      "oldsmar"
+    ],
+    "faqs": [
+      {
+        "q": "Do you build websites specifically for Tarpon Springs businesses?",
+        "a": "Yes. Copy, schema, internal links, and GBP alignment are scoped for Tarpon Springs and Pinellas County — not a statewide filler page with the city name swapped."
+      },
+      {
+        "q": "Can Knight Logics work on-site in Tarpon Springs?",
+        "a": "Yes for Tampa Bay engagements when on-site helps. Full remote delivery is also available nationwide for the same packages."
+      },
+      {
+        "q": "What package fits most Tarpon Springs service businesses?",
+        "a": "Many start with Local Site depth for ranking foundations, then expand into Authority or Growth Systems when page count and automation justify it. Pricing lists the current ladder."
+      },
+      {
+        "q": "How long does a Tarpon Springs website build take?",
+        "a": "Lean launches often take 1–2 weeks after content is ready. Deeper multi-page authority builds take longer based on scope and feedback speed."
+      },
+      {
+        "q": "Will a Tarpon Springs page help if I also serve neighboring cities?",
+        "a": "Yes — when those cities are real service areas. We link sibling metros and keep GBP service areas honest so you do not claim geography you cannot cover."
+      },
+      {
+        "q": "Do you only do websites, or full growth systems too?",
+        "a": "Websites are the foundation. CRM, reviews, ticketing, and automation are available as attached systems when you want the full stack."
+      },
+      {
+        "q": "What makes a Tarpon Springs page different from a template city page?",
+        "a": "Unique local framing (north Pinellas identity with Pasco overflow search behavior), real corridors (the Sponge Docks, downtown Tarpon, and East Lake Tarpon), verified media when available, and conversion paths matched to Pinellas County buyer behavior — not a find-and-replace city name."
+      }
+    ],
+    "ctaBlurb": "If your Tarpon Springs site is not earning calls or organic leads, the free audit shows what is actually blocking you — technical debt, thin structure, GBP mismatch, or conversion gaps — before you spend on a rebuild. Bring your current URL and we will map the Tarpon Springs opportunity against Pinellas County competition.",
+    "approxWordCount": 1426
+  },
+  {
+    "slug": "oldsmar",
+    "name": "Oldsmar",
+    "county": "Pinellas",
+    "countyFull": "Pinellas County",
+    "state": "FL",
+    "formId": "Old",
+    "keywords": "Oldsmar web designer, web design Oldsmar FL, Oldsmar website designer, local SEO Oldsmar, Pinellas County web design",
+    "title": "Web Design Oldsmar FL | Hand-Coded Sites That Rank",
+    "metaDescription": "Web design Oldsmar FL — hand-coded sites for Pinellas County service businesses with local SEO, GBP alignment, and Tampa Bay case studies. Free audit.",
+    "ogTitle": "Oldsmar Web Design & Local SEO | Knight Logics",
+    "ogDescription": "Hand-coded Oldsmar websites with local SEO, Google Business alignment, on-site Tampa Bay support, and remote U.S. delivery.",
+    "h1": "Oldsmar Web Designer for Service Businesses",
+    "heroLead": "Searching <strong>web designer Oldsmar</strong> or <strong>Oldsmar web design</strong>? Knight Logics builds hand-coded sites for Pinellas County businesses — local SEO structure, Google Business Profile alignment, and live Tampa Bay proof — with on-site support in the metro and full remote delivery nationwide.",
+    "breadcrumbLabel": "Oldsmar Web Design",
+    "articleHeadline": "Web Design for Oldsmar, FL — Built for Pinellas County Visibility",
+    "articleDescription": "What Oldsmar businesses need from a custom website to compete in Pinellas County: speed, service architecture, local SEO, and a conversion path that works.",
+    "whyHeading": "Why Oldsmar needs a stronger website than a template",
+    "whyParagraphs": [
+      "Oldsmar sits inside Pinellas County, where local search is no longer a polite brochure contest. Homeowners and commercial buyers compare multiple tabs before they call — and the sites that win usually combine clear service architecture, fast mobile performance, and a Google Business Profile that matches the website. If your current Oldsmar presence is a template homepage with a contact form buried below the fold, you are competing with one hand tied behind your back.",
+      "The competitive angle in Oldsmar is bridge city between Pinellas and Hillsborough drive markets. That means generic “Florida web design” language does not hold. Pages need Oldsmar-specific framing, honest service-area statements, and proof that you actually work this corridor. Knight Logics builds hand-coded sites for Oldsmar operators who want that clarity without WordPress bloat or monthly page-builder lock-in.",
+      "Neighborhood and corridor intent matters here: downtown Oldsmar, Race Track Road corridor, and the Safety Harbor bridge approach. When someone searches a trade plus Oldsmar, they are not looking for a statewide franchise story. They want to know whether you serve their street, how fast you respond, and whether the site feels trustworthy on a phone. That is what local SEO and conversion structure are for — not keyword stuffing.",
+      "Many Oldsmar businesses lose to split Pinellas/Hillsborough messaging that confuses GBP areas. The fix is rarely “more blog posts.” It is usually cleaner HTML, dedicated service pages, schema that validates, Search Console indexing, and GBP categories/service areas that agree with the site. Those fundamentals compound. Decorative redesigns without them do not.",
+      "A Oldsmar website should also make the next step obvious. Estimate forms, click-to-call, booking paths, and service selectors belong above the fold on mobile — not buried under stock hero text. Knight Logics designs conversion paths for how Pinellas County buyers actually behave when they are ready to hire."
+    ],
+    "marketHeading": "How Oldsmar buyers actually find and book",
+    "marketParagraphs": [
+      "In-person delivery is available across Oldsmar and the wider Tampa Bay metro when a kickoff, photo shoot, or on-site review helps. At the same time, every Knight Logics package is available fully remote across the United States — discovery, design, development, launch, and automation systems do not require you to be next door. Oldsmar clients often use a hybrid: local when useful, remote for speed.",
+      "A strong Oldsmar website usually includes a conversion-first homepage, dedicated service pages, FAQ structure, clear NAP consistency, and internal links into proof (reviews, galleries, case studies). For trades, estimate and call CTAs stay visible. For professional services, credibility and process clarity take the lead. Either way, the technical baseline is the same: hand-coded performance, schema, analytics, and indexing hygiene.",
+      "Pinellas County searchers bounce from slow sites. Core Web Vitals, compressed media, and lean JavaScript are not vanity metrics in Oldsmar — they are conversion infrastructure. Knight Logics targets high Lighthouse scores because a fast page keeps the lead in your pipeline instead of the next result.",
+      "When you are ready to grow beyond the website, the same foundation supports CRM outreach, review requests, ticketing, and social systems without starting over. Oldsmar operators who treat the site as the front door and the systems as the engine get compounding returns. That is the Growth Systems path — optional, but designed to attach cleanly.",
+      "Internal linking is part of the Oldsmar strategy. Your hub pages, service silos, and neighboring city pages should reinforce each other instead of competing as orphans. Knight Logics also connects Oldsmar landing pages back to pricing, audits, and case studies so visitors can move from education to a clear next step without bouncing to a competitor.",
+      "Content depth matters for indexing, but utility matters more. Every section on a Oldsmar page should answer a real buyer question: what you do, where you work, how to contact you, what proof exists, and what happens after the first call. Doorway pages that only swap city names fail that test. Unique local framing for Oldsmar and Pinellas County passes it.",
+      "Search Console data for Oldsmar-style queries often shows impressions without clicks when titles are vague or pages look interchangeable. We write Oldsmar-specific titles, meta descriptions, and H1 framing so the SERP snippet matches the promise on the page — then we measure CTR and iterate instead of guessing."
+    ],
+    "needsHeading": "What a Oldsmar site should include",
+    "needs": [
+      {
+        "title": "Oldsmar-specific service architecture",
+        "text": "Separate pages for the jobs people actually search in Oldsmar beat a single dump “Services” page every time. Architecture should match how Pinellas County buyers phrase queries."
+      },
+      {
+        "title": "GBP and website alignment",
+        "text": "Categories, service areas, phone, and business name must match. Oldsmar map-pack competition punishes mismatches between the profile and the site."
+      },
+      {
+        "title": "Mobile-first conversion",
+        "text": "Most Oldsmar service searches happen on phones. Click-to-call, short forms, and above-the-fold clarity are non-negotiable."
+      },
+      {
+        "title": "Proof that feels local",
+        "text": "Photos, reviews, and project examples should support Oldsmar / Pinellas County credibility — not generic stock that could be anywhere."
+      },
+      {
+        "title": "Indexation and measurement",
+        "text": "Search Console, sitemap submission, schema validation, and analytics so you can see what Oldsmar queries actually convert."
+      },
+      {
+        "title": "Honest geography",
+        "text": "Only claim Oldsmar and neighboring metros you can actually serve. Inflated service-area lists create trust gaps and GBP policy risk."
+      }
+    ],
+    "processHeading": "The build process for Oldsmar clients",
+    "processSteps": [
+      {
+        "title": "Audit",
+        "text": "Review the current Oldsmar site or competitive gap — speed, local keyword targeting, GBP alignment, schema, and conversion path — before writing code."
+      },
+      {
+        "title": "Architecture",
+        "text": "Map service and location structure around real Oldsmar and Pinellas County search intent, including sibling cities you actually serve."
+      },
+      {
+        "title": "Build",
+        "text": "Hand-coded HTML, CSS, and JavaScript. No CMS bloat. Performance, accessibility, and SEO targeted together."
+      },
+      {
+        "title": "Launch & index",
+        "text": "GSC setup, sitemap, schema checks, GBP alignment, and tracking verified so the Oldsmar property can be discovered."
+      },
+      {
+        "title": "Iterate",
+        "text": "After launch, review Oldsmar query performance, strengthen weak pages, and attach growth systems when lead handling becomes the bottleneck."
+      }
+    ],
+    "industriesHeading": "Industries we support around Oldsmar",
+    "industriesBlurb": "Oldsmar projects commonly include contractors, home services, specialty trades, professional services, and product brands that sell locally or ship. Around downtown Oldsmar, Race Track Road corridor, and the Safety Harbor bridge approach, information architecture changes by industry; the technical bar does not.",
+    "localAngle": "On-site collaboration is available in Oldsmar and across Tampa Bay. Full remote website and growth-system delivery is available nationwide.",
+    "proofBlurb": "Nearby Tampa Bay builds (Screen Team, Knight Group, JNS, Sal’s Painting, and others) show the same hand-coded, search-ready foundation Oldsmar businesses need. Your page count and package tier change; the quality bar does not. When we have a Oldsmar-specific project, it is featured here; until then, regional proof still demonstrates the delivery standard.",
+    "contentImage": "/images/service-areas/oldsmar.jpg",
+    "contentImageAlt": "Oldsmar, Florida — service area for Knight Logics web design and local SEO",
+    "contentImageCaption": "Oldsmar, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.",
+    "imageVerified": false,
+    "imageQuery": "oldsmar florida",
+    "siblings": [
+      "safety-harbor",
+      "tampa",
+      "palm-harbor",
+      "clearwater",
+      "lutz"
+    ],
+    "faqs": [
+      {
+        "q": "Do you build websites specifically for Oldsmar businesses?",
+        "a": "Yes. Copy, schema, internal links, and GBP alignment are scoped for Oldsmar and Pinellas County — not a statewide filler page with the city name swapped."
+      },
+      {
+        "q": "Can Knight Logics work on-site in Oldsmar?",
+        "a": "Yes for Tampa Bay engagements when on-site helps. Full remote delivery is also available nationwide for the same packages."
+      },
+      {
+        "q": "What package fits most Oldsmar service businesses?",
+        "a": "Many start with Local Site depth for ranking foundations, then expand into Authority or Growth Systems when page count and automation justify it. Pricing lists the current ladder."
+      },
+      {
+        "q": "How long does a Oldsmar website build take?",
+        "a": "Lean launches often take 1–2 weeks after content is ready. Deeper multi-page authority builds take longer based on scope and feedback speed."
+      },
+      {
+        "q": "Will a Oldsmar page help if I also serve neighboring cities?",
+        "a": "Yes — when those cities are real service areas. We link sibling metros and keep GBP service areas honest so you do not claim geography you cannot cover."
+      },
+      {
+        "q": "Do you only do websites, or full growth systems too?",
+        "a": "Websites are the foundation. CRM, reviews, ticketing, and automation are available as attached systems when you want the full stack."
+      },
+      {
+        "q": "What makes a Oldsmar page different from a template city page?",
+        "a": "Unique local framing (bridge city between Pinellas and Hillsborough drive markets), real corridors (downtown Oldsmar, Race Track Road corridor, and the Safety Harbor bridge approach), verified media when available, and conversion paths matched to Pinellas County buyer behavior — not a find-and-replace city name."
+      }
+    ],
+    "ctaBlurb": "If your Oldsmar site is not earning calls or organic leads, the free audit shows what is actually blocking you — technical debt, thin structure, GBP mismatch, or conversion gaps — before you spend on a rebuild. Bring your current URL and we will map the Oldsmar opportunity against Pinellas County competition.",
+    "approxWordCount": 1389
+  },
+  {
+    "slug": "brandon",
+    "name": "Brandon",
+    "county": "Hillsborough",
+    "countyFull": "Hillsborough County",
+    "state": "FL",
+    "formId": "Bra",
+    "keywords": "Brandon web designer, web design Brandon FL, Brandon website designer, local SEO Brandon, Hillsborough County web design",
+    "title": "Web Design Brandon FL | Hand-Coded Sites That Rank",
+    "metaDescription": "Web design Brandon FL — hand-coded sites for Hillsborough County service businesses with local SEO, GBP alignment, and Tampa Bay case studies. Free audit.",
+    "ogTitle": "Brandon Web Design & Local SEO | Knight Logics",
+    "ogDescription": "Hand-coded Brandon websites with local SEO, Google Business alignment, on-site Tampa Bay support, and remote U.S. delivery.",
+    "h1": "Brandon Web Designer for Service Businesses",
+    "heroLead": "Searching <strong>web designer Brandon</strong> or <strong>Brandon web design</strong>? Knight Logics builds hand-coded sites for Hillsborough County businesses — local SEO structure, Google Business Profile alignment, and live Tampa Bay proof — with on-site support in the metro and full remote delivery nationwide.",
+    "breadcrumbLabel": "Brandon Web Design",
+    "articleHeadline": "Web Design for Brandon, FL — Built for Hillsborough County Visibility",
+    "articleDescription": "What Brandon businesses need from a custom website to compete in Hillsborough County: speed, service architecture, local SEO, and a conversion path that works.",
+    "whyHeading": "Why Brandon needs a stronger website than a template",
+    "whyParagraphs": [
+      "Brandon sits inside Hillsborough County, where local search is no longer a polite brochure contest. Homeowners and commercial buyers compare multiple tabs before they call — and the sites that win usually combine clear service architecture, fast mobile performance, and a Google Business Profile that matches the website. If your current Brandon presence is a template homepage with a contact form buried below the fold, you are competing with one hand tied behind your back.",
+      "The competitive angle in Brandon is east Hillsborough volume market with strong homeowner intent. That means generic “Florida web design” language does not hold. Pages need Brandon-specific framing, honest service-area statements, and proof that you actually work this corridor. Knight Logics builds hand-coded sites for Brandon operators who want that clarity without WordPress bloat or monthly page-builder lock-in.",
+      "Neighborhood and corridor intent matters here: West Brandon, Bloomingdale approaches, and the Causeway corridor toward Tampa. When someone searches a trade plus Brandon, they are not looking for a statewide franchise story. They want to know whether you serve their street, how fast you respond, and whether the site feels trustworthy on a phone. That is what local SEO and conversion structure are for — not keyword stuffing.",
+      "Many Brandon businesses lose to Tampa-only sites that treat Brandon as an afterthought. The fix is rarely “more blog posts.” It is usually cleaner HTML, dedicated service pages, schema that validates, Search Console indexing, and GBP categories/service areas that agree with the site. Those fundamentals compound. Decorative redesigns without them do not.",
+      "A Brandon website should also make the next step obvious. Estimate forms, click-to-call, booking paths, and service selectors belong above the fold on mobile — not buried under stock hero text. Knight Logics designs conversion paths for how Hillsborough County buyers actually behave when they are ready to hire."
+    ],
+    "marketHeading": "How Brandon buyers actually find and book",
+    "marketParagraphs": [
+      "In-person delivery is available across Brandon and the wider Tampa Bay metro when a kickoff, photo shoot, or on-site review helps. At the same time, every Knight Logics package is available fully remote across the United States — discovery, design, development, launch, and automation systems do not require you to be next door. Brandon clients often use a hybrid: local when useful, remote for speed.",
+      "A strong Brandon website usually includes a conversion-first homepage, dedicated service pages, FAQ structure, clear NAP consistency, and internal links into proof (reviews, galleries, case studies). For trades, estimate and call CTAs stay visible. For professional services, credibility and process clarity take the lead. Either way, the technical baseline is the same: hand-coded performance, schema, analytics, and indexing hygiene.",
+      "Hillsborough County searchers bounce from slow sites. Core Web Vitals, compressed media, and lean JavaScript are not vanity metrics in Brandon — they are conversion infrastructure. Knight Logics targets high Lighthouse scores because a fast page keeps the lead in your pipeline instead of the next result.",
+      "When you are ready to grow beyond the website, the same foundation supports CRM outreach, review requests, ticketing, and social systems without starting over. Brandon operators who treat the site as the front door and the systems as the engine get compounding returns. That is the Growth Systems path — optional, but designed to attach cleanly.",
+      "Internal linking is part of the Brandon strategy. Your hub pages, service silos, and neighboring city pages should reinforce each other instead of competing as orphans. Knight Logics also connects Brandon landing pages back to pricing, audits, and case studies so visitors can move from education to a clear next step without bouncing to a competitor.",
+      "Content depth matters for indexing, but utility matters more. Every section on a Brandon page should answer a real buyer question: what you do, where you work, how to contact you, what proof exists, and what happens after the first call. Doorway pages that only swap city names fail that test. Unique local framing for Brandon and Hillsborough County passes it.",
+      "Search Console data for Brandon-style queries often shows impressions without clicks when titles are vague or pages look interchangeable. We write Brandon-specific titles, meta descriptions, and H1 framing so the SERP snippet matches the promise on the page — then we measure CTR and iterate instead of guessing."
+    ],
+    "needsHeading": "What a Brandon site should include",
+    "needs": [
+      {
+        "title": "Brandon-specific service architecture",
+        "text": "Separate pages for the jobs people actually search in Brandon beat a single dump “Services” page every time. Architecture should match how Hillsborough County buyers phrase queries."
+      },
+      {
+        "title": "GBP and website alignment",
+        "text": "Categories, service areas, phone, and business name must match. Brandon map-pack competition punishes mismatches between the profile and the site."
+      },
+      {
+        "title": "Mobile-first conversion",
+        "text": "Most Brandon service searches happen on phones. Click-to-call, short forms, and above-the-fold clarity are non-negotiable."
+      },
+      {
+        "title": "Proof that feels local",
+        "text": "Photos, reviews, and project examples should support Brandon / Hillsborough County credibility — not generic stock that could be anywhere."
+      },
+      {
+        "title": "Indexation and measurement",
+        "text": "Search Console, sitemap submission, schema validation, and analytics so you can see what Brandon queries actually convert."
+      },
+      {
+        "title": "Honest geography",
+        "text": "Only claim Brandon and neighboring metros you can actually serve. Inflated service-area lists create trust gaps and GBP policy risk."
+      }
+    ],
+    "processHeading": "The build process for Brandon clients",
+    "processSteps": [
+      {
+        "title": "Audit",
+        "text": "Review the current Brandon site or competitive gap — speed, local keyword targeting, GBP alignment, schema, and conversion path — before writing code."
+      },
+      {
+        "title": "Architecture",
+        "text": "Map service and location structure around real Brandon and Hillsborough County search intent, including sibling cities you actually serve."
+      },
+      {
+        "title": "Build",
+        "text": "Hand-coded HTML, CSS, and JavaScript. No CMS bloat. Performance, accessibility, and SEO targeted together."
+      },
+      {
+        "title": "Launch & index",
+        "text": "GSC setup, sitemap, schema checks, GBP alignment, and tracking verified so the Brandon property can be discovered."
+      },
+      {
+        "title": "Iterate",
+        "text": "After launch, review Brandon query performance, strengthen weak pages, and attach growth systems when lead handling becomes the bottleneck."
+      }
+    ],
+    "industriesHeading": "Industries we support around Brandon",
+    "industriesBlurb": "Brandon projects commonly include contractors, home services, specialty trades, professional services, and product brands that sell locally or ship. Around West Brandon, Bloomingdale approaches, and the Causeway corridor toward Tampa, information architecture changes by industry; the technical bar does not.",
+    "localAngle": "On-site collaboration is available in Brandon and across Tampa Bay. Full remote website and growth-system delivery is available nationwide.",
+    "proofBlurb": "Nearby Tampa Bay builds (Screen Team, Knight Group, JNS, Sal’s Painting, and others) show the same hand-coded, search-ready foundation Brandon businesses need. Your page count and package tier change; the quality bar does not. When we have a Brandon-specific project, it is featured here; until then, regional proof still demonstrates the delivery standard.",
+    "contentImage": "/images/service-areas/brandon.jpg",
+    "contentImageAlt": "Brandon, Florida — service area for Knight Logics web design and local SEO",
+    "contentImageCaption": "Brandon, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.",
+    "imageVerified": false,
+    "imageQuery": "brandon florida",
+    "siblings": [
+      "riverview",
+      "tampa",
+      "plant-city",
+      "temple-terrace",
+      "lutz"
+    ],
+    "faqs": [
+      {
+        "q": "Do you build websites specifically for Brandon businesses?",
+        "a": "Yes. Copy, schema, internal links, and GBP alignment are scoped for Brandon and Hillsborough County — not a statewide filler page with the city name swapped."
+      },
+      {
+        "q": "Can Knight Logics work on-site in Brandon?",
+        "a": "Yes for Tampa Bay engagements when on-site helps. Full remote delivery is also available nationwide for the same packages."
+      },
+      {
+        "q": "What package fits most Brandon service businesses?",
+        "a": "Many start with Local Site depth for ranking foundations, then expand into Authority or Growth Systems when page count and automation justify it. Pricing lists the current ladder."
+      },
+      {
+        "q": "How long does a Brandon website build take?",
+        "a": "Lean launches often take 1–2 weeks after content is ready. Deeper multi-page authority builds take longer based on scope and feedback speed."
+      },
+      {
+        "q": "Will a Brandon page help if I also serve neighboring cities?",
+        "a": "Yes — when those cities are real service areas. We link sibling metros and keep GBP service areas honest so you do not claim geography you cannot cover."
+      },
+      {
+        "q": "Do you only do websites, or full growth systems too?",
+        "a": "Websites are the foundation. CRM, reviews, ticketing, and automation are available as attached systems when you want the full stack."
+      },
+      {
+        "q": "What makes a Brandon page different from a template city page?",
+        "a": "Unique local framing (east Hillsborough volume market with strong homeowner intent), real corridors (West Brandon, Bloomingdale approaches, and the Causeway corridor toward Tampa), verified media when available, and conversion paths matched to Hillsborough County buyer behavior — not a find-and-replace city name."
+      }
+    ],
+    "ctaBlurb": "If your Brandon site is not earning calls or organic leads, the free audit shows what is actually blocking you — technical debt, thin structure, GBP mismatch, or conversion gaps — before you spend on a rebuild. Bring your current URL and we will map the Brandon opportunity against Hillsborough County competition.",
+    "approxWordCount": 1384
+  },
+  {
+    "slug": "riverview",
+    "name": "Riverview",
+    "county": "Hillsborough",
+    "countyFull": "Hillsborough County",
+    "state": "FL",
+    "formId": "Riv",
+    "keywords": "Riverview web designer, web design Riverview FL, Riverview website designer, local SEO Riverview, Hillsborough County web design",
+    "title": "Web Design Riverview FL | Hand-Coded Sites That Rank",
+    "metaDescription": "Web design Riverview FL — hand-coded sites for Hillsborough County service businesses with local SEO, GBP alignment, and Tampa Bay case studies. Free audit.",
+    "ogTitle": "Riverview Web Design & Local SEO | Knight Logics",
+    "ogDescription": "Hand-coded Riverview websites with local SEO, Google Business alignment, on-site Tampa Bay support, and remote U.S. delivery.",
+    "h1": "Riverview Web Designer for Service Businesses",
+    "heroLead": "Searching <strong>web designer Riverview</strong> or <strong>Riverview web design</strong>? Knight Logics builds hand-coded sites for Hillsborough County businesses — local SEO structure, Google Business Profile alignment, and live Tampa Bay proof — with on-site support in the metro and full remote delivery nationwide.",
+    "breadcrumbLabel": "Riverview Web Design",
+    "articleHeadline": "Web Design for Riverview, FL — Built for Hillsborough County Visibility",
+    "articleDescription": "What Riverview businesses need from a custom website to compete in Hillsborough County: speed, service architecture, local SEO, and a conversion path that works.",
+    "whyHeading": "Why Riverview needs a stronger website than a template",
+    "whyParagraphs": [
+      "Riverview sits inside Hillsborough County, where local search is no longer a polite brochure contest. Homeowners and commercial buyers compare multiple tabs before they call — and the sites that win usually combine clear service architecture, fast mobile performance, and a Google Business Profile that matches the website. If your current Riverview presence is a template homepage with a contact form buried below the fold, you are competing with one hand tied behind your back.",
+      "The competitive angle in Riverview is fast-growing south Hillsborough residential search demand. That means generic “Florida web design” language does not hold. Pages need Riverview-specific framing, honest service-area statements, and proof that you actually work this corridor. Knight Logics builds hand-coded sites for Riverview operators who want that clarity without WordPress bloat or monthly page-builder lock-in.",
+      "Neighborhood and corridor intent matters here: Apollo Beach approaches, Bloomingdale, and south county growth corridors. When someone searches a trade plus Riverview, they are not looking for a statewide franchise story. They want to know whether you serve their street, how fast you respond, and whether the site feels trustworthy on a phone. That is what local SEO and conversion structure are for — not keyword stuffing.",
+      "Many Riverview businesses lose to new-construction markets still using placeholder builder sites. The fix is rarely “more blog posts.” It is usually cleaner HTML, dedicated service pages, schema that validates, Search Console indexing, and GBP categories/service areas that agree with the site. Those fundamentals compound. Decorative redesigns without them do not.",
+      "A Riverview website should also make the next step obvious. Estimate forms, click-to-call, booking paths, and service selectors belong above the fold on mobile — not buried under stock hero text. Knight Logics designs conversion paths for how Hillsborough County buyers actually behave when they are ready to hire."
+    ],
+    "marketHeading": "How Riverview buyers actually find and book",
+    "marketParagraphs": [
+      "In-person delivery is available across Riverview and the wider Tampa Bay metro when a kickoff, photo shoot, or on-site review helps. At the same time, every Knight Logics package is available fully remote across the United States — discovery, design, development, launch, and automation systems do not require you to be next door. Riverview clients often use a hybrid: local when useful, remote for speed.",
+      "A strong Riverview website usually includes a conversion-first homepage, dedicated service pages, FAQ structure, clear NAP consistency, and internal links into proof (reviews, galleries, case studies). For trades, estimate and call CTAs stay visible. For professional services, credibility and process clarity take the lead. Either way, the technical baseline is the same: hand-coded performance, schema, analytics, and indexing hygiene.",
+      "Hillsborough County searchers bounce from slow sites. Core Web Vitals, compressed media, and lean JavaScript are not vanity metrics in Riverview — they are conversion infrastructure. Knight Logics targets high Lighthouse scores because a fast page keeps the lead in your pipeline instead of the next result.",
+      "When you are ready to grow beyond the website, the same foundation supports CRM outreach, review requests, ticketing, and social systems without starting over. Riverview operators who treat the site as the front door and the systems as the engine get compounding returns. That is the Growth Systems path — optional, but designed to attach cleanly.",
+      "Internal linking is part of the Riverview strategy. Your hub pages, service silos, and neighboring city pages should reinforce each other instead of competing as orphans. Knight Logics also connects Riverview landing pages back to pricing, audits, and case studies so visitors can move from education to a clear next step without bouncing to a competitor.",
+      "Content depth matters for indexing, but utility matters more. Every section on a Riverview page should answer a real buyer question: what you do, where you work, how to contact you, what proof exists, and what happens after the first call. Doorway pages that only swap city names fail that test. Unique local framing for Riverview and Hillsborough County passes it.",
+      "Search Console data for Riverview-style queries often shows impressions without clicks when titles are vague or pages look interchangeable. We write Riverview-specific titles, meta descriptions, and H1 framing so the SERP snippet matches the promise on the page — then we measure CTR and iterate instead of guessing."
+    ],
+    "needsHeading": "What a Riverview site should include",
+    "needs": [
+      {
+        "title": "Riverview-specific service architecture",
+        "text": "Separate pages for the jobs people actually search in Riverview beat a single dump “Services” page every time. Architecture should match how Hillsborough County buyers phrase queries."
+      },
+      {
+        "title": "GBP and website alignment",
+        "text": "Categories, service areas, phone, and business name must match. Riverview map-pack competition punishes mismatches between the profile and the site."
+      },
+      {
+        "title": "Mobile-first conversion",
+        "text": "Most Riverview service searches happen on phones. Click-to-call, short forms, and above-the-fold clarity are non-negotiable."
+      },
+      {
+        "title": "Proof that feels local",
+        "text": "Photos, reviews, and project examples should support Riverview / Hillsborough County credibility — not generic stock that could be anywhere."
+      },
+      {
+        "title": "Indexation and measurement",
+        "text": "Search Console, sitemap submission, schema validation, and analytics so you can see what Riverview queries actually convert."
+      },
+      {
+        "title": "Honest geography",
+        "text": "Only claim Riverview and neighboring metros you can actually serve. Inflated service-area lists create trust gaps and GBP policy risk."
+      }
+    ],
+    "processHeading": "The build process for Riverview clients",
+    "processSteps": [
+      {
+        "title": "Audit",
+        "text": "Review the current Riverview site or competitive gap — speed, local keyword targeting, GBP alignment, schema, and conversion path — before writing code."
+      },
+      {
+        "title": "Architecture",
+        "text": "Map service and location structure around real Riverview and Hillsborough County search intent, including sibling cities you actually serve."
+      },
+      {
+        "title": "Build",
+        "text": "Hand-coded HTML, CSS, and JavaScript. No CMS bloat. Performance, accessibility, and SEO targeted together."
+      },
+      {
+        "title": "Launch & index",
+        "text": "GSC setup, sitemap, schema checks, GBP alignment, and tracking verified so the Riverview property can be discovered."
+      },
+      {
+        "title": "Iterate",
+        "text": "After launch, review Riverview query performance, strengthen weak pages, and attach growth systems when lead handling becomes the bottleneck."
+      }
+    ],
+    "industriesHeading": "Industries we support around Riverview",
+    "industriesBlurb": "Riverview projects commonly include contractors, home services, specialty trades, professional services, and product brands that sell locally or ship. Around Apollo Beach approaches, Bloomingdale, and south county growth corridors, information architecture changes by industry; the technical bar does not.",
+    "localAngle": "On-site collaboration is available in Riverview and across Tampa Bay. Full remote website and growth-system delivery is available nationwide.",
+    "proofBlurb": "Nearby Tampa Bay builds (Screen Team, Knight Group, JNS, Sal’s Painting, and others) show the same hand-coded, search-ready foundation Riverview businesses need. Your page count and package tier change; the quality bar does not. When we have a Riverview-specific project, it is featured here; until then, regional proof still demonstrates the delivery standard.",
+    "contentImage": "/images/service-areas/riverview.jpg",
+    "contentImageAlt": "Riverview, Florida — service area for Knight Logics web design and local SEO",
+    "contentImageCaption": "Riverview, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.",
+    "imageVerified": false,
+    "imageQuery": "riverview florida hillsborough",
+    "siblings": [
+      "brandon",
+      "tampa",
+      "plant-city",
+      "temple-terrace",
+      "safety-harbor"
+    ],
+    "faqs": [
+      {
+        "q": "Do you build websites specifically for Riverview businesses?",
+        "a": "Yes. Copy, schema, internal links, and GBP alignment are scoped for Riverview and Hillsborough County — not a statewide filler page with the city name swapped."
+      },
+      {
+        "q": "Can Knight Logics work on-site in Riverview?",
+        "a": "Yes for Tampa Bay engagements when on-site helps. Full remote delivery is also available nationwide for the same packages."
+      },
+      {
+        "q": "What package fits most Riverview service businesses?",
+        "a": "Many start with Local Site depth for ranking foundations, then expand into Authority or Growth Systems when page count and automation justify it. Pricing lists the current ladder."
+      },
+      {
+        "q": "How long does a Riverview website build take?",
+        "a": "Lean launches often take 1–2 weeks after content is ready. Deeper multi-page authority builds take longer based on scope and feedback speed."
+      },
+      {
+        "q": "Will a Riverview page help if I also serve neighboring cities?",
+        "a": "Yes — when those cities are real service areas. We link sibling metros and keep GBP service areas honest so you do not claim geography you cannot cover."
+      },
+      {
+        "q": "Do you only do websites, or full growth systems too?",
+        "a": "Websites are the foundation. CRM, reviews, ticketing, and automation are available as attached systems when you want the full stack."
+      },
+      {
+        "q": "What makes a Riverview page different from a template city page?",
+        "a": "Unique local framing (fast-growing south Hillsborough residential search demand), real corridors (Apollo Beach approaches, Bloomingdale, and south county growth corridors), verified media when available, and conversion paths matched to Hillsborough County buyer behavior — not a find-and-replace city name."
+      }
+    ],
+    "ctaBlurb": "If your Riverview site is not earning calls or organic leads, the free audit shows what is actually blocking you — technical debt, thin structure, GBP mismatch, or conversion gaps — before you spend on a rebuild. Bring your current URL and we will map the Riverview opportunity against Hillsborough County competition.",
+    "approxWordCount": 1376
+  },
+  {
+    "slug": "temple-terrace",
+    "name": "Temple Terrace",
+    "county": "Hillsborough",
+    "countyFull": "Hillsborough County",
+    "state": "FL",
+    "formId": "Tem",
+    "keywords": "Temple Terrace web designer, web design Temple Terrace FL, Temple Terrace website designer, local SEO Temple Terrace, Hillsborough County web design",
+    "title": "Web Design Temple Terrace FL | Hand-Coded Sites That Rank",
+    "metaDescription": "Web design Temple Terrace FL — hand-coded sites for Hillsborough County service businesses with local SEO, GBP alignment, and Tampa Bay case studies. Free audit.",
+    "ogTitle": "Temple Terrace Web Design & Local SEO | Knight Logics",
+    "ogDescription": "Hand-coded Temple Terrace websites with local SEO, Google Business alignment, on-site Tampa Bay support, and remote U.S. delivery.",
+    "h1": "Temple Terrace Web Designer for Service Businesses",
+    "heroLead": "Searching <strong>web designer Temple Terrace</strong> or <strong>Temple Terrace web design</strong>? Knight Logics builds hand-coded sites for Hillsborough County businesses — local SEO structure, Google Business Profile alignment, and live Tampa Bay proof — with on-site support in the metro and full remote delivery nationwide.",
+    "breadcrumbLabel": "Temple Terrace Web Design",
+    "articleHeadline": "Web Design for Temple Terrace, FL — Built for Hillsborough County Visibility",
+    "articleDescription": "What Temple Terrace businesses need from a custom website to compete in Hillsborough County: speed, service architecture, local SEO, and a conversion path that works.",
+    "whyHeading": "Why Temple Terrace needs a stronger website than a template",
+    "whyParagraphs": [
+      "Temple Terrace sits inside Hillsborough County, where local search is no longer a polite brochure contest. Homeowners and commercial buyers compare multiple tabs before they call — and the sites that win usually combine clear service architecture, fast mobile performance, and a Google Business Profile that matches the website. If your current Temple Terrace presence is a template homepage with a contact form buried below the fold, you are competing with one hand tied behind your back.",
+      "The competitive angle in Temple Terrace is compact city identity next to Tampa with university-adjacent traffic. That means generic “Florida web design” language does not hold. Pages need Temple Terrace-specific framing, honest service-area statements, and proof that you actually work this corridor. Knight Logics builds hand-coded sites for Temple Terrace operators who want that clarity without WordPress bloat or monthly page-builder lock-in.",
+      "Neighborhood and corridor intent matters here: downtown Temple Terrace, Busch Boulevard approaches, and USF-adjacent corridors. When someone searches a trade plus Temple Terrace, they are not looking for a statewide franchise story. They want to know whether you serve their street, how fast you respond, and whether the site feels trustworthy on a phone. That is what local SEO and conversion structure are for — not keyword stuffing.",
+      "Many Temple Terrace businesses lose to Tampa metro templates that never name Temple Terrace. The fix is rarely “more blog posts.” It is usually cleaner HTML, dedicated service pages, schema that validates, Search Console indexing, and GBP categories/service areas that agree with the site. Those fundamentals compound. Decorative redesigns without them do not.",
+      "A Temple Terrace website should also make the next step obvious. Estimate forms, click-to-call, booking paths, and service selectors belong above the fold on mobile — not buried under stock hero text. Knight Logics designs conversion paths for how Hillsborough County buyers actually behave when they are ready to hire."
+    ],
+    "marketHeading": "How Temple Terrace buyers actually find and book",
+    "marketParagraphs": [
+      "In-person delivery is available across Temple Terrace and the wider Tampa Bay metro when a kickoff, photo shoot, or on-site review helps. At the same time, every Knight Logics package is available fully remote across the United States — discovery, design, development, launch, and automation systems do not require you to be next door. Temple Terrace clients often use a hybrid: local when useful, remote for speed.",
+      "A strong Temple Terrace website usually includes a conversion-first homepage, dedicated service pages, FAQ structure, clear NAP consistency, and internal links into proof (reviews, galleries, case studies). For trades, estimate and call CTAs stay visible. For professional services, credibility and process clarity take the lead. Either way, the technical baseline is the same: hand-coded performance, schema, analytics, and indexing hygiene.",
+      "Hillsborough County searchers bounce from slow sites. Core Web Vitals, compressed media, and lean JavaScript are not vanity metrics in Temple Terrace — they are conversion infrastructure. Knight Logics targets high Lighthouse scores because a fast page keeps the lead in your pipeline instead of the next result.",
+      "When you are ready to grow beyond the website, the same foundation supports CRM outreach, review requests, ticketing, and social systems without starting over. Temple Terrace operators who treat the site as the front door and the systems as the engine get compounding returns. That is the Growth Systems path — optional, but designed to attach cleanly.",
+      "Internal linking is part of the Temple Terrace strategy. Your hub pages, service silos, and neighboring city pages should reinforce each other instead of competing as orphans. Knight Logics also connects Temple Terrace landing pages back to pricing, audits, and case studies so visitors can move from education to a clear next step without bouncing to a competitor.",
+      "Content depth matters for indexing, but utility matters more. Every section on a Temple Terrace page should answer a real buyer question: what you do, where you work, how to contact you, what proof exists, and what happens after the first call. Doorway pages that only swap city names fail that test. Unique local framing for Temple Terrace and Hillsborough County passes it.",
+      "Search Console data for Temple Terrace-style queries often shows impressions without clicks when titles are vague or pages look interchangeable. We write Temple Terrace-specific titles, meta descriptions, and H1 framing so the SERP snippet matches the promise on the page — then we measure CTR and iterate instead of guessing."
+    ],
+    "needsHeading": "What a Temple Terrace site should include",
+    "needs": [
+      {
+        "title": "Temple Terrace-specific service architecture",
+        "text": "Separate pages for the jobs people actually search in Temple Terrace beat a single dump “Services” page every time. Architecture should match how Hillsborough County buyers phrase queries."
+      },
+      {
+        "title": "GBP and website alignment",
+        "text": "Categories, service areas, phone, and business name must match. Temple Terrace map-pack competition punishes mismatches between the profile and the site."
+      },
+      {
+        "title": "Mobile-first conversion",
+        "text": "Most Temple Terrace service searches happen on phones. Click-to-call, short forms, and above-the-fold clarity are non-negotiable."
+      },
+      {
+        "title": "Proof that feels local",
+        "text": "Photos, reviews, and project examples should support Temple Terrace / Hillsborough County credibility — not generic stock that could be anywhere."
+      },
+      {
+        "title": "Indexation and measurement",
+        "text": "Search Console, sitemap submission, schema validation, and analytics so you can see what Temple Terrace queries actually convert."
+      },
+      {
+        "title": "Honest geography",
+        "text": "Only claim Temple Terrace and neighboring metros you can actually serve. Inflated service-area lists create trust gaps and GBP policy risk."
+      }
+    ],
+    "processHeading": "The build process for Temple Terrace clients",
+    "processSteps": [
+      {
+        "title": "Audit",
+        "text": "Review the current Temple Terrace site or competitive gap — speed, local keyword targeting, GBP alignment, schema, and conversion path — before writing code."
+      },
+      {
+        "title": "Architecture",
+        "text": "Map service and location structure around real Temple Terrace and Hillsborough County search intent, including sibling cities you actually serve."
+      },
+      {
+        "title": "Build",
+        "text": "Hand-coded HTML, CSS, and JavaScript. No CMS bloat. Performance, accessibility, and SEO targeted together."
+      },
+      {
+        "title": "Launch & index",
+        "text": "GSC setup, sitemap, schema checks, GBP alignment, and tracking verified so the Temple Terrace property can be discovered."
+      },
+      {
+        "title": "Iterate",
+        "text": "After launch, review Temple Terrace query performance, strengthen weak pages, and attach growth systems when lead handling becomes the bottleneck."
+      }
+    ],
+    "industriesHeading": "Industries we support around Temple Terrace",
+    "industriesBlurb": "Temple Terrace projects commonly include contractors, home services, specialty trades, professional services, and product brands that sell locally or ship. Around downtown Temple Terrace, Busch Boulevard approaches, and USF-adjacent corridors, information architecture changes by industry; the technical bar does not.",
+    "localAngle": "On-site collaboration is available in Temple Terrace and across Tampa Bay. Full remote website and growth-system delivery is available nationwide.",
+    "proofBlurb": "Nearby Tampa Bay builds (Screen Team, Knight Group, JNS, Sal’s Painting, and others) show the same hand-coded, search-ready foundation Temple Terrace businesses need. Your page count and package tier change; the quality bar does not. When we have a Temple Terrace-specific project, it is featured here; until then, regional proof still demonstrates the delivery standard.",
+    "contentImage": "/images/service-areas/temple-terrace.jpg",
+    "contentImageAlt": "Temple Terrace, Florida — service area for Knight Logics web design and local SEO",
+    "contentImageCaption": "Temple Terrace, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.",
+    "imageVerified": false,
+    "imageQuery": "temple terrace florida",
+    "siblings": [
+      "tampa",
+      "brandon",
+      "lutz",
+      "wesley-chapel",
+      "safety-harbor"
+    ],
+    "faqs": [
+      {
+        "q": "Do you build websites specifically for Temple Terrace businesses?",
+        "a": "Yes. Copy, schema, internal links, and GBP alignment are scoped for Temple Terrace and Hillsborough County — not a statewide filler page with the city name swapped."
+      },
+      {
+        "q": "Can Knight Logics work on-site in Temple Terrace?",
+        "a": "Yes for Tampa Bay engagements when on-site helps. Full remote delivery is also available nationwide for the same packages."
+      },
+      {
+        "q": "What package fits most Temple Terrace service businesses?",
+        "a": "Many start with Local Site depth for ranking foundations, then expand into Authority or Growth Systems when page count and automation justify it. Pricing lists the current ladder."
+      },
+      {
+        "q": "How long does a Temple Terrace website build take?",
+        "a": "Lean launches often take 1–2 weeks after content is ready. Deeper multi-page authority builds take longer based on scope and feedback speed."
+      },
+      {
+        "q": "Will a Temple Terrace page help if I also serve neighboring cities?",
+        "a": "Yes — when those cities are real service areas. We link sibling metros and keep GBP service areas honest so you do not claim geography you cannot cover."
+      },
+      {
+        "q": "Do you only do websites, or full growth systems too?",
+        "a": "Websites are the foundation. CRM, reviews, ticketing, and automation are available as attached systems when you want the full stack."
+      },
+      {
+        "q": "What makes a Temple Terrace page different from a template city page?",
+        "a": "Unique local framing (compact city identity next to Tampa with university-adjacent traffic), real corridors (downtown Temple Terrace, Busch Boulevard approaches, and USF-adjacent corridors), verified media when available, and conversion paths matched to Hillsborough County buyer behavior — not a find-and-replace city name."
+      }
+    ],
+    "ctaBlurb": "If your Temple Terrace site is not earning calls or organic leads, the free audit shows what is actually blocking you — technical debt, thin structure, GBP mismatch, or conversion gaps — before you spend on a rebuild. Bring your current URL and we will map the Temple Terrace opportunity against Hillsborough County competition.",
+    "approxWordCount": 1428
+  },
+  {
+    "slug": "lutz",
+    "name": "Lutz",
+    "county": "Hillsborough",
+    "countyFull": "Hillsborough County",
+    "state": "FL",
+    "formId": "Lut",
+    "keywords": "Lutz web designer, web design Lutz FL, Lutz website designer, local SEO Lutz, Hillsborough County web design",
+    "title": "Web Design Lutz FL | Hand-Coded Sites That Rank",
+    "metaDescription": "Web design Lutz FL — hand-coded sites for Hillsborough County service businesses with local SEO, GBP alignment, and Tampa Bay case studies. Free audit.",
+    "ogTitle": "Lutz Web Design & Local SEO | Knight Logics",
+    "ogDescription": "Hand-coded Lutz websites with local SEO, Google Business alignment, on-site Tampa Bay support, and remote U.S. delivery.",
+    "h1": "Lutz Web Designer for Service Businesses",
+    "heroLead": "Searching <strong>web designer Lutz</strong> or <strong>Lutz web design</strong>? Knight Logics builds hand-coded sites for Hillsborough County businesses — local SEO structure, Google Business Profile alignment, and live Tampa Bay proof — with on-site support in the metro and full remote delivery nationwide.",
+    "breadcrumbLabel": "Lutz Web Design",
+    "articleHeadline": "Web Design for Lutz, FL — Built for Hillsborough County Visibility",
+    "articleDescription": "What Lutz businesses need from a custom website to compete in Hillsborough County: speed, service architecture, local SEO, and a conversion path that works.",
+    "whyHeading": "Why Lutz needs a stronger website than a template",
+    "whyParagraphs": [
+      "Lutz sits inside Hillsborough County, where local search is no longer a polite brochure contest. Homeowners and commercial buyers compare multiple tabs before they call — and the sites that win usually combine clear service architecture, fast mobile performance, and a Google Business Profile that matches the website. If your current Lutz presence is a template homepage with a contact form buried below the fold, you are competing with one hand tied behind your back.",
+      "The competitive angle in Lutz is north Hillsborough residential market spilling into Pasco. That means generic “Florida web design” language does not hold. Pages need Lutz-specific framing, honest service-area statements, and proof that you actually work this corridor. Knight Logics builds hand-coded sites for Lutz operators who want that clarity without WordPress bloat or monthly page-builder lock-in.",
+      "Neighborhood and corridor intent matters here: north Lutz, Van Dyke corridor, and the Land O' Lakes border. When someone searches a trade plus Lutz, they are not looking for a statewide franchise story. They want to know whether you serve their street, how fast you respond, and whether the site feels trustworthy on a phone. That is what local SEO and conversion structure are for — not keyword stuffing.",
+      "Many Lutz businesses lose to Pasco/Hillsborough border businesses with confused NAP. The fix is rarely “more blog posts.” It is usually cleaner HTML, dedicated service pages, schema that validates, Search Console indexing, and GBP categories/service areas that agree with the site. Those fundamentals compound. Decorative redesigns without them do not.",
+      "A Lutz website should also make the next step obvious. Estimate forms, click-to-call, booking paths, and service selectors belong above the fold on mobile — not buried under stock hero text. Knight Logics designs conversion paths for how Hillsborough County buyers actually behave when they are ready to hire."
+    ],
+    "marketHeading": "How Lutz buyers actually find and book",
+    "marketParagraphs": [
+      "In-person delivery is available across Lutz and the wider Tampa Bay metro when a kickoff, photo shoot, or on-site review helps. At the same time, every Knight Logics package is available fully remote across the United States — discovery, design, development, launch, and automation systems do not require you to be next door. Lutz clients often use a hybrid: local when useful, remote for speed.",
+      "A strong Lutz website usually includes a conversion-first homepage, dedicated service pages, FAQ structure, clear NAP consistency, and internal links into proof (reviews, galleries, case studies). For trades, estimate and call CTAs stay visible. For professional services, credibility and process clarity take the lead. Either way, the technical baseline is the same: hand-coded performance, schema, analytics, and indexing hygiene.",
+      "Hillsborough County searchers bounce from slow sites. Core Web Vitals, compressed media, and lean JavaScript are not vanity metrics in Lutz — they are conversion infrastructure. Knight Logics targets high Lighthouse scores because a fast page keeps the lead in your pipeline instead of the next result.",
+      "When you are ready to grow beyond the website, the same foundation supports CRM outreach, review requests, ticketing, and social systems without starting over. Lutz operators who treat the site as the front door and the systems as the engine get compounding returns. That is the Growth Systems path — optional, but designed to attach cleanly.",
+      "Internal linking is part of the Lutz strategy. Your hub pages, service silos, and neighboring city pages should reinforce each other instead of competing as orphans. Knight Logics also connects Lutz landing pages back to pricing, audits, and case studies so visitors can move from education to a clear next step without bouncing to a competitor.",
+      "Content depth matters for indexing, but utility matters more. Every section on a Lutz page should answer a real buyer question: what you do, where you work, how to contact you, what proof exists, and what happens after the first call. Doorway pages that only swap city names fail that test. Unique local framing for Lutz and Hillsborough County passes it.",
+      "Search Console data for Lutz-style queries often shows impressions without clicks when titles are vague or pages look interchangeable. We write Lutz-specific titles, meta descriptions, and H1 framing so the SERP snippet matches the promise on the page — then we measure CTR and iterate instead of guessing."
+    ],
+    "needsHeading": "What a Lutz site should include",
+    "needs": [
+      {
+        "title": "Lutz-specific service architecture",
+        "text": "Separate pages for the jobs people actually search in Lutz beat a single dump “Services” page every time. Architecture should match how Hillsborough County buyers phrase queries."
+      },
+      {
+        "title": "GBP and website alignment",
+        "text": "Categories, service areas, phone, and business name must match. Lutz map-pack competition punishes mismatches between the profile and the site."
+      },
+      {
+        "title": "Mobile-first conversion",
+        "text": "Most Lutz service searches happen on phones. Click-to-call, short forms, and above-the-fold clarity are non-negotiable."
+      },
+      {
+        "title": "Proof that feels local",
+        "text": "Photos, reviews, and project examples should support Lutz / Hillsborough County credibility — not generic stock that could be anywhere."
+      },
+      {
+        "title": "Indexation and measurement",
+        "text": "Search Console, sitemap submission, schema validation, and analytics so you can see what Lutz queries actually convert."
+      },
+      {
+        "title": "Honest geography",
+        "text": "Only claim Lutz and neighboring metros you can actually serve. Inflated service-area lists create trust gaps and GBP policy risk."
+      }
+    ],
+    "processHeading": "The build process for Lutz clients",
+    "processSteps": [
+      {
+        "title": "Audit",
+        "text": "Review the current Lutz site or competitive gap — speed, local keyword targeting, GBP alignment, schema, and conversion path — before writing code."
+      },
+      {
+        "title": "Architecture",
+        "text": "Map service and location structure around real Lutz and Hillsborough County search intent, including sibling cities you actually serve."
+      },
+      {
+        "title": "Build",
+        "text": "Hand-coded HTML, CSS, and JavaScript. No CMS bloat. Performance, accessibility, and SEO targeted together."
+      },
+      {
+        "title": "Launch & index",
+        "text": "GSC setup, sitemap, schema checks, GBP alignment, and tracking verified so the Lutz property can be discovered."
+      },
+      {
+        "title": "Iterate",
+        "text": "After launch, review Lutz query performance, strengthen weak pages, and attach growth systems when lead handling becomes the bottleneck."
+      }
+    ],
+    "industriesHeading": "Industries we support around Lutz",
+    "industriesBlurb": "Lutz projects commonly include contractors, home services, specialty trades, professional services, and product brands that sell locally or ship. Around north Lutz, Van Dyke corridor, and the Land O' Lakes border, information architecture changes by industry; the technical bar does not.",
+    "localAngle": "On-site collaboration is available in Lutz and across Tampa Bay. Full remote website and growth-system delivery is available nationwide.",
+    "proofBlurb": "Nearby Tampa Bay builds (Screen Team, Knight Group, JNS, Sal’s Painting, and others) show the same hand-coded, search-ready foundation Lutz businesses need. Your page count and package tier change; the quality bar does not. When we have a Lutz-specific project, it is featured here; until then, regional proof still demonstrates the delivery standard.",
+    "contentImage": "/images/service-areas/lutz.jpg",
+    "contentImageAlt": "Lutz, Florida — service area for Knight Logics web design and local SEO",
+    "contentImageCaption": "Lutz, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.",
+    "imageVerified": false,
+    "imageQuery": "lutz florida",
+    "siblings": [
+      "land-o-lakes",
+      "wesley-chapel",
+      "tampa",
+      "oldsmar",
+      "temple-terrace"
+    ],
+    "faqs": [
+      {
+        "q": "Do you build websites specifically for Lutz businesses?",
+        "a": "Yes. Copy, schema, internal links, and GBP alignment are scoped for Lutz and Hillsborough County — not a statewide filler page with the city name swapped."
+      },
+      {
+        "q": "Can Knight Logics work on-site in Lutz?",
+        "a": "Yes for Tampa Bay engagements when on-site helps. Full remote delivery is also available nationwide for the same packages."
+      },
+      {
+        "q": "What package fits most Lutz service businesses?",
+        "a": "Many start with Local Site depth for ranking foundations, then expand into Authority or Growth Systems when page count and automation justify it. Pricing lists the current ladder."
+      },
+      {
+        "q": "How long does a Lutz website build take?",
+        "a": "Lean launches often take 1–2 weeks after content is ready. Deeper multi-page authority builds take longer based on scope and feedback speed."
+      },
+      {
+        "q": "Will a Lutz page help if I also serve neighboring cities?",
+        "a": "Yes — when those cities are real service areas. We link sibling metros and keep GBP service areas honest so you do not claim geography you cannot cover."
+      },
+      {
+        "q": "Do you only do websites, or full growth systems too?",
+        "a": "Websites are the foundation. CRM, reviews, ticketing, and automation are available as attached systems when you want the full stack."
+      },
+      {
+        "q": "What makes a Lutz page different from a template city page?",
+        "a": "Unique local framing (north Hillsborough residential market spilling into Pasco), real corridors (north Lutz, Van Dyke corridor, and the Land O' Lakes border), verified media when available, and conversion paths matched to Hillsborough County buyer behavior — not a find-and-replace city name."
+      }
+    ],
+    "ctaBlurb": "If your Lutz site is not earning calls or organic leads, the free audit shows what is actually blocking you — technical debt, thin structure, GBP mismatch, or conversion gaps — before you spend on a rebuild. Bring your current URL and we will map the Lutz opportunity against Hillsborough County competition.",
+    "approxWordCount": 1383
+  },
+  {
+    "slug": "wesley-chapel",
+    "name": "Wesley Chapel",
+    "county": "Pasco",
+    "countyFull": "Pasco County",
+    "state": "FL",
+    "formId": "Wes",
+    "keywords": "Wesley Chapel web designer, web design Wesley Chapel FL, Wesley Chapel website designer, local SEO Wesley Chapel, Pasco County web design",
+    "title": "Web Design Wesley Chapel FL | Hand-Coded Sites That Rank",
+    "metaDescription": "Web design Wesley Chapel FL — hand-coded sites for Pasco County service businesses with local SEO, GBP alignment, and Tampa Bay case studies. Free audit.",
+    "ogTitle": "Wesley Chapel Web Design & Local SEO | Knight Logics",
+    "ogDescription": "Hand-coded Wesley Chapel websites with local SEO, Google Business alignment, on-site Tampa Bay support, and remote U.S. delivery.",
+    "h1": "Wesley Chapel Web Designer for Service Businesses",
+    "heroLead": "Searching <strong>web designer Wesley Chapel</strong> or <strong>Wesley Chapel web design</strong>? Knight Logics builds hand-coded sites for Pasco County businesses — local SEO structure, Google Business Profile alignment, and live Tampa Bay proof — with on-site support in the metro and full remote delivery nationwide.",
+    "breadcrumbLabel": "Wesley Chapel Web Design",
+    "articleHeadline": "Web Design for Wesley Chapel, FL — Built for Pasco County Visibility",
+    "articleDescription": "What Wesley Chapel businesses need from a custom website to compete in Pasco County: speed, service architecture, local SEO, and a conversion path that works.",
+    "whyHeading": "Why Wesley Chapel needs a stronger website than a template",
+    "whyParagraphs": [
+      "Wesley Chapel sits inside Pasco County, where local search is no longer a polite brochure contest. Homeowners and commercial buyers compare multiple tabs before they call — and the sites that win usually combine clear service architecture, fast mobile performance, and a Google Business Profile that matches the website. If your current Wesley Chapel presence is a template homepage with a contact form buried below the fold, you are competing with one hand tied behind your back.",
+      "The competitive angle in Wesley Chapel is Pasco growth corridor with New Tampa search spillover. That means generic “Florida web design” language does not hold. Pages need Wesley Chapel-specific framing, honest service-area statements, and proof that you actually work this corridor. Knight Logics builds hand-coded sites for Wesley Chapel operators who want that clarity without WordPress bloat or monthly page-builder lock-in.",
+      "Neighborhood and corridor intent matters here: Wiregrass, State Road 56 corridor, and New Tampa overflow. When someone searches a trade plus Wesley Chapel, they are not looking for a statewide franchise story. They want to know whether you serve their street, how fast you respond, and whether the site feels trustworthy on a phone. That is what local SEO and conversion structure are for — not keyword stuffing.",
+      "Many Wesley Chapel businesses lose to national franchise pages ranking above local independents. The fix is rarely “more blog posts.” It is usually cleaner HTML, dedicated service pages, schema that validates, Search Console indexing, and GBP categories/service areas that agree with the site. Those fundamentals compound. Decorative redesigns without them do not.",
+      "A Wesley Chapel website should also make the next step obvious. Estimate forms, click-to-call, booking paths, and service selectors belong above the fold on mobile — not buried under stock hero text. Knight Logics designs conversion paths for how Pasco County buyers actually behave when they are ready to hire."
+    ],
+    "marketHeading": "How Wesley Chapel buyers actually find and book",
+    "marketParagraphs": [
+      "In-person delivery is available across Wesley Chapel and the wider Tampa Bay metro when a kickoff, photo shoot, or on-site review helps. At the same time, every Knight Logics package is available fully remote across the United States — discovery, design, development, launch, and automation systems do not require you to be next door. Wesley Chapel clients often use a hybrid: local when useful, remote for speed.",
+      "A strong Wesley Chapel website usually includes a conversion-first homepage, dedicated service pages, FAQ structure, clear NAP consistency, and internal links into proof (reviews, galleries, case studies). For trades, estimate and call CTAs stay visible. For professional services, credibility and process clarity take the lead. Either way, the technical baseline is the same: hand-coded performance, schema, analytics, and indexing hygiene.",
+      "Pasco County searchers bounce from slow sites. Core Web Vitals, compressed media, and lean JavaScript are not vanity metrics in Wesley Chapel — they are conversion infrastructure. Knight Logics targets high Lighthouse scores because a fast page keeps the lead in your pipeline instead of the next result.",
+      "When you are ready to grow beyond the website, the same foundation supports CRM outreach, review requests, ticketing, and social systems without starting over. Wesley Chapel operators who treat the site as the front door and the systems as the engine get compounding returns. That is the Growth Systems path — optional, but designed to attach cleanly.",
+      "Internal linking is part of the Wesley Chapel strategy. Your hub pages, service silos, and neighboring city pages should reinforce each other instead of competing as orphans. Knight Logics also connects Wesley Chapel landing pages back to pricing, audits, and case studies so visitors can move from education to a clear next step without bouncing to a competitor.",
+      "Content depth matters for indexing, but utility matters more. Every section on a Wesley Chapel page should answer a real buyer question: what you do, where you work, how to contact you, what proof exists, and what happens after the first call. Doorway pages that only swap city names fail that test. Unique local framing for Wesley Chapel and Pasco County passes it.",
+      "Search Console data for Wesley Chapel-style queries often shows impressions without clicks when titles are vague or pages look interchangeable. We write Wesley Chapel-specific titles, meta descriptions, and H1 framing so the SERP snippet matches the promise on the page — then we measure CTR and iterate instead of guessing."
+    ],
+    "needsHeading": "What a Wesley Chapel site should include",
+    "needs": [
+      {
+        "title": "Wesley Chapel-specific service architecture",
+        "text": "Separate pages for the jobs people actually search in Wesley Chapel beat a single dump “Services” page every time. Architecture should match how Pasco County buyers phrase queries."
+      },
+      {
+        "title": "GBP and website alignment",
+        "text": "Categories, service areas, phone, and business name must match. Wesley Chapel map-pack competition punishes mismatches between the profile and the site."
+      },
+      {
+        "title": "Mobile-first conversion",
+        "text": "Most Wesley Chapel service searches happen on phones. Click-to-call, short forms, and above-the-fold clarity are non-negotiable."
+      },
+      {
+        "title": "Proof that feels local",
+        "text": "Photos, reviews, and project examples should support Wesley Chapel / Pasco County credibility — not generic stock that could be anywhere."
+      },
+      {
+        "title": "Indexation and measurement",
+        "text": "Search Console, sitemap submission, schema validation, and analytics so you can see what Wesley Chapel queries actually convert."
+      },
+      {
+        "title": "Honest geography",
+        "text": "Only claim Wesley Chapel and neighboring metros you can actually serve. Inflated service-area lists create trust gaps and GBP policy risk."
+      }
+    ],
+    "processHeading": "The build process for Wesley Chapel clients",
+    "processSteps": [
+      {
+        "title": "Audit",
+        "text": "Review the current Wesley Chapel site or competitive gap — speed, local keyword targeting, GBP alignment, schema, and conversion path — before writing code."
+      },
+      {
+        "title": "Architecture",
+        "text": "Map service and location structure around real Wesley Chapel and Pasco County search intent, including sibling cities you actually serve."
+      },
+      {
+        "title": "Build",
+        "text": "Hand-coded HTML, CSS, and JavaScript. No CMS bloat. Performance, accessibility, and SEO targeted together."
+      },
+      {
+        "title": "Launch & index",
+        "text": "GSC setup, sitemap, schema checks, GBP alignment, and tracking verified so the Wesley Chapel property can be discovered."
+      },
+      {
+        "title": "Iterate",
+        "text": "After launch, review Wesley Chapel query performance, strengthen weak pages, and attach growth systems when lead handling becomes the bottleneck."
+      }
+    ],
+    "industriesHeading": "Industries we support around Wesley Chapel",
+    "industriesBlurb": "Wesley Chapel projects commonly include contractors, home services, specialty trades, professional services, and product brands that sell locally or ship. Around Wiregrass, State Road 56 corridor, and New Tampa overflow, information architecture changes by industry; the technical bar does not.",
+    "localAngle": "On-site collaboration is available in Wesley Chapel and across Tampa Bay. Full remote website and growth-system delivery is available nationwide.",
+    "proofBlurb": "Nearby Tampa Bay builds (Screen Team, Knight Group, JNS, Sal’s Painting, and others) show the same hand-coded, search-ready foundation Wesley Chapel businesses need. Your page count and package tier change; the quality bar does not. When we have a Wesley Chapel-specific project, it is featured here; until then, regional proof still demonstrates the delivery standard.",
+    "contentImage": "/images/service-areas/wesley-chapel.jpg",
+    "contentImageAlt": "Wesley Chapel, Florida — service area for Knight Logics web design and local SEO",
+    "contentImageCaption": "Wesley Chapel, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.",
+    "imageVerified": false,
+    "imageQuery": "wesley chapel florida",
+    "siblings": [
+      "land-o-lakes",
+      "lutz",
+      "tampa",
+      "new-port-richey",
+      "temple-terrace"
+    ],
+    "faqs": [
+      {
+        "q": "Do you build websites specifically for Wesley Chapel businesses?",
+        "a": "Yes. Copy, schema, internal links, and GBP alignment are scoped for Wesley Chapel and Pasco County — not a statewide filler page with the city name swapped."
+      },
+      {
+        "q": "Can Knight Logics work on-site in Wesley Chapel?",
+        "a": "Yes for Tampa Bay engagements when on-site helps. Full remote delivery is also available nationwide for the same packages."
+      },
+      {
+        "q": "What package fits most Wesley Chapel service businesses?",
+        "a": "Many start with Local Site depth for ranking foundations, then expand into Authority or Growth Systems when page count and automation justify it. Pricing lists the current ladder."
+      },
+      {
+        "q": "How long does a Wesley Chapel website build take?",
+        "a": "Lean launches often take 1–2 weeks after content is ready. Deeper multi-page authority builds take longer based on scope and feedback speed."
+      },
+      {
+        "q": "Will a Wesley Chapel page help if I also serve neighboring cities?",
+        "a": "Yes — when those cities are real service areas. We link sibling metros and keep GBP service areas honest so you do not claim geography you cannot cover."
+      },
+      {
+        "q": "Do you only do websites, or full growth systems too?",
+        "a": "Websites are the foundation. CRM, reviews, ticketing, and automation are available as attached systems when you want the full stack."
+      },
+      {
+        "q": "What makes a Wesley Chapel page different from a template city page?",
+        "a": "Unique local framing (Pasco growth corridor with New Tampa search spillover), real corridors (Wiregrass, State Road 56 corridor, and New Tampa overflow), verified media when available, and conversion paths matched to Pasco County buyer behavior — not a find-and-replace city name."
+      }
+    ],
+    "ctaBlurb": "If your Wesley Chapel site is not earning calls or organic leads, the free audit shows what is actually blocking you — technical debt, thin structure, GBP mismatch, or conversion gaps — before you spend on a rebuild. Bring your current URL and we will map the Wesley Chapel opportunity against Pasco County competition.",
+    "approxWordCount": 1425
+  },
+  {
+    "slug": "new-port-richey",
+    "name": "New Port Richey",
+    "county": "Pasco",
+    "countyFull": "Pasco County",
+    "state": "FL",
+    "formId": "Npr",
+    "keywords": "New Port Richey web designer, web design New Port Richey FL, New Port Richey website designer, local SEO New Port Richey, Pasco County web design",
+    "title": "Web Design New Port Richey FL | Hand-Coded Sites That Rank",
+    "metaDescription": "Web design New Port Richey FL — hand-coded sites for Pasco County service businesses with local SEO, GBP alignment, and Tampa Bay case studies. Free audit.",
+    "ogTitle": "New Port Richey Web Design & Local SEO | Knight Logics",
+    "ogDescription": "Hand-coded New Port Richey websites with local SEO, Google Business alignment, on-site Tampa Bay support, and remote U.S. delivery.",
+    "h1": "New Port Richey Web Designer for Service Businesses",
+    "heroLead": "Searching <strong>web designer New Port Richey</strong> or <strong>New Port Richey web design</strong>? Knight Logics builds hand-coded sites for Pasco County businesses — local SEO structure, Google Business Profile alignment, and live Tampa Bay proof — with on-site support in the metro and full remote delivery nationwide.",
+    "breadcrumbLabel": "New Port Richey Web Design",
+    "articleHeadline": "Web Design for New Port Richey, FL — Built for Pasco County Visibility",
+    "articleDescription": "What New Port Richey businesses need from a custom website to compete in Pasco County: speed, service architecture, local SEO, and a conversion path that works.",
+    "whyHeading": "Why New Port Richey needs a stronger website than a template",
+    "whyParagraphs": [
+      "New Port Richey sits inside Pasco County, where local search is no longer a polite brochure contest. Homeowners and commercial buyers compare multiple tabs before they call — and the sites that win usually combine clear service architecture, fast mobile performance, and a Google Business Profile that matches the website. If your current New Port Richey presence is a template homepage with a contact form buried below the fold, you are competing with one hand tied behind your back.",
+      "The competitive angle in New Port Richey is west Pasco coastal corridor needing call-first mobile sites. That means generic “Florida web design” language does not hold. Pages need New Port Richey-specific framing, honest service-area statements, and proof that you actually work this corridor. Knight Logics builds hand-coded sites for New Port Richey operators who want that clarity without WordPress bloat or monthly page-builder lock-in.",
+      "Neighborhood and corridor intent matters here: downtown New Port Richey, Port Richey approaches, and US-19 corridor. When someone searches a trade plus New Port Richey, they are not looking for a statewide franchise story. They want to know whether you serve their street, how fast you respond, and whether the site feels trustworthy on a phone. That is what local SEO and conversion structure are for — not keyword stuffing.",
+      "Many New Port Richey businesses lose to outdated Pasco directory sites and slow WordPress installs. The fix is rarely “more blog posts.” It is usually cleaner HTML, dedicated service pages, schema that validates, Search Console indexing, and GBP categories/service areas that agree with the site. Those fundamentals compound. Decorative redesigns without them do not.",
+      "A New Port Richey website should also make the next step obvious. Estimate forms, click-to-call, booking paths, and service selectors belong above the fold on mobile — not buried under stock hero text. Knight Logics designs conversion paths for how Pasco County buyers actually behave when they are ready to hire."
+    ],
+    "marketHeading": "How New Port Richey buyers actually find and book",
+    "marketParagraphs": [
+      "In-person delivery is available across New Port Richey and the wider Tampa Bay metro when a kickoff, photo shoot, or on-site review helps. At the same time, every Knight Logics package is available fully remote across the United States — discovery, design, development, launch, and automation systems do not require you to be next door. New Port Richey clients often use a hybrid: local when useful, remote for speed.",
+      "A strong New Port Richey website usually includes a conversion-first homepage, dedicated service pages, FAQ structure, clear NAP consistency, and internal links into proof (reviews, galleries, case studies). For trades, estimate and call CTAs stay visible. For professional services, credibility and process clarity take the lead. Either way, the technical baseline is the same: hand-coded performance, schema, analytics, and indexing hygiene.",
+      "Pasco County searchers bounce from slow sites. Core Web Vitals, compressed media, and lean JavaScript are not vanity metrics in New Port Richey — they are conversion infrastructure. Knight Logics targets high Lighthouse scores because a fast page keeps the lead in your pipeline instead of the next result.",
+      "When you are ready to grow beyond the website, the same foundation supports CRM outreach, review requests, ticketing, and social systems without starting over. New Port Richey operators who treat the site as the front door and the systems as the engine get compounding returns. That is the Growth Systems path — optional, but designed to attach cleanly.",
+      "Internal linking is part of the New Port Richey strategy. Your hub pages, service silos, and neighboring city pages should reinforce each other instead of competing as orphans. Knight Logics also connects New Port Richey landing pages back to pricing, audits, and case studies so visitors can move from education to a clear next step without bouncing to a competitor.",
+      "Content depth matters for indexing, but utility matters more. Every section on a New Port Richey page should answer a real buyer question: what you do, where you work, how to contact you, what proof exists, and what happens after the first call. Doorway pages that only swap city names fail that test. Unique local framing for New Port Richey and Pasco County passes it.",
+      "Search Console data for New Port Richey-style queries often shows impressions without clicks when titles are vague or pages look interchangeable. We write New Port Richey-specific titles, meta descriptions, and H1 framing so the SERP snippet matches the promise on the page — then we measure CTR and iterate instead of guessing."
+    ],
+    "needsHeading": "What a New Port Richey site should include",
+    "needs": [
+      {
+        "title": "New Port Richey-specific service architecture",
+        "text": "Separate pages for the jobs people actually search in New Port Richey beat a single dump “Services” page every time. Architecture should match how Pasco County buyers phrase queries."
+      },
+      {
+        "title": "GBP and website alignment",
+        "text": "Categories, service areas, phone, and business name must match. New Port Richey map-pack competition punishes mismatches between the profile and the site."
+      },
+      {
+        "title": "Mobile-first conversion",
+        "text": "Most New Port Richey service searches happen on phones. Click-to-call, short forms, and above-the-fold clarity are non-negotiable."
+      },
+      {
+        "title": "Proof that feels local",
+        "text": "Photos, reviews, and project examples should support New Port Richey / Pasco County credibility — not generic stock that could be anywhere."
+      },
+      {
+        "title": "Indexation and measurement",
+        "text": "Search Console, sitemap submission, schema validation, and analytics so you can see what New Port Richey queries actually convert."
+      },
+      {
+        "title": "Honest geography",
+        "text": "Only claim New Port Richey and neighboring metros you can actually serve. Inflated service-area lists create trust gaps and GBP policy risk."
+      }
+    ],
+    "processHeading": "The build process for New Port Richey clients",
+    "processSteps": [
+      {
+        "title": "Audit",
+        "text": "Review the current New Port Richey site or competitive gap — speed, local keyword targeting, GBP alignment, schema, and conversion path — before writing code."
+      },
+      {
+        "title": "Architecture",
+        "text": "Map service and location structure around real New Port Richey and Pasco County search intent, including sibling cities you actually serve."
+      },
+      {
+        "title": "Build",
+        "text": "Hand-coded HTML, CSS, and JavaScript. No CMS bloat. Performance, accessibility, and SEO targeted together."
+      },
+      {
+        "title": "Launch & index",
+        "text": "GSC setup, sitemap, schema checks, GBP alignment, and tracking verified so the New Port Richey property can be discovered."
+      },
+      {
+        "title": "Iterate",
+        "text": "After launch, review New Port Richey query performance, strengthen weak pages, and attach growth systems when lead handling becomes the bottleneck."
+      }
+    ],
+    "industriesHeading": "Industries we support around New Port Richey",
+    "industriesBlurb": "New Port Richey projects commonly include contractors, home services, specialty trades, professional services, and product brands that sell locally or ship. Around downtown New Port Richey, Port Richey approaches, and US-19 corridor, information architecture changes by industry; the technical bar does not.",
+    "localAngle": "On-site collaboration is available in New Port Richey and across Tampa Bay. Full remote website and growth-system delivery is available nationwide.",
+    "proofBlurb": "Nearby Tampa Bay builds (Screen Team, Knight Group, JNS, Sal’s Painting, and others) show the same hand-coded, search-ready foundation New Port Richey businesses need. Your page count and package tier change; the quality bar does not. When we have a New Port Richey-specific project, it is featured here; until then, regional proof still demonstrates the delivery standard.",
+    "contentImage": "/images/service-areas/new-port-richey.jpg",
+    "contentImageAlt": "New Port Richey, Florida — service area for Knight Logics web design and local SEO",
+    "contentImageCaption": "New Port Richey, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.",
+    "imageVerified": false,
+    "imageQuery": "new port richey florida",
+    "siblings": [
+      "holiday",
+      "tarpon-springs",
+      "palm-harbor",
+      "wesley-chapel",
+      "land-o-lakes"
+    ],
+    "faqs": [
+      {
+        "q": "Do you build websites specifically for New Port Richey businesses?",
+        "a": "Yes. Copy, schema, internal links, and GBP alignment are scoped for New Port Richey and Pasco County — not a statewide filler page with the city name swapped."
+      },
+      {
+        "q": "Can Knight Logics work on-site in New Port Richey?",
+        "a": "Yes for Tampa Bay engagements when on-site helps. Full remote delivery is also available nationwide for the same packages."
+      },
+      {
+        "q": "What package fits most New Port Richey service businesses?",
+        "a": "Many start with Local Site depth for ranking foundations, then expand into Authority or Growth Systems when page count and automation justify it. Pricing lists the current ladder."
+      },
+      {
+        "q": "How long does a New Port Richey website build take?",
+        "a": "Lean launches often take 1–2 weeks after content is ready. Deeper multi-page authority builds take longer based on scope and feedback speed."
+      },
+      {
+        "q": "Will a New Port Richey page help if I also serve neighboring cities?",
+        "a": "Yes — when those cities are real service areas. We link sibling metros and keep GBP service areas honest so you do not claim geography you cannot cover."
+      },
+      {
+        "q": "Do you only do websites, or full growth systems too?",
+        "a": "Websites are the foundation. CRM, reviews, ticketing, and automation are available as attached systems when you want the full stack."
+      },
+      {
+        "q": "What makes a New Port Richey page different from a template city page?",
+        "a": "Unique local framing (west Pasco coastal corridor needing call-first mobile sites), real corridors (downtown New Port Richey, Port Richey approaches, and US-19 corridor), verified media when available, and conversion paths matched to Pasco County buyer behavior — not a find-and-replace city name."
+      }
+    ],
+    "ctaBlurb": "If your New Port Richey site is not earning calls or organic leads, the free audit shows what is actually blocking you — technical debt, thin structure, GBP mismatch, or conversion gaps — before you spend on a rebuild. Bring your current URL and we will map the New Port Richey opportunity against Pasco County competition.",
+    "approxWordCount": 1474
+  },
+  {
+    "slug": "holiday",
+    "name": "Holiday",
+    "county": "Pasco",
+    "countyFull": "Pasco County",
+    "state": "FL",
+    "formId": "Hol",
+    "keywords": "Holiday web designer, web design Holiday FL, Holiday website designer, local SEO Holiday, Pasco County web design",
+    "title": "Web Design Holiday FL | Hand-Coded Sites That Rank",
+    "metaDescription": "Web design Holiday FL — hand-coded sites for Pasco County service businesses with local SEO, GBP alignment, and Tampa Bay case studies. Free audit.",
+    "ogTitle": "Holiday Web Design & Local SEO | Knight Logics",
+    "ogDescription": "Hand-coded Holiday websites with local SEO, Google Business alignment, on-site Tampa Bay support, and remote U.S. delivery.",
+    "h1": "Holiday Web Designer for Service Businesses",
+    "heroLead": "Searching <strong>web designer Holiday</strong> or <strong>Holiday web design</strong>? Knight Logics builds hand-coded sites for Pasco County businesses — local SEO structure, Google Business Profile alignment, and live Tampa Bay proof — with on-site support in the metro and full remote delivery nationwide.",
+    "breadcrumbLabel": "Holiday Web Design",
+    "articleHeadline": "Web Design for Holiday, FL — Built for Pasco County Visibility",
+    "articleDescription": "What Holiday businesses need from a custom website to compete in Pasco County: speed, service architecture, local SEO, and a conversion path that works.",
+    "whyHeading": "Why Holiday needs a stronger website than a template",
+    "whyParagraphs": [
+      "Holiday sits inside Pasco County, where local search is no longer a polite brochure contest. Homeowners and commercial buyers compare multiple tabs before they call — and the sites that win usually combine clear service architecture, fast mobile performance, and a Google Business Profile that matches the website. If your current Holiday presence is a template homepage with a contact form buried below the fold, you are competing with one hand tied behind your back.",
+      "The competitive angle in Holiday is west Pasco residential demand between Tarpon and New Port Richey. That means generic “Florida web design” language does not hold. Pages need Holiday-specific framing, honest service-area statements, and proof that you actually work this corridor. Knight Logics builds hand-coded sites for Holiday operators who want that clarity without WordPress bloat or monthly page-builder lock-in.",
+      "Neighborhood and corridor intent matters here: Holiday proper, Elfers approaches, and the US-19 / Moog corridor. When someone searches a trade plus Holiday, they are not looking for a statewide franchise story. They want to know whether you serve their street, how fast you respond, and whether the site feels trustworthy on a phone. That is what local SEO and conversion structure are for — not keyword stuffing.",
+      "Many Holiday businesses lose to Pasco businesses listed only on Angi with no owned site. The fix is rarely “more blog posts.” It is usually cleaner HTML, dedicated service pages, schema that validates, Search Console indexing, and GBP categories/service areas that agree with the site. Those fundamentals compound. Decorative redesigns without them do not.",
+      "A Holiday website should also make the next step obvious. Estimate forms, click-to-call, booking paths, and service selectors belong above the fold on mobile — not buried under stock hero text. Knight Logics designs conversion paths for how Pasco County buyers actually behave when they are ready to hire."
+    ],
+    "marketHeading": "How Holiday buyers actually find and book",
+    "marketParagraphs": [
+      "In-person delivery is available across Holiday and the wider Tampa Bay metro when a kickoff, photo shoot, or on-site review helps. At the same time, every Knight Logics package is available fully remote across the United States — discovery, design, development, launch, and automation systems do not require you to be next door. Holiday clients often use a hybrid: local when useful, remote for speed.",
+      "A strong Holiday website usually includes a conversion-first homepage, dedicated service pages, FAQ structure, clear NAP consistency, and internal links into proof (reviews, galleries, case studies). For trades, estimate and call CTAs stay visible. For professional services, credibility and process clarity take the lead. Either way, the technical baseline is the same: hand-coded performance, schema, analytics, and indexing hygiene.",
+      "Pasco County searchers bounce from slow sites. Core Web Vitals, compressed media, and lean JavaScript are not vanity metrics in Holiday — they are conversion infrastructure. Knight Logics targets high Lighthouse scores because a fast page keeps the lead in your pipeline instead of the next result.",
+      "When you are ready to grow beyond the website, the same foundation supports CRM outreach, review requests, ticketing, and social systems without starting over. Holiday operators who treat the site as the front door and the systems as the engine get compounding returns. That is the Growth Systems path — optional, but designed to attach cleanly.",
+      "Internal linking is part of the Holiday strategy. Your hub pages, service silos, and neighboring city pages should reinforce each other instead of competing as orphans. Knight Logics also connects Holiday landing pages back to pricing, audits, and case studies so visitors can move from education to a clear next step without bouncing to a competitor.",
+      "Content depth matters for indexing, but utility matters more. Every section on a Holiday page should answer a real buyer question: what you do, where you work, how to contact you, what proof exists, and what happens after the first call. Doorway pages that only swap city names fail that test. Unique local framing for Holiday and Pasco County passes it.",
+      "Search Console data for Holiday-style queries often shows impressions without clicks when titles are vague or pages look interchangeable. We write Holiday-specific titles, meta descriptions, and H1 framing so the SERP snippet matches the promise on the page — then we measure CTR and iterate instead of guessing."
+    ],
+    "needsHeading": "What a Holiday site should include",
+    "needs": [
+      {
+        "title": "Holiday-specific service architecture",
+        "text": "Separate pages for the jobs people actually search in Holiday beat a single dump “Services” page every time. Architecture should match how Pasco County buyers phrase queries."
+      },
+      {
+        "title": "GBP and website alignment",
+        "text": "Categories, service areas, phone, and business name must match. Holiday map-pack competition punishes mismatches between the profile and the site."
+      },
+      {
+        "title": "Mobile-first conversion",
+        "text": "Most Holiday service searches happen on phones. Click-to-call, short forms, and above-the-fold clarity are non-negotiable."
+      },
+      {
+        "title": "Proof that feels local",
+        "text": "Photos, reviews, and project examples should support Holiday / Pasco County credibility — not generic stock that could be anywhere."
+      },
+      {
+        "title": "Indexation and measurement",
+        "text": "Search Console, sitemap submission, schema validation, and analytics so you can see what Holiday queries actually convert."
+      },
+      {
+        "title": "Honest geography",
+        "text": "Only claim Holiday and neighboring metros you can actually serve. Inflated service-area lists create trust gaps and GBP policy risk."
+      }
+    ],
+    "processHeading": "The build process for Holiday clients",
+    "processSteps": [
+      {
+        "title": "Audit",
+        "text": "Review the current Holiday site or competitive gap — speed, local keyword targeting, GBP alignment, schema, and conversion path — before writing code."
+      },
+      {
+        "title": "Architecture",
+        "text": "Map service and location structure around real Holiday and Pasco County search intent, including sibling cities you actually serve."
+      },
+      {
+        "title": "Build",
+        "text": "Hand-coded HTML, CSS, and JavaScript. No CMS bloat. Performance, accessibility, and SEO targeted together."
+      },
+      {
+        "title": "Launch & index",
+        "text": "GSC setup, sitemap, schema checks, GBP alignment, and tracking verified so the Holiday property can be discovered."
+      },
+      {
+        "title": "Iterate",
+        "text": "After launch, review Holiday query performance, strengthen weak pages, and attach growth systems when lead handling becomes the bottleneck."
+      }
+    ],
+    "industriesHeading": "Industries we support around Holiday",
+    "industriesBlurb": "Holiday projects commonly include contractors, home services, specialty trades, professional services, and product brands that sell locally or ship. Around Holiday proper, Elfers approaches, and the US-19 / Moog corridor, information architecture changes by industry; the technical bar does not.",
+    "localAngle": "On-site collaboration is available in Holiday and across Tampa Bay. Full remote website and growth-system delivery is available nationwide.",
+    "proofBlurb": "Nearby Tampa Bay builds (Screen Team, Knight Group, JNS, Sal’s Painting, and others) show the same hand-coded, search-ready foundation Holiday businesses need. Your page count and package tier change; the quality bar does not. When we have a Holiday-specific project, it is featured here; until then, regional proof still demonstrates the delivery standard.",
+    "contentImage": "/images/service-areas/holiday.jpg",
+    "contentImageAlt": "Holiday, Florida — service area for Knight Logics web design and local SEO",
+    "contentImageCaption": "Holiday, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.",
+    "imageVerified": false,
+    "imageQuery": "holiday florida pasco",
+    "siblings": [
+      "new-port-richey",
+      "tarpon-springs",
+      "palm-harbor",
+      "wesley-chapel",
+      "dunedin"
+    ],
+    "faqs": [
+      {
+        "q": "Do you build websites specifically for Holiday businesses?",
+        "a": "Yes. Copy, schema, internal links, and GBP alignment are scoped for Holiday and Pasco County — not a statewide filler page with the city name swapped."
+      },
+      {
+        "q": "Can Knight Logics work on-site in Holiday?",
+        "a": "Yes for Tampa Bay engagements when on-site helps. Full remote delivery is also available nationwide for the same packages."
+      },
+      {
+        "q": "What package fits most Holiday service businesses?",
+        "a": "Many start with Local Site depth for ranking foundations, then expand into Authority or Growth Systems when page count and automation justify it. Pricing lists the current ladder."
+      },
+      {
+        "q": "How long does a Holiday website build take?",
+        "a": "Lean launches often take 1–2 weeks after content is ready. Deeper multi-page authority builds take longer based on scope and feedback speed."
+      },
+      {
+        "q": "Will a Holiday page help if I also serve neighboring cities?",
+        "a": "Yes — when those cities are real service areas. We link sibling metros and keep GBP service areas honest so you do not claim geography you cannot cover."
+      },
+      {
+        "q": "Do you only do websites, or full growth systems too?",
+        "a": "Websites are the foundation. CRM, reviews, ticketing, and automation are available as attached systems when you want the full stack."
+      },
+      {
+        "q": "What makes a Holiday page different from a template city page?",
+        "a": "Unique local framing (west Pasco residential demand between Tarpon and New Port Richey), real corridors (Holiday proper, Elfers approaches, and the US-19 / Moog corridor), verified media when available, and conversion paths matched to Pasco County buyer behavior — not a find-and-replace city name."
+      }
+    ],
+    "ctaBlurb": "If your Holiday site is not earning calls or organic leads, the free audit shows what is actually blocking you — technical debt, thin structure, GBP mismatch, or conversion gaps — before you spend on a rebuild. Bring your current URL and we will map the Holiday opportunity against Pasco County competition.",
+    "approxWordCount": 1390
+  },
+  {
+    "slug": "land-o-lakes",
+    "name": "Land O' Lakes",
+    "county": "Pasco",
+    "countyFull": "Pasco County",
+    "state": "FL",
+    "formId": "Lol",
+    "keywords": "Land O' Lakes web designer, web design Land O' Lakes FL, Land O' Lakes website designer, local SEO Land O' Lakes, Pasco County web design",
+    "title": "Web Design Land O' Lakes FL | Hand-Coded Sites That Rank",
+    "metaDescription": "Web design Land O' Lakes FL — hand-coded sites for Pasco County service businesses with local SEO, GBP alignment, and Tampa Bay case studies. Free audit.",
+    "ogTitle": "Land O' Lakes Web Design & Local SEO | Knight Logics",
+    "ogDescription": "Hand-coded Land O' Lakes websites with local SEO, Google Business alignment, on-site Tampa Bay support, and remote U.S. delivery.",
+    "h1": "Land O' Lakes Web Designer for Service Businesses",
+    "heroLead": "Searching <strong>web designer Land O' Lakes</strong> or <strong>Land O' Lakes web design</strong>? Knight Logics builds hand-coded sites for Pasco County businesses — local SEO structure, Google Business Profile alignment, and live Tampa Bay proof — with on-site support in the metro and full remote delivery nationwide.",
+    "breadcrumbLabel": "Land O' Lakes Web Design",
+    "articleHeadline": "Web Design for Land O' Lakes, FL — Built for Pasco County Visibility",
+    "articleDescription": "What Land O' Lakes businesses need from a custom website to compete in Pasco County: speed, service architecture, local SEO, and a conversion path that works.",
+    "whyHeading": "Why Land O' Lakes needs a stronger website than a template",
+    "whyParagraphs": [
+      "Land O' Lakes sits inside Pasco County, where local search is no longer a polite brochure contest. Homeowners and commercial buyers compare multiple tabs before they call — and the sites that win usually combine clear service architecture, fast mobile performance, and a Google Business Profile that matches the website. If your current Land O' Lakes presence is a template homepage with a contact form buried below the fold, you are competing with one hand tied behind your back.",
+      "The competitive angle in Land O' Lakes is central Pasco residential growth with Hillsborough overlap searches. That means generic “Florida web design” language does not hold. Pages need Land O' Lakes-specific framing, honest service-area statements, and proof that you actually work this corridor. Knight Logics builds hand-coded sites for Land O' Lakes operators who want that clarity without WordPress bloat or monthly page-builder lock-in.",
+      "Neighborhood and corridor intent matters here: central Land O' Lakes, Lutz border, and SR-54 corridor. When someone searches a trade plus Land O' Lakes, they are not looking for a statewide franchise story. They want to know whether you serve their street, how fast you respond, and whether the site feels trustworthy on a phone. That is what local SEO and conversion structure are for — not keyword stuffing.",
+      "Many Land O' Lakes businesses lose to New Tampa brands that ignore Pasco city modifiers. The fix is rarely “more blog posts.” It is usually cleaner HTML, dedicated service pages, schema that validates, Search Console indexing, and GBP categories/service areas that agree with the site. Those fundamentals compound. Decorative redesigns without them do not.",
+      "A Land O' Lakes website should also make the next step obvious. Estimate forms, click-to-call, booking paths, and service selectors belong above the fold on mobile — not buried under stock hero text. Knight Logics designs conversion paths for how Pasco County buyers actually behave when they are ready to hire."
+    ],
+    "marketHeading": "How Land O' Lakes buyers actually find and book",
+    "marketParagraphs": [
+      "In-person delivery is available across Land O' Lakes and the wider Tampa Bay metro when a kickoff, photo shoot, or on-site review helps. At the same time, every Knight Logics package is available fully remote across the United States — discovery, design, development, launch, and automation systems do not require you to be next door. Land O' Lakes clients often use a hybrid: local when useful, remote for speed.",
+      "A strong Land O' Lakes website usually includes a conversion-first homepage, dedicated service pages, FAQ structure, clear NAP consistency, and internal links into proof (reviews, galleries, case studies). For trades, estimate and call CTAs stay visible. For professional services, credibility and process clarity take the lead. Either way, the technical baseline is the same: hand-coded performance, schema, analytics, and indexing hygiene.",
+      "Pasco County searchers bounce from slow sites. Core Web Vitals, compressed media, and lean JavaScript are not vanity metrics in Land O' Lakes — they are conversion infrastructure. Knight Logics targets high Lighthouse scores because a fast page keeps the lead in your pipeline instead of the next result.",
+      "When you are ready to grow beyond the website, the same foundation supports CRM outreach, review requests, ticketing, and social systems without starting over. Land O' Lakes operators who treat the site as the front door and the systems as the engine get compounding returns. That is the Growth Systems path — optional, but designed to attach cleanly.",
+      "Internal linking is part of the Land O' Lakes strategy. Your hub pages, service silos, and neighboring city pages should reinforce each other instead of competing as orphans. Knight Logics also connects Land O' Lakes landing pages back to pricing, audits, and case studies so visitors can move from education to a clear next step without bouncing to a competitor.",
+      "Content depth matters for indexing, but utility matters more. Every section on a Land O' Lakes page should answer a real buyer question: what you do, where you work, how to contact you, what proof exists, and what happens after the first call. Doorway pages that only swap city names fail that test. Unique local framing for Land O' Lakes and Pasco County passes it.",
+      "Search Console data for Land O' Lakes-style queries often shows impressions without clicks when titles are vague or pages look interchangeable. We write Land O' Lakes-specific titles, meta descriptions, and H1 framing so the SERP snippet matches the promise on the page — then we measure CTR and iterate instead of guessing."
+    ],
+    "needsHeading": "What a Land O' Lakes site should include",
+    "needs": [
+      {
+        "title": "Land O' Lakes-specific service architecture",
+        "text": "Separate pages for the jobs people actually search in Land O' Lakes beat a single dump “Services” page every time. Architecture should match how Pasco County buyers phrase queries."
+      },
+      {
+        "title": "GBP and website alignment",
+        "text": "Categories, service areas, phone, and business name must match. Land O' Lakes map-pack competition punishes mismatches between the profile and the site."
+      },
+      {
+        "title": "Mobile-first conversion",
+        "text": "Most Land O' Lakes service searches happen on phones. Click-to-call, short forms, and above-the-fold clarity are non-negotiable."
+      },
+      {
+        "title": "Proof that feels local",
+        "text": "Photos, reviews, and project examples should support Land O' Lakes / Pasco County credibility — not generic stock that could be anywhere."
+      },
+      {
+        "title": "Indexation and measurement",
+        "text": "Search Console, sitemap submission, schema validation, and analytics so you can see what Land O' Lakes queries actually convert."
+      },
+      {
+        "title": "Honest geography",
+        "text": "Only claim Land O' Lakes and neighboring metros you can actually serve. Inflated service-area lists create trust gaps and GBP policy risk."
+      }
+    ],
+    "processHeading": "The build process for Land O' Lakes clients",
+    "processSteps": [
+      {
+        "title": "Audit",
+        "text": "Review the current Land O' Lakes site or competitive gap — speed, local keyword targeting, GBP alignment, schema, and conversion path — before writing code."
+      },
+      {
+        "title": "Architecture",
+        "text": "Map service and location structure around real Land O' Lakes and Pasco County search intent, including sibling cities you actually serve."
+      },
+      {
+        "title": "Build",
+        "text": "Hand-coded HTML, CSS, and JavaScript. No CMS bloat. Performance, accessibility, and SEO targeted together."
+      },
+      {
+        "title": "Launch & index",
+        "text": "GSC setup, sitemap, schema checks, GBP alignment, and tracking verified so the Land O' Lakes property can be discovered."
+      },
+      {
+        "title": "Iterate",
+        "text": "After launch, review Land O' Lakes query performance, strengthen weak pages, and attach growth systems when lead handling becomes the bottleneck."
+      }
+    ],
+    "industriesHeading": "Industries we support around Land O' Lakes",
+    "industriesBlurb": "Land O' Lakes projects commonly include contractors, home services, specialty trades, professional services, and product brands that sell locally or ship. Around central Land O' Lakes, Lutz border, and SR-54 corridor, information architecture changes by industry; the technical bar does not.",
+    "localAngle": "On-site collaboration is available in Land O' Lakes and across Tampa Bay. Full remote website and growth-system delivery is available nationwide.",
+    "proofBlurb": "Nearby Tampa Bay builds (Screen Team, Knight Group, JNS, Sal’s Painting, and others) show the same hand-coded, search-ready foundation Land O' Lakes businesses need. Your page count and package tier change; the quality bar does not. When we have a Land O' Lakes-specific project, it is featured here; until then, regional proof still demonstrates the delivery standard.",
+    "contentImage": "/images/service-areas/land-o-lakes.jpg",
+    "contentImageAlt": "Land O' Lakes, Florida — service area for Knight Logics web design and local SEO",
+    "contentImageCaption": "Land O' Lakes, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.",
+    "imageVerified": false,
+    "imageQuery": "land o lakes florida",
+    "siblings": [
+      "wesley-chapel",
+      "lutz",
+      "tampa",
+      "new-port-richey",
+      "oldsmar"
+    ],
+    "faqs": [
+      {
+        "q": "Do you build websites specifically for Land O' Lakes businesses?",
+        "a": "Yes. Copy, schema, internal links, and GBP alignment are scoped for Land O' Lakes and Pasco County — not a statewide filler page with the city name swapped."
+      },
+      {
+        "q": "Can Knight Logics work on-site in Land O' Lakes?",
+        "a": "Yes for Tampa Bay engagements when on-site helps. Full remote delivery is also available nationwide for the same packages."
+      },
+      {
+        "q": "What package fits most Land O' Lakes service businesses?",
+        "a": "Many start with Local Site depth for ranking foundations, then expand into Authority or Growth Systems when page count and automation justify it. Pricing lists the current ladder."
+      },
+      {
+        "q": "How long does a Land O' Lakes website build take?",
+        "a": "Lean launches often take 1–2 weeks after content is ready. Deeper multi-page authority builds take longer based on scope and feedback speed."
+      },
+      {
+        "q": "Will a Land O' Lakes page help if I also serve neighboring cities?",
+        "a": "Yes — when those cities are real service areas. We link sibling metros and keep GBP service areas honest so you do not claim geography you cannot cover."
+      },
+      {
+        "q": "Do you only do websites, or full growth systems too?",
+        "a": "Websites are the foundation. CRM, reviews, ticketing, and automation are available as attached systems when you want the full stack."
+      },
+      {
+        "q": "What makes a Land O' Lakes page different from a template city page?",
+        "a": "Unique local framing (central Pasco residential growth with Hillsborough overlap searches), real corridors (central Land O' Lakes, Lutz border, and SR-54 corridor), verified media when available, and conversion paths matched to Pasco County buyer behavior — not a find-and-replace city name."
+      }
+    ],
+    "ctaBlurb": "If your Land O' Lakes site is not earning calls or organic leads, the free audit shows what is actually blocking you — technical debt, thin structure, GBP mismatch, or conversion gaps — before you spend on a rebuild. Bring your current URL and we will map the Land O' Lakes opportunity against Pasco County competition.",
+    "approxWordCount": 1471
+  },
+  {
+    "slug": "plant-city",
+    "name": "Plant City",
+    "county": "Hillsborough",
+    "countyFull": "Hillsborough County",
+    "state": "FL",
+    "formId": "Pla",
+    "keywords": "Plant City web designer, web design Plant City FL, Plant City website designer, local SEO Plant City, Hillsborough County web design",
+    "title": "Web Design Plant City FL | Hand-Coded Sites That Rank",
+    "metaDescription": "Web design Plant City FL — hand-coded sites for Hillsborough County service businesses with local SEO, GBP alignment, and Tampa Bay case studies. Free audit.",
+    "ogTitle": "Plant City Web Design & Local SEO | Knight Logics",
+    "ogDescription": "Hand-coded Plant City websites with local SEO, Google Business alignment, on-site Tampa Bay support, and remote U.S. delivery.",
+    "h1": "Plant City Web Designer for Service Businesses",
+    "heroLead": "Searching <strong>web designer Plant City</strong> or <strong>Plant City web design</strong>? Knight Logics builds hand-coded sites for Hillsborough County businesses — local SEO structure, Google Business Profile alignment, and live Tampa Bay proof — with on-site support in the metro and full remote delivery nationwide.",
+    "breadcrumbLabel": "Plant City Web Design",
+    "articleHeadline": "Web Design for Plant City, FL — Built for Hillsborough County Visibility",
+    "articleDescription": "What Plant City businesses need from a custom website to compete in Hillsborough County: speed, service architecture, local SEO, and a conversion path that works.",
+    "whyHeading": "Why Plant City needs a stronger website than a template",
+    "whyParagraphs": [
+      "Plant City sits inside Hillsborough County, where local search is no longer a polite brochure contest. Homeowners and commercial buyers compare multiple tabs before they call — and the sites that win usually combine clear service architecture, fast mobile performance, and a Google Business Profile that matches the website. If your current Plant City presence is a template homepage with a contact form buried below the fold, you are competing with one hand tied behind your back.",
+      "The competitive angle in Plant City is east Hillsborough identity with I-4 corridor discoverability needs. That means generic “Florida web design” language does not hold. Pages need Plant City-specific framing, honest service-area statements, and proof that you actually work this corridor. Knight Logics builds hand-coded sites for Plant City operators who want that clarity without WordPress bloat or monthly page-builder lock-in.",
+      "Neighborhood and corridor intent matters here: downtown Plant City, strawberry-country corridors, and I-4 approaches toward Brandon. When someone searches a trade plus Plant City, they are not looking for a statewide franchise story. They want to know whether you serve their street, how fast you respond, and whether the site feels trustworthy on a phone. That is what local SEO and conversion structure are for — not keyword stuffing.",
+      "Many Plant City businesses lose to agriculture-town sites stuck on decade-old builders. The fix is rarely “more blog posts.” It is usually cleaner HTML, dedicated service pages, schema that validates, Search Console indexing, and GBP categories/service areas that agree with the site. Those fundamentals compound. Decorative redesigns without them do not.",
+      "A Plant City website should also make the next step obvious. Estimate forms, click-to-call, booking paths, and service selectors belong above the fold on mobile — not buried under stock hero text. Knight Logics designs conversion paths for how Hillsborough County buyers actually behave when they are ready to hire."
+    ],
+    "marketHeading": "How Plant City buyers actually find and book",
+    "marketParagraphs": [
+      "In-person delivery is available across Plant City and the wider Tampa Bay metro when a kickoff, photo shoot, or on-site review helps. At the same time, every Knight Logics package is available fully remote across the United States — discovery, design, development, launch, and automation systems do not require you to be next door. Plant City clients often use a hybrid: local when useful, remote for speed.",
+      "A strong Plant City website usually includes a conversion-first homepage, dedicated service pages, FAQ structure, clear NAP consistency, and internal links into proof (reviews, galleries, case studies). For trades, estimate and call CTAs stay visible. For professional services, credibility and process clarity take the lead. Either way, the technical baseline is the same: hand-coded performance, schema, analytics, and indexing hygiene.",
+      "Hillsborough County searchers bounce from slow sites. Core Web Vitals, compressed media, and lean JavaScript are not vanity metrics in Plant City — they are conversion infrastructure. Knight Logics targets high Lighthouse scores because a fast page keeps the lead in your pipeline instead of the next result.",
+      "When you are ready to grow beyond the website, the same foundation supports CRM outreach, review requests, ticketing, and social systems without starting over. Plant City operators who treat the site as the front door and the systems as the engine get compounding returns. That is the Growth Systems path — optional, but designed to attach cleanly.",
+      "Internal linking is part of the Plant City strategy. Your hub pages, service silos, and neighboring city pages should reinforce each other instead of competing as orphans. Knight Logics also connects Plant City landing pages back to pricing, audits, and case studies so visitors can move from education to a clear next step without bouncing to a competitor.",
+      "Content depth matters for indexing, but utility matters more. Every section on a Plant City page should answer a real buyer question: what you do, where you work, how to contact you, what proof exists, and what happens after the first call. Doorway pages that only swap city names fail that test. Unique local framing for Plant City and Hillsborough County passes it.",
+      "Search Console data for Plant City-style queries often shows impressions without clicks when titles are vague or pages look interchangeable. We write Plant City-specific titles, meta descriptions, and H1 framing so the SERP snippet matches the promise on the page — then we measure CTR and iterate instead of guessing."
+    ],
+    "needsHeading": "What a Plant City site should include",
+    "needs": [
+      {
+        "title": "Plant City-specific service architecture",
+        "text": "Separate pages for the jobs people actually search in Plant City beat a single dump “Services” page every time. Architecture should match how Hillsborough County buyers phrase queries."
+      },
+      {
+        "title": "GBP and website alignment",
+        "text": "Categories, service areas, phone, and business name must match. Plant City map-pack competition punishes mismatches between the profile and the site."
+      },
+      {
+        "title": "Mobile-first conversion",
+        "text": "Most Plant City service searches happen on phones. Click-to-call, short forms, and above-the-fold clarity are non-negotiable."
+      },
+      {
+        "title": "Proof that feels local",
+        "text": "Photos, reviews, and project examples should support Plant City / Hillsborough County credibility — not generic stock that could be anywhere."
+      },
+      {
+        "title": "Indexation and measurement",
+        "text": "Search Console, sitemap submission, schema validation, and analytics so you can see what Plant City queries actually convert."
+      },
+      {
+        "title": "Honest geography",
+        "text": "Only claim Plant City and neighboring metros you can actually serve. Inflated service-area lists create trust gaps and GBP policy risk."
+      }
+    ],
+    "processHeading": "The build process for Plant City clients",
+    "processSteps": [
+      {
+        "title": "Audit",
+        "text": "Review the current Plant City site or competitive gap — speed, local keyword targeting, GBP alignment, schema, and conversion path — before writing code."
+      },
+      {
+        "title": "Architecture",
+        "text": "Map service and location structure around real Plant City and Hillsborough County search intent, including sibling cities you actually serve."
+      },
+      {
+        "title": "Build",
+        "text": "Hand-coded HTML, CSS, and JavaScript. No CMS bloat. Performance, accessibility, and SEO targeted together."
+      },
+      {
+        "title": "Launch & index",
+        "text": "GSC setup, sitemap, schema checks, GBP alignment, and tracking verified so the Plant City property can be discovered."
+      },
+      {
+        "title": "Iterate",
+        "text": "After launch, review Plant City query performance, strengthen weak pages, and attach growth systems when lead handling becomes the bottleneck."
+      }
+    ],
+    "industriesHeading": "Industries we support around Plant City",
+    "industriesBlurb": "Plant City projects commonly include contractors, home services, specialty trades, professional services, and product brands that sell locally or ship. Around downtown Plant City, strawberry-country corridors, and I-4 approaches toward Brandon, information architecture changes by industry; the technical bar does not.",
+    "localAngle": "On-site collaboration is available in Plant City and across Tampa Bay. Full remote website and growth-system delivery is available nationwide.",
+    "proofBlurb": "Nearby Tampa Bay builds (Screen Team, Knight Group, JNS, Sal’s Painting, and others) show the same hand-coded, search-ready foundation Plant City businesses need. Your page count and package tier change; the quality bar does not. When we have a Plant City-specific project, it is featured here; until then, regional proof still demonstrates the delivery standard.",
+    "contentImage": "/images/service-areas/plant-city.jpg",
+    "contentImageAlt": "Plant City, Florida — service area for Knight Logics web design and local SEO",
+    "contentImageCaption": "Plant City, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.",
+    "imageVerified": false,
+    "imageQuery": "plant city florida downtown",
+    "siblings": [
+      "brandon",
+      "riverview",
+      "tampa",
+      "temple-terrace",
+      "safety-harbor"
+    ],
+    "faqs": [
+      {
+        "q": "Do you build websites specifically for Plant City businesses?",
+        "a": "Yes. Copy, schema, internal links, and GBP alignment are scoped for Plant City and Hillsborough County — not a statewide filler page with the city name swapped."
+      },
+      {
+        "q": "Can Knight Logics work on-site in Plant City?",
+        "a": "Yes for Tampa Bay engagements when on-site helps. Full remote delivery is also available nationwide for the same packages."
+      },
+      {
+        "q": "What package fits most Plant City service businesses?",
+        "a": "Many start with Local Site depth for ranking foundations, then expand into Authority or Growth Systems when page count and automation justify it. Pricing lists the current ladder."
+      },
+      {
+        "q": "How long does a Plant City website build take?",
+        "a": "Lean launches often take 1–2 weeks after content is ready. Deeper multi-page authority builds take longer based on scope and feedback speed."
+      },
+      {
+        "q": "Will a Plant City page help if I also serve neighboring cities?",
+        "a": "Yes — when those cities are real service areas. We link sibling metros and keep GBP service areas honest so you do not claim geography you cannot cover."
+      },
+      {
+        "q": "Do you only do websites, or full growth systems too?",
+        "a": "Websites are the foundation. CRM, reviews, ticketing, and automation are available as attached systems when you want the full stack."
+      },
+      {
+        "q": "What makes a Plant City page different from a template city page?",
+        "a": "Unique local framing (east Hillsborough identity with I-4 corridor discoverability needs), real corridors (downtown Plant City, strawberry-country corridors, and I-4 approaches toward Brandon), verified media when available, and conversion paths matched to Hillsborough County buyer behavior — not a find-and-replace city name."
+      }
+    ],
+    "ctaBlurb": "If your Plant City site is not earning calls or organic leads, the free audit shows what is actually blocking you — technical debt, thin structure, GBP mismatch, or conversion gaps — before you spend on a rebuild. Bring your current URL and we will map the Plant City opportunity against Hillsborough County competition.",
+    "approxWordCount": 1427
+  }
+];

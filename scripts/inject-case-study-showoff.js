@@ -111,7 +111,7 @@ const PAGES = {
     ]
   },
   'case-study-faith-works.html': {
-    ogImage: 'https://knightlogics.com/images/showcase/faith-works-og-card.jpg',
+    ogImage: 'https://knightlogics.com/images/showcase/faith-works-og-card.webp',
     walkthrough: {
       title: 'Site proof &amp; local SEO depth',
       intro: 'Faith Works Outdoor Services assets from the client workspace — clearing banner, equipment, and stump before/after. No repeated brand cards, no other trade sites in this walkthrough.',
@@ -130,7 +130,7 @@ const PAGES = {
       audits: [
         { src: '/images/faith-works/stump-before.webp', alt: 'Stump before removal', title: 'Before — stump removal', text: 'Before still from the Faith Works stump-removal gallery.' },
         { src: '/images/faith-works/stump-after.webp', alt: 'Stump after removal', title: 'After — leveled ground', text: 'After still — the transformation homeowners hire for.' },
-        { src: '/images/showcase/faith-works-og-card.jpg', alt: 'Faith Works site card', title: 'Live site card', text: 'OG card for the 82-page local SEO build — used once here.' }
+        { src: '/images/showcase/faith-works-og-card.webp', alt: 'Faith Works site card', title: 'Live site card', text: 'OG card for the 82-page local SEO build — used once here.' }
       ],
       ctaHref: '/book-consultation',
       ctaLabel: 'Build outdoor-services growth systems',

@@ -4,6 +4,11 @@
 const fs = require('fs');
 const path = require('path');
 
+if (!process.argv.includes('--stripe-test-mode')) {
+    console.error('Refusing to contact Stripe without the explicit --stripe-test-mode flag. Use npm run test:checkout:mock for local contracts.');
+    process.exit(2);
+}
+
 function loadEnvFile(filePath) {
     if (!fs.existsSync(filePath)) {
         return;
@@ -44,13 +49,14 @@ const { PACKAGE_DEFINITIONS } = handler;
 
 const packagesToTest = [
     'website-demo-preview',
+    'website-local-seo-starter',
+    'website-authority-network',
+    'ecommerce-launch',
+    'ecommerce-advanced-system',
+    'gbp-setup',
+    'gbp-maintenance',
     'ops-simple-lead-tracker',
-    'ops-contractor-crm-starter',
-    'ops-job-records-system',
-    'ops-automated-job-records',
-    'ops-growth-system-starter',
-    'ops-full-growth-system',
-    'ops-custom-automation-system'
+    'monthly-local-seo-starter'
 ];
 
 function createMockResponse() {
@@ -123,9 +129,7 @@ async function testPackage(packageKey) {
                 email: 'qa.checkout.test@knightlogics.com',
                 preferredContact: 'email',
                 projectDetails: `Automated checkout smoke test for ${packageKey}.`,
-                pageCountExpectation: 'small',
-                seoExpansionNeed: 'no',
-                sellingOnlineNeed: 'no',
+                managedPropertyUrl: 'https://example.com/checkout-test',
                 returnPath: '/pricing',
                 intakeUploadCompleted: true
             }));
@@ -200,11 +204,17 @@ async function testInvoicePayment() {
 
 (async () => {
     if (!process.env.STRIPE_SECRET_KEY && !process.env.STRIPE_API_KEY) {
-        console.error('STRIPE_SECRET_KEY not found in .env.local/.env.production — cannot run live checkout smoke test.');
+        console.error('STRIPE_SECRET_KEY not found in .env.local/.env.production — cannot run Stripe test-mode checkout smoke.');
         process.exit(1);
     }
 
-    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || process.env.STRIPE_API_KEY, {
+    const stripeKey = process.env.STRIPE_SECRET_KEY || process.env.STRIPE_API_KEY;
+    if (!String(stripeKey).startsWith('sk_test_')) {
+        console.error('Refusing checkout smoke because the configured Stripe key is not a test-mode key.');
+        process.exit(2);
+    }
+
+    const stripe = new Stripe(stripeKey, {
         apiVersion: '2025-03-31.basil'
     });
     const results = [];

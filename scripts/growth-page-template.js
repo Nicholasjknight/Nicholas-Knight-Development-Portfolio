@@ -136,6 +136,19 @@ function renderSplit(block) {
 
 function renderMediaItem(m, single = false) {
   if (!m) return '';
+  if (m.type === 'media-needed') {
+    const page = esc(m.page || '');
+    const brief = esc(m.brief || m.alt || 'Capture needed');
+    const specs = esc(m.specs || 'Screenshot · 1600×900');
+    const aspect = esc(m.aspect || '16:9');
+    return `<div class="kl-growth-media${single ? ' kl-growth-media--solo' : ''}">
+            <figure class="kl-media-needed" data-media-needed="true" data-asset-type="${esc(m.assetType || 'screenshot')}" data-aspect="${aspect}" data-page="${page}" data-brief="${brief}">
+                <div class="kl-media-needed__frame" aria-hidden="true"></div>
+                <figcaption><strong>Media needed:</strong> ${brief}<span class="kl-media-needed__specs">${specs}</span></figcaption>
+            </figure>
+            ${m.title && !single ? `<div class="kl-growth-media-caption"><h3>${esc(m.title)}</h3><p>${m.text || ''}</p></div>` : ''}
+        </div>`;
+  }
   if (m.type === 'video') {
     const label = esc(m.title || m.alt || 'Demo video');
     const poster = m.poster ? ` poster="${m.poster}"` : '';

@@ -176,6 +176,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
     </section>
+    <section class="displayplus-section" style="padding-bottom:0;">
+        <div class="container">
+            <article class="svc-mirror fade-in">
+                <figure class="svc-mirror-media svc-mirror-media--good">
+                    <img src="/images/added-media/Auto%20Vid%20Compiler%20Page.png" alt="Auto Vid Compiler GUI — folder selection, trim controls, and compile workflow" loading="lazy" width="1400" height="900">
+                </figure>
+                <div class="svc-mirror-copy">
+                    <p class="svc-mirror-versus"><span>Shipped UI</span> Folder → trim → export</p>
+                    <h3>The actual compile interface</h3>
+                    <p>Folder picker, trim-length slider, intro and music dropdowns, and a one-click compile button — captured from the packaged Windows build, not a marketing mockup.</p>
+                    <ul class="svc-checklist">
+                        <li>Portable .exe with bundled FFmpeg</li>
+                        <li>20 free compiles, then credit packs or monthly access</li>
+                        <li>SHA256 checksum published with each release</li>
+                    </ul>
+                </div>
+            </article>
+            <figure class="kl-media-needed fade-in" data-media-needed="true" style="margin-top:2rem;"
+                data-asset-type="video"
+                data-aspect="16:9"
+                data-page="/auto-vid-compiler"
+                data-brief="Screen-recorded walkthrough of the real Auto Vid Compiler GUI: pick a clips folder, set trim length, choose an intro and music track, and run a compile.">
+                <div class="kl-media-needed__frame" aria-hidden="true"></div>
+                <figcaption>
+                    <strong>Media needed:</strong> A recorded walkthrough of the actual desktop app &mdash; folder selection, trim setting, intro/music pick, and a real compile from start to finished .mp4.
+                    <span class="kl-media-needed__specs">MP4 or YouTube embed · 16:9 · 45&ndash;90s · screen capture of real app</span>
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
     <section class="displayplus-proof-strip">
         <div class="container displayplus-proof-grid fade-in">
             <article class="displayplus-proof-card">
@@ -223,6 +254,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <i class="fas fa-music"></i>
                     <h3>Background Music</h3>
                     <p>Add MP3, WAV, M4A, OGG, FLAC, or AAC tracks and mix one under the compiled video while preserving original clip audio.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="displayplus-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Two Ways To Get It Running</h2>
+                <p>Most people should grab the packaged release. Running from source is there for anyone who wants to read or modify the code first.</p>
+            </div>
+            <div class="kl-proof-gallery fade-in" style="margin:2rem 0;">
+                <figure>
+                    <img src="/images/added-media/Auto%20Vid%20Compiler%20Page.png" alt="Auto Vid Compiler GUI — folder chosen, trim length set, intro and music dropdowns visible" loading="lazy" width="1400" height="900">
+                    <figcaption><strong>Live GUI capture</strong> — folder chosen, trim length set, intro/music dropdowns visible.</figcaption>
+                </figure>
+            </div>
+            <div class="displayplus-feature-grid">
+                <article class="displayplus-feature-card fade-in">
+                    <i class="fas fa-download"></i>
+                    <h3>Release Build (recommended)</h3>
+                    <p>Download the packaged executable from GitHub Releases and extract the full folder. This is the path most creators should use &mdash; no Python setup required.</p>
+                </article>
+                <article class="displayplus-feature-card fade-in">
+                    <i class="fas fa-code"></i>
+                    <h3>Run From Source</h3>
+                    <p>Clone the repository, run <code>pip install -r requirements.txt</code>, then launch <code>python UOVidCompiler_GUI.py</code>. Useful for developers who want to inspect or extend the pipeline.</p>
+                </article>
+                <article class="displayplus-feature-card fade-in">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Best fit: quick-capture highlight clips</h3>
+                    <p>The current workflow is well suited to short clips from Xbox Game Bar&rsquo;s &ldquo;Record That&rdquo; or similar quick-capture tools &mdash; not long, unedited recordings.</p>
+                </article>
+                <article class="displayplus-feature-card fade-in">
+                    <i class="fas fa-shield-halved"></i>
+                    <h3>Unsigned executable, checksum provided</h3>
+                    <p>The release is not code-signed, so Windows SmartScreen or your browser may show a warning on first download. Each release ships a SHA256 checksum in the notes so you can verify the file before running it.</p>
                 </article>
             </div>
         </div>
@@ -299,6 +367,91 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <span class="displayplus-step-number">04</span>
                     <h3>Export and upload</h3>
                     <p>Hit compile. The app processes each clip in sequence and delivers one finished .mp4 ready for YouTube.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="displayplus-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Release History Highlights</h2>
+                <p>Selected highlights from the GitHub release history &mdash; the project has kept shipping fixes and small features since the initial stable release.</p>
+            </div>
+            <div class="displayplus-steps" style="grid-template-columns:1fr;">
+                <article class="displayplus-step fade-in">
+                    <span class="displayplus-step-number">Recent</span>
+                    <h3>Intro timing and clip player fixes</h3>
+                    <p>Gameplay clips now start when the intro template animation ends rather than when a long sound effect finishes, with the sound effect carrying over into the first clips. The clip player also gained double-click-to-play thumbnails with a seek bar.</p>
+                </article>
+                <article class="displayplus-step fade-in">
+                    <span class="displayplus-step-number">Reliability</span>
+                    <h3>Shutdown, single-instance, and diagnostics work</h3>
+                    <p>Fixes across recent releases cover the app closing reliably from the X button or Alt+F4, a single-instance guard so copies don&rsquo;t stack in Task Manager, and persistent diagnostic logs written to AppData for troubleshooting.</p>
+                </article>
+                <article class="displayplus-step fade-in">
+                    <span class="displayplus-step-number">v1.0.0</span>
+                    <h3>Initial stable release</h3>
+                    <p>The first packaged, stable Windows build of the compiler.</p>
+                </article>
+            </div>
+            <p style="text-align:center;margin-top:28px;"><a href="https://github.com/Knight-Logics/Auto-Video-Editor-and-Compiler/releases" target="_blank" rel="noopener noreferrer" class="btn-secondary">Full Release History on GitHub</a></p>
+        </div>
+    </section>
+
+    <section class="displayplus-section displayplus-section-alt">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Known Limitations</h2>
+                <p>Worth knowing before you download, so this fits the job you actually have.</p>
+            </div>
+            <div class="displayplus-feature-grid">
+                <article class="displayplus-feature-card fade-in">
+                    <i class="fas fa-window-restore"></i>
+                    <h3>Windows only</h3>
+                    <p>This is a Windows desktop app. There is no macOS or Linux build.</p>
+                </article>
+                <article class="displayplus-feature-card fade-in">
+                    <i class="fas fa-scissors"></i>
+                    <h3>One trim rule for the whole batch</h3>
+                    <p>Trim length applies to every clip in the folder for that run &mdash; it is not a per-clip timeline editor.</p>
+                </article>
+                <article class="displayplus-feature-card fade-in">
+                    <i class="fas fa-folder"></i>
+                    <h3>Portable build must stay together</h3>
+                    <p>The .exe expects its bundled <code>ffmpeg/</code>, <code>intros/</code>, and <code>music/</code> folders in the same directory. Moving just the executable will break it.</p>
+                </article>
+                <article class="displayplus-feature-card fade-in">
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                    <h3>Want more control? See VideoForge</h3>
+                    <p>Ranked formats, captions, custom overlays, and a browser UI live in the evolved sibling app, VideoForge Studio, not in this focused compiler.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="displayplus-section" id="autovid-faq">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Auto Vid Compiler FAQ</h2>
+                <p>Common questions before downloading the compiler.</p>
+            </div>
+            <div class="displayplus-steps" style="grid-template-columns:1fr;">
+                <article class="displayplus-step fade-in">
+                    <h3>What kind of clips is this actually built for?</h3>
+                    <p>Short, quick-capture recordings &mdash; the kind you get from Xbox Game Bar&rsquo;s &ldquo;Record That&rdquo; or similar tools. It trims the end of each clip and stitches them together, so long unedited footage isn&rsquo;t the intended input.</p>
+                </article>
+                <article class="displayplus-step fade-in">
+                    <h3>Do I need Python installed to use it?</h3>
+                    <p>No, not for the packaged release build &mdash; FFmpeg is bundled and the app runs as a standalone .exe. Python is only needed if you choose to run the project from source.</p>
+                </article>
+                <article class="displayplus-step fade-in">
+                    <h3>Why does Windows show a warning when I download it?</h3>
+                    <p>The executable isn&rsquo;t code-signed yet, so SmartScreen or your browser may flag it as unrecognized. Each release includes a SHA256 checksum in the notes so you can verify the download before running it.</p>
+                </article>
+                <article class="displayplus-step fade-in">
+                    <h3>What happens to my credits if a compile fails or I stop it?</h3>
+                    <p>A credit is only used after a successful compile. Stopping a run or a failed compile does not consume a trial use or a paid credit.</p>
                 </article>
             </div>
         </div>

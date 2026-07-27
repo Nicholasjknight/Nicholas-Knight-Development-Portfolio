@@ -3,6 +3,13 @@ const serviceCheckoutHandler = require('./_lib/service-checkout');
 const serviceOrdersHandler = require('./_lib/service-orders');
 const serviceDeliveryHandler = require('./_lib/service-delivery');
 const serviceStatusHandler = require('./_lib/service-status');
+const {
+    catalog,
+    buildPackageDefinitions,
+    buildPaymentOptions,
+    getCatalogHash
+} = require('./_lib/package-catalog');
+const packageRouting = require('../pricing/package-routing');
 
 const DEFAULT_ALLOWED_ORIGINS = new Set([
     'https://knightlogics.com',
@@ -13,7 +20,7 @@ const DEFAULT_ALLOWED_ORIGINS = new Set([
 
 const LOCAL_DEV_ORIGIN_PATTERN = /^http:\/\/(?:127\.0\.0\.1|localhost):\d+$/;
 const FORMSPREE_ENDPOINT = process.env.FORMSPREE_ENDPOINT || 'https://formspree.io/f/xnnggyzp';
-const VALID_PAGE_COUNT_EXPECTATIONS = new Set(['small', 'preview', 'medium', 'local', 'large', 'authority', 'enterprise', 'max', 'growth']);
+const VALID_PAGE_COUNT_EXPECTATIONS = new Set(['demo', 'small', 'preview', 'medium', 'local', 'large', 'authority', 'enterprise', 'max', 'network', 'growth']);
 const VALID_SEO_EXPANSION_NEEDS = new Set(['no', 'services', 'cities', 'both', 'audit-external', 'audit-limited', 'audit-full', 'audit-maintained']);
 const VALID_SELLING_ONLINE_NEEDS = new Set(['no', 'later', 'stripe-links', 'invoicing', 'cart-store']);
 const MAX_JSON_BODY_BYTES = 64 * 1024;
@@ -22,6 +29,9 @@ const RATE_LIMIT_MAX_REQUESTS = 30;
 const requestBuckets = new Map();
 const KL_PRODUCT_KEY_META = 'kl_package_key';
 const KL_PAYMENT_OPTION_META = 'kl_payment_option';
+let stripeFactory = (secretKey) => new Stripe(secretKey, {
+    apiVersion: '2025-03-31.basil'
+});
 
 function createHttpError(statusCode, message) {
     const error = new Error(message);
@@ -29,7 +39,7 @@ function createHttpError(statusCode, message) {
     return error;
 }
 
-const PACKAGE_DEFINITIONS = {
+const PACKAGE_PROFILE_DEFAULTS = {
     'website-demo-preview': {
         mode: 'payment',
         name: 'Demo Preview Site',
@@ -46,7 +56,7 @@ const PACKAGE_DEFINITIONS = {
     'website-preview-launch': {
         mode: 'payment',
         name: 'Preview Launch Site',
-        description: 'Professional multi-page preview — up to about 20 pages — for proof-of-concept before a Local or Authority build.',
+        description: 'Professional intentional-noindex preview with up to 10 pages for proof-of-concept before a Local or Authority build.',
         amount: 75000,
         currency: 'usd',
         priceDisplay: '$750',
@@ -119,7 +129,7 @@ const PACKAGE_DEFINITIONS = {
     'website-local-seo-starter': {
         mode: 'payment',
         name: 'Local Site',
-        description: 'Domain-backed local website with up to 35 pages, search foundation (GSC, schema, analytics), and launch QA. GBP Setup is optional and chosen in intake.',
+        description: 'Domain-backed local website with up to 15 live pages, foundational on-page search setup, analytics, contact conversion, and launch QA. GBP Setup is optional.',
         amount: 120000,
         currency: 'usd',
         priceDisplay: '$1,200',
@@ -132,7 +142,7 @@ const PACKAGE_DEFINITIONS = {
     'website-local-launch-plus': {
         mode: 'payment',
         name: 'Authority Site',
-        description: '35-60 page multi-area authority website with advanced schema, conversion tracking, and a GBP setup or optimization pass included.',
+        description: 'Up to 30 planned live pages across services and priority areas, with advanced conversion measurement and one GBP setup or optimization pass included.',
         amount: 200000,
         currency: 'usd',
         priceDisplay: '$2,000',
@@ -429,11 +439,11 @@ const PACKAGE_DEFINITIONS = {
         mode: 'subscription',
         name: 'Full Growth System',
         description: 'Full business growth system including site, search, GBP, CRM, tracking, reporting, and monthly management.',
-        setupAmount: 500000,
-        setupPriceDisplay: '$5,000 setup',
+        setupAmount: 750000,
+        setupPriceDisplay: '$7,500 setup',
         amount: 69700,
         currency: 'usd',
-        priceDisplay: '$5,000 setup + $697/mo',
+        priceDisplay: '$7,500 setup + $697/mo',
         recurring: {
             interval: 'month'
         },
@@ -520,7 +530,7 @@ const PACKAGE_DEFINITIONS = {
     }
 };
 
-const PACKAGE_PAYMENT_OPTIONS = {
+const LEGACY_PACKAGE_PAYMENT_OPTIONS = {
     'website-search-foundation-plus': {
         deposit: {
             amount: 75000,
@@ -587,6 +597,9 @@ const PACKAGE_PAYMENT_OPTIONS = {
     },
     
 };
+
+const PACKAGE_DEFINITIONS = buildPackageDefinitions(PACKAGE_PROFILE_DEFAULTS);
+const PACKAGE_PAYMENT_OPTIONS = buildPaymentOptions();
 
 function getBaseUrl(req) {
     const forwardedProto = (req.headers['x-forwarded-proto'] || '').split(',')[0].trim();
@@ -744,7 +757,7 @@ function getPageCountRank(pageCountExpectation) {
     return pageRanks[pageCountExpectation] || 0;
 }
 
-function getPackageRoute(packageKey, intakeDetails) {
+function getLegacyPackageRoute(packageKey, intakeDetails) {
     const packageDefinition = PACKAGE_DEFINITIONS[packageKey];
 
     if (!packageDefinition) {
@@ -854,6 +867,28 @@ function getPackageRoute(packageKey, intakeDetails) {
     }
 
     return { routeType: 'allowed' };
+}
+
+function getPackageRoute(packageKey, intakeDetails) {
+    const resolution = packageRouting.resolvePackage(packageKey, intakeDetails, catalog);
+
+    if (!resolution.ok) {
+        return null;
+    }
+
+    if (resolution.changed) {
+        return {
+            routeType: 'package',
+            recommendedPackageKey: resolution.resolvedKey,
+            recommendationMessage: resolution.reason,
+            resolution
+        };
+    }
+
+    return {
+        routeType: 'allowed',
+        resolution
+    };
 }
 
 function normalizeSingleLine(value, maxLength) {
@@ -1188,8 +1223,18 @@ function buildCheckoutMetadata(packageKey, packageDefinition, intakeDetails, pay
         packageName: packageDefinition.name,
         selectedPaymentOption: paymentSelection.key,
         selectedPaymentDisplay: paymentSelection.priceDisplay,
+        catalogVersion: catalog.catalogVersion,
+        catalogHash: getCatalogHash(),
+        requestedPackageKey: packageKey,
+        resolvedPackageKey: packageKey,
         ...packageDefinition.metadata
     };
+
+    if (intakeDetails.resolutionSummary) {
+        metadata.requestedPackageKey = intakeDetails.resolutionSummary.requestedKey || packageKey;
+        metadata.resolvedPackageKey = intakeDetails.resolutionSummary.resolvedKey || packageKey;
+        metadata.resolutionReason = String(intakeDetails.resolutionSummary.reason || '').slice(0, 300);
+    }
 
     metadata.businessName = intakeDetails.businessName;
     metadata.contactName = intakeDetails.contactName;
@@ -1435,8 +1480,18 @@ async function handler(req, res) {
                 intakeAccepted: false,
                 routeType: packageRoute.routeType,
                 recommendedPackageKey: packageRoute.recommendedPackageKey || '',
-                recommendationMessage: packageRoute.recommendationMessage || ''
+                recommendationMessage: packageRoute.recommendationMessage || '',
+                resolution: packageRoute.resolution || null
             });
+        }
+
+        if (packageRoute && packageRoute.resolution) {
+            intakeDetails.resolutionSummary = packageRoute.resolution;
+        }
+    } else {
+        const directResolution = packageRouting.resolvePackage(packageKey, intakeDetails, catalog);
+        if (directResolution.ok) {
+            intakeDetails.resolutionSummary = directResolution;
         }
     }
 
@@ -1456,9 +1511,7 @@ async function handler(req, res) {
             await submitIntakeToFormspree(packageDefinition, intakeDetails, paymentSelection, allowedOrigin);
         }
 
-        const stripe = new Stripe(stripeSecretKey, {
-            apiVersion: '2025-03-31.basil'
-        });
+        const stripe = stripeFactory(stripeSecretKey);
 
         const baseUrl = allowedOrigin || getBaseUrl(req);
         const apiBase = baseUrl.replace(/\/$/, '');
@@ -1536,7 +1589,15 @@ async function handler(req, res) {
         return sendJson(res, 200, {
             url: session.url,
             paymentOption: paymentSelection.key,
-            paymentDisplay: paymentSelection.priceDisplay
+            paymentDisplay: paymentSelection.priceDisplay,
+            resolution: intakeDetails.resolutionSummary || {
+                requestedKey: packageKey,
+                resolvedKey: packageKey,
+                pricingMode: packageDefinition.pricingMode,
+                checkoutMode: packageDefinition.checkoutMode,
+                priceDisplay: packageDefinition.priceDisplay,
+                catalogVersion: catalog.catalogVersion
+            }
         });
     } catch (error) {
         if (error.code === 'INTAKE_SUBMISSION_FAILED') {
@@ -1558,3 +1619,14 @@ async function handler(req, res) {
 module.exports = handler;
 module.exports.PACKAGE_DEFINITIONS = PACKAGE_DEFINITIONS;
 module.exports.PACKAGE_PAYMENT_OPTIONS = PACKAGE_PAYMENT_OPTIONS;
+module.exports.getPackageRoute = getPackageRoute;
+module.exports.getPaymentSelection = getPaymentSelection;
+module.exports.buildCheckoutMetadata = buildCheckoutMetadata;
+module.exports.setStripeFactoryForTests = function setStripeFactoryForTests(factory) {
+    stripeFactory = factory;
+};
+module.exports.resetStripeFactoryForTests = function resetStripeFactoryForTests() {
+    stripeFactory = (secretKey) => new Stripe(secretKey, {
+        apiVersion: '2025-03-31.basil'
+    });
+};

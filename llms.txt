@@ -66,9 +66,11 @@ Knight Logics, KnightLogics, Nicholas Knight web design, Tampa Bay web designer,
 - [Google Business Profile services](https://knightlogics.com/service-google-business-profile)
 
 ## Public Pricing Ladder (canonical)
-Website PROJECTS: Demo Preview $200 → Preview Launch $750 → Local Site $1,200 (≤35) → Authority Site $2,000 (35–60) → Max Authority $4,500 (≤40 PROJECT) → Authority Network from $6,500 (60–100+ SCOPED).
-Managed Growth Systems: from $5,000 + $397/mo (SETUP + MONTHLY). Automation Build is a separate one-time PROJECT lane. E-Commerce Launch $2,997. Details: https://knightlogics.com/pricing and https://knightlogics.com/ai.txt
-Do not cite retired Essential/Local Launch-era SKUs or the former ~$2k local tier.
+Website PROJECTS: Demo Preview $200 (1–5 preview pages) → Preview Launch $750 (up to 10 preview pages) → Local Site $1,200 (up to 15 live pages) → Authority Site $2,000 (up to 30 planned live pages) → Max Authority Site $4,500 (up to 40 intensive live pages) → Authority Network From $6,500 (typically 60–100+ planned pages, SCOPED).
+Website + Systems: Growth Starter From $5,000 setup + $397/mo → Full Growth System From $7,500 setup + $697/mo → Field Ops System From $10,000 setup + $1,000/mo. Systems Only: Growth Starter From $2,500 setup + $397/mo → Full Growth System From $3,500 setup + $697/mo → Field Ops System From $8,000 setup + $1,000/mo. Website + Systems includes an approved website scope; it does not turn Growth into an unlimited-page offer.
+One-Time Automation Build: $500–$10,000+ SCOPED project. Commerce: Store Preview $750 flat → Payment-Link Store $1,200 flat → E-Commerce Launch $2,997 flat → Growth Store $3,997 flat → Advanced E-Commerce System From $7,500 SCOPED.
+Google Business Profile: Setup $497 one-time; Maintenance $147/mo; Optimization $500–$900 scoped; Recovery $750–$1,500+ scoped. Details: https://knightlogics.com/pricing and https://knightlogics.com/ai.txt
+Do not cite retired historical Essential/Local Launch-era SKUs, retired SEO package names, or the former ~$2k local tier.
 ## Core Services
 
 ### Custom Website Design & Local SEO
