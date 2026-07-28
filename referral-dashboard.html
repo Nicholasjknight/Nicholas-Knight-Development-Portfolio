@@ -454,6 +454,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             border-color: rgba(255,107,107,0.35);
         }
         .mini-btn--danger:hover { background: rgba(255,107,107,0.1); }
+        .mini-btn--purge {
+            color: #ff6b6b;
+            border-color: rgba(255,107,107,0.55);
+            background: rgba(255,107,107,0.08);
+        }
+        .mini-btn--purge:hover { background: rgba(255,107,107,0.18); }
+        .mini-btn-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: flex-end;
+        }
         .status-pill {
             display: inline-block;
             padding: 2px 8px;
@@ -773,16 +785,103 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var EMBED  = /(?:^|[?&])embed=1(?:&|$)/.test(window.location.search);
     var SESSION_KEY = 'kl_admin_session';
     var ROLE_KEY = 'kl_admin_role';
+    var SECRET_KEY = 'kl_admin_secret';
 
     function applyRoleMode() {
         document.body.classList.toggle('owner-mode', role === 'owner');
     }
 
+    function persistAuth() {
+        try {
+            if (token) {
+                sessionStorage.setItem(SESSION_KEY, token);
+                localStorage.setItem(SESSION_KEY, token);
+            }
+            if (secret) sessionStorage.setItem(SECRET_KEY, secret);
+            if (role) {
+                sessionStorage.setItem(ROLE_KEY, role);
+                localStorage.setItem(ROLE_KEY, role);
+            }
+        } catch (err) { /* private mode */ }
+    }
+
+    function readStored(key) {
+        try {
+            // Never persist the raw password in localStorage — token/role only.
+            if (key === SECRET_KEY) return sessionStorage.getItem(key) || '';
+            return sessionStorage.getItem(key) || localStorage.getItem(key) || '';
+        } catch (err) {
+            return '';
+        }
+    }
+
+    function clearStoredAuth() {
+        token = '';
+        secret = '';
+        role = '';
+        try {
+            sessionStorage.removeItem(SESSION_KEY);
+            sessionStorage.removeItem(SECRET_KEY);
+            sessionStorage.removeItem(ROLE_KEY);
+            localStorage.removeItem(SESSION_KEY);
+            localStorage.removeItem(ROLE_KEY);
+            localStorage.removeItem(SECRET_KEY); // legacy cleanup
+        } catch (err) { /* private mode */ }
+    }
+
     function authPayload(extra) {
         var payload = Object.assign({}, extra || {});
+        // Send both so a stale token can fall through to secret on the server.
         if (token) payload.token = token;
-        else if (secret) payload.secret = secret;
+        if (secret) payload.secret = secret;
         return payload;
+    }
+
+    function hasCredentials() {
+        return Boolean(token || secret);
+    }
+
+    function unlockDashboard() {
+        if (!hasCredentials()) return false;
+        applyRoleMode();
+        persistAuth();
+        document.getElementById('authError').style.display = 'none';
+        document.getElementById('auth-gate').style.display = 'none';
+        document.getElementById('dashboard').style.display = 'block';
+        loadStats();
+        return true;
+    }
+
+    function showAuthGate(message) {
+        document.getElementById('dashboard').style.display = 'none';
+        document.getElementById('auth-gate').style.display = 'flex';
+        if (message) {
+            document.getElementById('authError').textContent = message;
+            document.getElementById('authError').style.display = 'block';
+        }
+    }
+
+    function parseHashAuth() {
+        var hash = (window.location.hash || '').replace(/^#/, '');
+        if (!hash) return false;
+        var params = new URLSearchParams(hash);
+        var hashToken = params.get('kl_admin_token') || '';
+        var hashRole = params.get('kl_admin_role') || '';
+        // Strip credentials from the address bar immediately.
+        try {
+            history.replaceState(null, '', window.location.pathname + window.location.search);
+        } catch (err) { /* ignore */ }
+        if (!hashToken) return false;
+        token = hashToken;
+        if (hashRole) role = hashRole;
+        return true;
+    }
+
+    function requestParentAuth() {
+        if (!(window.parent && window.parent !== window)) return;
+        try {
+            window.parent.postMessage({ type: 'kl-admin-auth-request' }, window.location.origin);
+        } catch (err) { /* ignore */ }
     }
 
     function loginWithPassword(password) {
@@ -798,9 +897,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 secret = password;
                 token = result.data.token || '';
                 role = result.data.role || 'master';
-                sessionStorage.setItem('kl_admin_secret', secret);
-                if (token) sessionStorage.setItem(SESSION_KEY, token);
-                sessionStorage.setItem(ROLE_KEY, role);
+                persistAuth();
                 applyRoleMode();
                 return result.data;
             });
@@ -813,33 +910,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             var back = document.getElementById('embedBackLink');
             if (back) back.href = '/admin';
         }
-        token = sessionStorage.getItem(SESSION_KEY) || '';
-        role = sessionStorage.getItem(ROLE_KEY) || '';
-        secret = sessionStorage.getItem('kl_admin_secret') || '';
-        if (token || secret) {
-            applyRoleMode();
-            document.getElementById('auth-gate').style.display = 'none';
-            document.getElementById('dashboard').style.display = 'block';
-            loadStats();
-        } else if (window.parent && window.parent !== window) {
-            window.parent.postMessage({ type: 'kl-admin-auth-request' }, window.location.origin);
+        var fromHash = parseHashAuth();
+        if (!fromHash) {
+            token = readStored(SESSION_KEY);
+            role = readStored(ROLE_KEY);
+            secret = readStored(SECRET_KEY);
+        }
+        if (hasCredentials()) {
+            unlockDashboard();
+        } else {
+            requestParentAuth();
+            setTimeout(requestParentAuth, 300);
+            setTimeout(requestParentAuth, 1200);
         }
     }
 
     window.addEventListener('message', function (event) {
         if (event.origin !== window.location.origin) return;
         if (!event.data || event.data.type !== 'kl-admin-auth') return;
-        token = event.data.token || token;
-        secret = event.data.secret || secret;
-        role = event.data.role || role;
-        if (token) sessionStorage.setItem(SESSION_KEY, token);
-        if (secret) sessionStorage.setItem('kl_admin_secret', secret);
-        if (role) sessionStorage.setItem(ROLE_KEY, role);
-        applyRoleMode();
-        document.getElementById('authError').style.display = 'none';
-        document.getElementById('auth-gate').style.display = 'none';
-        document.getElementById('dashboard').style.display = 'block';
-        loadStats();
+        var nextToken = event.data.token || '';
+        var nextSecret = event.data.secret || '';
+        var nextRole = event.data.role || '';
+        if (!nextToken && !nextSecret) return;
+        if (nextToken) token = nextToken;
+        if (nextSecret) secret = nextSecret;
+        if (nextRole) role = nextRole;
+        unlockDashboard();
     });
 
     document.getElementById('forgotToggle').addEventListener('click', function () {
@@ -865,7 +961,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         if (!password) return;
         document.getElementById('authError').style.display = 'none';
         loginWithPassword(password).then(function () {
-            loadStats();
+            unlockDashboard();
         }).catch(function (err) {
             document.getElementById('authError').textContent = err.message || 'Incorrect password.';
             document.getElementById('authError').style.display = 'block';
@@ -881,10 +977,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     document.getElementById('partnerRosterBody').addEventListener('click', function (e) {
         var btn = e.target.closest('[data-partner-slug]');
         if (!btn) return;
+        var action = btn.getAttribute('data-partner-action') || 'toggle';
+        var slug = btn.getAttribute('data-partner-slug');
+        var name = btn.getAttribute('data-partner-name');
+        var offer = btn.getAttribute('data-partner-offer');
+        if (action === 'purge') {
+            purgePartner(slug, name, offer);
+            return;
+        }
         setPartnerActive(
-            btn.getAttribute('data-partner-slug'),
-            btn.getAttribute('data-partner-name'),
-            btn.getAttribute('data-partner-offer'),
+            slug,
+            name,
+            offer,
             btn.getAttribute('data-partner-active') === 'true'
         );
     });
@@ -1195,8 +1299,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         var qrApiUrl = getQrApiUrl(currentQrUrl, size, 2);
         var win = window.open('', '_blank');
         win.document.write([
-            '<!DOCTYPE html><html><head>
-<meta charset="UTF-8">',
+            '<!DOCTYPE html><html><head>',
+            '<meta charset="UTF-8">',
             '<title>Referral QR — ' + currentPartnerLabel + '</title>',
             '<style>',
             'body{font-family:Arial,sans-serif;margin:0;padding:40px;text-align:center;background:#fff;color:#050a14;}',
@@ -1206,11 +1310,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             '.url{font-size:0.75rem;color:#888;word-break:break-all;margin-top:10px;}',
             '.cta{font-size:1rem;font-weight:700;color:#0a1628;margin-top:16px;}',
             '@media print{body{padding:20px;}}',
-            '</style></head><body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQ3KH4JP"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->',
+            '</style></head><body>',
             '<h1>Knight Logics</h1>',
             '<p>Custom websites — SEO — Local visibility</p>',
             '<img src="' + qrApiUrl + '" alt="QR Code">',
@@ -1243,9 +1343,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 if (data.error) {
                     showError(data.error);
                     if (data.error === 'Forbidden.') {
-                        document.getElementById('authError').style.display = 'block';
-                        document.getElementById('auth-gate').style.display = 'flex';
-                        document.getElementById('dashboard').style.display = 'none';
+                        clearStoredAuth();
+                        showAuthGate('Session expired — unlock again.');
+                        if (EMBED) requestParentAuth();
                     }
                     return;
                 }
@@ -1344,15 +1444,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             var status = active
                 ? '<span class="status-pill status-pill--paid">active</span>'
                 : '<span class="status-pill status-pill--inactive">removed</span>';
-            var actionClass = active ? 'mini-btn mini-btn--danger' : 'mini-btn mini-btn--paid';
-            var actionText = active ? 'Remove' : 'Restore';
+            var attrs = 'data-partner-slug="' + escAttr(r.slug) +
+                '" data-partner-name="' + escAttr(r.displayName || r.slug) +
+                '" data-partner-offer="' + escAttr(r.latestOffer || '') + '"';
+            var actions;
+            if (active) {
+                actions = '<button class="mini-btn mini-btn--danger" data-partner-action="toggle" ' +
+                    attrs + ' data-partner-active="false">Remove</button>';
+            } else {
+                actions = '<div class="mini-btn-row">' +
+                    '<button class="mini-btn mini-btn--paid" data-partner-action="toggle" ' +
+                    attrs + ' data-partner-active="true">Restore</button>' +
+                    '<button class="mini-btn mini-btn--purge" data-partner-action="purge" ' +
+                    attrs + '>Delete forever</button>' +
+                    '</div>';
+            }
             return '<tr>' +
                 '<td>' + esc(r.displayName || r.slug) + '</td>' +
                 '<td class="td-mono">' + esc(r.slug) + '</td>' +
                 '<td class="td-mono">' + esc(r.latestOffer || '') + '</td>' +
                 '<td>' + status + '</td>' +
                 '<td class="td-muted">' + esc(r.source || '') + '</td>' +
-                '<td><button class="' + actionClass + '" data-partner-slug="' + escAttr(r.slug) + '" data-partner-name="' + escAttr(r.displayName || r.slug) + '" data-partner-offer="' + escAttr(r.latestOffer || '') + '" data-partner-active="' + String(!active) + '">' + actionText + '</button></td>' +
+                '<td>' + actions + '</td>' +
                 '</tr>';
         }).join('');
     }
@@ -1472,6 +1585,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         })
         .catch(function () {
             alert('Could not update partner.');
+        });
+    }
+
+    function purgePartner(slug, name, offer) {
+        if ((!token && !secret) || !slug) return;
+        var label = name || slug;
+        if (!window.confirm(
+            'Permanently delete ' + label + ' from the referral partner list?\n\n' +
+            'They will no longer appear here and cannot be restored from this screen.\n' +
+            'Historical referral events and payout records stay intact.'
+        )) {
+            return;
+        }
+        if (!window.confirm('Final confirmation: delete ' + label + ' forever from the partner roster?')) {
+            return;
+        }
+
+        fetch(SITE + '/api/referral-admin', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(authPayload({
+                action: 'purge_partner',
+                partnerSlug: slug,
+                partnerName: name || slug,
+                latestOffer: offer || ''
+            }))
+        })
+        .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+        .then(function (result) {
+            if (!result.ok) {
+                alert(result.data && result.data.error ? result.data.error : 'Could not permanently delete partner.');
+                return;
+            }
+            loadStats();
+        })
+        .catch(function () {
+            alert('Could not permanently delete partner.');
         });
     }
 

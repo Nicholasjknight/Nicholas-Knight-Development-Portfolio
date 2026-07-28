@@ -275,7 +275,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <link rel="alternate" type="text/plain" href="https://knightlogics.com/llms.txt" title="Knight Logics LLM Summary">
     <link rel="alternate" type="text/plain" href="https://knightlogics.com/llms-full.txt" title="Knight Logics Full LLM Summary">
-    <link rel="preload" as="image" href="./images/websitehero.webp?v=20260530hero3" fetchpriority="high">
+    <link rel="preload" as="image" href="./images/momhero.webp" fetchpriority="high">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="icon" type="image/png" href="/images/KnightLogicsLogo2.png" sizes="1024x1024">
@@ -283,7 +283,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#6de1ff">
     <meta name="msapplication-TileColor" content="#0a0a0a">
-    <link rel="stylesheet" href="style.css?v=20260709center1">
+    <link rel="stylesheet" href="style.css?v=20260727ecom1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <script type="application/ld+json">
@@ -306,15 +306,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             min-height: 520px;
             display: flex;
             align-items: center;
-            background: url('./images/websitehero.webp?v=20260530hero3') center/cover no-repeat;
+            background: url('./images/momhero.webp') center/cover no-repeat;
             overflow: hidden;
-        }
-        .svc-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(10,10,10,0.93) 0%, rgba(10,10,10,0.58) 100%);
-            z-index: 1;
         }
         .svc-hero-inner { position: relative; z-index: 2; max-width: 760px; padding: 120px 0 90px; }
         .svc-eyebrow {
@@ -323,6 +316,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background: rgba(100,255,218,0.12); border: 1px solid rgba(100,255,218,0.25);
             color: #64ffda; font-size: 0.78rem; font-weight: 700;
             letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.2rem;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.55);
         }
         .svc-hero h1 {
             font-size: clamp(2.2rem, 4.5vw, 3.8rem);
@@ -331,8 +325,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background-size: 200% 200%; background-clip: text;
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             animation: shimmer 3s ease-in-out infinite;
+            filter: drop-shadow(0 2px 12px rgba(0,0,0,0.65));
         }
-        .svc-hero p { font-size: clamp(1rem, 1.4vw, 1.2rem); color: rgba(255,255,255,0.85); line-height: 1.65; margin-bottom: 2rem; max-width: 620px; }
+        .svc-hero p { font-size: clamp(1rem, 1.4vw, 1.2rem); color: #f2f7f4; line-height: 1.65; margin-bottom: 2rem; max-width: 620px; text-shadow: 0 1px 10px rgba(0,0,0,0.7); }
+        .svc-hero .kl-breadcrumb,
+        .svc-hero .kl-breadcrumb a { text-shadow: 0 1px 8px rgba(0,0,0,0.65); }
         .svc-cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
         .svc-stats { background: rgba(10,10,10,0.98); border-bottom: 1px solid rgba(100,255,218,0.12); padding: 32px 0; }
         .svc-stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
@@ -514,54 +511,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="svc-section svc-section--dark kl-proof-section" style="background:#0a0a0a;padding:4.5rem 0;" aria-labelledby="ecom-proof-heading">
         <div class="container">
             <header class="section-header fade-in">
-                <h2 id="ecom-proof-heading">Storefront proof — not another theme demo</h2>
-                <p>Commerce pages need product UI, checkout confidence, and catalog ownership. These surfaces show the kind of builds this service covers.</p>
+                <h2 id="ecom-proof-heading">Live storefronts — not another theme demo</h2>
+                <p>Commerce pages need product UI, checkout confidence, and catalog ownership. Mom’s Resin Tables is the live handmade product store; ManCaves is the automated dropship catalog pattern. Whistle Stop comes next when that build is ready.</p>
             </header>
 
             <article class="svc-mirror fade-in">
                 <figure class="svc-mirror-media svc-mirror-media--good">
-                    <img src="/images/mancaves-store.webp" alt="ManCaves.Store custom e-commerce storefront product catalog" loading="lazy" width="1400" height="900">
+                    <img src="/images/added-media/moms-resin-site.webp" alt="Mom's Resin Tables live custom e-commerce storefront" loading="lazy" decoding="async" width="1400" height="900">
                 </figure>
                 <div class="svc-mirror-copy">
-                    <p class="svc-mirror-versus"><span>Custom storefront</span> ManCaves.Store</p>
-                    <h3>JSON catalog + Snipcart checkout — no template lock-in</h3>
-                    <p>Hand-coded storefront with Firebase auth, real-time search, and Vercel deployment. Built for ownership and cleaner margins than an app-heavy SaaS theme stack.</p>
+                    <p class="svc-mirror-versus"><span>Live store</span> Mom’s Resin Tables</p>
+                    <h3>Owned-domain catalog for handmade product commerce</h3>
+                    <p>Live custom storefront for a real product business — product pages, gallery proof, and checkout on the owned domain. This is the primary reference for store builds that need to sell unique SKUs, not rent a theme forever.</p>
                     <ul class="svc-checklist">
-                        <li>Product catalog driven by structured data</li>
-                        <li>PCI-aware cart via Snipcart / Stripe patterns</li>
-                        <li>Mobile-first product and checkout paths</li>
+                        <li>Product photography and gallery-led product pages</li>
+                        <li>Mobile-first catalog and conversion paths</li>
+                        <li>Full case study: <a href="/case-study-moms-resin-tables" style="color:#64ffda;">Mom’s Resin Tables →</a></li>
                     </ul>
                 </div>
             </article>
 
             <article class="svc-mirror svc-mirror--flip fade-in">
                 <figure class="svc-mirror-media svc-mirror-media--good">
-                    <img src="/images/showcase/hospitality-menus-ordering-mockup.webp" alt="Pattern illustration — fictional hospitality menus and online ordering mockup, not live client UI" loading="lazy" width="1400" height="900">
+                    <img src="/images/mancaves-store.webp" alt="ManCaves.Store automated dropship e-commerce catalog" loading="lazy" decoding="async" width="1400" height="900">
                 </figure>
                 <div class="svc-mirror-copy">
-                    <p class="svc-mirror-versus"><span>Pattern illustration</span> Menus &amp; events</p>
-                    <h3>Hospitality ordering when a full catalog is overkill</h3>
-                    <p>Bars and restaurants often need menus, events, and order paths — not a 200-SKU Shopify theme. The visual below is a fictional pattern mockup, not a live client workspace. We scope the storefront to the commerce pattern that matches the business.</p>
+                    <p class="svc-mirror-versus"><span>Dropship automation</span> ManCaves.Store</p>
+                    <h3>Automated catalog + fulfillment-oriented storefront</h3>
+                    <p>Hand-coded specialty retail store built as an automated dropship system — intended to repopulate products and handle fulfillment flows without a traditional inventory warehouse. JSON catalog, Snipcart checkout, Firebase auth, and Vercel deploy — ownership without Shopify lock-in.</p>
                     <ul class="svc-checklist">
-                        <li>Menu / event / order flows without platform bloat</li>
-                        <li>Pairs with <a href="/online-ordering-systems" style="color:#64ffda;">online ordering systems</a></li>
-                        <li>Payment links when a full cart is not required</li>
+                        <li>Product catalog driven by structured data for bulk repopulation</li>
+                        <li>PCI-aware cart via Snipcart / Stripe patterns</li>
+                        <li>Automation-first ops model vs handmade single-SKU stores like Mom’s</li>
                     </ul>
                 </div>
             </article>
 
             <div class="kl-proof-gallery fade-in">
                 <figure>
-                    <img src="/images/ManCavesLogo.webp" alt="ManCaves.Store brand mark" loading="lazy" width="800" height="450">
-                    <figcaption><strong>ManCaves.Store</strong> Custom-coded specialty retail storefront.</figcaption>
+                    <img src="/images/momhero.webp" alt="Mom's Resin Tables storefront hero" loading="lazy" decoding="async" width="1200" height="675">
+                    <figcaption><strong>Mom’s Resin Tables</strong> Live handmade product commerce on the owned domain.</figcaption>
                 </figure>
-                <figure class="kl-media-needed" data-media-needed="true" data-asset-type="screenshot" data-aspect="16:9" data-page="/service-ecommerce" data-brief="Snipcart cart drawer or Stripe checkout flow on a live Knight Logics storefront">
-                    <div class="kl-media-needed__frame" aria-hidden="true"></div>
-                    <figcaption><strong>Media needed:</strong> Cart / checkout flow screenshot. <span class="kl-media-needed__specs">Screenshot · 16:9 · redact PII</span></figcaption>
+                <figure>
+                    <img src="/images/moms-resin-showcase-880.webp" alt="Mom's Resin Tables product showcase" loading="lazy" decoding="async" width="880" height="495">
+                    <figcaption><strong>Product showcase</strong> Gallery-led catalog pages that sell unique pieces.</figcaption>
                 </figure>
-                <figure class="kl-media-needed" data-media-needed="true" data-asset-type="screenshot" data-aspect="16:9" data-page="/service-ecommerce" data-brief="Admin or inventory automation panel for ecommerce ops">
-                    <div class="kl-media-needed__frame" aria-hidden="true"></div>
-                    <figcaption><strong>Media needed:</strong> Inventory / pricing automation panel. <span class="kl-media-needed__specs">Screenshot · 16:9</span></figcaption>
+                <figure>
+                    <img src="/images/mancaves-store.webp" alt="ManCaves.Store product catalog grid" loading="lazy" decoding="async" width="1400" height="900">
+                    <figcaption><strong>ManCaves.Store</strong> Automated dropship catalog pattern — Whistle Stop will join this lane next.</figcaption>
                 </figure>
             </div>
         </div>
@@ -785,36 +782,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="svc-work-grid">
                 <div class="svc-work-card fade-in">
                     <div class="svc-work-thumb logo-thumb">
-                        <img src="./images/ManCavesLogo.webp" alt="ManCaves.Store — e-commerce storefront build" width="800" height="450" loading="lazy">
+                        <img src="./images/momhero.webp" alt="Mom's Resin Tables — live handmade product e-commerce store" width="1200" height="675" loading="lazy">
                     </div>
                     <div class="svc-work-copy">
-                        <p class="svc-work-label">Storefront Build</p>
+                        <p class="svc-work-label">Live product store</p>
+                        <h3>Mom’s Resin Tables</h3>
+                        <p>Owned-domain handmade product catalog with gallery-led product pages and checkout — primary live commerce reference.</p>
+                    </div>
+                </div>
+
+                <div class="svc-work-card fade-in">
+                    <div class="svc-work-thumb logo-thumb">
+                        <img src="./images/ManCavesLogo.webp" alt="ManCaves.Store — automated dropship e-commerce storefront" width="800" height="450" loading="lazy">
+                    </div>
+                    <div class="svc-work-copy">
+                        <p class="svc-work-label">Dropship automation</p>
                         <h3>ManCaves.Store</h3>
-                        <p>JSON-driven product catalog with Snipcart checkout integration, Firebase auth, real-time search, and Vercel deployment. Custom-coded storefront — no template.</p>
+                        <p>JSON-driven catalog with Snipcart checkout, Firebase auth, and automation aimed at product repopulation and fulfillment — specialty retail without a warehouse inventory model.</p>
                     </div>
                 </div>
 
                 <div class="svc-work-card fade-in">
                     <div class="svc-work-placeholder">
-                        <i class="fab fa-shopify"></i>
-                        <p>Managed Shopify storefronts for clients — product catalog setup, collections, theme customization, and app integrations. Stores are no longer active.</p>
+                        <i class="fas fa-store"></i>
+                        <p>Whistle Stop — upcoming live storefront reference for this lane.</p>
                     </div>
                     <div class="svc-work-copy">
-                        <p class="svc-work-label">Shopify Store Management</p>
-                        <h3>Client Shopify Stores</h3>
-                        <p>Set up and managed Shopify storefronts for clients including product imports, collection structure, payment settings, and shipping configuration.</p>
-                    </div>
-                </div>
-
-                <div class="svc-work-card fade-in">
-                    <div class="svc-work-placeholder">
-                        <i class="fas fa-cart-shopping"></i>
-                        <p>?? ADD: Screenshot of the Snipcart dashboard or cart/checkout flow in action<br><em>Recommended size: 1200—675px</em></p>
-                    </div>
-                    <div class="svc-work-copy">
-                        <p class="svc-work-label">Checkout Integration</p>
-                        <h3>Snipcart Checkout</h3>
-                        <p>Snipcart wired into a custom product catalog with cart flow, product variants, and Vercel-proxied API key handling for secure client-side checkout.</p>
+                        <p class="svc-work-label">Coming soon</p>
+                        <h3>Whistle Stop</h3>
+                        <p>Next commerce reference for this service page once the build is ready to publish.</p>
                     </div>
                 </div>
             </div>

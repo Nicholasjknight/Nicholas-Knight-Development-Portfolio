@@ -17849,8 +17849,9 @@ main li a {
 .svc-mirror-media {
     margin: 0;
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
     min-height: 0;
     max-height: min(62vh, 560px);
     overflow: hidden;
@@ -18114,6 +18115,13 @@ main li a {
     background: #111;
 }
 
+/* Tall / odd-ratio proofs (phone UIs, dispatch chat) — show entire frame */
+.kl-proof-gallery__fit img {
+    object-fit: contain;
+    object-position: center center;
+    background: #0a0f18;
+}
+
 .kl-proof-gallery figcaption {
     padding: 0.75rem 0.9rem 0.95rem;
     font-size: 0.84rem;
@@ -18217,23 +18225,27 @@ main li a {
 }
 
 .page-referral-network-systems .svc-mirror:has(.svc-mirror-media--brochure) {
-    grid-template-columns: minmax(300px, 0.95fr) minmax(0, 1.05fr);
+    grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
     align-items: start;
 }
 
-.page-referral-network-systems .svc-mirror-media--brochure {
+.page-referral-network-systems .svc-mirror-media--brochure,
+.page-referral-network-systems .svc-mirror-media--brochure.svc-mirror-media--portrait {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    justify-content: flex-start;
     max-height: none;
     overflow: hidden;
     padding: 0;
-    background: #0a0f18;
-    border: 1px solid rgba(100, 255, 218, 0.18);
-    border-radius: 12px;
+    background: #0d121c;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
 }
 
-.page-referral-network-systems .svc-mirror-media--brochure img {
+.page-referral-network-systems .svc-mirror-media--brochure img,
+.page-referral-network-systems .svc-mirror-media--brochure.svc-mirror-media--portrait img {
+    display: block;
     width: 100%;
     max-width: none;
     max-height: none;
@@ -18248,8 +18260,66 @@ main li a {
 .page-referral-network-systems .svc-mirror-media--brochure figcaption {
     margin: 0;
     width: 100%;
-    background: #0a0f18;
-    border-top: 1px solid rgba(100, 255, 218, 0.1);
+    flex: none;
+    padding: 0.75rem 0.9rem 0.95rem;
+    font-size: 0.84rem;
+    line-height: 1.45;
+    color: rgba(168, 178, 200, 0.95);
+    background: #0d121c;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.page-referral-network-systems .svc-mirror-media--brochure figcaption strong {
+    display: block;
+    color: #e6f1ff;
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.page-referral-network-systems .kl-ref-outcomes-fit {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: clamp(1.25rem, 3vw, 2rem);
+    align-items: start;
+    margin-top: 1.5rem;
+}
+
+.page-referral-network-systems .kl-ref-outcomes-fit__label {
+    margin: 0 0 0.85rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #64ffda;
+}
+
+.page-referral-network-systems .kl-growth-outcomes--compact {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 0;
+}
+
+.page-referral-network-systems .kl-growth-outcomes--compact .kl-growth-outcome {
+    padding: 14px 16px;
+}
+
+.page-referral-network-systems .kl-growth-outcomes--compact .kl-growth-outcome h3 {
+    font-size: 0.95rem;
+}
+
+.page-referral-network-systems .kl-growth-outcomes--compact .kl-growth-outcome p {
+    font-size: 0.86rem;
+    line-height: 1.45;
+}
+
+.page-referral-network-systems .kl-growth-ideal-grid--compact {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 0;
+}
+
+.page-referral-network-systems .kl-growth-ideal-grid--compact .kl-growth-ideal-card {
+    padding: 12px 14px;
 }
 
 @media (max-width: 900px) {
@@ -18257,9 +18327,25 @@ main li a {
         grid-template-columns: 1fr;
     }
 
-    .page-referral-network-systems .svc-mirror-media--brochure img {
-        width: min(100%, 560px);
+    .page-referral-network-systems .svc-mirror-media--brochure img,
+    .page-referral-network-systems .svc-mirror-media--brochure.svc-mirror-media--portrait img {
+        width: min(100%, 420px);
         margin: 0 auto;
+        object-fit: contain;
+    }
+
+    .page-referral-network-systems .kl-ref-outcomes-fit {
+        grid-template-columns: 1fr;
+    }
+
+    .page-referral-network-systems .kl-growth-outcomes--compact {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .page-referral-network-systems .kl-growth-outcomes--compact {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -18356,6 +18442,190 @@ main li a {
         font-size: 0.78rem;
         padding: 7px 12px;
     }
+}
+
+/* Ticketing page — short context intro above the dispatch video */
+.page-ticketing-invoicing-job-workflows .kl-growth-section--context-wide {
+    padding: 28px 0 20px;
+}
+
+.page-ticketing-invoicing-job-workflows .kl-growth-context--wide {
+    max-width: 46rem;
+}
+
+.page-ticketing-invoicing-job-workflows .kl-growth-context--wide h2 {
+    margin-bottom: 0.5rem;
+}
+
+.page-ticketing-invoicing-job-workflows .kl-growth-context--wide p {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.45;
+}
+
+.page-ticketing-invoicing-job-workflows .kl-growth-context--wide .kl-growth-context-note {
+    margin-top: 0.75rem;
+    padding: 10px 14px;
+    font-size: 0.9rem !important;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.page-ticketing-invoicing-job-workflows .kl-growth-media--video {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(100, 255, 218, 0.14);
+    background: #050a12;
+}
+
+.page-ticketing-invoicing-job-workflows .kl-growth-media--video .kl-lane-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: #050a12;
+}
+
+.page-ticketing-invoicing-job-workflows .kl-growth-media--video .kl-video-hint {
+    margin: 0;
+    padding: 0.55rem 0.85rem 0.75rem;
+    font-size: 0.82rem;
+    color: rgba(168, 178, 200, 0.9);
+    text-align: center;
+}
+
+/* Ticketing / invoicing page — portrait Vendoroo + landscape weekly invoice fits */
+.page-ticketing-invoicing-job-workflows .kl-growth-split:has(.kl-growth-media--portrait) {
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 0.68fr);
+    align-items: start;
+}
+
+.page-ticketing-invoicing-job-workflows .kl-growth-split-media:has(.kl-growth-media--portrait) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.page-ticketing-invoicing-job-workflows .kl-growth-media--portrait {
+    display: block;
+    width: min(100%, 380px);
+    margin: 0 auto;
+    background: #0a0f18;
+}
+
+.page-ticketing-invoicing-job-workflows .kl-growth-media--portrait figure {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-ticketing-invoicing-job-workflows .kl-growth-media--portrait img {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: top center;
+    background: #0a0f18;
+}
+
+.page-ticketing-invoicing-job-workflows .kl-growth-media--portrait figcaption,
+.page-ticketing-invoicing-job-workflows .kl-growth-media--invoice figcaption {
+    padding: 0.85rem 1rem 1rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: rgba(168, 178, 200, 0.95);
+}
+
+.page-ticketing-invoicing-job-workflows .kl-growth-media--portrait figcaption strong,
+.page-ticketing-invoicing-job-workflows .kl-growth-media--invoice figcaption strong {
+    display: block;
+    color: #e6f1ff;
+    margin-bottom: 0.25rem;
+}
+
+.page-ticketing-invoicing-job-workflows .kl-growth-media--invoice img {
+    aspect-ratio: 1800 / 982;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: top center;
+    background: #f4f1ea;
+}
+
+.page-ticketing-invoicing-job-workflows .kl-proof-gallery__fit img {
+    aspect-ratio: 16 / 10;
+    object-fit: contain;
+    object-position: center top;
+    background: #0a0f18;
+}
+
+.page-ticketing-invoicing-job-workflows .kl-proof-gallery__fit--portrait img {
+    aspect-ratio: 999 / 1104;
+    max-height: 420px;
+    margin: 0 auto;
+    width: auto;
+    max-width: 100%;
+}
+
+.page-ticketing-invoicing-job-workflows .kl-growth-proof-shot {
+    margin: 0;
+    background: #0a0f18;
+    display: flex;
+    justify-content: center;
+}
+
+.page-ticketing-invoicing-job-workflows .kl-growth-proof-shot--portrait img {
+    width: min(100%, 360px);
+    height: auto;
+    aspect-ratio: 999 / 1104;
+    object-fit: contain;
+    object-position: top center;
+}
+
+.page-ticketing-invoicing-job-workflows .kl-growth-proof-media img {
+    aspect-ratio: auto;
+    object-fit: contain;
+}
+
+.page-ticketing-invoicing-job-workflows .kl-growth-proof-card > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 280px;
+    object-fit: contain;
+    object-position: top center;
+    background: #0a0f18;
+    aspect-ratio: 999 / 1104;
+}
+
+.kl-proof-gallery__ops img {
+    aspect-ratio: 999 / 1104;
+    max-height: 360px;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: top center;
+    background: #0a0f18;
+}
+
+.page-ticketing-invoicing-job-workflows .svc-mirror-media--invoice {
+    background: #f4f1ea;
+    max-height: none;
+    overflow: hidden;
+}
+
+.page-ticketing-invoicing-job-workflows .svc-mirror-media--invoice img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    aspect-ratio: 1800 / 982;
+    object-fit: contain;
+    object-position: top center;
+    background: #f4f1ea;
 }
 
 

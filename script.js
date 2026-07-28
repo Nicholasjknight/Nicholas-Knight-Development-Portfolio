@@ -151,7 +151,7 @@ async function loadSocialIcons() {
     }
 }
 
-const HEADER_FOOTER_VER = '20260726cases1';
+const HEADER_FOOTER_VER = '20260727nav1';
 
 async function loadHeaderFooter() {
     try {

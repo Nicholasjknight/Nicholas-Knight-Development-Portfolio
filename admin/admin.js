@@ -90,11 +90,15 @@
         state.token = token;
         state.role = role || '';
         sessionStorage.setItem(SESSION_KEY, token);
-        if (role) sessionStorage.setItem(ROLE_KEY, role);
+        try { localStorage.setItem(SESSION_KEY, token); } catch (err) { /* private mode */ }
+        if (role) {
+            sessionStorage.setItem(ROLE_KEY, role);
+            try { localStorage.setItem(ROLE_KEY, role); } catch (err) { /* private mode */ }
+        }
     }
 
     function loadSessionRole() {
-        return sessionStorage.getItem(ROLE_KEY) || '';
+        return sessionStorage.getItem(ROLE_KEY) || localStorage.getItem(ROLE_KEY) || '';
     }
 
     function clearSession() {
@@ -104,6 +108,11 @@
         sessionStorage.removeItem(SESSION_KEY);
         sessionStorage.removeItem(SECRET_KEY);
         sessionStorage.removeItem(ROLE_KEY);
+        try {
+            localStorage.removeItem(SESSION_KEY);
+            localStorage.removeItem(ROLE_KEY);
+            localStorage.removeItem(SECRET_KEY); // legacy cleanup if an older build wrote it
+        } catch (err) { /* private mode */ }
     }
 
     function applyRoleUi() {
@@ -296,8 +305,14 @@
 
     function syncAuthToEmbedStorage() {
         if (state.secret) sessionStorage.setItem(SECRET_KEY, state.secret);
-        if (state.token) sessionStorage.setItem(SESSION_KEY, state.token);
-        if (state.role) sessionStorage.setItem(ROLE_KEY, state.role);
+        if (state.token) {
+            sessionStorage.setItem(SESSION_KEY, state.token);
+            try { localStorage.setItem(SESSION_KEY, state.token); } catch (err) { /* private mode */ }
+        }
+        if (state.role) {
+            sessionStorage.setItem(ROLE_KEY, state.role);
+            try { localStorage.setItem(ROLE_KEY, state.role); } catch (err) { /* private mode */ }
+        }
     }
 
     function mountEmbed(prefix, src) {
@@ -314,6 +329,34 @@
             frame.src = src;
             frame.dataset.loaded = src;
             log('info', 'Embed loaded', { src: src });
+        }
+    }
+
+    function buildReferralsEmbedSrc(src) {
+        var nextSrc = src.indexOf('?') >= 0 ? src + '&from=admin' : src + '?from=admin';
+        // Hash handoff: not sent to the server, survives sessionStorage iframe partition quirks.
+        // Token only — never put the raw master/owner password in the URL.
+        if (state.token) {
+            var hashParts = ['kl_admin_token=' + encodeURIComponent(state.token)];
+            if (state.role) hashParts.push('kl_admin_role=' + encodeURIComponent(state.role));
+            nextSrc += '#' + hashParts.join('&');
+        }
+        return nextSrc;
+    }
+
+    function pushAdminAuthToReferrals(target) {
+        if (!state.token && !state.secret) return;
+        var win = target || (($('referrals-frame') || {}).contentWindow);
+        if (!win || !win.postMessage) return;
+        try {
+            win.postMessage({
+                type: 'kl-admin-auth',
+                token: state.token,
+                secret: state.secret,
+                role: state.role,
+            }, window.location.origin);
+        } catch (err) {
+            log('warn', 'Referrals iframe postMessage failed', { error: String(err.message) });
         }
     }
 
@@ -345,12 +388,10 @@
 
         frame.onload = function () {
             try {
-                frame.contentWindow.postMessage({
-                    type: 'kl-admin-auth',
-                    token: state.token,
-                    secret: state.secret,
-                    role: state.role,
-                }, window.location.origin);
+                pushAdminAuthToReferrals(frame.contentWindow);
+                // Retry — child listener can miss the first postMessage on slow parses.
+                setTimeout(function () { pushAdminAuthToReferrals(frame.contentWindow); }, 250);
+                setTimeout(function () { pushAdminAuthToReferrals(frame.contentWindow); }, 1000);
                 hideFallback();
                 log('info', 'Referrals iframe loaded');
             } catch (err) {
@@ -364,12 +405,15 @@
             log('warn', 'Referrals iframe error');
         };
 
-        var nextSrc = src.indexOf('?') >= 0 ? src + '&from=admin' : src + '?from=admin';
-        if (frame.dataset.loaded !== nextSrc) {
+        var nextSrc = buildReferralsEmbedSrc(src);
+        // Compare without hash so a refreshed token still reloads the embed.
+        var loadedBase = (frame.dataset.loaded || '').split('#')[0];
+        var nextBase = nextSrc.split('#')[0];
+        if (loadedBase !== nextBase || !frame.getAttribute('src') || frame.getAttribute('src') === 'about:blank') {
             showFallback();
             frame.src = nextSrc;
-            frame.dataset.loaded = nextSrc;
-            log('info', 'Referrals embed loading', { src: nextSrc });
+            frame.dataset.loaded = nextBase;
+            log('info', 'Referrals embed loading', { src: nextBase });
             setTimeout(function () {
                 if (frame.style.display === 'none') return;
                 try {
@@ -379,6 +423,10 @@
                     showFallback();
                 }
             }, 4000);
+        } else {
+            // Already mounted — re-push session (e.g. tab revisit after parent login).
+            pushAdminAuthToReferrals(frame.contentWindow);
+            hideFallback();
         }
     }
 
@@ -403,14 +451,17 @@
 
         if (event.origin !== window.location.origin) return;
         if (event.data.type !== 'kl-admin-auth-request') return;
-        var frame = $('referrals-frame');
-        if (!frame || !frame.contentWindow) return;
-        frame.contentWindow.postMessage({
-            type: 'kl-admin-auth',
-            token: state.token,
-            secret: state.secret,
-            role: state.role,
-        }, window.location.origin);
+        if (!state.token && !state.secret) return;
+        if (event.source && event.source.postMessage) {
+            event.source.postMessage({
+                type: 'kl-admin-auth',
+                token: state.token,
+                secret: state.secret,
+                role: state.role,
+            }, event.origin);
+            return;
+        }
+        pushAdminAuthToReferrals();
     });
 
     function pushOpsAuthToFrame(frame, localUrl) {
@@ -749,7 +800,7 @@
     }
 
     async function tryRestoreSession() {
-        var token = sessionStorage.getItem(SESSION_KEY) || '';
+        var token = sessionStorage.getItem(SESSION_KEY) || localStorage.getItem(SESSION_KEY) || '';
         if (!token) return false;
         state.token = token;
         state.secret = sessionStorage.getItem(SECRET_KEY) || '';
@@ -757,6 +808,7 @@
         try {
             var data = await apiPost('/api/admin', { action: 'verify', token: token });
             state.role = data.role || state.role;
+            saveSession(state.token, state.role);
             applyRoleUi();
             showAuth(false);
             log('info', 'Session restored', { role: state.role });

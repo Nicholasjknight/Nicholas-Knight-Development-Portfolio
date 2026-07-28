@@ -188,6 +188,76 @@ module.exports = async function handler(req, res) {
             });
         }
 
+        if (action === 'purge_partner' || action === 'delete_partner') {
+            const partnerSlug = normSlug(body.partnerSlug || body.partner, 80);
+            if (!partnerSlug) {
+                return sendJson(res, 400, { error: 'Partner slug is required.' });
+            }
+
+            await ensurePartnerTermsTable(sql);
+            const staticPartner = getStaticPartner(partnerSlug);
+            const partnerName = normalizeDisplayName(
+                body.partnerName || body.displayName || (staticPartner && staticPartner.displayName) || titleFromSlug(partnerSlug),
+                partnerSlug,
+                120
+            );
+            const latestOffer = normalizeOffer(
+                body.latestOffer || body.offerCode || body.offer || (staticPartner && staticPartner.latestOffer) || '',
+                80
+            );
+
+            if (staticPartner) {
+                // Static roster partners reappear if the DB row is deleted — keep a PURGED tombstone.
+                const [partner] = await sql`
+                    INSERT INTO kl_referral_partner_terms
+                        (partner_slug, partner_name, latest_offer, commission_percent, is_active, notes)
+                    VALUES
+                        (${partnerSlug}, ${partnerName}, ${latestOffer || null}, 0, FALSE, 'PURGED permanently from referral dashboard')
+                    ON CONFLICT (partner_slug) DO UPDATE SET
+                        partner_name = COALESCE(EXCLUDED.partner_name, kl_referral_partner_terms.partner_name),
+                        latest_offer = COALESCE(EXCLUDED.latest_offer, kl_referral_partner_terms.latest_offer),
+                        is_active = FALSE,
+                        notes = 'PURGED permanently from referral dashboard',
+                        updated_at = NOW()
+                    RETURNING partner_slug, partner_name, latest_offer, is_active, notes
+                `;
+
+                return sendJson(res, 200, {
+                    ok: true,
+                    purged: true,
+                    mode: 'tombstone',
+                    partner: {
+                        slug: partner.partner_slug,
+                        displayName: partner.partner_name,
+                        latestOffer: partner.latest_offer || '',
+                        isActive: false
+                    }
+                });
+            }
+
+            const deleted = await sql`
+                DELETE FROM kl_referral_partner_terms
+                WHERE partner_slug = ${partnerSlug}
+                RETURNING partner_slug, partner_name, latest_offer
+            `;
+
+            if (!deleted.length) {
+                return sendJson(res, 404, { error: 'Partner not found in database.' });
+            }
+
+            return sendJson(res, 200, {
+                ok: true,
+                purged: true,
+                mode: 'deleted',
+                partner: {
+                    slug: deleted[0].partner_slug,
+                    displayName: deleted[0].partner_name,
+                    latestOffer: deleted[0].latest_offer || '',
+                    isActive: false
+                }
+            });
+        }
+
         if (action === 'generate_partner_verify_link') {
             const partnerSlug = normSlug(body.partnerSlug || body.partner, 80);
 

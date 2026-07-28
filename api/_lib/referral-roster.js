@@ -71,6 +71,12 @@ function isActiveValue(value) {
     return value !== false && value !== 0 && value !== 'false';
 }
 
+function isPurgedValue(row) {
+    if (!row) return false;
+    if (row.is_purged === true || row.isPurged === true) return true;
+    return /^purged\b/i.test(String(row.notes || '').trim());
+}
+
 function mergeReferralPartners(dynamicRows, options = {}) {
     const includeInactive = Boolean(options.includeInactive);
     const partnersBySlug = new Map();
@@ -82,6 +88,13 @@ function mergeReferralPartners(dynamicRows, options = {}) {
     (dynamicRows || []).forEach((row) => {
         const slug = normalizeSlug(row.partner_slug || row.slug || '');
         if (!slug) return;
+
+        // Permanent removals suppress both DB and static roster entries.
+        if (isPurgedValue(row)) {
+            partnersBySlug.delete(slug);
+            return;
+        }
+
         const staticPartner = getStaticPartner(slug);
         const active = isActiveValue(row.is_active);
 
@@ -112,6 +125,7 @@ module.exports = {
     cleanText,
     getStaticPartner,
     isActiveValue,
+    isPurgedValue,
     isStaticApprovedPayoutAttribution,
     mergeReferralPartners,
     normalizeDisplayName,
