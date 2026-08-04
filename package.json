@@ -8,6 +8,8 @@
     "dev:static": "npx serve -l 4183 --no-port-switching .",
     "qa:screenshots": "node scripts/qa-screenshot-matrix.js",
     "qa:hero-devices": "node scripts/qa-hero-cross-device.js --strict",
+    "qa:hero-browserstack": "node scripts/qa-hero-browserstack.js --quick --strict",
+    "qa:hero-browserstack:apple": "node scripts/qa-hero-browserstack.js --brand=apple --strict",
     "qa:screenshots:services": "node scripts/qa-screenshot-matrix.js --profile=knightlogics-services",
     "qa:screenshots:client-demo": "node scripts/qa-screenshot-matrix.js --profile=client-demo",
     "qa:lighthouse": "node scripts/qa-lighthouse.js",

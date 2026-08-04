@@ -28,7 +28,7 @@
         <input type="hidden" name="sku">
         <label>Delivery email<input type="email" name="buyerEmail" required autocomplete="email"></label>
         <div id="audit-fields">
-          <label>Client or business name<input name="clientName" maxlength="100"></label>
+          <label id="client-name-field">Client or business name<input name="clientName" maxlength="100"></label>
           <label>Public website URL<input type="url" name="websiteUrl" placeholder="https://example.com"></label>
           <label id="agency-field">Agency name<input name="agencyName" maxlength="100"></label>
           <label id="gsc-domain-field" hidden>Search Console domain or URL-prefix property
@@ -74,10 +74,12 @@
     const form = modal.querySelector('#order-form');
     const audit = modal.querySelector('#audit-fields');
     const prospect = modal.querySelector('#prospect-fields');
+    const clientNameField = modal.querySelector('#client-name-field');
     const agency = modal.querySelector('#agency-field');
     const gscField = modal.querySelector('#gsc-domain-field');
     const error = modal.querySelector('#order-error');
     const submit = modal.querySelector('#checkout-button');
+    const MODULE_SKUS = new Set(['ai_search_readiness', 'conversion_leak_audit']);
 
     document.querySelectorAll('[data-sku]').forEach((button) => {
       if (button.dataset.spWired) return;
@@ -88,13 +90,21 @@
         form.sku.value = sku;
         const isProspect = sku === 'local_opportunity_50';
         const isGsc = sku === 'full_access_gsc_audit';
+        const isModule = MODULE_SKUS.has(sku);
         audit.hidden = isProspect;
         prospect.hidden = !isProspect;
+        if (clientNameField) {
+          clientNameField.hidden = isModule;
+          const clientInput = clientNameField.querySelector('input');
+          if (clientInput) clientInput.required = !isProspect && !isModule;
+        }
         agency.hidden = sku !== 'agency_white_label_health_5';
         if (gscField) {
           gscField.hidden = !isGsc;
           gscField.querySelector('input').required = isGsc;
         }
+        const urlInput = audit.querySelector('input[name="websiteUrl"]');
+        if (urlInput) urlInput.required = !isProspect;
         error.textContent = '';
         modal.classList.add('is-open');
       });

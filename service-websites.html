@@ -745,26 +745,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </article>
 
             <article class="svc-mirror svc-mirror--flip fade-in">
-                <figure class="kl-media-needed" data-media-needed="true"
-                    data-asset-type="chart"
-                    data-aspect="4:3"
-                    data-page="/service-websites"
-                    data-brief="Search Console Experience > Core Web Vitals screenshot for a client property once it has enough real-user traffic for Chrome UX Report field data to populate. Must be a real GSC export, not a mockup chart.">
-                    <div class="kl-media-needed__frame" aria-hidden="true"></div>
-                    <figcaption>
-                        <strong>Media needed:</strong> Real Search Console Core Web Vitals field-data screenshot (mobile + desktop buckets) once a client site has enough Chrome UX Report traffic to populate.
-                        <span class="kl-media-needed__specs">PNG or WebP · 1200&times;900 · direct GSC export, no fabricated numbers</span>
-                    </figcaption>
+                <figure class="svc-mirror-media">
+                    <img src="/images/proof/gsc-core-web-vitals-no-data-knightlogics.png" alt="Google Search Console Core Web Vitals for knightlogics.com — mobile and desktop both show not enough usage data in the last 90 days despite rising impressions" loading="lazy" width="1024" height="345">
+                    <img src="/images/proof/psi-crux-no-data-knightlogics.png" alt="PageSpeed Insights mobile report for knightlogics.com — Chrome User Experience Report has no sufficient real-world speed data for this page while lab diagnostics still run" loading="lazy" width="1024" height="861" style="margin-top:12px;width:100%;height:auto;border-radius:8px;border:1px solid rgba(100,255,218,.15);">
                 </figure>
                 <div class="svc-mirror-copy">
                     <p class="svc-mirror-versus"><span>Beyond competitors</span> Field data when traffic exists</p>
                     <h3>Real-user LCP / INP / CLS — not lab-only claims</h3>
-                    <p>Lab PSI proves we can ship fast. CrUX proves users experienced it. We wait for honest field charts instead of posting “not enough data.”</p>
+                    <p>Lab PSI proves we can ship fast. CrUX proves users <em>experienced</em> it. Knight Logics had <strong>56K+ impressions in three months</strong> — real momentum — and Search Console still says “not enough usage data.” That is normal: impressions are not the same as enough Chrome users with telemetry. We publish the empty field state instead of faking charts.</p>
                     <ul class="svc-checklist">
-                        <li>Chrome UX Report via Search Console when eligible</li>
-                        <li>Mobile + desktop field buckets reviewed</li>
-                        <li>Used to catch regressions after content or script changes</li>
-                        <li>Until then: lab scores + crawl/index proof carry the story</li>
+                        <li>Search Console Experience → Core Web Vitals when eligible</li>
+                        <li>PSI “Discover what your real users are experiencing” checked in parallel</li>
+                        <li>Mobile + desktop field buckets reviewed once CrUX populates</li>
+                        <li>Until then: lab scores, index coverage, and impression trend carry the story</li>
                     </ul>
                 </div>
             </article>
@@ -778,19 +771,113 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container">
             <div class="section-header fade-in">
                 <h2>Live Sites &amp; Case Studies</h2>
-                <p>Real businesses and product brands — each mapped to a package on our <a href="/pricing">pricing ladder</a>. Open the live site, read the case study, and see what that tier includes.</p>
+                <p>Real businesses and product brands — open the live site, read the case study, and see audit-backed proof. <a href="/case-studies">Browse all case studies</a>.</p>
             </div>
             <div class="svc-work-grid svc-work-grid--3">
-                <a class="svc-work-card fade-in" href="/case-study-farrell-electric">
+                <a class="svc-work-card fade-in" href="/case-study-roof-monsters">
                     <div class="svc-work-thumb">
-                        <img src="https://farrell-electric.github.io/farrell-electric-website/HeroImage.png" alt="Farrell Electric demo preview example" loading="lazy">
-                        <span class="svc-work-price">$200</span>
+                        <img src="/images/showcase/roof-monsters-og-card.webp" alt="Roof Monsters live roofing website on roofmonsters.co" loading="lazy" width="1200" height="630">
                     </div>
                     <div class="svc-work-copy">
-                        <p class="svc-work-label">Portfolio Sample</p>
-                        <h3>Demo Preview</h3>
-                        <p class="svc-work-client">Farrell Electric</p>
-                        <p>GitHub Pages demo from client photos — no custom domain, deliberate noindex. Shows what a proof-of-concept looks like before Preview Launch or a full site build.</p>
+                        <p class="svc-work-label">Live Client · Network Anchor</p>
+                        <h3>Roofing Growth System</h3>
+                        <p class="svc-work-client">Roof Monsters</p>
+                        <div class="svc-work-tags">
+                            <span class="svc-work-tag">97 Lighthouse</span>
+                            <span class="svc-work-tag">79+ pages</span>
+                            <span class="svc-work-tag">Estimate Form</span>
+                        </div>
+                        <p>Live Tampa Bay roofing growth site with estimate-first capture, deep local SEO, and audit-backed technical scores.</p>
+                        <span class="svc-work-cta">View Case Study <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a class="svc-work-card fade-in" href="/case-study-breaking-ground">
+                    <div class="svc-work-thumb">
+                        <img src="/images/showcase/breaking-ground-og-card.webp" alt="Breaking Ground Land Services and Demolition website case study" loading="lazy" width="1200" height="750">
+                    </div>
+                    <div class="svc-work-copy">
+                        <p class="svc-work-label">Live Client</p>
+                        <h3>Demolition &amp; Land Services</h3>
+                        <p class="svc-work-client">Breaking Ground</p>
+                        <div class="svc-work-tags">
+                            <span class="svc-work-tag">Lighthouse 95</span>
+                            <span class="svc-work-tag">79 GSC URLs</span>
+                            <span class="svc-work-tag">WAVE clean</span>
+                        </div>
+                        <p>79-URL demolition-first growth site with launch audit captures — Lighthouse, WAVE, Rich Results, and index proof on breakinggroundlsad.com.</p>
+                        <span class="svc-work-cta">View Case Study <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a class="svc-work-card fade-in" href="/case-study-knight-group">
+                    <div class="svc-work-thumb">
+                        <img src="/images/KGHero.webp" alt="Knight Group website case study" loading="lazy" decoding="async" width="1200" height="675">
+                    </div>
+                    <div class="svc-work-copy">
+                        <p class="svc-work-label">Live Client · Network Anchor</p>
+                        <h3>Handyman Growth System</h3>
+                        <p class="svc-work-client">Knight Group</p>
+                        <div class="svc-work-tags">
+                            <span class="svc-work-tag">97 pages</span>
+                            <span class="svc-work-tag">Booking Flow</span>
+                            <span class="svc-work-tag">CRM Follow-up</span>
+                        </div>
+                        <p>97-page handyman architecture with booking, city coverage, kg outreach lane, and Stripe-backed dispatch close.</p>
+                        <span class="svc-work-cta">View Case Study <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a class="svc-work-card fade-in" href="/case-study-screen-team">
+                    <div class="svc-work-thumb">
+                        <img src="/images/showcase/screen-team-og-card.png" alt="The Screen Team LLC website case study" loading="lazy" width="1200" height="630">
+                    </div>
+                    <div class="svc-work-copy">
+                        <p class="svc-work-label">Live Client</p>
+                        <h3>Screen Enclosure Growth</h3>
+                        <p class="svc-work-client">The Screen Team LLC</p>
+                        <div class="svc-work-tags">
+                            <span class="svc-work-tag">36 pages</span>
+                            <span class="svc-work-tag">PSI 100 desktop</span>
+                            <span class="svc-work-tag">Quote CTAs</span>
+                        </div>
+                        <p>36-page enclosure and repair growth site with service-area SEO, quote forms, GBP alignment, and gallery proof across Tampa Bay.</p>
+                        <span class="svc-work-cta">View Case Study <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a class="svc-work-card fade-in" href="/case-study-faith-works">
+                    <div class="svc-work-thumb">
+                        <img src="/images/showcase/faith-works-og-card.webp" alt="Faith Works Outdoor Services website case study" loading="lazy" width="1200" height="630">
+                    </div>
+                    <div class="svc-work-copy">
+                        <p class="svc-work-label">Live Client</p>
+                        <h3>Large-Scale Local SEO</h3>
+                        <p class="svc-work-client">Faith Works Outdoor Services</p>
+                        <div class="svc-work-tags">
+                            <span class="svc-work-tag">82 pages</span>
+                            <span class="svc-work-tag">Land Clearing</span>
+                            <span class="svc-work-tag">faithworks lane</span>
+                        </div>
+                        <p>82-page land clearing and forestry mulching system with city coverage, service-area depth, and OutreachEngine lane.</p>
+                        <span class="svc-work-cta">View Case Study <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a class="svc-work-card fade-in" href="/case-study-jns">
+                    <div class="svc-work-thumb">
+                        <img src="/images/JNS-HomeImage.webp" alt="JNS Construction website case study" loading="lazy">
+                    </div>
+                    <div class="svc-work-copy">
+                        <p class="svc-work-label">Live Client</p>
+                        <h3>Website + GBP Bundle</h3>
+                        <p class="svc-work-client">JNS Construction Services LLC</p>
+                        <div class="svc-work-tags">
+                            <span class="svc-work-tag">11 pages</span>
+                            <span class="svc-work-tag">FAQ Schema</span>
+                            <span class="svc-work-tag">GBP</span>
+                        </div>
+                        <p>11-page contractor build with service architecture, form routing, analytics, and Google Business Profile delivered as a custom bundle.</p>
                         <span class="svc-work-cta">View Case Study <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </a>
@@ -798,13 +885,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <a class="svc-work-card fade-in" href="/case-study-sals-painting">
                     <div class="svc-work-thumb">
                         <img src="https://salspaintingrenovation.com/SalsHeroImage.png" alt="Sal's Painting website example" loading="lazy">
-                        <span class="svc-work-price">$1,200</span>
                     </div>
                     <div class="svc-work-copy">
                         <p class="svc-work-label">Live Portfolio Client</p>
-                        <h3>Local Site</h3>
+                        <h3>Painter Portfolio Build</h3>
                         <p class="svc-work-client">Sal's Painting &amp; Basic Renovations</p>
-                        <p>Multi-page painter site with custom domain, GA4, Search Console, schema, and estimate-first conversion — built at Local Site depth for a live portfolio client.</p>
+                        <div class="svc-work-tags">
+                            <span class="svc-work-tag">Schema</span>
+                            <span class="svc-work-tag">GA4</span>
+                            <span class="svc-work-tag">Estimate Form</span>
+                        </div>
+                        <p>Multi-page painter site with custom domain, analytics, schema, and estimate-first conversion on a live portfolio client domain.</p>
                         <span class="svc-work-cta">View Case Study <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </a>
@@ -812,87 +903,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <a class="svc-work-card fade-in" href="/case-study-moms-resin-tables">
                     <div class="svc-work-thumb">
                         <img src="/images/momhero.webp" alt="Mom's Resin Tables e-commerce showcase" loading="lazy">
-                        <span class="svc-work-price">$2,997</span>
                     </div>
                     <div class="svc-work-copy">
-                        <p class="svc-work-label">Live Client</p>
-                        <h3>E-Commerce Launch</h3>
+                        <p class="svc-work-label">Live Client · Commerce</p>
+                        <h3>Custom E-Commerce Store</h3>
                         <p class="svc-work-client">Mom's Resin Tables</p>
+                        <div class="svc-work-tags">
+                            <span class="svc-work-tag">Stripe</span>
+                            <span class="svc-work-tag">Custom Builder</span>
+                            <span class="svc-work-tag">Commission</span>
+                        </div>
                         <p>Catalog, product pages, cart and Stripe checkout, custom builder, commissions flow, and policy pages for a real product brand.</p>
                         <span class="svc-work-cta">View Case Study <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </a>
-
-                <a class="svc-work-card fade-in" href="/case-study-jns">
-                    <div class="svc-work-thumb">
-                        <img src="./images/JNS-HomeImage.webp" alt="JNS Construction website case study" loading="lazy">
-                        <span class="svc-work-price">Bundled deal</span>
-                    </div>
-                    <div class="svc-work-copy">
-                        <p class="svc-work-label">Live Client</p>
-                        <h3>Local Site + GBP</h3>
-                        <p class="svc-work-client">JNS Construction</p>
-                        <p>11-page contractor build with service architecture, form routing, FAQ schema, analytics, and Google Business Profile — delivered as a custom website + GBP bundle.</p>
-                        <span class="svc-work-cta">View Case Study <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </a>
-
-                <a class="svc-work-card fade-in" href="/case-study-knight-group">
-                    <div class="svc-work-thumb">
-                        <picture>
-                            <source media="(max-width: 768px)" srcset="https://www.knightgroup.com/Images/KGHero-mobile.webp">
-                            <img src="https://www.knightgroup.com/Images/KGHero.webp" alt="Knight Group website case study" loading="lazy">
-                        </picture>
-                        <span class="svc-work-price">$2,000</span>
-                    </div>
-                    <div class="svc-work-copy">
-                        <p class="svc-work-label">Live Client</p>
-                        <h3>Authority Site</h3>
-                        <p class="svc-work-client">Knight Group</p>
-                        <p>Handyman site with deep service structure, booking flow, LocalBusiness schema, GBP alignment, and performance-first local SEO across Central Florida.</p>
-                        <span class="svc-work-cta">View Case Study <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </a>
-
-                <a class="svc-work-card fade-in" href="/case-study-screen-team">
-                    <div class="svc-work-thumb">
-                        <img src="./images/screen-team-showcase-800.webp"
-                             srcset="./images/screen-team-showcase-400.webp 400w, ./images/screen-team-showcase-800.webp 800w"
-                             sizes="(max-width: 768px) 100vw, 400px"
-                             alt="The Screen Team LLC website showcase"
-                             width="800"
-                             height="450"
-                             loading="lazy"
-                             decoding="async">
-                        <span class="svc-work-price">$2,000</span>
-                    </div>
-                    <div class="svc-work-copy">
-                        <p class="svc-work-label">Live Client</p>
-                        <h3>Authority Site</h3>
-                        <p class="svc-work-client">The Screen Team LLC</p>
-                        <p>36-page screen repair and enclosure site with service-area SEO, quote forms, GBP setup, gallery proof, and ongoing performance work across Tampa Bay.</p>
-                        <span class="svc-work-cta">View Case Study <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </a>
-
-                <!-- Knight Logics case study hidden for now
-                <a class="svc-work-card fade-in" href="/case-study-knight-logics">
-                    <div class="svc-work-thumb">
-                        <img src="/images/KnightLogicsLogo2.png" alt="Knight Logics website case study" loading="lazy">
-                        <span class="svc-work-price">Portfolio</span>
-                    </div>
-                    <div class="svc-work-copy">
-                        <p class="svc-work-label">Personal Project</p>
-                        <h3>Knight Logics Portfolio</h3>
-                        <p class="svc-work-client">Knight Logics</p>
-                        <p>Hand-coded portfolio and service site for Knight Logics, with custom schema, SEO, and a clean, fast static build. Not a client project — included for proof of technical execution only.</p>
-                        <span class="svc-work-cta">View Case Study <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </a>
-                -->
             </div>
 
             <div style="display:flex; justify-content:center; margin-top:28px; gap:14px; flex-wrap:wrap;">
+                <a href="/case-studies" class="btn-primary">View All Case Studies</a>
                 <a href="#pricing" class="btn-secondary">See Website Pricing</a>
                 <a href="/automation" class="btn-secondary">See Automation Systems</a>
             </div>

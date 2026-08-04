@@ -38,6 +38,8 @@ const SUCCESS_PATHS = Object.freeze({
     ai_site_health_5: '/website-health-audit',
     agency_white_label_health_5: '/white-label-website-audit',
     local_opportunity_50: '/local-opportunity-pack',
+    ai_search_readiness: '/ai-search-readiness',
+    conversion_leak_audit: '/conversion-leak-audit',
     full_access_gsc_audit: '/full-access-website-audit'
 });
 
@@ -57,6 +59,9 @@ function normalizeInputs(service, body) {
         normalizeWebsiteUrl(input.websiteUrl);
         if (input.clientName.length < 2) throw new Error('Enter the client or business name.');
         if (service.sku.startsWith('agency_') && input.agencyName.length < 2) throw new Error('Enter the agency name for the report.');
+    }
+    if (service.fulfillment === 'paid_module_evidence_pack') {
+        normalizeWebsiteUrl(input.websiteUrl);
     }
     if (service.fulfillment === 'full_access_gsc_audit') {
         if (input.gscProperty.length < 3) throw new Error('Enter the Search Console domain or URL-prefix property.');

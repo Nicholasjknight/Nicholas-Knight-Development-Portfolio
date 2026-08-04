@@ -113,6 +113,14 @@ const PROOF = {
     text: `${FW.pageCount} land clearing and forestry mulching pages across Central Florida — faithworks OutreachEngine lane, schema, GA4/GSC, and GBP alignment in the full growth stack.`,
     badge: 'Live client'
   },
+  breakingGround: {
+    href: '/case-study-breaking-ground',
+    image: '/images/showcase/breaking-ground-og-card.webp',
+    imageAlt: 'Breaking Ground Land Services and Demolition website',
+    title: 'Breaking Ground — demolition-first growth site',
+    text: '79 sitemap URLs for mobile home demolition, land clearing, and site work across Central Florida on breakinggroundlsad.com.',
+    badge: 'Live client'
+  },
   jns: {
     href: '/case-study-jns',
     image: '/images/JNS-HomeImage.webp',
@@ -207,14 +215,14 @@ function defaultProofGrid(slug) {
     PROOF.vendoroo
   ];
   const map = {
-    'business-growth-systems': [PROOF.kg, PROOF.faithWorks, PROOF.screenTeam, PROOF.roofMonsters, PROOF.farrellElectric, PROOF.salsPainting, PROOF.jns, PROOF.hospitalityPattern],
+    'business-growth-systems': [PROOF.kg, PROOF.faithWorks, PROOF.breakingGround, PROOF.screenTeam, PROOF.roofMonsters, PROOF.farrellElectric, PROOF.salsPainting, PROOF.jns, PROOF.hospitalityPattern],
     'crm-outreach-lead-generation': [PROOF.crmOutreach, PROOF.kg],
     'ticketing-invoicing-job-workflows': [PROOF.vendoroo, PROOF.jns],
     'referral-network-systems': [PROOF.referral, PROOF.knightCommand],
-    'local-visibility-systems': [PROOF.faithWorks, PROOF.screenTeam],
+    'local-visibility-systems': [PROOF.faithWorks, PROOF.breakingGround, PROOF.screenTeam],
     'website-growth-audit': [PROOF.roofMonstersAudit, PROOF.kg],
     'online-ordering-systems': [PROOF.hospitalityPattern, PROOF.jns],
-    'contractor-growth-systems': [PROOF.screenTeam, PROOF.jns],
+    'contractor-growth-systems': [PROOF.screenTeam, PROOF.breakingGround, PROOF.jns],
     'home-service-business-growth-systems': [PROOF.kg, PROOF.screenTeam],
     'performance-partner-program': [PROOF.knightCommand, PROOF.crmOutreach],
     'handyman-business-growth-systems': [PROOF.kg, PROOF.crmOutreach],
@@ -222,7 +230,7 @@ function defaultProofGrid(slug) {
     'painter-business-growth-systems': [PROOF.salsPainting, PROOF.kg],
     'roofing-business-growth-systems': [PROOF.roofMonsters, PROOF.roofMonstersAudit, PROOF.roofMonstersProject],
     'screen-enclosure-business-growth-systems': [PROOF.screenTeam, PROOF.socialPoster],
-    'excavation-business-growth-systems': [PROOF.faithWorks, PROOF.jns],
+    'excavation-business-growth-systems': [PROOF.faithWorks, PROOF.breakingGround, PROOF.jns],
     'restaurant-bar-growth-systems': [PROOF.hospitalityPattern, PROOF.socialPoster],
     'starting-a-new-business': [PROOF.kg, PROOF.faithWorks, PROOF.screenTeam, PROOF.roofMonsters, PROOF.farrellElectric, PROOF.salsPainting, PROOF.jns, PROOF.hospitalityPattern],
     'ai-business-automation': [PROOF.knightCommand, PROOF.socialPoster],
@@ -232,7 +240,7 @@ function defaultProofGrid(slug) {
     'stripe-invoice-automation': [PROOF.vendoroo, PROOF.jns],
     'job-photo-pdf-reports': [PROOF.vendoroo, PROOF.jns],
     'review-request-systems': [PROOF.screenTeam, PROOF.roofMonsters],
-    'service-area-page-strategy': [PROOF.faithWorks, PROOF.screenTeam],
+    'service-area-page-strategy': [PROOF.faithWorks, PROOF.breakingGround, PROOF.screenTeam],
     'business-dashboard-development': [PROOF.knightCommand, PROOF.referral],
     'internal-business-tools': [PROOF.knightCommand, PROOF.crmOutreach],
     'api-integration-services': [PROOF.referral, PROOF.vendoroo],

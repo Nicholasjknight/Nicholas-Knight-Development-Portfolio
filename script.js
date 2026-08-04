@@ -1041,9 +1041,6 @@ const KL_SUBPAGE_HERO_SELECTORS = [
     '.cs-hero:not(.svc-hero--stars)',
     '.automation-hero:not(.svc-hero--stars)',
     '.referral-hero:not(.svc-hero--stars)',
-    '.displayplus-hero:not(.svc-hero--stars)',
-    '.videoforge-hero:not(.svc-hero--stars)',
-    '.pixelforge-hero:not(.svc-hero--stars)',
     '.contact-page-hero:not(.svc-hero--stars)',
     '.ed-hero:not(.svc-hero--stars)',
     '.svc-hero--panels',
@@ -1096,9 +1093,6 @@ function findSubpageHeroInner(hero) {
         '.cs-hero-inner',
         '.profile-hero-inner',
         '.contact-page-hero-inner',
-        '.videoforge-hero-copy',
-        '.pixelforge-hero-copy',
-        '.displayplus-hero-copy',
         '.ed-hero-copy',
         '.container',
     ];
@@ -1109,9 +1103,19 @@ function findSubpageHeroInner(hero) {
     return null;
 }
 
+function isProductAppTwoColHero(hero) {
+    if (!hero) return false;
+    return hero.classList.contains('pixelforge-hero')
+        || hero.classList.contains('videoforge-hero')
+        || hero.classList.contains('displayplus-hero')
+        || !!hero.querySelector('.pixelforge-hero-grid, .videoforge-hero-layout, .displayplus-hero-layout');
+}
+
 function compactSubpageHeroContent() {
     document.querySelectorAll('.svc-hero--stars, .svc-hero--panels').forEach((hero) => {
         if (hero.dataset.compacted === '1') return;
+        // Keep product app heroes as native copy | panel two-column layouts.
+        if (isProductAppTwoColHero(hero)) return;
 
         const inner = findSubpageHeroInner(hero);
         if (!inner) return;

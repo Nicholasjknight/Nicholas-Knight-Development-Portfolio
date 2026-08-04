@@ -7655,7 +7655,27 @@ html {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+    grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+    gap: 36px;
+    align-items: center;
+}
+
+/* Shared product-app hero: copy | panel (PixelForge / VideoForge / Display Control+ / Auto Vid) */
+.videoforge-hero-layout,
+.displayplus-hero-layout {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+    gap: 36px;
+    align-items: center;
+}
+
+.pixelforge-hero .pixelforge-hero-grid,
+.videoforge-hero .videoforge-hero-layout,
+.displayplus-hero .displayplus-hero-layout {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr) !important;
     gap: 36px;
     align-items: center;
 }
@@ -7811,6 +7831,133 @@ html {
     font-weight: 700;
 }
 
+.pixelforge-compare {
+    margin-bottom: 18px;
+}
+
+.pixelforge-compare__frame {
+    position: relative;
+    margin: 0;
+    aspect-ratio: 16 / 10;
+    max-height: min(360px, 42vw);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(122, 169, 229, 0.22);
+    background: #1e2c44;
+    cursor: ew-resize;
+    touch-action: none;
+    user-select: none;
+    container-type: size;
+}
+
+.pixelforge-compare__image {
+    display: block;
+    pointer-events: none;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.pixelforge-compare__image--after {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    filter: contrast(1.14) saturate(1.2) brightness(1.05);
+}
+
+.pixelforge-compare__clip {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 48%;
+    overflow: hidden;
+    border-right: 3px solid #64ffda;
+    box-shadow: 2px 0 20px rgba(100, 255, 218, 0.28);
+    z-index: 1;
+}
+
+/* Must match the frame width — not the clip — or the left side compresses and duplicates content */
+.pixelforge-compare__image--before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100cqi;
+    height: 100cqb;
+    max-width: none;
+    filter: blur(2.5px) contrast(0.8) brightness(0.86) saturate(0.72);
+}
+
+.pixelforge-compare__label {
+    position: absolute;
+    top: 14px;
+    z-index: 3;
+    padding: 7px 12px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    pointer-events: none;
+}
+
+.pixelforge-compare__label--before {
+    left: 14px;
+    background: rgba(6, 10, 20, 0.78);
+    color: #d0dded;
+}
+
+.pixelforge-compare__label--after {
+    right: 14px;
+    background: rgba(100, 255, 218, 0.2);
+    color: #e8fffb;
+}
+
+.pixelforge-compare__divider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 48%;
+    width: 3px;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, #c9edff 0%, #64ffda 100%);
+    box-shadow: 0 0 18px rgba(100, 255, 218, 0.35);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.pixelforge-compare__divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 22px;
+    height: 22px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.82);
+    background: #0e1829;
+    box-shadow: 0 0 0 4px rgba(100, 255, 218, 0.15);
+}
+
+.pixelforge-compare__range {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: ew-resize;
+    z-index: 4;
+}
+
+.pixelforge-compare__hint {
+    margin: 10px 2px 0;
+    font-size: 0.78rem;
+    line-height: 1.45;
+    color: rgba(157, 183, 212, 0.88);
+    text-align: center;
+}
+
+/* Legacy compare mock - keep for backwards compatibility if referenced elsewhere */
 .pixelforge-compare-mock {
     position: relative;
     min-height: 290px;
@@ -7872,8 +8019,8 @@ html {
 
 .pixelforge-shell-stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
 }
 
 .pixelforge-shell-stats div {
@@ -7997,6 +8144,44 @@ html {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+}
+
+.pixelforge-feature-grid--stills {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.pixelforge-feature-grid--stills figure {
+    margin: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(122, 169, 229, 0.18);
+    background: rgba(8, 13, 24, 0.72);
+}
+
+.pixelforge-feature-grid--stills img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.pixelforge-feature-grid--stills figcaption {
+    padding: 0.85rem 1rem 1.05rem;
+    font-size: 0.86rem;
+    line-height: 1.45;
+    color: rgba(168, 178, 200, 0.95);
+}
+
+.pixelforge-feature-grid--stills figcaption strong {
+    display: block;
+    color: #e6f1ff;
+    margin-bottom: 0.3rem;
 }
 
 .pixelforge-feature-card {
@@ -8143,8 +8328,8 @@ html {
 
 .displayplus-hero-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
-    gap: 32px;
+    grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+    gap: 36px;
     align-items: center;
 }
 
@@ -8453,8 +8638,8 @@ html {
 
 .videoforge-hero-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
-    gap: 32px;
+    grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+    gap: 36px;
     align-items: center;
 }
 
@@ -8965,9 +9150,19 @@ body.kl-pwa-banner-visible #kl-chat-launcher {
     }
 
     .pixelforge-hero-grid,
+    .videoforge-hero-layout,
+    .displayplus-hero-layout,
+    .pixelforge-hero .pixelforge-hero-grid,
+    .videoforge-hero .videoforge-hero-layout,
+    .displayplus-hero .displayplus-hero-layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    .pixelforge-hero-grid,
     .pixelforge-split,
     .pixelforge-download-layout,
     .pixelforge-feature-grid,
+    .pixelforge-feature-grid--stills,
     .pixelforge-steps,
     .pixelforge-proof-grid,
     .displayplus-hero-layout,
@@ -9013,6 +9208,10 @@ body.kl-pwa-banner-visible #kl-chat-launcher {
 
     .pixelforge-subtitle {
         font-size: 1rem;
+    }
+
+    .pixelforge-compare__frame {
+        min-height: 200px;
     }
 
     .pixelforge-compare-mock {
@@ -15889,6 +16088,23 @@ body:not(:has(#hero)) .profile-hero-inner {
     align-items: stretch;
 }
 
+/* Video walkthrough grids: full-width player, proof stills in a row below */
+.cs-media-grid:not(.cs-media-grid--stills) {
+    grid-template-columns: 1fr;
+}
+
+.cs-media-grid:not(.cs-media-grid--stills) .cs-proof-stack {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 14px;
+    align-content: start;
+}
+
+.cs-media-grid:not(.cs-media-grid--stills) > .kl-media-needed,
+.cs-media-grid:not(.cs-media-grid--stills) > .cs-proof-card.kl-media-needed {
+    width: 100%;
+}
+
 .cs-media-grid--stills {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
@@ -15924,16 +16140,13 @@ body:not(:has(#hero)) .profile-hero-inner {
     overflow: hidden;
     border: 1px solid rgba(148, 163, 184, 0.22);
     background: #0b1524;
-    height: 100%;
-    min-height: 240px;
 }
 
 .cs-video-shell video,
 .cs-video-shell img {
     display: block;
     width: 100%;
-    height: 100%;
-    min-height: 240px;
+    height: auto;
     aspect-ratio: 16 / 9;
     object-fit: cover;
 }
@@ -17825,6 +18038,39 @@ main li a {
     color: #6b7fa3;
 }
 
+/* Filled media slots — same spacing/caption rhythm as placeholders */
+.kl-media-filled {
+    margin: 1.5rem 0 2rem;
+    padding: 0;
+    border: 1px solid rgba(100, 255, 218, 0.18);
+    border-radius: 10px;
+    background: rgba(7, 20, 38, 0.55);
+    overflow: hidden;
+}
+
+.kl-media-filled > img,
+.kl-media-filled > video,
+.kl-media-filled > svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    vertical-align: middle;
+}
+
+.kl-media-filled figcaption {
+    padding: 0.9rem 1.1rem 1.1rem;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: #a8b2d1;
+}
+
+.kl-media-filled figcaption strong {
+    color: #e6f1ff;
+    display: block;
+    margin-bottom: 0.35rem;
+}
+
 /* Site-wide proof mirrors (agency media bands — reuse on any service page) */
 .svc-mirror {
     display: grid;
@@ -18097,6 +18343,11 @@ main li a {
     margin: 2rem 0 0;
 }
 
+/* 4-up proof strips: one row on desktop, 2×2 on smaller screens (never 1-col stack) */
+.kl-proof-gallery--quad {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .kl-proof-gallery figure {
     margin: 0;
     border-radius: 6px;
@@ -18113,6 +18364,14 @@ main li a {
     object-fit: cover;
     object-position: top center;
     background: #111;
+}
+
+.kl-proof-gallery svg.kl-package-ladder-diagram {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background: #071426;
 }
 
 /* Tall / odd-ratio proofs (phone UIs, dispatch chat) — show entire frame */
@@ -18164,11 +18423,31 @@ main li a {
     .kl-proof-gallery {
         grid-template-columns: 1fr;
     }
+
+    .kl-proof-gallery--quad {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media (min-width: 901px) and (max-width: 1100px) {
     .kl-proof-gallery {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .kl-proof-gallery--quad {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .kl-proof-gallery--quad {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+    }
+
+    .kl-proof-gallery--quad figcaption {
+        font-size: 0.75rem;
+        padding: 0.55rem 0.65rem 0.7rem;
     }
 }
 

@@ -73,7 +73,13 @@ const entries = publicRoutes.map((entry) => {
 
   const configured = entry.sitemap === true ? {} : entry.sitemap;
   const previous = currentEntries.get(loc) || {};
-  const lastmod = configured.lastmod || previous.lastmod || defaults.lastmod;
+  // Prefer explicit entry/default lastmod so deploy refreshes stay current.
+  // Pass --preserve-lastmod to keep prior sitemap dates when unchanged.
+  const preserveLastmod = process.argv.includes('--preserve-lastmod');
+  const lastmod = configured.lastmod
+    || (preserveLastmod ? previous.lastmod : null)
+    || defaults.lastmod
+    || previous.lastmod;
   const changefreq = configured.changefreq || previous.changefreq || defaults.changefreq;
   const priority = configured.priority || previous.priority || defaults.priority;
   if (!lastmod || !changefreq || !priority) {

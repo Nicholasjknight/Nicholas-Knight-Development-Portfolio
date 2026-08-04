@@ -61,14 +61,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 "@type": "Offer",
                 "price": "1.00",
                 "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://knightlogics.com/auto-vid-compiler",
                 "description": "20 free compile uses, then $5 for 5 credits, $10 for 12 credits, or $10/mo unlimited access."
             },
+            "featureList": [
+                "Folder-based clip compile",
+                "End trimming and intro overlay",
+                "Background music mix",
+                "Overlap-aware sequencing",
+                "Bundled FFmpeg portable exe"
+            ],
             "sameAs": [
                 "https://github.com/Knight-Logics/Auto-Video-Editor-and-Compiler",
                 "https://github.com/Knight-Logics/Auto-Video-Editor-and-Compiler/releases/latest"
             ],
             "description": "Windows app that turns a folder of short clips into a polished highlight reel. Trims clip endings, prepends an intro, overlays background music, supports clip ordering, and exports one YouTube-ready video with FFmpeg."
         }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type":"Question","name":"What kind of clips is this actually built for?","acceptedAnswer":{"@type":"Answer","text":"Short, quick-capture recordings — the kind you get from Xbox Game Bar’s Record That or similar tools. It trims the end of each clip and stitches them together, so long unedited footage isn’t the intended input."}},
+            {"@type":"Question","name":"Do I need Python installed to use it?","acceptedAnswer":{"@type":"Answer","text":"No, not for the packaged release build — FFmpeg is bundled and the app runs as a standalone .exe. Python is only needed if you choose to run the project from source."}},
+            {"@type":"Question","name":"Why does Windows show a warning when I download it?","acceptedAnswer":{"@type":"Answer","text":"The executable isn’t code-signed yet, so SmartScreen or your browser may flag it as unrecognized. Each release includes a SHA256 checksum in the notes so you can verify the download before running it."}},
+            {"@type":"Question","name":"What happens to my credits if a compile fails or I stop it?","acceptedAnswer":{"@type":"Answer","text":"A credit is only used after a successful compile. Stopping a run or a failed compile does not consume a trial use or a paid credit."}}
+        ]
     }
     </script>
 
@@ -81,7 +102,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="theme-color" content="#64ffda">
     <meta name="msapplication-TileColor" content="#0a0a0a">
 
-    <link rel="stylesheet" href="style.css?v=20260709center1">
+    <link rel="stylesheet" href="style.css?v=20260804apphero1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script type="application/ld+json">
     {
@@ -94,7 +115,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         ]
     }
     </script>
-    <title>Auto Vid Compiler | Knight Logics</title>
+    <title>Auto Vid Compiler | Highlight Reel Maker for Windows</title>
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
@@ -103,7 +124,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "wgj5b5rrss");
     </script>
-    <script defer src="/script.js?v=20260709gbp1"></script>
+    <script defer src="/script.js?v=20260804apphero1"></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -193,17 +214,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </ul>
                 </div>
             </article>
-            <figure class="kl-media-needed fade-in" data-media-needed="true" style="margin-top:2rem;"
-                data-asset-type="video"
-                data-aspect="16:9"
-                data-page="/auto-vid-compiler"
-                data-brief="Screen-recorded walkthrough of the real Auto Vid Compiler GUI: pick a clips folder, set trim length, choose an intro and music track, and run a compile.">
-                <div class="kl-media-needed__frame" aria-hidden="true"></div>
-                <figcaption>
-                    <strong>Media needed:</strong> A recorded walkthrough of the actual desktop app &mdash; folder selection, trim setting, intro/music pick, and a real compile from start to finished .mp4.
-                    <span class="kl-media-needed__specs">MP4 or YouTube embed · 16:9 · 45&ndash;90s · screen capture of real app</span>
-                </figcaption>
-            </figure>
+            <figure class="kl-media-filled">
+                    <img src="/images/added-media/Auto%20Vid%20Compiler%20Page.png" alt="Auto Vid Compiler GUI" loading="lazy" decoding="async" width="1600" height="900">
+                    <figcaption><strong>Desktop GUI</strong> Auto Vid Compiler — folder pick, trim length, intro/music, and compile controls from the shipped .exe UI. <span class="kl-media-needed__specs">Still from live UI · narrated walkthrough queued</span></figcaption>
+                </figure>
         </div>
     </section>
 

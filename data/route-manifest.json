@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "origin": "https://knightlogics.com",
   "sitemapDefaults": {
-    "lastmod": "2026-07-10",
+    "lastmod": "2026-08-04",
     "changefreq": "monthly",
     "priority": "0.80"
   },
@@ -77,6 +77,7 @@
       { "file": "case-study-sals-painting.html", "route": "/case-study-sals-painting", "sitemap": { "priority": "0.84" } },
       { "file": "case-study-moms-resin-tables.html", "route": "/case-study-moms-resin-tables", "sitemap": { "priority": "0.84" } },
       { "file": "case-study-evidencedesk-ai.html", "route": "/case-study-evidencedesk-ai", "sitemap": { "priority": "0.84" } },
+      { "file": "case-study-breaking-ground.html", "route": "/case-study-breaking-ground", "sitemap": { "priority": "0.84", "lastmod": "2026-08-04" } },
       { "file": "web-designer-tampa.html", "route": "/web-designer-tampa", "sitemap": { "priority": "0.85" } },
       { "file": "web-designer-st-petersburg.html", "route": "/web-designer-st-petersburg", "sitemap": true },
       { "file": "web-designer-clearwater.html", "route": "/web-designer-clearwater", "sitemap": { "priority": "0.85" } },
@@ -106,6 +107,8 @@
       { "file": "website-health-audit.html", "route": "/website-health-audit", "sitemap": { "priority": "0.90" } },
       { "file": "white-label-website-audit.html", "route": "/white-label-website-audit", "sitemap": true },
       { "file": "local-opportunity-pack.html", "route": "/local-opportunity-pack", "sitemap": true },
+      { "file": "ai-search-readiness.html", "route": "/ai-search-readiness", "sitemap": { "priority": "0.90", "lastmod": "2026-08-04" } },
+      { "file": "conversion-leak-audit.html", "route": "/conversion-leak-audit", "sitemap": { "priority": "0.90", "lastmod": "2026-08-04" } },
       { "file": "full-access-website-audit.html", "route": "/full-access-website-audit", "sitemap": true },
       { "file": "package-demo-preview.html", "route": "/package-demo-preview", "sitemap": { "priority": "0.90" } },
       { "file": "package-preview-launch.html", "route": "/package-preview-launch", "sitemap": true },
@@ -133,6 +136,8 @@
       { "file": "sample-white-label-website-audit.html", "route": "/sample-white-label-website-audit" },
       { "file": "sample-local-opportunity-pack.html", "route": "/sample-local-opportunity-pack" },
       { "file": "sample-full-access-website-audit.html", "route": "/sample-full-access-website-audit" },
+      { "file": "sample-ai-search-readiness.html", "route": "/sample-ai-search-readiness" },
+      { "file": "sample-conversion-leak-audit.html", "route": "/sample-conversion-leak-audit" },
       { "file": "samples/instant-packages/sample-local-opportunity-pack.html", "route": "/samples/instant-packages/sample-local-opportunity-pack" }
     ],
     "fictional demo": [

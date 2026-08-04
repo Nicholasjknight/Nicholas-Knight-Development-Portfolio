@@ -32,36 +32,70 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         "@context": "https://schema.org",
         "@type": "WebPage",
         "@id": "https://knightlogics.com/videoforge#webpage",
-        "name": "VideoForge Studio | Knight Logics",
+        "name": "VideoForge Studio | Free Windows Ranked Video App",
         "url": "https://knightlogics.com/videoforge",
         "description": "Windows-first local video production app for ranked and countdown style exports with FFmpeg processing, optional narration, and browser-based workflow.",
         "mainEntity": {
-            "@type": "SoftwareSourceCode",
+            "@type": "SoftwareApplication",
             "@id": "https://knightlogics.com/videoforge#software",
             "name": "VideoForge Studio",
-            "alternateName": "AutoTop5 Showcase App",
-            "runtimePlatform": "Windows 10, Windows 11",
-            "version": "0.4.5",
+            "alternateName": ["VideoForge", "Video Forge Studio", "AutoTop5 Showcase App"],
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "Windows 10, Windows 11",
+            "softwareVersion": "0.4.5",
+            "image": "https://knightlogics.com/images/videoforge-app-icon.png",
             "datePublished": "2025-08-01",
-            "dateModified": "2026-06-13",
+            "dateModified": "2026-08-04",
             "creator": {
                 "@type": "Organization",
-                "name": "Knight Logics"
+                "name": "Knight Logics",
+                "url": "https://knightlogics.com"
             },
             "publisher": {
                 "@type": "Organization",
                 "name": "Knight Logics",
                 "url": "https://knightlogics.com"
             },
-            "codeRepository": "https://github.com/Knight-Logics/VideoForge-Studio",
+            "downloadUrl": "https://github.com/Knight-Logics/VideoForge-Studio/releases/download/v0.4.5/VideoForge-Studio-Installer.exe",
+            "softwareHelp": "https://github.com/Knight-Logics/VideoForge-Studio",
             "url": "https://knightlogics.com/videoforge",
             "isAccessibleForFree": true,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://knightlogics.com/videoforge",
+                "description": "Free Windows download. Optional credit billing for narration and add-ons when enabled."
+            },
+            "featureList": [
+                "Ranked and countdown video exports",
+                "Local FFmpeg rendering",
+                "Clip upload with titles, captions, and overlays",
+                "Optional ElevenLabs narration",
+                "Background music mix and intermissions",
+                "Portrait, landscape, and custom output presets"
+            ],
             "sameAs": [
                 "https://github.com/Knight-Logics/VideoForge-Studio",
                 "https://github.com/Knight-Logics/VideoForge-Studio/releases/tag/v0.4.5"
             ],
-            "description": "Windows-first local video production app for ranked and countdown style exports with FFmpeg processing, optional narration, and browser-based workflow."
+            "description": "Windows-first local video production app for ranked and countdown style exports with FFmpeg processing, optional narration, overlays, captions, and local rendering."
         }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type":"Question","name":"Is VideoForge Windows-only?","acceptedAnswer":{"@type":"Answer","text":"Yes. The public download is a Windows 10/11 installer. Hosted or Docker paths exist in the repo for operators, but this page sells the free desktop download."}},
+            {"@type":"Question","name":"Is there a subscription to download?","acceptedAnswer":{"@type":"Answer","text":"No. Install is free. Optional credit billing for add-ons uses the same Knight Account Stripe path as PixelForge when enabled — not required to render local ranked exports."}},
+            {"@type":"Question","name":"What does ranked local video mean?","acceptedAnswer":{"@type":"Answer","text":"You upload 3–10 clips, set titles/captions/overlays, and render a countdown or ranked showcase with FFmpeg on your machine — not a YouTube Shorts auto-reframe tool."}},
+            {"@type":"Question","name":"Does rendering ever run on Knight Logics servers?","acceptedAnswer":{"@type":"Answer","text":"No, not in the packaged desktop build. Rendering happens locally with the bundled FFmpeg on your own hardware."}},
+            {"@type":"Question","name":"What output sizes does it support?","acceptedAnswer":{"@type":"Answer","text":"Portrait 1440×2560, landscape 1920×1080, or a custom size you set per render, with a frame-rate selector added in v0.4.4."}},
+            {"@type":"Question","name":"The .exe won’t start — what do I try first?","acceptedAnswer":{"@type":"Answer","text":"Extract the zip fully and run VideoForge-Studio.exe from a normal folder like Desktop or Downloads, not from inside the compressed zip. If the desktop window still doesn’t open, the app is also reachable at http://127.0.0.1:5050 in a browser."}}
+        ]
     }
     </script>
 
@@ -72,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#f7b85a">
 
-    <link rel="stylesheet" href="style.css?v=20260709center1">
+    <link rel="stylesheet" href="style.css?v=20260804apphero1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script type="application/ld+json">
     {
@@ -96,7 +130,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "wgj5b5rrss");
     </script>
-    <script defer src="/script.js?v=20260709gbp1"></script>
+    <script defer src="/script.js?v=20260804apphero1"></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -199,17 +233,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </ul>
                 </div>
             </article>
-            <figure class="kl-media-needed fade-in" data-media-needed="true"
-                data-asset-type="video"
-                data-aspect="16:9"
-                data-page="/videoforge"
-                data-brief="Screen-recorded walkthrough of the real VideoForge Studio desktop window: upload 3-10 clips, set titles/captions/overlays, pick an output preset, and render with the FFmpeg pipeline.">
-                <div class="kl-media-needed__frame" aria-hidden="true"></div>
-                <figcaption>
-                    <strong>Media needed:</strong> A recorded walkthrough of the actual VideoForge Studio UI &mdash; upload, sequence, render, export &mdash; captured from the packaged desktop build, not a mockup.
-                    <span class="kl-media-needed__specs">MP4 or YouTube embed · 16:9 · 60&ndash;120s · screen capture of real app, no narration required</span>
-                </figcaption>
-            </figure>
         </div>
     </section>
 
@@ -241,9 +264,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <p>VideoForge Studio ships two install paths. Almost everyone should use the packaged Windows build below; source mode exists for anyone who wants to run it directly from Python.</p>
             </div>
             <div class="kl-proof-gallery fade-in" style="margin:2rem 0;">
-                <figure class="kl-media-needed" data-media-needed="true" data-asset-type="screenshot" data-aspect="16:9" data-page="/videoforge" data-brief="Screenshot of the real VideoForge Studio desktop window showing the upload/sequence panel with clip thumbnails and the render progress bar.">
-                    <div class="kl-media-needed__frame" aria-hidden="true"></div>
-                    <figcaption><strong>Media needed:</strong> Packaged desktop app — clip upload/sequence screen or in-progress render with SSE progress bar. <span class="kl-media-needed__specs">PNG · 1600×900 · real UI</span></figcaption>
+                <figure class="kl-media-filled">
+                    <img src="/images/added-media/VideoForge%20Studio%20GUI.png" alt="VideoForge Studio desktop UI — render setup with clip upload and progress" loading="lazy" decoding="async" width="1600" height="900">
+                    <figcaption><strong>Packaged desktop app</strong> VideoForge Studio — title setup, clip upload, output presets, and render status from the live local build.</figcaption>
                 </figure>
                 <figure>
                     <img src="/images/added-media/Auto%20Vid%20Compiler%20Page.png" alt="Auto Vid Compiler — predecessor highlight-reel tool" loading="lazy" width="1400" height="900">
@@ -380,15 +403,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <h2>Exports &amp; Output Presets</h2>
                 <p>Rendering is tuned for ranked and countdown formats that get published across vertical and horizontal platforms, not for arbitrary timeline editing.</p>
             </div>
-            <figure class="kl-media-needed" data-media-needed="true"
-                data-asset-type="screenshot"
-                data-aspect="16:9"
-                data-page="/videoforge"
-                data-brief="Side-by-side comparison of a portrait 1440x2560 export and a landscape 1920x1080 export from the same VideoForge Studio render job.">
-                <div class="kl-media-needed__frame" aria-hidden="true"></div>
+            <figure class="kl-media-filled">
+                <img src="/images/added-media/VideoForge%20Studio%20GUI.png" alt="VideoForge Studio render workspace — titles, clip upload, narration, music, intermissions, and export controls" loading="lazy" decoding="async" width="1600" height="900">
                 <figcaption>
-                    <strong>Media needed:</strong> Side-by-side portrait vs. landscape export samples from a real VideoForge render, showing overlays and captions rendered at each preset.
-                    <span class="kl-media-needed__specs">PNG or WebP · 1600&times;900 composite · two real exports, not stock footage</span>
+                    <strong>Live render workspace</strong> One VideoForge Studio screen runs the full job: ranked titles, clip upload, optional ElevenLabs narration, background music mix, intermission cards, output presets, and local FFmpeg render status — then a single downloadable export. Resolution is only one control among those.
                 </figcaption>
             </figure>
             <div class="videoforge-feature-grid">

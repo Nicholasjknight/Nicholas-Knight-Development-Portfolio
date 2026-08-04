@@ -342,9 +342,6 @@
             '.cs-hero-inner',
             '.profile-hero-inner',
             '.contact-page-hero-inner',
-            '.videoforge-hero-copy',
-            '.pixelforge-hero-copy',
-            '.displayplus-hero-copy',
             '.ed-hero-copy',
             '.container > div',
         ];
@@ -357,6 +354,13 @@
 
     function setupHeroStars(hero) {
         if (!hero) return;
+        // Product app pages keep native 2-column heroes (copy | panel).
+        if (hero.classList.contains('pixelforge-hero')
+            || hero.classList.contains('videoforge-hero')
+            || hero.classList.contains('displayplus-hero')
+            || hero.querySelector('.pixelforge-hero-grid, .videoforge-hero-layout, .displayplus-hero-layout')) {
+            return;
+        }
         const zone = ensureStarsZone(hero);
         // Move any legacy in-hero stars layer up into the shared zone.
         const legacy = hero.querySelector(':scope > .svc-hero-stars');
@@ -369,6 +373,12 @@
 
     function upgradeToStarsHero(section) {
         if (!section || section.dataset.starsUpgraded === '1') return;
+        if (section.classList.contains('pixelforge-hero')
+            || section.classList.contains('videoforge-hero')
+            || section.classList.contains('displayplus-hero')
+            || section.querySelector('.pixelforge-hero-grid, .videoforge-hero-layout, .displayplus-hero-layout')) {
+            return;
+        }
         section.dataset.starsUpgraded = '1';
         section.classList.add('svc-hero', 'svc-hero--stars');
         section.classList.remove(
@@ -378,9 +388,6 @@
             'cs-hero',
             'automation-hero',
             'referral-hero',
-            'displayplus-hero',
-            'videoforge-hero',
-            'pixelforge-hero',
             'ed-hero'
         );
         section.removeAttribute('style');

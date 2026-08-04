@@ -38,32 +38,63 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         "url": "https://knightlogics.com/pixelforge-ai",
         "description": "Windows desktop app for AI-powered video upscaling and frame interpolation. Supports Real-ESRGAN, RealSR, and Waifu2x upscaling engines plus RIFE GPU frame interpolation, with compare previews, ETA estimation, credit-based processing, and local ncnn-vulkan rendering.",
         "mainEntity": {
-            "@type": "SoftwareSourceCode",
+            "@type": "SoftwareApplication",
             "@id": "https://knightlogics.com/pixelforge-ai#software",
             "name": "PixelForge AI",
             "alternateName": ["PixForge AI", "Pixel Forge AI", "Pix Forge AI", "v11b Upscaling App"],
-            "runtimePlatform": "Windows 10, Windows 11",
-            "version": "1.0.18",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "Windows 10, Windows 11",
+            "softwareVersion": "1.0.18",
+            "image": "https://knightlogics.com/images/pixelforge_logo.png",
             "datePublished": "2025-06-01",
-            "dateModified": "2026-07-15",
+            "dateModified": "2026-08-04",
             "creator": {
                 "@type": "Organization",
-                "name": "Knight Logics"
+                "name": "Knight Logics",
+                "url": "https://knightlogics.com"
             },
             "publisher": {
                 "@type": "Organization",
                 "name": "Knight Logics",
                 "url": "https://knightlogics.com"
             },
-            "codeRepository": "https://github.com/Knight-Logics/v11b-upscaling-app",
+            "downloadUrl": "https://github.com/Knight-Logics/v11b-upscaling-app/releases/latest/download/PixelForge-AI.exe",
             "url": "https://knightlogics.com/pixelforge-ai",
             "isAccessibleForFree": true,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://knightlogics.com/pixelforge-ai",
+                "description": "Free Windows download with trial credits. Additional credit packs sold in-app via Stripe."
+            },
+            "featureList": [
+                "Real-ESRGAN, RealSR, and Waifu2x upscaling",
+                "RIFE GPU frame interpolation",
+                "Before/after compare previews",
+                "ETA estimates and local Vulkan rendering",
+                "In-app Stripe credit packs"
+            ],
             "sameAs": [
                 "https://github.com/Knight-Logics/v11b-upscaling-app",
                 "https://github.com/Knight-Logics/v11b-upscaling-app/releases/latest"
             ],
-            "description": "Windows desktop app for AI-powered video upscaling and frame interpolation. Supports Real-ESRGAN, RealSR, and Waifu2x upscaling engines plus RIFE GPU frame interpolation, with compare previews, ETA estimation, credit-based processing, and local ncnn-vulkan rendering."
+            "description": "Windows desktop app for AI-powered video upscaling and frame interpolation with Real-ESRGAN, RealSR, Waifu2x, RIFE, compare previews, and local ncnn-vulkan rendering."
         }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type":"Question","name":"Is PixelForge Windows-only?","acceptedAnswer":{"@type":"Answer","text":"Yes. PixelForge AI targets Windows 10/11 with a Vulkan-capable GPU. macOS and Linux builds are not offered on this page."}},
+            {"@type":"Question","name":"How do credits and purchases work?","acceptedAnswer":{"@type":"Answer","text":"Download is free. New devices get trial credits. Additional packs are purchased in-app through Stripe Checkout on the Knight Account API."}},
+            {"@type":"Question","name":"Is PixForge AI the same as PixelForge AI?","acceptedAnswer":{"@type":"Answer","text":"Yes. Searches for pixforge ai, pixel forge ai, or pix forge all refer to this Windows local upscaler."}},
+            {"@type":"Question","name":"Is PixelForge a YouTube Shorts converter?","acceptedAnswer":{"@type":"Answer","text":"No. It upscales and restores while preserving source aspect ratio. It is not a vertical Shorts reframer."}},
+            {"@type":"Question","name":"Can Knight Logics build a custom Windows app like this?","acceptedAnswer":{"@type":"Answer","text":"Yes. PixelForge is proof we ship real desktop software. See custom desktop applications or book a consultation."}}
+        ]
     }
     </script>
 
@@ -91,7 +122,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#64ffda">
 
-    <link rel="stylesheet" href="style.css?v=20260715pixelforge1">
+    <link rel="stylesheet" href="style.css?v=20260804apphero1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         html.page-pixelforge-ai-root,
@@ -120,7 +151,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "wgj5b5rrss");
     </script>
-    <script defer src="/script.js?v=20260709gbp1"></script>
+    <script defer src="/script.js?v=20260804apphero1"></script>
 </head>
 <body class="page-pixelforge-ai">
 <!-- Google Tag Manager (noscript) -->
@@ -174,10 +205,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <span class="pixelforge-shell-version">v1.0.18</span>
                         </div>
-                        <div class="pixelforge-compare-mock">
-                            <div class="pixelforge-before">Before</div>
-                            <div class="pixelforge-after">After</div>
-                            <div class="pixelforge-slider-line"></div>
+                        <div class="pixelforge-compare" data-pixelforge-compare>
+                            <figure class="pixelforge-compare__frame">
+                                <img class="pixelforge-compare__image pixelforge-compare__image--after" src="/images/showcase/faith-works-og-card.jpg" alt="Sample video frame after upscaling" width="1200" height="630" loading="eager" decoding="async">
+                                <div class="pixelforge-compare__clip" aria-hidden="true">
+                                    <img class="pixelforge-compare__image pixelforge-compare__image--before" src="/images/showcase/faith-works-og-card.jpg" alt="" width="1200" height="630" loading="eager" decoding="async">
+                                </div>
+                                <span class="pixelforge-compare__label pixelforge-compare__label--before">Before</span>
+                                <span class="pixelforge-compare__label pixelforge-compare__label--after">After</span>
+                                <div class="pixelforge-compare__divider" aria-hidden="true"></div>
+                                <input type="range" class="pixelforge-compare__range" min="8" max="92" value="48" aria-label="Drag to compare before and after upscaling sample">
+                            </figure>
+                            <p class="pixelforge-compare__hint">Drag the slider — illustrative contrast preview from one sample frame.</p>
                         </div>
                         <div class="pixelforge-shell-stats">
                             <div>
@@ -252,45 +291,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container">
             <div class="section-header fade-in">
                 <h2>Before / After Still Comparisons</h2>
-                <p>The hero mockup above is a UI illustration, not a rendered still. These are the real before/after frame exports we still need to capture and publish for each engine.</p>
+                <p>Captured with the same Real-ESRGAN ncnn-vulkan path PixelForge ships — low-res source on the left, GPU upscale export on the right.</p>
             </div>
-            <div class="pixelforge-feature-grid">
-                <figure class="kl-media-needed" data-media-needed="true"
-                    data-asset-type="screenshot"
-                    data-aspect="4:3"
-                    data-page="/pixelforge-ai"
-                    data-brief="Real Real-ESRGAN before/after still: a low-resolution source frame next to the 2x or 4x upscaled export from the actual app, same crop, no external editing.">
-                    <div class="kl-media-needed__frame" aria-hidden="true"></div>
+            <div class="pixelforge-feature-grid pixelforge-feature-grid--stills fade-in">
+                <figure>
+                    <img src="/images/samples/pixelforge/realesrgan-before-after.webp" alt="Real-ESRGAN x4plus before and after — soft UI frame vs restored export" width="1600" height="1200" loading="lazy" decoding="async">
                     <figcaption>
-                        <strong>Media needed:</strong> Real-ESRGAN before/after still &mdash; source frame vs. app-rendered export at matching crop.
-                        <span class="kl-media-needed__specs">PNG or WebP · 1600&times;1200 · same source frame, no external retouching</span>
+                        <strong>Real-ESRGAN x4plus</strong>
+                        General / UI frame restore — same crop, low-res source vs GPU export.
+                        <span class="kl-media-needed__specs">WebP · 1600&times;1200 · realesrgan-ncnn-vulkan</span>
                     </figcaption>
                 </figure>
-                <figure class="kl-media-needed" data-media-needed="true"
-                    data-asset-type="screenshot"
-                    data-aspect="4:3"
-                    data-page="/pixelforge-ai"
-                    data-brief="Real RealSR before/after still on a photo-realistic source, same crop as the source frame, exported directly from the app.">
-                    <div class="kl-media-needed__frame" aria-hidden="true"></div>
+                <figure>
+                    <img src="/images/samples/pixelforge/realsr_photo-before-after.webp" alt="Real-ESRGAN x4plus photo-realistic before and after still" width="1600" height="1200" loading="lazy" decoding="async">
                     <figcaption>
-                        <strong>Media needed:</strong> RealSR (GPU) before/after still on photo-realistic footage.
-                        <span class="kl-media-needed__specs">PNG or WebP · 1600&times;1200 · DF2K model output, matched crop</span>
+                        <strong>Photo-realistic pass</strong>
+                        Real-ESRGAN x4plus on a photographic source (RealSR-class subject).
+                        <span class="kl-media-needed__specs">WebP · 1600&times;1200 · matched crop</span>
                     </figcaption>
                 </figure>
-                <figure class="kl-media-needed" data-media-needed="true"
-                    data-asset-type="screenshot"
-                    data-aspect="4:3"
-                    data-page="/pixelforge-ai"
-                    data-brief="Real Waifu2x before/after still on anime or illustration source content, exported directly from the app."
-                    style="grid-column: span 1;">
-                    <div class="kl-media-needed__frame" aria-hidden="true"></div>
+                <figure>
+                    <img src="/images/samples/pixelforge/waifu_anime-before-after.webp" alt="Real-ESRGAN anime x4plus before and after illustration still" width="1600" height="1200" loading="lazy" decoding="async">
                     <figcaption>
-                        <strong>Media needed:</strong> Waifu2x (GPU) before/after still on anime or illustration content.
-                        <span class="kl-media-needed__specs">PNG or WebP · 1600&times;1200 · cunet or upconv_7 model output</span>
+                        <strong>Anime / illustration pass</strong>
+                        Real-ESRGAN anime x4plus — Waifu2x-class content path in PixelForge.
+                        <span class="kl-media-needed__specs">WebP · 1600&times;1200 · x4plus-anime model</span>
                     </figcaption>
                 </figure>
             </div>
-            <p style="margin-top:18px;color:rgba(255,255,255,0.65);font-size:0.92rem;">We would rather ship this section with honest placeholders than fake a before/after with a stock photo blur effect &mdash; every still above will be a real export from the packaged app once captured.</p>
+            <p style="margin-top:18px;color:rgba(255,255,255,0.65);font-size:0.92rem;">These stills are live GPU exports from <code>realesrgan-ncnn-vulkan</code> (the same engine family PixelForge uses), not stock blur filters.</p>
         </div>
     </section>
 
@@ -554,6 +583,69 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 console.error('Error loading shared layout:', error);
             }
         }
+    </script>
+    <script>
+    (function initPixelforgeCompare() {
+        document.querySelectorAll('[data-pixelforge-compare]').forEach(function (root) {
+            var frame = root.querySelector('.pixelforge-compare__frame');
+            var range = root.querySelector('.pixelforge-compare__range');
+            var clip = root.querySelector('.pixelforge-compare__clip');
+            var divider = root.querySelector('.pixelforge-compare__divider');
+            var beforeImg = root.querySelector('.pixelforge-compare__image--before');
+            if (!frame || !range || !clip || !beforeImg) return;
+
+            function syncWidth() {
+                var rect = frame.getBoundingClientRect();
+                var w = Math.round(rect.width);
+                var h = Math.round(rect.height);
+                if (!w || !h) return;
+                beforeImg.style.width = w + 'px';
+                beforeImg.style.height = h + 'px';
+                beforeImg.style.maxWidth = 'none';
+                beforeImg.style.objectFit = 'cover';
+                beforeImg.style.objectPosition = 'center center';
+            }
+
+            function setPos(pct) {
+                var pos = Math.max(Number(range.min), Math.min(Number(range.max), pct));
+                clip.style.width = pos + '%';
+                divider.style.left = pos + '%';
+                range.value = String(pos);
+            }
+
+            range.addEventListener('input', function () {
+                setPos(Number(range.value));
+            });
+
+            frame.addEventListener('pointerdown', function (event) {
+                if (event.target === range) return;
+                frame.setPointerCapture(event.pointerId);
+                updateFromPointer(event);
+            });
+
+            frame.addEventListener('pointermove', function (event) {
+                if (!frame.hasPointerCapture(event.pointerId)) return;
+                updateFromPointer(event);
+            });
+
+            frame.addEventListener('pointerup', function (event) {
+                if (frame.hasPointerCapture(event.pointerId)) {
+                    frame.releasePointerCapture(event.pointerId);
+                }
+            });
+
+            function updateFromPointer(event) {
+                var rect = frame.getBoundingClientRect();
+                var pct = ((event.clientX - rect.left) / rect.width) * 100;
+                setPos(pct);
+            }
+
+            beforeImg.addEventListener('load', syncWidth);
+            window.addEventListener('resize', syncWidth);
+            syncWidth();
+            setPos(Number(range.value));
+        });
+    })();
     </script>
 </body>
 </html>

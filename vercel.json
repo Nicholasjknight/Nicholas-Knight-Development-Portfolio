@@ -117,6 +117,16 @@
       "permanent": true
     },
     {
+      "source": "/ai-search-readiness.html",
+      "destination": "/ai-search-readiness",
+      "permanent": true
+    },
+    {
+      "source": "/conversion-leak-audit.html",
+      "destination": "/conversion-leak-audit",
+      "permanent": true
+    },
+    {
       "source": "/full-access-website-audit.html",
       "destination": "/full-access-website-audit",
       "permanent": true
@@ -149,6 +159,16 @@
     {
       "source": "/sample-local-opportunity-pack.html",
       "destination": "/sample-local-opportunity-pack",
+      "permanent": true
+    },
+    {
+      "source": "/sample-ai-search-readiness.html",
+      "destination": "/sample-ai-search-readiness",
+      "permanent": true
+    },
+    {
+      "source": "/sample-conversion-leak-audit.html",
+      "destination": "/sample-conversion-leak-audit",
       "permanent": true
     },
     {
@@ -239,6 +259,11 @@
     {
       "source": "/case-study-faith-works.html",
       "destination": "/case-study-faith-works",
+      "permanent": true
+    },
+    {
+      "source": "/case-study-breaking-ground.html",
+      "destination": "/case-study-breaking-ground",
       "permanent": true
     },
     {
@@ -839,6 +864,10 @@
       "destination": "/case-study-farrell-electric.html"
     },
     {
+      "source": "/case-study-breaking-ground",
+      "destination": "/case-study-breaking-ground.html"
+    },
+    {
       "source": "/case-study-sals-painting",
       "destination": "/case-study-sals-painting.html"
     },
@@ -1195,6 +1224,42 @@
     },
     {
       "source": "/sample-local-opportunity-pack.html",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow, noarchive"
+        }
+      ]
+    },
+    {
+      "source": "/sample-ai-search-readiness",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow, noarchive"
+        }
+      ]
+    },
+    {
+      "source": "/sample-ai-search-readiness.html",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow, noarchive"
+        }
+      ]
+    },
+    {
+      "source": "/sample-conversion-leak-audit",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow, noarchive"
+        }
+      ]
+    },
+    {
+      "source": "/sample-conversion-leak-audit.html",
       "headers": [
         {
           "key": "X-Robots-Tag",

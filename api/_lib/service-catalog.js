@@ -13,20 +13,38 @@ const SERVICES = Object.freeze({
     agency_white_label_health_5: Object.freeze({
         sku: 'agency_white_label_health_5',
         name: 'White-Label AI Search + Website Health Audit',
-        description: 'Agency-branded outside-in report for up to five public pages, including raw JSON evidence.',
-        amount: 9900,
+        description: 'Same $39 outside-in health engine with your agency name on the PDF cover — not a deeper audit.',
+        amount: 4900,
         inputKeys: ['clientName', 'websiteUrl', 'agencyName'],
         fulfillment: 'paid_external_audit',
-        offerVersion: '2026-07-v1'
+        offerVersion: '2026-08-v1'
     }),
     local_opportunity_50: Object.freeze({
         sku: 'local_opportunity_50',
         name: '50-Prospect Local Opportunity Intelligence Pack',
-        description: 'Fifty distinct public business records ranked by basic website opportunity signals.',
-        amount: 3900,
+        description: 'Niche + location prospect pack with contact enrichment, email MX verification, phone format validation, and credibility ranking. CSV + HTML.',
+        amount: 4900,
         inputKeys: ['targetNiche', 'location', 'radiusMiles'],
         fulfillment: 'prospect_opportunity_pack',
-        offerVersion: '2026-07-v2'
+        offerVersion: '2026-08-v2'
+    }),
+    ai_search_readiness: Object.freeze({
+        sku: 'ai_search_readiness',
+        name: 'AI Search Readiness Pack',
+        description: 'Outside-in GEO/AEO signals: llms.txt, FAQPage, AI crawler policy, robots, and schema readiness evidence. PDF + HTML + JSON.',
+        amount: 7900,
+        inputKeys: ['websiteUrl'],
+        fulfillment: 'paid_module_evidence_pack',
+        offerVersion: 'ai-search-ready-v1'
+    }),
+    conversion_leak_audit: Object.freeze({
+        sku: 'conversion_leak_audit',
+        name: 'Conversion Leak Audit',
+        description: 'Playwright scan for broken forms, weak CTAs, phones, and missing trust cues. PDF + HTML + JSON findings.',
+        amount: 9900,
+        inputKeys: ['websiteUrl'],
+        fulfillment: 'paid_module_evidence_pack',
+        offerVersion: 'conversion-leak-v1'
     }),
     full_access_gsc_audit: Object.freeze({
         sku: 'full_access_gsc_audit',

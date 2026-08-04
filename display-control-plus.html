@@ -32,35 +32,65 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         "@context": "https://schema.org",
         "@type": "WebPage",
         "@id": "https://knightlogics.com/display-control-plus#webpage",
-        "name": "Display Control+ | Knight Logics",
+        "name": "Display Control+ | Professional Display Protection for Windows",
         "url": "https://knightlogics.com/display-control-plus",
         "description": "Professional Windows utility for per-monitor OLED/LCD burn-in protection with tray controls, idle detection modes, media overlays, and persistent settings.",
         "mainEntity": {
-            "@type": "SoftwareSourceCode",
+            "@type": "SoftwareApplication",
             "@id": "https://knightlogics.com/display-control-plus#software",
             "name": "Display Control+",
-            "runtimePlatform": "Windows 10, Windows 11",
-            "version": "1.0.x",
+            "applicationCategory": "UtilitiesApplication",
+            "operatingSystem": "Windows 10, Windows 11",
+            "softwareVersion": "1.1.1",
+            "image": "https://knightlogics.com/images/Display-Control-Plus-Logo.webp",
             "datePublished": "2025-07-01",
-            "dateModified": "2026-04-02",
+            "dateModified": "2026-08-04",
             "creator": {
                 "@type": "Organization",
-                "name": "Knight Logics"
+                "name": "Knight Logics",
+                "url": "https://knightlogics.com"
             },
             "publisher": {
                 "@type": "Organization",
                 "name": "Knight Logics",
                 "url": "https://knightlogics.com"
             },
-            "codeRepository": "https://github.com/Knight-Logics/display-control-plus",
+            "downloadUrl": "https://github.com/Knight-Logics/display-control-plus/releases/download/v1.1.1/DisplayControlSetup_v1.1.1.exe",
             "url": "https://knightlogics.com/display-control-plus",
             "isAccessibleForFree": true,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://knightlogics.com/display-control-plus",
+                "description": "14-day free trial, then annual subscription or one-time lifetime license via Stripe."
+            },
+            "featureList": [
+                "Per-monitor OLED/LCD protection",
+                "Tray-first controls",
+                "Idle detection modes",
+                "Blank, image, slideshow, and video overlays",
+                "Persistent AppData configuration"
+            ],
             "sameAs": [
                 "https://github.com/Knight-Logics/display-control-plus",
                 "https://github.com/Knight-Logics/display-control-plus/releases/tag/v1.1.1"
             ],
             "description": "Professional Windows utility for per-monitor OLED/LCD burn-in protection with tray controls, idle detection modes, media overlays, and persistent settings."
         }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type":"Question","name":"Is Display Control+ free?","acceptedAnswer":{"@type":"Answer","text":"New installs get a 14-day free trial. After that, continued use requires an annual subscription or a one-time lifetime license through Stripe checkout."}},
+            {"@type":"Question","name":"Which executable should I actually run?","acceptedAnswer":{"@type":"Answer","text":"tray.exe. It is the recommended entry point for daily use. DisplayControl.exe opens the dashboard directly if you need it, and overlay_bg.exe is a background process the tray app manages."}},
+            {"@type":"Question","name":"Do my settings survive a restart?","acceptedAnswer":{"@type":"Answer","text":"Yes. Configuration is stored in %APPDATA%\\KnightLogics\\DisplayControlPlus\\config.json, and license/account state is stored separately in license.json in the same folder."}},
+            {"@type":"Question","name":"Can I run different protection rules on different monitors?","acceptedAnswer":{"@type":"Answer","text":"Yes. Per-monitor profiles let one display use a fast timeout while another uses a longer one, with mixed-timeout reliability improved in v1.1.1."}}
+        ]
     }
     </script>
 
@@ -73,7 +103,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="theme-color" content="#6de1ff">
     <meta name="msapplication-TileColor" content="#0a0a0a">
 
-    <link rel="stylesheet" href="style.css?v=20260709center1">
+    <link rel="stylesheet" href="style.css?v=20260804apphero1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script type="application/ld+json">
     {
@@ -86,7 +116,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         ]
     }
     </script>
-    <title>Display Control+ | Knight Logics</title>
+    <title>Display Control+ | Professional Display Protection for Windows</title>
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
@@ -95,7 +125,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "wgj5b5rrss");
     </script>
-    <script defer src="/script.js?v=20260709gbp1"></script>
+    <script defer src="/script.js?v=20260804apphero1"></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -197,17 +227,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </ul>
                 </div>
             </article>
-            <figure class="kl-media-needed fade-in" data-media-needed="true"
-                data-asset-type="video"
-                data-aspect="16:9"
-                data-page="/display-control-plus"
-                data-brief="Screen-recorded walkthrough of the real Display Control+ tray app: opening the dashboard, selecting monitors, choosing a detection mode, and setting an overlay (blank/image/slideshow/video).">
-                <div class="kl-media-needed__frame" aria-hidden="true"></div>
-                <figcaption>
-                    <strong>Media needed:</strong> A recorded walkthrough of the actual tray.exe &rarr; dashboard flow, captured from a real multi-monitor Windows machine, not a mockup.
-                    <span class="kl-media-needed__specs">MP4 or YouTube embed · 16:9 · 60&ndash;120s · screen capture of real app</span>
-                </figcaption>
-            </figure>
+            <figure class="kl-media-filled">
+                    <img src="/images/added-media/Display%20Control+%20Page.png" alt="Display Control+ dashboard walkthrough still" loading="lazy" decoding="async" width="1600" height="900">
+                    <figcaption><strong>Dashboard flow</strong> Display Control+ — monitor selection, detection modes, and overlay picker from the shipped Windows build. <span class="kl-media-needed__specs">Still from live UI · full screen recording queued</span></figcaption>
+                </figure>
         </div>
     </section>
 
@@ -243,9 +266,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <img src="/images/added-media/Display%20Control+%20Page.png" alt="Display Control+ dashboard — per-monitor selection, detection modes, and overlay picker" loading="lazy" width="1400" height="900">
                     <figcaption><strong>Dashboard</strong> Per-monitor profiles and overlay modes from the shipped build.</figcaption>
                 </figure>
-                <figure class="kl-media-needed" data-media-needed="true" data-asset-type="screenshot" data-aspect="16:9" data-page="/display-control-plus" data-brief="Screenshot of tray.exe system tray menu with Open Dashboard, Pause/Resume, and Exit options on a live Windows machine.">
-                    <div class="kl-media-needed__frame" aria-hidden="true"></div>
-                    <figcaption><strong>Media needed:</strong> Tray context menu capture — Open Dashboard, Pause/Resume, Exit on a real multi-monitor setup. <span class="kl-media-needed__specs">PNG · 1600×900</span></figcaption>
+                <figure class="kl-media-filled">
+                    <img src="/images/added-media/Display%20Control%20Plus%20Tray%20Menu.png" alt="Display Control+ tray menu and dashboard" loading="lazy" decoding="async" width="1600" height="900">
+                    <figcaption><strong>Tray-first</strong> tray.exe context menu path (Open Dashboard / Pause / Exit) with the live dashboard shown for the same build.</figcaption>
                 </figure>
             </div>
             <div class="displayplus-feature-grid">
