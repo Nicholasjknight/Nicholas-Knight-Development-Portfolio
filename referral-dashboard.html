@@ -1242,7 +1242,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         if (!currentQrUrl) return;
         setBuilderStatus('Building brochure download...');
         try {
-            var base = await loadImage('/images/KLBrochure.png');
+            var base = await loadImage('/images/KLBrochure.webp');
             var qr = await loadImage(getQrApiUrl(currentQrUrl, 512, 2));
             var canvas = document.createElement('canvas');
             canvas.width = base.naturalWidth || base.width;

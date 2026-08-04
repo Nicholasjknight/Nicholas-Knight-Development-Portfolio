@@ -3964,7 +3964,7 @@ document.addEventListener('keydown', function(event) {
         banner.setAttribute('role', 'complementary');
         banner.setAttribute('aria-label', 'Install Knight Logics app');
         banner.innerHTML = `
-            <img class="pwa-install-icon" src="./images/KnightLogicsLogo2.png" alt="Knight Logics" width="40" height="40">
+            <img class="pwa-install-icon" src="./images/KnightLogicsLogo2.webp" alt="Knight Logics" width="40" height="40">
             <div class="pwa-install-text">
                 <strong>Knight Logics</strong>
                 <span>Add to your home screen</span>

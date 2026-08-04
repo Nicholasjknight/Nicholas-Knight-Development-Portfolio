@@ -9,24 +9,24 @@
   "scope": "/",
   "icons": [
     {
-      "src": "./images/KnightLogicsLogo2.png",
+      "src": "./images/KnightLogicsLogo2.webp",
       "sizes": "192x192",
-      "type": "image/png",
+      "type": "image/webp",
       "purpose": "any"
     },
     {
-      "src": "./images/KnightLogicsLogo2.png",
+      "src": "./images/KnightLogicsLogo2.webp",
       "sizes": "512x512",
-      "type": "image/png",
+      "type": "image/webp",
       "purpose": "any"
     }
   ],
   "categories": ["business", "technology"],
   "screenshots": [
     {
-      "src": "./images/KnightLogicsLogo2.png",
+      "src": "./images/KnightLogicsLogo2.webp",
       "sizes": "540x720",
-      "type": "image/png"
+      "type": "image/webp"
     }
   ]
 }
