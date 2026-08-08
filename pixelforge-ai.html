@@ -75,6 +75,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 "Three cached source-frame crop previews",
                 "Same resolution, 1080p, 1440p, 4K, and 8K output targets",
                 "Checkpointed local rendering with NVENC support",
+                "Automatic interlace correction and HDR/10-bit precision guard",
                 "In-app Stripe credit packs"
             ],
             "sameAs": [
@@ -435,6 +436,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <li>Three cached source-frame crop previews with progress and cancellation</li>
                             <li>H.264, HEVC 10-bit, AV1 10-bit, ProRes 422 HQ, image sequences, and NVENC</li>
                             <li>High-bit sources stay RGB48 through FP32 DirectML inference and feed the final 10-bit encoder without an 8-bit frame checkpoint</li>
+                            <li>Automatic quality guard corrects interlaced sources, routes HDR/10-bit video away from 8-bit AI engines, and warns before enlargement beyond a credible 4x recovery range</li>
                         </ul>
                     </div>
                 </div>
