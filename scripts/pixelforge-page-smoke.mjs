@@ -3,7 +3,8 @@ import path from 'node:path';
 import { chromium } from 'playwright';
 
 const target = process.argv[2] || 'http://127.0.0.1:8765/pixelforge-ai.html';
-const outputDir = path.resolve('website-audit', '2026-07-15');
+const targetOrigin = new URL(target).origin;
+const outputDir = path.resolve('website-audit', '2026-08-08');
 await fs.mkdir(outputDir, { recursive: true });
 
 const viewports = [
@@ -23,15 +24,16 @@ try {
     const localRequestFailures = [];
     page.on('pageerror', (error) => pageErrors.push(error.message));
     page.on('requestfailed', (request) => {
-      if (request.url().startsWith('http://127.0.0.1:8765/')) {
+      if (request.url().startsWith(`${targetOrigin}/`)) {
         localRequestFailures.push(`${request.url()}: ${request.failure()?.errorText || 'failed'}`);
       }
     });
 
     const response = await page.goto(target, { waitUntil: 'networkidle', timeout: 45_000 });
+    await page.waitForTimeout(300);
     const checks = await page.evaluate(() => {
       const download = document.querySelector('a[href*="releases/latest/download/PixelForge-AI.exe"]');
-      const release = document.querySelector('a[href*="releases/tag/v1.0.18"]');
+      const release = document.querySelector('a[href*="releases/tag/v1.0.20"]');
       const schemas = [...document.querySelectorAll('script[type="application/ld+json"]')]
         .map((node) => {
           try { return JSON.parse(node.textContent || '{}'); } catch { return null; }
@@ -39,18 +41,26 @@ try {
         .filter(Boolean);
       const software = schemas
         .map((item) => item.mainEntity || item)
-        .find((item) => item['@type'] === 'SoftwareSourceCode');
+        .find((item) => item['@type'] === 'SoftwareApplication');
+      const heroGridRect = document.querySelector('.pixelforge-hero-grid')?.getBoundingClientRect();
       return {
         title: document.title,
         h1: document.querySelector('h1')?.textContent?.trim() || '',
         visibleVersion: document.querySelector('.pixelforge-shell-version')?.textContent?.trim() || '',
-        hasTrialCopy: document.body.innerText.includes('New devices receive a server-backed trial'),
-        hasNeutralDefaultCopy: document.body.innerText.includes('benchmarked neutral 2x default'),
+        hasTrialCopy: document.body.innerText.includes('20 server-backed trial credits'),
+        hasTargetDrivenCopy: document.body.innerText.includes('Same resolution, 1080p, 1440p, 4K, or 8K'),
+        hasSixEngineCopy: document.body.innerText.includes('Six Local AI Enhancement Engines'),
+        hasPreviewCopy: document.body.innerText.includes('three real source-frame numbers'),
         downloadHref: download?.href || '',
         releaseHref: release?.href || '',
-        schemaVersion: software?.version || '',
+        schemaVersion: software?.softwareVersion || '',
         schemaModified: software?.dateModified || '',
         horizontalOverflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+        heroContentWithinViewport: Boolean(
+          heroGridRect
+            && heroGridRect.left >= -1
+            && heroGridRect.right <= window.innerWidth + 1
+        ),
         rootDiagnostics: {
           viewportWidth: window.innerWidth,
           htmlClientWidth: document.documentElement.clientWidth,
@@ -102,21 +112,24 @@ try {
           .slice(0, 12),
       };
     });
-    const screenshot = path.join(outputDir, `pixelforge-v1018-${viewport.name}-viewport.png`);
-    const fullPageScreenshot = path.join(outputDir, `pixelforge-v1018-${viewport.name}-full.png`);
+    const screenshot = path.join(outputDir, `pixelforge-v1020-${viewport.name}-viewport.png`);
+    const fullPageScreenshot = path.join(outputDir, `pixelforge-v1020-${viewport.name}-full.png`);
     await page.screenshot({ path: screenshot, fullPage: false });
     await page.screenshot({ path: fullPageScreenshot, fullPage: true });
     const passed = Boolean(
       response?.ok()
-      && checks.h1 === 'PixelForge AI'
-      && checks.visibleVersion === 'v1.0.18'
+      && checks.h1 === 'PixelForge AI / PixForge'
+      && checks.visibleVersion === 'v1.0.20'
       && checks.hasTrialCopy
-      && checks.hasNeutralDefaultCopy
+      && checks.hasTargetDrivenCopy
+      && checks.hasSixEngineCopy
+      && checks.hasPreviewCopy
       && checks.downloadHref.endsWith('/releases/latest/download/PixelForge-AI.exe')
-      && checks.releaseHref.endsWith('/releases/tag/v1.0.18')
-      && checks.schemaVersion === '1.0.18'
-      && checks.schemaModified === '2026-07-15'
+      && checks.releaseHref.endsWith('/releases/tag/v1.0.20')
+      && checks.schemaVersion === '1.0.20'
+      && checks.schemaModified === '2026-08-08'
       && checks.horizontalOverflow <= 1
+      && checks.heroContentWithinViewport
       && pageErrors.length === 0
       && localRequestFailures.length === 0
     );

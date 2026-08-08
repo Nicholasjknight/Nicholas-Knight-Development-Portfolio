@@ -216,10 +216,13 @@ If those scripts are unavailable or dirty in the current worktree, use direct Pl
 - Render billing is reservation-based: `reserve` deducts atomically, `commit` finalizes a valid output, and `release` returns the exact trial/paid split after cancellation or failure.
 - Stripe package metadata uses `app=pixelforge_ai`; `api/stripe-webhook.js` credits completed sessions even when the desktop app closes before confirmation.
 - Current server-authoritative packages are 32 credits / $5, 68 / $10, and 144 / $20. The desktop app cannot override those amounts.
+- A one-time `pro_lifetime` entitlement is implemented but remains disabled until `PIXELFORGE_PRO_LIFETIME_PRICE_CENTS` is deliberately set. Do not invent or deploy a price without an explicit business decision.
+- As audited on 2026-08-08, Vercel Development has a Stripe test key, but the linked Production `KL_DATABASE_URL` value pulls as empty (`""`). Stripe test Checkout and signed/idempotent fulfillment contracts pass; real database/webhook integration cannot be considered healthy until a non-empty Postgres URL is configured and `npm run test:pixelforge-billing:db` passes against it.
 - Anonymous diagnostics exclude media, file paths, computer names, raw machine identifiers, and email. The app sends an app-scoped device hash plus coarse render/profile outcomes and supports `V11B_DISABLE_ANONYMOUS_DIAGNOSTICS=1`.
 - Main smoke check: `npm run test:pixelforge-billing`.
-- Desktop release `v1.0.18` was published on 2026-07-15 with the production client, benchmarked native-safe presets, packaged EXE/ZIP, and SHA-256 checksums: `https://github.com/Knight-Logics/v11b-upscaling-app/releases/tag/v1.0.18`.
-- Product-page regression check: `node scripts/pixelforge-page-smoke.mjs http://127.0.0.1:8765/pixelforge-ai.html`; it validates desktop/mobile overflow, release links, visible version, trial/default copy, and SoftwareSourceCode schema.
+- Non-charging Stripe page smoke: set `PIXELFORGE_CHECKOUT_SMOKE_URL` to a newly created Checkout URL, then run `npm run test:pixelforge-checkout`. It verifies the product, amount, and payment form without submitting payment.
+- Desktop source `v1.0.20` adds six enhancement engines (including DirectML SPAN), target-driven output, three cached crop previews, benchmark-refined content presets, bounded-memory DirectML streaming, RGB48/FP32 high-bit inference, checkpoint/resume for directory-only engines, a single final encode, NVENC, and professional container/track preservation. Publish the matching EXE/ZIP and SHA-256 checksums before promoting the `v1.0.20` release URL; `v1.0.18` remains the last confirmed public release until then.
+- Product-page regression check: `node scripts/pixelforge-page-smoke.mjs http://127.0.0.1:8765/pixelforge-ai.html`; it validates desktop/mobile overflow, release links, visible version, trial/target-driven copy, and SoftwareApplication schema.
 
 ## Security Baseline
 

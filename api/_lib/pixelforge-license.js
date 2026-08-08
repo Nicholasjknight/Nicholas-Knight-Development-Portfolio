@@ -3,12 +3,12 @@
 const Stripe = require('stripe');
 const { neon } = require('@neondatabase/serverless');
 const {
-    PIXELFORGE_PLANS,
     commitReservation,
     countRecentCheckoutStarts,
     creditPaidSession,
     ensureTables,
     getStatus,
+    getPlan,
     normEmail,
     normMachineId,
     normPlanId,
@@ -123,7 +123,7 @@ async function createCheckout(sql, stripe, req, machineId, body) {
         return { ok: false, statusCode: 429, error: 'Too many checkout attempts. Wait a few minutes and try again.' };
     }
 
-    const plan = PIXELFORGE_PLANS[planId];
+    const plan = getPlan(planId);
     const email = normEmail(body.email || '');
     const session = await stripe.checkout.sessions.create({
         mode: 'payment',
@@ -137,7 +137,9 @@ async function createCheckout(sql, stripe, req, machineId, body) {
                     unit_amount: plan.amount,
                     product_data: {
                         name: `PixelForge AI - ${plan.label}`,
-                        description: `${plan.credits} credits for local AI video enhancement.`
+                        description: plan.entitlement === 'pro_lifetime'
+                            ? 'One-time PixelForge AI Pro license for local AI enhancement.'
+                            : `${plan.credits} credits for local AI video enhancement.`
                     }
                 }
             }
@@ -147,6 +149,7 @@ async function createCheckout(sql, stripe, req, machineId, body) {
             machine_id: machineId,
             plan_id: planId,
             credits: String(plan.credits),
+            entitlement: plan.entitlement || 'credits',
             paymentType: 'desktop_app_credit_pack'
         },
         success_url: successUrl,

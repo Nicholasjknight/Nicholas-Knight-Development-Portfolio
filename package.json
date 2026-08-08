@@ -29,6 +29,8 @@
     "test:license-cors": "node scripts/license-cors-smoke.js",
     "test:pixelforge-billing": "node scripts/pixelforge-billing-smoke.js",
     "test:pixelforge-billing:db": "node scripts/pixelforge-billing-db-smoke.js",
+    "test:pixelforge-checkout": "node scripts/pixelforge-checkout-smoke.mjs",
+    "test:pixelforge-purchase": "node scripts/pixelforge-purchase-smoke.mjs",
     "test:security-render": "node scripts/site-security-render-smoke.js",
     "test:whistle-stop-content": "node scripts/whistle-stop-content-smoke.js"
   },

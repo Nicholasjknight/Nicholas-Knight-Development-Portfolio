@@ -5,6 +5,7 @@ const crypto = require('crypto');
 const FREE_TRIAL_CREDITS = 20;
 const MAX_RENDER_CREDITS = 5000;
 const RESERVATION_TTL_MINUTES = 24 * 60;
+const PRO_LIFETIME_PLAN_ID = 'pro_lifetime';
 
 const PIXELFORGE_PLANS = Object.freeze({
     starter_32: Object.freeze({
@@ -55,7 +56,25 @@ function normEmail(value) {
 }
 
 function normPlanId(value) {
-    return typeof value === 'string' && PIXELFORGE_PLANS[value] ? value : null;
+    return typeof value === 'string' && getPlan(value) ? value : null;
+}
+
+function getLifetimeProPlan() {
+    const amount = Number.parseInt(process.env.PIXELFORGE_PRO_LIFETIME_PRICE_CENTS || '', 10);
+    if (!Number.isFinite(amount) || amount < 1000 || amount > 500000) return null;
+    return Object.freeze({
+        id: PRO_LIFETIME_PLAN_ID,
+        label: 'PixelForge AI Pro',
+        credits: 0,
+        amount,
+        badge: 'One-time license',
+        entitlement: PRO_LIFETIME_PLAN_ID
+    });
+}
+
+function getPlan(planId) {
+    if (typeof planId !== 'string') return null;
+    return PIXELFORGE_PLANS[planId] || (planId === PRO_LIFETIME_PLAN_ID ? getLifetimeProPlan() : null);
 }
 
 function normCredits(value) {
@@ -100,12 +119,16 @@ function cleanTelemetryMetadata(value) {
 }
 
 function publicPlans() {
-    return Object.values(PIXELFORGE_PLANS).map((plan) => ({
+    const plans = Object.values(PIXELFORGE_PLANS);
+    const lifetime = getLifetimeProPlan();
+    if (lifetime) plans.push(lifetime);
+    return plans.map((plan) => ({
         id: plan.id,
         label: plan.label,
         credits: plan.credits,
         amount_cents: plan.amount,
-        badge: plan.badge
+        badge: plan.badge,
+        entitlement: plan.entitlement || 'credits'
     }));
 }
 
@@ -116,6 +139,7 @@ async function ensureTables(sql) {
             free_trial_total integer NOT NULL DEFAULT 20,
             free_trial_remaining integer NOT NULL DEFAULT 20,
             paid_credits integer NOT NULL DEFAULT 0,
+            pro_lifetime boolean NOT NULL DEFAULT false,
             email text,
             stripe_customer_id text,
             created_at timestamptz NOT NULL DEFAULT now(),
@@ -123,6 +147,7 @@ async function ensureTables(sql) {
             last_seen_at timestamptz NOT NULL DEFAULT now()
         )
     `;
+    await sql`ALTER TABLE pixelforge_accounts ADD COLUMN IF NOT EXISTS pro_lifetime boolean NOT NULL DEFAULT false`;
 
     await sql`
         CREATE TABLE IF NOT EXISTS pixelforge_credit_reservations (
@@ -178,7 +203,7 @@ async function getAccount(sql, machineId, email = null) {
             email = COALESCE(EXCLUDED.email, pixelforge_accounts.email),
             updated_at = now(),
             last_seen_at = now()
-        RETURNING machine_id, free_trial_total, free_trial_remaining, paid_credits,
+        RETURNING machine_id, free_trial_total, free_trial_remaining, paid_credits, pro_lifetime,
             email, stripe_customer_id, created_at, updated_at, last_seen_at
     `;
     return account;
@@ -187,11 +212,14 @@ async function getAccount(sql, machineId, email = null) {
 function statusPayload(account, extras = {}) {
     const freeRemaining = Number(account.free_trial_remaining || 0);
     const paidCredits = Number(account.paid_credits || 0);
+    const proActive = account.pro_lifetime === true;
     return {
         ok: true,
         machine_id: account.machine_id,
         credits: freeRemaining + paidCredits,
         paid_credits: paidCredits,
+        pro_active: proActive,
+        unlimited: proActive,
         free_trial_total: Number(account.free_trial_total || FREE_TRIAL_CREDITS),
         free_trial_remaining: freeRemaining,
         email_linked: Boolean(account.email),
@@ -236,7 +264,26 @@ async function reserveCredits(sql, machineId, creditsValue, metadata = {}) {
     if (!credits) return { ok: false, error: 'Invalid render credit amount.' };
 
     await releaseExpiredReservations(sql, machineId);
-    await getAccount(sql, machineId);
+    const currentAccount = await getAccount(sql, machineId);
+
+    if (currentAccount.pro_lifetime === true) {
+        const reservationId = `pfr_${crypto.randomBytes(16).toString('hex')}`;
+        const cleanedMetadata = cleanTelemetryMetadata(metadata);
+        const [reservation] = await sql`
+            INSERT INTO pixelforge_credit_reservations
+                (reservation_id, machine_id, credits, free_credits, paid_credits, render_metadata, expires_at)
+            VALUES (${reservationId}, ${machineId}, ${credits}, 0, 0,
+                ${JSON.stringify(cleanedMetadata)}::jsonb,
+                now() + (${RESERVATION_TTL_MINUTES} * interval '1 minute'))
+            RETURNING reservation_id, credits, expires_at
+        `;
+        return statusPayload(currentAccount, {
+            reservation_id: reservation.reservation_id,
+            reserved_credits: Number(reservation.credits || credits),
+            expires_at: reservation.expires_at,
+            entitlement: PRO_LIFETIME_PLAN_ID
+        });
+    }
 
     const reservationId = `pfr_${crypto.randomBytes(16).toString('hex')}`;
     const cleanedMetadata = cleanTelemetryMetadata(metadata);
@@ -258,7 +305,7 @@ async function reserveCredits(sql, machineId, creditsValue, metadata = {}) {
             FROM balance
             WHERE account.machine_id = balance.machine_id
             RETURNING account.machine_id, account.free_trial_total,
-                account.free_trial_remaining, account.paid_credits, account.email
+                account.free_trial_remaining, account.paid_credits, account.pro_lifetime, account.email
         ), created AS (
             INSERT INTO pixelforge_credit_reservations
                 (reservation_id, machine_id, credits, free_credits, paid_credits, render_metadata, expires_at)
@@ -269,7 +316,7 @@ async function reserveCredits(sql, machineId, creditsValue, metadata = {}) {
             RETURNING reservation_id, credits, free_credits, paid_credits, expires_at
         )
         SELECT charged.machine_id, charged.free_trial_total, charged.free_trial_remaining,
-            charged.paid_credits, charged.email, created.reservation_id,
+            charged.paid_credits, charged.pro_lifetime, charged.email, created.reservation_id,
             created.credits AS reserved_credits, created.free_credits AS reserved_free_credits,
             created.paid_credits AS reserved_paid_credits, created.expires_at
         FROM charged CROSS JOIN created
@@ -353,7 +400,7 @@ async function releaseReservation(sql, machineId, reservationValue) {
             FROM released
             WHERE account.machine_id = released.machine_id
             RETURNING account.machine_id, account.free_trial_total,
-                account.free_trial_remaining, account.paid_credits, account.email
+                account.free_trial_remaining, account.paid_credits, account.pro_lifetime, account.email
         )
         SELECT restored.*, released.credits AS released_credits
         FROM restored CROSS JOIN released
@@ -425,7 +472,7 @@ async function creditPaidSession(sql, session, expectedMachineId = null) {
         return { ok: false, error: 'Checkout session is not a PixelForge purchase.' };
     }
 
-    const plan = PIXELFORGE_PLANS[planId];
+    const plan = getPlan(planId);
     const amountTotal = Number(session.amount_total || 0);
     const currency = typeof session.currency === 'string' ? session.currency.toLowerCase() : 'usd';
     if (session.payment_status !== 'paid') {
@@ -457,11 +504,19 @@ async function creditPaidSession(sql, session, expectedMachineId = null) {
     `;
 
     if (inserted.length) {
-        await sql`
-            UPDATE pixelforge_accounts
-            SET paid_credits = paid_credits + ${plan.credits}, updated_at = now()
-            WHERE machine_id = ${machineId}
-        `;
+        if (plan.entitlement === PRO_LIFETIME_PLAN_ID) {
+            await sql`
+                UPDATE pixelforge_accounts
+                SET pro_lifetime = true, updated_at = now()
+                WHERE machine_id = ${machineId}
+            `;
+        } else {
+            await sql`
+                UPDATE pixelforge_accounts
+                SET paid_credits = paid_credits + ${plan.credits}, updated_at = now()
+                WHERE machine_id = ${machineId}
+            `;
+        }
     }
 
     const account = await getAccount(sql, machineId, email);
@@ -470,6 +525,7 @@ async function creditPaidSession(sql, session, expectedMachineId = null) {
         credited: inserted.length > 0,
         credited_credits: inserted.length ? plan.credits : 0,
         purchased_credits: plan.credits,
+        entitlement: plan.entitlement || 'credits',
         already_processed: inserted.length === 0,
         plan_id: planId,
         session_id: session.id
@@ -479,11 +535,14 @@ async function creditPaidSession(sql, session, expectedMachineId = null) {
 module.exports = {
     FREE_TRIAL_CREDITS,
     MAX_RENDER_CREDITS,
+    PRO_LIFETIME_PLAN_ID,
     PIXELFORGE_PLANS,
     countRecentCheckoutStarts,
     creditPaidSession,
     ensureTables,
     getAccount,
+    getLifetimeProPlan,
+    getPlan,
     getStatus,
     normCredits,
     normEmail,
