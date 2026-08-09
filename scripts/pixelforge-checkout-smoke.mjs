@@ -12,7 +12,7 @@ if (parsedUrl.protocol !== 'https:' || parsedUrl.hostname !== 'checkout.stripe.c
 
 const outputDir = path.resolve('website-audit', '2026-08-08');
 await fs.mkdir(outputDir, { recursive: true });
-const screenshot = path.join(outputDir, 'pixelforge-checkout-starter32.png');
+const screenshot = path.join(outputDir, 'pixelforge-checkout-starter12.png');
 
 const browser = await chromium.launch({ headless: true });
 try {
@@ -30,7 +30,7 @@ try {
     status: response?.status() || 0,
     finalHost: new URL(page.url()).hostname,
     title,
-    hasProduct: /PixelForge AI\s*-\s*32 Credits/i.test(visibleText),
+    hasProduct: /PixelForge AI\s*-\s*12 Credits/i.test(visibleText),
     hasAmount: /\$5\.00\b/.test(visibleText),
     hasPaymentForm: /card information|pay with|email/i.test(visibleText),
     pageErrors,
