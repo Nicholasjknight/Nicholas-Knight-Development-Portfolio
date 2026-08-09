@@ -70,8 +70,8 @@ try {
     await page.waitForTimeout(300);
     const checks = await page.evaluate(() => {
       const download = document.querySelector('a[href*="releases/latest/download/PixelForge-AI.exe"]');
-      const nvidiaDownload = document.querySelector('a[href*="PixelForge-AI-NVIDIA_1.0.21_windows_x64.zip"]');
-      const release = document.querySelector('a[href*="releases/tag/v1.0.21"]');
+      const nvidiaDownload = document.querySelector('a[href*="PixelForge-AI-NVIDIA_1.0.22_windows_x64.zip"]');
+      const release = document.querySelector('a[href*="releases/tag/v1.0.22"]');
       const schemas = [...document.querySelectorAll('script[type="application/ld+json"]')]
         .map((node) => {
           try { return JSON.parse(node.textContent || '{}'); } catch { return null; }
@@ -156,14 +156,14 @@ try {
           .slice(0, 12),
       };
     });
-    const screenshot = path.join(outputDir, `pixelforge-v1021-${viewport.name}-viewport.png`);
-    const fullPageScreenshot = path.join(outputDir, `pixelforge-v1021-${viewport.name}-full.png`);
+    const screenshot = path.join(outputDir, `pixelforge-v1022-${viewport.name}-viewport.png`);
+    const fullPageScreenshot = path.join(outputDir, `pixelforge-v1022-${viewport.name}-full.png`);
     await page.screenshot({ path: screenshot, fullPage: false });
     await page.screenshot({ path: fullPageScreenshot, fullPage: true });
     const passed = Boolean(
       response?.ok()
       && checks.h1 === 'PixelForge AI / PixForge'
-      && checks.visibleVersion === 'v1.0.21'
+      && checks.visibleVersion === 'v1.0.22'
       && checks.hasTrialCopy
       && checks.hasPackCopy
       && checks.hasTargetDrivenCopy
@@ -173,9 +173,9 @@ try {
       && checks.hasPreviewCopy
       && checks.hasChoiceClarity
       && checks.downloadHref.endsWith('/releases/latest/download/PixelForge-AI.exe')
-      && checks.nvidiaDownloadHref.endsWith('/releases/latest/download/PixelForge-AI-NVIDIA_1.0.21_windows_x64.zip')
-      && checks.releaseHref.endsWith('/releases/tag/v1.0.21')
-      && checks.schemaVersion === '1.0.21'
+      && checks.nvidiaDownloadHref.endsWith('/releases/latest/download/PixelForge-AI-NVIDIA_1.0.22_windows_x64.zip')
+      && checks.releaseHref.endsWith('/releases/tag/v1.0.22')
+      && checks.schemaVersion === '1.0.22'
       && checks.schemaModified === '2026-08-09'
       && checks.horizontalOverflow <= 1
       && checks.heroContentWithinViewport
