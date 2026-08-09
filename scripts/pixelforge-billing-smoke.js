@@ -24,6 +24,29 @@ assert.strictEqual(billing.normMachineId('a'.repeat(64)), 'a'.repeat(64));
 assert.strictEqual(billing.normMachineId('not-a-machine-id'), null);
 assert.strictEqual(billing.normEmail(' Buyer@Example.com '), 'buyer@example.com');
 assert.strictEqual(billing.normEmail('not-an-email'), null);
+const previousProPrice = process.env.PIXELFORGE_PRO_LIFETIME_PRICE_CENTS;
+try {
+    delete process.env.PIXELFORGE_PRO_LIFETIME_PRICE_CENTS;
+    assert.strictEqual(billing.getLifetimeProPlan(), null);
+    assert.strictEqual(billing.normPlanId('pro_lifetime'), null);
+    process.env.PIXELFORGE_PRO_LIFETIME_PRICE_CENTS = '9900';
+    assert.deepStrictEqual(
+        billing.getLifetimeProPlan(),
+        {
+            id: 'pro_lifetime',
+            label: 'PixelForge AI Pro',
+            credits: 0,
+            amount: 9900,
+            badge: 'One-time license',
+            entitlement: 'pro_lifetime'
+        }
+    );
+    assert.strictEqual(billing.normPlanId('pro_lifetime'), 'pro_lifetime');
+    assert.ok(billing.publicPlans().some((plan) => plan.id === 'pro_lifetime' && plan.amount_cents === 9900));
+} finally {
+    if (previousProPrice === undefined) delete process.env.PIXELFORGE_PRO_LIFETIME_PRICE_CENTS;
+    else process.env.PIXELFORGE_PRO_LIFETIME_PRICE_CENTS = previousProPrice;
+}
 
 const { normalizeLoopbackRedirect } = handler._test;
 assert.strictEqual(
