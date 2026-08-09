@@ -1,8 +1,45 @@
 import fs from 'node:fs/promises';
+import http from 'node:http';
 import path from 'node:path';
 import { chromium } from 'playwright';
 
-const target = process.argv[2] || 'http://127.0.0.1:8765/pixelforge-ai.html';
+const siteRoot = path.resolve('.');
+let localServer;
+let target = process.argv[2] || '';
+if (!target) {
+  const contentTypes = {
+    '.css': 'text/css; charset=utf-8',
+    '.html': 'text/html; charset=utf-8',
+    '.ico': 'image/x-icon',
+    '.jpg': 'image/jpeg',
+    '.js': 'text/javascript; charset=utf-8',
+    '.json': 'application/json; charset=utf-8',
+    '.png': 'image/png',
+    '.svg': 'image/svg+xml',
+    '.webp': 'image/webp',
+  };
+  localServer = http.createServer(async (request, response) => {
+    try {
+      const pathname = decodeURIComponent(new URL(request.url || '/', 'http://127.0.0.1').pathname);
+      const relative = pathname.replace(/^\/+/, '') || 'pixelforge-ai.html';
+      const filePath = path.resolve(siteRoot, relative);
+      if (filePath !== siteRoot && !filePath.startsWith(`${siteRoot}${path.sep}`)) {
+        response.writeHead(403).end('Forbidden');
+        return;
+      }
+      const body = await fs.readFile(filePath);
+      response.writeHead(200, { 'Content-Type': contentTypes[path.extname(filePath).toLowerCase()] || 'application/octet-stream' });
+      response.end(body);
+    } catch {
+      response.writeHead(404).end('Not found');
+    }
+  });
+  await new Promise((resolve, reject) => {
+    localServer.once('error', reject);
+    localServer.listen(0, '127.0.0.1', resolve);
+  });
+  target = `http://127.0.0.1:${localServer.address().port}/pixelforge-ai.html`;
+}
 const targetOrigin = new URL(target).origin;
 const outputDir = path.resolve('website-audit', '2026-08-08');
 await fs.mkdir(outputDir, { recursive: true });
@@ -33,7 +70,8 @@ try {
     await page.waitForTimeout(300);
     const checks = await page.evaluate(() => {
       const download = document.querySelector('a[href*="releases/latest/download/PixelForge-AI.exe"]');
-      const release = document.querySelector('a[href*="releases/tag/v1.0.20"]');
+      const nvidiaDownload = document.querySelector('a[href*="PixelForge-AI-NVIDIA_1.0.22_windows_x64.zip"]');
+      const release = document.querySelector('a[href*="releases/tag/v1.0.22"]');
       const schemas = [...document.querySelectorAll('script[type="application/ld+json"]')]
         .map((node) => {
           try { return JSON.parse(node.textContent || '{}'); } catch { return null; }
@@ -47,13 +85,17 @@ try {
         title: document.title,
         h1: document.querySelector('h1')?.textContent?.trim() || '',
         visibleVersion: document.querySelector('.pixelforge-shell-version')?.textContent?.trim() || '',
-        hasTrialCopy: document.body.innerText.includes('20 server-backed trial credits'),
+        hasTrialCopy: document.body.innerText.includes('8 server-backed trial credits'),
+        hasPackCopy: document.body.innerText.includes('$5 / 12, $10 / 30, or $20 / 72'),
         hasTargetDrivenCopy: document.body.innerText.includes('Same resolution, 1080p, 1440p, 4K, or 8K'),
         hasSixEngineCopy: document.body.innerText.includes('Six Local AI Enhancement Engines'),
         hasNvidiaCopy: document.body.innerText.includes('hardware-gated NVIDIA RTX VSR Ultra'),
         hasSmooth60Copy: document.body.innerText.includes('RIFE Smooth 60 FPS'),
         hasPreviewCopy: document.body.innerText.includes('three real source-frame numbers'),
+        hasChoiceClarity: document.body.innerText.includes('The best overall starting point')
+          && document.body.innerText.includes('The fastest compatible SDR path'),
         downloadHref: download?.href || '',
+        nvidiaDownloadHref: nvidiaDownload?.href || '',
         releaseHref: release?.href || '',
         schemaVersion: software?.softwareVersion || '',
         schemaModified: software?.dateModified || '',
@@ -114,23 +156,26 @@ try {
           .slice(0, 12),
       };
     });
-    const screenshot = path.join(outputDir, `pixelforge-v1020-${viewport.name}-viewport.png`);
-    const fullPageScreenshot = path.join(outputDir, `pixelforge-v1020-${viewport.name}-full.png`);
+    const screenshot = path.join(outputDir, `pixelforge-v1022-${viewport.name}-viewport.png`);
+    const fullPageScreenshot = path.join(outputDir, `pixelforge-v1022-${viewport.name}-full.png`);
     await page.screenshot({ path: screenshot, fullPage: false });
     await page.screenshot({ path: fullPageScreenshot, fullPage: true });
     const passed = Boolean(
       response?.ok()
       && checks.h1 === 'PixelForge AI / PixForge'
-      && checks.visibleVersion === 'v1.0.20'
+      && checks.visibleVersion === 'v1.0.22'
       && checks.hasTrialCopy
+      && checks.hasPackCopy
       && checks.hasTargetDrivenCopy
       && checks.hasSixEngineCopy
       && checks.hasNvidiaCopy
       && checks.hasSmooth60Copy
       && checks.hasPreviewCopy
+      && checks.hasChoiceClarity
       && checks.downloadHref.endsWith('/releases/latest/download/PixelForge-AI.exe')
-      && checks.releaseHref.endsWith('/releases/tag/v1.0.20')
-      && checks.schemaVersion === '1.0.20'
+      && checks.nvidiaDownloadHref.endsWith('/releases/latest/download/PixelForge-AI-NVIDIA_1.0.22_windows_x64.zip')
+      && checks.releaseHref.endsWith('/releases/tag/v1.0.22')
+      && checks.schemaVersion === '1.0.22'
       && checks.schemaModified === '2026-08-09'
       && checks.horizontalOverflow <= 1
       && checks.heroContentWithinViewport
@@ -151,6 +196,7 @@ try {
   }
 } finally {
   await browser.close();
+  if (localServer) await new Promise((resolve) => localServer.close(resolve));
 }
 
 console.log(JSON.stringify({ target, passed: results.every((item) => item.passed), results }, null, 2));

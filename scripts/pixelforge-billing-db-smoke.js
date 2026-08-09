@@ -35,26 +35,26 @@ async function main() {
     try {
         await billing.ensureTables(sql);
         const initial = await billing.getStatus(sql, machineId);
-        assert.strictEqual(initial.credits, 20);
-        assert.strictEqual(initial.free_trial_remaining, 20);
+        assert.strictEqual(initial.credits, 8);
+        assert.strictEqual(initial.free_trial_remaining, 8);
 
         const reserved = await billing.reserveCredits(sql, machineId, 3, { profile: 'balanced', outcome: 'db_smoke' });
         assert.strictEqual(reserved.ok, true);
-        assert.strictEqual(reserved.credits, 17);
+        assert.strictEqual(reserved.credits, 5);
 
         const released = await billing.releaseReservation(sql, machineId, reserved.reservation_id);
         assert.strictEqual(released.ok, true);
-        assert.strictEqual(released.credits, 20);
+        assert.strictEqual(released.credits, 8);
 
         const second = await billing.reserveCredits(sql, machineId, 2, { profile: 'balanced', outcome: 'db_smoke' });
         const committed = await billing.commitReservation(sql, machineId, second.reservation_id);
         assert.strictEqual(committed.ok, true);
-        assert.strictEqual(committed.credits, 18);
+        assert.strictEqual(committed.credits, 6);
 
         const idempotent = await billing.commitReservation(sql, machineId, second.reservation_id);
         assert.strictEqual(idempotent.ok, true);
         assert.strictEqual(idempotent.already_processed, true);
-        assert.strictEqual(idempotent.credits, 18);
+        assert.strictEqual(idempotent.credits, 6);
 
         console.log('PixelForge live database reservation smoke checks passed.');
     } finally {

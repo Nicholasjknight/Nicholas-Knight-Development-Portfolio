@@ -64,8 +64,8 @@ function createFulfillmentSql() {
       if (!state.account) {
         state.account = {
           machine_id: machineId,
-          free_trial_total: 20,
-          free_trial_remaining: 20,
+          free_trial_total: 8,
+          free_trial_remaining: 8,
           paid_credits: 0,
           email: email || null,
           stripe_customer_id: null,
@@ -169,7 +169,7 @@ async function main() {
     });
     const port = server.address().port;
     const origin = `http://127.0.0.1:${port}`;
-    const plan = billing.PIXELFORGE_PLANS.starter_32;
+    const plan = billing.PIXELFORGE_PLANS.starter_12;
     const checkout = await stripe.checkout.sessions.create({
       mode: 'payment',
       customer_creation: 'always',
@@ -188,7 +188,7 @@ async function main() {
       metadata: {
         app: 'pixelforge_ai',
         machine_id: machineId,
-        plan_id: 'starter_32',
+        plan_id: 'starter_12',
         credits: String(plan.credits),
         paymentType: 'desktop_app_credit_pack',
       },
@@ -274,20 +274,20 @@ async function main() {
     }
     assert.equal(webhookResult.ok, true);
     assert.equal(webhookResult.credited, true);
-    assert.equal(webhookResult.credited_credits, 32);
-    assert.equal(webhookResult.credits, 52);
+    assert.equal(webhookResult.credited_credits, 12);
+    assert.equal(webhookResult.credits, 20);
 
     const confirmResult = await billing.creditPaidSession(fulfillmentSql, paidSession, machineId);
     assert.equal(confirmResult.ok, true);
     assert.equal(confirmResult.already_processed, true);
     assert.equal(confirmResult.credited_credits, 0);
-    assert.equal(confirmResult.paid_credits, 32);
-    assert.equal(confirmResult.credits, 52);
+    assert.equal(confirmResult.paid_credits, 12);
+    assert.equal(confirmResult.credits, 20);
 
     console.log(JSON.stringify({
       passed: true,
       stripe_mode: 'test',
-      plan_id: 'starter_32',
+      plan_id: 'starter_12',
       amount_cents: paidSession.amount_total,
       webhook_signature_verified: true,
       fulfillment_database: useLiveDatabase ? 'Neon Postgres (test account removed)' : 'in-memory contract',

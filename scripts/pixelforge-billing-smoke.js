@@ -7,16 +7,18 @@ const path = require('path');
 const billing = require('../api/_lib/pixelforge-billing');
 const handler = require('../api/_lib/pixelforge-license');
 
-assert.strictEqual(billing.FREE_TRIAL_CREDITS, 20);
+assert.strictEqual(billing.FREE_TRIAL_CREDITS, 8);
 assert.deepStrictEqual(
     Object.fromEntries(Object.entries(billing.PIXELFORGE_PLANS).map(([id, plan]) => [id, [plan.credits, plan.amount]])),
     {
-        starter_32: [32, 500],
-        creator_68: [68, 1000],
-        pro_144: [144, 2000]
+        starter_12: [12, 500],
+        creator_30: [30, 1000],
+        studio_72: [72, 2000]
     }
 );
+assert.strictEqual(billing.normPlanId('starter_12'), 'starter_12');
 assert.strictEqual(billing.normPlanId('starter_32'), 'starter_32');
+assert.ok(!billing.publicPlans().some((plan) => plan.id === 'starter_32'));
 assert.strictEqual(billing.normPlanId('forged_9999'), null);
 assert.strictEqual(billing.normCredits(1), 1);
 assert.strictEqual(billing.normCredits(5001), null);

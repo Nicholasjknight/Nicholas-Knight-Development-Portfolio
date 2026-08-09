@@ -2,33 +2,44 @@
 
 const crypto = require('crypto');
 
-const FREE_TRIAL_CREDITS = 20;
+const FREE_TRIAL_CREDITS = 8;
 const MAX_RENDER_CREDITS = 5000;
 const RESERVATION_TTL_MINUTES = 24 * 60;
 const PRO_LIFETIME_PLAN_ID = 'pro_lifetime';
 
 const PIXELFORGE_PLANS = Object.freeze({
-    starter_32: Object.freeze({
-        id: 'starter_32',
-        label: '32 Credits',
-        credits: 32,
+    starter_12: Object.freeze({
+        id: 'starter_12',
+        label: '12 Credits',
+        credits: 12,
         amount: 500,
-        badge: 'Starter'
+        badge: 'Starter',
+        summary: 'A low-cost pack for a previewed short clip.'
     }),
-    creator_68: Object.freeze({
-        id: 'creator_68',
-        label: '68 Credits',
-        credits: 68,
+    creator_30: Object.freeze({
+        id: 'creator_30',
+        label: '30 Credits',
+        credits: 30,
         amount: 1000,
-        badge: 'Most Popular'
+        badge: 'Most Popular',
+        summary: 'Best for several clips or one longer enhancement.'
     }),
-    pro_144: Object.freeze({
-        id: 'pro_144',
-        label: '144 Credits',
-        credits: 144,
+    studio_72: Object.freeze({
+        id: 'studio_72',
+        label: '72 Credits',
+        credits: 72,
         amount: 2000,
-        badge: 'Best Value'
+        badge: 'Best Value',
+        summary: 'Lowest rate for 4K, 60 FPS, and production queues.'
     })
+});
+
+// v1.0.20 and earlier embedded these IDs. Keep them valid so an installed
+// legacy client never reaches a broken checkout, but do not advertise them.
+const PIXELFORGE_LEGACY_PLANS = Object.freeze({
+    starter_32: Object.freeze({ id: 'starter_32', label: '32 Credits', credits: 32, amount: 500, badge: 'Legacy' }),
+    creator_68: Object.freeze({ id: 'creator_68', label: '68 Credits', credits: 68, amount: 1000, badge: 'Legacy' }),
+    pro_144: Object.freeze({ id: 'pro_144', label: '144 Credits', credits: 144, amount: 2000, badge: 'Legacy' })
 });
 
 const TELEMETRY_EVENTS = new Set([
@@ -74,7 +85,9 @@ function getLifetimeProPlan() {
 
 function getPlan(planId) {
     if (typeof planId !== 'string') return null;
-    return PIXELFORGE_PLANS[planId] || (planId === PRO_LIFETIME_PLAN_ID ? getLifetimeProPlan() : null);
+    return PIXELFORGE_PLANS[planId]
+        || PIXELFORGE_LEGACY_PLANS[planId]
+        || (planId === PRO_LIFETIME_PLAN_ID ? getLifetimeProPlan() : null);
 }
 
 function normCredits(value) {
@@ -128,6 +141,7 @@ function publicPlans() {
         credits: plan.credits,
         amount_cents: plan.amount,
         badge: plan.badge,
+        summary: plan.summary || '',
         entitlement: plan.entitlement || 'credits'
     }));
 }
@@ -136,8 +150,8 @@ async function ensureTables(sql) {
     await sql`
         CREATE TABLE IF NOT EXISTS pixelforge_accounts (
             machine_id text PRIMARY KEY,
-            free_trial_total integer NOT NULL DEFAULT 20,
-            free_trial_remaining integer NOT NULL DEFAULT 20,
+            free_trial_total integer NOT NULL DEFAULT 8,
+            free_trial_remaining integer NOT NULL DEFAULT 8,
             paid_credits integer NOT NULL DEFAULT 0,
             pro_lifetime boolean NOT NULL DEFAULT false,
             email text,
@@ -148,6 +162,8 @@ async function ensureTables(sql) {
         )
     `;
     await sql`ALTER TABLE pixelforge_accounts ADD COLUMN IF NOT EXISTS pro_lifetime boolean NOT NULL DEFAULT false`;
+    await sql`ALTER TABLE pixelforge_accounts ALTER COLUMN free_trial_total SET DEFAULT 8`;
+    await sql`ALTER TABLE pixelforge_accounts ALTER COLUMN free_trial_remaining SET DEFAULT 8`;
 
     await sql`
         CREATE TABLE IF NOT EXISTS pixelforge_credit_reservations (
@@ -537,6 +553,7 @@ module.exports = {
     MAX_RENDER_CREDITS,
     PRO_LIFETIME_PLAN_ID,
     PIXELFORGE_PLANS,
+    PIXELFORGE_LEGACY_PLANS,
     countRecentCheckoutStarts,
     creditPaidSession,
     ensureTables,
