@@ -221,8 +221,8 @@ If those scripts are unavailable or dirty in the current worktree, use direct Pl
 - Anonymous diagnostics exclude media, file paths, computer names, raw machine identifiers, and email. The app sends an app-scoped device hash plus coarse render/profile outcomes and supports `V11B_DISABLE_ANONYMOUS_DIAGNOSTICS=1`.
 - Main smoke check: `npm run test:pixelforge-billing`.
 - Non-charging Stripe page smoke: set `PIXELFORGE_CHECKOUT_SMOKE_URL` to a newly created Checkout URL, then run `npm run test:pixelforge-checkout`. It verifies the product, amount, and payment form without submitting payment.
-- Desktop source `v1.0.20` adds six enhancement engines (including DirectML SPAN), target-driven output, three cached crop previews, benchmark-refined content presets, bounded-memory DirectML streaming, RGB48/FP32 high-bit inference, checkpoint/resume for directory-only engines, a single final encode, NVENC, and professional container/track preservation. Publish the matching EXE/ZIP and SHA-256 checksums before promoting the `v1.0.20` release URL; `v1.0.18` remains the last confirmed public release until then.
-- Product-page regression check: `node scripts/pixelforge-page-smoke.mjs http://127.0.0.1:8765/pixelforge-ai.html`; it validates desktop/mobile overflow, release links, visible version, trial/target-driven copy, and SoftwareApplication schema.
+- Desktop release `v1.0.20` was published on 2026-08-09 with six core enhancement engines, a hardware-gated optional NVIDIA RTX VSR pack, target-driven output, three cached crop previews, benchmark-refined content presets, Smooth 60 FPS, bounded-memory processing, high-bit precision routing, checkpoint/resume, a single final encode, NVENC, and professional media preservation. Public release: `https://github.com/Knight-Logics/v11b-upscaling-app/releases/tag/v1.0.20`.
+- Product-page regression check: `node scripts/pixelforge-page-smoke.mjs http://127.0.0.1:4183/pixelforge-ai.html`; it validates desktop/mobile overflow, release links, visible version, trial/target-driven copy, and SoftwareApplication schema.
 
 ## Security Baseline
 

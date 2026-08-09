@@ -10,12 +10,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PixelForge AI / PixForge — local Windows video and image enhancement with six AI engines, target-driven output, three-frame crop previews, RIFE, and professional export controls.">
+    <meta name="description" content="PixelForge AI / PixForge — local Windows video and image enhancement with six core AI engines, optional NVIDIA RTX VSR, Smooth 60 FPS, target-driven output, and professional export controls.">
 <meta name="author" content="Nicholas Knight">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="PixelForge AI / PixForge | Free Windows Video Upscaler">
-    <meta property="og:description" content="Download PixelForge AI (PixForge) for Windows. Six local AI enhancement engines, target-driven output, three-frame crop previews, RIFE, and professional export controls.">
+    <meta property="og:description" content="Download PixelForge AI (PixForge) for Windows. Six core local AI engines, optional NVIDIA RTX VSR, Smooth 60 FPS, three-frame previews, and professional export controls.">
     <meta property="og:url" content="https://knightlogics.com/pixelforge-ai">
     <link rel="canonical" href="https://knightlogics.com/pixelforge-ai">
     <meta property="og:site_name" content="Knight Logics">
@@ -36,7 +36,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         "@id": "https://knightlogics.com/pixelforge-ai#webpage",
         "name": "PixelForge AI Video Upscaler | Knight Logics",
         "url": "https://knightlogics.com/pixelforge-ai",
-        "description": "Windows desktop app for local AI video and image enhancement. Six upscaling engines, RIFE interpolation, three-frame crop previews, target-driven output, resumable processing, and professional export controls.",
+        "description": "Windows desktop app for local AI video and image enhancement. Six core upscaling engines, optional NVIDIA RTX VSR, RIFE Smooth 60 FPS, three-frame crop previews, target-driven output, resumable processing, and professional export controls.",
         "mainEntity": {
             "@type": "SoftwareApplication",
             "@id": "https://knightlogics.com/pixelforge-ai#software",
@@ -47,7 +47,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             "softwareVersion": "1.0.20",
             "image": "https://knightlogics.com/images/pixelforge_logo.webp",
             "datePublished": "2025-06-01",
-            "dateModified": "2026-08-08",
+            "dateModified": "2026-08-09",
             "creator": {
                 "@type": "Organization",
                 "name": "Knight Logics",
@@ -71,7 +71,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             },
             "featureList": [
                 "SPAN, Real-ESRGAN, RealSR, Waifu2x, Real-CUGAN, and SRMD upscaling",
-                "RIFE 4.25 GPU frame interpolation",
+                "Hardware-gated optional NVIDIA RTX VSR Ultra profile",
+                "RIFE 4.25 Smooth 60 FPS frame interpolation",
                 "Three cached source-frame crop previews",
                 "Same resolution, 1080p, 1440p, 4K, and 8K output targets",
                 "Checkpointed local rendering with NVENC support",
@@ -82,7 +83,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 "https://github.com/Knight-Logics/v11b-upscaling-app",
                 "https://github.com/Knight-Logics/v11b-upscaling-app/releases/latest"
             ],
-            "description": "Windows desktop app for local AI video and image enhancement with six upscaling engines, RIFE interpolation, cached crop previews, target-driven output, and professional media export options."
+            "description": "Windows desktop app for local AI video and image enhancement with six core engines, optional NVIDIA RTX VSR, RIFE Smooth 60 FPS, cached crop previews, target-driven output, and professional media export options."
         }
     }
     </script>
@@ -205,7 +206,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="pixelforge-inline-notes">
                     <span><i class="fas fa-desktop"></i> Windows 10/11</span>
                     <span><i class="fas fa-microchip"></i> Vulkan GPU required</span>
-                    <span><i class="fas fa-wand-magic-sparkles"></i> 6 enhancement engines + RIFE</span>
+                    <span><i class="fas fa-wand-magic-sparkles"></i> 6 core engines + optional RTX VSR</span>
                 </div>
             </div>
 
@@ -240,7 +241,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="pixelforge-shell-stats">
                             <div>
                                 <strong>Engines</strong>
-                                <span>SPAN, Real-ESRGAN, RealSR, Waifu2x, Real-CUGAN, SRMD</span>
+                                <span>6 core engines + optional NVIDIA RTX VSR</span>
                             </div>
                             <div>
                                 <strong>Interpolation</strong>
@@ -373,12 +374,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <article class="pixelforge-feature-card fade-in">
                     <i class="fas fa-expand"></i>
                     <h3>Six Local AI Enhancement Engines</h3>
-                    <p>Current SPAN DirectML models join Real-ESRGAN, RealSR, Waifu2x, Real-CUGAN, and SRMD. Refined presets select the appropriate engine for people/camera, anime/game, or old/noisy material.</p>
+                    <p>Current SPAN DirectML models join Real-ESRGAN, RealSR, Waifu2x, Real-CUGAN, and SRMD. Refined presets select by content, while a hardware-gated NVIDIA RTX VSR Ultra profile appears only after compatible GPU, driver, VRAM, and real-inference checks pass.</p>
                 </article>
                 <article class="pixelforge-feature-card fade-in">
                     <i class="fas fa-film"></i>
-                    <h3>RIFE GPU Frame Interpolation</h3>
-                    <p>RIFE 4.25 is the recommended ncnn-vulkan interpolation model, with 4.26 available as the newer optional model and minterpolate as a CPU fallback.</p>
+                    <h3>RIFE Smooth 60 FPS</h3>
+                    <p>Choose Keep source or Smooth 60 FPS independently from enhancement. RIFE 4.25 is recommended, 4.26 is optional, and sources already near 60 FPS are preserved without an unnecessary interpolation pass.</p>
                 </article>
                 <article class="pixelforge-feature-card fade-in">
                     <i class="fas fa-clock"></i>
@@ -426,12 +427,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <li><strong>SPAN DirectML</strong> — current fast photo and animation models</li>
                             <li><strong>Real-CUGAN</strong> — refined anime and game detail</li>
                             <li><strong>SRMD</strong> — adjustable denoise for old or noisy sources</li>
+                            <li><strong>NVIDIA RTX VSR Ultra</strong> — optional sidecar shown only on a verified compatible RTX system</li>
                         </ul>
                     </div>
                     <div class="pixelforge-stack-card">
                         <h3>Interpolation &amp; Advanced Controls</h3>
                         <ul>
-                            <li><strong>RIFE GPU</strong> — frame interpolation via ncnn-vulkan (4.25 recommended; 4.26 optional)</li>
+                            <li><strong>RIFE GPU</strong> — one-click Smooth 60 FPS via ncnn-vulkan (4.25 recommended; 4.26 optional)</li>
                             <li><strong>minterpolate CPU</strong> — fallback for non-Vulkan systems</li>
                             <li>Three cached source-frame crop previews with progress and cancellation</li>
                             <li>H.264, HEVC 10-bit, AV1 10-bit, ProRes 422 HQ, image sequences, and NVENC</li>
@@ -481,10 +483,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="pixelforge-download-copy fade-in">
                     <span class="pixelforge-mini-label">Packaging</span>
                     <h2>Packaged As A Standalone Windows App</h2>
-                    <p>The Windows package includes six enhancement engines, RIFE, FFmpeg, and their model assets. DirectML accelerates SPAN on supported Windows GPUs; the native engines use Vulkan. The updater stages releases through AppData and relaunches cleanly.</p>
+                    <p>The universal Windows package includes six enhancement engines, RIFE, FFmpeg, and their model assets. A verified optional NVIDIA pack adds RTX VSR without inflating the universal download. The updater stages releases through AppData and relaunches cleanly.</p>
                     <div class="pixelforge-note-box">
                         <strong>System requirement</strong>
-                        <p>A DirectML- or Vulkan-capable Windows GPU is recommended. NVENC is used when available for H.264, HEVC, and AV1 delivery, with software encoding fallbacks.</p>
+                        <p>A DirectML- or Vulkan-capable Windows GPU is recommended. The NVIDIA profile is only shown on compatible RTX hardware; NVENC is used when available for H.264, HEVC, and AV1 delivery, with software fallbacks.</p>
                     </div>
                     <div class="pixelforge-note-box">
                         <strong>What it is not</strong>
@@ -505,11 +507,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                         <div>
                             <strong>Core engines</strong>
-                            <span>SPAN, Real-ESRGAN, RealSR, Waifu2x, Real-CUGAN, SRMD + RIFE</span>
+                            <span>SPAN, Real-ESRGAN, RealSR, Waifu2x, Real-CUGAN, SRMD + RIFE; optional RTX VSR</span>
                         </div>
                         <div>
                             <strong>Runtime</strong>
-                            <span>DirectML + ncnn-vulkan, with optional NVENC delivery</span>
+                            <span>DirectML + ncnn-vulkan; optional NVIDIA VFX VSR and NVENC delivery</span>
                         </div>
                         <div>
                             <strong>Audience</strong>

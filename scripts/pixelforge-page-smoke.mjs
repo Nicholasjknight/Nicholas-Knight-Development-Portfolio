@@ -50,6 +50,8 @@ try {
         hasTrialCopy: document.body.innerText.includes('20 server-backed trial credits'),
         hasTargetDrivenCopy: document.body.innerText.includes('Same resolution, 1080p, 1440p, 4K, or 8K'),
         hasSixEngineCopy: document.body.innerText.includes('Six Local AI Enhancement Engines'),
+        hasNvidiaCopy: document.body.innerText.includes('hardware-gated NVIDIA RTX VSR Ultra'),
+        hasSmooth60Copy: document.body.innerText.includes('RIFE Smooth 60 FPS'),
         hasPreviewCopy: document.body.innerText.includes('three real source-frame numbers'),
         downloadHref: download?.href || '',
         releaseHref: release?.href || '',
@@ -123,11 +125,13 @@ try {
       && checks.hasTrialCopy
       && checks.hasTargetDrivenCopy
       && checks.hasSixEngineCopy
+      && checks.hasNvidiaCopy
+      && checks.hasSmooth60Copy
       && checks.hasPreviewCopy
       && checks.downloadHref.endsWith('/releases/latest/download/PixelForge-AI.exe')
       && checks.releaseHref.endsWith('/releases/tag/v1.0.20')
       && checks.schemaVersion === '1.0.20'
-      && checks.schemaModified === '2026-08-08'
+      && checks.schemaModified === '2026-08-09'
       && checks.horizontalOverflow <= 1
       && checks.heroContentWithinViewport
       && pageErrors.length === 0
