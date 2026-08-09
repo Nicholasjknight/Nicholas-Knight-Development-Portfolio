@@ -3,11 +3,14 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import http from 'node:http';
 import { createRequire } from 'node:module';
+import { Readable } from 'node:stream';
+import { neon } from '@neondatabase/serverless';
 import { chromium } from 'playwright';
 import Stripe from 'stripe';
 
 const require = createRequire(import.meta.url);
 const billing = require('../api/_lib/pixelforge-billing');
+const stripeWebhook = require('../api/stripe-webhook');
 
 function parseEnvFile(filePath) {
   const values = {};
@@ -97,17 +100,47 @@ function createFulfillmentSql() {
   return { sql, state };
 }
 
+async function invokeStripeWebhook(payload, signature) {
+  const req = Readable.from([Buffer.from(payload)]);
+  req.method = 'POST';
+  req.headers = { 'stripe-signature': signature };
+
+  return new Promise((resolve, reject) => {
+    const headers = {};
+    const res = {
+      statusCode: 200,
+      setHeader(name, value) {
+        headers[String(name).toLowerCase()] = value;
+      },
+      end(body = '') {
+        let parsed = {};
+        try {
+          parsed = body ? JSON.parse(String(body)) : {};
+        } catch (error) {
+          reject(new Error(`Stripe webhook returned invalid JSON: ${error.message}`));
+          return;
+        }
+        resolve({ statusCode: this.statusCode, headers, body: parsed });
+      },
+    };
+    Promise.resolve(stripeWebhook(req, res)).catch(reject);
+  });
+}
+
 async function main() {
   if (process.env.PIXELFORGE_ALLOW_PURCHASE_SMOKE !== '1') {
     throw new Error('Set PIXELFORGE_ALLOW_PURCHASE_SMOKE=1 to run this test-mode purchase smoke.');
   }
   const stripeEnvPath = process.env.PIXELFORGE_STRIPE_ENV_FILE;
-  assert.ok(stripeEnvPath && fs.existsSync(stripeEnvPath), 'Development Stripe environment file is required.');
-
-  const stripeEnv = parseEnvFile(stripeEnvPath);
-  const stripeKey = stripeEnv.STRIPE_SECRET_KEY || stripeEnv.STRIPE_API_KEY || '';
+  const stripeEnv = stripeEnvPath && fs.existsSync(stripeEnvPath) ? parseEnvFile(stripeEnvPath) : {};
+  const stripeKey = process.env.STRIPE_SECRET_KEY || process.env.STRIPE_API_KEY ||
+    stripeEnv.STRIPE_SECRET_KEY || stripeEnv.STRIPE_API_KEY || '';
   assert.match(stripeKey, /^sk_test_/, 'Purchase smoke refuses any non-test Stripe key.');
   process.env.STRIPE_SECRET_KEY = stripeKey;
+
+  const useLiveDatabase = process.env.PIXELFORGE_USE_LIVE_DB === '1';
+  const databaseUrl = process.env.KL_DATABASE_URL || process.env.DATABASE_URL || '';
+  if (useLiveDatabase) assert.ok(databaseUrl, 'KL_DATABASE_URL is required for the live database purchase smoke.');
 
   const webhookSecret = `whsec_pixelforge_smoke_${crypto.randomBytes(16).toString('hex')}`;
   const stripe = new Stripe(stripeKey, { apiVersion: '2025-03-31.basil' });
@@ -118,8 +151,12 @@ async function main() {
   let customerId = '';
   let browser;
   let server;
+  const priorWebhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+  const fulfillment = useLiveDatabase ? { sql: neon(databaseUrl) } : createFulfillmentSql();
+  const fulfillmentSql = fulfillment.sql;
 
   try {
+    if (useLiveDatabase) await billing.ensureTables(fulfillmentSql);
     let redirectUrl = '';
     server = http.createServer((req, res) => {
       redirectUrl = `http://127.0.0.1:${server.address().port}${req.url}`;
@@ -222,14 +259,25 @@ async function main() {
     const signature = stripe.webhooks.generateTestHeaderString({ payload: eventPayload, secret: webhookSecret });
     const verifiedEvent = stripe.webhooks.constructEvent(eventPayload, signature, webhookSecret);
     assert.equal(verifiedEvent.type, 'checkout.session.completed');
-    const { sql } = createFulfillmentSql();
-    const webhookResult = await billing.creditPaidSession(sql, verifiedEvent.data.object);
+
+    let webhookResult;
+    if (useLiveDatabase) {
+      process.env.STRIPE_WEBHOOK_SECRET = webhookSecret;
+      process.env.KL_DATABASE_URL = databaseUrl;
+      const webhookResponse = await invokeStripeWebhook(eventPayload, signature);
+      assert.equal(webhookResponse.statusCode, 200);
+      assert.equal(webhookResponse.body.received, true);
+      assert.equal(webhookResponse.body.pixelforge, true);
+      webhookResult = webhookResponse.body;
+    } else {
+      webhookResult = await billing.creditPaidSession(fulfillmentSql, verifiedEvent.data.object);
+    }
     assert.equal(webhookResult.ok, true);
     assert.equal(webhookResult.credited, true);
     assert.equal(webhookResult.credited_credits, 32);
     assert.equal(webhookResult.credits, 52);
 
-    const confirmResult = await billing.creditPaidSession(sql, paidSession, machineId);
+    const confirmResult = await billing.creditPaidSession(fulfillmentSql, paidSession, machineId);
     assert.equal(confirmResult.ok, true);
     assert.equal(confirmResult.already_processed, true);
     assert.equal(confirmResult.credited_credits, 0);
@@ -242,7 +290,7 @@ async function main() {
       plan_id: 'starter_32',
       amount_cents: paidSession.amount_total,
       webhook_signature_verified: true,
-      fulfillment_database: 'in-memory contract (Vercel KL_DATABASE_URL is currently empty)',
+      fulfillment_database: useLiveDatabase ? 'Neon Postgres (test account removed)' : 'in-memory contract',
       credits_after_purchase: confirmResult.credits,
       paid_credits: confirmResult.paid_credits,
       idempotent_confirmation: confirmResult.already_processed,
@@ -250,7 +298,12 @@ async function main() {
   } finally {
     if (browser) await browser.close().catch(() => {});
     if (server) await new Promise((resolve) => server.close(resolve));
+    if (useLiveDatabase) {
+      await fulfillmentSql`DELETE FROM pixelforge_accounts WHERE machine_id = ${machineId}`.catch(() => {});
+    }
     if (customerId) await stripe.customers.del(customerId).catch(() => {});
+    if (priorWebhookSecret === undefined) delete process.env.STRIPE_WEBHOOK_SECRET;
+    else process.env.STRIPE_WEBHOOK_SECRET = priorWebhookSecret;
   }
 }
 
