@@ -1317,10 +1317,23 @@ function initServicesEntrance() {
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    const showcaseBlocks = services.querySelectorAll('.kl-services-showcase');
+    const servicesCta = services.querySelector('[data-kl-services-cta]');
+
+    const allRevealed = () => {
+        const sectionDone = services.classList.contains('kl-services-animate');
+        const showcaseDone = [...showcaseBlocks].every((s) => s.classList.contains('kl-services-showcase-animate'));
+        const ctaDone = !servicesCta || servicesCta.classList.contains('kl-services-cta-animate');
+        return sectionDone && showcaseDone && ctaDone;
+    };
+
+    let detachFailsafe = () => {};
+
     const startSectionAnimation = () => {
         if (services.classList.contains('kl-services-animate')) return;
         services.classList.add('kl-services-animate');
         window.setTimeout(() => services.classList.add('kl-services-animate-done'), 900);
+        if (allRevealed()) detachFailsafe();
     };
 
     const startShowcaseAnimation = (showcase) => {
@@ -1329,16 +1342,15 @@ function initServicesEntrance() {
         const cardCount = showcase.querySelectorAll('.services-showcase-card.kl-services-enter').length;
         const doneMs = Math.min(2800, 1100 + cardCount * 110);
         window.setTimeout(() => showcase.classList.add('kl-services-showcase-animate-done'), doneMs);
+        if (allRevealed()) detachFailsafe();
     };
 
     const startCtaAnimation = (cta) => {
         if (!cta || cta.classList.contains('kl-services-cta-animate')) return;
         cta.classList.add('kl-services-cta-animate');
         window.setTimeout(() => cta.classList.add('kl-services-cta-animate-done'), 1000);
+        if (allRevealed()) detachFailsafe();
     };
-
-    const showcaseBlocks = services.querySelectorAll('.kl-services-showcase');
-    const servicesCta = services.querySelector('[data-kl-services-cta]');
 
     const isNearViewport = (el, leadPx = 280) => {
         const rect = el.getBoundingClientRect();
@@ -1361,16 +1373,35 @@ function initServicesEntrance() {
     });
     if (servicesCta && isNearViewport(servicesCta, 40)) startCtaAnimation(servicesCta);
 
-    // Failsafe only if the block is in/near view and somehow never animated.
-    window.setTimeout(() => {
-        if (isNearViewport(services, 80)) startSectionAnimation();
+    const tryRevealNearViewport = () => {
+        if (isNearViewport(services, 120)) startSectionAnimation();
         showcaseBlocks.forEach((showcase) => {
-            if (isNearViewport(showcase, 80)) startShowcaseAnimation(showcase);
+            if (isNearViewport(showcase, 120)) startShowcaseAnimation(showcase);
         });
-        if (servicesCta && isNearViewport(servicesCta, 80)) startCtaAnimation(servicesCta);
-    }, 4500);
+        if (servicesCta && isNearViewport(servicesCta, 120)) startCtaAnimation(servicesCta);
+    };
+
+    // Failsafe: tall #services can never hit a fractional IO threshold on mobile
+    // (12% of a 7000px section ≈ full phone viewport). Re-check on scroll/timeout.
+    const failsafeT1 = window.setTimeout(tryRevealNearViewport, 1200);
+    const failsafeT2 = window.setTimeout(tryRevealNearViewport, 4500);
+    window.addEventListener('scroll', tryRevealNearViewport, { passive: true });
+    window.addEventListener('resize', tryRevealNearViewport, { passive: true });
+    detachFailsafe = () => {
+        window.clearTimeout(failsafeT1);
+        window.clearTimeout(failsafeT2);
+        window.removeEventListener('scroll', tryRevealNearViewport);
+        window.removeEventListener('resize', tryRevealNearViewport);
+    };
 
     if ('IntersectionObserver' in window) {
+        // Observe a compact sentinel — not the full tall section — so any
+        // visible pixels can fire. threshold:0 avoids the mobile tall-section trap.
+        const sectionSentinel =
+            services.querySelector('.services-positioning-panel') ||
+            services.querySelector('.section-header') ||
+            services.querySelector('.kl-services-grid') ||
+            services;
         const sectionObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
@@ -1379,14 +1410,17 @@ function initServicesEntrance() {
                 }
             });
         }, {
-            threshold: 0.12,
-            rootMargin: '0px 0px -8% 0px'
+            threshold: 0,
+            rootMargin: '0px 0px -6% 0px'
         });
-        sectionObserver.observe(services);
+        sectionObserver.observe(sectionSentinel);
 
         showcaseBlocks.forEach((showcase) => {
             if (showcase.classList.contains('kl-services-showcase-animate')) return;
-            const observeTarget = showcase.querySelector('.services-showcase-grid') || showcase;
+            const observeTarget =
+                showcase.querySelector('.services-showcase-card') ||
+                showcase.querySelector('.services-showcase-grid') ||
+                showcase;
             const showcaseObserver = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
@@ -1395,9 +1429,8 @@ function initServicesEntrance() {
                     }
                 });
             }, {
-                // Fire when a solid chunk of the mosaic is actually on screen
-                threshold: 0.22,
-                rootMargin: '0px 0px -12% 0px'
+                threshold: 0,
+                rootMargin: '0px 0px -8% 0px'
             });
             showcaseObserver.observe(observeTarget);
         });
@@ -1411,7 +1444,7 @@ function initServicesEntrance() {
                     }
                 });
             }, {
-                threshold: 0.2,
+                threshold: 0,
                 rootMargin: '0px 0px -6% 0px'
             });
             ctaObserver.observe(servicesCta);
