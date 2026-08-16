@@ -13,7 +13,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="robots" content="noindex, nofollow">
     <title>Knight Command — Admin</title>
     <link rel="icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/admin/admin.css?v=20260627admin1">
+    <link rel="stylesheet" href="/admin/admin.css?v=20260815books1">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -56,6 +56,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav class="kc-tabs" aria-label="Knight Command modules">
         <button type="button" class="kc-tab active" data-module="overview">Command Center</button>
         <button type="button" class="kc-tab" data-module="referrals">Referrals</button>
+        <button type="button" class="kc-tab" data-module="books" id="tab-books" hidden>Books</button>
         <button type="button" class="kc-tab" data-module="outreach">Outreach CRM</button>
         <button type="button" class="kc-tab" data-module="email">Email Agent</button>
         <button type="button" class="kc-tab" data-module="social-ops">Social Ops</button>
@@ -69,21 +70,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap;">
                 <div>
                     <h2 style="font-size:1.15rem;margin-bottom:4px;">Command Center</h2>
-                    <p style="color:var(--muted);font-size:0.88rem;">Cloud health plus ops tools (local fallback when cloud URLs are not set).</p>
+                    <p style="color:var(--muted);font-size:0.88rem;">Income across businesses, then cloud health and ops tools.</p>
                     <p id="overview-intro" style="color:var(--muted);font-size:0.82rem;margin-top:4px;">Loading module routing…</p>
                 </div>
-                <button type="button" class="kc-btn kc-btn-primary" id="refresh-overview-btn">Refresh status</button>
+                <button type="button" class="kc-btn kc-btn-primary" id="refresh-overview-btn">Refresh</button>
+            </div>
+            <div class="kc-card kc-income" id="income-overview">
+                <div class="kc-income-head">
+                    <div>
+                        <h3>Income Overview</h3>
+                        <p>Stripe · Zelle · Venmo · cash — ST (Chris) / FW (Tyler) / RM, week ending Friday</p>
+                    </div>
+                    <span class="kc-muted" id="income-overview-meta">Loading…</span>
+                </div>
+                <div class="kc-income-summary" id="income-overview-summary"></div>
+                <div class="kc-income-weeks" id="income-overview-weeks"></div>
+                <div class="kc-income-table-wrap" id="income-overview-body"></div>
             </div>
             <div id="overview-notes"></div>
             <div class="kc-grid" id="overview-grid"></div>
             <div class="kc-card">
                 <h3>Quick open</h3>
-                <p style="margin-bottom:10px;">Opens the secure cloud apps. Local ports are used only during local development:</p>
+                    <p style="margin-bottom:10px;">Opens inside this window. Use <code>https://knightlogics.com/admin</code> from any device — not Live Server <code>:5500</code>.</p>
                 <div style="display:flex;gap:8px;flex-wrap:wrap;">
-                    <button type="button" class="kc-btn kc-btn-ghost" data-open-module="outreach" data-open-local="http://127.0.0.1:5050/">Outreach</button>
-                    <button type="button" class="kc-btn kc-btn-ghost" data-open-module="email" data-open-local="http://127.0.0.1:5100/">Email Agent</button>
-                    <button type="button" class="kc-btn kc-btn-ghost" data-open-module="social-ops" data-open-local="http://127.0.0.1:8500/">Social Ops</button>
-                    <button type="button" class="kc-btn kc-btn-ghost" data-open-module="social-poster" data-open-local="http://127.0.0.1:8501/">Social Poster</button>
+                    <button type="button" class="kc-btn kc-btn-ghost" data-open-module="outreach">Outreach</button>
+                    <button type="button" class="kc-btn kc-btn-ghost" data-open-module="email">Email Agent</button>
+                    <button type="button" class="kc-btn kc-btn-ghost" data-open-module="social-ops">Social Ops</button>
+                    <button type="button" class="kc-btn kc-btn-ghost" data-open-module="social-poster">Social Poster</button>
                 </div>
             </div>
         </div>
@@ -95,12 +108,64 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
+    <section class="kc-panel" id="panel-books">
+        <div class="kc-panel-inner">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:14px;">
+                <div>
+                    <h2 style="font-size:1.15rem;margin-bottom:4px;">Client books</h2>
+                    <p style="color:var(--muted);font-size:0.88rem;">Weekly income from Screen Team (Chris), Faith Works (Tyler), and Roof Monsters — same Friday week as Knight Group payout books. Scans nickknight488, nknight@knightgroup.com, and support@knightlogics.com.</p>
+                </div>
+                <button type="button" class="kc-btn kc-btn-primary" id="refresh-books-btn">Refresh from email</button>
+            </div>
+            <div class="kc-card kc-income" id="books-overview">
+                <div class="kc-income-summary" id="books-summary"></div>
+                <form class="kc-books-form" id="books-manual-form">
+                    <label>Business
+                        <select name="business_id" required>
+                            <option value="st">Screen Team (Chris)</option>
+                            <option value="fw">Faith Works (Tyler)</option>
+                            <option value="rm">Roof Monsters</option>
+                            <option value="kl">Knight Logics</option>
+                            <option value="kg">Knight Group</option>
+                        </select>
+                    </label>
+                    <label>Channel
+                        <select name="channel">
+                            <option value="zelle">Zelle</option>
+                            <option value="venmo">Venmo</option>
+                            <option value="cash_app">Cash App</option>
+                            <option value="paypal">PayPal</option>
+                            <option value="cash">Cash</option>
+                            <option value="check">Check</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </label>
+                    <label>Amount
+                        <input name="amount" type="number" step="0.01" min="0.01" required placeholder="0.00">
+                    </label>
+                    <label>Date
+                        <input name="paid_at" type="date" required>
+                    </label>
+                    <label>Payer
+                        <input name="payer" placeholder="Chris / Tyler / …">
+                    </label>
+                    <label>Memo
+                        <input name="memo" placeholder="Week or job note">
+                    </label>
+                    <button class="kc-btn kc-btn-primary" type="submit">Save payment</button>
+                </form>
+                <p class="kc-muted" id="books-manual-msg"></p>
+                <div id="books-weeks"></div>
+            </div>
+        </div>
+    </section>
+
     <section class="kc-panel kc-panel-inner--flush" id="panel-outreach">
         <div class="kc-embed-wrap">
             <div class="kc-embed-status" id="embed-status-outreach">
                 <strong data-embed-title>Outreach CRM</strong>
                 <p data-embed-detail>Connecting to cloud Outreach CRM…</p>
-                <button type="button" class="kc-btn kc-btn-primary" data-open-local="http://127.0.0.1:5050/">Open Outreach CRM ↗</button>
+                <button type="button" class="kc-btn kc-btn-primary" data-retry-module="outreach">Retry in this tab</button>
             </div>
             <iframe id="outreach-frame" title="Outreach CRM" src="about:blank"></iframe>
         </div>
@@ -111,7 +176,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="kc-embed-status" id="embed-status-email">
                 <strong data-embed-title>Email Agent</strong>
                 <p data-embed-detail>Connecting to cloud Email Agent…</p>
-                <button type="button" class="kc-btn kc-btn-primary" data-open-local="http://127.0.0.1:5100/?embed=1">Open Email Agent ↗</button>
+                <button type="button" class="kc-btn kc-btn-primary" data-retry-module="email">Retry in this tab</button>
             </div>
             <iframe id="email-frame" title="Email Agent" src="about:blank"></iframe>
         </div>
@@ -122,7 +187,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="kc-embed-status" id="embed-status-social-ops">
                 <strong data-embed-title>Social Ops</strong>
                 <p data-embed-detail>Loading Social Ops (engagement manager)…</p>
-                <button type="button" class="kc-btn kc-btn-primary" data-open-local="http://127.0.0.1:8500/">Open :8500 ↗</button>
+                <button type="button" class="kc-btn kc-btn-primary" data-retry-module="social-ops">Retry in this tab</button>
             </div>
             <iframe id="social-ops-frame" title="Social Ops" src="about:blank"></iframe>
         </div>
@@ -133,7 +198,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="kc-embed-status" id="embed-status-social-poster">
                 <strong data-embed-title>Social Poster</strong>
                 <p data-embed-detail>Loading Social Poster…</p>
-                <button type="button" class="kc-btn kc-btn-primary" data-open-local="http://127.0.0.1:8501/?embed=true">Open :8501 ↗</button>
+                <button type="button" class="kc-btn kc-btn-primary" data-retry-module="social-poster">Retry in this tab</button>
             </div>
             <iframe id="social-poster-frame" title="Social Poster" src="about:blank"></iframe>
         </div>
@@ -173,6 +238,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </section>
 </div>
 
-<script src="/admin/admin.js?v=20260727referrals2" defer></script>
+<script src="/admin/admin.js?v=20260816embed1" defer></script>
 </body>
 </html>

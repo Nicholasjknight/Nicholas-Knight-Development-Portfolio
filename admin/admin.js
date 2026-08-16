@@ -7,11 +7,12 @@
     var ROLE_KEY = 'kl_admin_role';
     var LOG_MAX = 250;
 
-    var AGENCY_MODULES = ['outreach', 'email', 'social-ops', 'social-poster', 'access'];
+    var AGENCY_MODULES = ['books', 'outreach', 'email', 'social-ops', 'social-poster', 'access'];
 
     var MODULES = {
         overview: { label: 'Command Center', panel: 'panel-overview' },
         referrals: { label: 'Referrals', panel: 'panel-referrals', embed: '/referral-dashboard?embed=1' },
+        books: { label: 'Books', panel: 'panel-books' },
         outreach: {
             label: 'Outreach CRM',
             panel: 'panel-outreach',
@@ -52,7 +53,22 @@
         'http://127.0.0.1:5100',
         'http://127.0.0.1:8500',
         'http://127.0.0.1:8501',
+        'http://localhost:5050',
+        'http://localhost:5100',
+        'http://localhost:8500',
+        'http://localhost:8501',
     ];
+
+    var CLOUD_OPS_ORIGINS = [
+        'https://ops.knightlogics.com',
+        'https://mail.knightlogics.com',
+        'https://social.knightlogics.com',
+        'https://poster.knightlogics.com',
+    ];
+
+    var HANDSHAKE_MODULES = { email: true, outreach: true };
+    var pendingReady = {};
+    var OPS_READY_WAIT_MS = 10000;
 
     var state = {
         token: '',
@@ -270,6 +286,33 @@
         });
     }
 
+    function updateHash(moduleId) {
+        try {
+            var next = (moduleId && moduleId !== 'overview') ? ('#' + moduleId) : window.location.pathname + window.location.search;
+            history.replaceState(null, '', next);
+        } catch (err) { /* ignore */ }
+    }
+
+    function moduleFromHash() {
+        var hashModule = (window.location.hash || '').replace(/^#\/?/, '').trim();
+        return MODULES[hashModule] ? hashModule : 'overview';
+    }
+
+    function remountModule(moduleId) {
+        var cfg = MODULES[moduleId];
+        if (!cfg || !cfg.panel) return;
+        var prefix = cfg.panel.replace('panel-', '');
+        var frame = $(prefix + '-frame');
+        if (!frame) return;
+        if (pendingReady[prefix]) {
+            try { pendingReady[prefix](false); } catch (err) {}
+            delete pendingReady[prefix];
+        }
+        frame.dataset.loaded = '';
+        frame.removeAttribute('src');
+        frame.src = 'about:blank';
+    }
+
     function setActiveModule(moduleId) {
         if (!MODULES[moduleId]) return;
         if (!canOpenModule(moduleId)) {
@@ -298,9 +341,12 @@
             }
         } else if (moduleId === 'overview') {
             refreshOverview();
+        } else if (moduleId === 'books') {
+            refreshBooksPanel();
         } else if (moduleId === 'access') {
             refreshAccessPanel();
         }
+        updateHash(moduleId);
     }
 
     function syncAuthToEmbedStorage() {
@@ -433,6 +479,19 @@
     window.addEventListener('message', function (event) {
         if (!event.data) return;
 
+        if (event.data.type === 'kl-ops-ready') {
+            var readyOriginOk = CLOUD_OPS_ORIGINS.indexOf(event.origin) >= 0
+                || LOCAL_OPS_ORIGINS.indexOf(event.origin) >= 0
+                || state.opsOrigins.indexOf(event.origin) >= 0;
+            if (!readyOriginOk) return;
+            var readyPrefix = event.data.module === 'email_agent' ? 'email' : event.data.module;
+            if (typeof pendingReady[readyPrefix] === 'function') {
+                pendingReady[readyPrefix](true);
+                delete pendingReady[readyPrefix];
+            }
+            return;
+        }
+
         if (event.data.type === 'kl-ops-auth-request') {
             var opsAllowed = state.opsOrigins.indexOf(event.origin) >= 0
                 || LOCAL_OPS_ORIGINS.indexOf(event.origin) >= 0;
@@ -497,27 +556,54 @@
         var frame = $(prefix + '-frame');
         if (!frame) return;
         var embedUrl = withOpsToken(url);
-        if (wrap) {
+        var showOverlay = function (title, detail) {
+            if (!wrap) return;
             wrap.classList.add('open');
             wrap.style.display = 'flex';
-            wrap.querySelector('[data-embed-title]').textContent = 'Connecting to cloud ops…';
-            wrap.querySelector('[data-embed-detail]').textContent = help || 'Loading remote Outreach stack.';
+            wrap.querySelector('[data-embed-title]').textContent = title;
+            wrap.querySelector('[data-embed-detail]').textContent = detail;
+        };
+        var hideOverlay = function () {
+            if (!wrap) return;
+            wrap.classList.remove('open');
+            wrap.style.display = 'none';
+        };
+        showOverlay('Connecting to cloud ops…', help || 'Loading inside this tab — it will not open a new window.');
+
+        if (typeof pendingReady[prefix] === 'function') {
+            try { pendingReady[prefix](false); } catch (err) {}
+            delete pendingReady[prefix];
         }
+
+        var needsHandshake = !!HANDSHAKE_MODULES[prefix];
+        var readyTimer = null;
+        if (needsHandshake) {
+            readyTimer = window.setTimeout(function () {
+                delete pendingReady[prefix];
+                showOverlay(
+                    'Still connecting…',
+                    'The module did not confirm it loaded. Retry stays in this tab.'
+                );
+            }, OPS_READY_WAIT_MS);
+            pendingReady[prefix] = function (ok) {
+                if (readyTimer) window.clearTimeout(readyTimer);
+                if (ok) hideOverlay();
+            };
+        }
+
         frame.onload = function () {
             pushOpsAuthToFrame(frame, embedUrl);
-            if (wrap) {
-                wrap.classList.remove('open');
-                wrap.style.display = 'none';
-            }
+            if (!needsHandshake) hideOverlay();
             log('info', 'Cloud ops iframe loaded', { url: embedUrl });
         };
         frame.onerror = function () {
-            if (wrap) {
-                wrap.classList.add('open');
-                wrap.querySelector('[data-embed-title]').textContent = 'Cloud ops unreachable';
-                wrap.querySelector('[data-embed-detail]').textContent =
-                    (help || '') + ' Confirm tunnel + local services on this PC, then refresh.';
-            }
+            frame.dataset.loaded = '';
+            if (readyTimer) window.clearTimeout(readyTimer);
+            delete pendingReady[prefix];
+            showOverlay(
+                'Cloud ops unreachable',
+                (help || '') + ' Confirm this PC is on and the tunnel is running, then retry in this tab.'
+            );
             log('warn', 'Cloud ops iframe error', { url: embedUrl });
         };
         if (frame.dataset.loaded !== embedUrl) {
@@ -525,10 +611,7 @@
             frame.dataset.loaded = embedUrl;
         } else {
             pushOpsAuthToFrame(frame, embedUrl);
-            if (wrap) {
-                wrap.classList.remove('open');
-                wrap.style.display = 'none';
-            }
+            if (!needsHandshake) hideOverlay();
         }
         setTimeout(function () { pushOpsAuthToFrame(frame, embedUrl); }, 800);
     }
@@ -708,6 +791,7 @@
         if (grid) {
             grid.innerHTML = '<div class="kc-card"><h3>Status</h3><strong>Loading…</strong><p>Checking cloud modules.</p></div>';
         }
+        refreshIncomeOverview().catch(function () {});
         try {
             var health = await apiPost('/api/admin', { action: 'health' });
             state.health = health;
@@ -723,6 +807,246 @@
                     String(err.message) + '</p></div>';
             }
         }
+    }
+
+    function money(n) {
+        return '$' + Number(n || 0).toLocaleString(undefined, {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 2,
+        });
+    }
+
+    function escHtml(value) {
+        return String(value == null ? '' : value)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+
+    var BIZ_LABELS = {
+        kl: 'Knight Logics',
+        kg: 'Knight Group',
+        st: 'Screen Team',
+        fw: 'Faith Works',
+        rm: 'Roof Monsters',
+    };
+
+    async function fetchLocalOutreach(path) {
+        if (window.location.protocol === 'https:') {
+            throw new Error('Local Outreach probe blocked on HTTPS admin');
+        }
+        var response = await fetch('http://127.0.0.1:5050' + path, {
+            method: 'GET',
+            headers: { Accept: 'application/json' },
+        });
+        var data = await response.json().catch(function () { return {}; });
+        if (!response.ok) {
+            throw new Error((data && data.error) || ('Local Outreach HTTP ' + response.status));
+        }
+        data.source = 'local_outreach';
+        return data;
+    }
+
+    async function fetchLocalRevenueScorecard() {
+        return fetchLocalOutreach('/api/revenue-scorecard');
+    }
+
+    async function fetchClientBooks() {
+        var data;
+        try {
+            data = await apiPost('/api/admin', { action: 'client-books' });
+        } catch (cloudErr) {
+            data = await fetchLocalOutreach('/api/client-books');
+            log('warn', 'Client books used local Outreach fallback', {
+                cloudError: String(cloudErr.message || cloudErr),
+            });
+        }
+        state.clientBooks = data;
+        return data;
+    }
+
+    function weekCardsHtml(period) {
+        if (!period) return '';
+        var lanes = [
+            { key: 'st', title: 'Screen Team', sub: 'Chris', lane: period.st || {} },
+            { key: 'fw', title: 'Faith Works', sub: 'Tyler', lane: period.fw || {} },
+            { key: 'rm', title: 'Roof Monsters', sub: 'Stripe', lane: period.rm || {} },
+            { key: 'combined', title: 'Combined clients', sub: 'ST + FW + RM', lane: period.combined_clients || {} },
+        ];
+        return '<div class="kc-week-block"><h3>' + escHtml(period.week_label) +
+            (period.is_current ? ' · this week' : '') + '</h3>' +
+            '<p class="kc-muted">' + Number((period.combined_clients && period.combined_clients.payments) || 0) +
+            ' client payments · ' + money((period.combined_clients && period.combined_clients.received) || 0) + '</p>' +
+            '<div class="kc-week-grid">' + lanes.map(function (item) {
+                return '<div class="kc-week-card ' + item.key + '"><h4>' + item.title +
+                    ' · ' + item.sub + '</h4><div class="amt">' + money(item.lane.received) +
+                    '</div><div class="sub">' + Number(item.lane.payments || 0) + ' payments</div></div>';
+            }).join('') + '</div></div>';
+    }
+
+    async function refreshIncomeOverview() {
+        var meta = $('income-overview-meta');
+        var summary = $('income-overview-summary');
+        var body = $('income-overview-body');
+        if (!body) return;
+        if (meta) meta.textContent = 'Loading…';
+        try {
+            var data;
+            try {
+                data = await fetchClientBooks();
+            } catch (booksErr) {
+                try {
+                    data = await apiPost('/api/admin', { action: 'revenue-scorecard' });
+                } catch (cloudErr) {
+                    data = await fetchLocalRevenueScorecard();
+                    log('warn', 'Income overview used local Outreach fallback', {
+                        cloudError: String(cloudErr.message || cloudErr),
+                        booksError: String(booksErr.message || booksErr),
+                    });
+                }
+            }
+            renderIncomeOverview(data);
+        } catch (err) {
+            if (meta) meta.textContent = 'Unavailable';
+            if (summary) summary.innerHTML = '';
+            body.innerHTML = '<p class="kc-income-foot">Income ledger unavailable: ' +
+                escHtml(err.message || err) +
+                '. Start OutreachEngine (:5050) + tunnel, then refresh.</p>';
+            log('warn', 'Income overview failed', { error: String(err.message || err) });
+        }
+    }
+
+    function renderIncomeOverview(data) {
+        var meta = $('income-overview-meta');
+        var summary = $('income-overview-summary');
+        var body = $('income-overview-body');
+        var weeksEl = $('income-overview-weeks');
+        if (!body) return;
+
+        var totals = data.payment_totals || data.totals || {};
+        var lanes = data.lanes || {};
+        var byBiz = data.by_business || {};
+        var order = data.attention_order || Object.keys(BIZ_LABELS);
+        var allocated = totals.revenue_allocated != null ? totals.revenue_allocated : totals.revenue;
+        var zelleIn = Number(totals.zelle_inbound || 0) + Number(totals.manual || 0);
+        var kgOps = (data.compensation_estimates &&
+            data.compensation_estimates.kg_ops_estimate_on_recorded_kg_revenue) || 0;
+        var stamp = String(data.generated_at || '').replace('T', ' ').slice(0, 19) || 'now';
+        if (meta) {
+            meta.textContent = 'Updated ' + stamp +
+                (data.source === 'local_outreach' ? ' · local' : ' · ops');
+        }
+
+        if (summary) {
+            var cards = [
+                { label: 'ST + FW + RM', value: data.client_total, cls: 'gold' },
+                { label: 'Allocated', value: allocated, cls: '' },
+                { label: 'Stripe', value: totals.stripe_receipts, cls: '' },
+                { label: 'Zelle / manual', value: zelleIn, cls: 'gold' },
+                { label: 'Unallocated', value: totals.revenue_unallocated, cls: 'warn' },
+                { label: 'KG ops ~25%', value: kgOps, cls: 'gold' },
+            ];
+            summary.innerHTML = cards.map(function (card) {
+                return '<div class="kc-income-metric"><div class="lbl">' + card.label +
+                    '</div><div class="val ' + card.cls + '">' + money(card.value) + '</div></div>';
+            }).join('');
+        }
+
+        if (weeksEl) {
+            var current = (data.periods || []).find(function (p) { return p.is_current; }) ||
+                (data.periods || [])[0];
+            weeksEl.innerHTML = current ? weekCardsHtml(current) : '';
+        }
+
+        var rows = order.map(function (bid) {
+            var lane = lanes[bid] || byBiz[bid] || {};
+            var income = lane.revenue_attributed != null ? lane.revenue_attributed : lane.revenue;
+            var channels = Object.keys(lane.revenue_by_channel || lane.by_channel || {}).map(function (key) {
+                return key + ': ' + money((lane.revenue_by_channel || lane.by_channel)[key]);
+            }).join(' · ') || '—';
+            return '<tr>' +
+                '<td class="biz">' + escHtml(BIZ_LABELS[bid] || bid) + '</td>' +
+                '<td class="amt">' + money(income) + '</td>' +
+                '<td>' + Number(lane.payment_count || lane.payments || 0) + '</td>' +
+                '<td class="ch">' + escHtml(channels) + '</td>' +
+                '</tr>';
+        }).join('');
+
+        var unallocN = Number(totals.unallocated_count || (data.unallocated_payments || []).length || 0);
+        var reviewN = Number(totals.needs_review_count || (data.needs_review || []).length || 0);
+        var smsMissing = (data.sms_payment_mentions && data.sms_payment_mentions.without_amount) || [];
+        body.innerHTML =
+            '<table class="kc-income-table"><thead><tr>' +
+            '<th>Business</th><th>Income</th><th>Payments</th><th>Channels</th>' +
+            '</tr></thead><tbody>' + rows + '</tbody></table>' +
+            '<div class="kc-income-foot">Sources: Stripe receipts in the three mailboxes · Regions/FNB Zelle · Venmo/PayPal/Cash App alerts · manual Books entries. ' +
+            'Outbound Zelle (Vince / Stefan) excluded. Use the Books tab to log Chris/Tyler Zelle that never hit email.' +
+            (unallocN || reviewN ? (' · ' + unallocN + ' unallocated / ' + reviewN + ' need review.') : '') +
+            (smsMissing.length ? (' · ' + smsMissing.length + ' SMS payment mention(s) need amounts.') : '') +
+            '</div>';
+    }
+
+    async function refreshBooksPanel() {
+        var weeksEl = $('books-weeks');
+        if (!weeksEl) return;
+        weeksEl.innerHTML = '<p class="kc-muted">Loading ledger…</p>';
+        try {
+            await fetch('http://127.0.0.1:5050/api/email-agent/sync', { method: 'POST' }).catch(function () {});
+            var data = await fetchClientBooks();
+            renderBooksPanel(data);
+        } catch (err) {
+            weeksEl.innerHTML = '<p class="kc-income-foot">Could not load books: ' +
+                escHtml(err.message || err) + '</p>';
+        }
+    }
+
+    function renderBooksPanel(data) {
+        var summary = $('books-summary');
+        var weeksEl = $('books-weeks');
+        var biz = data.by_business || {};
+        var totals = data.totals || {};
+        if (summary) {
+            summary.innerHTML = [
+                { label: 'ST + FW + RM', value: data.client_total, cls: 'gold' },
+                { label: 'Screen Team', value: biz.st && biz.st.revenue, cls: '' },
+                { label: 'Faith Works', value: biz.fw && biz.fw.revenue, cls: '' },
+                { label: 'Roof Monsters', value: biz.rm && biz.rm.revenue, cls: '' },
+                { label: 'Unallocated', value: totals.revenue_unallocated, cls: 'warn' },
+            ].map(function (card) {
+                return '<div class="kc-income-metric"><div class="lbl">' + card.label +
+                    '</div><div class="val ' + card.cls + '">' + money(card.value) + '</div></div>';
+            }).join('');
+        }
+        if (!weeksEl) return;
+        var periods = data.periods || [];
+        if (!periods.length) {
+            weeksEl.innerHTML = '<p class="kc-muted">No payments yet.</p>';
+            return;
+        }
+        weeksEl.innerHTML = periods.map(function (period) {
+            var rows = []
+                .concat((period.st && period.st.rows) || [])
+                .concat((period.fw && period.fw.rows) || [])
+                .concat((period.rm && period.rm.rows) || [])
+                .concat((period.kl && period.kl.rows) || [])
+                .concat((period.kg && period.kg.rows) || [])
+                .concat((period.unallocated && period.unallocated.rows) || []);
+            rows.sort(function (a, b) {
+                return String(b.paid_at || '').localeCompare(String(a.paid_at || ''));
+            });
+            var table = rows.length ? ('<table class="kc-income-table"><thead><tr>' +
+                '<th>Date</th><th>Biz</th><th>Channel</th><th>Payer</th><th>Memo</th><th>Amount</th>' +
+                '</tr></thead><tbody>' + rows.map(function (row) {
+                    return '<tr><td>' + escHtml(String(row.paid_at || '').slice(0, 10)) +
+                        '</td><td>' + escHtml(row.business_id || '') +
+                        '</td><td>' + escHtml(row.channel || '') +
+                        '</td><td>' + escHtml(row.payer || '') +
+                        '</td><td class="ch">' + escHtml(row.memo || '') +
+                        '</td><td class="amt">' + money(row.amount) + '</td></tr>';
+                }).join('') + '</tbody></table>') : '<p class="kc-muted">No payments this week.</p>';
+            return weekCardsHtml(period) + table;
+        }).join('');
     }
 
     function renderOverview(health) {
@@ -745,12 +1069,19 @@
             var mod = health.remoteModules[key];
             if (!mod || !mod.url) return;
             var remoteStatusClass = mod.status === 'ok' ? 'ok' : (mod.status === 'error' ? 'err' : 'warn');
+            var openModuleId = null;
+            Object.keys(REMOTE_MODULE_MAP).forEach(function (moduleId) {
+                if (REMOTE_MODULE_MAP[moduleId] === key) openModuleId = moduleId;
+            });
             cards.push(
                 '<div class="kc-card">' +
                 '<span class="kc-status ' + remoteStatusClass + '">' + (mod.status || 'cloud') + '</span>' +
                 '<strong>' + mod.label + ' (cloud)</strong>' +
                 '<p>' + mod.detail + '</p>' +
-                '<a class="kc-btn kc-btn-ghost" href="' + mod.url + '" target="_blank" rel="noopener">Open ↗</a></div>'
+                (openModuleId
+                    ? '<button type="button" class="kc-btn kc-btn-ghost" data-open-module="' + openModuleId + '">Open in this tab</button>'
+                    : '') +
+                '</div>'
             );
         });
 
@@ -774,7 +1105,9 @@
                 '<span class="kc-status ' + statusClass + '" id="local-status-' + mod.id.replace(/_/g, '-') + '">local</span>' +
                 '<strong>' + mod.label + '</strong>' +
                 '<p>Port ' + mod.port + ' — ' + mod.url + '</p>' +
-                '<a class="kc-btn kc-btn-ghost" href="' + mod.url + '" target="_blank" rel="noopener">Open ↗</a></div>'
+                '<button type="button" class="kc-btn kc-btn-ghost" data-open-module="' +
+                (mod.id === 'email_agent' ? 'email' : (mod.id === 'knight_command' ? 'outreach' : mod.id.replace(/_/g, '-'))) +
+                '">Open in this tab</button></div>'
             );
         });
 
@@ -812,7 +1145,7 @@
             applyRoleUi();
             showAuth(false);
             log('info', 'Session restored', { role: state.role });
-            setActiveModule('overview');
+            setActiveModule(moduleFromHash());
             refreshOverview().catch(function () {});
             return true;
         } catch (err) {
@@ -831,7 +1164,7 @@
         applyRoleUi();
         showAuth(false);
         log('info', 'Login successful', { expiresAt: data.expiresAt, role: state.role });
-        setActiveModule('overview');
+        setActiveModule(moduleFromHash());
         refreshOverview().catch(function () {});
     }
 
@@ -918,6 +1251,61 @@
         });
         $('logout-btn').addEventListener('click', function () { logout(false); });
         $('refresh-overview-btn').addEventListener('click', refreshOverview);
+        var refreshBooks = $('refresh-books-btn');
+        if (refreshBooks) refreshBooks.addEventListener('click', refreshBooksPanel);
+        var booksForm = $('books-manual-form');
+        if (booksForm) {
+            var dateInput = booksForm.querySelector('input[name="paid_at"]');
+            if (dateInput && !dateInput.value) {
+                dateInput.valueAsDate = new Date();
+            }
+            booksForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var msg = $('books-manual-msg');
+                var fd = new FormData(booksForm);
+                var paid = fd.get('paid_at');
+                apiPost('/api/admin', {
+                    action: 'client-books-manual',
+                    business_id: fd.get('business_id'),
+                    channel: fd.get('channel'),
+                    amount: Number(fd.get('amount')),
+                    paid_at: paid ? paid + 'T12:00:00-04:00' : '',
+                    payer: fd.get('payer'),
+                    memo: fd.get('memo'),
+                }).then(function (data) {
+                    if (msg) msg.textContent = 'Saved.';
+                    booksForm.reset();
+                    if (dateInput) dateInput.valueAsDate = new Date();
+                    state.clientBooks = data;
+                    renderBooksPanel(data);
+                    renderIncomeOverview(data);
+                }).catch(function (err) {
+                    if (window.location.protocol !== 'https:') {
+                        fetch('http://127.0.0.1:5050/api/client-books/manual', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                business_id: fd.get('business_id'),
+                                channel: fd.get('channel'),
+                                amount: Number(fd.get('amount')),
+                                paid_at: paid ? paid + 'T12:00:00-04:00' : '',
+                                payer: fd.get('payer'),
+                                memo: fd.get('memo'),
+                            }),
+                        }).then(function (r) { return r.json(); }).then(function (data) {
+                            if (!data.ok) throw new Error(data.error || 'Save failed');
+                            if (msg) msg.textContent = 'Saved locally.';
+                            state.clientBooks = data;
+                            renderBooksPanel(data);
+                        }).catch(function (localErr) {
+                            if (msg) msg.textContent = localErr.message || err.message || 'Save failed';
+                        });
+                        return;
+                    }
+                    if (msg) msg.textContent = err.message || 'Save failed';
+                });
+            });
+        }
         $('forgot-toggle').addEventListener('click', function () {
             var panel = $('forgot-panel');
             if (!panel) return;
@@ -968,11 +1356,18 @@
             });
         });
 
-        document.querySelectorAll('[data-open-local]').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                var url = btn.getAttribute('data-open-local');
-                window.open(url, '_blank', 'noopener');
-            });
+        document.addEventListener('click', function (e) {
+            var btn = e.target && e.target.closest
+                ? e.target.closest('[data-open-module], [data-retry-module]')
+                : null;
+            if (!btn || !document.getElementById('kc-shell') || !document.getElementById('kc-shell').contains(btn)) {
+                return;
+            }
+            var moduleId = btn.getAttribute('data-open-module') || btn.getAttribute('data-retry-module');
+            if (!moduleId || !MODULES[moduleId]) return;
+            e.preventDefault();
+            if (btn.hasAttribute('data-retry-module')) remountModule(moduleId);
+            setActiveModule(moduleId);
         });
     }
 
