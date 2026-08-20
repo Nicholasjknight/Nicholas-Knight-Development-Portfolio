@@ -892,6 +892,10 @@
       "destination": "/videoforge.html"
     },
     {
+      "source": "/baypermit",
+      "destination": "/baypermit/index.html"
+    },
+    {
       "source": "/pixelforge-ai",
       "destination": "/pixelforge-ai.html"
     },
