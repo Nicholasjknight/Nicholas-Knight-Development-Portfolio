@@ -101,7 +101,6 @@
       { "file": "remote-us-services.html", "route": "/remote-us-services", "sitemap": true },
       { "file": "display-control-plus.html", "route": "/display-control-plus", "sitemap": { "priority": "0.65" } },
       { "file": "videoforge.html", "route": "/videoforge", "sitemap": { "priority": "0.65" } },
-      { "file": "baypermit/index.html", "route": "/baypermit/", "sitemap": { "priority": "0.65" } },
       { "file": "pixelforge-ai.html", "route": "/pixelforge-ai", "sitemap": { "priority": "0.65" } },
       { "file": "auto-vid-compiler.html", "route": "/auto-vid-compiler", "sitemap": { "priority": "0.65" } },
       { "file": "service-packages.html", "route": "/service-packages", "sitemap": { "priority": "0.90" } },
