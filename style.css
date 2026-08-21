@@ -1245,7 +1245,7 @@ a:where(:not(.cta-button, .nav-link, .nav-brand-link, .nav-dropdown-toggle)):foc
     display: none !important;
     opacity: 0 !important;
     pointer-events: none;
-    background-image: url('./images/CircuitBrush3.webp?v=20260604perf1');
+    background-image: url('/images/CircuitBrush3.webp?v=20260604perf1');
     z-index: 3;
 }
 
@@ -11775,7 +11775,7 @@ body.kl-pwa-banner-visible #kl-chat-launcher {
     position: absolute;
     inset: 0;
     z-index: 2;
-    background: url('./images/CircuitBrush3.webp') center/cover no-repeat;
+    background: url('/images/CircuitBrush3.webp') center/cover no-repeat;
     opacity: .035;
     mix-blend-mode: screen;
     pointer-events: none;
