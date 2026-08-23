@@ -1,6 +1,6 @@
 # Knight Logics
 
-> Knight Logics is a founder-led Tampa Bay studio run by Nicholas Knight. The business focuses on hand-coded websites, local SEO, Google Business Profile optimization, workflow automation, and shipped Windows desktop software.
+> You don’t have enough customers yet. Knight Logics gets Tampa Bay businesses on Google and builds the system that keeps the phone ringing. Launch Kit $299. GBP from $497. Website from $200 / $1,200 local. Software Lab is proof we ship tools — not the client offer.
 
 ## Identity
 
@@ -34,16 +34,16 @@ These public endpoints are intentionally exposed so crawlers, AI systems, and ev
 ## Canonical Starting URLs
 
 - Homepage: https://knightlogics.com/
+- Starting a new business / Launch Kit: https://knightlogics.com/starting-a-new-business
+- Google Business Profile: https://knightlogics.com/service-google-business-profile
+- Pricing: https://knightlogics.com/pricing
+- Free growth audit: https://knightlogics.com/website-growth-audit
+- Contact: https://knightlogics.com/contact
+- Consultation booking: https://knightlogics.com/book-consultation
+- Phone: +1-813-773-5553
 - Founder profile: https://knightlogics.com/nicholas-knight
 - Website services: https://knightlogics.com/service-websites
 - Local SEO services: https://knightlogics.com/service-local-seo
-- Google Business Profile services: https://knightlogics.com/service-google-business-profile
-- Automation services: https://knightlogics.com/service-ai-automation
-- Desktop apps: https://knightlogics.com/service-desktop-apps
-- Pricing: https://knightlogics.com/pricing
-- Contact: https://knightlogics.com/contact
-- Consultation booking: https://knightlogics.com/book-consultation
-- Website growth audit: https://knightlogics.com/website-growth-audit
 - Business growth systems hub: https://knightlogics.com/business-growth-systems
 - Case studies index: https://knightlogics.com/case-studies
 - AI discovery file: https://knightlogics.com/ai.txt

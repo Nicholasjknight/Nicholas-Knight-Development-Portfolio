@@ -121,8 +121,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="twitter:title" content="${escAttr(city.ogTitle)}">
     <meta name="twitter:description" content="${escAttr(city.ogDescription)}">
     <meta name="twitter:image" content="https://knightlogics.com/images/added-media/kl-home-site.webp">
-    <link rel="icon" type="image/png" href="/images/KnightLogicsLogo2.png" sizes="1024x1024">
-    <link rel="apple-touch-icon" href="/images/KnightLogicsLogo2.png">
+    <link rel="icon" type="image/png" href="/images/KnightLogicsLogo2.webp" sizes="1024x1024">
+    <link rel="apple-touch-icon" href="/images/KnightLogicsLogo2.webp">
     <link rel="manifest" href="/manifest.json">
 
     <script type="application/ld+json">
@@ -312,8 +312,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <h1 style="font-size: clamp(1.9rem, 4vw, 2.8rem); margin: 0 0 18px; line-height: 1.2;">${esc(city.h1)}</h1>
                     <p style="font-size: 1.08rem; color: #a8b2c8; line-height: 1.7; margin-bottom: 28px;">${rich(city.heroLead)} See <a href="/service-local-seo" style="color:#64ffda;">local SEO</a>, <a href="/service-google-business-profile" style="color:#64ffda;">Google Business Profile</a>, and <a href="/case-studies" style="color:#64ffda;">case studies</a>.</p>
                     <div style="display:flex; gap:12px; flex-wrap:wrap;">
-                        <a href="/website-growth-audit" class="services-panel-link services-panel-link--solid">Get a Free Audit</a>
-                        <a href="/contact" class="services-panel-link" style="background:transparent; border:1px solid rgba(100,255,218,.4);">Talk to Nicholas &rarr;</a>
+                        <a href="/starting-a-new-business" class="services-panel-link services-panel-link--solid">Launch Kit $299</a>
+                        <a href="tel:+18137735553" class="services-panel-link" style="background:transparent; border:1px solid rgba(100,255,218,.4);">Call (813) 773-5553</a>
                     </div>
                 </div>
                 <aside class="city-hero-form-shell" aria-label="Contact Knight Logics">
@@ -325,34 +325,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                         <form class="consultation-form" action="https://formspree.io/f/xnnggyzp" method="POST">
                             <div class="city-form-group">
-                                <label for="cityBusiness_${city.formId}">Business Name</label>
-                                <input type="text" id="cityBusiness_${city.formId}" name="businessName" placeholder="Your business name" required>
+                                <label for="cityNameOrg_${city.formId}">Name / organization</label>
+                                <input type="text" id="cityNameOrg_${city.formId}" name="nameOrg" autocomplete="organization" placeholder="Your name or company" required minlength="2" maxlength="160">
                             </div>
                             <div class="city-form-group">
-                                <label for="cityName_${city.formId}">Your Name</label>
-                                <input type="text" id="cityName_${city.formId}" name="contactName" placeholder="First and last name" required>
+                                <label for="cityContact_${city.formId}">Phone or email</label>
+                                <input type="text" id="cityContact_${city.formId}" name="contact" inputmode="email" autocomplete="email" placeholder="(813) 555-0123 or you@company.com" required maxlength="160">
                             </div>
                             <div class="city-form-group">
-                                <label for="cityEmail_${city.formId}">Email</label>
-                                <input type="email" id="cityEmail_${city.formId}" name="email" placeholder="you@example.com" required>
+                                <label for="cityDescription_${city.formId}">What do you need?</label>
+                                <textarea id="cityDescription_${city.formId}" name="description" required minlength="8" maxlength="2500" placeholder="Tell us what is not working."></textarea>
                             </div>
-                            <div class="city-form-group">
-                                <label for="cityService_${city.formId}">What do you need?</label>
-                                <select id="cityService_${city.formId}" name="serviceType" required>
-                                    <option value="">Select a service...</option>
-                                    <option value="website">New Website / Redesign</option>
-                                    <option value="seo">Local SEO &amp; Google Business</option>
-                                    <option value="audit">Free Website Audit</option>
-                                    <option value="automation">Business Automation</option>
-                                    <option value="other">Other / Consultation</option>
-                                </select>
-                            </div>
-                            <div class="city-form-group">
-                                <label for="cityDetails_${city.formId}">Project Details (optional)</label>
-                                <textarea id="cityDetails_${city.formId}" name="projectDetails" placeholder="What&rsquo;s the goal?"></textarea>
-                            </div>
-                            <input type="hidden" name="source" value="${escAttr(city.name)} city landing page hero form">
-                            <button type="submit" class="city-form-submit">Send My Request</button>
+                            <input type="hidden" name="_subject" value="Knight Logics city page inquiry">
+                            <input type="hidden" name="leadSource" value="${escAttr(city.name)} city landing page hero form">
+                            <button type="submit" class="city-form-submit form-submit-btn">
+                                <span>Send My Request</span>
+                                <span class="btn-loading" style="display:none;">Sending&hellip;</span>
+                            </button>
                         </form>
                     </div>
                 </aside>
@@ -427,7 +416,7 @@ ${city.marketParagraphs.map((p) => `            <p>${esc(p)}</p>`).join('\n')}
 
                 <article class="svc-mirror svc-mirror--flip fade-in">
                     <figure class="svc-mirror-media svc-mirror-media--good">
-                        <img src="/images/proof/psi-desktop-screenteam-100.png" alt="Screen Team desktop PageSpeed Insights scores at 100" width="1200" height="800" loading="lazy" decoding="async">
+                        <img src="/images/proof/psi-desktop-screenteam-100.webp" alt="Screen Team desktop PageSpeed Insights scores at 100" width="1200" height="800" loading="lazy" decoding="async">
                     </figure>
                     <div class="svc-mirror-copy">
                         <p class="svc-mirror-versus"><span>Performance</span> Lab scores as a build requirement</p>
@@ -451,7 +440,7 @@ ${city.marketParagraphs.map((p) => `            <p>${esc(p)}</p>`).join('\n')}
                         <figcaption><strong>Knight Group</strong> Estimate-first handyman site. <a href="/case-study-knight-group" style="color:#64ffda;">Case study →</a></figcaption>
                     </figure>
                     <figure>
-                        <img src="/images/proof/gbp-panel-knightgroup.png" alt="Google Business Profile panel aligned with website" width="1200" height="800" loading="lazy">
+                        <img src="/images/proof/gbp-panel-knightgroup.webp" alt="Google Business Profile panel aligned with website" width="1200" height="800" loading="lazy">
                         <figcaption><strong>GBP ↔ site parity</strong> Map pack and owned pages tell the same story for ${esc(city.name)} searches. <a href="/service-google-business-profile" style="color:#64ffda;">GBP services →</a></figcaption>
                     </figure>
                 </div>
@@ -518,7 +507,7 @@ ${city.marketParagraphs.map((p) => `            <p>${esc(p)}</p>`).join('\n')}
             <div style="margin-top: 48px; padding: 32px; background: rgba(100,255,218,.06); border: 1px solid rgba(100,255,218,.2); border-radius: 8px; text-align: center;">
                 <p style="font-size: 1.05rem; color: #e6f1ff; margin: 0 0 16px; font-weight: 600;">${esc(city.ctaBlurb)}</p>
                 <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-                    <a href="/website-growth-audit" class="services-panel-link">Get a Free Audit</a>
+                    <a href="tel:+18137735553" class="services-panel-link">Call (813) 773-5553</a>
                     <a href="/contact" class="services-panel-link" style="background:transparent; border:1px solid rgba(100,255,218,.4);">Contact Nicholas &rarr;</a>
                 </div>
             </div>

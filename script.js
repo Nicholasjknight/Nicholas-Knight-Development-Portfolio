@@ -151,7 +151,7 @@ async function loadSocialIcons() {
     }
 }
 
-const HEADER_FOOTER_VER = '20260727nav1';
+const HEADER_FOOTER_VER = '20260823sales3';
 
 async function loadHeaderFooter() {
     try {
@@ -3484,122 +3484,121 @@ function showNotification(message, type = 'info') {
     }, 3000);
 }
 
-// Business Contact Form Handler
-function initBusinessContactForm() {
-    const forms = document.querySelectorAll('.consultation-form');
-    if (!forms.length) return;
+const KL_EMAIL_RE = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
 
-    const formatFieldLabel = (key) => key
-        .replace(/^_+/, '')
-        .replace(/([A-Z])/g, ' $1')
-        .replace(/[-_]+/g, ' ')
-        .replace(/\s+/g, ' ')
-        .trim()
-        .replace(/^./, (char) => char.toUpperCase());
+function parseKlContact(raw) {
+    const value = String(raw || '').trim();
+    if (!value || value.length > 160) return null;
+    if (value.includes('@')) {
+        if (!KL_EMAIL_RE.test(value)) return null;
+        const domain = value.split('@')[1] || '';
+        if (!domain.includes('.') || domain.startsWith('.') || domain.endsWith('.')) return null;
+        return { kind: 'email', email: value, phone: '' };
+    }
+    const digits = value.replace(/\D/g, '');
+    const national = digits.length === 11 && digits[0] === '1' ? digits.slice(1) : digits;
+    if (national.length !== 10) return null;
+    if (/^(\d)\1{9}$/.test(national) || national === '0000000000' || national === '1234567890') return null;
+    return { kind: 'phone', email: '', phone: value };
+}
 
-    forms.forEach((form) => {
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const submitBtn = form.querySelector('.form-submit-btn');
-            const btnText = submitBtn.querySelector('span');
-            const btnLoading = submitBtn.querySelector('.btn-loading');
-            
-            // Show loading state
-            submitBtn.disabled = true;
-            btnText.style.display = 'none';
-            btnLoading.style.display = 'block';
-            
-            // Collect form data
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-            const businessName = data.businessName || 'Knight Logics Inquiry';
-            const contactName = data.contactName || 'Not provided';
-            const serviceType = data.serviceType || 'Not specified';
-            const projectDetails = data.projectDetails || 'Not provided';
-            const timeline = data.timeline || 'Not specified';
-            const budget = data.budget || 'Not specified';
-            const subject = data._subject || `New Consultation Request from ${businessName}`;
-            const reservedKeys = new Set([
-                '_subject',
-                '_replyto',
-                'businessName',
-                'contactName',
-                'email',
-                'serviceType',
-                'timeline',
-                'budget',
-                'projectDetails'
-            ]);
-            const extraFields = Object.entries(data)
-                .filter(([key, value]) => !reservedKeys.has(key) && value)
-                .map(([key, value]) => `${formatFieldLabel(key)}: ${value}`);
-            
-            try {
-                // Send form data to Formspree
-                const response = await fetch('https://formspree.io/f/xnnggyzp', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        ...data,
-                        businessName,
-                        contactName,
-                        email: data.email,
-                        serviceType,
-                        timeline,
-                        budget,
-                        projectDetails,
-                        additionalDetails: extraFields.length ? extraFields.join('\n') : 'None provided',
-                        _replyto: data.email,
-                        _subject: subject
-                    })
-                });
+function readKlLeadFields(form) {
+    const data = Object.fromEntries(new FormData(form));
+    const nameOrg = String(data.nameOrg || data.businessName || data.contactName || data.name || '').trim();
+    const contactRaw = String(data.contact || '').trim() || String(data.email || data.phone || '').trim();
+    const description = String(data.description || data.projectDetails || data.primaryProblem || '').trim();
+    return { data, nameOrg, contactRaw, description, parsed: parseKlContact(contactRaw) };
+}
 
-                if (response.ok) {
-                    showBusinessNotification('Thank you! Your consultation request has been sent successfully. We\'ll contact you within 24 hours.', 'success');
-                    klNotifyLead('New KL Lead', 'Contact: ' + contactName + '\nEmail: ' + (data.email || '') + '\nService: ' + serviceType);
-                    form.reset();
-                } else {
-                    throw new Error('Network response was not ok');
-                }
-                
-            } catch (error) {
-                console.error('Formspree submission error:', error);
-                
-                // Fallback to mailto if Formspree fails
-                const emailSubject = subject;
-                const emailBody = `
-Business/Organization: ${businessName}
-Contact Name: ${contactName}
-Email: ${data.email}
-Service Type: ${serviceType}
-Timeline: ${timeline}
-Budget: ${budget}
+function bindKlLeadForm(form) {
+    if (!form || form.dataset.klLeadBound === '1') return;
+    form.dataset.klLeadBound = '1';
 
-${extraFields.length ? `${extraFields.join('\n')}
-` : ''}
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
 
-Project Details:
-${projectDetails}
+        const { data, nameOrg, contactRaw, description, parsed } = readKlLeadFields(form);
+        const contactInput = form.querySelector('[name="contact"]') || form.querySelector('[name="email"]');
+        if (contactInput) contactInput.setCustomValidity('');
 
----
-This message was sent from the Knight Logics contact form on knightlogics.com
-                `.trim();
-                
-                const mailtoLink = `mailto:nickknight488@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-                window.location.href = mailtoLink;
-                
-                showBusinessNotification('Opening your email client as backup. Please send the email to complete your request.', 'info');
-            } finally {
-                // Reset button state
-                submitBtn.disabled = false;
-                btnText.style.display = 'block';
-                btnLoading.style.display = 'none';
+        if (nameOrg.length < 2) {
+            showBusinessNotification('Add your name or organization.', 'error');
+            return;
+        }
+        if (!parsed) {
+            if (contactInput) {
+                contactInput.setCustomValidity('Enter a real phone number or email.');
+                contactInput.reportValidity();
             }
-        });
+            showBusinessNotification('Phone or email must be a real number or address.', 'error');
+            return;
+        }
+        if (description.length < 8) {
+            showBusinessNotification('Add a short description of what you need.', 'error');
+            return;
+        }
+
+        const submitBtn = form.querySelector('.form-submit-btn') || form.querySelector('button[type="submit"]');
+        const btnText = submitBtn ? submitBtn.querySelector('span:not(.btn-loading)') : null;
+        const btnLoading = submitBtn ? submitBtn.querySelector('.btn-loading') : null;
+        if (submitBtn) submitBtn.disabled = true;
+        if (btnText) btnText.style.display = 'none';
+        if (btnLoading) btnLoading.style.display = 'block';
+
+        const subject = data._subject || `New Knight Logics inquiry from ${nameOrg}`;
+        const payload = {
+            nameOrg,
+            contact: contactRaw,
+            description,
+            email: parsed.email || undefined,
+            phone: parsed.phone || undefined,
+            leadSource: data.leadSource || data.source || window.location.pathname,
+            page: window.location.pathname,
+            _subject: subject
+        };
+        if (parsed.email) payload._replyto = parsed.email;
+
+        try {
+            const response = await fetch(form.action || 'https://formspree.io/f/xnnggyzp', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (response.ok) {
+                showBusinessNotification('Thank you. We will reply the same day on business days.', 'success');
+                klNotifyLead('New KL Lead', 'Name: ' + nameOrg + '\nContact: ' + contactRaw + '\n' + description);
+                form.reset();
+                if (form.id === 'mobileSheetForm') {
+                    const closeBtn = document.getElementById('mobileSheetClose');
+                    if (closeBtn) setTimeout(() => closeBtn.click(), 800);
+                }
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        } catch (error) {
+            console.error('Formspree submission error:', error);
+            const emailBody = [
+                'Name / organization: ' + nameOrg,
+                'Phone or email: ' + contactRaw,
+                '',
+                description,
+                '',
+                '---',
+                'Sent from knightlogics.com' + window.location.pathname
+            ].join('\n');
+            window.location.href = `mailto:nickknight488@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+            showBusinessNotification('Opening your email client as backup. Please send the email to complete your request.', 'info');
+        } finally {
+            if (submitBtn) submitBtn.disabled = false;
+            if (btnText) btnText.style.display = 'block';
+            if (btnLoading) btnLoading.style.display = 'none';
+        }
     });
+}
+
+function initBusinessContactForm() {
+    document.querySelectorAll('.consultation-form').forEach(bindKlLeadForm);
 }
 
 function showBusinessNotification(message, type = 'success') {
@@ -3946,43 +3945,6 @@ document.addEventListener('keydown', function(event) {
         if (e.key === 'Escape' && sheet.classList.contains('is-open')) closeSheet();
     });
 
-    // Wire up form submission for the mobile sheet form
-    var mobileForm = document.getElementById('mobileSheetForm');
-    if (mobileForm) {
-        mobileForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            var btn = mobileForm.querySelector('.form-submit-btn');
-            var label = btn.querySelector('span');
-            var loading = btn.querySelector('.btn-loading');
-            btn.disabled = true;
-            if (label) label.style.display = 'none';
-            if (loading) loading.style.display = 'block';
-
-            fetch(mobileForm.action, {
-                method: 'POST',
-                body: new FormData(mobileForm),
-                headers: { 'Accept': 'application/json' }
-            }).then(function(r) {
-                if (r.ok) {
-                    var mName = (document.getElementById('mobileContactName') || {}).value || 'Unknown';
-                    var mEmail = (document.getElementById('mobileEmail') || {}).value || '';
-                    klNotifyLead('KL Mobile Form', 'Contact: ' + mName + '\nEmail: ' + mEmail);
-                    mobileForm.innerHTML = '<div class="form-success-message" style="text-align:center;padding:2rem 0;"><p style="color:#64ffda;font-size:1.1rem;font-weight:700;">Request sent!</p><p style="color:rgba(255,255,255,0.7);margin-top:0.5rem;">We\'ll be in touch shortly.</p></div>';
-                    setTimeout(closeSheet, 2200);
-                } else {
-                    btn.disabled = false;
-                    if (label) label.style.display = '';
-                    if (loading) loading.style.display = 'none';
-                    alert('Something went wrong. Please try again or call (813) 773-5553.');
-                }
-            }).catch(function() {
-                btn.disabled = false;
-                if (label) label.style.display = '';
-                if (loading) loading.style.display = 'none';
-                alert('Network error. Please try again or call (813) 773-5553.');
-            });
-        });
-    }
 })();
 
 // PWA Install Banner — intercepts native prompt and shows custom dismissible banner
@@ -4181,22 +4143,24 @@ function initServiceSidebarForms() {
 
         const service = mount.dataset.serviceLabel || 'Website / SEO';
         const market = mount.dataset.marketLabel || 'Tampa Bay';
+        const uid = 'sb' + String(Math.random()).slice(2, 8);
         const form = document.createElement('form');
-        form.className = 'svc-sidebar-form-inner';
-        form.action = 'https://formspree.io/f/xpwzgkqr';
+        form.className = 'svc-sidebar-form-inner consultation-form';
+        form.action = 'https://formspree.io/f/xnnggyzp';
         form.method = 'POST';
         form.innerHTML = `
             <h3>Request a free audit</h3>
-            <p>Short form — we reply within 24 hours with next steps for ${service} in ${market}.</p>
-            <div class="form-group"><label for="sb-name">Business name</label><input id="sb-name" name="businessName" required></div>
-            <div class="form-group"><label for="sb-url">Website or GBP URL</label><input id="sb-url" name="websiteUrl" type="url" placeholder="https://"></div>
-            <div class="form-group"><label for="sb-email">Email</label><input id="sb-email" name="email" type="email" required></div>
-            <div class="form-group"><label for="sb-problem">Primary problem</label><textarea id="sb-problem" name="primaryProblem" placeholder="Rankings, leads, GBP, site redesign…"></textarea></div>
+            <p>Three fields — we reply the same day for ${service} in ${market}.</p>
+            <div class="form-group"><label for="${uid}NameOrg">Name / organization</label><input id="${uid}NameOrg" name="nameOrg" autocomplete="organization" required minlength="2" maxlength="160"></div>
+            <div class="form-group"><label for="${uid}Contact">Phone or email</label><input id="${uid}Contact" name="contact" inputmode="email" autocomplete="email" placeholder="(813) 555-0123 or you@company.com" required maxlength="160"></div>
+            <div class="form-group"><label for="${uid}Description">What do you need?</label><textarea id="${uid}Description" name="description" required minlength="8" maxlength="2500" placeholder="Tell us what is not working."></textarea></div>
+            <input type="hidden" name="_subject" value="Knight Logics ${service} inquiry">
             <input type="hidden" name="leadSource" value="Service page sidebar">
             <input type="hidden" name="requestedService" value="${service}">
             <input type="hidden" name="market" value="${market}">
-            <button type="submit" class="btn-primary">Send audit request</button>`;
+            <button type="submit" class="btn-primary form-submit-btn"><span>Send My Request</span><span class="btn-loading" style="display:none;">Sending&hellip;</span></button>`;
         mount.appendChild(form);
+        bindKlLeadForm(form);
     });
 }
 

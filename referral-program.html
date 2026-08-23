@@ -287,7 +287,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
         }
     </style>
-    <script defer src="/script.js?v=20260709gbp1"></script>
+    <script defer src="/script.js?v=20260823sales3"></script>
 </head>
 <body class="referral-page">
 <!-- Google Tag Manager (noscript) -->
@@ -488,29 +488,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                     <form class="consultation-form" action="https://formspree.io/f/xnnggyzp" method="POST">
                         <input type="hidden" name="_subject" value="Referral Partner Application">
-                        <input type="hidden" name="serviceType" value="Referral Partner Program">
                         <input type="hidden" name="leadSource" value="Referral Program Page">
                         <div class="form-group">
-                            <label for="partnerBusinessName">Business name</label>
-                            <input id="partnerBusinessName" name="businessName" type="text" autocomplete="organization" required>
+                            <label for="partnerNameOrg">Name / organization</label>
+                            <input id="partnerNameOrg" name="nameOrg" type="text" autocomplete="organization" required minlength="2" maxlength="160">
                         </div>
                         <div class="form-group">
-                            <label for="partnerContactName">Contact name</label>
-                            <input id="partnerContactName" name="name" type="text" autocomplete="name" required>
+                            <label for="partnerContact">Phone or email</label>
+                            <input id="partnerContact" name="contact" type="text" inputmode="email" autocomplete="email" placeholder="(813) 555-0123 or you@company.com" required maxlength="160">
                         </div>
                         <div class="form-group">
-                            <label for="partnerEmail">Email</label>
-                            <input id="partnerEmail" name="email" type="email" autocomplete="email" required>
+                            <label for="partnerDescription">What do you need?</label>
+                            <textarea id="partnerDescription" name="description" required minlength="8" maxlength="2500" placeholder="Who you refer, and how you want to partner."></textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="partnerWebsite">Website or listing URL</label>
-                            <input id="partnerWebsite" name="website" type="url" autocomplete="url" placeholder="https://">
-                        </div>
-                        <div class="form-group starter-package-intake-span-2">
-                            <label for="partnerNotes">Who do you usually refer?</label>
-                            <textarea id="partnerNotes" name="projectDetails" placeholder="Example: new businesses ordering signs, business cards, storefront graphics, menus, or launch materials." required></textarea>
-                        </div>
-                        <button type="submit" class="cta-button primary" style="border:0;">Submit Partner Application</button>
+                        <button type="submit" class="cta-button primary form-submit-btn" style="border:0;">
+                            <span>Submit Partner Application</span>
+                            <span class="btn-loading" style="display:none;">Sending&hellip;</span>
+                        </button>
                     </form>
                 </div>
             </div>
