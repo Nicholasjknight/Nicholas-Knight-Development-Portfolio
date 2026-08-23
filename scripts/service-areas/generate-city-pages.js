@@ -2,6 +2,10 @@
  * Generate web-designer-*.html pages from cities.json
  * Shared hero chrome (gradient + form) — unique city image lives in the article body.
  * Run: node scripts/service-areas/generate-city-pages.js
+ *
+ * Do not run this to refresh photos. It can wipe sales-door CTAs on live city
+ * pages. Overwrite images/service-areas/{slug}.webp in place instead
+ * (replace-city-images.js).
  */
 const fs = require('fs');
 const path = require('path');

@@ -5,6 +5,30 @@
 const fs = require('fs');
 const path = require('path');
 
+/** Verified Wikimedia Commons photos. Keep in sync with replace-city-images.js. */
+const IMAGE_META = {
+  tampa: { alt: 'Downtown Tampa, Florida skyline', caption: 'Downtown Tampa along the Hillsborough River.' },
+  'st-petersburg': { alt: 'Downtown St. Petersburg, Florida', caption: 'Downtown St. Petersburg.' },
+  clearwater: { alt: 'Clearwater Beach, Florida looking toward the Gulf', caption: 'Clearwater Beach on the Gulf of Mexico.' },
+  'safety-harbor': { alt: 'Safety Harbor, Florida waterfront on Tampa Bay', caption: 'Safety Harbor waterfront on Tampa Bay.' },
+  'palm-harbor': { alt: 'Brooker Creek at John Chesnut Sr. Park, Palm Harbor, Florida', caption: 'Brooker Creek at John Chesnut Sr. Park in Palm Harbor.' },
+  dunedin: { alt: 'Dunedin City Hall, Dunedin, Florida', caption: 'Dunedin City Hall.' },
+  largo: { alt: 'Largo Public Library, Largo, Florida', caption: 'Largo Public Library.' },
+  'pinellas-park': { alt: 'CSX Clearwater Subdivision in Pinellas Park, Florida', caption: 'Rail corridor through Pinellas Park.' },
+  seminole: { alt: 'Lake Walsingham sunset, Seminole, Florida', caption: 'Lake Walsingham in Seminole.' },
+  'tarpon-springs': { alt: 'Sponge Docks in Tarpon Springs, Florida', caption: 'Tarpon Springs Sponge Docks.' },
+  oldsmar: { alt: 'Aerial view of Oldsmar, Florida', caption: 'Aerial view of Oldsmar and Old Tampa Bay.' },
+  brandon: { alt: 'Westfield Brandon mall, Brandon, Florida', caption: 'Westfield Brandon mall — the commercial center of Brandon.' },
+  riverview: { alt: 'Alafia River near Riverview, Hillsborough County, Florida', caption: 'Alafia River near Lithia Springs — the river corridor through Riverview.' },
+  'temple-terrace': { alt: 'Temple Terrace entry tower on 56th Street, Florida', caption: 'Temple Terrace entry on 56th Street.' },
+  lutz: { alt: 'Historic Lutz train depot, Lutz, Florida', caption: 'Historic Lutz train depot.' },
+  'wesley-chapel': { alt: 'Wesley Chapel, Florida commercial corridor', caption: 'Wesley Chapel in Pasco County.' },
+  'new-port-richey': { alt: 'Sims Park amphitheatre, New Port Richey, Florida', caption: 'Sims Park amphitheatre in New Port Richey.' },
+  holiday: { alt: 'Anclote River Park, Holiday, Florida', caption: 'Sailboats at Anclote River Park in Holiday.' },
+  'land-o-lakes': { alt: "US 41 and State Road 54 in Land O' Lakes, Florida, from the air", caption: "US 41 and State Road 54 in Land O' Lakes, from a hot-air balloon." },
+  'plant-city': { alt: 'Downtown Plant City, Florida commercial district', caption: 'Downtown Plant City commercial district.' },
+};
+
 const CITIES = [
   { slug: 'tampa', name: 'Tampa', county: 'Hillsborough', countyFull: 'Hillsborough County', formId: 'Tam', neighborhoods: 'South Tampa, Ybor City, Hyde Park, Channelside, Carrollwood, Westchase, and Seminole Heights', rivals: 'Hillsborough contractors and multi-location franchise sites', angle: 'largest metro search volume and densest map-pack competition', siblings: ['brandon', 'temple-terrace', 'clearwater', 'st-petersburg', 'safety-harbor'], imageQuery: 'tampa florida skyline downtown' },
   { slug: 'st-petersburg', name: 'St. Petersburg', county: 'Pinellas', countyFull: 'Pinellas County', formId: 'StP', neighborhoods: 'Downtown St. Pete, Midtown, Snell Isle, Historic Kenwood, and Gulfport', rivals: 'beach-tourism templates and thin Pinellas brochure sites', angle: 'creative downtown energy mixed with peninsula-wide trade demand', siblings: ['clearwater', 'pinellas-park', 'largo', 'tampa', 'seminole'], imageQuery: 'st petersburg florida downtown pier' },
@@ -88,7 +112,8 @@ function buildCity(c) {
 
   const proofBlurb = `Nearby Tampa Bay builds (Screen Team, Knight Group, JNS, Sal’s Painting, and others) show the same hand-coded, search-ready foundation ${city} businesses need. Your page count and package tier change; the quality bar does not. When we have a ${city}-specific project, it is featured here; until then, regional proof still demonstrates the delivery standard.`;
 
-  const contentImageCaption = `${city}, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.`;
+  const media = IMAGE_META[c.slug] || {};
+  const contentImageCaption = media.caption || `${city}, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.`;
 
   const obj = {
     slug: c.slug,
@@ -119,11 +144,11 @@ function buildCity(c) {
     industriesBlurb,
     localAngle: `On-site collaboration is available in ${city} and across Tampa Bay. Full remote website and growth-system delivery is available nationwide.`,
     proofBlurb,
-    contentImage: `/images/service-areas/${c.slug}.jpg`,
-    contentImageAlt: `${city}, Florida — service area for Knight Logics web design and local SEO`,
+    contentImage: `/images/service-areas/${c.slug}.webp`,
+    contentImageAlt: media.alt || `${city}, Florida — service area for Knight Logics web design and local SEO`,
     contentImageCaption,
     /** Only true after a verified local photo is placed at contentImage. Default false → generator emits kl-media-needed. */
-    imageVerified: false,
+    imageVerified: Boolean(media.alt),
     imageQuery: c.imageQuery,
     siblings: c.siblings,
     faqs,

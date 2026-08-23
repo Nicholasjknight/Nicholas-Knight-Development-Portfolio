@@ -1,71 +1,48 @@
 /**
  * City content images policy — verified local photography only.
  *
- * Previous Unsplash "vibe" downloads were inaccurate (wrong cities) and damaged
- * trust + image SEO. This script NO LONGER downloads generic stock.
+ * Previous Unsplash "vibe" downloads were geographically false (Banff on Brandon,
+ * NYC on Dunedin, Golden Gate on New Port Richey, Chicago snow on Tampa).
  *
- * Workflow:
- * 1. Capture or license a verified photo of the exact city (landmark / corridor).
- * 2. Save as images/service-areas/{slug}.jpg (or .webp).
- * 3. Set imageVerified: true for that city in build-cities-json.js (or patch cities.json).
- * 4. Rebuild: node scripts/service-areas/build-cities-json.js
- * 5. Regenerate: node scripts/service-areas/generate-city-pages.js
+ * Current files live in images/service-areas/{slug}.webp and were fetched from
+ * Wikimedia Commons by scripts/service-areas/replace-city-images.js.
  *
- * Until then, generate-city-pages.js emits .kl-media-needed placeholders.
+ * Do not download generic stock. Do not regenerate city HTML from
+ * generate-city-pages.js without checking sales-door CTAs — overwrite the
+ * image files in place instead.
  *
  * Run: node scripts/service-areas/download-city-images.js
  */
 const fs = require('fs');
 const path = require('path');
 
+const { CITIES } = require('./replace-city-images.js');
 const outDir = path.join(__dirname, '..', '..', 'images', 'service-areas');
-fs.mkdirSync(outDir, { recursive: true });
-
-const SLUGS = [
-  'tampa',
-  'st-petersburg',
-  'clearwater',
-  'safety-harbor',
-  'palm-harbor',
-  'dunedin',
-  'largo',
-  'pinellas-park',
-  'seminole',
-  'tarpon-springs',
-  'oldsmar',
-  'brandon',
-  'riverview',
-  'temple-terrace',
-  'lutz',
-  'wesley-chapel',
-  'new-port-richey',
-  'holiday',
-  'land-o-lakes',
-  'plant-city',
-];
-
-/** Optional: map slug → verified HTTPS URL of an exact-city photograph with known license. */
-const VERIFIED_SOURCES = {
-  // Example (do not enable until URL is confirmed as that city):
-  // tampa: 'https://upload.wikimedia.org/wikipedia/commons/.../Tampa_....jpg',
-};
 
 const ATTR = `# Service-area content images
 
-Policy (2026-07): only verified exact-city photographs or owned captures.
+Policy: only verified exact-city photographs (Wikimedia Commons) or owned captures.
 
-Hero sections on city pages use the shared Knight Logics hero pattern (no per-city hero photo).
+Hero sections use the shared Knight Logics hero pattern (no per-city hero photo).
 In-article metro images must depict the named city. Misleading stock is forbidden.
 
-| Slug | Status |
-|------|--------|
-${SLUGS.map((k) => `| ${k} | ${VERIFIED_SOURCES[k] ? 'verified URL configured' : 'PLACEHOLDER — supply photo, then set imageVerified'} |`).join('\n')}
+To refresh binaries: \`node scripts/service-areas/replace-city-images.js\`
 
-Until a verified file exists, city HTML uses \`.kl-media-needed\` placeholders.
+See \`ATTRIBUTION.md\` in this folder for license and credit.
+
+| Slug | Commons file | Status |
+|------|--------------|--------|
+${Object.entries(CITIES)
+  .map(([slug, spec]) => `| ${slug} | ${spec.file} | verified |`)
+  .join('\n')}
 `;
 
+if (!CITIES) {
+  console.error('replace-city-images.js must export CITIES');
+  process.exit(1);
+}
+
 fs.writeFileSync(path.join(outDir, 'SOURCES.md'), ATTR);
-console.log('Wrote images/service-areas/SOURCES.md');
-console.log('Verified downloads configured:', Object.keys(VERIFIED_SOURCES).length);
-console.log('Remaining placeholders:', SLUGS.filter((s) => !VERIFIED_SOURCES[s]).length);
-console.log('No vibe-stock downloads will run. Add VERIFIED_SOURCES entries when you have exact-city URLs.');
+console.log('Wrote images/service-areas/SOURCES.md from verified Commons map.');
+console.log('Verified cities:', Object.keys(CITIES).length);
+console.log('No vibe-stock downloads will run.');
