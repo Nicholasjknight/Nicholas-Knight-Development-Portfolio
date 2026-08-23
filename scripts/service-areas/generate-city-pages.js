@@ -501,7 +501,7 @@ ${city.marketParagraphs.map((p) => `            <p>${esc(p)}</p>`).join('\n')}
                 <li>Electricians &amp; specialty trades</li>
             </ul>
 
-            <p><a href="/nicholas-knight" style="color:#64ffda;">Nicholas Knight</a> builds every site directly — HTML, CSS, and JavaScript from Safety Harbor. Review <a href="/pricing" style="color:#64ffda;">pricing</a> or <a href="/book-consultation" style="color:#64ffda;">book a consultation</a> when the scope is clear.</p>
+            <p><a href="/nicholas-knight" style="color:#64ffda;">Nicholas Knight</a> builds every site directly — HTML, CSS, and JavaScript from Safety Harbor. Review <a href="/pricing" style="color:#64ffda;">pricing</a> or <a href="/book-consultation" style="color:#64ffda;">request a consultation</a> when the scope is clear.</p>
 
             <h2 style="color: #e6f1ff; font-size: 1.5rem; margin: 40px 0 16px;">Frequently asked questions — ${esc(city.name)} web design</h2>
             <div style="display:grid; gap: 20px; margin-bottom: 12px;">

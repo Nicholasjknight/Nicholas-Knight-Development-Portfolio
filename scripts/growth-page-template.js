@@ -669,7 +669,7 @@ function renderCta(cta) {
             <div class="svc-cta-band-inner fade-in">
                 <h2>${title}</h2>
                 <p>${text}</p>
-                <a href="/book-consultation" class="btn-primary">Book a Free Consultation</a>
+                <a href="/book-consultation" class="btn-primary">Request a Consultation</a>
             </div>
         </div>
     </section>`;
@@ -694,7 +694,7 @@ function renderServicePage(p) {
                 <p class="svc-hero-lead">${p.lead}</p>
                 ${renderStats(p.stats)}
                 <div class="svc-cta-row">
-                    <a href="/book-consultation" class="btn-primary">Book a Consultation</a>
+                    <a href="/book-consultation" class="btn-primary">Request a Consultation</a>
                     <a href="/website-growth-audit" class="btn-secondary">Free Growth Audit</a>
                 </div>
             </div>

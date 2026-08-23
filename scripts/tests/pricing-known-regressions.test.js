@@ -102,6 +102,21 @@ test('public pricing does not advertise stale package names or price syntax', ()
     assert.doesNotMatch(publicCopy, /Authority(?: Site)?[^\n]{0,80}35[–-]60 pages/i);
 });
 
+test('public sales copy does not advertise unfinished scaffolding or stale KL metrics', () => {
+    assert.doesNotMatch(read('index.html'), /Site Index &amp; Policy Pages/);
+    assert.doesNotMatch(read('index.html'), /Hand-coded sites load faster, score higher on Core Web Vitals/);
+    assert.doesNotMatch(read('videoforge.html'), /Coming Soon|Embed target is ready/i);
+    assert.doesNotMatch(read('display-control-plus.html'), /Coming Soon|Ready for your future/i);
+    assert.doesNotMatch(read('case-study-knight-logics.html'), />23</);
+    assert.doesNotMatch(read('case-study-knight-logics.html'), /richer SERP presentation/i);
+    assert.doesNotMatch(read('case-study-knight-logics.html'), /ports 5050/);
+    assert.match(read('privacy-policy.html'), /Last updated: August 23, 2026/);
+    assert.match(read('header.html'), /Request a Consultation/);
+    assert.match(read('website-growth-audit.html'), /id="auditWebsite"/);
+    assert.match(read('website-growth-audit.html'), /href="#auditForm"/);
+    assert.doesNotMatch(read('website-growth-audit.html'), /Book a Free Consultation/);
+});
+
 test('package pages preserve canonical website bands and Growth setup prices', () => {
     assert.match(read('package-demo-preview.html'), /1[–-]5 pages/i);
     assert.match(read('package-preview-launch.html'), /up to 10/i);

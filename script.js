@@ -151,7 +151,7 @@ async function loadSocialIcons() {
     }
 }
 
-const HEADER_FOOTER_VER = '20260823sales3';
+const HEADER_FOOTER_VER = '20260823sales4';
 
 async function loadHeaderFooter() {
     try {

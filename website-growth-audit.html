@@ -67,16 +67,24 @@
                 </div>
                 <form class="consultation-form kl-door-form" id="auditForm" action="https://formspree.io/f/xnnggyzp" method="POST">
                     <div class="form-group">
-                        <label for="auditNameOrg">Name / organization</label>
-                        <input type="text" id="auditNameOrg" name="nameOrg" autocomplete="organization" placeholder="Your name or company" required minlength="2" maxlength="160">
+                        <label for="auditNameOrg">Business name</label>
+                        <input type="text" id="auditNameOrg" name="nameOrg" autocomplete="organization" placeholder="Your company" required minlength="2" maxlength="160">
+                    </div>
+                    <div class="form-group">
+                        <label for="auditWebsite">Website</label>
+                        <input type="url" id="auditWebsite" name="website" autocomplete="url" inputmode="url" placeholder="https://yourbusiness.com" required maxlength="240">
+                    </div>
+                    <div class="form-group">
+                        <label for="auditCity">City</label>
+                        <input type="text" id="auditCity" name="city" autocomplete="address-level2" placeholder="Tampa, Clearwater, St. Pete…" required minlength="2" maxlength="80">
                     </div>
                     <div class="form-group">
                         <label for="auditContact">Phone or email</label>
                         <input type="text" id="auditContact" name="contact" inputmode="email" autocomplete="email" placeholder="(813) 555-0123 or you@company.com" required maxlength="160">
                     </div>
                     <div class="form-group">
-                        <label for="auditDescription">What do you need?</label>
-                        <textarea id="auditDescription" name="description" rows="4" required minlength="8" maxlength="2500" placeholder="Your site URL and why the phone is quiet."></textarea>
+                        <label for="auditDescription">Biggest issue</label>
+                        <textarea id="auditDescription" name="description" rows="4" required minlength="8" maxlength="2500" placeholder="Maps is quiet, site looks dated, leads go nowhere…"></textarea>
                     </div>
                     <input type="hidden" name="_subject" value="Knight Logics growth audit request">
                     <input type="hidden" name="leadSource" value="Website growth audit">
@@ -220,7 +228,7 @@
                 <h2>Findings map to flagship lanes</h2>
                 <p>Audit output routes to business-growth-systems, individual lanes, or trade-specific sub-pages depending on urgency and budget.</p>
                 <ul class="kl-growth-list"><li>Free audit entry point before paid scope</li><li>Faith Works and Screen Team for large geography trades</li><li>Knight Group benchmark when handyman depth applies</li><li>No obligation to adopt full stack — lane-scoped builds available</li></ul>
-                <div class="kl-growth-links"><a href="/business-growth-systems">Growth Systems</a><a href="/book-consultation">Book Consultation</a><a href="/performance-partner-program">Partner Program</a></div>
+                <div class="kl-growth-links"><a href="/business-growth-systems">Growth Systems</a><a href="/book-consultation">Request a Consultation</a><a href="/performance-partner-program">Partner Program</a></div>
             </div>
         </div>
     </section>
@@ -416,7 +424,7 @@
     <section class="kl-growth-section kl-growth-section--compact">
         <div class="container">
             <p class="kl-growth-pricing-note fade-in">Free initial audit tier — implementation quoted separately based on prioritized lanes.</p>
-            <div class="kl-growth-links kl-growth-links--center fade-in"><a href="/book-consultation">Book Consultation</a>
+            <div class="kl-growth-links kl-growth-links--center fade-in"><a href="/book-consultation">Request a Consultation</a>
                 <a href="/business-growth-systems">Growth Systems</a>
                 <a href="/local-visibility-systems">Local Visibility</a>
                 <a href="/case-study-knight-group">Knight Group Example</a></div>
@@ -427,7 +435,7 @@
             <div class="svc-cta-band-inner fade-in">
                 <h2>Request your growth audit</h2>
                 <p>Share your site and how you get customers today. We will return prioritized fixes and system opportunities.</p>
-                <a href="/book-consultation" class="btn-primary">Book a Free Consultation</a>
+                <a href="#auditForm" class="btn-primary">Request Your Free Audit</a>
             </div>
         </div>
     </section>
