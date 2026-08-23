@@ -110,6 +110,7 @@ test('public sales copy does not advertise unfinished scaffolding or stale KL me
     assert.doesNotMatch(read('case-study-knight-logics.html'), />23</);
     assert.doesNotMatch(read('case-study-knight-logics.html'), /richer SERP presentation/i);
     assert.doesNotMatch(read('case-study-knight-logics.html'), /ports 5050/);
+    assert.doesNotMatch(read('case-study-knight-logics.html'), /All pages crawled and indexed successfully/i);
     assert.match(read('privacy-policy.html'), /Last updated: August 23, 2026/);
     assert.match(read('header.html'), /Request a Consultation/);
     assert.match(read('website-growth-audit.html'), /id="auditWebsite"/);
