@@ -98,6 +98,7 @@ test('public pricing does not advertise stale package names or price syntax', ()
     assert.doesNotMatch(publicCopy, /Growth sites? (?:are|start at) 70\+ pages/i);
     assert.doesNotMatch(publicCopy, /Preview Launch[^\n]{0,80}up to ~?20 pages/i);
     assert.doesNotMatch(publicCopy, /Local Site[^\n]{0,80}up to 35 pages/i);
+    assert.doesNotMatch(read('index.html'), /up to <strong>35 pages<\/strong>/i);
     assert.doesNotMatch(publicCopy, /Authority(?: Site)?[^\n]{0,80}35[–-]60 pages/i);
 });
 
