@@ -324,8 +324,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="city-hero-form-card">
                         <div style="margin-bottom:16px;">
                             <span style="display:inline-flex;align-items:center;padding:5px 12px;border-radius:999px;background:rgba(100,255,218,.1);border:1px solid rgba(100,255,218,.2);color:#64ffda;font-size:.76rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;">Get in Touch</span>
-                            <h2 style="margin:12px 0 6px;font-size:1.1rem;color:#fff;line-height:1.15;">Talk Through Your Project</h2>
-                            <p style="margin:0;color:rgba(255,255,255,.72);font-size:.86rem;line-height:1.35;">Need a stronger site or better rankings? Start here.</p>
+                            <h2 style="margin:12px 0 6px;font-size:1.1rem;color:#fff;line-height:1.15;">${esc(city.formTitle || 'Talk Through Your Project')}</h2>
+                            <p style="margin:0;color:rgba(255,255,255,.72);font-size:.86rem;line-height:1.35;">${esc(city.formLead || 'Need a stronger site or better rankings? Start here.')}</p>
                         </div>
                         <form class="consultation-form" action="https://formspree.io/f/xnnggyzp" method="POST">
                             <div class="city-form-group">
@@ -409,7 +409,7 @@ ${city.marketParagraphs.map((p) => `            <p>${esc(p)}</p>`).join('\n')}
                     <div class="svc-mirror-copy">
                         <p class="svc-mirror-versus"><span>Local SEO</span> Screen Team LLC</p>
                         <h3>Call-first trade site with deep service coverage</h3>
-                        <p>The same pattern we use for ${esc(city.name)} launches: service silos, estimate CTAs, schema, and pages built for map-pack clicks on phones.</p>
+                        <p>${esc(city.proofPattern || `The same pattern we use for ${city.name} launches: service silos, estimate CTAs, schema, and pages built for map-pack clicks on phones.`)}</p>
                         <ul class="svc-checklist">
                             <li>Mobile estimate and call paths above the fold</li>
                             <li>Service + city architecture for Tampa Bay search</li>
@@ -424,8 +424,8 @@ ${city.marketParagraphs.map((p) => `            <p>${esc(p)}</p>`).join('\n')}
                     </figure>
                     <div class="svc-mirror-copy">
                         <p class="svc-mirror-versus"><span>Performance</span> Lab scores as a build requirement</p>
-                        <h3>Speed that survives Slow 4G in ${esc(city.name)}</h3>
-                        <p>Every Knight Logics build targets strong Lighthouse and PageSpeed results so ${esc(city.name)} visitors from Maps do not bounce before the estimate form loads.</p>
+                        <h3>${esc(city.proofPerfHeading || `Speed that survives Slow 4G in ${city.name}`)}</h3>
+                        <p>${esc(city.proofSpeed || `Every Knight Logics build targets strong Lighthouse and PageSpeed results so ${city.name} visitors from Maps do not bounce before the estimate form loads.`)}</p>
                         <ul class="svc-checklist">
                             <li>Compressed media and lean scripts by default</li>
                             <li>Desktop and mobile lab checks before launch</li>
@@ -459,7 +459,7 @@ ${city.marketParagraphs.map((p) => `            <p>${esc(p)}</p>`).join('\n')}
                 </figure>
                 <div class="svc-mirror-copy">
                     <p class="svc-mirror-versus"><span>Technical baseline</span> Lighthouse targets</p>
-                    <h3>Performance for ${esc(city.name)} local results</h3>
+                    <h3>${esc(city.proofLabHeading || `Performance for ${city.name} local results`)}</h3>
                     <p>Builder-template sites often dominate the middle of local SERPs with weak Core Web Vitals. We treat Performance, Accessibility, Best Practices, and SEO as ship criteria — not a post-launch upsell.</p>
                     <ul class="svc-checklist">
                         <li>Measurable edge vs page-builder competitors</li>
@@ -475,8 +475,8 @@ ${city.marketParagraphs.map((p) => `            <p>${esc(p)}</p>`).join('\n')}
                 </figure>
                 <div class="svc-mirror-copy">
                     <p class="svc-mirror-versus"><span>Maps</span> Google Business Profile</p>
-                    <h3>The map layer ${esc(city.name)} sites cannot ignore</h3>
-                    <p>The local map pack is often the first thing a ${esc(city.name)} searcher sees. Sites ship with <a href="/service-google-business-profile" style="color:#64ffda;">GBP alignment</a> — NAP parity, matching services, and conversion paths that turn profile clicks into calls.</p>
+                    <h3>${esc(city.proofMapsHeading || `The map layer ${city.name} sites cannot ignore`)}</h3>
+                    <p>${esc(city.proofMaps || `The local map pack is often the first thing a ${city.name} searcher sees.`)} Sites ship with <a href="/service-google-business-profile" style="color:#64ffda;">GBP alignment</a> — NAP parity, matching services, and conversion paths that turn profile clicks into calls.</p>
                     <ul class="svc-checklist">
                         <li>Categories and services matched to estimate intents</li>
                         <li>Landing URLs that convert on mobile</li>
@@ -493,12 +493,19 @@ ${city.marketParagraphs.map((p) => `            <p>${esc(p)}</p>`).join('\n')}
             <h2 style="color: #e6f1ff; font-size: 1.5rem; margin: 40px 0 16px;">${esc(city.industriesHeading)}</h2>
             <p>${esc(city.industriesBlurb)}</p>
             <ul style="padding-left: 1.4em; margin-bottom: 24px; display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px 24px;">
-                <li>Screen &amp; pool enclosure repair</li>
-                <li>Painting &amp; exterior coatings</li>
-                <li>General construction &amp; contracting</li>
-                <li>Home services &amp; property maintenance</li>
-                <li>Local retail &amp; product brands</li>
-                <li>Electricians &amp; specialty trades</li>
+${(city.industries && city.industries.length
+    ? city.industries
+    : [
+        'Screen & pool enclosure repair',
+        'Painting & exterior coatings',
+        'General construction & contracting',
+        'Home services & property maintenance',
+        'Local retail & product brands',
+        'Electricians & specialty trades',
+      ]
+  )
+    .map((item) => `                <li>${esc(item)}</li>`)
+    .join('\n')}
             </ul>
 
             <p><a href="/nicholas-knight" style="color:#64ffda;">Nicholas Knight</a> builds every site directly — HTML, CSS, and JavaScript from Safety Harbor. Review <a href="/pricing" style="color:#64ffda;">pricing</a> or <a href="/book-consultation" style="color:#64ffda;">request a consultation</a> when the scope is clear.</p>

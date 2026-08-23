@@ -118,6 +118,38 @@ test('public sales copy does not advertise unfinished scaffolding or stale KL me
     assert.doesNotMatch(read('website-growth-audit.html'), /Book a Free Consultation/);
 });
 
+test('city pages keep unique copy and do not add new cities', () => {
+    const pages = fs.readdirSync(ROOT).filter((name) => /^web-designer-.+\.html$/i.test(name));
+    assert.equal(pages.length, 20);
+
+    const stems = [
+        /brochure contest/,
+        /next step obvious/,
+        /Internal linking is part/,
+        /Content depth matters/,
+        /Search Console data for/,
+        /The competitive angle in/,
+        /Neighborhood and corridor intent/,
+        /Talk Through Your Project/,
+        /Need a stronger site or better rankings/,
+    ];
+    const whyOpeners = new Set();
+    for (const name of pages) {
+        const html = read(name);
+        for (const stem of stems) {
+            assert.doesNotMatch(html, stem, `${name} still has templated stem ${stem}`);
+        }
+        const why = html.match(/<article[\s\S]*?<h2[^>]*>[\s\S]*?<\/h2>\s*<p>([\s\S]*?)<\/p>/);
+        assert.ok(why, `${name} needs a why paragraph`);
+        assert.equal(whyOpeners.has(why[1]), false, `shared why opener: ${name}`);
+        whyOpeners.add(why[1]);
+    }
+    for (const sales of ['web-designer-tampa.html', 'web-designer-st-petersburg.html', 'web-designer-clearwater.html']) {
+        assert.match(read(sales), /id="before-after"/);
+        assert.match(read(sales), /id="estimates"/);
+    }
+});
+
 test('package pages preserve canonical website bands and Growth setup prices', () => {
     assert.match(read('package-demo-preview.html'), /1[–-]5 pages/i);
     assert.match(read('package-preview-launch.html'), /up to 10/i);

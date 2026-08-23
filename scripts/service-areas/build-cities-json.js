@@ -52,65 +52,60 @@ const CITIES = [
   { slug: 'plant-city', name: 'Plant City', county: 'Hillsborough', countyFull: 'Hillsborough County', formId: 'Pla', neighborhoods: 'downtown Plant City, strawberry-country corridors, and I-4 approaches toward Brandon', rivals: 'agriculture-town sites stuck on decade-old builders', angle: 'east Hillsborough identity with I-4 corridor discoverability needs', siblings: ['brandon', 'riverview', 'tampa', 'temple-terrace', 'safety-harbor'], imageQuery: 'plant city florida downtown' },
 ];
 
+const UNIQUE = require('./city-unique-copy');
+
+const REQUIRED_COPY = [
+  'heroLead', 'formTitle', 'formLead', 'whyHeading', 'whyParagraphs',
+  'localAngle', 'marketHeading', 'marketParagraphs', 'needsHeading', 'needs',
+  'processHeading', 'processSteps', 'industriesHeading', 'industriesBlurb',
+  'industries', 'proofBlurb', 'proofPattern', 'proofSpeed', 'proofPerfHeading',
+  'proofLabHeading', 'proofMapsHeading', 'proofMaps', 'faqs', 'ctaBlurb',
+];
+
+const BANNED_STEMS = [
+  'brochure contest',
+  'next step obvious',
+  'Internal linking is part',
+  'Content depth matters',
+  'Search Console data for',
+  'The competitive angle in',
+  'Neighborhood and corridor intent',
+  'Talk Through Your Project',
+  'Need a stronger site or better rankings',
+  'projects commonly include contractors, home services, specialty trades',
+  'sits inside',
+];
+
 function wordsApprox(str) {
   return String(str).replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
+}
+
+function assertCopy(c, u) {
+  if (!u) throw new Error(`Missing unique copy for ${c.slug}`);
+  for (const key of REQUIRED_COPY) {
+    if (u[key] == null || u[key] === '') throw new Error(`${c.slug} missing ${key}`);
+  }
+  if (u.whyParagraphs.length !== 5) throw new Error(`${c.slug} needs 5 why paragraphs`);
+  if (u.marketParagraphs.length !== 5) throw new Error(`${c.slug} needs 5 market paragraphs`);
+  if (u.needs.length !== 6) throw new Error(`${c.slug} needs 6 needs`);
+  if (u.processSteps.length !== 5) throw new Error(`${c.slug} needs 5 process steps`);
+  if (u.industries.length !== 6) throw new Error(`${c.slug} needs 6 industries`);
+  if (u.faqs.length !== 7) throw new Error(`${c.slug} needs 7 FAQs`);
+  const bag = [
+    u.heroLead, u.formTitle, u.formLead, ...u.whyParagraphs, ...u.marketParagraphs,
+    u.industriesBlurb, u.localAngle, u.proofBlurb, u.ctaBlurb,
+    ...u.faqs.map((f) => `${f.q} ${f.a}`),
+  ].join('\n');
+  for (const stem of BANNED_STEMS) {
+    if (bag.includes(stem)) throw new Error(`${c.slug} still has banned stem: ${stem}`);
+  }
 }
 
 function buildCity(c) {
   const city = c.name;
   const county = c.countyFull;
-  const whyParagraphs = [
-    `${city} sits inside ${county}, where local search is no longer a polite brochure contest. Homeowners and commercial buyers compare multiple tabs before they call — and the sites that win usually combine clear service architecture, fast mobile performance, and a Google Business Profile that matches the website. If your current ${city} presence is a template homepage with a contact form buried below the fold, you are competing with one hand tied behind your back.`,
-    `The competitive angle in ${city} is ${c.angle}. That means generic “Florida web design” language does not hold. Pages need ${city}-specific framing, honest service-area statements, and proof that you actually work this corridor. Knight Logics builds hand-coded sites for ${city} operators who want that clarity without WordPress bloat or monthly page-builder lock-in.`,
-    `Neighborhood and corridor intent matters here: ${c.neighborhoods}. When someone searches a trade plus ${city}, they are not looking for a statewide franchise story. They want to know whether you serve their street, how fast you respond, and whether the site feels trustworthy on a phone. That is what local SEO and conversion structure are for — not keyword stuffing.`,
-    `Many ${city} businesses lose to ${c.rivals}. The fix is rarely “more blog posts.” It is usually cleaner HTML, dedicated service pages, schema that validates, Search Console indexing, and GBP categories/service areas that agree with the site. Those fundamentals compound. Decorative redesigns without them do not.`,
-    `A ${city} website should also make the next step obvious. Estimate forms, click-to-call, booking paths, and service selectors belong above the fold on mobile — not buried under stock hero text. Knight Logics designs conversion paths for how ${county} buyers actually behave when they are ready to hire.`,
-  ];
-
-  const marketParagraphs = [
-    `In-person delivery is available across ${city} and the wider Tampa Bay metro when a kickoff, photo shoot, or on-site review helps. At the same time, every Knight Logics package is available fully remote across the United States — discovery, design, development, launch, and automation systems do not require you to be next door. ${city} clients often use a hybrid: local when useful, remote for speed.`,
-    `A strong ${city} website usually includes a conversion-first homepage, dedicated service pages, FAQ structure, clear NAP consistency, and internal links into proof (reviews, galleries, case studies). For trades, estimate and call CTAs stay visible. For professional services, credibility and process clarity take the lead. Either way, the technical baseline is the same: hand-coded performance, schema, analytics, and indexing hygiene.`,
-    `${county} searchers bounce from slow sites. Core Web Vitals, compressed media, and lean JavaScript are not vanity metrics in ${city} — they are conversion infrastructure. Knight Logics targets high Lighthouse scores because a fast page keeps the lead in your pipeline instead of the next result.`,
-    `When you are ready to grow beyond the website, the same foundation supports CRM outreach, review requests, ticketing, and social systems without starting over. ${city} operators who treat the site as the front door and the systems as the engine get compounding returns. That is the Growth Systems path — optional, but designed to attach cleanly.`,
-    `Internal linking is part of the ${city} strategy. Your hub pages, service silos, and neighboring city pages should reinforce each other instead of competing as orphans. Knight Logics also connects ${city} landing pages back to pricing, audits, and case studies so visitors can move from education to a clear next step without bouncing to a competitor.`,
-    `Content depth matters for indexing, but utility matters more. Every section on a ${city} page should answer a real buyer question: what you do, where you work, how to contact you, what proof exists, and what happens after the first call. Doorway pages that only swap city names fail that test. Unique local framing for ${city} and ${county} passes it.`,
-    `Search Console data for ${city}-style queries often shows impressions without clicks when titles are vague or pages look interchangeable. We write ${city}-specific titles, meta descriptions, and H1 framing so the SERP snippet matches the promise on the page — then we measure CTR and iterate instead of guessing.`,
-  ];
-
-  const needs = [
-    { title: `${city}-specific service architecture`, text: `Separate pages for the jobs people actually search in ${city} beat a single dump “Services” page every time. Architecture should match how ${county} buyers phrase queries.` },
-    { title: 'GBP and website alignment', text: `Categories, service areas, phone, and business name must match. ${city} map-pack competition punishes mismatches between the profile and the site.` },
-    { title: 'Mobile-first conversion', text: `Most ${city} service searches happen on phones. Click-to-call, short forms, and above-the-fold clarity are non-negotiable.` },
-    { title: 'Proof that feels local', text: `Photos, reviews, and project examples should support ${city} / ${county} credibility — not generic stock that could be anywhere.` },
-    { title: 'Indexation and measurement', text: `Search Console, sitemap submission, schema validation, and analytics so you can see what ${city} queries actually convert.` },
-    { title: 'Honest geography', text: `Only claim ${city} and neighboring metros you can actually serve. Inflated service-area lists create trust gaps and GBP policy risk.` },
-  ];
-
-  const processSteps = [
-    { title: 'Audit', text: `Review the current ${city} site or competitive gap — speed, local keyword targeting, GBP alignment, schema, and conversion path — before writing code.` },
-    { title: 'Architecture', text: `Map service and location structure around real ${city} and ${county} search intent, including sibling cities you actually serve.` },
-    { title: 'Build', text: 'Hand-coded HTML, CSS, and JavaScript. No CMS bloat. Performance, accessibility, and SEO targeted together.' },
-    { title: 'Launch & index', text: `GSC setup, sitemap, schema checks, GBP alignment, and tracking verified so the ${city} property can be discovered.` },
-    { title: 'Iterate', text: `After launch, review ${city} query performance, strengthen weak pages, and attach growth systems when lead handling becomes the bottleneck.` },
-  ];
-
-  const faqs = [
-    { q: `Do you build websites specifically for ${city} businesses?`, a: `Yes. Copy, schema, internal links, and GBP alignment are scoped for ${city} and ${county} — not a statewide filler page with the city name swapped.` },
-    { q: `Can Knight Logics work on-site in ${city}?`, a: `Yes for Tampa Bay engagements when on-site helps. Full remote delivery is also available nationwide for the same packages.` },
-    { q: `What package fits most ${city} service businesses?`, a: `Many start with Local Site depth for ranking foundations, then expand into Authority or Growth Systems when page count and automation justify it. Pricing lists the current ladder.` },
-    { q: `How long does a ${city} website build take?`, a: 'Lean launches often take 1–2 weeks after content is ready. Deeper multi-page authority builds take longer based on scope and feedback speed.' },
-    { q: `Will a ${city} page help if I also serve neighboring cities?`, a: `Yes — when those cities are real service areas. We link sibling metros and keep GBP service areas honest so you do not claim geography you cannot cover.` },
-    { q: `Do you only do websites, or full growth systems too?`, a: `Websites are the foundation. CRM, reviews, ticketing, and automation are available as attached systems when you want the full stack.` },
-    { q: `What makes a ${city} page different from a template city page?`, a: `Unique local framing (${c.angle}), real corridors (${c.neighborhoods}), verified media when available, and conversion paths matched to ${county} buyer behavior — not a find-and-replace city name.` },
-  ];
-
-  const industriesBlurb = `${city} projects commonly include contractors, home services, specialty trades, professional services, and product brands that sell locally or ship. Around ${c.neighborhoods}, information architecture changes by industry; the technical bar does not.`;
-
-  const ctaBlurb = `If your ${city} site is not earning calls or organic leads, the free audit shows what is actually blocking you — technical debt, thin structure, GBP mismatch, or conversion gaps — before you spend on a rebuild. Bring your current URL and we will map the ${city} opportunity against ${county} competition.`;
-
-  const heroLead = `Searching <strong>web designer ${city}</strong> or <strong>${city} web design</strong>? Knight Logics builds hand-coded sites for ${county} businesses — local SEO structure, Google Business Profile alignment, and live Tampa Bay proof — with on-site support in the metro and full remote delivery nationwide.`;
-
-  const proofBlurb = `Nearby Tampa Bay builds (Screen Team, Knight Group, JNS, Sal’s Painting, and others) show the same hand-coded, search-ready foundation ${city} businesses need. Your page count and package tier change; the quality bar does not. When we have a ${city}-specific project, it is featured here; until then, regional proof still demonstrates the delivery standard.`;
+  const u = UNIQUE[c.slug];
+  assertCopy(c, u);
 
   const media = IMAGE_META[c.slug] || {};
   const contentImageCaption = media.caption || `${city}, FL — replace with a verified local photograph. Until then, use the on-page media placeholder; project proof below is from live Knight Logics client builds.`;
@@ -128,22 +123,31 @@ function buildCity(c) {
     ogTitle: `${city} Web Design & Local SEO | Knight Logics`,
     ogDescription: `Hand-coded ${city} websites with local SEO, Google Business alignment, on-site Tampa Bay support, and remote U.S. delivery.`,
     h1: `${city} Web Designer for Service Businesses`,
-    heroLead,
+    heroLead: u.heroLead,
+    formTitle: u.formTitle,
+    formLead: u.formLead,
     breadcrumbLabel: `${city} Web Design`,
     articleHeadline: `Web Design for ${city}, FL — Built for ${county} Visibility`,
     articleDescription: `What ${city} businesses need from a custom website to compete in ${county}: speed, service architecture, local SEO, and a conversion path that works.`,
-    whyHeading: `Why ${city} needs a stronger website than a template`,
-    whyParagraphs,
-    marketHeading: `How ${city} buyers actually find and book`,
-    marketParagraphs,
-    needsHeading: `What a ${city} site should include`,
-    needs,
-    processHeading: `The build process for ${city} clients`,
-    processSteps,
-    industriesHeading: `Industries we support around ${city}`,
-    industriesBlurb,
-    localAngle: `On-site collaboration is available in ${city} and across Tampa Bay. Full remote website and growth-system delivery is available nationwide.`,
-    proofBlurb,
+    whyHeading: u.whyHeading,
+    whyParagraphs: u.whyParagraphs,
+    marketHeading: u.marketHeading,
+    marketParagraphs: u.marketParagraphs,
+    needsHeading: u.needsHeading,
+    needs: u.needs,
+    processHeading: u.processHeading,
+    processSteps: u.processSteps,
+    industriesHeading: u.industriesHeading,
+    industriesBlurb: u.industriesBlurb,
+    industries: u.industries,
+    localAngle: u.localAngle,
+    proofBlurb: u.proofBlurb,
+    proofPattern: u.proofPattern,
+    proofSpeed: u.proofSpeed,
+    proofPerfHeading: u.proofPerfHeading,
+    proofLabHeading: u.proofLabHeading,
+    proofMapsHeading: u.proofMapsHeading,
+    proofMaps: u.proofMaps,
     contentImage: `/images/service-areas/${c.slug}.webp`,
     contentImageAlt: media.alt || `${city}, Florida — service area for Knight Logics web design and local SEO`,
     contentImageCaption,
@@ -151,8 +155,8 @@ function buildCity(c) {
     imageVerified: Boolean(media.alt),
     imageQuery: c.imageQuery,
     siblings: c.siblings,
-    faqs,
-    ctaBlurb,
+    faqs: u.faqs,
+    ctaBlurb: u.ctaBlurb,
   };
 
   const bag = [
@@ -167,6 +171,30 @@ function buildCity(c) {
 }
 
 const cities = CITIES.map(buildCity);
+
+function assertNoSharedOpeners(list) {
+  const fields = [
+    ['heroLead', (c) => c.heroLead],
+    ['formTitle', (c) => c.formTitle],
+    ['why0', (c) => c.whyParagraphs[0]],
+    ['market0', (c) => c.marketParagraphs[0]],
+    ['cta', (c) => c.ctaBlurb],
+    ['industriesBlurb', (c) => c.industriesBlurb],
+  ];
+  for (const [label, pick] of fields) {
+    const seen = new Map();
+    for (const city of list) {
+      const value = pick(city);
+      if (seen.has(value)) {
+        throw new Error(`Shared ${label}: ${seen.get(value)} and ${city.slug}`);
+      }
+      seen.set(value, city.slug);
+    }
+  }
+}
+
+assertNoSharedOpeners(cities);
+
 const outJson = path.join(__dirname, 'cities.json');
 fs.writeFileSync(outJson, JSON.stringify(cities, null, 2));
 const outJs = path.join(__dirname, 'cities.js');
