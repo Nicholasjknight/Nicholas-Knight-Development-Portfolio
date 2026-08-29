@@ -68,7 +68,8 @@
 
     var HANDSHAKE_MODULES = { email: true, outreach: true };
     var pendingReady = {};
-    var OPS_READY_WAIT_MS = 10000;
+    var OPS_READY_WAIT_MS = 12000;
+    var OPS_IFRAME_FALLBACK_MS = 1500;
 
     var state = {
         token: '',
@@ -80,6 +81,8 @@
         localProbe: {},
         remoteModules: {},
         opsOrigins: [],
+        opsEmbedUrls: {},
+        embedReady: {},
     };
 
     function $(id) { return document.getElementById(id); }
@@ -100,6 +103,46 @@
         else if (level === 'warn') console.warn(prefix, message, detail || '');
         else console.log(prefix, message, detail || '');
         renderLogs();
+    }
+
+    function knightlogicsOpsOrigin(origin) {
+        try {
+            var host = new URL(origin).hostname.toLowerCase();
+            return host === 'knightlogics.com' || host.endsWith('.knightlogics.com');
+        } catch (err) {
+            return false;
+        }
+    }
+
+    function opsHandshakeOriginOk(origin, extraUrl) {
+        if (!origin) return false;
+        if (CLOUD_OPS_ORIGINS.indexOf(origin) >= 0) return true;
+        if (LOCAL_OPS_ORIGINS.indexOf(origin) >= 0) return true;
+        if (state.opsOrigins.indexOf(origin) >= 0) return true;
+        if (knightlogicsOpsOrigin(origin)) return true;
+        var urls = extraUrl ? [extraUrl] : [];
+        Object.keys(state.opsEmbedUrls || {}).forEach(function (key) {
+            if (state.opsEmbedUrls[key]) urls.push(state.opsEmbedUrls[key]);
+        });
+        for (var i = 0; i < urls.length; i++) {
+            try {
+                if (new URL(urls[i]).origin === origin) return true;
+            } catch (err) { /* ignore */ }
+        }
+        return false;
+    }
+
+    function pingOpsReady(frame, embedUrl) {
+        if (!frame || !frame.contentWindow || !frame.contentWindow.postMessage) return;
+        var target = '*';
+        try {
+            if (embedUrl) target = new URL(embedUrl).origin;
+        } catch (err) { /* keep * */ }
+        try {
+            frame.contentWindow.postMessage({ type: 'kl-ops-ping' }, target);
+        } catch (err) {
+            try { frame.contentWindow.postMessage({ type: 'kl-ops-ping' }, '*'); } catch (err2) { /* ignore */ }
+        }
     }
 
     function saveSession(token, role) {
@@ -308,6 +351,8 @@
             try { pendingReady[prefix](false); } catch (err) {}
             delete pendingReady[prefix];
         }
+        state.embedReady[prefix] = false;
+        frame.dataset.opsReady = '';
         frame.dataset.loaded = '';
         frame.removeAttribute('src');
         frame.src = 'about:blank';
@@ -479,15 +524,49 @@
     window.addEventListener('message', function (event) {
         if (!event.data) return;
 
-        if (event.data.type === 'kl-ops-ready') {
-            var readyOriginOk = CLOUD_OPS_ORIGINS.indexOf(event.origin) >= 0
-                || LOCAL_OPS_ORIGINS.indexOf(event.origin) >= 0
-                || state.opsOrigins.indexOf(event.origin) >= 0;
-            if (!readyOriginOk) return;
+        if (event.data.type === 'kl-ops-ready' || event.data.type === 'kl-ops-error') {
+            if (!opsHandshakeOriginOk(event.origin, state.opsEmbedUrls[event.data.module] || state.opsEmbedUrls.email)) {
+                log('warn', 'Rejected ops handshake origin', {
+                    origin: event.origin,
+                    type: event.data.type,
+                    module: event.data.module || '',
+                });
+                return;
+            }
             var readyPrefix = event.data.module === 'email_agent' ? 'email' : event.data.module;
+            log('info', 'Ops handshake received', {
+                type: event.data.type,
+                module: readyPrefix,
+                origin: event.origin,
+                pending: typeof pendingReady[readyPrefix] === 'function',
+            });
+            state.embedReady[readyPrefix] = event.data.type === 'kl-ops-ready';
+            var readyFrame = $(readyPrefix + '-frame');
+            if (readyFrame) readyFrame.dataset.opsReady = event.data.type === 'kl-ops-ready' ? '1' : '';
             if (typeof pendingReady[readyPrefix] === 'function') {
-                pendingReady[readyPrefix](true);
+                pendingReady[readyPrefix](event.data.type === 'kl-ops-ready');
                 delete pendingReady[readyPrefix];
+            } else if (event.data.type === 'kl-ops-ready') {
+                var lateWrap = $('embed-status-' + readyPrefix);
+                if (lateWrap) {
+                    lateWrap.classList.remove('open');
+                    lateWrap.style.display = 'none';
+                }
+                log('info', 'Late ops ready hid overlay after timeout', { module: readyPrefix });
+            }
+            if (event.data.type === 'kl-ops-error') {
+                var errorWrap = $('embed-status-' + readyPrefix);
+                if (errorWrap) {
+                    errorWrap.classList.add('open');
+                    errorWrap.style.display = 'flex';
+                    errorWrap.querySelector('[data-embed-title]').textContent = 'Module failed to load';
+                    errorWrap.querySelector('[data-embed-detail]').textContent =
+                        String(event.data.error || 'The embedded service returned an error.').slice(0, 300);
+                }
+                log('warn', 'Cloud ops module reported a load error', {
+                    module: readyPrefix,
+                    error: String(event.data.error || ''),
+                });
             }
             return;
         }
@@ -569,6 +648,7 @@
             wrap.style.display = 'none';
         };
         showOverlay('Connecting to cloud ops…', help || 'Loading inside this tab — it will not open a new window.');
+        state.opsEmbedUrls[prefix] = embedUrl;
 
         if (typeof pendingReady[prefix] === 'function') {
             try { pendingReady[prefix](false); } catch (err) {}
@@ -576,29 +656,65 @@
         }
 
         var needsHandshake = !!HANDSHAKE_MODULES[prefix];
+        var alreadyReady = needsHandshake &&
+            frame.dataset.loaded === embedUrl &&
+            (frame.dataset.opsReady === '1' || state.embedReady[prefix]);
+        if (alreadyReady) {
+            hideOverlay();
+            pushOpsAuthToFrame(frame, embedUrl);
+            pingOpsReady(frame, embedUrl);
+            log('info', 'Ops embed already ready — overlay skipped', { prefix: prefix, url: embedUrl });
+            return;
+        }
+
         var readyTimer = null;
+        var loadFallbackTimer = null;
         if (needsHandshake) {
             readyTimer = window.setTimeout(function () {
-                delete pendingReady[prefix];
-                showOverlay(
-                    'Still connecting…',
-                    'The module did not confirm it loaded. Retry stays in this tab.'
-                );
+                log('warn', 'Ops handshake slow', { prefix: prefix, url: embedUrl, iframeLoaded: frame.dataset.loaded === embedUrl });
+                // Keep pendingReady so a late kl-ops-ready still hides the overlay.
+                if (frame.dataset.loaded === embedUrl || (frame.src && frame.src !== 'about:blank')) {
+                    hideOverlay();
+                    state.embedReady[prefix] = true;
+                    frame.dataset.opsReady = '1';
+                    log('info', 'Hiding overlay after timeout because iframe already loaded', { prefix: prefix });
+                } else {
+                    showOverlay(
+                        'Still connecting…',
+                        'The module is taking longer than usual. Retry stays in this tab — the inbox behind this screen may already be usable.'
+                    );
+                }
             }, OPS_READY_WAIT_MS);
             pendingReady[prefix] = function (ok) {
                 if (readyTimer) window.clearTimeout(readyTimer);
+                if (loadFallbackTimer) window.clearTimeout(loadFallbackTimer);
+                state.embedReady[prefix] = !!ok;
+                frame.dataset.opsReady = ok ? '1' : '';
                 if (ok) hideOverlay();
             };
         }
 
         frame.onload = function () {
             pushOpsAuthToFrame(frame, embedUrl);
+            pingOpsReady(frame, embedUrl);
             if (!needsHandshake) hideOverlay();
             log('info', 'Cloud ops iframe loaded', { url: embedUrl });
+            if (needsHandshake) {
+                loadFallbackTimer = window.setTimeout(function () {
+                    if (typeof pendingReady[prefix] === 'function' && frame.dataset.opsReady !== '1') {
+                        log('info', 'Assuming ops module usable after iframe load', { prefix: prefix });
+                        pendingReady[prefix](true);
+                        delete pendingReady[prefix];
+                    }
+                }, OPS_IFRAME_FALLBACK_MS);
+            }
         };
         frame.onerror = function () {
             frame.dataset.loaded = '';
+            frame.dataset.opsReady = '';
+            state.embedReady[prefix] = false;
             if (readyTimer) window.clearTimeout(readyTimer);
+            if (loadFallbackTimer) window.clearTimeout(loadFallbackTimer);
             delete pendingReady[prefix];
             showOverlay(
                 'Cloud ops unreachable',
@@ -611,9 +727,10 @@
             frame.dataset.loaded = embedUrl;
         } else {
             pushOpsAuthToFrame(frame, embedUrl);
+            pingOpsReady(frame, embedUrl);
             if (!needsHandshake) hideOverlay();
         }
-        setTimeout(function () { pushOpsAuthToFrame(frame, embedUrl); }, 800);
+        setTimeout(function () { pushOpsAuthToFrame(frame, embedUrl); pingOpsReady(frame, embedUrl); }, 800);
     }
 
     function withOpsToken(url) {
